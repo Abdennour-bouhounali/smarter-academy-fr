@@ -1,6 +1,13 @@
 # « مختبر التفكير » — The thinking space contract
 
-> **Status.**
+> **Status (2026-11-22).** Covers the thinking space: content model, answer checks, server gate, student screens.
+> Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the ENGINE (schema, validator,
+> `packages/core/thinkingLab/`, `Domain/ThinkingLab`, the screens, the figure components). Not true here: no challenge
+> exists — the 46 Algerian challenges, their oracle batches `scripts/thinking-lab-oracle/` and the bank list were deleted
+> (the generated index has `count: 0`); the screens and the validator's forbidden-word list are Arabic; plan §7 row 3
+> keeps the space hidden until French content exists. French content rules: `FRENCH_LANGUAGE_CONTRACT.md`.
+>
+> **Status in DZ.**
 >
 > - **Phase 0 (« Foundations »), 2026-10-30, implemented:**
 >   - the content model;
@@ -14,11 +21,10 @@
 >   - screens 1–3 with the replay player and sounds;
 >   - the access key;
 >   - the deploy step;
->   - the seed bank, 46 challenges, all published.
+>   - (in DZ) the seed bank, 46 challenges, all published — not in this repository.
 > - **Planned, not yet implemented:** everything marked *Planned* below, which is phases 2–7 of
 >   [`reports/THINKING_LAB_PLAN_2026-10-30.md`](../reports/THINKING_LAB_PLAN_2026-10-30.md). The plan stays the authority for
 >   what is not built yet, and its §2 owner decisions D1–D10 are binding. This contract is the authority for what exists.
-> - Content: [`curriculum/THINKING_LAB_CHALLENGE_BANK.md`](../curriculum/THINKING_LAB_CHALLENGE_BANK.md).
 
 ## 1. What it is
 
@@ -39,7 +45,7 @@ content/thinking-lab/
   _fixtures/expressions.json           JS ↔ PHP fixture of the expression evaluator (§4.2)
   _fixtures/answers.json               JS ↔ PHP fixture of the answer checker (§4.1)
   _fixtures/params.json                JS ↔ PHP fixture of per-student numbers (§3.3)
-  challenges/<NNNN>-<id>.json          one file per challenge (46 published)
+  challenges/<NNNN>-<id>.json          one file per challenge (none today; the folder does not exist)
   index.generated.json                 GENERATED, checked in, SERVER-ONLY (§5.3)
 packages/core/thinkingLab/             pure logic, imported BY PATH, never through the core barrel
   expression.js  checkAnswer.js  params.js
@@ -59,7 +65,7 @@ apps/web/src/
   services/thinkingLabService.js
   pages/student/thinking/{ThinkingLadderPage,ThinkingChallengePage,ThinkingNumberPage}.jsx   lazy routes
   features/thinkingLab/
-    thinkingModel.js                   pure helpers: state in words, phases, LTR math islands, Algiers time
+    thinkingModel.js                   pure helpers: state in words, phases, LTR math islands, Algiers time (Europe/Paris in step 1E — not yet applied in the code)
     ThinkingParts.jsx                  MathRun, ChallengeFigure, AnswerInput, PhaseChip, SoundToggle, prettyMath
     ladder/LadderHome.jsx              screen 1
     workspace/Workspace.jsx            screen 2
@@ -68,7 +74,7 @@ apps/web/src/
   i18n/locales/ar/thinking.json        on-demand namespace
 scripts/
   build-thinking-lab-index.mjs  validate-thinking-lab.mjs  thinking-lab-oracle.test.mjs
-  thinking-lab-oracle/{seed,primary,middle,secondary,university}.mjs
+  thinking-lab-oracle/<batch>.mjs      one oracle batch per band (deleted with the challenges; recreated with the first one)
   lib/jsonSchemaSubset.mjs
 ```
 
@@ -289,14 +295,13 @@ with a dead end (`B`).
 
 ### 5.4 How to add a challenge
 
-1. Write `content/thinking-lab/challenges/<NNNN>-<id>.json` from the bank entry, in our own words with our own numbers.
+1. Write `content/thinking-lab/challenges/<NNNN>-<id>.json`, in our own words with our own numbers.
 2. If it has a figure, add `apps/web/src/features/thinkingLab/figures/<Name>.jsx` (§7.2).
 3. Add its oracle to the batch of its band in `scripts/thinking-lab-oracle/`.
 4. Run `npm run build:thinking-lab-index`, `npm run validate:thinking-lab -- --strict`,
    `npx vitest run --dir scripts thinking-lab` and `cd apps/web && npx vitest run src/features/thinkingLab`.
 5. Look at the figure: render it and view the PNG.
 6. Set `status: "published"`; nothing generated stays `draft`.
-7. Update the challenge bank's status line.
 
 ## 6. The ladder and the gate (implemented, phase 1)
 
@@ -349,7 +354,7 @@ stake belongs to phase 4.
 
 - **When it opens:** `unlockAt = first_attempt_at + think_hours` once `attempts_counted ≥ attempts_to_unlock`.
   - The defaults are 3 attempts and 24 h; the primary band waits 0 h.
-  - Time is the server's clock and stored in UTC; the screen shows it in Africa/Algiers.
+  - Time is the server's clock and stored in UTC; the screen shows it in Africa/Algiers (Europe/Paris in step 1E — not yet applied in the code).
 - **Before it opens:** `GET …/replay` answers `gate_closed` (403).
 - **Opening it:** the first read after it opens turns `trying` into `learned` (outcome `learned`).
 - **Twin credit:** solving the twin **alone** afterwards turns the original's outcome into `twin` (plan §6).
@@ -480,8 +485,8 @@ These names are added to `playSfx`:
 | `notyet` | two soft falling notes, never a buzzer |
 | `stepTick` | each replay step |
 
-A solved challenge plays `playMedal('gold')`. All of them are silent unless « الصوت » is on (`MANIPULATION_CONTRACT.md`
-« Sound effects »).
+A solved challenge plays `playMedal('gold')`. All of them are silent unless « الصوت » is on (the sound contract was `MANIPULATION_CONTRACT.md` « Sound effects »,
+deleted on 2026-11-22 with the legacy lab system; `git show 049380e:docs/architecture/MANIPULATION_CONTRACT.md`).
 
 ## 8. Open decisions in effect (plan §17)
 
@@ -504,7 +509,7 @@ practice (everything open, nothing written). Plan §17 n° 3 ("who can use the l
 they preview, they do not play.
 
 - **Server** (`TeacherPreview`, `TeacherThinkingLabController`, routes under `/teacher/thinking-lab`, `can:teacher`):
-  - `GET …/challenges` lists the 46 challenges with what a teacher may know: `band`, `family`, `title`, `summit`, `examTag`.
+  - `GET …/challenges` lists the published challenges (none today) with what a teacher may know: `band`, `family`, `title`, `summit`, `examTag`.
   - `GET …/challenges/{id}?tuple=n` returns the whole challenge with no gate: the answer, the declared mistakes
     with their replies, all keys, the replay, `keyMoves`, `move`, the parts and ceiling with their answers, and the twin.
     `n` walks through the student's possible number sets (`params`).
@@ -550,7 +555,7 @@ they preview, they do not play.
 | PHPUnit (unit) | `tests/Unit/ThinkingLab/{ExpressionEvaluatorFixtureTest,AnswerCheckerFixtureTest}.php` | the same fixtures, PHP side |
 | PHPUnit (feature) | `tests/Feature/ThinkingLabFlowTest.php` | the plan's phase-1 acceptance (1 → 2 → 3 attempts → +24 h, time travelled), honest-attempt refusals, keys, reach, open places, postpone, the primary band, twin credit, extras, access |
 | PHPUnit (feature) | `tests/Feature/ThinkingLabLeakTest.php` | no answer, closed key or replay in any pre-gate response |
-| Vitest (scripts) | `scripts/validate-thinking-lab.test.mjs`, `scripts/thinking-lab-oracle.test.mjs` | each validator rule; the oracle for all 46 challenges |
+| Vitest (scripts) | `scripts/validate-thinking-lab.test.mjs`, `scripts/thinking-lab-oracle.test.mjs` | each validator rule; the oracle for every published challenge (none today) |
 | Vitest (web) | `features/thinkingLab/{thinkingModel,serverOnly}.test.js`, `figures/figures.test.jsx` | state in words, math islands, Algiers time; the server-only content; every figure and every replay layer |
 | PHPUnit (feature) | `tests/Feature/TeacherThinkingLabTest.php` | the teacher preview: everything open, a tested answer judged like the student's, nothing written, a student refused (§8bis) |
 | Gate | `npm run validate:thinking-lab -- --strict` (in `check:lessons`) | §5.1 |

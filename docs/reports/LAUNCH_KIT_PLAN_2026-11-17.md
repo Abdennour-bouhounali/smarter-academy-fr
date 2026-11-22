@@ -1,6 +1,9 @@
-# « عُدّة الانطلاق » — build plan (approved by the owner on 2026-11-17, « go on »)
+# The launch kit — build plan (approved by the owner on 2026-11-17, « go on »)
 
-Contract of what is built: `docs/architecture/LAUNCH_KIT.md`. This file keeps the whole idea, the decisions and the phases.
+> **Status (2026-11-22).** The idea, the decisions and the phases of the launch kit. Imported from the Algerian platform
+> (DZ dev `7f4cef1c`) on 2026-11-22; the decisions are the Algerian owner's and still apply to the engine here. True
+> here: phase 1 (the engine, in the browser). Not true here: any family, any classified link, any lesson (the Algerian
+> numbers below are history). Contract of what is built: `docs/architecture/LAUNCH_KIT.md`.
 
 ## The idea (owner, 2026-11-16)
 
@@ -8,8 +11,8 @@ Before starting a lesson, in every lesson of every grade, the student plays a ga
 a test of the earlier الكفاءات the lesson needs (his grade and the grades before). At the end: a score and direct links to the
 lessons to revise, with an easy return. Under a threshold he cannot start. A teacher sees the last score of his students. The
 tracking of a الكفاءة must tell a problem in a prerequisite from a problem in the new idea; a click on a الكفاءة opens the window
-of the earlier ones; a strong result on a الكفاءة that leans heavily on others updates those — many students join in 4AM with no
-data on the earlier grades.
+of the earlier ones; a strong result on a الكفاءة that leans heavily on others updates those — many students join in a late grade with
+no data on the earlier grades.
 
 ## The design (accepted)
 
@@ -41,24 +44,18 @@ Asked on 2026-11-16; the owner answered on 2026-11-17 (« I accept it all », wi
 | 2 | Who opens lessons? | **The teacher** is responsible for opening lessons for his class (owner). The teacher's interface of a lesson is different and will be updated later — nothing is built for it now. **All the earlier lessons of the earlier grades are open to the student**: a lesson to revise is never locked. **An independent student, who belongs to no class, has ALL lessons open** (owner, 2026-11-17). **He passes through the capsule like everyone** (owner, 2026-11-17, after seeing the capsule: « yes ») |
 | 3 | Does the launch move the mastery of the الكفاءة itself? | **No, separate** (owner): the launch is a first, quick insight on the student's level; the exercises are what really measures it |
 | 4 | The revise link: capsule or whole lesson? | **The short capsule first** (owner), the whole lesson one tap further |
-| 5 | Core / support | **Accepted and done for 4AM (2026-11-17).** The owner: « the net of learning point architecture needs your expert touch to make it solid ». 122 links classified (85 core, 37 support), 13 missing links added, three resolver functions, a test that forbids the catalogue to contradict the net, and a review table for the owner: `docs/curriculum/LEARNING_NET_WEIGHTS_4AM.md` (`LEARNING_NET.md` §2.2bis, §7bis, §8bis). 1AM–3AM are classified when their lessons get a launch |
+| 5 | Core / support | **Accepted** (done for the Algerian 4AM on 2026-11-17). Here: the resolver functions and the test exist (`LEARNING_NET.md` §2.2bis, §7bis, §8bis); no link is classified yet — the French net is empty, and 3e is weighted first (plan §5, 2C); the owner's review table is `docs/curriculum/LEARNING_NET_WEIGHTS.md` (generated) |
 
 ## Phases
 
 | Phase | Content | State |
 |---|---|---|
-| 1 | Engine, families of the pilot's two prerequisites, the game, the kit, the return, the gate and its capsule — on `qasim-adad-tabii`, browser only | **built 2026-11-17, to be judged by the owner** |
+| 1 | Engine, the game, the kit, the return, the gate and its capsule — browser only (built on an Algerian pilot lesson; its families were deleted here) | **built 2026-11-17, to be judged by the owner** |
 | 2 | The server asks and grades (as « بوصلتي »); the result is stored and synced; the gate decided by the server; the teacher's « جاهزية القسم », last score and who needed a capsule | not built |
 | 3 | Link weights (core / support); the picture with its sources; the window; the automatic update; the diagnosis | not built |
-| 4 | Rollout unit by unit as families are written (it replaces « أستعدّ » in the same place; its ten written questions per lesson become seed questions); errors of the bank tagged with their الكفاءة; the live class launch | not built |
+| 4 | Rollout unit by unit as families are written; errors of the bank tagged with their learning point; the live class launch | not built |
 
 ## The real cost
 
-Questions. Each prerequisite needs a family (two levels, several forms, named mistakes, a worked example). Two exist. The
-direct prerequisites of the 4AM lessons come first. « بوصلتي » coverage with both levels on 2026-11-09, as a measure of what the
-bank can seed: 4AM 36 of 52 items, 3AM 16 of 58, 2AM 12 of 54, 1AM 10 of 60.
-
-## A rule that will change
-
-« أستعدّ » today « never gates, sends no evidence » (`LEARNING_NET.md` §3, guide §4septies). Phase 2 changes that for the lessons
-that get a launch; until the owner validates phase 1, « أستعدّ » stays as it is everywhere.
+Questions. Each prerequisite needs a family (two levels, several forms, named mistakes, a worked example). None exists
+here (the Algerian platform had nine). The direct prerequisites of the first 3e lessons come first.

@@ -1,5 +1,10 @@
 # « الوصول والحدود » — Access & Limits for features
 
+> **Status (2026-11-22).** Covers the per-tier access to Math Lab instruments, notebook and saved works, and their
+> quotas. Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the whole mechanism (API
+> `Domain/Access/Features/`, `useFeatureAccess`, `/admin/offres/acces`). Not true here: the interface strings are still
+> Arabic (steps 1C–1E); the seed's free/premium split follows the DZ 4AM programme, not a French one (§9).
+
 > **Authoritative** for: which subscription **tier** (free / premium) may use
 > each Math Lab instrument, the notebook (كرّاسي) and saved Math Lab works;
 > the quotas on **notebook copies** and **document generations**; the usage
@@ -192,14 +197,14 @@ run seeders). Edit them in the admin screen, not in code.
 
 | Feature | Free | Premium |
 |---|---|---|
-| Instruments anchored in the 4AM programme: whiteboard, functionGrapher, geometry3d, probabilityStats, algebra, vectors, trigonometry, transformations, numberLab, measurement | ✔ | ✔ |
+| Instruments anchored in the DZ 4AM programme (the split was never redone for France): whiteboard, functionGrapher, geometry3d, probabilityStats, algebra, vectors, trigonometry, transformations, numberLab, measurement | ✔ | ✔ |
 | Beyond-programme instruments: sequences, conics, analysis, logic | ✘ | ✔ |
 | Notebook | ✔, **50 new notes / month** | ✔, unlimited |
 | Saved Math Lab works | ✔, **10 new works / month** | ✔, unlimited |
 
 No Free/Premium classification of the Math Lab existed before; this one
 follows the « beyond the programme stays one click away » split of
-`MATH_LAB.md`. **Pending owner confirmation** (see the 2026-09-25 report).
+`MATH_LAB.md`. **Pending owner confirmation** — for France too (plan §7).
 
 ## 10. Frontend
 

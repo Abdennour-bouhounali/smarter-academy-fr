@@ -1,35 +1,34 @@
 # @smarter-academy/core
 
-Platform-agnostic logic shared by every Smarter Academy client — today the web app (`apps/web`), and, when it's built, a future React Native app. Everything here is plain JavaScript with **zero** React, DOM, or bundler-specific APIs (no `localStorage`, no `window`/`document`, no `import.meta`) — it runs identically under Vite, Metro, or plain Node.
+Platform-agnostic logic shared by the web app (`apps/web`), the scripts and — through generated files — the API.
+Plain JavaScript with **zero** React, DOM or bundler-specific APIs (no `localStorage`, no `window`/`document`, no
+`import.meta`): it runs the same under Vite and plain Node. Its tests (`npm run test --workspace=packages/core`) run in
+Node, which is what enforces this.
 
-## What belongs here
+Another agent is removing unused exports while the rebuild goes on (plan §4, step 1B): the folders below are what is
+there on 2026-11-22; read `index.js` for the exact public surface.
 
-Pure functions and static data: `input → output`, no side effects, no framework coupling. The test in `vitest run` (`npm run test --workspace=packages/core`) is the actual enforcement mechanism — anything that touches a browser API fails immediately in this package's zero-config Node test environment.
-
-| Module | What it does |
+| Where | What |
 |---|---|
-| `mathComparison.js` | Algebraic-equivalence checking (`compareMathExpressions`), via `@cortex-js/compute-engine` |
-| `numberFormat.js` | French number formatting/parsing (`formatFr`, `parseDec`, decimal comparison) |
-| `errorClassifiers.js` | Detects common student error patterns (sign errors, missing square root, ...) |
-| `auth.js` | `hasRequiredRole(user, allowedRoles)` — the authorization predicate behind route guards |
-| `geometry.js` | Pythagorean formulas (`computeHypotenuse`, `computePythagoreanLeg`) |
-| `algebra.js` | Affine-function evaluation (`evaluateAffineFunction`) |
-| `exercise/` | `adaptiveExerciseState.js` — the pure "submit → hint → solution" state rules of the French-era exercise pattern. Tested and exported, but its only consumer (`apps/web`'s `useAdaptiveExercise`) was deleted on 2026-09-29; no 4AM lesson uses it |
-| `api/` | `errors.js` — `ApiError`, `classifyStatus`. The `fetch` call itself stays in `apps/web` (needs `import.meta.env`) |
-| `validation/` | Canonical exercise validators (`{isCorrect}` result contract — see `docs/architecture/EXERCISE_CONTRACT.md`): `validateChoiceAnswer`, `validateNumericAnswer`, `validateScientificNotation` |
-| `progress/` | `calculateCompletionPercentage` (pure completion-% math), `getNextIncompleteModule`, `getNextLesson` (pure curriculum navigation) |
-| `curriculum/` | `coursesData.js` — the catalogue (`courseLevels`; `allCourseLevels` unfiltered; `buildCourseLevels` for fixtures), built from the JSON of `curriculum/fr/` (programme / lessons / units per grade 6e–3e, the learning net `fr/net/`, the school calendar `fr/calendar/` — an EMPTY skeleton since 2026-11-22, `docs/FRANCE_REBUILD_PLAN.md` §4bis), and `getAllGrades()` (the flattened grade list — the single source of truth for what a student's `grade` profile field can be); `lessonStages.js` — the canonical learning-journey stage vocabulary (`LESSON_STAGES`, `REQUIRED_STAGES`) and the 90-minute lesson cap (`MAX_LESSON_MINUTES`), shared by the lesson validator and the web app |
-
-See `docs/architecture/MOBILE_READINESS.md` for the investigation behind what's here (and, as importantly, what was deliberately left out).
+| `curriculum/` | `coursesData.js` — the catalogue (`courseLevels`, `allCourseLevels`, `buildCourseLevels` for test fixtures, `getAllGrades()`), built from the JSON of `curriculum/fr/`: programme, lessons and units per grade `6e`–`3e`, the learning net `fr/net/`, the school calendar `fr/calendar/`. **An EMPTY skeleton since 2026-11-22** (four grades, five thèmes, no lesson — `docs/FRANCE_REBUILD_PLAN.md` §4bis). `activeGrades.js` (`ACTIVE_GRADE_IDS`), `lessonStages.js`, the exporters read by the API (`exportCurriculum.mjs`, `exportContentRegistry.mjs`) |
+| `practice/` | the practice answer evaluator (exact rationals, intervals, canonical affine forms) — `docs/architecture/EXERCISE_CONTRACT.md` |
+| `thinkingLab/` | the `expression` answer check and per-student numbers of the thinking lab — `docs/architecture/THINKING_LAB.md` |
+| `compass/` | the year-compass engine — `docs/architecture/YEAR_COMPASS.md` |
+| `progress/` | completion %, next lesson / next module, module-number validation, `moduleLayoutMigrations.js` (its table is `{}` here) — `docs/architecture/PROGRESS_MODEL.md` |
+| `validation/` | choice, numeric and scientific-notation validators (`{isCorrect}` contract) |
+| `numberFormat.js`, `mathComparison.js`, `random.js`, `geometry.js`, `algebra.js`, `arithmetic/`, `errorClassifiers.js`, `exercise/` | number formatting and parsing, algebraic equivalence, seeded randomness, small maths helpers |
+| `auth.js`, `api/errors.js` | the role predicate behind route guards; `ApiError` and status classification (the `fetch` call stays in `apps/web`) |
 
 ## What does *not* belong here
 
-Anything that needs `localStorage` (progress persistence — see `apps/web/src/lessons/common/hooks/useProgress.js` and the `getLessonProgress`/`getResumeLesson` family, which stay web-side and remain a documented future seam), anything that renders UI (React components/hooks), and anything that talks to `import.meta.env` (the API client). These are genuinely web-platform-coupled today; moving them here without also building the adapter they'd need would just relocate the coupling, not remove it.
+Anything that needs `localStorage` (progress persistence stays in `apps/web/src/lessons/common/hooks/useProgress.js`
+and `utils/progress/`), anything that renders UI, and anything that reads `import.meta.env`.
 
 ## Usage
 
 ```js
-import { validateNumericAnswer, courseLevels, hasRequiredRole } from '@smarter-academy/core';
+import { courseLevels, hasRequiredRole } from '@smarter-academy/core';
+import { createLearningNet } from '@smarter-academy/core/curriculum/fr/net/learningNet.js';
 ```
 
-Resolved via npm workspaces — no path aliases, no build step. A future Expo/React Native app in this same workspace would import it exactly the same way.
+Resolved through npm workspaces — no path aliases, no build step.

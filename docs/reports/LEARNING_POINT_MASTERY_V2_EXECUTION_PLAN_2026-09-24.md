@@ -1,5 +1,8 @@
 # Smarter Academy — Learning Point Mastery V2 Execution Plan
 
+> **Status (2026-11-22).** Historical plan, imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. The
+> lessons and files it cites are gone; the contract is `LEARNING_ARCHITECTURE.md`.
+
 > **Status: IMPLEMENTED (2026-09-24) — historical plan, not a contract.** The
 > implemented contract is [`LEARNING_ARCHITECTURE.md`](../architecture/LEARNING_ARCHITECTURE.md)
 > § « Mastery model (V2) ». Deviations from this plan, each forced by the
@@ -885,7 +888,7 @@ unchanged). The drill-down is the same join filtered to one LP, ordered by
 
 ## 27. Knowledge Map
 
-The map stays what `KNOWLEDGE_MAP.md` defines: **curriculum structure the
+The map stays what `KNOWLEDGE_MAP.md` (deleted 2026-11-22) defines: **curriculum structure the
 student has unlocked by completing modules**, with items (not LPs) as nodes.
 V2 adds an **overlay**, not a second source:
 
@@ -1186,7 +1189,7 @@ so that replayed V2 kinds rest on server-classified rows wherever possible).
   `EXERCISE_CONTRACT.md` §0 (outcome table, retry semantics),
   `AI_LESSON_CONTRACT.md` (`learningPoints` with roles, `difficulty`,
   registry rule), `TEACHER_CLASSROOM_ARCHITECTURE.md` §4 (class × LP),
-  `LESSON_DEVELOPMENT_GUIDE.md` pointers; `config/mastery.php` documented.
+  `LESSON_DEVELOPMENT_GUIDE.md` (deleted 2026-11-22) pointers; `config/mastery.php` documented.
 - **Files**: docs only. **Tests**: none. **Risk**: none. **Rollback**: git.
 
 ### Phase 1 — Evidence foundation

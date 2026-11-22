@@ -1,44 +1,19 @@
 # Smarter Academy — Interaction & Manipulation Pedagogy
 
 > **The contract for how a mathematical concept becomes understandable through manipulation in a
-> Smarter Academy lesson.** It is written for AI coding agents and developers who design,
-> generate, refactor, or audit lessons. It is not a lesson, not an article, and not a UI template.
+> Smarter Academy lesson.** Written for the agents and developers who design, generate or audit lessons.
 >
-> Sibling contracts stay normative on their own ground — `ARCHITECTURE.md`, `LESSON_CONTRACT.md`
-> (module structure, stages, durations, learning-point wiring), `EXERCISE_CONTRACT.md`,
-> `PROGRESS_MODEL.md`, `LEARNING_ARCHITECTURE.md`, `AI_LESSON_CONTRACT.md`,
-> `LESSON_INTEGRATION_GUIDE.md`, `CLAUDE.md`. `LESSON_DESIGN_PLAYBOOK.md` is the operational
-> synthesis. **Precedence:** on any question of *what the student manipulates, what they must
-> notice, how feedback is worded, how scaffolding disappears*, this document wins. On lesson
-> structure, stage vocabulary and validator rules, `LESSON_CONTRACT.md` and
-> `scripts/validate-lessons.mjs` win. When the playbook disagrees with this document, update the
-> playbook.
->
-> **Above this document:** `MANIPULATION_DNA.md` (2026-09-30) — the design philosophy of a
-> manipulation (the finger controls a mathematical variable, the mathematics resists, contrast,
-> interaction distance, causal visibility, the design sheet, reuse engineering not experience).
-> This document applies it to lesson design; `MANIPULATION_CONTRACT.md` implements it.
-
-Every file path below is repo-relative. Components are cited as **examples of interaction
-primitives**, never as mandatory building blocks. The rules in this document apply to any
-manipulation.
-
-> **Historical examples (read this first).** Most example components this document cites —
-> `PartitionShape`, `ShapeComposer`, `FormulaBuilder`, `LiquidContainer`, `Balance`,
-> `FractionBuilder`, `AreaGrid`, `ClockFace`, `FunctionMachine`, `TaxiMeter`, `planeFor`… and
-> every path under `lessons/college/` or `lessons/lycee/` — belonged to the **French-era lessons
-> deleted on 2026-09-25** (read them in git history). They are kept as illustrations of the
-> principles, not as components to import. **The current manipulations are the closed registry of
-> 26 types** in `packages/core/curriculum/manipulationTypes.js` (mounted by
-> `apps/web/src/lessons/common/manipulations/manipulationRegistry.js`): `divisor-explorer`,
-> `divisor-explorer-books`, `team-builder`, `factor-pairs`, `divisor-properties`,
-> `common-divisors`, `pgcd-differences`, `euclidean-algorithm`, `coprime-explorer`,
-> `fraction-reduction` (unit 1), `square-root-side`, `square-fold`, `square-tiling` (unit 2,
-> 2026-09-30), `pitch-expansion`, `turf-factoring` (unit 3, 2026-10-01), `equation-balance`, `vanishing-pitch`,
-> `solution-ray`, `growth-race` (unit 4, 2026-10-01), `pair-scoreboard`, `elimination-cards`, `story-modeller`
-> (unit 5, 2026-10-01), `ratio-ride`, `linear-machine`, `origin-line`, `percent-tag` (unit 6, 2026-10-02) — reused across lessons by props and theme data
-> (`MANIPULATION_CONTRACT.md`). Shared components still present include `NumberLine`,
-> `CoordPlane` and `InfoSorter` (`apps/web/src/lessons/common/components/`).
+> **Status (2026-11-22).** Imported from the Algerian platform (DZ `dev` `7f4cef1c`) on 2026-11-22. True here: the
+> principles (§1–§30) — they bind every v2 lesson, whose mechanics are `GAME_WORLD.md` (the kit, a world, the forge).
+> Not true here: every component this document used to cite as an example — the French-era components (`PartitionShape`,
+> `ShapeComposer`, …), the Algerian lab registry (`lessons/common/manipulations/`, deleted 2026-11-22), the module kit
+> (`common/kit/`, `ContentModule`, `TapQuestion`) — is DELETED; such names are illustrations, not components to import.
+> The sections on module-lesson openings (§6bis–§6quater), the knowledge map and the lab system were cut
+> (`git show 049380e:docs/architecture/INTERACTION_PEDAGOGY.md`). Shared components still present: `NumberLine`,
+> `CoordPlane`, `GeoFigure`, `SpaceFigure` (`apps/web/src/lessons/common/components/`). On lesson structure and
+> validator rules, `LESSON_CONTRACT.md` and `scripts/validate-lessons.mjs` win.
+> Where this document names phone or tablet widths (375 px…), the binding size is 1366×768 alone (root `CLAUDE.md`);
+> phones are paused.
 
 ---
 
@@ -111,12 +86,9 @@ Canonical touches:
 
 ### TRUE MANIPULATION
 
-**An action changes a mathematical state.** Tapping a part of the (historical, deleted
-2026-09-25) `PartitionShape` added an index to `cells`; the numerator *was* `cells.length`. In the
-4AM unit, carrying a player into a team of `team-builder` builds the partition (the refusal
-of a sixth player *is* « equal parts »), and stretching the shelf of `divisor-explorer-books`
-sets b, the size of every shelf, while the 420 books re-shelve under the finger — the shelf
-length *is* the divisor being tested (quotition, `MANIPULATION_DNA.md` §8). Dragging the cursor of `NumberLine`
+**An action changes a mathematical state.** Tapping a part of a partitioned shape adds an index to `cells`; the
+numerator *is* `cells.length`. Stretching a shelf sets b, the size of every shelf, while the books re-shelve under the
+finger — the shelf length *is* the divisor being tested. Dragging the cursor of `NumberLine`
 (`apps/web/src/lessons/common/components/NumberLine.jsx`) in `mode="place"` sets `value`; the
 position *is* the number.
 
@@ -142,9 +114,8 @@ formalization). They are not the manipulation.
 
 ## 3. The interaction loop
 
-The canonical loop for one micro-competence. In kit terms (`common/kit/ContentModule.jsx`): the
-situation and question live in the `MissionBrief` or the step title, the manipulation is the step
-body, observation is the derived visual, and formalization is the reveal that closes the step.
+The canonical loop for one micro-competence. In a v2 world it is the forge of a key (`GAME_WORLD.md`): predict, act,
+see the world answer, write the rule, and only then its name.
 
 ### 1. REAL EXAMPLE
 Start from a meaningful situation: sharing, measuring, buying, filling, travelling, building,
@@ -190,10 +161,10 @@ A primitive is **appropriate when the variable the student controls is the conce
 variable.** If the concept is "denominator", the control must change the number of equal parts —
 not scroll a carousel of pre-cut pizzas.
 
-*The « examples » column names French-era components deleted on 2026-09-25 (historical); the
-« 4AM registry types » column names what exists today.*
+*The last column names components that are all deleted (French-era components and the Algerian lab registry): they
+illustrate the primitive, nothing more.*
 
-| Primitive | Student controls | Mathematical state | Appropriate when | Historical examples (deleted) · 4AM registry types |
+| Primitive | Student controls | Mathematical state | Appropriate when | Historical examples (all deleted) |
 |---|---|---|---|---|
 | **A. Partition** | how many equal parts; which parts are taken | denominator, numerator, ratio, area share, probability | the concept is *about* equal parts or the whole/part relation | `PartitionShape` (`weights` allows deliberately unequal parts for the "4 morceaux ≠ 4 parts égales" conflict); `ObjectGroup` (fractions of a collection — the student selects *groups*, never single objects) · 4AM: `team-builder` (partition: fix the number of groups); its quotition twin `divisor-explorer-books` fixes the size of a group by stretching a shelf |
 | **B. Combine / Compose** | which pieces join | sum of fractions, of lengths, of expressions; composed figure | the concept is additive or compositional | `ShapeComposer` (aires: tap piece → tap slot); `FormulaBuilder` (perimetres: chips → formula tokens) |
@@ -305,361 +276,6 @@ challenge consolidates and transfers; it introduces nothing.
 
 ---
 
-## 6bis. Every lesson opens with a signature manipulation
-
-> **Module 1 of every lesson is a mathematical laboratory, not an introduction.** The student
-> must be able to *cause* the lesson's central phenomenon to happen — and want to try again —
-> before anything is named, defined or written as a formula.
-
-The test of a Module 1 is the sentence the student says after thirty seconds: *« Qu'est-ce qui se
-passe ? Je réessaie. »* If the honest sentence is *« D'accord, j'ai lu »*, the module is a page,
-not a laboratory.
-
-### 6bis.1 The arc of the opening module
-
-```
-REAL SITUATION → CURIOSITY → PREDICTION → MANIPULATION → OBSERVATION → DISCOVERY → MATHEMATICAL QUESTION
-```
-
-- **Real situation** — two sentences in the `MissionBrief` — the platform's one activity card,
-  redesigned 2026-09-21: a light card carrying source pill, optional hook, objective, the
-  textbook's own statement, an optional **drawn** context vignette and the source tag. It is
-  data-driven; no lesson-specific design is ever added to it (guide §4bis) — an object on screen
-  (§19). Only when
-  the context serves the mathematics; a die, a taxi meter, a market scale and a phone battery
-  earned their place, a decorative story does not.
-- **Curiosity** — one question the student cannot yet answer (« Que paie-t-on pour 0 km ? »).
-- **Prediction** — a `TapQuestion` or `NumericQuestion` *before* the system answers (§9). The
-  wrong prediction is the most memorable moment of the module; the reveal comes from the
-  manipulation, not from the feedback text.
-- **Manipulation** — the student changes the concept's own variable (§4, §5) and the consequence
-  appears at once, with no validation click in between.
-- **Observation → discovery** — the invariant or the predictable change becomes visible (§7):
-  the same input redraws the same output; the coins double with the cherries; the trace starts
-  above zero; the points line up; the probe reads one altitude per hour.
-- **Mathematical question** — the module ends by *asking* what later modules will name, never by
-  defining it. Formal vocabulary and `f(x)` notation belong to the module whose stage is
-  `discovery`/`formalization` (§6, §14).
-
-Only after this arc may explanation begin. **Naming happens after the gesture, never before it:**
-in the 4AM unit, the Module 1 of each of the eight concept lessons ends its manipulation step with
-a `KnowledgeBrick` (default `variant="new"`) that names what the student has just caused — e.g.
-`qasim-mushtarak-akbar/modules/Module01Baqat.jsx` lays `qawasim-mushtaraka` after the bouquets are made (the example was `qasim-adad-tabii` until its module pages were deleted, 2026-11-18, `LESSON_V2.md` §2)
-(KNOWLEDGE_DEPENDENCY.md « teach before the demand »). A `synthesis` lesson (the unit's
-وضعية إدماجية, `wadiya-idmajiya-aadad`) has **no opening manipulation**: since 2026-10-13 its Modules 1–6 are
-training situations (`GuidedProblem`), Module 7 is the analysis of the final situation (with `variant="rappel"` bricks only)
-and Module 8 the evaluated situation.
-
-### 6bis.2 Design the manipulation from the mathematics, not from a widget list
-
-Do not ask « quelle interaction ajouter ? ». Ask, in this order:
-
-1. **What is the central idea of the lesson?** (one sentence, curriculum-precise — §23 step 1)
-2. **What makes it hard or counter-intuitive?** — the misconception, the invisible relation,
-   the invariant, the cause/effect the student usually misses.
-3. **What can the student manipulate to make that idea visible?** — and only then choose the
-   control (§16: tap → stepper → chip → slider → drag).
-
-A slider, a drag-and-drop, an MCQ or an animation is never the answer to question 3 by itself.
-The answer is a *phenomenon the student can make happen*: throw the die again, double the mass,
-drive the taxi back to 0 km, place the fifth point, slide the probe to 400 m.
-
-**Each lesson must have its own mathematical identity.** Reuse the *quality* of a proven
-opening, never the exact interaction: a graph plus a slider used five times with different labels
-is five failures, not one success. *(Historical — the five French-era 3e function lessons below
-were deleted on 2026-09-25, with every component the table names; the table is kept for the
-pedagogical pattern. For the current openings, see the Module 1 of each 4AM lesson and the drawn
-worlds table of `MANIPULATION_CONTRACT.md` §2bis.)*
-
-| Lesson | Opening laboratory | Phenomenon the student makes happen | What is *not* done here (later module) |
-|---|---|---|---|
-| Fonctions | the mystery machine (`FunctionMachine` + `RuleTester`) | any number in — including the student's own — one number out; a candidate rule is replayed on **all** recorded couples; a never-tried input is predicted then confirmed; the same input redraws the same output; the couples reappear as list, table, points | naming image / antécédent / `f(x)` (M2); placing the points oneself (M4) |
-| Fonctions linéaires | the market scale (`ScalingLab`) | slide the mass: cherries and coins grow together; double the mass, the coins double; the recorded couples align through O; a 1 € tray shifts every point and the line misses O | varying the coefficient (M2); the pivot invariant when `a` changes (M3) |
-| Fonctions affines | the taxi meter (`TaxiMeter`) | drive: the meter starts at the pick-up fee, climbs per km; back to 0 km, you still pay; switch company: the start moves *or* the climb changes | continuous `a` / `b` sliders, staircase, the names *coefficient directeur* / *ordonnée à l'origine* (M2–M4) |
-| Représentation graphique | build the battery graph (`CoordPlane`, grid nodes only) | predict the shape, place the five rows as points, join, predict the empty time, extend the line to 0 % | placing between graduations (M3); choosing the scale (M4) |
-| Lecture graphique | the probe on the balloon flight (`GraphProbe showPair`) | sweep the whole flight; bring the probe to 3 h; predict 5 h → 6 h; find *an* hour at 400 m — and learn there are four | the horizontal guide and the word antécédent (M2); extremums, variations (M4) |
-
-The last column is as important as the middle one: an opening manipulation **prepares** the
-lesson (Module 1 « I experienced it » → Module 2 « I understand it » → later « I can use it »)
-and must leave each later module something to discover. Audit Module 1's copy against every
-later module's responsibility (playbook §6) before shipping it.
-
-### 6bis.3 Requirements checklist for Module 1
-
-- **Meaningful variables only.** Expose the variables that reveal the concept (mass, distance,
-  input, position) and nothing else. Fake interactivity — a control whose value changes nothing
-  mathematical — is removed (§2, §18).
-- **Cause → effect, immediately.** Every gesture redraws the visual, the number and the symbol
-  from the *same* state (§5, §28). No « Valider » between the action and its consequence.
-- **Prediction before the reveal, whenever there is something to be surprised about** (§9).
-- **Representations revealed progressively** (§10, §11): the couple, then the table, then the
-  points — never all at once, never before the gesture that gives them meaning.
-- **One « aha » the module does not state first.** Name it in the component header (« Expected
-  observation ») and engineer the interaction so that it *happens*; the feedback then puts words on
-  what the student has just seen.
-- **Short copy.** « Essaie. » « Observe. » « Que remarques-tu ? » « Et si tu mets 0 ? » Two
-  sentences, then an action. The `À retenir` lives in the footer, after `allDone`.
-- **Replayable, with reachable extremes** (§17bis): reset, another value, another configuration,
-  0, negatives, the largest value the control allows. The student should be able to ask « et
-  si… ? » and get an answer from the system, not from a paragraph.
-- **A game feel without game mechanics**: curiosity, prediction, visible consequences, discovery
-  — no points for clicks, no badges, no timer (§26).
-- **Completion on the real goal**, unconditional, with an escape hatch after a few attempts
-  (playbook §8) — a Module 1 that strands the student in a wrong state has failed before the
-  lesson started.
-
-### 6bis.4 Hard visual invariant — every valid state has a valid layout
-
-The opening manipulation is the most manipulated screen of the lesson, so §17bis applies with
-full force: **no number, label, symbol, line, point, arrow or control may overlap, collide, clip
-or leave its frame for any reachable state**. Never assume a digit count, a short label, a
-positive value or a fixed position. Derive the frame from the content (historical examples, deleted
-2026-09-25: `planeFor(points)` fitted range, step and pixel units to whatever the student typed;
-`TaxiMeter` sized its frame for the most expensive tariff), keep readouts in the DOM rather than in
-SVG `<text>`, run `npm run audit:collisions` (`scripts/audit-svg-collisions.mjs`), and **sweep the
-control in the e2e suite** — including a mobile pass at 375 px and an aspect-ratio
-guard on every `CoordPlane` (`viewBox height / width ≤ 3`, the signature of a forgotten `unitY`).
-
-### 6bis.4bis Two levels, one workspace (2026-09-20)
-
-The opening manipulation is offered at **two levels in one workspace** —
-« مبتدئ » by default, « متقدم » one tap away — never as two manipulations
-stacked down the page, and never on a second page. The mechanism, the data
-model and the validator rules are in
-[`MANIPULATION_CONTRACT.md` §7bis-levels](./MANIPULATION_CONTRACT.md); what
-matters pedagogically is this:
-
-- **مبتدئ buys the first contact.** Small numbers, one obvious gesture, an
-  immediate visible consequence. The student must be able to *cause* the
-  phenomenon within seconds, before any notation.
-- **متقدم buys autonomy, not arithmetic.** It removes scaffolding, withdraws
-  suggestions, poses a case where the answer is "no", or uses numbers too large
-  to check by counting. « Beginner with bigger numbers » is not a second level,
-  and the validator rejects it.
-- **Both serve the same objective.** The context may change between levels; the
-  mathematical objective may not. That is what makes them two experiences of
-  one idea rather than two unrelated exercises.
-- **The context serves the mathematics, never the reverse.** A situation the
-  student lives in (teams, a game, a build) is worth choosing when it makes the
-  structure easier to see. When the textbook's own drawing *is* the argument —
-  a rectangle of points, two lists of divisors — keep it at both levels.
-- **One world per lesson, the same quality everywhere (2026-09-21).** The
-  football pitch and the library are the references; every other lesson of
-  unit 1 now opens on its own drawn world — a construction site in bricks of
-  n, a florist's bouquets, school bags, a tailor's ribbons, a recipe — chosen
-  by asking, in this order: what is the concept, what real situation carries
-  exactly its structure, what object does the student move, what quantity
-  changes, what relation becomes visible, what should they conclude. The
-  worlds differ; the shell, the drag engine, the refusal-with-a-reason, the
-  hints, the discovery phase and the tabs do not — that is what makes them
-  recognisably one platform. The table and the rules are in
-  [`MANIPULATION_CONTRACT.md` §2bis](./MANIPULATION_CONTRACT.md).
-
-### 6bis.5 Scope rule for agents
-
-**When an agent works on a specific manipulation, it modifies only that manipulation** — its
-module, its lesson-local components and utils, its tests and its e2e section. Other modules, other
-lessons and shared components stay untouched unless the current manipulation genuinely cannot be
-built without a change; then the change is minimal, additive, behind defaults that preserve every
-existing caller, verified on the current manipulation and reported explicitly (§17bis « Scope »,
-playbook §16b). Writing a guide section is never a licence to update the lessons it describes.
-
-### 6bis.6 Before declaring Module 1 complete
-
-| Axis | Question — every answer must be *yes* |
-|---|---|
-| Mathematical | Does the manipulation reveal the core concept? Is the mathematics exact in every reachable state? Is each variable genuinely tied to its consequence? |
-| Pedagogical | Is there curiosity, a prediction, an observable phenomenon and a discovery the module did not state first? Does Module 1 leave later modules their discoveries? |
-| UX | Is the first tap obvious? Is feedback immediate? Can the student replay and push the extremes? Does it work at 375 px with touch? |
-| Visual | No overlap, no clipping, no overflow, no unreadable label — swept over the whole range, not sampled at the default. |
-| Architecture | Kit `ContentModule` + lesson-local components; shared infrastructure reused, not forked; nothing outside the current manipulation modified. |
-
-
----
-
-## 6ter. The mathematical laboratory — rules confirmed by the 3e « données » batch
-
-*(Historical provenance — these three French-era lessons were deleted on 2026-09-25; the rules
-remain normative, the component names below are historical.)* Written after building
-`probabilites-3e`, `proportionnalite-3e` and `modelisation-3e` (2026-09-05),
-the last three lessons of the 3e « Organisation et gestion de données, fonctions » chapter. §6bis
-states the principles; this section pins the operational rules those three builds proved, so the
-next lesson does not rediscover them. Every rule below is normative for new lessons; none is a
-licence to modify existing ones (§6bis.5).
-
-### 6ter.1 Signature opening manipulation
-
-> Every lesson should begin with a meaningful mathematical experience capable of creating
-> curiosity before formal explanation.
-
-The three openings, as a precedent bank (reuse the *quality*, never the widget):
-
-| Lesson | Opening laboratory | Phenomenon the student makes happen | Left to later modules |
-|---|---|---|---|
-| Probabilités | the die laboratory (`DiceLab`, `FaceTracks`, `afterStreak`) | predict a face, throw 1 / 10 / 100 / 1 000 times, watch six tracks even out, run « three 6 in a row, then note the next throw » 300 times, load a face | event = set of outcomes (M2), P = favourable ÷ possible on a bag (M3), the 6 × 6 grid of two dice (M4) |
-| Proportionnalité | the recipe for 7 (`RecipeLab`, `RatioTable`) | slide the guests, watch every ingredient stretch, predict 4 then 7 (no integer factor), read the constant « ÷ personnes » column, see points align through O, watch the cooking time *not* move | the coefficient named (M2), the four paths to an empty cell (M3), k² on areas (M4) |
-| Modélisation | the modelling laboratory (`InfoSorter`, `QuantityPicker`, `ModelTester`, `ModelViews`) | sort the app's data, pick the two quantities, replay four candidate models on three real tickets, unfold table / graph / expression, predict 35 min, confront the real bill, meet the 8 € cap | representation choice (M2), placing points (M3), fitting parameters (M4), the cycle named (M5), limits (M6) |
-
-### 6ter.2 Mathematical laboratory
-
-> A manipulation must allow the student to **cause** a mathematical phenomenon, **observe** it and
-> **derive meaning** from it.
-
-- The student's control is the concept's own variable (number of throws, number of guests, the
-  candidate model), never a proxy.
-- The phenomenon is produced by the mathematics, not scripted: a non-proportional situation
-  behaves non-proportionally everywhere because it *is* a rule object (`applyRule`), a loaded die
-  is a weight vector, a capped tariff is `min(model, cap)`. Nothing that the copy claims is written
-  by hand where the code could compute it.
-- **Randomness is injected, never drawn in the render, and never identical on every visit.** A
-  simulation takes an `rng` (`makeRng`) so it is testable, and seeds it once per session
-  (`sessionSeed`) so that the first throw changes from one visit to the next — a die that
-  « always gives 4 » on load destroys the experience. Tests pin the seed through
-  `window.__SMARTER_RNG_SEED`.
-- **An experiment the student can run beats a sentence.** « After three 6, is a 6 more likely? »
-  is answered by a button that performs the experiment 300 times, not by a paragraph.
-
-### 6ter.3 Prediction
-
-> When meaningful, ask the student to predict before manipulating.
-
-When the manipulation itself will answer, collect the prediction **without a verdict**
-(chips with `aria-pressed`, no correction — the component `PredictionChips` was deleted on 2026-11-17, unused: each lab draws its own) and let the experiment speak; the closing
-`TapQuestion` then quotes the student's own prediction (« Ta prédiction : … L'expérience te
-contredit »). Use a graded `TapQuestion` for a prediction only when no manipulation follows.
-
-### 6ter.4 Action loop
-
-> **ACTION → CHANGE → OBSERVATION → MATHEMATICAL MEANING**
-
-Every step of a laboratory module fills the four slots and the header comment of its component
-records them (§24). A step whose « CHANGE » is only a revealed paragraph is a page, not a lab.
-
-### 6ter.5 Visual safety
-
-> Every valid mathematical state must have a valid visual layout.
-
-Devices that held under sweeps in these three lessons:
-
-- **Prefer DOM tracks to SVG text.** Horizontal bars whose length is a percentage of a track
-  (`FaceTracks`, `RecipeLab`, `PercentBar`) with the numbers in their own grid column cannot
-  overlap or clip, whatever the digit count — the layout audit becomes a DOM overflow check.
-- **The scale contains the tallest bar AND the tallest theoretical mark** (`scaleMax`), so a
-  dashed model marker can never leave the frame.
-- **Grids on phones need real pixels, not a ratio.** A 6 × 6 outcome grid at 375 px measured
-  35 px per cell inside the step padding; it now bleeds out of that padding (`-mx-5 sm:mx-0`) to
-  keep ≥ 44 px cells. Measure with `getBoundingClientRect`, do not infer from the viewBox.
-- **Fit the plane to the data** (`planeFor`: range, step, unit and unitY from the points and 0),
-  and assert `viewBox height / width ≤ 3` in the suite.
-- **Sweep, don't sample**: the e2e suites drive every stepper to both bounds (1 → 12 guests,
-  k 0,5 → 3, 6 000 throws) and run `layoutAudit` + `domOverflow` at each step.
-
-### 6ter.6 Scope safety
-
-> When an AI agent modifies a manipulation, it must modify only the current manipulation unless
-> explicitly instructed otherwise.
-
-Corollaries (current rule): manipulations are a **closed registry of types** reused across lessons
-by props and theme data (`MANIPULATION_CONTRACT.md`) — never copied into a lesson folder; a shared
-component is **extended behind an optional prop, never forked**, and only when the current
-manipulation cannot exist without it; a sibling lesson's overlapping module is left as is and the
-overlap is reported. *(Historical: the French-era batch copied labs between lesson folders —
-`probaUtils` from `diceUtils` — a practice the registry replaced.)*
-
-### 6ter.7 Bug classes found and fixed in this batch — grep for them
-
-- **A `disabled` prop that freezes the whole lab.** `MarbleBag` and `SpinnerWheel` disabled
-  their *action* button (« Tirer », « Tourner ») together with their steppers when the module
-  froze the composition after the goal was reached. Split the props: `disabled` for the
-  composition, the action stays live.
-- **A start state that already satisfies the goal.** The bag opened on 1 red / 2 blue / 1 green
-  — exactly the 1/4 the student was asked to build, so the step completed on mount. Test the
-  initial state against the goal predicate before shipping.
-- **Targeted hints hide the general explanation.** `NumericQuestion` shows `explainFor(n)`
-  *instead of* `explain` when it matches; an e2e check for a word that only lives in `explain`
-  fails on a wrong-on-purpose path. Assert the hint's own wording.
-- **Single-line imports and scripted edits.** Appending `, x` to an import that is on one line
-  needs a different edit than a multi-line list; always recompile after a scripted edit.
-
-## 6quater. Displacement lessons — the ladder confirmed by `vecteurs-2nde` (historical)
-
-*(Historical — the 2nde « Vecteurs » lesson and its components were deleted on 2026-09-25; read
-them in git history. The ladder below remains a pedagogical pattern.)* Written after building the 2nde « Vecteurs » lesson (2026-09-05). §6bis and §6ter state the
-principles; this section pins the shape that worked for a concept that IS a transformation rather
-than a quantity, so the next lesson on translations, vectors, or coordinates does not rediscover it.
-
-### 6quater.1 The displacement ladder
-
-```
-concrete displacement → manipulation → visual invariant → coordinates → notation → calculation → geometric problem
-```
-
-| Rung | What the student does | What appears on screen | What is NOT yet said |
-|---|---|---|---|
-| concrete displacement | moves an object on a grid (drag, D-pad, arrow keys) | the trace arrow and the « recipe » in words (« 3 vers la droite et 2 vers le haut ») | no coordinates, no notation, no word « vecteur » |
-| manipulation | reproduces the recipe from another start, chains two orders, drives back | a second arrow, a direct-trip arrow, the return arrow | addition, opposite — only *experienced* |
-| visual invariant | moves the origin of an arrow whose recipe is frozen | the arrow travels identical to itself; posed copies stay as ghosts | « représentant », « égaux » — named only after three copies |
-| coordinates | reads the staircase, then moves A and B and watches x_B − x_A recompute | the staircase legs « +3 » / « +2 », a live table | the formula, written last |
-| notation and calculation | sets v at the tip of u; slides k; reads the staircase as a right triangle | the sum arrow, k·u, the norm calculation | — |
-| geometric problem | places the fourth vertex, finds a missing displacement, proves an alignment | the quadrilateral closes when AB = DC; AC = 3·AB | — |
-
-Each rung exposes exactly one new variable (the object's position, then the origin, then a
-component, then a point, then v, then k, then I) and leaves the next rung its discovery.
-
-### 6quater.1bis The property ladder (a second rung sequence, confirmed by `colinearite-alignement-2nde`)
-
-When the lesson's object is a *property* of vectors rather than the vector itself, the ladder is:
-
-```
-visual direction → manipulation → invariant → geometric property → coordinate criterion → algebraic proof
-```
-
-| Rung | What the student does | What appears | What is NOT yet said |
-|---|---|---|---|
-| visual direction | drags a vector's tip while another vector and its dashed support line stay fixed | lamps « direction / sens / longueur » | the word « colinéaires » |
-| invariant | makes the vector longer, reversed, then off the line | the direction lamp stays on, then goes off | k, coordinates |
-| geometric property | moves a third point C | lamps « alignés » and « AB, AC colinéaires » light together, on both sides of A | the criterion |
-| coordinate criterion | slides k, reads a proportion table, decides on pairs without a drawing | v = k·u, the cross products | the name « déterminant » |
-| algebraic proof | annuls a live number by flattening a parallelogram, then computes it | det = x y′ − y x′, its sign, |det| = 1 for the near miss | — |
-
-Two rules specific to this ladder: **the near miss is the lesson** — every rung has a state the eye
-gets wrong ((4 ; 3) on the rail of (2 ; 1), C at (5 ; 4), det = ±1) so the calculation has a reason
-to exist; and **the number is annulled before it is named** — the student makes det reach 0 by a
-gesture, then computes it. The same ladder applies to any property detectable by a coordinate
-formula (orthogonality and the scalar product in Première, for instance).
-
-### 6quater.2 Dynamic vector manipulation — rules that held
-
-- **Freeze what the rung is not about.** Moving the origin with frozen components is what makes
-  « same vector » visible; setting components with a frozen origin is what makes coordinates
-  visible. One control set per mode, never both.
-- **Bounds are computed, never refused after the fact.** A stepper's min/max derive from the
-  frame *and* the other end of the arrow (origin ∈ [xMin − v_x ; xMax − v_x]); the button disables
-  at the bound instead of letting the tip leave the plane. Drag paths clamp the same way.
-- **The zero vector is drawn, not omitted.** A ring at the point, with its name, so « AA = 0 » is
-  an object the student produced, not an empty screen.
-- **Goals are predicates on the mathematics** (`equal`, `isZero`, `colinearFactor`,
-  `isParallelogram`), the diagnosis names the failing attribute (direction / sens / longueur), and
-  every goal-reach manipulation keeps an escape hatch after ~12 moves.
-- **Predictions are chips without verdict inside the lab step** (§6ter.3); the closing feedback
-  quotes them (« Ta prédiction : à la station. Le sol te contredit »).
-
-### 6quater.3 Safe geometric labelling
-
-Point names, vector names and staircase numbers move with the objects they name, so a fixed
-offset cannot be correct in every reachable state (§17bis). The shipped device is a pure,
-unit-tested placer (`labelLayout.placeLabels`): every label gets an ordered list of candidate
-boxes (around a point: 8 directions at 3 distances; along an arrow: both sides of the midpoint,
-then the thirds, then *beyond the two ends*), the first candidate that lies inside the frame and
-touches no obstacle wins, and obstacles include the point discs, the arrows sampled as small
-boxes, and the **axis tick bands** of the plane. Staircase labels prefer the *outside* of the
-right triangle (`avoid` = the hypotenuse's midpoint). Robots and icons are SVG shapes, never
-`<text>`, so they cannot collide with a graduation — and a point that the student can drop ON an
-axis needs the tick bands declared as obstacles too (`axisObstacles(geo)`), or its name lands on
-the graduation. The sweep test over the whole grid of
-reachable pairs (2 401 point pairs, ~3 400 short vectors with staircase) is the proof; the e2e
-suite repeats the audit at 1 280 px and 375 px while driving every stepper to both bounds.
-
 ## 7. The invariant principle
 
 Every manipulation must let the student notice **something that stays true or changes
@@ -725,10 +341,8 @@ PREDICT → MANIPULATE → OBSERVE → EXPLAIN
 and let the system reveal the consequence. This beats an animation because the student has a
 stake in the outcome, and a wrong prediction is the most memorable moment in the module.
 
-Implementation: a `TapQuestion` (`common/kit/questions.jsx`) placed *before* the manipulation is
-unlocked. The kit's one-tap policy makes prediction cheap: no validation button, no retry loop,
-the reveal comes from the manipulation that follows. `Protractor.jsx` (angles) uses the same shape
-at reading time: the student commits to "50 ou 130 ?" before the correct reading is confirmed.
+Implementation: a one-tap prediction placed *before* the manipulation is unlocked — no validation button, no retry
+loop; the reveal comes from the manipulation that follows.
 
 Do not ask for a prediction when there is nothing to be surprised about.
 
@@ -833,15 +447,13 @@ Three levels, used in this order:
 | **Short conceptual feedback** | one sentence stating the mathematical consequence | after a validation or a reveal |
 | **Remediation** | a smaller step, a worked case, or a re-manipulation | only after a wrong answer, only when needed |
 
-House policy, applied by construction in `common/kit/questions.jsx`:
+House policy (it was built into the deleted module kit; a v2 world keeps it):
 
 - one tap **is** the answer; no separate validate for choice questions;
-- `onAnswered(isCorrect)` always fires — a wrong answer never blocks progression;
+- a wrong answer never blocks progression;
 - on a wrong answer the student sees **their answer, the correct answer, and the rule** — never a
-  «Réessayer» loop;
-- `Feedback` (`common/components/LessonUI.jsx`) carries meaning by icon plus an `sr-only` prefix
-  read from i18n (`t(toneSpec.prefixKey)` — `feedback.correct` « صحيح », `feedback.toReview`
-  « للمراجعة », `feedback.hint` « إرشاد » in `locales/ar/lesson.json`), never by colour alone.
+  « retry » loop;
+- feedback carries meaning by icon plus an `sr-only` prefix, never by colour alone.
 
 Avoid: long explanations, popups, constant celebrations, generic «Bravo !». Feedback **describes
 mathematics**:
@@ -917,9 +529,8 @@ Deliberate no-drag designs to imitate:
 
 Drag is right when the concept *is* a continuous position or magnitude (number line, ruler, clock
 hand, the length of a shelf) — and even then it ships with a stepper or keyboard twin (§17, §27).
-The 4AM shelf (`divisor-explorer-books`, 2026-09-30) is the reference: a stretch gesture
-(`useStretchInteraction`) with slider keys and −/+ as its twins. It replaced 17 number buttons,
-because a button chose b while the shelf *is* b (`MANIPULATION_DNA.md` §3.1).
+A shelf stretched by the hand, with slider keys and −/+ as its twins, replaced 17 number buttons on the Algerian
+platform, because a button chose b while the shelf *is* b.
 
 ---
 
@@ -962,8 +573,7 @@ two (the consequence, plus a layout shift).
 
 Requirements:
 
-- touch targets **44–48 px** (the kit uses `min-h-[44px]` / `min-h-[48px]`; the lesson-kit e2e
-  mobile pass fails any enabled button under 40 px at 375×667);
+- touch targets **44–48 px**;
 - no precision-dependent dragging when avoidable; snap to the mathematically meaningful values;
 - every drag interaction has an accessible alternative that reaches the same state;
 - no two-finger gestures;
@@ -1011,8 +621,7 @@ drawing unit) when the magnitude grows. When an object moves, its label moves wi
 another safe position. Reserve space for the **longest** reachable string, not the current one.
 
 Practical devices (the first two from French-era lessons deleted on 2026-09-25 — historical): a
-collision-aware label placer fed with the drawing's own obstacles (`vecteurs-2nde/components/labelLayout.js`,
-§6quater.3); an axis floor so the scale never collapses around small values
+collision-aware label placer fed with the drawing's own obstacles; an axis floor so the scale never collapses around small values
 (`graphiques/components/BarChart.jsx`'s `axisFloor`); capped representative tiles plus a
 « ×N » badge instead of rendering a thousand nodes; readouts placed outside the figure in a normal
 DOM row rather than inside the SVG, where they cannot collide with the drawing at all.
@@ -1146,8 +755,7 @@ The same gesture is not worth the same thing the fifth time. Decide per activity
 When offered, auto-completion is an **explicit, secondary button** next to إعادة / تلميح; the manual
 gesture stays available before, during and after it; it reaches the **same underlying state** by
 the **same rule** as the hand; it never opens the discovery or writes the formal rule; and any final
-act of recognition (carrying the PGCD into its box) stays with the student. Contract, audit and
-recipe: [`MANIPULATION_CONTRACT.md` §6bis](./MANIPULATION_CONTRACT.md).
+act of recognition (carrying the PGCD into its box) stays with the student.
 
 ---
 
@@ -1199,9 +807,8 @@ mathematics dictates.
 
 ## 21. Example — fractions
 
-*(Historical — the reference lesson `apps/web/src/lessons/college/6e/nombres_calculs/fractions/`
-and every component this section names were deleted on 2026-09-25; read them in git history. The
-current worked examples are the 4AM lessons — see `docs/lessons/LESSON_DEVELOPMENT_GUIDE.md` §9.)*
+*(Historical — the reference lesson of the old French product and every component this section names are gone;
+no lesson exists in this repository yet.)*
 
 ```
 Real chocolate bar → divide the whole → take pieces → observe the quantity → the fraction appears
@@ -1394,8 +1001,8 @@ Require:
 
 - keyboard alternatives for every manipulation
 - visible focus
-- screen-reader labels in Arabic stating the *reading* (every `aria-label` is Arabic —
-  `ARABIC_RTL_CONTRACT.md`)
+- screen-reader labels stating the *reading*, in the interface language (`FRENCH_LANGUAGE_CONTRACT.md`; the code is
+  still Arabic until plan steps 1C–1D)
 - accessible alternatives to dragging that reach the same mathematical state
 - sufficient contrast
 - touch-friendly controls (§17)
@@ -1496,22 +1103,12 @@ Give an important diagram the room it needs (`visualSize` on a knowledge item:
 `transform: scale()` — the `viewBox` scales geometry, labels and strokes
 together, so a scaled figure stays sharp.
 
-## 28ter. The Knowledge Map is discovered, not handed over (2026-09-29)
-
-The lesson's Knowledge Map applies this document's principles to the
-lesson's knowledge itself: it is **discovered progressively** — the root,
-then each labelled relationship leads to the next idea, with one « التالي »
-node showing the next step — and it only shows what the lesson has taught.
-Its guidance (common mistakes, warnings, checks, reminders) comes from the
-lesson's own questions and exercises, next to the idea each one serves. The
-contract is `KNOWLEDGE_MAP.md` Part A.
-
 ## 29. Quality checklist
 
 Run before declaring a lesson complete. Every answer must be **yes**.
 
 ### Pedagogy
-- Does Module 1 open on a signature manipulation the student can replay, with a prediction and a discovery the module does not state first (§6bis)?
+- Does the lesson open on a manipulation the student can replay, with a prediction and a discovery nothing states first?
 - Can the concept be discovered before it is explained?
 - Is there a genuine mathematical manipulation (§2)?
 - Does the student control a meaningful variable?
@@ -1556,8 +1153,7 @@ Run before declaring a lesson complete. Every answer must be **yes**.
 - Can the activity reset?
 - Are all controls functional — no placeholder buttons, no dead props?
 - Are there no placeholder interactions?
-- Does `npm run validate:lessons` pass, and does the lesson-kit e2e mobile pass
-  (`apps/web/e2e/lesson-kit/`) run clean for the lesson?
+- Does `npm run validate:lessons` pass, and do the lesson's walks at 1366×768 run clean?
 
 ---
 
@@ -1576,8 +1172,3 @@ Run before declaring a lesson complete. Every answer must be **yes**.
 > **One mathematical state. Multiple synchronized representations.**
 
 > **Concrete → Visual → Numerical → Symbolic → Automatic.**
-
-
-## Manipulation system (phase 8, 2026-09-18)
-
-Implemented once in `apps/web/src/lessons/common/manipulations/`: a closed registry of TYPES (each named by the mathematical idea it makes visible), a shared shell and state hook, and shared primitives. A lesson declares its manipulations as DATA (`lesson.config.js` → `resources[]`) and renders `<Manipulation type="…" />` in the module's `intro` slot (§6bis). Modules run in « وضع التلميذ » (the student acts at each step); class mode lives in `ManipulationTeacherMode` (`apps/web/src/lessons/common/manipulations/ManipulationTeacherMode.jsx`), driven by Classroom Mode.

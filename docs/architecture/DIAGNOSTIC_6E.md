@@ -1,15 +1,14 @@
 # Diagnostic 6e — Architecture
 
-> **Historical — dormant, not reachable by a 4AM student (verified 2026-09-29).** The
-> 6e diagnostic flow is still routed (`/espace/diagnostic`, `apps/web/src/App.jsx`) and
-> its backend still exists (`apps/api/app/Domain/Diagnostic/`), but
-> `DIAGNOSTIC_AVAILABLE_GRADES = ['6e']` (`apps/web/src/services/diagnosticService.js`)
-> and `6e` is not an active grade (`ACTIVE_GRADE_IDS` = `4am`, `terminale_dz` in
-> `packages/core/curriculum/activeGrades.js`), so neither the grade picker nor the
-> invite banner sends anyone there. Its skill→lesson starting points
-> (`SixiemeDiagnosticProvider.php`) target `/courses/college/6e/*` routes of French
-> lessons **deleted on 2026-09-25**. Read this document as the design record of the
-> engine, not as a description of a live feature.
+> **Status (2026-11-22).** Covers the adaptive 6e diagnostic: engine, provider, question bank, API, pages. Written for
+> the first French product, carried through the Algerian platform (dormant there) and imported back on 2026-11-22
+> (DZ dev 7f4cef1c). True here: the engine (`apps/api/app/Domain/Diagnostic/`, one provider
+> `SixiemeDiagnosticProvider`), the routes `/espace/diagnostic`, `/run`, `/resultat` and the pages
+> `pages/student/diagnostic/`; and since `6e` is again an active grade (`ACTIVE_GRADE_IDS` = `6e…3e`) with
+> `DIAGNOSTIC_AVAILABLE_GRADES = ['6e']`, **`ChooseGrade` now sends a student who picks 6e to the diagnostic**. Not true
+> here: the 9 French 6e lessons its skills and starting points name (`/courses/college/6e/…` in the provider) no
+> longer exist, so every recommendation points to a lesson that is not there; the competency graph below was
+> derived from them, not from the official 2025 cycle 3 programme. Whether it is kept is open (not in plan §7).
 
 The first Smarter Academy adaptive diagnostic. Not a quiz, not a fixed-length test: it estimates what a 6e student already masters, what's fragile, and what's missing, using as few questions as the evidence allows, then recommends one specific place to start learning. This document is the map — the reference for extending it to 5e/4e/3e later, adding question types, and understanding why the pieces are shaped the way they are.
 
@@ -165,7 +164,6 @@ components/diagnostic/
   DiagnosticProgress.jsx             confidence-flavored progress bar, not "question N/M"
   SkillProfileList.jsx               one strengths/reinforce/gaps group
   RecommendationCard.jsx             the "first mission" CTA
-  DiagnosticInviteBanner.jsx         dashboard nudge for an incomplete/unstarted diagnostic
 pages/student/diagnostic/
   DiagnosticIntro.jsx  → DiagnosticRun.jsx  → DiagnosticResult.jsx
 ```
@@ -186,11 +184,11 @@ Visitor → Register (email+password) → Choose grade
   → any other grade → straight to the student space (no diagnostic exists yet)
 ```
 
-Existing 6e students who skip or exit mid-diagnostic aren't blocked from anything — `DiagnosticInviteBanner` (no longer mounted on the dashboard since the home was rebuilt around « بوصلتي », 2026-11-09; the component is kept with this dormant subsystem) offered to start/resume, and disappears once `status === 'completed'`. `isDiagnosticAvailableForGrade()` (`diagnosticService.js`) is the one frontend place that knows which grades have a diagnostic — `ChooseGrade.jsx` and the banner both defer to it rather than hardcoding `'6e'` independently, mirroring the backend's own `DiagnosticEngine::PROVIDERS` map.
+Existing 6e students who skip or exit mid-diagnostic aren't blocked from anything (the old invite banner `DiagnosticInviteBanner` is deleted). `isDiagnosticAvailableForGrade()` (`diagnosticService.js`) is the one frontend place that knows which grades have a diagnostic — `ChooseGrade.jsx` defers to it rather than hardcoding `'6e'` independently, mirroring the backend's own `DiagnosticEngine::PROVIDERS` map.
 
 **Recommendation logic** (`ProfileBuilder::recommend()`): the lowest-tier `gap` skill, or failing that the lowest-tier `reinforce` skill, or failing that (everything mastered) a fixed capstone fallback (`resolution-problemes`, module 1). Picking the *lowest-tier* gap is equivalent to picking the true frontier/root-cause gap without a separate frontier-detection pass: because the engine only ever tests a skill once its prerequisites are resolved (§4), if a downstream skill is a gap, either its prerequisite is fine (so this really is the root cause) or its prerequisite is *also* a gap — in which case that prerequisite has a strictly lower tier and sorts first automatically. This is why Student B (one fragile fraction skill, everything else fine) gets pointed at exactly that skill, and Student C (foundational gap) gets pointed at the foundation, never at a downstream symptom.
 
-**The "first mission" link goes to the recommended lesson's index page, not `startingPoint.moduleNumber` directly** — found live, not anticipated: every 6e `lesson.config.js` has `sequentialUnlock: true`, so `ModuleLayout`/`isModuleUnlocked` locks any module beyond 1 for a student with no progress on that lesson yet, regardless of how its URL was reached. Deep-linking straight into, say, module 3 would land on a "Module verrouillé" screen instead of the intended question — confirmed by driving the actual flow in a browser. Respecting that existing, working locking behavior (rather than changing it for this feature) means the recommendation's precision lives in *which lesson* gets picked and in `moduleTitle` as descriptive context ("au programme, notamment : « … »" on the result screen), not in a direct deep link — the student still starts at module 1 of the right lesson, which is also arguably the better first look anyway (the whole mission roadmap, not one bare module).
+**The "first mission" link goes to the recommended lesson's index page, not `startingPoint.moduleNumber` directly** (those lessons are deleted: today the link leads nowhere — see the status block) — found live, not anticipated: every 6e `lesson.config.js` has `sequentialUnlock: true`, so `ModuleLayout`/`isModuleUnlocked` locks any module beyond 1 for a student with no progress on that lesson yet, regardless of how its URL was reached. Deep-linking straight into, say, module 3 would land on a "Module verrouillé" screen instead of the intended question — confirmed by driving the actual flow in a browser. Respecting that existing, working locking behavior (rather than changing it for this feature) means the recommendation's precision lives in *which lesson* gets picked and in `moduleTitle` as descriptive context ("au programme, notamment : « … »" on the result screen), not in a direct deep link — the student still starts at module 1 of the right lesson, which is also arguably the better first look anyway (the whole mission roadmap, not one bare module).
 
 ## 12. What this phase deliberately did not build
 
@@ -208,6 +206,6 @@ The concrete steps, so this stays a content problem, not an engine rewrite:
 1. Trace 5e's real curriculum the same way §2 did for 6e: read `packages/core/curriculum/coursesData.js`'s 5e entries and every `apps/web/src/lessons/college/5e/**/lesson.config.js` that exists once 5e lessons are built (none are today). Build a competency graph from real `skills[]`/`prerequisites`, not an invented one.
 2. Create `app/Domain/Diagnostic/Grades/CinquiemeDiagnosticProvider.php` implementing `GradeDiagnosticProvider` — same shape as `SixiemeDiagnosticProvider`: a `SKILLS` map (tiers, prerequisites, importance, starting points) and a `QUESTIONS` map (3-4 per skill, varied representations, misconceptions where genuinely well-defined).
 3. Register it: `DiagnosticEngine::PROVIDERS['5e'] = CinquiemeDiagnosticProvider::class`.
-4. Add `'5e'` to the frontend's `DIAGNOSTIC_AVAILABLE_GRADES` (`apps/web/src/services/diagnosticService.js`) once ready to expose it — this alone turns on the `ChooseGrade`/`DiagnosticInviteBanner` entry points for 5e students.
+4. Add `'5e'` to the frontend's `DIAGNOSTIC_AVAILABLE_GRADES` (`apps/web/src/services/diagnosticService.js`) once ready to expose it — this alone turns on the `ChooseGrade` entry point for 5e students.
 
 Nothing in `DiagnosticEngine`, `AdaptiveSelector`, `MasteryModel`, `AnswerChecker`, `ProfileBuilder`, the controller, the routes, the migrations, or any frontend component needs to change. If a genuinely new *question representation* is needed for 5e content, that's the one exception — see §10's "adding a question type."

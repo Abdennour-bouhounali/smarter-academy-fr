@@ -1,5 +1,8 @@
 # Learning Point Progress & Mastery: Current Architecture Audit
 
+> **Status (2026-11-22).** Historical audit, imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. The
+> lessons and files it cites are gone; the contract it led to is `LEARNING_ARCHITECTURE.md`.
+
 > **Point-in-time report (2026-09-24). Historical, not a contract.** This was a
 > read-only audit: no code or documentation was changed. Every claim was
 > checked against the working tree on that date, and line references point to
@@ -41,7 +44,7 @@ Nothing else touches LP mastery:
 | [`LEARNING_ARCHITECTURE.md`](../architecture/LEARNING_ARCHITECTURE.md) | Evidence flow, trust boundary, mastery constants, practice ≠ assessment, mastery gates, recommendations | Mostly accurate. Three stale points: (a) "practice never touches mastery" — the practice *engine* does (it is a different thing from practice *questions*); (b) the results screen "recommends modules via `recommendModulesForLearningPoints`" — nothing in production calls it; (c) mastery gates "block on a demonstrated gap" — never evaluated (see §17) |
 | [`EXERCISE_CONTRACT.md`](../architecture/EXERCISE_CONTRACT.md) | Validation boundary and practice engine | Consistent: correctness is computed by the client |
 | [`AI_LESSON_CONTRACT.md`](../architecture/AI_LESSON_CONTRACT.md) | `assessment: {enabled, type, learningPointIds}` on questions | Implemented, and enforced by `validate:lessons` |
-| [`KNOWLEDGE_MAP.md`](../architecture/KNOWLEDGE_MAP.md) | The cumulative map (بطاقتي) | Driven by completed modules, not by mastery |
+| `KNOWLEDGE_MAP.md` (deleted 2026-11-22) | The cumulative map (بطاقتي) | Driven by completed modules, not by mastery |
 | [`TEACHER_CLASSROOM_ARCHITECTURE.md`](../architecture/TEACHER_CLASSROOM_ARCHITECTURE.md) §4 | The teacher view is a query over the student's tables; no copy is stored | True. The view just contains almost no LP data |
 
 **Principles the code does respect:**
@@ -82,14 +85,14 @@ Key files:
 |---|---|
 | Mastery formula | [`apps/api/app/Domain/Progress/Support/MasteryModel.php`](../../apps/api/app/Domain/Progress/Support/MasteryModel.php) |
 | Evidence write + LP update | [`apps/api/app/Domain/Progress/ProgressEngine.php`](../../apps/api/app/Domain/Progress/ProgressEngine.php) |
-| Replay / rebuild | [`apps/api/app/Domain/Progress/MasteryRecalculator.php`](../../apps/api/app/Domain/Progress/MasteryRecalculator.php) |
+| Replay / rebuild | `apps/api/app/Domain/Progress/MasteryRecalculator.php` (gone today) |
 | Final-test evidence endpoint | [`apps/api/app/Http/Controllers/LearningEvidenceController.php`](../../apps/api/app/Http/Controllers/LearningEvidenceController.php) |
 | Final-test snapshot endpoint | [`apps/api/app/Http/Controllers/LessonFinalTestAttemptController.php`](../../apps/api/app/Http/Controllers/LessonFinalTestAttemptController.php) |
 | Practice → evidence | [`apps/api/app/Domain/Practice/PracticeEvidenceRecorder.php`](../../apps/api/app/Domain/Practice/PracticeEvidenceRecorder.php) |
 | Student profile read | [`apps/api/app/Http/Controllers/LearningProfileController.php`](../../apps/api/app/Http/Controllers/LearningProfileController.php) |
 | Teacher class / student read | [`apps/api/app/Domain/Classroom/ClassroomProgressService.php`](../../apps/api/app/Domain/Classroom/ClassroomProgressService.php), [`apps/api/app/Domain/Progress/StudentDossier.php`](../../apps/api/app/Domain/Progress/StudentDossier.php) |
-| Final test (client) | [`apps/web/src/lessons/common/kit/BossFinal.jsx`](../../apps/web/src/lessons/common/kit/BossFinal.jsx) |
-| Evidence submission (client) | [`apps/web/src/lessons/common/hooks/useEvidenceSubmission.js`](../../apps/web/src/lessons/common/hooks/useEvidenceSubmission.js), [`apps/web/src/lessons/common/evidenceQueue.js`](../../apps/web/src/lessons/common/evidenceQueue.js) |
+| Final test (client) | `apps/web/src/lessons/common/kit/BossFinal.jsx` (gone today) |
+| Evidence submission (client) | `apps/web/src/lessons/common/hooks/useEvidenceSubmission.js` (gone today), `apps/web/src/lessons/common/evidenceQueue.js` (gone today) |
 
 ## 4. Learning Point Data Model
 

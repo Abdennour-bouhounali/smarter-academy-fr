@@ -1,22 +1,13 @@
 # Interaction & Manipulation Pedagogy
 
-The full contract lives in
-[`docs/architecture/INTERACTION_PEDAGOGY.md`](./docs/architecture/INTERACTION_PEDAGOGY.md).
+The full text lives in
+[`docs/architecture/INTERACTION_PEDAGOGY.md`](./docs/architecture/INTERACTION_PEDAGOGY.md). It was written for the
+lessons of the first French product and of the Algerian platform, whose components are deleted; its principles still
+hold, its component examples do not (see its status block).
 
-It defines how a mathematical concept becomes understandable through manipulation in a Smarter
-Academy lesson: the REAL → DISCOVER → MANIPULATE → UNDERSTAND → TOUCH THE MATH → FORMALIZE →
-AUTOMATIZE → TRANSFER progression, the taxonomy of manipulation primitives, the feedback and
-scaffolding rules, the AI-agent decision process, and the quality checklist. Read it before
-designing, generating, refactoring, or auditing any lesson. On questions of what the student
-manipulates and how feedback is worded, it is authoritative;
-[`docs/architecture/LESSON_CONTRACT.md`](./docs/architecture/LESSON_CONTRACT.md)
-stays authoritative on lesson structure and stages.
-
-**To build a lesson, start at
-[`docs/lessons/LESSON_DEVELOPMENT_GUIDE.md`](./docs/lessons/LESSON_DEVELOPMENT_GUIDE.md)**,
-which sequences this document with the other contracts. For manipulations
-specifically, the mechanical contract is
-[`docs/architecture/MANIPULATION_CONTRACT.md`](./docs/architecture/MANIPULATION_CONTRACT.md).
+How a v2 lesson applies them — the student acts, predicts, forges his rule, and the world answers — is
+[`docs/architecture/GAME_WORLD.md`](./docs/architecture/GAME_WORLD.md) and
+[`docs/architecture/LESSON_V2.md`](./docs/architecture/LESSON_V2.md).
 
 > **Don't show the mathematics. Let the student act on it.**
 > **Don't explain what the student can discover.**

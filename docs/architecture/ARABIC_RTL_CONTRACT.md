@@ -1,5 +1,10 @@
 # Arabic & RTL Contract
 
+> **Status (2026-11-22).** Imported unchanged from the Algerian platform. It describes the code AS IT IS until steps
+> 1C–1E of `docs/FRANCE_REBUILD_PLAN.md` end (the interface is still Arabic and right to left); it is then deleted.
+> The French rules are `FRENCH_LANGUAGE_CONTRACT.md`. `ALGERIA_PLATFORM_MASTER_SPEC.md`, cited below, was deleted on
+> 2026-11-22 (`git show 049380e:docs/ALGERIA_PLATFORM_MASTER_SPEC.md`).
+
 > **The student-facing product is Arabic. Everything a student can read is in
 > Arabic, except legitimate mathematical notation and the brand name.**
 > This document is authoritative on language, direction, typography and
@@ -555,21 +560,7 @@ Solving one does not solve the other. Verify both independently, then together.
 
 ### The Knowledge Map (2026-09-29)
 
-The progressive map follows this section without exception
-(`KNOWLEDGE_MAP.md` A.11): only its **lane positions** mirror under RTL —
-arrows keep flowing downward and notation is never mirrored; relation labels
-are DOM text (Cairo, browser bidi), never SVG `<text>`; a **mathematical
-subtitle is never truncated** — it is scaled to fit (`FittedMath`), because
-« 11 × 13 + 0 » without « 143 = » is a false equality; an Arabic subtitle may
-end in « … ». In the linear « المعارف مفصّلة », a line that starts with a math
-island shows that island at the reading-start (right) edge, internally LTR —
-this is correct, not a reversal.
-
-Every equality a map node shows is written **inside `$…$`** (`KNOWLEDGE_MAP.md`
-A.10 rule 12): « 252 − 140 = 112 » in plain text after Arabic displays as
-« 112 = 140 − 252 ». `lessonGraphs.test.js` refuses a digit equality outside a
-math island unless a Latin letter anchors it (« PGCD(155 ; 141) = 1 » is safe);
-a quoted lesson string that breaks the rule is left out of the map.
+Deleted on 2026-11-22 with the old knowledge map (`git show 049380e:docs/architecture/ARABIC_RTL_CONTRACT.md`).
 
 ## 5. Arabic plurals
 
@@ -664,7 +655,7 @@ inside a component, always use the hook.
 
 The Arabic terminology of the official Algerian programme **is** the
 interface's terminology. It is never re-translated from French. The register
-lives in [`../ALGERIA_4AM_CURRICULUM.md`](../ALGERIA_4AM_CURRICULUM.md) §6.
+lived in `ALGERIA_4AM_CURRICULUM.md` §6 (deleted 2026-11-22; `git show 049380e:docs/ALGERIA_4AM_CURRICULUM.md`).
 
 The engine's own vocabulary, settled by the owner:
 
@@ -762,9 +753,8 @@ text. Classify each hit: notation and identifiers stay, prose gets translated.
 
 ## 9. Related
 
-- [`../ALGERIA_PLATFORM_MASTER_SPEC.md`](../ALGERIA_PLATFORM_MASTER_SPEC.md) §14–§16 — the binding product rule this contract implements.
-- [`LESSON_DESIGN_PLAYBOOK.md`](./LESSON_DESIGN_PLAYBOOK.md) §13bis/§13ter — the same rules in the lesson-authoring workflow.
-- [`MANIPULATION_CONTRACT.md`](./MANIPULATION_CONTRACT.md) §8 — RTL inside a manipulation.
+- `ALGERIA_PLATFORM_MASTER_SPEC.md` §14–§16, `LESSON_DESIGN_PLAYBOOK.md` §13bis/§13ter, `MANIPULATION_CONTRACT.md` §8 —
+  deleted on 2026-11-22 (`git show 049380e:docs/<path>`).
 - [`CLASSROOM_MODE.md`](./CLASSROOM_MODE.md) §9 — RTL in presentation.
 
 ## A counter « x / y » never breaks (owner, 2026-11-09)

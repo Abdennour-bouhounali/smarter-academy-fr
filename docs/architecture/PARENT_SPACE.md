@@ -4,6 +4,13 @@
 > The problem it answers: parents and teachers are afraid to hand a child an
 > internet-connected laptop. The child can open other sites while « studying »,
 > and nobody can tell real work from an open tab.
+>
+> **Status (2026-11-22).** Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the parent
+> link, its code and QR, study time, the week report, the device guide, the closed-garden test — all in the code. Not true
+> here: the interface and the e-mails are Arabic; the day, the week (Sunday → Saturday) and the weekly e-mail run on
+> Africa/Algiers (`config/family.php`, `routes/console.php`); the domain written in the code is `smarter-academy.com` —
+> French time, week and domain are step 1E of the plan, not yet applied in the code. Whether minors' parent links go live
+> in France waits for the owner and a lawyer (plan §7, 4).
 
 A web page cannot lock a device: it cannot see or block another tab. The
 platform therefore answers in three layers, and claims nothing more:
@@ -213,7 +220,7 @@ token, so the last beat never leaves with a dead token. Throttle 30/min,
 - It does not trust a beat. A beat covers at most the time elapsed since the
   previous one, plus 15 s (cache key `study-time:last:{id}`), and never more
   than 180 s. An over-claim is scaled down.
-- Rows go into `study_time_days (user_id, day, surface)`: Algiers day,
+- Rows go into `study_time_days (user_id, day, surface)`: local day (`family.timezone`, Algiers today),
   counters capped at 16 h. `day` is a plain `Y-m-d` string (no date cast).
 
 **What it never is.** The platform does not see, log or infer other sites.
@@ -224,7 +231,7 @@ token, so the last beat never leaves with a dead token. Throttle 30/min,
 
 `ParentReportService::week($student, $weeksBack)`:
 
-- The week runs Sunday → Saturday in Algiers (`FamilyClock`), up to 8 weeks back.
+- The week runs Sunday → Saturday in `family.timezone` (`FamilyClock`; Algiers today), up to 8 weeks back.
 - It returns:
   - `time`: 7 `days` with study / game / other / idle / away / leaves, plus
     `bySurface`, the totals and `activeDays` (≥ 1 study minute);
@@ -351,7 +358,7 @@ It covers:
 
 `ALLOWED_HOSTS` lists what a restricted browser must allow:
 
-- `smarter-academy.com` (site + API);
+- `smarter-academy.com` (site + API) — the Algerian domain, still in `DeviceGuide.jsx` (plan 1E);
 - `fonts.googleapis.com` and `fonts.gstatic.com` (fonts);
 - `accounts.google.com` (Google sign-in only).
 

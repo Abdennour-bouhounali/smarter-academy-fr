@@ -1,5 +1,12 @@
 # Phase 5 — Audit d'architecture : intégration d'un fournisseur de paiement
 
+> **Status (2026-11-22).** A point-in-time report of the OLD French product (2026-09-11), kept as the history of the
+> Stripe code. That code came back with the Algerian import (DZ `dev` `7f4cef1c`, 2026-11-22) and is in this tree:
+> `apps/api/app/Domain/Billing/*`, `BillingCheckoutController`, `BillingSubscriptionController`, `POST /webhooks/{provider}`
+> and `/billing/*` in `routes/api.php`. Not true here: no web page calls it — `/tarifs`, `/abonnement`,
+> `/abonnement/retour` are absent from `App.jsx`; paid access is granted by activation codes. Re-attaching Stripe in
+> EUR is plan step 1F (`FRANCE_REBUILD_PLAN.md` §4). Test counts below are the old product's.
+
 > **⚠️ CE DOCUMENT EST L'AUDIT D'ORIGINE (2026-09-11, avant implémentation).**
 >
 > La phase 5 a depuis été **implémentée**. Ce fichier est conservé tel quel comme

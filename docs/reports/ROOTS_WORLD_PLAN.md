@@ -1,10 +1,18 @@
 # The world of 4AM unit 2 « الحساب على الجذور » — PLAN (2026-11-20, nothing is built)
 
+> **Status (2026-11-22).** HISTORY: why the world `gameworld/rootCourts/` is shaped as it is — three candidate mechanics,
+> the council, the design of the Algerian lessons that played it. Imported from the Algerian platform (DZ dev `7f4cef1c`)
+> on 2026-11-22. True here: the world's code (`apps/web/src/lessons/common/gameworld/rootCourts/`), its contract in
+> `GAME_WORLD.md` §2ter-3. Not true here: every lesson named below (`jidhr-tarbii`, `natiqa-ghayr-natiqa`,
+> `muadalat-x-murabba`…) is an Algerian lesson, not in this repository — see the Algerian platform; its bank, its walk and
+> its Arabic sentences are gone. The plan's first French use is « racine carrée » (3e) on this world (plan §8). Documents
+> it cites that were deleted on 2026-11-22 are read with `git show 049380e:docs/<path>`.
+
 **Status: a plan, written for the owner's decision. No code, no file other than this one was written; no build, walk,
 test suite or `check:lessons` was run (another session was committing).** What was read: `CLAUDE.md`, `docs/README.md`,
-`LESSON_V2_MASTER_PLAN.md` §4ter-0 and §9, the skill `.claude/skills/lesson-v2/` (five files), `LESSON_V2.md`,
-`GAME_WORLD.md` (§1–§2ter-2, §2ter-0, §2ter-1, §2sexies, « استكشف » and its table of kinds), `MANIPULATION_DNA.md` §17,
-`INTEGRATION_LESSON_PLAN.md` §6, the headers of `kit/WorldRuntime.js`, `kit/LessonWorld.jsx`, `missionIsle/Game.js`,
+`LESSON_V2_MASTER_PLAN.md` §4ter-0 and §9 (deleted 2026-11-22), the skill `.claude/skills/lesson-v2/` (five files), `LESSON_V2.md`,
+`GAME_WORLD.md` (§1–§2ter-2, §2ter-0, §2ter-1, §2sexies, « استكشف » and its table of kinds), `MANIPULATION_DNA.md` §17 and
+`INTEGRATION_LESSON_PLAN.md` §6 (both deleted 2026-11-22), the headers of `kit/WorldRuntime.js`, `kit/LessonWorld.jsx`, `missionIsle/Game.js`,
 `kit/authoring/README.md`, and `npm run lesson:brief` for the six lessons. NOT read, by the owner's rule: the old
 lessons, the textbook, `docs/sources/**`. Of the banks, only the briefs' digests and one exercise file (for its shape).
 
@@ -332,7 +340,7 @@ One line of design per key; each lesson gets its own design stop. The catalogue'
 | 3 `muadalat-x-murabba` | the post stands at 0 in the MIDDLE of a wall graduated both ways | **opposites** (the walk left and the walk right build the same court — a symmetry) · **how many** (he is given a court to build: 49, 0, −4; he walks; the counter never goes under 0 — a count of 2, 1, 0) · **solving** (the two stopping places written ±√a) · **reducing** (an equation is first brought to « a court of a ») |
 | 4 `amaliyat-judhur` | « تغيير البلاطة »: the unit tile is replaced by a SLAB of area b; a second rod | **product** (a court of a slabs of area b: its plaque reads a × b tiles, its wall is √a slab-sides — his hand chooses a and b; a whole count per side gives 6√2, any count gives √2 × √3) · **quotient** (the same, reversed: which smaller tile) · **the proof by squaring** (a procedure: cards in order, like `letters`) · **the sum** (two rods at a right angle: the diagonal's court holds a + b tiles, and the corner path is longer than the diagonal — the misreading √a + √b is BUILT and is too long) |
 | 5 `tawzif-khawass-judhur` | cuts: a square he cuts and moves | **a√b, b smallest** (a hunt: which slabs pave the court of 72 squarely — 2, 8, 18, 72 — and which is smallest; unit 1's divisors are the tool, not re-taught) · **like roots** (rods of the same slab end to end; a rod of another slab does not join) · **rational denominator** (the court of 2 cut in half: a rectangle √2 by √2/2 holding exactly 1 tile) · **identities** ((√3 + 1)² cut in four pieces: 3, 1 and two strips; (3 + √5)(3 − √5): a square of side 3 less a square of side √5, moved into a rectangle of 4 tiles) |
-| 6 `wadiya-idmajiya-judhur` | no key: `mission-isle`, missions as data, the endless game | a « plot » SCENE is needed (`INTEGRATION_LESSON_PLAN.md` §6 lists it, not built): the square plot, the rectangle of the same area, the fence |
+| 6 `wadiya-idmajiya-judhur` | no key: `mission-isle`, missions as data, the endless game | a « plot » SCENE is needed (the integration plan's §6 listed it, not built): the square plot, the rectangle of the same area, the fence |
 
 **Lesson 2's argument — mine, not the council's.** No walk shows that a root is not rational. What a 14-year-old CAN
 find and defend: **the last digit of a square**. He squares decimals whose last digit is 1 … 9 and reads the last digit
@@ -395,7 +403,7 @@ class test; its old version traced and deleted in the same change.
 | 3 | The kit's additions (typed root, claims on both sides, the run moved) ∥ the world's core (scene, mirror, the two kinds) | agents on opus ∥ main session (3D) | unit tests; the run re-walked on ONE reference lesson of unit 1 |
 | 4 | Lesson 1 through the skill's pipeline: wave 1 (written world ∥ board, class test, launch family, instrument), wave 2 (forges and experiments ∥ pack, old version deleted), walks at 1366×768 on a frozen copy, the eyes on the new screens — all of them: every screen of a new world is new | agents, main session | status ✅, the gate report, the docs, commit `feat(lessons): jidhr-tarbii — v2` on `dev`. Never pushed |
 | 5 | Write back into the skill (the ledger, the briefs, the proven screens of the new world) | main session | same commit |
-| 6 | Lesson 2's design stop, then lessons 3–5 one by one, then the last lesson by `INTEGRATION_LESSON_PLAN.md` | — | a STOP per lesson for a new piece |
+| 6 | Lesson 2's design stop, then lessons 3–5 one by one, then the last lesson by the integration plan (deleted 2026-11-22) | — | a STOP per lesson for a new piece |
 
 One heavy check at a time; agents that write at once touch files that do not overlap; no source edited while a walk runs.
 
@@ -434,13 +442,6 @@ on another world; the exact square of the calculator's ten digits (the tests com
 | D5 | Lesson 2: the forge proves « no decimal number »; « not a fraction either » is given on the tablet | accept, and say so in the lesson's report — or tell me the argument you want |
 | D6 | The five الكفاءات with no bank exercise: proved by the world's « تدرّب » only | yes for now; the gap in the bank is reported, not filled by generated exercises |
 | D7 | Steps 1 and 2 before any world code: the storyboard page, then the grey-box you play | yes |
-
-## Documentation Sync
-
-This pass wrote ONE file, as asked: this plan. `docs/README.md` does not list it yet and `LESSON_V2_MASTER_PLAN.md`
-§4ter-0 does not name unit 2's world — both are to be updated with the first change that follows the owner's decision
-(no other file could be edited in this pass). The older `docs/reports/UNIT2_HISAB_JUDHUR_MISSION_PROMPT.md` is a prompt
-for the old mission player on this unit; it is not superseded here and was not read. No contract changed: nothing is built.
 
 ---
 

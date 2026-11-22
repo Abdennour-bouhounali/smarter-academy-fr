@@ -1,31 +1,32 @@
-# GAME_WORLD — the lesson played as a 3D game world (first built 2026-11-15)
+# GAME_WORLD — the lesson played as a 3D game world
 
-**BINDING for the lesson v2 rollout (owner decision D6, 2026-11-17): every v2 lesson follows this contract — `LESSON_V2.md` says how a lesson plugs into it.** What has not changed: it was built on the pilot lesson and no real student has used it yet.
-
-**Where it started:** a TRIAL on ONE lesson (`qasim-adad-tabii`), student view only — a free experiment the owner asked
-for « without limiting it with the docs or what is already built ». Sections still marked « NOT validated » describe parts
-he has not judged one by one; they are binding all the same, as built.
-
-> **ONE SCREEN SIZE since 2026-11-19 (owner): 1366×768, alone.** A world, a forge, an experiment, a sitting are built,
-> walked and reviewed at 1366×768 only. Measures and rules below that name 1024×768 or 1840×900 are the record of what
-> was verified before that date; nothing new is checked at those sizes.
+> **Status (2026-11-22).** Covers the v2 lesson's student side: the kit (`apps/web/src/lessons/common/gameworld/kit/`),
+> the three worlds (`divisorIsles`, `missionIsle`, `rootCourts`), the missions engine, the rule forge and its
+> experiments, the practice ladder, the trainer, the exam sitting, the knowledge page, the gate run. Imported from the
+> Algerian platform (DZ dev `7f4cef1c`) on 2026-11-22. True here: the engine's code and the mechanics written below.
+> Not true here: **no lesson exists** — every lesson named below (`qasim-adad-tabii`, `qawasim-adad-tabii`,
+> `khawass-qawasim`, `jidhr-tarbii`, `natiqa-ghayr-natiqa`, the PGCD lessons, the 1AM/2AM division road, the
+> integration lesson `wadiya-idmajiya-aadad`…) is an Algerian lesson, not in this repository (see the Algerian platform,
+> or `git show 049380e`); their stories, banks and walks are gone, and the examples built on them are kept only where
+> they carry a rule. Every sentence of the kit and the worlds is Arabic, laid right to left (`kit/text.js`, the `L`
+> tables, the worlds' `strings.js`) — moving them behind a language folder is plan §4, step 1C. **One screen size:
+> 1366×768**; measures below that name 1024×768 or 1840×900 are the record of what was verified in Algeria.
 
 ## 1. What it is
 
-A student who opens the lesson enters **« أرخبيل القواسم »**: a chain of nine floating islands in a three.js scene, played in a
-full window with a small hovering robot, « زيرو ». The teacher and Classroom Mode see no change.
+A student who opens a lesson whose pack names a world enters it: a three.js scene played in a full window with a small
+hovering robot. The teacher sees his card instead (`CLASS_SESSION.md` §2).
 
-- Switch: `world: { id: 'divisor-isles', content }` in the lesson's PACK (`lesson.pack.js`, `LESSON_V2.md` §1). The config
-  has no `studentView` / `mission` any more (deleted with the old version, 2026-11-18).
-- Mount: `LessonIndex.jsx` renders the world for a STUDENT (not a teacher, not Classroom Mode) of any lesson whose pack
-  names a world, and for the teacher's preview (`?apercu=eleve`).
-  `gameworld/LessonGameWorld.jsx` loads the WORLD (`gameworld/worlds.js › WORLDS`: one entry per world, never per
-  lesson) and the lesson's content (its pack) together, lazily — three.js never enters the entry bundle. A world names
-  no lesson. Both are usually on their way before it mounts (`lessons/worldPreload.js`, §1bis).
-- **The old version is deleted (owner, 2026-11-18).** A v2 lesson has no mission player, no module page and no
-  `?view=classic`: its module addresses (`/astaidd`, `/itqan`, …) redirect to the home, which is the world
-  (`buildLessonRoutes › retiredModules`, `LESSON_V2.md` §2). A device without WebGL gets a message and the way out
-  (`exitTo`). Trace: `docs/reports/OLD_VERSION_TRACE_2026-11-18.md`.
+- Switch: `world: { id, content }` in the lesson's PACK (`lesson.pack.js`, `LESSON_V2.md` §1). Worlds:
+  `gameworld/worlds.js › WORLDS` — `divisor-isles` (`divisorIsles/`, the islands and their bridges), `mission-isle`
+  (`missionIsle/`, a unit's last lesson), `root-courts` (`rootCourts/`, square courts and their side).
+- Mount: `lessons/common/components/LessonIndex.jsx` renders the world for a STUDENT of any lesson whose pack names a
+  world, and for the teacher's preview (`?apercu=eleve`). `gameworld/LessonGameWorld.jsx` loads the WORLD (one entry per
+  world, never per lesson) and the lesson's content (its pack) together, lazily — three.js never enters the entry
+  bundle. A world names no lesson. Both are usually on their way before it mounts (`lessons/worldPreload.js`, §1bis).
+- A v2 lesson has no module page: its module addresses redirect to the home, which is the world
+  (`lessons/common/lessonRoutes.jsx › buildLessonRoutes`, `LESSON_V2.md` §2). A device without WebGL gets a message and
+  the way out (`exitTo`).
 
 ## 1bis. From the click to the title: ONE loading screen (2026-11-21)
 
@@ -36,7 +37,7 @@ student sees between his click and the world's title, whatever is loading behind
 
 | Who mounts it | While |
 |---|---|
-| `lessons/LessonWaiting.jsx` (the route boundary, the classroom shell, the page frame) — only when `useOpensWorld(lessonId)`: the pack names a world AND the viewer is a student, or a teacher's `?apercu=eleve` | the lesson's routes, runtime and home arrive |
+| `lessons/LessonWaiting.jsx` (the route boundary `lessonRouteBoundary.jsx`, the lesson runtime, `lessonRoutes.jsx`) — only when `useOpensWorld(lessonId)`: the pack names a world AND the viewer is a student, or a teacher's `?apercu=eleve` | the lesson's routes, runtime and home arrive |
 | `LessonIndex.jsx`, `classSession/LessonBoard.jsx` | the world's loader arrives |
 | `LessonGameWorld.jsx` | the world's code, the lesson's content and the server's save arrive |
 | `kit/LessonWorld.jsx` (`over`, then `leaving`: it fades over the title in 0.45 s and lets clicks through) | the 3D scene is built |
@@ -58,11 +59,15 @@ What makes five mounts ONE screen, and what a change to it must keep:
 - The lesson's name is shown without raw LaTeX (`mathToPlain`); its line and the note's line keep their height.
 - World-neutral: a gem, three lights turning, a few stars — it names no world and no lesson. Reading sizes ≥ 18 px.
 
-Checks: `gameworld/worldLoading.test.jsx` (the clock, the three states), `e2e/gameworld-sync.mjs` (the screen on a
-slow server). NOT measured: how long the scene's build blocks a weak school laptop, and real timings on a school
+Checks: `gameworld/worldLoading.test.jsx` (the clock, the three states); no walk here (the Algerian
+`e2e/gameworld-sync.mjs` was deleted). NOT measured: how long the scene's build blocks a weak school laptop, and real timings on a school
 network.
 
-## 2. The mathematical idea of the world
+## 2. The mathematical idea of the world `divisorIsles`
+
+> The stage table below is the story of the Algerian pilot lesson `qasim-adad-tabii` (an Algerian lesson, not in this
+> repository — see the Algerian platform). It shows how a world's mechanic carries a lesson; the rules under it bind
+> every lesson.
 
 Between two islands there is a gap of `a` cells. The student carries a mould of length `b` and fires planks of that length:
 the scene lays `q` planks one by one and shows the `r` cells left — `a = b × q + r`, written live at the top of the screen.
@@ -112,10 +117,10 @@ open from the title screen, so no walk in the world is needed.
 
 ### « خريطة المعارف » — the full page of what the lesson teaches (`KnowledgePage.jsx`)
 
-A FULL page (not a card, no scrolling): the lesson's own mind map — the 13 nodes of `knowledgeGraph.js` (the idea, the two
-definitions, the reminder on Euclidean division, the two examples, the check, the four sentences, 1 and the number itself, the two
-common mistakes, the warning « القاسم ليس 0 », the summary) with their labelled links — and, for the four rules, the memo sheet of
-`knowledge.jsx` (rule, hook, example, trap, exam tip, memory test). **Nothing is retyped: the page imports the lesson's data**, so a
+A FULL page (not a card, no scrolling): the lesson's own mind map — the nodes of its `KNOWLEDGE_GRAPH` (definitions,
+examples, checks, common mistakes, warnings, the summary) with their labelled links — and, for each rule, the memo sheet
+of `LESSON_KNOWLEDGE` (rule, hook, example, trap, exam tip, memory test), both from the file the pack names
+(`world/knowledge.js`). **Nothing is retyped: the page imports the lesson's data**, so a
 change in the lesson changes the page. Three families of cards, three colours: what to know, what helps, what to beware of.
 
 Gamified, and saved (`know: { read, sealed }`): a card is locked until its key is owned (a rule is named only after it is
@@ -125,7 +130,7 @@ gold by its memory test.
 **Every kind of card has its icon and its word** (`kit/text.js › TX.know.kinds`: `[icon, word, family]`; the family is one of
 the legend's three). A kind with no entry was drawn « • » with no word — 39 cards of the v2 lessons (`relationship`, `method`,
 `tip`) until 2026-11-19, when they got `🔑 قاعدة`, `🧭 طريقة` (core) and `✨ حيلة` (guide). `kit/knowledgeKinds.test.js` reads
-every `world/knowledge.js` under `lessons/moyen` and fails on a `kind` the table does not name: a new kind is added to the
+every `world/knowledge.js` under `lessons/college` (none today: it then checks every kind of the table) and fails on a `kind` the table does not name: a new kind is added to the
 table in the same change. **The map's positions** (`world/knowledge.js › POSITIONS`, percent of the map box) keep every card
 inside the box and every link's label between two cards, never under one, at 1366 × 768, 1024 × 768 and 1840 × 900, the
 card panel open: a card is at most 15rem wide (8.6rem below 1101 px), so three columns at 17 %, 50 %, 83 % never touch, and a
@@ -192,7 +197,7 @@ at the depot. The summary node « 🏆 تحدّي الامتحان »: one mixed
   appears. The summary node « تحدّي الامتحان » is not a rule and keeps its name. The same guard holds on « تقدّمي » (a row not
   earned), on the end card's key tooltips and in the knowledge journey's trail (a card turned over whose key is not held).
   Enforced in `kit/PracticeHub.jsx`, `kit/Spaces.jsx › ProgressPage`, `kit/End.jsx`, `kit/KnowledgePage.jsx`; tested by
-  `kit/lockedNames.render.test.jsx` and asserted on a new student by each `e2e/gameworld-*-hub.mjs`. Not covered: the map's
+  `kit/lockedNames.render.test.jsx` (the Algerian per-lesson hub walks that also asserted it were deleted). Not covered: the map's
   ROOT (`practiceMap.root`, the lesson's title) and its edge labels are lesson data shown from the first screen — they must
   name places of the story, never a rule.
 - **The gate dash is MENTAL ARITHMETIC** (owner, 2026-11-15, after questions no teacher could answer in the time of a gate): every
@@ -264,12 +269,14 @@ boxes are only hidden meanwhile (the paper gate is not asked twice). The trainer
 dots are buttons, an earlier one shows the statement, the answers given (`answerLabel`) and the correction.
 
 `judge(order, step, value)` is the one place that says whether a step is right and, when it is not, WHY — **by what the answer
-produces** (« بسعة 9: 96 = 9 × 10 + 6، تبقى 6 علب على الأرض »), never by giving the answer. An order pays 1200 دج, less 300 per mistake;
-three mistakes end the day. Money is written « دج », without a thousands space.
+produces** (« بسعة 9: 96 = 9 × 10 + 6، تبقى 6 علب على الأرض »), never by giving the answer. An order pays a sum, less a part per mistake;
+three mistakes end the day. Money is written in dinars today (« دج », no thousands space); the French format (euros):
+`FRENCH_LANGUAGE_CONTRACT.md`, not yet applied in the code.
 
 ## 2ter-2. A second world: « جزيرة المهمّات » (`gameworld/missionIsle/`, 2026-11-20)
 
-The world of a unit's LAST lesson (`docs/reports/INTEGRATION_LESSON_PLAN.md`). It extends the same runtime
+The world of a unit's LAST lesson (its Algerian plan, built on the BEM's integration situation, was deleted on
+2026-11-22: `git show 049380e:docs/reports/INTEGRATION_LESSON_PLAN.md`; what the French one rests on is not decided). It extends the same runtime
 (`kit/WorldRuntime.js`) and the same shell (`kit/LessonWorld.jsx`), and is registered in `worlds.js › WORLDS`
 as `mission-isle`. What differs from « أرخبيل القواسم »: one island (the oasis depot, `divisorIsles/Depot.js`, the
 only file it takes from the other world), no road, no key, no title screen, the robot does not walk — the phase is
@@ -278,7 +285,7 @@ doors it has no use for lead home (`openMap`, `closeMap`, `roam`, `quitSitting`)
 is played by `gameworld/missions/MissionRunner.jsx`, ONE engine for every mission (step kinds `data`, `goal`, `tries`,
 `connect`, `plan`, `work`, `review`; `resume` for a mission left half-way); the
 scenes are the depot's (`runLots`, `runPairing`, `setPlot` / `runRing`). A new SCENE is added to the depot only when a
-family of situations needs it (the plan's §6 table). Text on this world's screens is never under 18 px.
+family of situations needs it. Text on this world's screens is never under 18 px.
 Its home has a third door when the lesson gives `lesson.endless` (`{ title, say, levels, gates, round(level, rand) }`):
 the unit's ENDLESS GAME — lesson 1's gate run design for design (rail of light, arches, board, camera, `di-dash`
 screen), with no end and faster — the phase is `run`; the lesson gives
@@ -286,11 +293,11 @@ the rounds (an order, three options, one right, a fact per wrong option), the wo
 
 ## 2ter-3. A third world: « قصر الساحات » (`gameworld/rootCourts/`, 2026-11-21 — BEING BUILT, not validated)
 
-The world of 4AM unit 2 « الحساب على الجذور » (design, council and plan: `docs/reports/ROOTS_WORLD_PLAN.md`). It extends
-the same runtime (`kit/WorldRuntime.js`) and the same shell (`kit/LessonWorld.jsx`) and is registered in
-`worlds.js › WORLDS` as `root-courts`. The owner validated the story of lesson 1 `jidhr-tarbii`
-on 2026-11-21; the lesson was then completed the same day: its written world (practice ladder, « تدرّب », the exam
-sitting, the knowledge map), its board, class test, launch family and lab instrument, and the two things below.
+Built for the Algerian unit on square roots (why this mechanic: `docs/reports/ROOTS_WORLD_PLAN.md`); planned here for
+« racine carrée » (3e, plan §8). It extends the same runtime (`kit/WorldRuntime.js`) and the same shell
+(`kit/LessonWorld.jsx`) and is registered in `worlds.js › WORLDS` as `root-courts`. The examples below come from the
+Algerian lessons `jidhr-tarbii` and `natiqa-ghayr-natiqa` (Algerian lessons, not in this repository — see the Algerian
+platform).
 
 **A level of the practice ladder is played on the kit's rail** (`Game.startPractice` → `kit/GateRun.js`): the lesson's
 ladder (`kit/ladder.js`) makes the waves; a wave carries what the rail shows — `say` (the order), `tex?`, `gates` (three
@@ -302,7 +309,6 @@ hearts; the stars of a level are the hearts left; the result is the kit's `resul
 the pavilion of the last terrace, under the column of light: one written problem on a wide card (`RootCourts › Mission`,
 the kit's `UseLines`, its lines one under the other, each box named by the words beside it). « تحقّق » answers with a
 fact of the world about the first line that does not hold yet; solved, it is kept (`flags.mission`) and the story ends.
-In `jidhr-tarbii`: a court of 1849 tiles (its side, 43) and a garden of 1900 (between 43 and 44; the square of its side).
 
 **The mechanic** (`rootCourts/logic.js` is its law, pure and exact — fractions of BigInt; a number is TEXT everywhere
 else: « 30 », « 5,47 », « 49/64 »):
@@ -508,16 +514,16 @@ not show them (a door never opens on nothing) and the world's `openHub` ignores 
 world's HUD shows in the middle and marks so is never covered by the « E » bubble (`WorldRuntime › placePrompt`).
 `kit/Instruction.jsx › Recall` takes the world's own `title` (« من الساحة السابقة »).
 
-**Known, not done**: no unit test plays `Game.js` (the 3D mechanic is played by a browser only: the walk
-`e2e/lessons/jidhr-tarbii.walk.mjs`, through `e2e/lib/lessonWalk/worlds/rootCourts.mjs`; the free view's clock controls
-are not walked — the walk places the robot); the typed radical sign the last steps need does not exist in the kit (the forges spell
-« ضلع الساحة [ ] »); no test renders `RootCourts.jsx` (a wrong import path in it reached the browser on 2026-11-21 — see `defects.md`).
+**Known, not done**: no unit test plays `Game.js` (the 3D mechanic is played by a browser only: the walk player
+`e2e/lib/lessonWalk/worlds/rootCourts.mjs` stays; the Algerian lesson walk that used it was deleted, so no walk runs it
+today); the typed radical sign the last steps need does not exist in the kit (the forges spell
+« ضلع الساحة [ ] »); no test renders `RootCourts.jsx` (a wrong import path in it reached the browser on 2026-11-21 — see `.claude/skills/lesson-v2/defects.md`).
 
 ## 2quater. « الامتحان الأبيض » — the exam sitting (PROTOTYPE, 2026-11-16)
 
 **Status: a prototype of the SITTING, to judge the feel, not validated. Since 2026-11-18 its sheets are the lesson's EXERCISE
-BANK, served as it is** (owner: « you will use the exercises bank as it is »; `kit/bankSitting.js`, findings and design:
-`docs/reports/BANK_AS_IS_2026-11-18.md`).
+BANK, served as it is** (owner: « you will use the exercises bank as it is »; `kit/bankSitting.js`). No bank exists here
+(`content/practice/` holds only its index and schema); the French bank's contract is plan §5, 2G.
 Opened from a level of the exam ladder (§2quinquies; until 2026-11-16 a button of the title screen opened it directly). `ExamSitting.jsx`, logic `sitting.js` + `bankSitting.js`, style
 `examSitting.css` (prefix `xs-`). It is the opposite of the game on purpose: one sheet of paper, three colours — black for the
 subject, blue for what the student writes, RED for the corrector and never before the copy comes back — silence, no stars.
@@ -530,27 +536,18 @@ subject, blue for what the student writes, RED for the corrector and never befor
 
 - **The subject is the lesson's BANK, as it is** (`kit/bankSitting.js › createBankSittings({ lesson })`; a lesson's
   `world/sitting.js` is that one call): level N of the ladder serves `sheets` exam sheets drawn from
-  `content/practice/<grade>/<lesson>/level-N/` (`BANK_LEVELS`: 1, 2, 2, 2, 1 sheets — level 5 is the bank's « الوضعيّة
-  الإدماجيّة (08 ن) »), loaded when the exam space or a sitting opens through the practice space's own loader
-  (`features/practice/practiceContent.js`, lazily: it never enters a world's chunk). Nothing is generated, copied or rewritten:
-  statement, formulas, table, steps, answer types, points (`metadata.exam.points`), minutes (`metadata.estimatedMinutes`),
-  hints and model solution are the bank's. Two things happen AT DISPLAY only: « DA » of MONEY is written « دج » (`cashDj`), and
-  nothing of `metadata.source` (textbook pages) is shown. `cashDj` (2026-11-19) touches money only: in a formula `\text{ DA}`
-  or DA glued to a number (`1040DA`, `11225\,DA`) — leaving the formula when it ends it (`$1040$ دج`), `\text{ دج}` inside;
-  in the words DA after a number (« 900DA », « 900 DA »), right after a formula ending on a number (`$1500$DA`), « (DA) »,
-  « بالـ DA », « بالدينار DA » — never when a Latin letter follows, never a name (`$AB + DA = 7$` stays). The amount before a
-  DA in the words loses its thousands spaces (« 211 500DA » → « 211500 دج »: groups of exactly three digits only). A third
-  display rule (`namesAsMath`, 2026-11-19): a « PGCD(a ; b) » / « PPCM(a ; b) » written in the WORDS of a bank line (with
-  the « = n » that follows it) is drawn as a formula `$\mathrm{PGCD}(a ; b) = n$` — in plain Arabic text the bidi algorithm
-  scrambled it (« هو PGCD(252 ; 36 = (180. ») — and inside a formula the name gets upright letters; the answer format the
-  widgets parse is left as the bank wrote it. lib/sittingWalk.mjs writes the same rules again for its word-for-word check. It runs
-  on every string the sitting shows — statement, formulas, table, steps, the model copy and its boxed `result`, the hints,
-  the choice written back — and on what the practice WIDGETS draw: each step carries `shown` (its `statement`, `lead`,
-  `answerFormat` and choices through `cashDj`), given to `ChoiceInput` / `TemplateInput` / `IntegerSetInput`, while the mark
-  and the copy sent to the server read the bank's own step (`bank`). `kit/bankDisplay.test.js` draws EVERY sheet of every
-  level of the twelve v2 banks (the DEV hook below) and finds no « DA » left on screen. A sheet with a step of a type the sitting does not draw (`multiChoice`,
-  `affine`, `interval`, `point`: `SITTING_TYPES`) is left out of the sittings and stays in « /espace/pratique » — none in the six
-  v2 banks of 2026-11-18.
+  `content/practice/<grade>/<lesson>/level-N/` (`BANK_LEVELS`: 1, 2, 2, 2, 1 sheets — level 5 was the Algerian bank's
+  integration situation of 8 points; the French levels are not decided, plan §5, 2G), loaded when the exam space or a
+  sitting opens through the practice space's own loader (`features/practice/practiceContent.js`, lazily: it never enters a
+  world's chunk). Nothing is generated, copied or rewritten: statement, formulas, table, steps, answer types, points
+  (`metadata.exam.points`), minutes (`metadata.estimatedMinutes`), hints and model solution are the bank's, and nothing of
+  `metadata.source` is shown. Two DISPLAY rules made for the Algerian banks run on every string the sitting and its
+  widgets show (`shown` = `namesAsMath(cashDj(text))`; the mark and the copy sent read the bank's own step): `cashDj`
+  writes a « DA » of money as « دج », and `namesAsMath` draws a « PGCD(a ; b) » written in the words as a formula (bidi
+  scrambled it in Arabic text). Both are Algerian by nature: the French writing of money and of PGCD —
+  `FRENCH_LANGUAGE_CONTRACT.md`, not yet applied in the code. `kit/bankDisplay.test.js` draws every sheet of every v2 bank
+  (`college/**/world/sitting.js` — none today). A sheet with a step of a type the sitting does not draw (`multiChoice`,
+  `affine`, `interval`, `point`: `SITTING_TYPES`) is left out of the sittings and stays in « /espace/pratique ».
 - **An empty level is never sat** (2026-11-19): `makeSubject` returns `null` when the level has nothing to mark — no sheet
   in its pool (an empty bank level, a lesson missing from the exercise index), or only sheets written on paper (total 0).
   The sitting then says « لا يوجد بعدُ موضوع لهذه الدرجة. » with a way out (`data-xs="empty"`): nothing is marked, sent or
@@ -571,12 +568,10 @@ subject, blue for what the student writes, RED for the corrector and never befor
   a leaf follows), « التالي ». The exercise tabs' count (« 0/8 ») counts every leaf; « أسلّم ورقتي » is unchanged. A sheet
   that fits is ONE leaf, exactly as before, no control. Hooks: `data-xs-leaves` (how many) and `data-xs-leaf-on` (the one on
   screen) on the column, `data-xs-leaf` on each answer, `data-xs-leaf-prev` / `data-xs-leaf-next` / `data-xs-leaf-count`.
-  Cheaper remedies first: the line a fraction box writes under itself (« كسر لا يقبل الاختزال — اترك المقام فارغًا… ») is
-  said once per leaf (`data-xs-quiet` on the others) — it took one sheet of `ikhtizal-kasr` back under its box (636 → fits
-  in 581 px at 1366 × 768) and another from 684 to 650; tighter gaps gained 4 px and were not kept. Three sheets of that bank
-  are in two leaves (l3-003, l4-006, l5-004), none of `qasim-mushtarak-akbar`. The corrected copy is not in leaves (one line
-  per answer: it fits); the walk checks it after handing in every sheet in leaves (`lib/sittingWalk.mjs › everyLeaf`: each
-  leaf a screen of its own, every answer typed on its leaf, kept, counted, then the copy handed back whole).
+  Cheaper remedies first: the line a fraction box writes under itself is said once per leaf (`data-xs-quiet` on the
+  others). The corrected copy is not in leaves (one line per answer: it fits); the walk library checks it
+  (`e2e/lib/sittingWalk.mjs › everyLeaf`: each leaf a screen of its own, every answer typed on its leaf, kept, counted,
+  then the copy handed back whole).
 - **The clock hands in once**: the countdown updater is pure (`sitting.js › tick`), and the time-out hand-in is an effect on
   `left === 0` (`timeUp`) behind a once-only guard — a StrictMode double call cannot send two copies.
 - **Marked by the practice evaluator** (`mark` = `@smarter-academy/core/practice › evaluateAnswer`): a sheet's points are
@@ -600,21 +595,13 @@ subject, blue for what the student writes, RED for the corrector and never befor
   also adds to the key's tally of « تقدّمي » (`Game.handInSitting`, `tallyOf`).
 - **The ladder** shows a level's minutes and points once its bank is loaded (`levelMinutes`, `levelPoints`: a range when
   the sheets of a level differ, e.g. « 2–2,5 نقاط »).
-- Check: the sitting walk of each v2 lesson — `gameworld-sitting.mjs` (the pilot) and `gameworld-<lesson>-sitting.mjs`
-  (`qawasim`, `khawass`, `baqi`, `qawaid`, `hasr`), all built on `e2e/lib/sittingWalk.mjs` (2026-11-19), at 1366×768,
-  `E2E_SIZE=1024x768` and `1840x900`. Three parts, each in its own session: `levelFive` (one sitting of level 5 answered
-  right with the bank's key on disk, the hand-in, the model copy, the promotion, « تقدّمي » before and after a reload),
-  `copies` (a blank copy, a wrong copy with « أرشدني » / « اشرح لي », a copy quit half-way, a right copy) and `everySheet`
-  (EVERY sheet of EVERY level opened through the ladder with the DEV hook below, its text checked against the disk, its
-  answer boxes in their shape, each screen through the walk's `shot`: nothing scrolls or is cut, 12 px, no raw formula,
-  no « DA »). `E2E_PARTS=five|copies|sheets` (comma list) runs only some parts and prints « NOT a full run ». The answer
-  key and the points are always read from the bank on disk (`e2e/lib/bankSheet.mjs › fromDisk`), never from the page.
-  **Written on 2026-11-19 and NOT yet run** at the time of writing. Unit: the kit's `kit.test.js` (a toy bank: money-only `cashDj`, the empty level, the DEV hook
-  in and out of production, the clock), `examSitting.render.test.jsx` (the empty screen), `sittingSat.test.js` (every copy
-  is evidence),
-  `bankEvidence.test.js` (sent, queued, refused, the flush race) and `bankDisplay.test.js` (every sheet of the twelve v2
-  banks, no « DA » of money on screen); per lesson `world/sitting.test.js` against its REAL bank (every level, every step
-  markable to full points by the bank's key, no « DA » of money in any shown string); `journey.test.js`. Status script: S4bis.
+- Check: no sitting walk exists here; the library `e2e/lib/sittingWalk.mjs` (parts `levelFive`, `copies`, `everySheet`,
+  `everyLeaf`; `E2E_PARTS=five|copies|sheets`; the key and the points always read from the bank on disk,
+  `e2e/lib/bankSheet.mjs › fromDisk`) stays for the first French lesson. Unit: `kit.test.js` (a toy bank: money-only
+  `cashDj`, the empty level, the DEV hook in and out of production, the clock), `examSitting.render.test.jsx`,
+  `examSittingLeaves.render.test.jsx`, `sittingSat.test.js` (every copy is evidence), `bankEvidence.test.js` (sent,
+  queued, refused, the flush race), `bankDisplay.test.js`, `sheetLeaves.test.js`; per lesson `world/sitting.test.js`
+  against its REAL bank. Status script: S4bis.
 - **A walk chooses its sheet (DEV only)**: when `import.meta.env.DEV` and `localStorage['di.dev.sheet']` holds the id of a
   bank exercise of the level being opened, `makeSubject` puts that sheet first (`DEV_SHEET_KEY`); `sittings.sheetIds(n)`
   lists a level's sittable sheets so a walk can loop over all of them. A production build reads nothing (the branch is
@@ -629,7 +616,7 @@ subject, blue for what the student writes, RED for the corrector and never befor
   their words (`.xs-field[data-xs-type='choice'] .grid`: « نعم / لا » on one line, seven weekdays on two) instead of
   ChoiceInput's two columns of 48 px rows. `Fit` now also shrinks a box that is too tall by more than ONE pixel (its 0.5 %
   dead band alone let a 685 px sheet stand cut in a 682 px box at 1840×900) — this applies to every `Fit` of the kit.
-- Not built yet (the rest of the proposal): a full BEM-length exam, spaced returns, the resume of an interrupted sitting, the
+- Not built yet (the rest of the proposal): a full exam-length paper, spaced returns, the resume of an interrupted sitting, the
   photo of the paper, the student's own self-mark of a `selfCheck` step inside the sitting, the parent's line.
 
 ## 2quinquies. Two practice spaces, the exam ladder, « تقدّمي » and « مختبري » (2026-11-16, NOT validated)
@@ -673,8 +660,9 @@ felt BETWEEN two levels of the exam, never inside a sitting.
 
 ### « عُدّة الانطلاق » before the world (phase 1, 2026-11-17)
 
-The FIRST « ابدأ المغامرة » of a student plays the launch of the lesson (`lessons/common/launchkit/`, contract
-`LAUNCH_KIT.md`): overlay `{ type: 'launch', then: 'start' }`; when it ends, `Game.js › launched` closes it and starts the world.
+The FIRST « start » of a student plays the launch of the lesson (`lessons/common/launchkit/`, contract
+`LAUNCH_KIT.md`): overlay `{ type: 'launch', then: 'start' }` (`kit/LessonWorld.jsx › onBegin`); when it ends,
+`launched` closes it and starts the world.
 Afterwards « واصل » goes straight in (`launchkit/store.js › launchDone`) and « 🎒 عُدّتي » on the title screen opens the kit again
 (`data-di-launch-open`). The 3D world is neither simulated nor drawn behind it (as behind « مختبري » and the exam sheet). The
 walks of the game world seed the launch as already played.
@@ -786,10 +774,15 @@ Nothing in the game world scrolls — not the page, not a card, not a panel — 
    model sheet, the body of a knowledge card, the bottom panel of a case. It never scrolls; when the content is taller than its
    room it is scaled down just enough, and grows back when there is room. It is the LAST resort: a panel whose content is scaled
    below ×0.8 is a panel to redesign (the walks print those places).
-3. **Checked at every screenshot of the three walks** (`noScroll` in `e2e/gameworld-*.mjs`): nothing can scroll, no fitted box cuts
+3. **Checked at every screenshot of a world's walk** (`noScroll`, `e2e/lib/walk.mjs`): nothing can scroll, no fitted box cuts
    its content, no panel leaves the screen, the page is not taller than the window.
 
-## 2sexies. « مصهر القاعدة » — the rule forge (2026-11-18; all four rules since 2026-11-17 of the rollout; NOT validated)
+## 2sexies. « مصهر القاعدة » — the rule forge (NOT validated)
+
+> The forges and experiments below are the kit's and the worlds' (all kept); the lessons that carry the examples —
+> the pilot, lessons 2–8 of the Algerian 4AM unit 1, the 1AM/2AM division road, the square-root lessons — are Algerian
+> lessons, not in this repository (see the Algerian platform). A spec block, a hook or a test named here is real code;
+> the numbers of a lesson are its example.
 
 Owner, 2026-11-18: the method says the student discovers, touches, observes « until concluding the maths rule » — « how are we
 giving him the chance to do that? »; the earlier answer (a space where he writes the rule after the manipulation) cannot tell
@@ -916,8 +909,8 @@ predictions (§2ter-1 « A situation lived on the islands ») — opens directly
   numbers and their two notebooks) carries `head` (« 1003 و 34 »): its log line names it so, never « a لوح b » (A10).
 - **A list never starts a line with its comma** (2026-11-19: the rule card of lesson 4's race wrapped « … 9 ، 6 ، 3 ، 2 ، 1 »
   and left « ، 18 » alone on the next line). A list of numbers is joined with a no-break space BEFORE each « ، » and a
-  normal space after it (`'\u00a0، '`), so a line can break only after a comma: `world/math.js › listAr` of
-  `qasim-mushtarak-akbar`, `divisorIsles/strings.js` (the divisors listed after a mistake), and the launch kit's
+  normal space after it (`'\u00a0، '`), so a line can break only after a comma: a lesson's own list helper,
+  `divisorIsles/strings.js` (the divisors listed after a mistake), and the launch kit's
   `LIST_SEP`. A test or a walk that reads such a list compares it with the same separator, or splits on « ، » and trims.
 - **A fact under a verdict** (`.rf-fb > span`, the child only): a formula inside it keeps KaTeX's inline boxes (a block on
   every span had broken « 72 = 3 × 24 » into a column of atoms).
@@ -1004,7 +997,7 @@ The twenty-two kinds of `divisorIsles/` (logic `inquiry.js`; screens `Inquiry.js
 `InquiryCycle.jsx` — cycle, with its own logic `cycle.js` and styles `inquiryCycle.css`, added on 2026-11-19 for the
 second key of `qisma-iqlidiya-baqi` —, and `InquirySummit.jsx` — summit — and `InquiryDeal.jsx` — deal —, each with its
 own logic (`summit.js`, `deal.js`) and styles (`inquirySummit.css`, `inquiryDeal.css`), added on 2026-11-19 for 4AM
-unit 1, batch 2 (`docs/reports/BATCH_2_DESIGN.md` §2), and `InquiryLists.jsx` — lists — with `lists.js` and
+unit 1, batch 2, and `InquiryLists.jsx` — lists — with `lists.js` and
 `inquiryLists.css`, added the same day for lesson 5 `tayin-pgcd`, and `InquirySort.jsx` — sort — with `sort.js` and
 `inquirySort.css`, added the same day for lessons 7 and 8, and `InquiryMeasure.jsx` — measure — and `InquiryPart.jsx`
 — part — with `measure.js`, `part.js`, `inquiryMeasure.css`, `inquiryPart.css`, added the same day for lesson 8
@@ -1876,8 +1869,7 @@ per row. The exam sheet of « تدرّب » (`kit/Trainer.jsx › Marked`) print
 underlined; a prompt that contains `$…$` is rendered through `MathText` instead, so a formula in a prompt is allowed.
 `rf-says`, the labels of `RuleForge` and a tablet's `notes` stay plain text: no `$` in them.
 
-**Lesson 4 (`qasim-mushtarak-akbar`, 2026-11-19) — two keys found on the islands, two on experiments** (design:
-`docs/reports/BATCH_2_DESIGN.md` §3 and §7): `qawasim-mushtaraka` on the CONVOY « twins » (the planks of island A — 7, 11,
+**Lesson 4 (`qasim-mushtarak-akbar`, 2026-11-19) — two keys found on the islands, two on experiments** (an Algerian lesson, not in this repository): `qawasim-mushtaraka` on the CONVOY « twins » (the planks of island A — 7, 11,
 13, 9 — build 198 then 234, island B has none; the instruction names both gaps before he picks, the card on B recalls the
 first bridge, the card on C what each plank he fired did) and `al-akbar` on the convoy « crown » with a PURSE of 42 coins
 (the planks 2, 7, 14 of island C all fill 266 and 322; only 14 pays for both bridges, 19 + 23). Their forges have NO
@@ -1914,13 +1906,12 @@ screenshot, that nothing leaves the frame, no button is covered, nothing scrolls
 
 ## 3. Files
 
-Since 2026-11-17 the code is in THREE places (Phase 0 of the lesson v2 rollout, kit extraction — in progress, see the
-state line under the tables):
+The code is in THREE places:
 
 1. **the kit** `apps/web/src/lessons/common/gameworld/kit/` — lesson-independent; it names no lesson and imports none
    (`kit.test.js` drives it with a toy lesson and reads its files for the boundary);
-2. **the lesson's content** `<lesson folder>/world/` — the pilot's is
-   `lessons/moyen/4am/ansab_al_aadad_wal_hisab/aadad-tabiiya-natiqa/qasim-adad-tabii/world/`;
+2. **the lesson's content** `<lesson folder>/world/` — at
+   `lessons/college/<grade>/<theme>/<unit>/<lesson>/world/` (none today);
 3. **the world** `gameworld/divisorIsles/` — the three.js scene and its mechanic, and, until the next sub-steps move
    them, the React screens.
 
@@ -2041,8 +2032,6 @@ eleven screens. What is NOT extracted, and why:
   `Game.js` names no island by its number and no key any more. STILL the pilot's inside the world: its story DATA
   (`logic.js › ISLANDS, SEGMENTS, DASH_WAVES, STATUES`) and its story WORDS (`strings.js`: the robot's sentences, the
   stone's question, the store, the tablets) — a second lesson gives its own and overrides them;
-- ~~the title screen still links to the classic mission player (`classicHref`)~~ — gone 2026-11-18 with the old version
-  of the three v2 lessons (decision D3).
 A lesson declares its content in ONE `lesson.pack.js` (`LESSON_V2.md` §1, 2026-11-17); what its world is played with is
 `world/index.js`, named there (`world.content`). The world receives it as the `lesson` prop.
 
@@ -2070,7 +2059,8 @@ The lesson keeps how an answer is judged (`check`, `mark`), its model copy and i
 kit for it). What is mathematics — when a gate is right, how an answer is marked, what a claim
 proves — stays with the lesson. New generated content takes `rand` and is tested with `rng(seed)`.
 
-Everything is drawn in code (no model, no image, no sound file); Arabic in the scene is canvas text. No person is drawn.
+Everything is drawn in code (no model, no image, no sound file); the text in the scene is canvas text (Arabic today). No
+person is drawn.
 
 ## 4. State, progress and « الكفاءات »
 
@@ -2081,8 +2071,9 @@ Everything is drawn in code (no model, no image, no sound file); Arabic in the s
 - **The journey follows the student from one device to the next** (2026-11-17, `kit/saveSync.js`; `LESSON_V2.md` §1ter): a
   copy of the save is kept on the server in his private answers store; the newest whole save wins. The world opens on
   a loading screen (`LessonGameWorld.jsx`) that brings the server's copy when it is newer, then mounts.
-- It marks lesson modules complete through `useProgress.markModuleCompleted`: module 1 after tablet 1 (that is, after the rule forge), module 2 after tablet 4,
-  module 3 after the dash, module 4 after the last bridge. Modules 0, 5, 6 and 7 are not played in the world.
+- It marks lesson modules complete through `useProgress.markModuleCompleted` when the story reaches what a module taught
+  (`onModule`; which module after which tablet is the lesson's `story.js`), and every module when the story ends
+  (`kit/storyEnd.js`, `LESSON_V2.md` §1ter).
 
 ### Which game answers count toward « الكفاءات » (owner decision, 2026-11-15)
 
@@ -2090,38 +2081,34 @@ Until that day the game wrote no learning evidence; it now does, on strict terms
 
 - **What counts**: an answer that looks like an exam answer — WRITTEN format, FIRST try, in paper mode, with no help opened before
   it (no rule reminder, no model sheet). That is: the exam-format questions of « تدرّب » (`division`, `show`, `complete`, `two`) and
-  the division steps of the real cases (`STEP_KEY`). The first try is sent right OR wrong.
+  the division steps of the real cases (`STEP_KEY`) — those kinds are the pilot's; each lesson names its own. The first
+  try is sent right OR wrong.
 - **What never counts**: the gate dash, the story, a game-format question, a second try, an invoice or a sum, and « صحيح أم خطأ؟ علّل »
   (its verdict cannot be re-computed from numbers).
 - **The server is the judge**: the browser sends a CLAIM — the numbers of the question and what the student wrote — to
   `POST /lessons/{code}/game-evidence` (`GameEvidenceController`); `ClaimVerifier` re-computes the verdict and ignores any flag
   from the browser. The JS `verifyClaim()` (`kit/claims.js`) and the PHP verifier share ONE fixture (`apps/api/tests/Fixtures/game-claims.json`);
   a claim kind belongs to no lesson, and adding one is the same three edits on both sides (`LESSON_V2.md` §1bis).
-- **The learning point**: each question carries its key; the four keys map onto the lesson's P1–P4 (`learningPointOf`).
+- **The learning point**: each question carries its key; the keys map onto the lesson's learning points (`learningPointOf`).
 - **The weight**: a practice evidence judged by the server, difficulty 2 (trainer) or 3 (case). The same division asked twice is
-  the same item (`ClaimVerifier::itemId`). A game alone never declares a point mastered: `mastery.require_assessment` still asks
-  for « إختبار أولي » (tested: twelve right cases leave the point below « mastered »).
+  the same item (`ClaimVerifier::itemId`). A game alone never declares a point mastered: `config/mastery.php › require_assessment` asks for
+  a success in assessment conditions OR on an item of difficulty ≥ 4 (`assessment_equivalent_difficulty`,
+  `Domain/Progress/Engine/EngineV2.php`); game evidence is difficulty 2 or 3.
 - **Offline**: what could not be sent is kept per student and retried when the game opens or the connection returns (idempotent
   by `attemptId`); a refused payload is dropped.
 
 ## 5. Check
 
-`node apps/web/e2e/gameworld-divisor-isles.mjs [outDir]` (dev server up) plays the whole game as a simulated student — every bridge,
-the storm, the guardians, the dash, the workshop, the last bridge, the ending — then checks that a reload offers the save, that
-a module address and `?view=classic` both land on the world (the old version is deleted) and that a TEACHER never gets
-the world. It fails on a missed stage or a page error.
-`node apps/web/e2e/gameworld-field.mjs [outDir]` plays every mission of the depot (wrong crate packed and explained, the classic
-truck mistake, a lost day) and reads the knowledge page card by card (13 cards, a mistake uncovered, a rule sealed, the locks of a
-student without keys, full page without scrolling) and trains on five cards without leaving the page (the order of the formats,
-a hint then the correction, the exam sheet without scrolling).
-`node apps/web/e2e/gameworld-practice.mjs [outDir]` plays the practice game: the map locked then open, a run with a deliberate
-mistake (guidance, rule, the question that comes back), a won and a lost level, the exam node, the save, « من البداية », and a
-device without a game save. Unit tests: `npx vitest run src/lessons/common/gameworld` in `apps/web` (every generated wave has
-exactly one right gate; every wrong gate has its guidance).
+Unit tests: `npx vitest run src/lessons/common/gameworld` in `apps/web` (the kit on a toy lesson, `kit.test.js`; every
+world's pure logic and its render tests; every generated wave has exactly one right gate; every wrong gate has its
+guidance). Walks: none — the Algerian game walks (`gameworld-divisor-isles.mjs`, `gameworld-field.mjs`,
+`gameworld-practice.mjs`, `gameworld-sync.mjs`, the sitting and hub walks) were deleted with their lessons; the walk
+library stays (`e2e/lib/walk.mjs`, `e2e/lib/lessonWalk/`, `sittingWalk.mjs`, `launchKitTwoTools.mjs`). A lesson's walk
+plays its whole world as a simulated student at 1366×768, checks that a reload offers the save, that a module address
+lands on the world, and that a TEACHER never gets the world.
 
 **Choosing the sheet of a sitting (DEV only, 2026-11-19).** A sitting draws its sheet at random; a walk that must see a given
-sheet sets, before opening the sitting, `localStorage.setItem('di.dev.sheet', '<bank exercise id>')` (e.g.
-`ex-4am-khawass-qawasim-l5-001`) — `bankSitting.js › makeSubject` then puts that sheet first when it belongs to the level
+sheet sets, before opening the sitting, `localStorage.setItem('di.dev.sheet', '<bank exercise id>')` — `bankSitting.js › makeSubject` then puts that sheet first when it belongs to the level
 being opened (otherwise the key is ignored). To loop over a whole level, read its ids from `window.__world.lesson.sittings
 .sheetIds(n)` (or the bank folder on disk) and set the key before each sitting. It works only under `import.meta.env.DEV`;
 a production build never reads it. Remove the key after the walk (`localStorage.removeItem('di.dev.sheet')`). The sitting
@@ -2134,23 +2121,12 @@ between the camera and the robot ducks down, and a sign too close to the lens hi
 
 ## 6. Known limits
 
-- Verified in headless Chromium (software rendering) at 1366×768, and the first stage at 1024×768. **Not yet played by a real
-  student, nor on a real tablet or a real GPU**: speed, the touch stick and the sound were not judged by a human ear or hand.
-- Strings live in `strings.js`, not in the i18n namespace; the lab kit (`LabCoach`, rounds, memo card) is not used.
+- Verified in Algeria in headless Chromium (software rendering, then GPU). **Not yet played by a real student, nor on a
+  real tablet**: speed, the touch stick and the sound were not judged by a human ear or hand.
+- Strings live in each world's `strings.js` and in `kit/text.js`, not in the i18n namespaces (plan §4, step 1C).
 - Two devices played at the same time do not merge: the newest whole save wins (the device's clock).
-- **Other screen sizes (2026-11-17, Chromium emulation — not a real tablet, not a real phone).** The pilot's eight walks
-  pass at 1366×768, 1024×768 and 1840×900 (92 + 30 + 102 + 45 + 56 + 47 + 59 + 102 checks each), and the six student
-  walks pass on a phone held sideways (touch, 800×370: 92 + 30 + 102 + 45 + 55 + 33). What was repaired to get there:
-  - the knowledge page at 1024×768 and 1840×900: the world is no longer drawn behind an opaque page
-    (`WorldRuntime › pausesWorld`), a card of the map keeps its width, the legend sits in the free corner, the whole map
-    is scaled while the side panel is on « تدرّب »;
-  - the header of the teacher's tools at 1024×768 (tab icons hidden between 768 and 1100 px);
-  - on a phone: see « On a phone » below.
-  The phone walks check the PHONE rules, not the laptop ones: text floors are lower (root font 13 px), and the boxes
-  named there may slide inside themselves. **Still not judged by a human on a real device**: touch comfort, the stick,
-  the sound, a notch, a browser bar that hides and shows.
 
-## On a phone (TRIAL, owner 2026-11-16 — pilot lesson only; **PAUSED 2026-11-18**: both packs say `phone: false`, nothing new is built or walked for phones until the owner resumes it)
+## On a phone (PAUSED — every pack says `phone: false`; nothing is built or walked for phones until the owner resumes it)
 
 **What opens.** Lessons are closed on phones (`RequireLargeScreen`). For a lesson listed in
 `components/auth/phoneLessons.js › PHONE_LESSONS` a phone opens exactly (owner: « allow only the pages that are designed
@@ -2213,12 +2189,6 @@ upright: the lesson's name, then the tools on one line that slides.
 - **« مختبري »**: 12 px is the floor of a label, the quests are one line that slides, the instrument's drawing
   (`.ll-draw`) slides inside itself; the lab of a lesson that does not open on a phone is closed with it.
 
-**Walks.** Every game walk takes `E2E_TOUCH=1 E2E_SIZE=800x370`; `launch-kit.mjs` and `lesson-lab.mjs` also take
-`E2E_SOFT=1` (a failed check is printed and the walk goes on, to look at every screen). A walk knows it is on a phone
-(`PHONE` = touch and at most 500 px high) and then checks the phone rules: the floors above, the boxes that may slide
-inside, and — where the laptop walk goes to a page a phone closes (`?view=classic`, another lesson) — the closed
-message instead. State on 2026-11-17, Chromium emulation: the six student walks pass (story 92 checks, practice 30,
-cases and knowledge page 102, exam sitting 45, launch kit 55, « مختبري » 33). The story used to stop at island H: two
-of the game's delays ran on the real clock while the walk fast-forwards the game's clock — they are on the game's clock
-now (`this.wait`). Not walked on a phone: « إختبار أولي » and the classic player (closed there), the teacher's class
-session (closed there).
+**Walks.** A walk takes `E2E_TOUCH=1 E2E_SIZE=800x370` for a phone held sideways; it knows it is on a phone (`PHONE` =
+touch and at most 500 px high) and then checks the phone rules: the floors above, the boxes that may slide inside, and the
+closed message where a phone closes the page. `E2E_SOFT=1` prints a failed check and goes on. No phone walk runs here.

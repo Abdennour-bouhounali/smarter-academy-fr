@@ -1,86 +1,52 @@
-# Smarter Academy
+# Smarter Academy (France)
 
-**Arabic-first, RTL mathematics platform for the Algerian curriculum**
-(التعليم المتوسط, starting with 4AM). The interface, the lessons and the
-mathematics vocabulary are Arabic; the documentation and code comments are
-English and French.
+Mathematics for the French collège (6e, 5e, 4e, 3e), in French, left to right, with Stripe for payment.
 
-The live content is the 4AM textbook unit 1 (« الأعداد الطبيعيّة والأعداد
-النّاطقة ») — eight lessons plus a synthesis — under
-`apps/web/src/lessons/moyen/4am/` — the only lesson content in the repository.
-The French-era lessons (`lessons/college/`, `lessons/lycee/`) and the French
-reference catalogue were deleted on 2026-09-25.
+**This branch (`rebuild/dz-core`) is a rebuild in progress.** On 2026-11-22 the tree of the Algerian platform
+(`smarter-academy-dz`) was imported (commit `049380e`) and is being turned into the French product. Read
+[`docs/FRANCE_REBUILD_PLAN.md`](./docs/FRANCE_REBUILD_PLAN.md) first: it is the programme, the decisions and the
+progress log. State today:
 
-## Repository structure
+- the tree is the lesson ENGINE and the SHELL (student, teacher, parent, school and admin spaces) around an EMPTY
+  French catalogue: four grades, five thèmes each, **no lesson**;
+- the interface still speaks Arabic and reads right to left; names, e-mails, money and the time zone are still
+  Algerian — steps 1C–1G of the plan change that;
+- no real user exists; the old French site is untouched on `main` (`0ddfb98`).
 
-An npm-workspaces monorepo, organized so a future React Native app is additive, not a rewrite:
+## Structure
 
 ```
 apps/
-  web/      React 18 + Vite 5 + Tailwind 3 SPA — the client (JavaScript, no TypeScript)
-  api/      Laravel + Sanctum + MySQL — auth, curriculum, progress, practice, notebook
+  web/      React 18 + Vite + Tailwind — JavaScript and JSX, no TypeScript
+            src/lessons/common/   the lesson engine (gameworld/ kit and worlds, launchkit/, lessonlab/, classroom/)
+            src/lessons/college/<grade>/<theme>/<unit>/<lesson>/   where a lesson will live (none yet)
+            src/features/, src/pages/   the spaces of the shell
+  api/      Laravel + Sanctum + MySQL — auth, curriculum, progress and mastery, practice, billing (Stripe), spaces
 packages/
-  core/     Platform-agnostic logic: answer validation, math/number formatting,
-            lesson-access rules, progress-% calculation, the auth role predicate,
-            arithmetic, the practice answer evaluator, and the curriculum
-            catalogue. Zero React/DOM/bundler coupling — a future mobile client
-            imports this package unchanged.
-content/
-  practice/ versioned exercise JSON for the practice engine (read by Vite, by
-            Laravel and by the validator) — not under apps/web/src
-docs/
-  README.md        the documentation map — which document is authoritative
-  lessons/         LESSON_DEVELOPMENT_GUIDE.md — start here to build a lesson
-  architecture/    the living contracts
-  sources/         the textbook extraction every lesson cites
-  reports/         point-in-time snapshots from past work phases
+  core/     pure logic: the curriculum (curriculum/fr/), number formats, the practice evaluator, progress rules
+content/    exercise banks, class tests, thinking-lab challenges, compass index — empty today
+scripts/    validators, generators and checks (`npm run check:lessons` chains them)
+docs/       the plan, the contracts, the official French texts — map: docs/README.md
 ```
 
-`apps/web/src/lessons/` holds the lesson UI. An Algerian lesson lives at
-`lessons/moyen/<grade>/<chapter>/<unit>/<lesson>/` with `lesson.config.js`,
-`index.jsx`, `routes.jsx`, `moduleContext.js`, `knowledge.jsx`, `content/` and
-`modules/Module<NN><Descriptor>.jsx`; the unit's shared factories live in
-`_unit/`. Anything web-coupled (renders JSX, reads `localStorage`) stays in
-`apps/web`; pure input→output logic lives in `packages/core`.
-
-## Setup
+## Install and test
 
 ```bash
-npm install                          # installs the whole workspace (web + core)
-cp apps/api/.env.example apps/api/.env   # then configure DB credentials
-cd apps/api && composer install && php artisan key:generate && php artisan migrate
+npm ci                                   # the whole workspace (web, core, scripts)
+npm test                                 # packages/core, then apps/web, then scripts
+cd apps/api && composer install && php8.4 artisan test   # the API, on in-memory SQLite (phpunit.xml)
 ```
 
-## Development
+Eight API tests need MySQL and do not pass on SQLite (listed in the root `CLAUDE.md`). Development server:
+`npm run dev` (web, http://localhost:5173) or `npm run dev:all` (web + API; the API needs `apps/api/.env` from
+`.env.example` and its own database). The other checks (`lint`, `check:unused`, `check:unreached`, `check:format`,
+`check:lessons`) are listed in the root `CLAUDE.md`.
 
-```bash
-npm run dev        # frontend only, http://localhost:5173
-npm run dev:all     # frontend + Laravel API together
-```
-
-## Other scripts
-
-```bash
-npm run build       # production build to apps/web/dist/
-npm run preview      # preview a production build locally
-npm test             # runs packages/core's tests, then apps/web's
-```
-
-Backend tests: `cd apps/api && php artisan test`. Backend formatting: `cd apps/api && vendor/bin/pint`.
+**Deployment is locked**: `deploy.yml` and `publish-content.yml` are skipped unless the repository variable
+`FR_REBUILD_CUTOVER_APPROVED` is `yes` (plan, status table and §6).
 
 ## Documentation
 
-**[`docs/README.md`](./docs/README.md) is the map** — it says which document is
-authoritative for what, and which are historical. The entry points:
-
-- [`docs/lessons/LESSON_DEVELOPMENT_GUIDE.md`](./docs/lessons/LESSON_DEVELOPMENT_GUIDE.md) — **read this before creating or changing a lesson**
-- [`docs/architecture/LESSON_CONTRACT.md`](./docs/architecture/LESSON_CONTRACT.md) — the lesson and module contract
-- [`docs/architecture/ARABIC_RTL_CONTRACT.md`](./docs/architecture/ARABIC_RTL_CONTRACT.md) — Arabic, RTL, typography, terminology
-- [`docs/architecture/MANIPULATION_CONTRACT.md`](./docs/architecture/MANIPULATION_CONTRACT.md) — manipulations as tactile laboratories
-- [`docs/architecture/CLASSROOM_MODE.md`](./docs/architecture/CLASSROOM_MODE.md) — وضع القسم, the presentation layer
-- [`docs/architecture/INTERACTION_PEDAGOGY.md`](./docs/architecture/INTERACTION_PEDAGOGY.md) — how a concept becomes manipulable
-- [`CONTRIBUTING.md`](./CONTRIBUTING.md) — naming and code conventions
-- [`packages/core/README.md`](./packages/core/README.md) — what belongs in the shared logic package
-
-The root [`CLAUDE.md`](./CLAUDE.md) carries the rules that bind every task in
-this repository, including the documentation synchronization rule.
+[`docs/README.md`](./docs/README.md) says which document is authoritative for what, and which ones still describe
+code not yet converted to French. The rules that bind every task are in the root [`CLAUDE.md`](./CLAUDE.md).
+Conventions: [`CONTRIBUTING.md`](./CONTRIBUTING.md); the shared package: [`packages/core/README.md`](./packages/core/README.md).

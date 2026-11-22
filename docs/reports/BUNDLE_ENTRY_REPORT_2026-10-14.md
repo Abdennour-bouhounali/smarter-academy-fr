@@ -1,5 +1,10 @@
 # Entry bundle fix — 2026-10-14 (before phase 3 of the cycle moyen rollout)
 
+> **Status (2026-11-22).** A dated measurement of the Algerian app (74 lessons), imported with it (DZ `dev` `7f4cef1c`)
+> on 2026-11-22 and kept as the history of the lazy lesson boundary. What it built still holds (the route boundary, the
+> generated lesson index, the core barrel by path, the entry budget — `BUNDLE_BOUNDARIES.md`). Not true here: the lab
+> strings `lesson.manipulation.json`, the `_unit/` route factories and every lesson it names are deleted.
+
 > Session goal: get the LESSON CONTENT out of the entry bundle without changing what any page shows or does.
 > No lesson was generated. Contract: [`../architecture/BUNDLE_BOUNDARIES.md`](../architecture/BUNDLE_BOUNDARIES.md)
 > (§2 ladder, §3 boundaries, §4 rules 9–10, §5 « Entry fix »).
@@ -109,57 +114,5 @@ the مذكرة builds; 390 px without overflow, RTL, no console error.
    - `moyen-draft-grades.mjs`: « practice: no answer field found » (adaptive question choice for the QA student);
    - lesson-kit `test-presentation.mjs` D1: diagnostic questions hidden in presentation.
 
-## 5. Documentation sync
-
-| File | What |
-|---|---|
-| `docs/architecture/BUNDLE_BOUNDARIES.md` | §2 ladder; §3 rows « Lesson index », « Lesson route boundary », « lesson.manipulation strings », « Core barrel »; §4 rules 3–4 rewritten, new rules 9 (barrel) and 10 (budget); §5 « Entry fix » table; §6 budget modes |
-| `docs/lessons/LESSON_DEVELOPMENT_GUIDE.md` | « Loading »; §3 « How a lesson is mounted »; « Adding a GRADE » (loader globs); unit recipe step 5; unit-9 stub note obsolete; §11 « Publish a lesson » wiring (index, not `App.jsx`); §14.1 diagram; §14.3 gates (index, budget, new e2e); theme-words file |
-| `docs/architecture/LESSON_CONTRACT.md` | id agreement (folder = id enforced, boundary); `path` rule; the route factory is loaded with each lesson and registers its config |
-| `docs/architecture/MANIPULATION_CONTRACT.md` | every « strings in `lesson.json › manipulation.*` » → `lesson.manipulation.json` (same keys) |
-| `docs/architecture/ARCHITECTURE.md`, `LESSON_DESIGN_PLAYBOOK.md` | `App.jsx` no longer lists lessons; mounting = the index |
-| `docs/README.md`, `CLAUDE.md` | map row and the standing rule (budget, index, lab-strings file, path imports) |
-| `docs/reports/MOYEN_ROLLOUT_PHASE2_REPORT_2026-10-14.md` | §6 marked done; points to the prompt below |
-
-## 6. Phase 3 prompt (updated for the new lesson wiring)
-
-```text
-Phase 3 of the cycle moyen rollout — generate the next N=3 lessons of the learning-net queue.
-Read first: CLAUDE.md, docs/README.md, docs/architecture/LEARNING_NET.md (§3bis platform/DB, §4 generation contract,
-§4bis order), docs/reports/MOYEN_ROLLOUT_PHASE2_REPORT_2026-10-14.md (owner decisions D1–D12; D12: publish = push
-to dev), docs/lessons/LESSON_DEVELOPMENT_GUIDE.md end to end (§3 « How a lesson is mounted » and « Adding a GRADE »,
-§11 « Publish a lesson », §14), docs/architecture/BUNDLE_BOUNDARIES.md §4 (rules 3, 4, 9, 10),
-docs/architecture/MANIPULATION_DNA.md, docs/architecture/EXERCISE_CONTRACT.md (« Term-exam provenance »,
-« Earlier-year review link »), docs/sources/moyen/exams/EXAM_PATTERN.md §6.
-
-Run `node scripts/learning-net-queue.mjs` so the queue is fresh, then take its first N entries that are still
-`coming_soon` in packages/core/curriculum/dz/lessons_<g>_2026_2027.json. For each, in order:
-1. If it is the first lesson of its unit: seed the unit (lessons/moyen/<g>/<chapter>/<unit>/, _unit/ with the three
-   one-line bindings) and build docs/sources/<g>/unit<N>/extraction.json (+ build-extraction.py) from the pages in the
-   unit's `textbook` block (docs/official-book-pdfs/; render only the pages you need with pdftoppm; the 2AM scan is the
-   only copy — get the idea and move on, D5/D9). Pages missing from the scan (D11) are GENERATED in the book's format
-   as declared platform additions.
-2. Generate the lesson INTO its existing catalogue entry (same code, same programmeItems) per guide §14 and
-   LEARNING_NET §4, in a folder named exactly like the lesson code: « أستعدّ » measures every review-link item; nothing
-   noRebuildForLesson lists is rebuilt; pointPrerequisites only along net links; the lab follows MANIPULATION_DNA with
-   two levels; knowledge map, « أتوقّع القاعدة », « مسائل », values woven into story contexts. Lab strings go to
-   apps/web/src/i18n/locales/ar/lesson.manipulation.json (keys lesson:manipulation.<type>.*), never lesson.json;
-   unit maths in packages/core/arithmetic/ are imported BY PATH, never added to the core barrel. Do NOT touch App.jsx:
-   run `npm run generate:lesson-index` once the lesson's lesson.config.js and routes.jsx exist. The draft الكفاءات may
-   be refined (keep their order — LP ids are positional), never silently dropped: list every change for me.
-3. Build its practice bank (5 levels × 10) from docs/sources/moyen/exams/exams-index.json and exercises generated
-   « على منوال » the term exams: source.type "term_exam" (one precise corpus exercise) or platform_addition /
-   term_exam_modelled, badge « على منوال اختبار الفصل … », oracles for every constructed answer; add it to
-   active.json and exam-style.json.
-4. Run the gates (npm test, npm run check:lessons — it includes the lesson-index check and the 330 KB entry budget —,
-   npm run build), check it in the browser (RTL, 320 px; node apps/web/e2e/lesson-route-boundary.mjs; extend
-   apps/web/e2e/moyen-draft-grades.mjs if useful), then PUBLISH it with guide §11 « Publish a lesson » (status
-   available, durationMinutes ≤ 90, lesson index regenerated, export/import, commit, fast-forward dev, push origin dev)
-   and give me its URL before starting the next lesson. If the entry budget fails, find the leak with
-   `node scripts/analyze-entry-bundle.mjs --chain <module>` — never raise the budget to make a lesson pass.
-5. If it completes its unit, generate and publish the unit's synthesis « أدمج تعلّماتي » (unit-1 9-module format,
-   with ALL its Module<NN> files — registry.test.js fails on a declared module without a route).
-PHP tests on MySQL (phpunit.local.xml), one run at a time. Follow the documentation synchronization rule.
-End with a short progress report appended to docs/reports/MOYEN_ROLLOUT_PROGRESS.md and the same prompt for the
-next batch.
-```
+(§5 « Documentation sync » and §6, a generation prompt for Algerian lessons, were cut on 2026-11-22: they named
+documents and lessons deleted since; `git show 049380e:docs/reports/BUNDLE_ENTRY_REPORT_2026-10-14.md`.)

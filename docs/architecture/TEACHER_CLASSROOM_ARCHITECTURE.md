@@ -1,5 +1,11 @@
 # Teachers, classes (الأقسام) and configurable plans
 
+> **Status (2026-11-22).** Covers the teacher role, classes, per-class visibility, progress views, plans, seats and
+> activation codes. Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the whole
+> mechanism (API and web), on an EMPTY catalogue. Not true here: the interface is still Arabic and right to left
+> (steps 1C–1E); the commercial model of §5 is Algeria's (no online payment, prices in DZD) — France's (Stripe, euros)
+> is plan §4 step 1F and §7 n° 5, not yet applied in the code. The module-lesson gates of §8b are deleted.
+
 > The authoritative document for: the `teacher` role, teacher-created classes
 > and their membership, per-class lesson visibility, class and student
 > progress views, the DZ commercial model (no online payment, **teacher plans
@@ -69,7 +75,7 @@ school_admin created by the platform admin       /idara           can:school   (
   role is whitelisted at each hop; a tampered value falls back to `student`.
 - **« الاسم و اللقب » for every account (2026-09-29).** The register form
   and the Google consent step both collect first name + family name
-  in Arabic letters only (`PersonName` rule, validated live — see `ARCHITECTURE.md` §9); a teacher or student
+  in Arabic letters only today (`PersonName` rule — Latin names are step 1E, not yet applied in the code); a teacher or student
   account without one is sent to a name step before its space
   (`/enseignant/bienvenue`, `/espace/bienvenue/nom`), and both edit it from
   their profile (`PATCH /auth/profile`). This is what makes the identity
@@ -101,12 +107,12 @@ student and admin.
 
 | Table | Key columns | Rules |
 |---|---|---|
-| `classrooms` | `teacher_id`, `name`, `grade` (same code as `users.grade`, e.g. `4am`), `academic_year`, `status` `active\|archived\|suspended`, `join_code` (unique), **`join_link_token`** (unique, 32 base62, born with the class), `join_code_enabled` (**« الانضمام مفتوح » — closes the link AND the code**; historical name), `archived_at` | grade must be allowed by `content.allowed_grades` and exist in `grades`; **classes are not a commercial unit** — a teacher creates as many as they want unless the technical limit `classrooms.max` is configured (null = unlimited) |
+| `classrooms` | `teacher_id`, `name`, `grade` (same code as `users.grade`, e.g. `3e`), `academic_year`, `status` `active\|archived\|suspended`, `join_code` (unique), **`join_link_token`** (unique, 32 base62, born with the class), `join_code_enabled` (**« الانضمام مفتوح » — closes the link AND the code**; historical name), `archived_at` | grade must be allowed by `content.allowed_grades` and exist in `grades`; **classes are not a commercial unit** — a teacher creates as many as they want unless the technical limit `classrooms.max` is configured (null = unlimited) |
 | `classroom_memberships` | `classroom_id`, `student_id`, `status` `active\|left\|removed`, `joined_via` `join_link\|join_code\|school_enrolment` (`invitation` on historical rows only), `school_consent_at`/`school_consent_by` (`SCHOOL_ADMIN_SPACE.md` §4), `invitation_id` (historical), `removed_by`, **`consented_at`, `consent_version`** | **unique `(classroom_id, student_id)`**: rejoining reactivates the row; only `role = student`; class must be `active`; **one class per student** (owner, 2026-10-24): no join while the student has an active membership in another *active* class (`already_in_class`); **joining requires the explicit consent** (see « Consent and what the teacher may read ») |
 | `classroom_invitations` | **historical, read-only** (e-mail invitations, removed 2026-10-01) | kept because old memberships point to it (`invitation_id`); the migration `2026_10_01_000002` revoked the rows still pending; no model, route or service remains |
 | `users.pending_class_join_token` / `pending_class_join_at` | a join the student consented to on the link page **before having an account** | written at registration (`PendingClassJoin::remember`), consumed when the e-mail is verified (`complete`); hidden from every serialization |
 | `classroom_lessons` | `classroom_id`, `lesson_id`, `status` `visible\|hidden`, `created_by`, `updated_by` | **absence of a row = visible**; unique `(classroom_id, lesson_id)` |
-| `teacher_lab_settings` | `user_id`, `lesson_id`, `checkpoints_off` (json) | 2026-10-28: the labs whose in-lab questions a teacher switched off for HIS OWN account; never read for a student (the questions are mandatory for every student, MANIPULATION_CONTRACT §8quinquies); unique `(user_id, lesson_id)` |
+| `teacher_lab_settings` | `user_id`, `lesson_id`, `checkpoints_off` (json) | 2026-10-28, for the in-lab questions of the legacy lab system — that system is deleted; the table, its model and `TeacherLabSettingsController` remain in the API and no web code calls them (2026-11-22) |
 
 ### Services (`app/Domain/Classroom/`)
 
@@ -207,8 +213,8 @@ email is never shared.** Leaving the class ends the teacher's per-student
 reading.
 
 Since 2026-10-06, the teacher also reads the PHOTOS of handwritten work that
-students attach to exam steps (every lesson whose practice is in BEM format —
-`content/practice/exam-style.json`), and may correct
+students attach to exam steps (every lesson whose practice is in exam format —
+`content/practice/exam-style.json`; no lesson today), and may correct
 and annotate them in « تصحيح الإجابات ». These are photos of minors:
 - private disk, metadata stripped, kept 12 months;
 - served only to the student and to a teacher of their ACTIVE class;
@@ -424,8 +430,8 @@ never a replay of evidence, never a copy:
   `statusReason`, `confidence`, counters, `freshness` and **`recentDirection`**
   (the movement over the window, `LearningTrend::direction`), sorted gap →
   reinforce → unassessed → mastered, then by confidence; plus
-  - `trajectory`: for each of the last 8 weeks (Algerian weeks, ending
-    Saturday, `Insights\InsightWindow::weekEnds`), how many members were in
+  - `trajectory`: for each of the last 8 weeks (weeks ending Saturday — the Algerian week, not yet changed in the code,
+    `Insights\InsightWindow::weekEnds`), how many members were in
     each status — read from the history (§ 4c); a member whose state
     predates the recorded history is counted `unknown`, never guessed;
   - `items`: the assessment items of this LP the members answered, the most
@@ -587,6 +593,9 @@ evidence on read.
 
 ## 5. The DZ commercial model — no online payment, for anyone
 
+> **Algerian by nature, and what the code does today.** France sells with Stripe (`Domain/Billing`, in the tree and
+> unused): plan §4 step 1F, §7 n° 5. Until then this section describes the code.
+
 ```text
 FREE                register → verify e-mail → the type's DEFAULT plan is effective at once
                     (plans.is_default, no subscription row, no approval)
@@ -666,9 +675,7 @@ tiersFor(version)         → ordered by sort_order, then min_students
 ```
 
 Initial grid (seed values, **not rules** — the admin edits them from the
-panel): 1–5 → 0 DA, 6–20 → 1 000 DA, 21–30 → 800 DA, 31–50 → 700 DA,
-51–100 → 600 DA, 101+ → 500 DA per student. 20 students → 20 × 1 000 =
-20 000 DA; 25 students → 25 × 800 = 20 000 DA. Inactive tiers are kept but
+panel, in DZD; the French price is plan §7 n° 5). Inactive tiers are kept but
 ignored for coverage and continuity. The frontend mirrors the calculation for
 the instant preview (`features/teacher/subscription/seatPricing.js`,
 `features/admin/plans/pricingTiers.js`) and is **never trusted**: the request
@@ -849,19 +856,16 @@ A student who is in no class is « independent » and sees exactly what they saw
 before this phase. `StudyContextTest` and `contentAvailability.test.js` lock
 both branches.
 
-## 8. The teacher space (Arabic, RTL)
+## 8. The teacher space
+
+> Arabic and right to left today; the French rules are `FRENCH_LANGUAGE_CONTRACT.md` — not yet applied in the code.
 
 Routes under `/enseignant` (`ProtectedRoute allowedRoles={['teacher']}`,
 `TeacherLayout` + `TeacherNavbar`, pattern of the student shell, no grade
 gate; `data/teacherNavigation.js`). Since 2026-09-29 it is the SAME workspace
 shell as the student's: `<main class="sa-workspace-main">` with the sidebar /
-gutter variables, a sidebar that folds to icons with the shared
-`SidebarToggle`, and the knowledge map's fixed-width column that makes room
-for the lesson instead of covering it (`KNOWLEDGE_MAP.md` « The column »).
-One side effect, intended: teacher pages get the student pages' 16 px top
-padding on desktop (`.sa-workspace-main .sa-page`):
-
-> **Superseded on 2026-11-16:** the sidebar no longer folds. Both workspaces have a fixed 80 px rail (`components/common/WorkspaceNav.jsx`, `RAIL_WIDTH`) and `SidebarToggle` is deleted; the knowledge map's column sits beside the rail. See `docs/reports/NAVIGATION_REBUILD_PLAN.md` §0.
+gutter variables and a fixed 80 px rail (`components/common/WorkspaceNav.jsx`, `RAIL_WIDTH` —
+`docs/reports/NAVIGATION_REBUILD_PLAN.md` §0):
 
 ```text
 /enseignant                      TeacherHome          usage tiles (UsageMeter, N / M in dir="ltr"), classes, next steps
@@ -915,7 +919,7 @@ linking to « عرضي » when full; the members tab of a class shows the same
 hint.
 
 Frontend code uses `classGroup` as the identifier; i18n namespace `teacher`
-(with the six Arabic plural forms for counts); services under
+(with the six Arabic plural forms for counts — French forms at step 1D); services under
 `services/teacher/` (token-first, `apiMessage` reasons). The admin UI kit
 (`DataTable`, `states`, `FilterBar.Pagination`, `Modal.ConfirmDialog`) takes
 label props so no French default reaches a teacher screen;
@@ -1015,39 +1019,9 @@ usesWorkspaceShell   StudentLayout  MainLayout     TeacherLayout  MainLayout
   (the same Math Lab pages) and `/enseignant/cahier[/revision|/:noteId]` (the
   same notebook pages), mounted under `ProtectedRoute allowedRoles={['teacher']}`.
   `data/teacherNavigation.js` lists الدروس · المختبر · كرّاسي before أقسامي.
-- **Modules.** `lessons/common/utils/moduleGate.js` is the single gate used
-  by `ModuleLayout` (the page) and `LessonIndex` (the summary):
-  `freeNavigation` opens every module in any order, exactly like presenting
-  does; a module *unpublished* by the admin stays closed for everyone.
-  `packages/core/lessonAccess.js` is untouched — the student rule is not
-  bypassed case by case, the reader is different.
-- **Parts (étapes).** The same rule one level down, in
-  `lessons/common/utils/stepUnlock.js` — the *only* other gate:
-  `isStepLocked(alreadyCompleted, sequentialLocked, { freeNavigation, presenting })`
-  returns `false` for a free-navigation reader, so every `StepCard` of a
-  module is open, in any order, and the khulasa (the module's closing
-  synthesis) is readable without "finishing". `canAdvance(allDone, viewer)`
-  does the same for the « المحور التالي » gesture: for a student it stays
-  conditioned on `allDone` (the grey button and its "what's left" popover are
-  their compass), for a teacher it is always open — moving on is
-  **structural**, not earned. Both are applied once, in
-  `lessons/common/kit/ContentModule.jsx`; no lesson passes `locked` itself
-  (asserted by `pages/teacherContract.test.js`), so the whole active corpus
-  follows from that single call. `BossFinal` reads the same reader to open
-  its مراجعة / النتائج phases: preparing a test means reading its correction
-  without sitting it.
-- **Knowledge map (2026-09-29).** A `freeNavigation` reader sees the lesson's
-  **complete** knowledge map from the start — every module of
-  `LESSON_KNOWLEDGE` counts as unlocked in `LessonKnowledgeProvider`, nothing
-  is written. A محور's closing « للتذكّر » snapshot still shows only modules
-  `≤ n` (what a student holds there); the final synthesis shows everything.
-  Contract: `KNOWLEDGE_MAP.md` « The progression ».
-
-  The pedagogical truth is kept separate from the navigation right:
-  `allDone` still means "this module is complete" (it drives the progress
-  bar and the completion `ModuleLayout` writes), while `mayAdvance` only
-  answers "may this reader move on". Conflating them would have let a
-  teacher's visit look like a finished module.
+- **Modules, parts, knowledge map.** The gates of the module lesson (`moduleGate.js`, `stepUnlock.js`,
+  `ContentModule`, `BossFinal`, the old knowledge map) were deleted with that system on 2026-11-22. A v2 lesson has no
+  sequential lock for any reader (`LESSON_V2.md`).
 - **No progress, ever.** `useProgress` (visit, completion, XP),
   `useLessonProgressSync` (login hydration and queue flush),
   `useEvidenceSubmission` (learning evidence) and `useFinalTestAttempt`
@@ -1081,28 +1055,27 @@ usesWorkspaceShell   StudentLayout  MainLayout     TeacherLayout  MainLayout
   (`useLearningViewer().isTeacher`; a student's unit page is unchanged):
   the lesson's **محاور** as compact numbered chips, in `lesson.config.js`
   order (`LessonModuleChips`), and two distinct actions
-  (`TeacherLessonActions`): **« مذكرة الدرس »** and **« وضع القسم »** — the
-  latter opens the lesson directly in a lesson session
-  (`CLASSROOM_MODE.md` §6ter).
+  (`TeacherLessonActions`): **« مذكرة الدرس »** and the class session [NOT CHECKED 2026-11-22: which entries
+  `TeacherLessonActions` still shows now that Classroom Mode of module lessons is deleted].
 - **« مذكرة الدرس » — `/enseignant/cours/:lessonId/memoire`.** A teacher-only
   orchestration document for one lesson, a single continuous page meant to
   stay open during the class (`pages/teacher/LessonMemoPage.jsx`,
   `features/teacher/lessonMemo/`). **It is built, never written:**
-  `buildLessonMemo` (pure, tested on every real lesson) turns the catalogue
+  **Its sources are the module lesson's files (`lesson.config.js` modules, `knowledge.jsx`, `content/*.js` globbed
+  under `lessons/college/`); no lesson has them today, so the memo has nothing to build** — what it becomes for a v2
+  lesson (its pack's `board` memo, `CLASS_SESSION.md`) is open. As imported:
+  `buildLessonMemo` (pure) turns the catalogue
   entry, `lesson.config.js`, `knowledge.jsx` and `content/*.js` into
   sections — header (level, domain, unit, duration, planned minutes, محاور),
   objectives (skills / knowledge bricks / scope include–exclude / unit
   objectives), prerequisites (catalogue notions + prerequisite lessons),
-  starting activity (the textbook `ACTIVITY` / `ACTIVITY_A` / `SITUATION`,
-  its questions and closing; the trigger محور's manipulations first, with a
-  « اعرض » that opens it in وضع القسم), a **timeline** with one phase per
+  starting activity (`ACTIVITY` / `ACTIVITY_A` / `SITUATION`, its questions and closing), a **timeline** with one phase per
   محور (stage, minutes and cumulative clock, teacher / students / support /
   intention, expected outcome = the learning points and bricks it teaches,
-  textbook questions + stage prompts, vigilance = the `commonError` of the
+  stage prompts, vigilance = the `commonError` of the
   exercises on those points, transition to the next محور), examples, anticipated
   errors (with the brick as the nudge and the exercise's `explain` as the
-  fix), differentiation (exercise `difficulty` and manipulation `level`
-  only), the trace to build, the end-of-session check (oral questions from
+  fix), differentiation (exercise `difficulty` only), the trace to build, the end-of-session check (oral questions from
   brick summaries, the evaluation محور, success indicators = learning points,
   an exit ticket = the first `facile` exercise) and « ما بعد الحصة » (next
   lesson in the unit, lessons that depend on it, remediation lessons). What a
@@ -1110,10 +1083,10 @@ usesWorkspaceShell   StudentLayout  MainLayout     TeacherLayout  MainLayout
   paragraph **per stage** in the on-demand `memo` i18n namespace, never per
   lesson. A section with no source data is not rendered. Sticky bar:
   « رجوع » (to `location.state.from`, else history, else `/enseignant/cours`),
-  « كرّاسي », print, open the lesson, « وضع القسم »; `@media print` gives a
+  « كرّاسي », print, open the lesson; `@media print` gives a
   preparation sheet without the app chrome.
   **Access:** the route is under `ProtectedRoute allowedRoles={['teacher']}`
-  (a student or a visitor is redirected, asserted by `e2e/teacher-memo.mjs`);
+  (a student or a visitor is redirected; its walk `e2e/teacher-memo.mjs` was deleted on 2026-11-22);
   the page also refuses an unknown, unbuilt or admin-closed lesson. The memo's
   content is lesson content the teacher can already read; the only
   server-side data is the teacher's notes, below.
@@ -1124,12 +1097,9 @@ usesWorkspaceShell   StudentLayout  MainLayout     TeacherLayout  MainLayout
   duplicate), « ✓ حُفظ », local draft as a safety net, edit and delete; a rich
   note written in the lesson's notebook window is shown and edited in
   « كرّاسي ». No migration, no new endpoint.
-- **Fullscreen.** Classroom Mode (وضع القسم) is the platform's fullscreen
-  presentation; the teacher is a presenter role, so the « عرض » entries are
-  there in the teacher shell. Students never present: `student` is not in
-  `CLASSROOM_PRESENTER_ROLES` since 2026-10-01 (see `CLASSROOM_MODE.md` §3).
-- **Knowledge map, notebook, Math Lab.** « بطاقتي » and « كرّاسي » are the
-  same floating column inside the lesson; the notebook pages and the Math Lab
+- **Fullscreen.** The presentation layer (`lessons/common/classroom/`, used by practice, the Math Lab and the class
+  board) admits presenter roles only: `student` is not in `CLASSROOM_PRESENTER_ROLES` (see `CLASSROOM_MODE.md` §3).
+- **Notebook, Math Lab.** The notebook pages and the Math Lab
   pages are reused under `/enseignant` with links built from
   `useWorkspaceBase()` (`notebookPaths(base)`, `mathLabBasePath(base)`,
   `mathLabToolPath(tool, id, root)`). Notes and lab documents belong to the
@@ -1145,8 +1115,8 @@ usesWorkspaceShell   StudentLayout  MainLayout     TeacherLayout  MainLayout
   (`PracticeLearnerGuardTest`). Before, only the web route guard kept teachers
   out.
 - **The teacher's practice (2026-10-05) — not a separate space.** The teacher
-  enters it THROUGH THE LESSON, exactly like the student: the lesson summary's
-  `PracticeEntryCard` (teacher variant) links to `/enseignant/pratique/:lessonCode`,
+  enters it THROUGH THE LESSON, exactly like the student [NOT CHECKED 2026-11-22: the entry card after the module
+  summary's deletion]; it links to `/enseignant/pratique/:lessonCode`,
   which renders the **student's own `PracticeHub`** in teacher mode: the
   overview is built locally (`teacherBank.teacherOverview`: every level open,
   no progress, the lesson's learning points with unlit stars and no counters;
@@ -1187,14 +1157,9 @@ the podium of teams — from `/enseignant/hissa/:lessonId` (full screen, outside
 (`class_seatings`, `class_tests`, `class_sessions`, `class_session_answers`), **never** `learning_evidence`. The whole
 contract is `docs/architecture/CLASS_SESSION.md`; this document only points to it.
 
-The same day the class session got its own during-the-lesson screens — the rules revised after the start test and « الدرس
-على السبّورة » (the class experiments, writes its rule, the board attacks it, then the name), with a pen, a curtain and a
-timer (`CLASS_SESSION.md` §5bis–§5ter; pilot lesson only, not validated). **Classroom Mode described in this document is
-unchanged for every lesson that has no board script**: it still presents the modules of a lesson page. **A lesson listed
-in `features/classSession/boardLessons.js` (today `qasim-adad-tabii` only) no longer has Classroom Mode at all** — its
-shell is mounted with `retired`, every entry button disappears (lesson page, modules, nested labs and tests), and the
-catalogue card and the مذكرة open « حصّة القسم » (`CLASS_SESSION.md` §2). The teacher's practice for such a lesson is the
-new bank and the class's board, not the shared hub and the old player (`TeacherBankGate`, `CLASS_SESSION.md` §5quater).
+Since 2026-11-22 Classroom Mode of module lessons is deleted; a lesson whose pack declares `board` opens « حصّة القسم »
+from the catalogue card and the memo (`features/classSession/boardLessons.js`, read from the generated lesson index —
+empty today). The teacher's practice for a v2 lesson is its bank (`TeacherBankGate`, `CLASS_SESSION.md` §5quater).
 
 ## 9. The admin control surface (French)
 
@@ -1319,9 +1284,8 @@ carry the same choice.
 - `PlanSeeder` (wired in `DatabaseSeeder`): `teacher-free` (« الأستاذ —
   مجاني », default: 5 seats, unlimited classes), `teacher-seats` (« الأستاذ —
   حسب عدد التلاميذ », the seat-priced plan with the initial six-tier grid,
-  covers students), `student-premium` (« التلميذ — وصول كامل »). **Plan names
-  and descriptions are Arabic**: the teacher and the student read them as they
-  are (`PlanSeederLanguageTest`, `ARABIC_RTL_CONTRACT.md` §2); only the slug
+  covers students), `student-premium` (« التلميذ — وصول كامل »). Plan names and descriptions are seeded in the
+  product's language — Arabic today (`PlanSeederLanguageTest`; French at step 1D–1F, not yet applied); only the slug
   is latin. Idempotent by
   slug, never overwrites a plan the admin has edited — so a database seeded
   before the seat model keeps its old `teacher-free` values until the admin
@@ -1359,8 +1323,7 @@ plus the extended `AdminAuthorizationTest`, `PurgeStudentAccountsTest`,
 users).
 
 Frontend (vitest): `features/learning/learningViewer.test.js` (the reader
-table above), `lessons/common/utils/moduleGate.test.js` (student locked,
-teacher open, unpublished closed for all), `features/practice/notebook/space/noteMeta.test.js`
+table above), `features/practice/notebook/space/noteMeta.test.js`
 (`notebookPaths`, exercise note → lesson outside the student space),
 `features/mathlab/mathLabDocument.test.js` (paths per workspace),
 `features/teacher/**/*.test.js` (**insights helpers**, entitlement summary,

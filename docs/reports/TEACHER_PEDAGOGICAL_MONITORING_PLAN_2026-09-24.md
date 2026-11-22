@@ -2,6 +2,12 @@
 
 **DETECT → UNDERSTAND → INTERVENE → MEASURE**
 
+> **Status (2026-11-22).** HISTORICAL: the audit and plan of the teacher's monitoring loop, written on the Algerian
+> platform on 2026-09-24 and imported (DZ dev 7f4cef1c) on 2026-11-22. The loop it planned is implemented and kept in
+> this tree; its contract is `docs/architecture/TEACHER_CLASSROOM_ARCHITECTURE.md` §2, §4–§4c. Its lesson paths
+> (`lessons/moyen/4am/`), its counts and its Algiers time (D-14, `TimeWindow`) are the Algerian platform's — do not read
+> them as this repository's.
+
 - **Date:** 2026-09-24
 - **Branch audited:** `dev`, including the uncommitted working tree
 - **Implementation (2026-09-25):** implemented. The contract now lives in
@@ -1191,7 +1197,7 @@ These must be agreed before implementation begins.
 | `requires` / `priorKnowledge` (static knowledge deps) | `docs/architecture/KNOWLEDGE_DEPENDENCY.md` | not the DB point prerequisites |
 | Admin analytics and panel | `docs/architecture/ADMIN_PANEL_ARCHITECTURE.md` | |
 | Demo personas and dataset | `docs/architecture/DEMO_DATASET.md` | useful for calibration |
-| Product scope and access model | `docs/ALGERIA_PLATFORM_MASTER_SPEC.md` | |
+| Product scope and access model | `docs/ALGERIA_PLATFORM_MASTER_SPEC.md` (deleted 2026-11-22; `git show 049380e:docs/ALGERIA_PLATFORM_MASTER_SPEC.md`) | |
 | Historical only | `docs/reports/LEARNING_POINT_MASTERY_AUDIT_2026-09-24.md`, `…_V2_EXECUTION_PLAN_…` | the plan's header lists deviations |
 
 **Terminology to keep:** القسم / `classroom` (backend) / `classGroup` (frontend); نقاط التعلّم / Learning Point; الوحدة (unit); المحور (module); كرّاسي (notebook); وضع القسم (Classroom Mode, a presentation layer and **not** this feature); status names `mastered / reinforce / gap / unassessed`; reasons `insufficient_evidence / needs_assessment`; freshness `fresh / aging / stale`; "evidence" (`learning_evidence`); "effective lessons".

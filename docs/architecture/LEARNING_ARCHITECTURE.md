@@ -1,51 +1,36 @@
 # Learning Architecture
 
-> **Corrections (2026-09-20).** The mechanisms below are accurate; four details
-> have moved on:
->
-> - **The hierarchy has a unit level.** It is
->   `GRADE → CHAPTER (ميدان) → UNIT (الوحدة) → LESSON (الدرس) → LEARNING POINT`.
->   The unit is a real table (`units`, `lessons.unit_id`) and a real navigation
->   surface. See `LESSON_CONTRACT.md` § « L'unité 4AM ».
-> - **The Algerian learning points come from
->   `packages/core/curriculum/dz/lessons_4am_2026_2027.json`**, not from
->   `coursesData.js`'s French tree. The derivation rule is unchanged:
->   `{gradeId}_{lessonId}_P{n}` in `pointsToLearn` order, append-only.
-> - **The learning-profile UI exists.** "API exists; no UI yet" is stale — the
->   lesson index, the unit page, the progression tree, the student home and the
->   practice hub all render mastery today.
-> - **Mastery V2 (2026-09-24)** supersedes the single-formula model: a
->   versioned engine, server-side evaluation, an assessment-item registry,
->   repetition-aware evidence and a minimum-evidence rule. See « Evidence
->   sources », « Evidence flow », « The assessment-item registry » and
->   « Mastery model (V2) » below.
+> **Status (2026-11-22).** Covers the curriculum sync, the evidence sources and flow, the assessment-item registry and
+> Mastery V2. Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the whole server side
+> (`Domain/Progress`, `Domain/Curriculum`, the commands), on the French grades `6e`–`3e`. Not true here: the catalogue is
+> EMPTY, so no learning point, no assessment item and no evidence exist yet; the module lessons whose final test
+> (`BossFinal`) and stages this document cites were deleted — a v2 lesson's evidence is its game-world first tries
+> (`LESSON_V2.md` §1bis) and the practice engine.
 
-The curriculum + learning-evidence + mastery system introduced by the
-Grade → Chapter → Lesson → LearningPoint migration (Slice 1). Companion docs:
-`AI_LESSON_CONTRACT.md` (the question-metadata convention),
-`docs/reports/DIAGNOSTIC_INTEGRATION.md` (how the existing diagnostic fits in),
-`docs/reports/LEARNING_POINT_COVERAGE.md` (per-lesson assessment coverage).
+The curriculum + learning-evidence + mastery system. Companion docs: `AI_LESSON_CONTRACT.md` (the question-metadata
+convention), `docs/reports/DIAGNOSTIC_INTEGRATION.md` (how the diagnostic fits in), `LEARNING_NET.md` (the programme
+items above the learning points).
 
 ## The hierarchy
 
 ```
-GRADE  (4am — the only grade with content; terminale_dz exists as an identity)
-  └── CHAPTER / المجال   (official-program domain, e.g. ansab_al_aadad_wal_hisab)
-        └── UNIT / الوحدة   (a textbook unit, e.g. aadad-tabiiya-natiqa)
-              └── LESSON   (e.g. qasim-adad-tabii)
-                    └── LEARNING POINT   (e.g. 4am_qasim-adad-tabii_P1)
+GRADE  (6e, 5e, 4e, 3e; level `college`)
+  └── CHAPTER   (a thème of the programme, e.g. nombres_calculs)
+        └── UNIT    (`units`, `lessons.unit_id`)
+              └── LESSON   (none yet)
+                    └── LEARNING POINT   (<grade>_<lesson>_P<n>, e.g. 3e_<lesson>_P1)
 ```
 
 - **Source of truth**: `packages/core/curriculum/coursesData.js`, which builds
-  the Algerian catalogue (`dzCourseLevels`) from
-  `curriculum/dz/programme_4am_2026_2027.json`, `units_4am_2026_2027.json` and
-  `lessons_4am_2026_2027.json` (the French `smaMetadata` catalogue was deleted
-  on 2026-09-25). MySQL is the **runtime index** of that source, never a
-  second definition of it.
+  the catalogue (`allCourseLevels`, `courseLevels`) from
+  `curriculum/fr/programme_<grade>_2026_2027.json`, `units_<grade>_…` and
+  `lessons_<grade>_…`. MySQL is the **runtime index** of that source, never a
+  second definition of it. The catalogue builder hides a thème with no lesson,
+  so every grade exports `chapters: []` today.
 - **Learning points** are derived from each lesson's authored `pointsToLearn`
-  array inside `buildDzLesson()` (`coursesData.js`): entry *i* becomes
-  `{gradeId}_{lessonId}_P{i+1}`. The IDs are stable, deterministic, and
-  human-readable.
+  array inside `buildLesson()` (`coursesData.js`): entry *i* becomes
+  `{gradeId}_{lessonId}_P{i+1}`. The plan asks for opaque ids with a lock file
+  before the first lesson (plan §2) — not yet implemented.
 - **`pointsToLearn` is append-only once imported.** Reordering or removing an
   entry silently changes which competency an existing `P{n}` code names, while
   evidence rows keep referencing the code. `php artisan
@@ -75,8 +60,9 @@ coursesData.js ──(node exportCurriculum.mjs)──> .generated/curriculum-ex
   from the source are **retired (`retired_at`), never deleted** — evidence may
   reference them.
 - `php artisan smarter:validate-curriculum {--strict}` — read-only comparison,
-  writes `docs/reports/CURRICULUM_SYNC_REPORT.md`. `--strict` exits non-zero
-  on drift (CI mode).
+  writes `docs/reports/CURRICULUM_SYNC_REPORT.md` (the DZ copy of that file was
+  deleted on 2026-11-22; a run writes a new one). `--strict` exits non-zero on
+  drift (CI mode).
 
 ### Where lesson existence is authoritative
 
@@ -85,9 +71,9 @@ of that source, never a second definition of it. A lesson's identity is its
 `code`, and the same string is the lesson id everywhere:
 
 ```
-packages/core/curriculum/dz/lessons_4am_2026_2027.json   code
+packages/core/curriculum/fr/lessons_<grade>_2026_2027.json   code
   → coursesData.js                                        lesson.id
-  → <lesson>/lesson.config.js                             LESSON_CONFIG.id
+  → lessons/college/<grade>/<theme>/<unit>/<lesson>/       the lesson's folder (lesson.config.js, lesson.pack.js)
   → apps/web/src/lessons/registry.js                      registry key
   → MySQL lessons.code                                    the DB row
   → localStorage `smarter_lesson_{id}`, API `{lessonCode}` in every route
@@ -131,10 +117,10 @@ Three kinds of question, and only two sources of evidence:
 
 | Question | Where | Produces evidence? | `assessment_type` |
 |---|---|---|---|
-| Module questions (`discovery`, `practice`, trigger, manipulation) | inside a lesson's modules | **never** — mistakes there are information, not evidence | — |
-| Final test (« إختبار أولي », `BossFinal`, `evaluation` stage) | the lesson's evaluation module | yes | `assessment` |
-| Practice engine exercises | `content/practice/**`, the practice hub | yes, at practice weight | `practice_exercise` |
-| Game world of a lesson (trial, `qasim-adad-tabii`, 2026-11-15) | generated arithmetic, no stored key | yes, on strict terms: written format, first try, no help — the server RE-COMPUTES the verdict from the numbers (`POST /lessons/{code}/game-evidence`, `GameEvidenceController`, `Domain/GameWorld/ClaimVerifier`), difficulty 2–3; never enough alone for « mastered » (`GAME_WORLD.md` §4) | `practice_exercise` |
+| Module questions (`discovery`, `practice`, trigger, manipulation) — module lessons, deleted here | inside a lesson's modules | **never** — mistakes there are information, not evidence | — |
+| Final test (`BossFinal`, `evaluation` stage) — module lessons, deleted here; the server door (`POST /lessons/{code}/evidence`) remains | the lesson's evaluation module | yes | `assessment` |
+| Practice engine exercises | `content/practice/**` (empty today), the practice hub | yes, at practice weight | `practice_exercise` |
+| Game world of a v2 lesson | generated arithmetic, no stored key | yes, on strict terms: written format, first try, no help — the server RE-COMPUTES the verdict from the numbers (`POST /lessons/{code}/game-evidence`, `GameEvidenceController`, `Domain/GameWorld/ClaimVerifier`), difficulty 2–3; never enough alone for « mastered » (`GAME_WORLD.md` §4) | `practice_exercise` |
 
 **Daily challenge answers** (« التحدّي اليومي », 2026-09-25) are practice
 engine questions served by the server: they enter through the same door as
@@ -149,10 +135,10 @@ never touch this state. Contract: `DAILY_CHALLENGE.md` §5.
 canonical state — there is no second mastery table
 (`PracticeEvidenceConvergenceTest::test_there_is_no_second_mastery_table`).
 
-Textbook exercises inside lessons (`content/exercises.js`) stay
-**instructional** (decision D9): their `learningPointId` is documentation. A
-textbook exercise that should count goes into the practice bank as a JSON
-exercise — it then satisfies the evidence contract by construction.
+Exercises written inside a lesson stay **instructional** (decision D9): their
+`learningPointId` is documentation. An exercise that should count goes into the
+practice bank as a JSON exercise — it then satisfies the evidence contract by
+construction.
 
 ## Evidence flow
 
@@ -475,57 +461,17 @@ collapsed.
 
 ## The learning journey (stages) and the 90-minute cap
 
-Every lesson follows the universal cycle, authored as `stage` fields on its
-modules (`packages/core/curriculum/lessonStages.js`, contract in
-`LESSON_CONTRACT.md`):
-
-```text
-prerequisite_check → trigger → discovery → manipulation
-        → formalization (À retenir) → practice_lab → evaluation
-```
-
-- `prerequisite_check` and `manipulation` are optional — the pedagogy is
-  universal, its expression adapts to the mathematics.
-- **Results is not a stage**: the "what did I learn" screen is the
-  `evaluation` module's completion view, rendered from the learning-profile
-  endpoint.
-- Only `evaluation`-stage modules contain evidence-generating questions;
-  everything earlier is learning, where mistakes are information, not
-  evidence.
-- **The final evaluation is an alternative path, not just the last module.**
-  It is unlocked from the start (`lessonAccess.js` exempts `evaluation`-stage
-  modules from sequential unlock): a student may choose "Je pense déjà
-  maîtriser" and demonstrate mastery directly — the evidence counts the same
-  whenever it is given. (`student_lesson_progress.completion_mode` exists but
-  the client only ever records `path`; the mastery claim is the Learning
-  Point state, not this column.) After the test, the results screen shows the
-  Learning Point states and « ما التالي؟ » from
-  `GET /students/me/lessons/{code}/recommendations`
-  (`Domain\Progress\Recommendation\RecommendationService`): a weak point
-  maps to the module(s) that teach it (`lesson_modules.teaches_learning_point_codes`),
-  a weak prerequisite comes first, `needs_assessment` points back to the test,
-  `insufficient_evidence` to practice — never "restart the lesson".
-- **Mastery gates are SOFT (D8).** `requiresLearningPointIds` on a module
-  expresses a real pedagogical dependency; when a required point is a
-  demonstrated `gap`, the module card RECOMMENDS the teaching module
-  (`recommendModulesForLearningPoints`) and stays open. Nothing is ever
-  locked by mastery — the non-blocking invariant wins. No live 4AM lesson
-  declares a gate today.
-- **A built lesson's module sequence is capped at 90 minutes**
-  (`MAX_LESSON_MINUTES`, mirrored as `lessons.duration_minutes` in MySQL and
-  checked by `smarter:validate-curriculum`) — both the module `estimatedMin`
-  sum and the catalogue's `durationMinutes` must stay at or below it. A topic
-  whose full scope needs more than one sitting is split into multiple
-  `lesson.config.js` files ("Partie 1 / Partie 2") rather than exceeding the
-  cap.
+The stage vocabulary (`prerequisite_check → trigger → discovery → manipulation → formalization → practice_lab →
+evaluation`) and the 90-minute cap (`MAX_LESSON_MINUTES`) still live in `packages/core/curriculum/lessonStages.js`,
+read by the lesson validator; the module lessons that were authored on them are deleted, and a v2 lesson has no
+stages (`LESSON_V2.md`). What still holds on the server: `GET /students/me/lessons/{code}/recommendations`
+(`Domain\Progress\Recommendation\RecommendationService`) maps a weak point to what teaches it, a weak prerequisite
+first, never "restart the lesson"; and **nothing is ever locked by mastery** — the non-blocking invariant wins (D8).
 
 ## Validation gates
 
-- `npm run validate:lessons` — parses lesson JSX (`@babel/parser`) and checks
-  question ids, assessment metadata shape, and learning-point references.
-  Coverage (every LP ≥ 1 assessment question) is enforced for **migrated**
-  lessons now, and for **all available lessons** under `--strict` — flip
-  `--strict` on in CI once all 9 six-ième lessons are migrated.
+- `npm run validate:lessons` (in `check:lessons`, `--strict`) — the lesson validator; with no lesson it has nothing to
+  check.
 - `php artisan smarter:validate-curriculum --strict` — curriculum drift gate.
 - Backend suites: `CurriculumImportTest`, `LearningEvidenceFlowTest`,
   `StudentLearningProfileTest`, plus the untouched `DiagnosticFlowTest`
@@ -540,5 +486,3 @@ prerequisite_check → trigger → discovery → manipulation
 3. Time on task (D10).
 4. Adaptive recommendations across lessons (the per-lesson
    `RecommendationService` exists; a cross-lesson planner does not).
-5. Cleanup: `apps/web/public/smarter-ui/lesson.js` is dead pre-React code with
-   an incompatible localStorage key (`smarter_completed_lessons`).

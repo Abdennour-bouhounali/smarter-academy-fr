@@ -6,6 +6,12 @@
 > encaissements, messages). Établi le 2026-10-17 par l'intégration du site
 > autonome du premier livre (« بروتوكول SMART لحل المسائل الرياضية »).
 > Le code est la source de vérité ; ce fichier le décrit.
+>
+> **Status (2026-11-22).** Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the whole
+> store described below is in the code and is ON — `/books` in the front end and the books groups of `routes/api.php`,
+> with no switch. Not true here: it is an Algerian store by nature (an Arabic book, wilayas and communes, prices in
+> dinars, cash on delivery, `smarter-academy.com`). France gets no books store (plan §7, 3): step 1F turns it OFF in
+> the front end AND on the server — not yet applied in the code. Do not extend or translate this module.
 
 ## 1. Décision d'architecture
 

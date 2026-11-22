@@ -1,18 +1,14 @@
 # Exercise Engine — implémentation de référence
 
-> Livrée le 2026-09-10. **Activée pour une seule leçon : 2nde « Fonction affine ».**
+> **Status (2026-11-22).** Historical record of the first build of the practice engine (2026-09-10, first French
+> product, on the lycée lesson 2nde « Fonction affine »), carried through the Algerian platform and imported back on
+> 2026-11-22 (DZ dev 7f4cef1c). The reference lesson, its bank, its misconceptions `MISC-AFF-*` and its labs
+> (`TankLab`, `RateProbes`) no longer exist, and no bank exists today. The engine it describes still runs; its
+> contract is `EXERCISE_CONTRACT.md`, which wins. The closed lab registry (`features/practice/PracticeLab.jsx`,
+> `SUPPORT_LABS` in `scripts/validate-exercises.mjs`) is empty.
 >
-> **2026-09-25 :** cette leçon de référence, son contenu de pratique
-> (`content/practice/seconde/`), ses misconceptions `MISC-AFF-*` et ses deux
-> laboratoires (`TankLab`, `RateProbes`) ont été **supprimés** avec toutes les
-> leçons françaises. Le moteur décrit ici est inchangé et sert les 9 leçons de
-> l'unité 4AM. Le registre fermé des laboratoires
-> (`features/practice/PracticeLab.jsx`, `SUPPORT_LABS` dans
-> `scripts/validate-exercises.mjs`) est désormais **vide** : un labo s'y ajoute
-> aux deux endroits, jamais dans le contenu.
->
-> Cible : [`EXERCISE_ENGINE_ARCHITECTURE.md`](./EXERCISE_ENGINE_ARCHITECTURE.md).
-> Audit préalable : [`EXERCISE_ENGINE_INTEGRATION_AUDIT.md`](./EXERCISE_ENGINE_INTEGRATION_AUDIT.md).
+> Cible : [`EXERCISE_ENGINE_ARCHITECTURE.md`](./EXERCISE_ENGINE_ARCHITECTURE.md). (L'audit préalable
+> `EXERCISE_ENGINE_INTEGRATION_AUDIT.md` a été supprimé le 2026-11-22 ; `git show 049380e:docs/architecture/EXERCISE_ENGINE_INTEGRATION_AUDIT.md`.)
 
 ---
 

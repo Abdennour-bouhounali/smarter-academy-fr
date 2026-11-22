@@ -1,230 +1,107 @@
-# Documentation map — Smarter Academy DZ
+# Documentation map — Smarter Academy (France), rebuild on the DZ core
 
-> **The code is the source of truth. This documentation describes what is
-> implemented today.** Where something is planned but not built, it says
-> `Planned` or `Not yet implemented`. If you find a document that contradicts
-> the code, the code wins — and fixing the document is part of the task that
-> found it (root `CLAUDE.md`, Documentation Synchronization Rule).
+> **The code is the source of truth.** A document that contradicts the code is wrong, and correcting it is part of
+> the task that found it (root `CLAUDE.md`, « Documentation »). Planned behaviour is marked `Planned`.
 
-The platform is Arabic-first (ar-DZ, RTL) and follows the Algerian curriculum.
-The live content is fourteen 4AM textbook units, starting under
-`apps/web/src/lessons/moyen/4am/ansab_al_aadad_wal_hisab/` — unit 1 « الأعداد
-الطبيعيّة والأعداد النّاطقة » (`aadad-tabiiya-natiqa/`, 9 lessons) and unit 2
-« الحساب على الجذور » (`hisab-judhur/`, 5 lessons + a synthesis, 2026-09-30; textbook
-extraction `docs/sources/4am/unit2/extraction.json`) and unit 3 « الحساب الحرفي »
-(`hisab-harfi/`, 3 lessons + a synthesis, 2026-10-01; extraction generated and checked by
-`docs/sources/4am/unit3/build-extraction.py`) and unit 4 « معادلات ومتراجحات من الدرجة
-الأولى بمجهول واحد » (`muadalat-mutarajihat/`, 4 lessons + a synthesis, 2026-10-01; extraction
-generated and checked by `docs/sources/4am/unit4/build-extraction.py`) and unit 5 « جمل معادلتين من
-الدرجة الأولى بمجهولين » (`jumal-muadalatayn/`, 3 lessons + a synthesis, 2026-10-01; extraction generated
-and checked by `docs/sources/4am/unit5/build-extraction.py`) and unit 6 « الدالة الخطية والتناسبية »
-(`tanasubiya_duwal/tanasubiya-dala-khattiya/`, 5 lessons + a synthesis, 2026-10-02, under the owner's display ميدان
-« ميدان التناسبية والدوال »; extraction generated and checked by `docs/sources/4am/unit6/build-extraction.py`) and unit 7
-« الدالة التآلفية » (`tanasubiya_duwal/dala-taalufiya/`, 5 lessons + a synthesis, 2026-10-02, same display ميدان; the supplied
-pages 77–79 have no formal pages, so formal knowledge, exercises and the synthesis are declared platform additions; extraction
-generated and checked by `docs/sources/4am/unit7/build-extraction.py`) and unit 8 « الإحصاء » (`tanasubiya_duwal/ihsa/`,
-4 lessons + a synthesis, 2026-10-02, same display ميدان, programme domain « ميدان تنظيم المعطيات »; the full unit pp. 91–101;
-extraction generated and checked by `docs/sources/4am/unit8/build-extraction.py`, exact arithmetic `packages/core/arithmetic/statistics.js`) and unit 9 « خاصية طالس » (`handasa/khassiyat-talis/`, 3 lessons + a
-synthesis, 2026-10-02, the first unit of the programme's « ميدان الهندسة »; extraction generated and checked by
-`docs/sources/4am/unit9/build-extraction.py`, exact Thales `packages/core/arithmetic/thales.js`, figures drawn by the shared
-`GeoFigure`, also in practice statements as `statement.figure`) and unit 10 « حساب المثلثات في المثلث القائم » (`handasa/hisab-muthallathat/`,
-4 lessons + a synthesis, 2026-10-04, the second unit of « ميدان الهندسة »; extraction generated and checked by
-`docs/sources/4am/unit10/build-extraction.py`, exact trigonometry with surds `packages/core/arithmetic/trigonometry.js`, the authors'
-brief and shared-file lock kept next to it) and units 11 « الأشعة والانسحاب » (`handasa/ashia-insihab/`) and 12 « الأشعة في معلم »
-(`handasa/ashia-maalam/`), 4 lessons + a synthesis each, 2026-10-04, the third and fourth units of « ميدان الهندسة »; extractions generated
-and checked by `docs/sources/4am/unit11|unit12/build-extraction.py`, exact vectors `packages/core/arithmetic/vectors.js`, one authors' brief
-and lock for both in `docs/sources/4am/unit11/`) and unit 13 « الدوران - الزوايا - المضلّعات المنتظمة » (`handasa/dawaran-mudalaat/`, 4 lessons +
-a synthesis, 2026-10-04, the fifth unit of « ميدان الهندسة »; extraction generated and checked by `docs/sources/4am/unit13/build-extraction.py`,
-exact rotations, inscribed angles and regular polygons `packages/core/arithmetic/rotation.js`, brief and lock in `docs/sources/4am/unit13/`) and unit 14
-« الهندسة في الفضاء » (`handasa/handasa-fada/`, 4 lessons + a synthesis, 2026-10-05, the sixth unit of « ميدان الهندسة » and the first in space;
-extraction `docs/sources/4am/unit14/build-extraction.py`, exact maths `packages/core/arithmetic/space.js`, figures `SpaceFigure`, live 3D labs on
-`lessons/common/manipulations/space/stage3d/`, brief and lock in `docs/sources/4am/unit14/`) — the **only** lesson
-content in the repository. The
-French-era lessons (`lessons/college/`, `lessons/lycee/`), their practice
-content, specs, e2e scripts, French-only engines and the French reference
-catalogue were **deleted on 2026-09-25**. Architecture documents still use
-some of them as examples (a 6e manipulation, a 2nde lesson…): those passages
-explain a pattern, but the files they cite no longer exist — use git history
-to read them.
+This repository is the French platform (collège 6e–3e, French, left to right, Stripe) being rebuilt from the Algerian
+one. On 2026-11-22 the tree is the lesson ENGINE and the SHELL around an EMPTY French catalogue: **no lesson exists**,
+the interface still speaks Arabic and reads right to left, and no real user exists.
 
 ## Start here
 
-| If you are about to… | Read |
-|---|---|
-| Author or generate a lesson's **Knowledge Map** (the progressive map, its guidance layer, its quality checklist) | [`architecture/KNOWLEDGE_MAP.md`](./architecture/KNOWLEDGE_MAP.md) **Part A** |
-| Create or modify a lesson, module, manipulation or exercise | **[`lessons/LESSON_DEVELOPMENT_GUIDE.md`](./lessons/LESSON_DEVELOPMENT_GUIDE.md)** — the single entry point |
-| **Generate a new lesson** | [`lessons/LESSON_DEVELOPMENT_GUIDE.md`](./lessons/LESSON_DEVELOPMENT_GUIDE.md) **§14 — the reference architecture, frozen for generation on 2026-09-29**: the real structure, the generation contract (input, required output, what to reuse, what is prohibited) and the validation a generated lesson must pass |
-| **Generate a 1AM–3AM lesson**, or touch what a lesson assumes from earlier years | **[`architecture/LEARNING_NET.md`](./architecture/LEARNING_NET.md)** §4 — start from the lesson's `coming_soon` entry in `lessons_<grade>_2026_2027.json` (code, unit, official items, draft الكفاءات), never from a parallel decomposition; then **publish** it: [`lessons/LESSON_DEVELOPMENT_GUIDE.md`](./lessons/LESSON_DEVELOPMENT_GUIDE.md) §11 « Publish a lesson » (publish = push to `dev`) |
-| Add a grade to the catalogue, or understand what a `coming_soon` lesson is in the UI, the database and Mastery V2 | [`lessons/LESSON_DEVELOPMENT_GUIDE.md`](./lessons/LESSON_DEVELOPMENT_GUIDE.md) §3 « Adding a GRADE »; [`architecture/LEARNING_NET.md`](./architecture/LEARNING_NET.md) §3bis |
-| Write practice exercises modelled on the 1AM–3AM term exams, or touch the « راجع » link shown after a wrong answer | [`architecture/EXERCISE_CONTRACT.md`](./architecture/EXERCISE_CONTRACT.md) § « Term-exam provenance (1AM–3AM) » and § « Earlier-year review link »; recipe [`sources/moyen/exams/EXAM_PATTERN.md`](./sources/moyen/exams/EXAM_PATTERN.md) §6 |
-| **Generate the « مسائل »** (3 exam-style problem modules) of a lesson | **[`lessons/MASAIL_GENERATION_GUIDE.md`](./lessons/MASAIL_GENERATION_GUIDE.md)** — owner rules, design method, data schema, wiring checklist, validation, pitfalls |
-| **Write the « أتوقّع القاعدة » prompts** of a lesson (the rule the student writes before reading it) | **[`lessons/PREDICT_PROMPT_GUIDE.md`](./lessons/PREDICT_PROMPT_GUIDE.md)** — criteria, procedure, `npm run audit:predict` |
-| Understand the whole system | [`architecture/ARCHITECTURE.md`](./architecture/ARCHITECTURE.md) |
-| Work on Classroom Mode (وضع القسم) | [`architecture/CLASSROOM_MODE.md`](./architecture/CLASSROOM_MODE.md) |
-| **Retrofit** an existing lesson to « the textbook is the reference, not the script » (one track per module; prompt and per-lesson status) | [`reports/LESSON_METHOD_RETROFIT.md`](./reports/LESSON_METHOD_RETROFIT.md) (+ [`LESSON_METHOD_RETROFIT_PHASE2.md`](./reports/LESSON_METHOD_RETROFIT_PHASE2.md): 4AM units 2–14, open points) — rules: guide §4ter–§4quinquies |
-| Show the **student** less at once — the « focus » view (`studentView: 'focus'`, `MoreToggle`; pilot `qasim-adad-tabii`, 2026-11-03) | guide §4sexies + [`reports/STUDENT_FOCUS_VIEW_2026-11-03.md`](./reports/STUDENT_FOCUS_VIEW_2026-11-03.md) |
-| **Generate, review or finish a v2 lesson** — the pipeline, the brief of each agent, the ledger of every defect met so far with the check that catches it, the screenshot review; what each lesson taught is written back into it (owner, 2026-11-19) | the project skill [`.claude/skills/lesson-v2/`](../.claude/skills/lesson-v2/SKILL.md) (`SKILL.md`, `briefs.md`, `defects.md`, `review.md`) — versioned, the only part of `.claude/` that is; design of 4AM unit 1 lessons 4–8: `reports/BATCH_2_DESIGN.md`; gate reports: `reports/LESSON_3_GATE_REPORT.md`, `reports/LESSON_4_GATE_REPORT.md` |
-| Roll the pilot's **lesson v2** out to every lesson (owner, 2026-11-16: 4AM term by term with each term's prerequisites, then 3AM; rebuild or generate; clean code, no dead code) — PLAN, Phase 0 not started | `reports/LESSON_V2_MASTER_PLAN.md` (audit, decisions D1–D7, Phase 0, definition of done) + the generated order `curriculum/V2_ROLLOUT_ORDER.md` (`node scripts/v2-rollout-order.mjs`) |
-| The **independent review of 2026-11-19** of the division road, lesson 3, the kit, the walks and batch 2: its findings, the ten fix packages (written; walks not re-run at the time), the owner's decisions of the day and what is OPEN for him | [`reports/REVIEW_2026-11-19.md`](./reports/REVIEW_2026-11-19.md) |
-| Build the **last lesson of a unit** (« أدمج تعلّماتي », the BEM's integration situation) — PLAN accepted 2026-11-19, not built: three missions in the unit's world, a recap, the bank as training exams; what the 19 BEM papers ask; one engine and its scenes for every unit | `reports/INTEGRATION_LESSON_PLAN.md` (built after the unit's other lessons: `reports/LESSON_V2_MASTER_PLAN.md` §9) |
-| Work on the world **« قصر الساحات »** (4AM unit 2, square roots: courts, the measuring rod, the yard of tiles, the gate run, the final mission) or on one of its lessons | `architecture/GAME_WORLD.md` §2ter-3 (the contract); `reports/ROOTS_WORLD_PLAN.md` (why this mechanic: three candidates, the council, what the owner changed while playing); how a world must PLAY: `.claude/skills/lesson-v2/play.md` |
-| Rebuild the **navigation** of both spaces and of lessons (owner, 2026-11-16) — PLAN, not built: four doors per account, one year map for every list of lessons, one lesson bar with previous / next | `reports/NAVIGATION_REBUILD_PLAN.md` (decisions N1–N9, build order; look: `reports/mockups/navigation-look.html`) |
-| Turn a lesson into a **mission journey** for the student (`studentView: 'mission'`; pilot `qasim-adad-tabii`, 2026-11-04, stages 1–2 of 3: full-window player, no scrolling) | guide §4septies + [`reports/MISSION_PLAYER_PLAN_2026-11-04.md`](./reports/MISSION_PLAYER_PLAN_2026-11-04.md); rollout of the whole prototype to every lesson (after the owner validates): [`reports/PILOT_PROTOTYPE_ROLLOUT_PLAN_2026-11-08.md`](./reports/PILOT_PROTOTYPE_ROLLOUT_PLAN_2026-11-08.md) |
-| **Lab prototype — mandatory for every new lab and lesson** (in-lab questions, steps + celebration, sound, the memo card « للتذكّر » and its timed challenge); rollout to the 112 existing lessons DONE 2026-10-28 — definition of done, procedure, per-lesson status; guide summary `LESSON_DEVELOPMENT_GUIDE.md` §6ter | [`reports/LAB_PROTOTYPE_ROLLOUT.md`](./reports/LAB_PROTOTYPE_ROLLOUT.md) — status: `node apps/web/scripts/lab-rollout-status.mjs` · contracts: `MANIPULATION_CONTRACT.md` §8quinquies, `KNOWLEDGE_MAP.md` « The memo card » |
-| **Onboard** a manipulation (the `LabCoach` ring + bubble, mandatory for every lab; rollout prompt and per-lab status) | [`reports/LAB_COACH_ROLLOUT.md`](./reports/LAB_COACH_ROLLOUT.md) — contract: `MANIPULATION_CONTRACT.md` §8quater |
-| **Design** a manipulation (what the hand controls, resistance, contrast, the design sheet, anti-template rules) | [`architecture/MANIPULATION_DNA.md`](./architecture/MANIPULATION_DNA.md) — read it before the contract |
-| Work on a manipulation | [`architecture/MANIPULATION_CONTRACT.md`](./architecture/MANIPULATION_CONTRACT.md) |
-| Work on exercises or the practice engine | [`architecture/EXERCISE_CONTRACT.md`](./architecture/EXERCISE_CONTRACT.md) |
-| Write Arabic UI or lesson text | [`architecture/ARABIC_RTL_CONTRACT.md`](./architecture/ARABIC_RTL_CONTRACT.md) |
-| Remove code, silence a lint finding, or ask « why does CI say this is unused? » (ESLint, unused exports / i18n keys / sentences, the baseline that only shrinks) | [`architecture/CODE_HEALTH.md`](./architecture/CODE_HEALTH.md) |
-| Add a provider, a route, a heavy dependency, an `import.meta.glob` or an i18n namespace — or ask « why is this in the bundle? » | [`architecture/BUNDLE_BOUNDARIES.md`](./architecture/BUNDLE_BOUNDARIES.md) |
-| Work on the Math Lab (مختبر الرياضيات) or add an instrument to it | [`architecture/MATH_LAB.md`](./architecture/MATH_LAB.md) |
-| « مختبري », the lab OF A LESSON (2026-11-16, not validated): the instruments of the lesson and of every lesson BEFORE it, shared numbers, « جرّب »; add an instrument for a lesson | [`architecture/LESSON_LAB.md`](./architecture/LESSON_LAB.md) |
-| « عُدّة الانطلاق », the launch of a lesson (phase 1, 2026-11-17, pilot lesson only, not validated): a five-minute game that measures the earlier الكفاءات a lesson needs — tools from the net, three gestures, a workshop, the kit; add a question family | [`architecture/LAUNCH_KIT.md`](architecture/LAUNCH_KIT.md) (plan and phases not built: [`reports/LAUNCH_KIT_PLAN_2026-11-17.md`](reports/LAUNCH_KIT_PLAN_2026-11-17.md)) |
-| « حصّة القسم », the TEACHER's class session (steps 1–2, 2026-11-18, pilot lesson, not validated): the teacher's card on a lesson and « جرّب الدرس كتلميذ », the seating map and the teams, the editable class test, the test on the board by name, the podium; the hour as a script — the rules revised (the teacher picks the reader) and the lesson on the board (the class experiments, writes its rule, the board attacks it, then the name), the board tools (pen, pointer, curtain, timer); add a default test, a rule card or a board script for a lesson | [`architecture/CLASS_SESSION.md`](architecture/CLASS_SESSION.md) |
-| The WEIGHT of a link of the learning net (core / support, 2026-11-17), the three prerequisite graphs and the test that keeps them from contradicting each other; review or correct a weight | [`architecture/LEARNING_NET.md`](architecture/LEARNING_NET.md) §2.2bis, §7bis, §8bis — the owner's review table (generated): [`curriculum/LEARNING_NET_WEIGHTS_4AM.md`](curriculum/LEARNING_NET_WEIGHTS_4AM.md) |
-| Work on teachers — how a teacher reads lessons (free navigation, no progress), classes (الأقسام), seat-based plans and pricing tiers, subscriptions, requests or plan-bound activation codes | [`architecture/TEACHER_CLASSROOM_ARCHITECTURE.md`](./architecture/TEACHER_CLASSROOM_ARCHITECTURE.md) |
-| Use or change the logo (mark, wordmark, favicons, PWA icons, e-mail logo, share cards) — never redraw it locally | [`architecture/BRAND.md`](./architecture/BRAND.md) |
-| Sell a printed book (catalogue `/books`, order request without online payment, delivery fee set later, payments as lines, admin tracking, contact messages) | [`architecture/BOOKS_STORE.md`](./architecture/BOOKS_STORE.md) |
-| Build or change an admin screen (Arabic, RTL, shared design system) | [`architecture/ADMIN_PANEL_ARCHITECTURE.md`](./architecture/ADMIN_PANEL_ARCHITECTURE.md) §33.0 |
-| Ambassadors (« سفراء »), who sees which publication state (admin: all; ambassador: published + hidden), a module has no status of its own (it follows its lesson; import publishes by default), problem reports with screenshots | [`architecture/ADMIN_PANEL_ARCHITECTURE.md`](./architecture/ADMIN_PANEL_ARCHITECTURE.md) Annexe A8 |
-| Permanent deletion of a student or teacher account (admin only, e-mail retyped, files removed) | [`architecture/ADMIN_PANEL_ARCHITECTURE.md`](./architecture/ADMIN_PANEL_ARCHITECTURE.md) Annexe A9 |
-| Regenerate or extend the recette/demo dataset (`DemoDataSeeder`) | [`architecture/DEMO_DATASET.md`](./architecture/DEMO_DATASET.md) |
-| Decide which tier may use a Math Lab instrument, the notebook or saved works, set a quota (notebook copies, document generations), or understand a « premium_required » / « quota_exceeded » refusal | [`architecture/ACCESS_AND_LIMITS.md`](./architecture/ACCESS_AND_LIMITS.md) — admin screen « الوصول والحدود » (`/admin/offres/acces`), never a condition in code |
-| Work on the teacher's « مذكرة الدرس » (lesson orchestration page), the teacher's lesson actions on the unit page, or the catalogue lesson search | [`architecture/TEACHER_CLASSROOM_ARCHITECTURE.md`](./architecture/TEACHER_CLASSROOM_ARCHITECTURE.md) §8b — and, for what a lesson must author to feed it, [`lessons/LESSON_DEVELOPMENT_GUIDE.md`](./lessons/LESSON_DEVELOPMENT_GUIDE.md) « Your lesson feeds the teacher's مذكرة الدرس » |
-| Work on the classroom pointer / spotlight in وضع القسم | [`architecture/CLASSROOM_MODE.md`](./architecture/CLASSROOM_MODE.md) §6quater |
-| Work on the Daily Math Challenge (« التحدّي اليومي »): question selection, server timing, scoring, streak, class ranking, teacher tab / display mode, admin scale | [`architecture/DAILY_CHALLENGE.md`](./architecture/DAILY_CHALLENGE.md) |
-| The thinking space « مختبر التفكير » (problem solving & critical thinking; SMART method + observation) — **phase 0 implemented 2026-10-30** (content schema, `expression` answer check in JS + PHP with one shared fixture, per-student numbers, validator / oracle / generated index in `check:lessons`); **phase 1 implemented 2026-11-01** (the ladder `/espace/tafkir`, the gate 3 attempts + 24 h, honest attempts, keys, the replay player, 46 published challenges); **teacher read-only preview 2026-10-31** (`/enseignant/tafkir`); **phases 2–7 planned**. Path 1: a numbered challenge ladder outside the curriculum (« سُلَّم التحدّيات », hidden primary → university bands, try first, solution after 3 attempts + 1 day or by teacher request, thinking replays). Path 2: the curriculum « مسرح العقل ». Covers the expression answer check, whiteboard and photos, gamification and sound, the league for independent students, phases and acceptance | contract (what exists): [`architecture/THINKING_LAB.md`](./architecture/THINKING_LAB.md); build plan (what is planned): [`reports/THINKING_LAB_PLAN_2026-10-30.md`](./reports/THINKING_LAB_PLAN_2026-10-30.md); seed content (46 challenges, all published + backlog): [`curriculum/THINKING_LAB_CHALLENGE_BANK.md`](./curriculum/THINKING_LAB_CHALLENGE_BANK.md) |
-| The root `CLAUDE.md` as it was before it was cut to a map on 2026-11-17 — HISTORICAL: the dated history of every feature | [`reports/CLAUDE_MD_BEFORE_CUT_2026-11-17.md`](./reports/CLAUDE_MD_BEFORE_CUT_2026-11-17.md) |
-| **Lesson v2** — the lesson as data plus one world: the PACK `lesson.pack.js` (the one place where a lesson says what it gives the platform: phone, world, knowledge, exam coach, board), its generated flags, the lesson's folder (2026-11-17, Phase 0 of the rollout; plan `reports/LESSON_V2_MASTER_PLAN.md`) | [`architecture/LESSON_V2.md`](./architecture/LESSON_V2.md) |
-| The lesson played as a 3D game world — **TRIAL on `qasim-adad-tabii`, student only, 2026-11-15** (« أرخبيل القواسم »: islands, bridges that hold only when the remainder is 0, the switch `world` of the lesson's pack — `?view=classic` and the old module pages DELETED 2026-11-18 for the three v2 lessons, `architecture/LESSON_V2.md` §2; the full-page « خريطة المعارف », the practice space and the real-world game « تعاونية الواحة ») | [`architecture/GAME_WORLD.md`](./architecture/GAME_WORLD.md) |
-| Work on « فضاء الألعاب », the game space (`/espace/jeux`, teacher `/enseignant/jeux`; fun games — the orbit runner, « دفاع الكوكب » Planet Defense and the « المستكشف » platformer with 12 levels — and the free, adaptive maths games « قنّاص القيم » value sniper « الدخيل » odd one out and « الحساب الذهني » mental arithmetic (50 levels each); hearts, the refuel station « محطة التزوّد », runs and the server's score bound, ships and turrets, weekly class leaderboard per game, teacher tab / board display, closing a game for the class or for one student) | [`architecture/MADAR_GAME.md`](./architecture/MADAR_GAME.md) |
-| Work on what a parent sees: « رابط الوليّ » (the private link `/w/:token` with no account, its optional 4-digit code, the teacher's QR « بطاقات الأولياء »), REAL study time (`StudyTimeTracker`, `study_time_days`), the week report and « التقدّم بالتفصيل » shared with the student, the device guide `/himaya`, the closed-garden rule of the student space, or the parent account kept for later (`/wali`) | [`architecture/PARENT_SPACE.md`](./architecture/PARENT_SPACE.md) |
-| Make a lesson free or premium, or understand why one is locked | [`architecture/ADMIN_PANEL_ARCHITECTURE.md`](./architecture/ADMIN_PANEL_ARCHITECTURE.md) « Le palier du contenu » — `lessons.tier` is the single source of truth, the admin decides, new lessons are created free, no sync or deploy ever overwrites it |
-| Add or change a page's **first-visit guided tour** (« جولة تعريفية »: student and teacher tours, completion stored per account, replay button) | [`architecture/PAGE_TOURS.md`](./architecture/PAGE_TOURS.md) §5 |
-| Deploy, or know what production contains | [`deployment/DZ_FIRST_DEPLOYMENT.md`](./deployment/DZ_FIRST_DEPLOYMENT.md) « Le curriculum : synchronisé par le pipeline » (production scope: the unit « الأعداد الطبيعيّة والأعداد النّاطقة »; unit 2 « الحساب على الجذور » enters at the next deploy) |
+1. [`FRANCE_REBUILD_PLAN.md`](./FRANCE_REBUILD_PLAN.md) — the programme, the decisions, what each step leaves behind,
+   the owner's open questions (§7) and the progress log (§9).
+2. The root [`CLAUDE.md`](../CLAUDE.md) — the rules that bind every task.
+3. The contract of the area you touch (table below), then the code.
 
-## Authoritative documents (one owner per contract)
+## Status words
 
-Each row names the **one** document that decides its subject. Other documents
-may describe it, but they defer to this one.
+- **current** — written for this repository.
+- **imported, corrected** — imported from the Algerian platform (DZ `dev` at `7f4cef1c`) on 2026-11-22 and corrected
+  the same day against this tree. Its status block (top of the file) says what is true here and what is not.
+- **not yet French** — describes code that still does the Algerian thing (Arabic text, right to left, dinars, Algiers
+  time, Algerian school model); it stays true until the plan's step named in its status block converts that code.
+- **history** — a dated record; it explains why, it is not a contract.
 
-| Subject | Authoritative document |
-|---|---|
-| Curriculum hierarchy (المجال → الوحدة → الدرس → الكفاءات), lesson & module contract, stages, unlock rules, non-blocking progression | [`architecture/LESSON_CONTRACT.md`](./architecture/LESSON_CONTRACT.md) |
-| How a lesson is wired end to end (files, routes, registry, storage) | [`architecture/LESSON_INTEGRATION_GUIDE.md`](./architecture/LESSON_INTEGRATION_GUIDE.md) |
-| How a lesson should teach (interaction & manipulation pedagogy) | [`architecture/INTERACTION_PEDAGOGY.md`](./architecture/INTERACTION_PEDAGOGY.md) |
-| How a lesson is designed and built, end to end, by a human or an agent | [`architecture/LESSON_DESIGN_PLAYBOOK.md`](./architecture/LESSON_DESIGN_PLAYBOOK.md) |
-| Manipulation design philosophy — mathematical causality, interaction distance, causal visibility, invariants, resistance, contrast, formalization, reuse engineering not experience (sits above the pedagogy and the contract) | [`architecture/MANIPULATION_DNA.md`](./architecture/MANIPULATION_DNA.md) |
-| Manipulations (tactile laboratories), including the two gesture engines (carry, stretch) and the student auto-completion capability (manual first, then « let the lab finish it », §6bis) | [`architecture/MANIPULATION_CONTRACT.md`](./architecture/MANIPULATION_CONTRACT.md) |
-| Classroom Mode / presentation layer | [`architecture/CLASSROOM_MODE.md`](./architecture/CLASSROOM_MODE.md) |
-| Arabic, RTL, typography, terminology, bidi rules | [`architecture/ARABIC_RTL_CONTRACT.md`](./architecture/ARABIC_RTL_CONTRACT.md) |
-| Exercise validation boundary, answer shapes, practice engine | [`architecture/EXERCISE_CONTRACT.md`](./architecture/EXERCISE_CONTRACT.md) |
-| What the entry bundle may contain, lazy boundaries (lesson route boundary + generated lesson index, lesson runtime, lab strings, Math Lab overlay, notebook window, on-demand i18n namespaces), prefetch points, the entry BUDGET gate (212 KB gzip since 2026-11-17), measured before/after | [`architecture/BUNDLE_BOUNDARIES.md`](./architecture/BUNDLE_BOUNDARIES.md); the 2026-10-14 entry fix (629 → 322 KB gzip): [`reports/BUNDLE_ENTRY_REPORT_2026-10-14.md`](./reports/BUNDLE_ENTRY_REPORT_2026-10-14.md) |
-| Lint, format and « nothing unused »: what each check enforces, the deliberate exceptions, the baseline | [`architecture/CODE_HEALTH.md`](./architecture/CODE_HEALTH.md) |
-| Question metadata, evidence, assessment rules for generated lessons | [`architecture/AI_LESSON_CONTRACT.md`](./architecture/AI_LESSON_CONTRACT.md) |
-| The « مسائل » modules: design, `content/problems.js` schema, one answer per demand, written answers, rollout | [`lessons/MASAIL_GENERATION_GUIDE.md`](./lessons/MASAIL_GENERATION_GUIDE.md) |
-| « أتوقّع القاعدة » — the student writes a rule before reading it (`KnowledgeBrick` default, `PredictRule`, `predictPrompt`) | [`architecture/KNOWLEDGE_DEPENDENCY.md`](./architecture/KNOWLEDGE_DEPENDENCY.md) § « أتوقّع القاعدة » |
-| Knowledge before demand (`priorKnowledge`, `KnowledgeBrick`, `requires`) | [`architecture/KNOWLEDGE_DEPENDENCY.md`](./architecture/KNOWLEDGE_DEPENDENCY.md) |
-| The Knowledge Map: **the approved progressive interactive learning map** (Mind Map « الخريطة » + linear « المعارف مفصّلة », one model; semantic knowledge types incl. خطأ شائع / انتبه / تحقّق / تذكّر / نصيحة / خلاصة; learning-synchronised reveal; data model `knowledgeGraph.js`; authoring rules, quality checklist, migration and generation — Part A; on all nine lessons since the 2026-09-29 migration, reference `qasim-adad-tabii`), the cumulative engine and `knowledge.jsx`, the column / drawer / full-screen panel | [`architecture/KNOWLEDGE_MAP.md`](./architecture/KNOWLEDGE_MAP.md) |
-| Completion vs mastery, progress storage and sync | [`architecture/PROGRESS_MODEL.md`](./architecture/PROGRESS_MODEL.md) |
-| Curriculum sync, evidence flow, **the mastery model (Mastery V2: versioned engine, server-side evaluation, assessment-item registry, repetition & minimum-evidence rules, replay, outcome taxonomy, decisions D1–D10)** | [`architecture/LEARNING_ARCHITECTURE.md`](./architecture/LEARNING_ARCHITECTURE.md) |
-| The student notebook (كرّاسي) — including the teacher's **read-only** access to the notebook of a student in their قسم (since 2026-09-24) | [`architecture/NOTEBOOK.md`](./architecture/NOTEBOOK.md) |
-| The Math Lab (مختبر الرياضيات): its two-lab information architecture (السبّورة common to all, then مخبر المتوسط and مخبر الثانوي as a `?lab=` parameter over the SAME registry, components and routes — each shared instrument declaring `scopes` and per-lab `capabilities` in its `scope.js`, a document remembering its lab), tool contract & registry, document model & API, whiteboard V1 (with its geometry desk « أدوات الهندسة »: ruler, compass, protractor and set square drawn in SVG that CONSTRAIN the ordinary pen through one constraint layer — straight projection, a ray at an exact angle, polar projection for arcs — on a virtual cm scale, constructions saved as Excalidraw elements that know what they are, replay, export with or without instruments), function grapher V1 (expression subset, sampling, viewport, tangent/derivative mode), 3D geometry explorer V1 (solids, dimensions, volume/area, three.js scene), probability & statistics lab V1 (experiments, simulation engine, law of large numbers, dataset summary, SVG charts, the physical dice/coin table on three.js and its result → orientation contract), algebra & equation lab V1 (exact rationals, linear normal form, equations *and* inequalities with the sign flip, balance, number line, step history with undo/redo), vectors & coordinate geometry lab V1 (الأشعة: the grapher's repère reused, dependency-resolved scene, tip-to-tail and parallelogram, scalar slider, انسحاب of a point and of a shape, exact norms, relative-tolerance relations), trigonometry & unit circle lab V1 (مختبر المثلثات: the right triangle of the 4AM programme first, the unit circle one click away, exact values for the remarkable angles, the honestly undefined tangent, the wave born from the rotation, predict → reveal practice), sequences & recurrences lab V1 (مختبر المتتاليات: the arithmetic sequence and its «الفروق المتتالية» first — sequences are *not* in the 4AM programme — the cobweb diagram, fixed points and convergence one toggle away, the grapher's parser and camera reused rather than rebuilt, numerical observation never dressed as proof), transformations & dynamic geometry lab V1 (مختبر التحويلات: an affine engine where a transformation is a matrix and composition a product, the انسحاب of the 4AM programme first with التحاكي and the composition stack one click away, centres and axes that follow the figure's own vertices, invariants MEASURED on the student's figure rather than recited, order reordering as the experiment itself, animations that interpolate the transformation and not the matrix, predict → transform → verify practice that never blocks, and puzzles judged by superposition), conic sections & analytic geometry lab V1 (مختبر المقاطع المخروطية: the circle of the 4AM programme first with the parabola, ellipse and hyperbola one click away, a canonical model where a conic is five numbers and never its points, a safe recursive-descent equation parser that completes the square exactly and never executes the student's input, intersections solved by discriminant so that 0/1/2 is a mathematical fact, the equation shown live beside the sliders *and* editable in the inspector so both directions of the link are visible, focal properties MEASURED on the student's own point, predict → reveal → verify practice that never blocks), number & arithmetic lab V1 (مختبر الأعداد والحساب: thirteen modes in one laboratory — explorer, place value with animated regrouping, number line, fractions, decimals, percentages, proportionality, divisibility, primes, factors, PGCD/PPCM, rounding, operations — an exact integer engine where a fraction is never reduced behind the student's back, « one value many representations » guaranteed by storing a single fraction and deriving every writing, divisibility that shows its REASON, Euclid whose squares are linked line-by-line to the divisions and zoomable down to the last one, a practice engine that never blocks and explains errors by drawing), the symbolic engine (Nerdamer behind a facade: nothing imports it directly, it is loaded lazily, guarded against the calls that never return, and — measured wrong 5 times out of 22 on limits at infinity — its answers are confronted with the function's real behaviour before being shown, so a student sees a right answer or none), analysis & calculus lab V1 (مختبر التحليل والدوال: the average rate of change of the 4AM affine function first — the only authentic 4AM anchor of differential calculus — with the tangent, the derivative, limits, integrals, function study and transformations one click away; a symbolic derivative written as one AST → AST pass over the grapher's own tree, with no computer-algebra dependency, cross-validated against the grapher's numerical derivative and falling back to it honestly when a rule is missing; a live readout that keeps the numbers visible while the student manipulates, because reading and setting live in different tabs; exact vs approximate never conflated — `= 4` for a rule, `≈ 4` for a measurement; limits read from two side-by-side approach tables and never claimed as proofs; a signed integral drawn apart from the geometric area; Riemann rectangles returned as objects because the drawing is the lesson; and five numerical defects found only by verification — the pole taken for a root, the vanishing stationary point, the removable hole a grid steps over, the oblique asymptote lost to catastrophic cancellation, and noise displayed as an asymptote), logic & proof lab V1 (مختبر المنطق والبرهان: ten areas in one laboratory that opens on an EXPERIMENT rather than a menu — « can you prove this statement false? » — where truth is a region of the number line you slide x along, a counterexample is something you hunt for and the lab explains why one sufficed, an implication's four forms are read column against column so the contrapositive's agreement and the converse's disagreement are seen rather than asserted, a proof is a DEPENDENCY GRAPH (several valid orders, a refusal that names what is missing instead of saying « wrong »), and — the rule the whole instrument serves — a search that finds no counterexample is reported as an observation and never as a proof; plus « قاموس الرموز », which says how each Latin symbol is READ in Arabic, since the interface is Arabic but the notation is not), measurement & rule-discovery lab V1 (مختبر القياس: ten OPEN investigations where the student is never given the formula — they pull an object about, count the unit grid, fill an observation table and only then BUILD a rule from tokens and put it on trial; a declarative investigation catalogue so an eleventh is one entry and not a screen; a rule engine that answers a wrong rule with a COUNTEREXAMPLE — « your rule gives 11 where I measured 28 » — and never with a verdict, comparing two writings of one relation by value so `2 × (L + l)` and `L + l + L + l` are recognised as the same; an evidence gate that refuses to conclude on three measurements of the same square or without a trial on an object the student did not choose, so guessing does not pay; « it held on what you measured » never dressed as a proof, with the geometric explanation — two triangles making the rectangle, the disc cut into sectors, the squares of Pythagoras — arriving only once the evidence is in; and scenes drawn entirely in SVG, the unrolled thread that makes π visible and the cuboid's three countable faces), the personal workspace « أعمالي » (search, filters, sorting, grid/list, multi-selection and bulk actions, favourites, rename and duplicate — and previews drawn in SVG from each tool's own `summarize(data)`, so a card never mounts an instrument), the Lab opened **over** a lesson (« 🧪 المختبر »: a layer above the router so the lesson is never unmounted, the tool picker, and a fullscreen open to students *and* teachers — distinct from وضع القسم), the column writing of a شعاع, lesson-integration point | [`architecture/MATH_LAB.md`](./architecture/MATH_LAB.md) |
-| **The Daily Math Challenge (« التحدّي اليومي »)**: retrieval selection from the mastery state, stable instances per class/student and day, server-owned timing, the scoring rules (correctness dominates, bounded speed tiers, streak, bounded missed-day decay), cumulative standings and tie-breaking, Top 3 / competition visibility, teacher dashboard and display mode, admin scale, evidence provenance `daily_challenge:{uuid}` | [`architecture/DAILY_CHALLENGE.md`](./architecture/DAILY_CHALLENGE.md) |
-| **The thinking space « مختبر التفكير »** (phases 0–1, 2026-10-30 / 11-01): the ladder and the gate (3 attempts + 24 h, honest attempts, keys, postpone, twin), the presenter (nothing of the answer before the gate) and the student API, screens 1–3 with the replay player and SVG figures, the challenge schema (hidden bands, summits, keys S → 👁 → R, replays `S M A R T O B`, mistakes with « ليس بعد » replies), the five answer checks (`expression` = a recursive-descent parser written in JS and PHP with one 222-case fixture, equivalence at seeded points, no `eval`), per-student numbers (FNV-1a), the validator (leaks before the gate, band ↔ number, forbidden words), the oracle and the server-only generated index | [`architecture/THINKING_LAB.md`](./architecture/THINKING_LAB.md) |
-| **The game « مدار »** (2026-10-22): one-tap orbit runner, hearts earned by correct answers on the student's own الكفاءات (refuel station, evidence `madar:{uuid}`), server-owned runs and score bound, ships unlocked by record or refuel (never by finishing a lesson), weekly class leaderboard, teacher settings/tab/display; phone + laptop | [`architecture/MADAR_GAME.md`](./architecture/MADAR_GAME.md) |
-| **The school administration space « فضاء الإدارة »** (2026-10-26, phases 0–7 built; phase 7 = the school LICENCE (model C: reason `school_licence` before `teacher_subscription`, the school's seats replace the teacher's); phase 4 = the الكفاءات map class by class as counts and the student file, the parent's « التقدّم بالتفصيل » without study time; phase 5 = five report types FROZEN as snapshots, A4 print, CSV; phase 6 = the meeting view with « إخفاء الأسماء »): the school as a first-class object, its director (`school_admin`, created by the platform admin with a one-time password), the gate `SchoolAccess` (the school reads only students who consented to it, never an e-mail, never an average), `/idara` and the admin's « المؤسسات »; the structure — terms, teachers joining by link and « مؤسستي » (the same facts for teacher and school), classes, roster import (preview, all-or-nothing, generated « معرّف الدخول »), transfer, login cards, the student's school consent | [`architecture/SCHOOL_ADMIN_SPACE.md`](./architecture/SCHOOL_ADMIN_SPACE.md) |
-| **The parent side « فضاء الوليّ »** (2026-10-22, link model 2026-10-23): no parent account — a private « رابط الوليّ » the student creates after consenting, or the teacher prints as a QR; real study time measured on the platform's own pages (active / idle / away, bounded server-side); one week report and detailed progress shared by parent and student; public device-lock guide; closed-garden test of the student space | [`architecture/PARENT_SPACE.md`](./architecture/PARENT_SPACE.md) |
-| **Feature access per tier (« الوصول والحدود »)**: Math Lab instruments, notebook and saved works per tier, `notebook_copy` / `document_generation` quotas, the `usage_events` ledger and its period, atomic consumption, `/me/feature-access`, the admin configuration API | [`architecture/ACCESS_AND_LIMITS.md`](./architecture/ACCESS_AND_LIMITS.md) |
-| Admin panel; **lesson access tier (free / premium): `lessons.tier`, admin-controlled, never written by a sync** | [`architecture/ADMIN_PANEL_ARCHITECTURE.md`](./architecture/ADMIN_PANEL_ARCHITECTURE.md) (the Annexe wins where it conflicts with the body) |
-| Teacher role, classes (الأقسام), membership — **the class join link « رابط الانضمام » and the join code, one membership door, one class per student (2026-10-24), pending join through registration / e-mail verification** (the e-mail invitation was removed 2026-10-01), **joining consent and the teacher's privacy boundary (`ClassroomAccess`, no student email)**, **the teacher learning loop — learning map, attention signals « تستحقّ نظرة », student snapshot « لمحة », interventions « التدخّلات » and their measure**, per-class lesson visibility, study context, the DZ commercial model (no online payment; teacher plans sold by student seats, classes unlimited), plans / versions / pricing tiers / entitlements, subscription requests, manual activation, plan-bound activation codes with seat capacity, admin commercial controls | [`architecture/TEACHER_CLASSROOM_ARCHITECTURE.md`](./architecture/TEACHER_CLASSROOM_ARCHITECTURE.md) |
-| **Page tours (« جولة تعريفية »)**: first-visit guided tour per page and per role, `page_tours` table and `/me/tours` API, completed/skipped closure, registry of CSS-selector steps, non-blocking overlay, replay button, `TOURS_ELIGIBLE_SINCE` | [`architecture/PAGE_TOURS.md`](./architecture/PAGE_TOURS.md) |
-| Product scope, access model, Algerian terminology policy | [`ALGERIA_PLATFORM_MASTER_SPEC.md`](./ALGERIA_PLATFORM_MASTER_SPEC.md) |
-| 4AM curriculum inventory and terminology register | [`ALGERIA_4AM_CURRICULUM.md`](./ALGERIA_4AM_CURRICULUM.md) |
-| **« بوصلتي » — the year compass** (P0 and P1 implemented 2026-11-09): the start check « جولة الانطلاق », the report « خريطة نقاطي », the year/week plan « خطّتي », owner decisions, the two student cases (on my own / with a class), the shared school calendar and the four grade progressions as data (`packages/core/curriculum/dz/calendar/`, `check:year-calendar`, renewed every year) | [`architecture/YEAR_COMPASS.md`](./architecture/YEAR_COMPASS.md) |
-| **The learning net « شبكة الكفاءات » (1AM–4AM)**: the official programme of the four years as data (224 items, verbatim, stable ids `<g>am.m<n>.r<nn>`), the links between items (`requires` / `extends` + added value / `consolidates` — the no-duplication rule), 17 conceptual threads, each lesson's `programmeItems` (the 1AM–3AM lessons, once planned in the net, are `coming_soon` catalogue entries since 2026-10-14), the resolver (`reviewLinksForLesson`, `forwardLinksForLesson`, `noRebuildForLesson`, `earlierYearReviewFor`), « راجع قبل أن تنطلق » under every « أستعدّ » and « راجع » after a wrong answer, and the database / Mastery V2 treatment of unpublished lessons (§3bis) | [`architecture/LEARNING_NET.md`](./architecture/LEARNING_NET.md); generated map [`curriculum/LEARNING_NET_MAP.md`](./curriculum/LEARNING_NET_MAP.md); sources `Math-Moyenne-programme/` |
-| **The 1AM–3AM rollout**: owner decisions D1–D11 (drafted الكفاءات, all LPs in the database with draft cards, generation ALONG THE NET from the 4AM chains — since 2026-10-20 opened by Phase A « what 4AM needs NOW », the direct prerequisites of the 4AM units in textbook order, practice from the term exams, publish each lesson as it is generated, links to earlier years inside exercises), the textbook maps (units, lessons, draft الكفاءات, page maps, scan defects), the term-exam corpus and its pattern, the generation queue, the next phases and their session prompts | [`reports/MOYEN_ROLLOUT_PHASE1_REPORT_2026-10-13.md`](./reports/MOYEN_ROLLOUT_PHASE1_REPORT_2026-10-13.md); phase 2 (platform and database, publish = push to `dev`, phase-3 prompt): [`reports/MOYEN_ROLLOUT_PHASE2_REPORT_2026-10-14.md`](./reports/MOYEN_ROLLOUT_PHASE2_REPORT_2026-10-14.md); phase 3 (lessons generated one by one, each published on `dev`; progress log and next-batch prompt): [`reports/MOYEN_ROLLOUT_PROGRESS.md`](./reports/MOYEN_ROLLOUT_PROGRESS.md); [`curriculum/GENERATION_QUEUE.md`](./curriculum/GENERATION_QUEUE.md) (since 2026-10-25 opened by « Phase 0 », the owner's priority on 3AM units 1–5, each lesson planned before generation: [`curriculum/PLAN_3AM_UNITS_1_5.md`](./curriculum/PLAN_3AM_UNITS_1_5.md); the 1AM « ميدان الأنشطة العددية » run index and design cards, 20 entries: [`curriculum/PLAN_1AM_NUMBERS.md`](./curriculum/PLAN_1AM_NUMBERS.md)); `sources/{1am,2am,3am}/textbook-map.json`; [`sources/moyen/exams/EXAM_PATTERN.md`](./sources/moyen/exams/EXAM_PATTERN.md) |
+## Areas
 
-## Reference material
+| Area | Authoritative document | Status |
+|---|---|---|
+| The rebuild: steps, decisions, log | [`FRANCE_REBUILD_PLAN.md`](./FRANCE_REBUILD_PLAN.md) | current |
+| French language, register, typography, direction, formats, content and culture rules | [`architecture/FRENCH_LANGUAGE_CONTRACT.md`](./architecture/FRENCH_LANGUAGE_CONTRACT.md) | current — not yet applied in the code |
+| Arabic and right to left, as the code still does it | [`architecture/ARABIC_RTL_CONTRACT.md`](./architecture/ARABIC_RTL_CONTRACT.md) | not yet French — deleted when steps 1C–1E end |
+| The whole system (apps, API domains, auth, grades) | [`architecture/ARCHITECTURE.md`](./architecture/ARCHITECTURE.md) | imported, corrected |
+| A v2 lesson: its pack, its folder, what the server checks, done | [`architecture/LESSON_V2.md`](./architecture/LESSON_V2.md) | imported, corrected — no lesson yet |
+| The game world: kit, worlds (`divisorIsles`, `rootCourts`, `missionIsle`), the rule forge, the exam sitting | [`architecture/GAME_WORLD.md`](./architecture/GAME_WORLD.md) (why `rootCourts` looks as it does: [`reports/ROOTS_WORLD_PLAN.md`](./reports/ROOTS_WORLD_PLAN.md), history) | imported, corrected — not yet French (the kit's sentences, step 1C) |
+| The launch kit of a lesson | [`architecture/LAUNCH_KIT.md`](./architecture/LAUNCH_KIT.md) (plan: [`reports/LAUNCH_KIT_PLAN_2026-11-17.md`](./reports/LAUNCH_KIT_PLAN_2026-11-17.md)) | imported, corrected — its families are empty |
+| The lab of a lesson | [`architecture/LESSON_LAB.md`](./architecture/LESSON_LAB.md) | imported, corrected |
+| The teacher's class session and board | [`architecture/CLASS_SESSION.md`](./architecture/CLASS_SESSION.md) | imported, corrected — not yet French |
+| The projector shell (`lessons/common/classroom/`) | [`architecture/CLASSROOM_MODE.md`](./architecture/CLASSROOM_MODE.md) | imported, corrected — the module-lesson part is deleted |
+| Learning-point and assessment rules for a generated lesson | [`architecture/AI_LESSON_CONTRACT.md`](./architecture/AI_LESSON_CONTRACT.md) | imported, corrected |
+| What still binds of the module-lesson contract (`lesson.config.js`, stages, non-blocking progression) | [`architecture/LESSON_CONTRACT.md`](./architecture/LESSON_CONTRACT.md) | imported, corrected — the module system is deleted |
+| Nothing asked before it is available (`audit:knowledge:gate`) | [`architecture/KNOWLEDGE_DEPENDENCY.md`](./architecture/KNOWLEDGE_DEPENDENCY.md) | imported, corrected — the audit has nothing to read today |
+| Interaction pedagogy (principles) | [`architecture/INTERACTION_PEDAGOGY.md`](./architecture/INTERACTION_PEDAGOGY.md) | imported, corrected — its component examples are deleted |
+| Exercises, the practice engine, the exam sheet | [`architecture/EXERCISE_CONTRACT.md`](./architecture/EXERCISE_CONTRACT.md); target design [`architecture/EXERCISE_ENGINE_ARCHITECTURE.md`](./architecture/EXERCISE_ENGINE_ARCHITECTURE.md); first build [`architecture/EXERCISE_ENGINE_REFERENCE_IMPLEMENTATION.md`](./architecture/EXERCISE_ENGINE_REFERENCE_IMPLEMENTATION.md) (history) | imported, corrected — the banks are empty; the exam sheet is the BEM's until plan step 2G |
+| The learning net (programme items, links, weights, resolver) | [`architecture/LEARNING_NET.md`](./architecture/LEARNING_NET.md) | imported, corrected — the French net is empty |
+| Curriculum sync, evidence, mastery (Mastery V2) | [`architecture/LEARNING_ARCHITECTURE.md`](./architecture/LEARNING_ARCHITECTURE.md) (history: [`reports/LEARNING_POINT_MASTERY_AUDIT_2026-09-24.md`](./reports/LEARNING_POINT_MASTERY_AUDIT_2026-09-24.md), [`reports/LEARNING_POINT_MASTERY_V2_EXECUTION_PLAN_2026-09-24.md`](./reports/LEARNING_POINT_MASTERY_V2_EXECUTION_PLAN_2026-09-24.md)) | imported, corrected |
+| Completion vs mastery, progress storage | [`architecture/PROGRESS_MODEL.md`](./architecture/PROGRESS_MODEL.md) | imported, corrected |
+| The year compass and the school calendar | [`architecture/YEAR_COMPASS.md`](./architecture/YEAR_COMPASS.md) | imported, corrected — the French year is not written (plan 2D) |
+| The thinking lab | [`architecture/THINKING_LAB.md`](./architecture/THINKING_LAB.md) (plan: [`reports/THINKING_LAB_PLAN_2026-10-30.md`](./reports/THINKING_LAB_PLAN_2026-10-30.md), history) | imported, corrected — no challenge; not yet French |
+| The 6e diagnostic | [`architecture/DIAGNOSTIC_6E.md`](./architecture/DIAGNOSTIC_6E.md) (history: [`reports/DIAGNOSTIC_6E_REPORT.md`](./reports/DIAGNOSTIC_6E_REPORT.md), [`reports/DIAGNOSTIC_COVERAGE.md`](./reports/DIAGNOSTIC_COVERAGE.md), [`reports/DIAGNOSTIC_INTEGRATION.md`](./reports/DIAGNOSTIC_INTEGRATION.md)) | imported, corrected — mounted; its recommendations name lessons that do not exist |
+| The games space | [`architecture/MADAR_GAME.md`](./architecture/MADAR_GAME.md) | imported, corrected — not yet French |
+| The daily challenge | [`architecture/DAILY_CHALLENGE.md`](./architecture/DAILY_CHALLENGE.md) | imported, corrected — not yet French; not hidden yet (plan 1F) |
+| The Math Lab | [`architecture/MATH_LAB.md`](./architecture/MATH_LAB.md) (open issues: [`reports/PREEXISTING_ISSUES_2026-09-23.md`](./reports/PREEXISTING_ISSUES_2026-09-23.md)) | imported, corrected — not yet French; its two labs follow the Algerian cycles |
+| The notebook | [`architecture/NOTEBOOK.md`](./architecture/NOTEBOOK.md) | imported, corrected |
+| Page tours | [`architecture/PAGE_TOURS.md`](./architecture/PAGE_TOURS.md) | imported, corrected |
+| Teachers, classes, plans, seats, activation | [`architecture/TEACHER_CLASSROOM_ARCHITECTURE.md`](./architecture/TEACHER_CLASSROOM_ARCHITECTURE.md) (history: [`reports/TEACHER_PEDAGOGICAL_MONITORING_PLAN_2026-09-24.md`](./reports/TEACHER_PEDAGOGICAL_MONITORING_PLAN_2026-09-24.md)) | imported, corrected — not yet French (the commercial model is Algerian, plan 1F) |
+| Parents (the private link, study time) | [`architecture/PARENT_SPACE.md`](./architecture/PARENT_SPACE.md) | imported, corrected — not yet French |
+| The school space | [`architecture/SCHOOL_ADMIN_SPACE.md`](./architecture/SCHOOL_ADMIN_SPACE.md) | imported, corrected — not yet French (Algerian school model) |
+| The books store | [`architecture/BOOKS_STORE.md`](./architecture/BOOKS_STORE.md) | imported, corrected — ON today, turned off by plan 1F |
+| Feature access per tier, quotas | [`architecture/ACCESS_AND_LIMITS.md`](./architecture/ACCESS_AND_LIMITS.md) | imported, corrected |
+| The admin panel, lesson tier | [`architecture/ADMIN_PANEL_ARCHITECTURE.md`](./architecture/ADMIN_PANEL_ARCHITECTURE.md) | imported, corrected — not yet French |
+| The demo dataset (`DemoDataSeeder`) | [`architecture/DEMO_DATASET.md`](./architecture/DEMO_DATASET.md) | imported, corrected — stops today: no published lesson |
+| Navigation: four doors, one menu, `nav-*` colours | [`reports/NAVIGATION_REBUILD_PLAN.md`](./reports/NAVIGATION_REBUILD_PLAN.md) §0 | imported, corrected |
+| Entry bundle and lazy boundaries | [`architecture/BUNDLE_BOUNDARIES.md`](./architecture/BUNDLE_BOUNDARIES.md) (history: [`reports/BUNDLE_ENTRY_REPORT_2026-10-14.md`](./reports/BUNDLE_ENTRY_REPORT_2026-10-14.md)) | imported, corrected |
+| Lint, unused code, dead files, format | [`architecture/CODE_HEALTH.md`](./architecture/CODE_HEALTH.md) | imported, corrected |
+| The brand and the logo | [`architecture/BRAND.md`](./architecture/BRAND.md) | imported, corrected — the mark is an open decision (plan §7, 8) |
+| Billing (Stripe: provider, checkout, lifecycle) | [`reports/PAYMENT_PROVIDER_PHASE5_REPORT.md`](./reports/PAYMENT_PROVIDER_PHASE5_REPORT.md), [`reports/CHECKOUT_PHASE6_REPORT.md`](./reports/CHECKOUT_PHASE6_REPORT.md), [`reports/STRIPE_PHASE65_ROUND_TRIP_REPORT.md`](./reports/STRIPE_PHASE65_ROUND_TRIP_REPORT.md), [`reports/BILLING_LIFECYCLE_PHASE7_REPORT.md`](./reports/BILLING_LIFECYCLE_PHASE7_REPORT.md); first audit [`audits/PAYMENT_PROVIDER_INTEGRATION_AUDIT.md`](./audits/PAYMENT_PROVIDER_INTEGRATION_AUDIT.md) | history — the code is in `Domain/Billing`, no page calls it until plan 1F; `Planned`: a payment switch in the API (plan §4ter) |
+| Authentication, registration, the student's grade | [`reports/AUTHENTICATION_FOUNDATION_REPORT.md`](./reports/AUTHENTICATION_FOUNDATION_REPORT.md), [`reports/FRICTIONLESS_REGISTRATION_REPORT.md`](./reports/FRICTIONLESS_REGISTRATION_REPORT.md), [`reports/STUDENT_GRADE_CONTEXT_REPORT.md`](./reports/STUDENT_GRADE_CONTEXT_REPORT.md); living contract: `ARCHITECTURE.md` | history |
+| Deployment | [`deployment/DZ_FIRST_DEPLOYMENT.md`](./deployment/DZ_FIRST_DEPLOYMENT.md) (the Algerian bootstrap and what the workflows do); old French production: [`deployment/HOSTINGER_FILE_MANAGER_DEPLOYMENT.md`](./deployment/HOSTINGER_FILE_MANAGER_DEPLOYMENT.md), [`deployment/HOSTINGER_AUTH_ENV_CHECKLIST.md`](./deployment/HOSTINGER_AUTH_ENV_CHECKLIST.md) | imported, corrected / history — deploys are LOCKED (`FR_REBUILD_CUTOVER_APPROVED`); the French database will be created fresh (plan §6). The `HOSTINGER_*.sql` files are Algerian hand migrations, not for it |
+| Philosophy of the first French product | [`architecture/CLAUDE.md`](./architecture/CLAUDE.md) | history — its technical sections are wrong (its banner says which) |
+| Working on a lesson (pipeline, briefs, ledger of defects) | the project skill [`.claude/skills/lesson-v2/`](../.claude/skills/lesson-v2/SKILL.md) | still the Algerian skill: adapted before the first French lesson (plan §8) |
 
-- [`sources/4am/unit1/extraction.json`](./sources/4am/unit1/) — the textbook
-  extraction every unit-1 content element cites. The PDF itself
-  (`official-book-pdfs/`) is copyrighted and untracked.
-- `data-verification/` — curriculum-scope reference data.
-- `deployment/` — deployment procedures.
-- [`reports/LEARNING_POINT_MASTERY_AUDIT_2026-09-24.md`](./reports/LEARNING_POINT_MASTERY_AUDIT_2026-09-24.md)
-  and [`reports/LEARNING_POINT_MASTERY_V2_EXECUTION_PLAN_2026-09-24.md`](./reports/LEARNING_POINT_MASTERY_V2_EXECUTION_PLAN_2026-09-24.md)
-  — the audit that motivated Mastery V2 and its plan. **Historical**: the
-  implemented contract is `LEARNING_ARCHITECTURE.md`; the plan's header lists
-  where the implementation deviates from it.
-- `sources/4am/unit1/worksheet-tafawwuq-01.json` — provenance of the
-  « سلسلة التفوق رقم 01 » sheet (25 items in the practice bank, 1 not
-  integrated with its reason). Recipe: `EXERCISE_CONTRACT.md` § « Non-textbook
-  sources — worksheets ».
-- `official-BREVET-exams/` — the BEM annals 2007–2025 and their solutions booklet (PDF, never
-  versioned). `sources/4am/bem-practice/annals-index.md` (+ `.json`) — the index of the whole corpus
-  (19 sessions, 95 exercises, the lesson that owns each). `sources/4am/bem-practice/brief-authors.md`
-  — the brief of the « exam sheet » practice, prototype `bahth-pgcd` then rolled out unit by unit
-  (2026-10-06; per-unit brief/lock/audit in `sources/4am/bem-practice/rollout/unit<N>/`). Contract:
-  `EXERCISE_CONTRACT.md` § « Présentation examen (BEM) » (switch: `content/practice/exam-style.json`).
-- [`reports/UNIT1_REFERENCE_CHANGES_2026-10-13.md`](./reports/UNIT1_REFERENCE_CHANGES_2026-10-13.md)
-  — what changed only in unit 1 (values in stories, discovery pass, synthesis with training situations) and the checklist to extend it.
-- [`reports/LESSON_ARCHITECTURE_AUDIT_2026-09-29.md`](./reports/LESSON_ARCHITECTURE_AUDIT_2026-09-29.md)
-  — the end-to-end audit of the nine lessons, the shared lesson engine and the
-  lesson docs that froze the reference architecture (31 defects fixed, the
-  doc↔code matrix, test results). **Historical**: the contract it produced is
-  the guide's §14.
-- [`reports/REFERENCE_MANIPULATIONS_FORENSIC_AUDIT.md`](./reports/REFERENCE_MANIPULATIONS_FORENSIC_AUDIT.md)
-  — read-only forensic audit (2026-09-29) of every manipulation of the 4AM
-  unit: Part I goes deep on the reference lesson `qasim-adad-tabii` (3
-  instances, student scripts, state machines); Part II covers all 29
-  instances of the 9 lessons (9 types) with per-instance pros/cons, the
-  unit-wide shared defects (§20) and a scoreboard (§30). **Open findings,
-  not a contract** — the contract stays `MANIPULATION_CONTRACT.md`. Part I
-  and the shared defects a–f, i, k (for the reference lesson) were acted on
-  in the 2026-09-30 redesign, and lessons 2–9 were redesigned the same
-  day (`MANIPULATION_DNA.md` §15 lists what remains open).
-- [`reports/QUESTION_ANSWER_AUDIT_2026-09-24.md`](./reports/QUESTION_ANSWER_AUDIT_2026-09-24.md)
-  — audit of every answer key and judge (practice, final tests, modules,
-  registry, Math Lab). The rules it established live in `EXERCISE_CONTRACT.md`
-  § « Answer-key integrity » and `MATH_LAB.md` §3.3; its « Flagged » list is
-  still open.
-- [`reports/TEACHER_PEDAGOGICAL_MONITORING_PLAN_2026-09-24.md`](./reports/TEACHER_PEDAGOGICAL_MONITORING_PLAN_2026-09-24.md)
-  — audit of the teacher/class system (privacy findings G1–G13, mastery,
-  notebook, history, performance) and the phased plan for DETECT → UNDERSTAND
-  → INTERVENE → MEASURE. **Historical**: implemented on 2026-09-25; the
-  contract is `TEACHER_CLASSROOM_ARCHITECTURE.md` §2 and §4–§4c (+
-  `LEARNING_ARCHITECTURE.md` « State history »). G1–G4, G7–G10 and G12 are
-  closed; G5/G6 (archived classes in «قسمي», seats on restore) remain open.
-- [`reports/PREEXISTING_ISSUES_2026-09-23.md`](./reports/PREEXISTING_ISSUES_2026-09-23.md)
-  — **open issues, not history.** Things found while building the analysis lab
-  that it did not cause: a flaky grapher QA check (the feature itself works), an
-  unreproduced sequences assertion, pre-existing npm advisories, and two
-  upstream Nerdamer defects whose workarounds are load-bearing. Read it before
-  upgrading `nerdamer`.
+Mockups kept beside the plans they illustrate: `reports/mockups/` (`navigation-look.html`, the `roots-world-*` trials
+of `rootCourts`, `oasis-world.html`).
 
-## Historical — do not treat as current
+## The curriculum
 
-These are point-in-time records. They explain **why** things are the way they
-are; they do not describe today's behaviour and must not be used as a
-contract.
+- **Official French sources**: [`curriculum/officiel/`](./curriculum/officiel/) — its `README.md` says which text
+  applies to which grade and year, with the quotes that prove it. Lessons and learning points are defined from these
+  texts and from nothing else.
+- **Draft of the 3e net**: [`curriculum/draft-3e/`](./curriculum/draft-3e/) (`REVIEW.md` first) — a draft for the
+  owner's review, NOT wired: nothing in the code reads it; the shipped net in `packages/core/curriculum/fr/` is empty.
+  `Planned`: wiring it into `curriculum/fr/` (59 lessons, all `coming_soon`).
+- **Generated from the shipped net** (never edit by hand): `curriculum/LEARNING_NET_MAP.md`, `learning-net-map.html`,
+  `LEARNING_NET_WEIGHTS.md` (`npm run generate:learning-net`), `GENERATION_QUEUE.md`, `generation-queue.json`
+  (`scripts/learning-net-queue.mjs`). Empty while the net is empty.
 
-| Document | Status |
-|---|---|
-| [`architecture/CLAUDE.md`](./architecture/CLAUDE.md) | **Product & pedagogy philosophy only.** Its technology sections are wrong: it prescribes TypeScript, NestJS, Prisma, PostgreSQL, Zustand and TanStack Query; the real stack is JavaScript, React 18 + Vite, Laravel + MySQL, React Context and a fetch client. It also predates the Algerian platform and describes a French product. |
-| `ALGERIA_*_REPORT.md`, `ALGERIA_MIGRATION_AUDIT.md`, `ALGERIA_IMPLEMENTATION_ROADMAP.md` | Phase records. `ALGERIA_PHASE8_UNIT1_TEXTBOOK_REPORT.md` is the most useful: it records how unit 1 was built. |
-| `reports/` | Point-in-time audits. Several predate the Algerian takeover and describe the French product or a two-table backend. Cross-check every number against the code. |
-| `architecture/EXERCISE_ENGINE_INTEGRATION_AUDIT.md` | Superseded by `EXERCISE_ENGINE_REFERENCE_IMPLEMENTATION.md`. |
-| `architecture/EXERCISE_ENGINE_ARCHITECTURE.md` | Target design. Largely implemented, but some paths in it are illustrative, not real. |
-| `architecture/LESSON_DESIGN_PLAYBOOK.md`, `architecture/INTERACTION_PEDAGOGY.md` | Still listed as authoritative for pedagogy, but written for the French lessons: their component tables and precedents are labelled historical (2026-09-29). Where they disagree with the guide or `LESSON_CONTRACT.md`, those win. |
-| `architecture/DIAGNOSTIC_6E.md` | Scoped to a French grade; the diagnostic flow it documents is still mounted. |
-| `architecture/EXERCISE_ENGINE_REFERENCE_IMPLEMENTATION.md` | Its reference lesson (`fonction-affine-2nde`) and labs (`TankLab`, `RateProbes`) were deleted on 2026-09-25; the engine it describes is live. |
-| `experiments/JSXGRAPH_PILOT.md` | Concluded: rejected, removed from the codebase. |
+## Deleted on 2026-11-22
+
+This pass deleted 181 files whose subject no longer exists here: the history of the Algerian product (`ALGERIA_*.md`,
+the copy of the old `CLAUDE.md`, the 1AM–4AM rollout reports and progress logs, unit mission prompts, gate reports,
+batch designs, the review of 2026-11-19, the bank inventory, the knowledge contracts of the Algerian lessons, plans of
+Algerian units, the thinking-lab challenge list, the Algerian unit-1 SQL); the documents of deleted systems (the lab
+system `MANIPULATION_CONTRACT.md` / `MANIPULATION_DNA.md` and its rollouts, the old knowledge map, the module-lesson
+guide `lessons/LESSON_DEVELOPMENT_GUIDE.md` with its « مسائل » and « أتوقّع القاعدة » guides, the lesson integration
+guide, the design playbook, the mission player plans, the student focus view, the v2 rollout plan of the Algerian
+lessons, the integration-lesson plan); and the reports of the old French product that describe lessons and catalogues
+that are gone (the 5e/4e curriculum report, the lycée audits `audits/2de-*` and `audits/judgements/`, the scope data
+`data-verification/`, the OGE architecture, the first architecture audits, the lesson reset, the JSXGraph pilot).
+Every one of them is in commit `049380e` (the import of the whole Algerian tree): `git show 049380e:docs/<path>`.
+The old French site's own documents are on `main`.
 
 ## Language of the documentation
 
-Documents and code comments are written in English and French; this is the
-repository's authoring convention. It has no bearing on the **product**, whose
-every user-facing surface — student, teacher and admin alike — is Arabic. See
-[`architecture/ARABIC_RTL_CONTRACT.md`](./architecture/ARABIC_RTL_CONTRACT.md).
+Documents and code comments are written in English and French. The product is French
+([`architecture/FRENCH_LANGUAGE_CONTRACT.md`](./architecture/FRENCH_LANGUAGE_CONTRACT.md)); until steps 1C–1E of the
+plan end, its interface is still Arabic.

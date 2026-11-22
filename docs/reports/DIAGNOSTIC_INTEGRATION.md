@@ -1,5 +1,9 @@
 # Diagnostic Integration
 
+> **Status (2026-11-22).** Historical, imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. The
+> diagnostic tables and `learning_points.diagnostic_skill_id` still exist (`LEARNING_ARCHITECTURE.md` « Initial
+> knowledge »); the 6e lessons it maps to are gone.
+
 How the existing 6e diagnostic (unchanged by this migration) becomes the
 FIRST SOURCE OF TRUTH for a student's initial knowledge inside the new
 learning-point architecture. Companion: `docs/architecture/DIAGNOSTIC_6E.md`

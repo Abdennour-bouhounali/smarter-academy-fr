@@ -1,5 +1,11 @@
 # Progress Model
 
+> **Status (2026-11-22).** Covers completion (modules, lessons, chapters) versus mastery, progress storage and sync.
+> Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the tables, the API, the merge rules,
+> `calculateCompletionPercentage`, `useProgress` / `progressQueue.js`, the learner guard. Not true here: no lesson
+> exists, so nothing is ever written; the module lessons this text was written for are deleted — a v2 lesson is
+> complete when its world's story ends (`LESSON_V2.md` §1ter); `MODULE_LAYOUT_MIGRATIONS` is `{}`.
+
 > **Two progressions, two vocabularies (Mastery V2, 2026-09-24).**
 > **Completion** answers « did the student go through the material? » —
 > modules done, lessons done, percentages. **Mastery** answers « what does the
@@ -75,7 +81,7 @@ storage before writing it back and remove only what the flush actually sent
 and settled; a snapshot or an answer parked during the `await` (debounce,
 `online`, a concurrent flush) survives. Before, the flush rewrote the queue
 from its initial copy and could erase the completion of a lesson's last
-module. Locked by `progressQueue.test.js` and `evidenceQueue.test.js`.
+module. Locked by `progressQueue.test.js` (the evidence queue `evidenceQueue.js` was deleted on 2026-11-22).
 
 **Module completion is written by `ModuleLayout` only, under one rule**:
 `isCompleted && unlocked && !presenting` — for the effect, « التالي » and
@@ -100,20 +106,17 @@ has its own score).
 ### Renumérotation des modules — migration unique (2026-10-05)
 
 Les modules terminés sont stockés PAR NUMÉRO. Insérer des modules avant un
-module existant (pilote « مسائل » : le test de `qasim-adad-tabii` passe de 4 à
-7) change le sens des numéros déjà stockés. La migration est UNIQUE, jamais
-appliquée à chaque lecture (après le changement, « 4 » est légitimement la
-مسألة 1) :
+module existant change le sens des numéros déjà stockés. La migration est
+UNIQUE, jamais appliquée à chaque lecture :
 - client : `@smarter-academy/core › moduleLayoutMigrations` — les données
   portent `layoutVersion` ; absente = ancienne disposition, migrée à la
   lecture (`useProgress`, `progressQueue`, `getLessonProgress`) ; un stockage
-  vide naît à la version courante ;
-- serveur : une migration de données Laravel
-  (`2026_10_05_000003_remap_problem_modules_qasim_adad_tabii`) remappe les
-  lignes une fois, pour que l'union client ∪ serveur ne réintroduise jamais
-  l'ancien sens. Déploiement à toutes les leçons (2026-10-06) : UNE migration
-  par unité, qui porte la table de toutes ses leçons
-  (`2026_10_06_000001_remap_problem_modules_unit1_aadad` : 7 leçons, 4 → 7 ou 5 → 8 ; `…000002…unit2_judhur` : 5 leçons, jusqu'à 6 → 9 ; puis `…000003…unit3_harfi`, `…000004…unit4_muadalat`, `…000005…unit5_jumal`, `…000006…unit6_khattiya`, `…000007…unit7_taalufiya`, `…000008…unit8_ihsa`, puis `2026_10_07_000009` à `…000014` pour les unités 9–14 (et, hors déploiement, `2026_10_13_000002_remap_wadiya_modules_synthesis_units_2_14` (les 13 autres synthèses, format de l'unité 1 : `{1→7, 2→0, 3→0, 4→8}`, `wadiya-idmajiya-judhur` `{1→7, 2→0, 3→8}` — « أؤكّد تعلّماتي » et « أتعمّق » supprimés) et `2026_10_13_000001_remap_wadiya_modules_idmajiya_aadad` : la synthèse `wadiya-idmajiya-aadad` : `{1 → 7, 2 → 0, 3 → 8}`, « أؤكّد تعلّماتي » supprimé, six « وضعيات تدريبية » insérées, l'analyse déplacée au module 7) — 60 leçons au total, identiques à la table client).
+  vide naît à la version courante. La table `MODULE_LAYOUT_MIGRATIONS` est
+  VIDE ici (`{}`, 2026-11-22) ;
+- serveur : une migration de données Laravel remappe les lignes une fois. Les
+  16 migrations héritées de DZ qui remappent des codes de leçons algériens
+  restent dans l'historique (on ne réécrit pas un historique de migrations) et
+  ne font rien sur une base française.
 - Toute leçon renumérotée ajoute une étape aux DEUX tables, dans le même
   changement.
 - Au déploiement, l'import du registre crée les nouveaux modules en `draft` :
@@ -140,7 +143,7 @@ read as either. Its answers DO produce ordinary practice evidence. See
 
 - **Definition:** binary. A module is complete iff `useProgress(lessonId).markModuleCompleted(moduleId)` has been called for it, ever.
 - **Module `0` counts.** The id is written as the module's number stringified, so a lesson opening on « أستعدّ » stores `'0'`. `calculateCompletionPercentage` already normalises it (its regex matches `^(\d+)`), and callers must test module numbers with `isValidModuleNumber`, never for truthiness.
-- **Numerator/denominator:** N/A — not a percentage, a boolean (`isModuleCompleted(moduleId)`, `lessonAccess.js`).
+- **Numerator/denominator:** N/A — not a percentage, a boolean (`isModuleCompleted(moduleId)` of `useProgress.js`; `lessonAccess.js` was deleted on 2026-11-22).
 - **Who decides when this fires:** the module itself, at whatever point its own author considers it "done" (§Module contract, `LESSON_CONTRACT.md`) — intentionally not standardized across module types.
 - **Edge case:** calling `markModuleCompleted` twice for the same id is a no-op (`useProgress.js` checks `.includes()` first) — idempotent by construction.
 
@@ -152,16 +155,11 @@ read as either. Its answers DO produce ordinary practice evidence. See
 - **Edge cases, explicit:** `totalModules` missing/zero → `0` (never `NaN`/`Infinity`); `completedModuleIds` missing/not an array → `0`; more completed than total (shouldn't happen, but a stale/corrupted `localStorage` value could produce it) → capped at `100`.
 - **Weighting:** none — every module counts equally. There is no concept of "this module is worth more" anywhere in the current data model.
 
-### Chapter completion
+### Chapter and grade completion
 
-- **Definition:** the mean of each available lesson's completion percentage within that chapter (`Courses.jsx`'s `getChapterProgress`, now itself calling `calculateCompletionPercentage` per lesson instead of the pre-cleanup inaccurate raw-length formula).
-- **Numerator/denominator:** `sum(calculateCompletionPercentage(lesson) for lesson in availableLessons) / availableLessons.length`.
-- **Edge case:** a chapter with zero available lessons (every lesson still `status: 'coming_soon'` — no longer true of any 4AM chapter: all 74 lessons are `available` since the French grades were deleted on 2026-09-25) → `0`, not `NaN` (`getChapterProgress` early-returns before dividing).
-- **Weighting:** every *lesson* counts equally regardless of its module count — a 5-module lesson and an 11-module lesson each contribute one vote to the chapter average. This is a real modeling decision already baked into the existing code, documented here rather than changed (changing it would alter what number a student currently sees).
-
-### Course completion (= grade, per the domain model in `ARCHITECTURE.md` §1)
-
-- **Does not exist as a computed value anywhere today.** `Courses.jsx` computes chapter-level aggregates but never rolls them further up to a single "your 6e progress is X%" number. Not added in this phase (no UI currently asks for it; adding it would be speculative).
+- `getChapterProgress` no longer exists in `Courses.jsx` (checked 2026-11-22); where a chapter or grade aggregate is
+  computed today (`features/progression/buildProgressionTree.js`, `lessons/common/utils/progress/getLessonProgress.js`)
+  and how it weighs lessons is `[NOT CHECKED 2026-11-22]`. With no lesson, every aggregate is empty.
 
 ## Completion vs. Mastery
 
@@ -178,11 +176,7 @@ read as either. Its answers DO produce ordinary practice evidence. See
 master a Learning Point without completing the lesson** (the final test is
 always open) — `RepeatedAttemptsFlowTest::test_completion_and_mastery_are_independent`.
 
-**The progressive Knowledge Map adds neither** (`KNOWLEDGE_MAP.md` A.4): a node
-is locked until completion (or a brick) establishes its item — a COMPLETION
-read; mastery appears only as the Learning Point dots on its « بطاقتك » strip;
-its « available / discovered » states are exploration UI kept in
-`sessionStorage`, never progress, never evidence.
+(The progressive Knowledge Map of the module lessons, which read completion, was deleted with them.)
 
 **Aggregation above the Learning Point is a COUNT, never a score.** A lesson
 or unit shows « 3 / 4 متحكَّم فيها » and the four-status distribution; there is
@@ -224,8 +218,7 @@ teacher only through its own read-only surfaces, never counted into progress
 
 Only a **student** does. A teacher (or an admin) opens the same lessons,
 modules and **parts** with `freeNavigation` (no sequential lock, at either
-level: `utils/moduleGate.js` for modules, `utils/stepUnlock.js` for the steps
-inside one and for the « التالي » gesture) and `tracksProgress = false`
+level; the module-lesson gates `utils/moduleGate.js` / `utils/stepUnlock.js` were deleted with the module kit) and `tracksProgress = false`
 (`features/learning/learningViewer.js`): `useProgress`, the progress sync and
 the evidence queue are silent for them, and the final-test hook sends nothing
 to the server (it keeps a LOCAL copy of the reader's attempt, like a visitor's;

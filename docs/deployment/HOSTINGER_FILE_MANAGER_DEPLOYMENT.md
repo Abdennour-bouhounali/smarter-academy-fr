@@ -1,5 +1,10 @@
 # Déploiement Smarter Academy par le File Manager Hostinger
 
+> **Status (2026-11-22).** A manual (File Manager + phpMyAdmin) update of the OLD French production, Sept. 2026, kept
+> as history; `deploy.yml` still cites it in a comment. Not true here: this tree deploys only through `deploy.yml`, which
+> is LOCKED until the owner sets `FR_REBUILD_CUTOVER_APPROVED=yes`, onto a FRESH French database
+> (`FRANCE_REBUILD_PLAN.md` §6). Do not follow these steps.
+
 Guide écrit pour **ce projet** et pour **une méthode de déploiement sans accès
 terminal ni SSH** : hPanel → File Manager (téléversement de fichiers) et
 hPanel → phpMyAdmin (exécution de SQL).

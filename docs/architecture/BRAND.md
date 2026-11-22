@@ -1,5 +1,10 @@
 # Brand — the Smarter Academy logo
 
+> **Status (2026-11-22).** Covers the logo, its files and their uses. Imported from the Algerian platform (DZ `dev`
+> `7f4cef1c`) on 2026-11-22. True here: every file and rule below (checked: the files exist). Open: whether France keeps
+> this mark or the old French site's logo is the owner's decision (`FRANCE_REBUILD_PLAN.md` §7, item 8; default: this
+> mark). `public/og/qasim-adad-tabii.png` is the share card of an Algerian lesson, not in this repository.
+
 Authoritative for the logo, its files and where each one is used. Adopted by the
 owner on **2026-10-21**; it replaced the star + figure + open-book emblem (and the
 graduation-cap « S » baked into the old share image) everywhere.
@@ -48,7 +53,7 @@ python3 scripts/brand/build-logo.py --svg-only
 
 `og-image.png` (the site-wide share card) is an illustration; only its top-left
 logo was replaced on 2026-10-21 (a one-off edit, not produced by the script). It
-stays 256-colour and under 300 KB (`CLAUDE.md` « OG share cards »).
+stays 256-colour and under 300 KB. It carries no Arabic text (looked at on 2026-11-22: the logo, Latin labels and formulas).
 
 ## Rules
 

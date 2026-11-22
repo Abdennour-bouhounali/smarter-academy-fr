@@ -243,6 +243,22 @@ What is left of this track:
    the lesson-v2 pipeline (`.claude/skills/lesson-v2/`, to be adapted) — the brevet bank first, then design, waves,
    walks at 1366×768, screenshots looked at, the skill written back. A new world only when a unit needs a new mechanic.
 
+## 8bis. Known debts found on the way — each must be settled before the step named
+
+| Debt | Found | Settle before |
+|---|---|---|
+| `validate-lessons.mjs`, `audit-knowledge-dependencies.mjs` and `lesson-v2-status.mjs` recognise a v2 lesson by the text `retiredModules: true` in its `routes.jsx`; `buildLessonRoutes` no longer takes that option — the first French lesson would be judged a module lesson | docs pass, 2026-11-22 | the first French lesson (§8) |
+| `check:non-blocking` and `audit:knowledge:gate` look for patterns only a module lesson had: they pass on any tree. Delete them or re-aim them at the v2 lesson | docs pass | the first French lesson |
+| The 6e diagnostic is reachable (`ChooseGrade` sends a new 6e student to it) and recommends lessons that do not exist | docs pass | step 1F (hide what has no French content) |
+| The daily challenge, the thinking lab and the compass are not hidden yet although they have no French content | docs pass | step 1F |
+| The teacher's lesson memo page (`/enseignant/cours/:lessonId/memoire`) reads module-lesson files a v2 lesson does not have; `teacher_lab_settings` (API) has no web caller; nothing calls `POST /lessons/{code}/evidence` | docs pass | step 1H (dead code of the shell) |
+| The API still reads `content/class-tests/`; the web guard that checked a default class test's answers was deleted with the Algerian tests | docs pass | the first French class test |
+| `.claude/skills/lesson-v2/` tells agents to read deleted Algerian documents | docs pass | §8 (the skill is adapted first) |
+| `deploy.yml` still refuses a `.fr` domain (the Algerian guard) | docs pass | step 1G |
+| Code comments cite deleted documents (about 80 places in `apps/api`, `apps/web/src`, `scripts`) | docs pass | with each file's next change |
+| The thinking-lab leak detector treats Latin letters as mathematics: on French prose a formula is caught only after a colon or `=` | tooling pass | the first French challenge |
+| 15 `[NOT CHECKED 2026-11-22]` marks in the corrected contracts | docs pass | when the area is next touched |
+
 ## 9. Progress log
 
 Working rule learned on 2026-11-22: while agents share this folder, **every commit names its paths**

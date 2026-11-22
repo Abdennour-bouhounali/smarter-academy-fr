@@ -4,6 +4,10 @@
 `مختبر التحليل والدوال` (MATH_LAB §5m), integrated MathLive into its inputs and
 Nerdamer as the symbolic engine (§4b).
 
+> **Status (2026-11-22).** Open issues of the Math Lab, found on the Algerian platform on 2026-09-23 and imported (DZ dev
+> 7f4cef1c) on 2026-11-22 with the Math Lab, which is kept whole. Whether each issue is still open here is
+> `[NOT CHECKED 2026-11-22]`; read it before upgrading `nerdamer`.
+
 > **Why this document exists.** Everything below was observed during that work
 > but is **not caused by it**. Each entry names the evidence that it predates
 > the change, so it can be picked up independently. Nothing here is fixed.

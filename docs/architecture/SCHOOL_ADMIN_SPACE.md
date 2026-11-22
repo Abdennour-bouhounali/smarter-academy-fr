@@ -7,6 +7,12 @@
 > map per class, the student file), its REPORTS (frozen snapshots, A4 print,
 > CSV), the MEETING VIEW and the school LICENCE (model C). The code is the
 > source of truth.
+>
+> **Status (2026-11-22).** Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: everything
+> above, in the API and the web code. Not true here: the interface is Arabic; a school is still described the Algerian
+> way (a « متوسطة », `wilaya` / `commune` columns, the login domain `@eleve.smarter-academy.com`); three terms happen to
+> match the French trimestres, but no French school year is written yet (plan 2D). The French wording is
+> `FRENCH_LANGUAGE_CONTRACT.md`; minors' data in a school space waits for the owner (plan §7, 4).
 
 A **school** (« المؤسسة », a متوسطة) is a first-class object: its classes, its
 teachers, its students, and one **director** (« المدير ») who manages them,
@@ -372,7 +378,7 @@ The teacher's class shape gains `schoolId`.
 
 | # | Phase | Contents |
 |---|---|---|
-| — | — | XLSX roster files (CSV and paste only) and XLSX report export (CSV only); a BEM-readiness report; a deputy / counselor role (D3) |
+| — | — | XLSX roster files (CSV and paste only) and XLSX report export (CSV only); an exam-readiness report; a deputy / counselor role (D3) |
 
 ## 9. Files
 

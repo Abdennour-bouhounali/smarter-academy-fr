@@ -5,6 +5,12 @@
 > the class ranking, what each role may see, its API, configuration and
 > tests. Implemented 2026-09-25. The code is the source of truth:
 > `apps/api/app/Domain/DailyChallenge/`, `apps/web/src/features/dailyChallenge/`.
+>
+> **Status (2026-11-22).** Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the engine,
+> the API, the pages and the tests below. Not true here: its questions come from `content/practice`, which is EMPTY, so
+> no challenge can be built today; the interface is Arabic; the date is Algiers time and Friday is the rest day
+> (`config/daily_challenge.php`) — French time and school week are step 1E, not yet applied in the code. Plan §7, 3: the
+> feature is to be HIDDEN until French content exists (step 1F) — not yet applied either.
 
 ## 1. What it is — and what it is not
 
@@ -45,7 +51,7 @@ a second mastery system, **not** a second class system (it reads
 
 One `daily_challenges` row per (scope, date), unique: refreshing, a second
 tab or a retry can never regenerate an easier challenge. The date is the
-**Algiers** date (`challenge.timezone`), not UTC.
+local date of `challenge.timezone` (Algiers today — plan 1E), not UTC.
 
 Only `role = student` plays (`learner` middleware): a teacher or admin gets
 403, like every other evidence route.
@@ -80,9 +86,8 @@ member must be able to open it); a personal one uses premium content only if
 the student is entitled. Every candidate is checked against the shipped
 content file, and only questions that **count for mastery**
 (`AnswerEvaluator::countsForMastery`) are served: never a self-assessed
-« بيّن أن » step (`selfCheck`) nor a `counted: false` step of a BEM sheet —
-they would be scored on the student's word (since 2026-10-07; before that the
-BEM content of `bahth-pgcd` could reach a challenge). Deterministic: ties broken by `crc32(scope|date|key)`.
+« بيّن أن » step (`selfCheck`) nor a `counted: false` step of an exam sheet —
+they would be scored on the student's word (since 2026-10-07). Deterministic: ties broken by `crc32(scope|date|key)`.
 
 ## 4. Serving and timing — the server owns the clock
 
@@ -162,7 +167,7 @@ scale changes future challenges, never a past score.
 
 ## 7. Streak and missed days
 
-- Challenge days: `challenge.challenge_weekdays` (ISO, default all but Friday).
+- Challenge days: `challenge.challenge_weekdays` (ISO, default all but Friday — the Algerian week; plan 1E).
   A non-challenge day neither breaks a streak nor costs anything.
 - A day counts as played when a finished attempt has **at least one answer**.
 - The streak is the **student's** (their habit, across scopes):
@@ -358,7 +363,7 @@ i18n/locales/ar/challenge.json                      ON-DEMAND namespace (BUNDLE_
 | `tests/Feature/DailyChallengeClassTest.php` | same questions for the class, competition × Top 3 matrix, rank movement only when real, disabled class → personal, left student disappears, dashboard analysis without email, display mode without last names or times, deterministic ties, settings validation and scope, owner-only access, admin config validation + snapshot, constant query count |
 | `tests/Feature/TeacherPrivacyContractTest.php` | the three teacher routes carry no email |
 | `features/dailyChallenge/challengeModel.test.js` | the pure formatting |
-| `apps/web/e2e/daily-challenge.mjs` | browser QA on the demo dataset (student A/B/C, mobile/tablet/desktop, reduced motion, teacher tab + display, admin) |
+| `apps/web/e2e/daily-challenge.mjs` | browser QA on the demo dataset — needs a published 3e lesson, so it cannot run today (student A/B/C, mobile/tablet/desktop, reduced motion, teacher tab + display, admin) |
 
 ## 16bis. Shared with « مدار » (2026-10-22)
 
@@ -371,8 +376,8 @@ The game's refuel station (`MADAR_GAME.md` §5) reuses this feature's selector a
 - `ChallengeQuestionPresenter` accepts a `DailyChallengeQuestion` or a `MadarRefuel`. There is still one boundary between the answer key and the client.
 - Since 2026-11-09 it also serves by reference (`publicRef(lesson, exercise, question)`, used by « بوصلتي », `YEAR_COMPASS.md` §9), and the public
   question carries the WHOLE setup: `statement.{content, formulas, table, figure}` and the question's `lead`. Before that fix the
-  `formulas` (« A = … ») and `table` were dropped, so « إليك العدد A حيث: » arrived alone and was unanswerable (811 statements have
-  formulas, 361 a table). The web side renders them through `ExerciseStatement` (`EXERCISE_CONTRACT.md`).
+  `formulas` (« A = … ») and `table` were dropped, so « إليك العدد A حيث: » arrived alone and was unanswerable (counted on the Algerian
+  banks, deleted here). The web side renders them through `ExerciseStatement` (`EXERCISE_CONTRACT.md`).
 
 ## 17. Not built (Planned)
 

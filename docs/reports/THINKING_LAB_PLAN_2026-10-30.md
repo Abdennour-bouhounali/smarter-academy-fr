@@ -1,5 +1,10 @@
 # « مختبر التفكير » — Implementation plan (2026-10-30)
 
+> **Status (2026-11-22).** Historical build plan of the thinking space, imported from the Algerian platform (DZ dev
+> 7f4cef1c) on 2026-11-22. Its ENGINE (phases 0–1) exists here; its 46 challenges, their oracle batches and the bank
+> list `docs/curriculum/THINKING_LAB_CHALLENGE_BANK.md` were deleted (`git show 049380e:<path>`). Its Algerian content,
+> language and time rules do not bind here (`FRENCH_LANGUAGE_CONTRACT.md`, plan §7). The contract is `THINKING_LAB.md`.
+
 > **Status: phase 0 (« Foundations ») implemented on 2026-10-30, phase 1 (« Ladder core ») on 2026-11-01; phases 2–7 Planned.** This is the build plan for
 > the thinking space.
 >
@@ -9,7 +14,7 @@
 > - Progress is tracked per phase in §19.
 >
 > - Design proposal (visual, interactive): https://claude.ai/artifact/6Rah4WZf4GvBvPb94zSX4x
-> - Seed content: [`curriculum/THINKING_LAB_CHALLENGE_BANK.md`](../curriculum/THINKING_LAB_CHALLENGE_BANK.md)
+> - Seed content: `curriculum/THINKING_LAB_CHALLENGE_BANK.md` (deleted 2026-11-22; `git show 049380e:docs/curriculum/THINKING_LAB_CHALLENGE_BANK.md`)
 > - Method source: the owner's book « بروتوكول SMART لحل المسائل الرياضية »
 >   (`~/SMART/SMART Protocole Book/SMART-Protocol-Arabic/The Book`), a starting point and not the only source.
 
@@ -585,7 +590,7 @@ nothing generated stays `draft`).
   - `THINKING_LAB.md` rewritten: the ladder, the gate, the API, the presenter, the screens, the figures, the sounds and
     the open decisions in effect;
   - `ACCESS_AND_LIMITS.md` (the `thinking_lab.ladder` key);
-  - `MANIPULATION_CONTRACT.md` (the five new `playSfx` names);
+  - `MANIPULATION_CONTRACT.md` (deleted 2026-11-22) (the five new `playSfx` names);
   - `BUNDLE_BOUNDARIES.md` (the `thinking` namespace, the lazy routes and figures, the measured entry);
   - the `CLAUDE.md` paragraph, the `docs/README.md` rows, and the challenge bank status (46 published).
 - **Teacher preview, 2026-10-31 (owner decision, answers §17 n° 3 for teachers):** a read-only preview at `/enseignant/tafkir`
@@ -601,7 +606,7 @@ nothing generated stays `draft`).
 - **New**:
   - `docs/architecture/THINKING_LAB.md`, the contract: the content schema, gate, scoring, league,
     privacy and screens. This plan points to it once it exists.
-  - `docs/curriculum/THINKING_LAB_CHALLENGE_BANK.md`, kept current as challenges are written.
+  - `docs/curriculum/THINKING_LAB_CHALLENGE_BANK.md` (deleted 2026-11-22), kept current as challenges are written.
 - **Update**:
   - `docs/README.md`: a map entry.
   - `ACCESS_AND_LIMITS.md`: the features and the quota unit.
@@ -610,7 +615,7 @@ nothing generated stays `draft`).
     not a practice answer type.
   - `CLASSROOM_MODE.md`: the replay scope.
   - `BUNDLE_BOUNDARIES.md`: the `thinking.json` namespace and the lazy route.
-  - `MANIPULATION_CONTRACT.md`: the new sound names, if added to `playSfx`.
+  - `MANIPULATION_CONTRACT.md` (deleted 2026-11-22): the new sound names, if added to `playSfx`.
   - `CLAUDE.md`: one paragraph once phase 1 ships.
 
 ## 20. Tests
@@ -625,7 +630,7 @@ nothing generated stays `draft`).
 - **E2E (Playwright, `apps/web/e2e/`)**:
   - an independent student on #318: wrong ×3, wait, replay, « اشرح لنفسك », move card;
   - a class student: request, then the teacher sends a key, then accepts;
-  - screenshots at 1366×768 and 768×1024, reviewed by eye (`MANIPULATION_DNA.md` §17 quality bar).
+  - screenshots at 1366×768 and 768×1024, reviewed by eye (`MANIPULATION_DNA.md` §17, deleted 2026-11-22 quality bar).
 
 ## 21. Risks
 | Risk | Mitigation |

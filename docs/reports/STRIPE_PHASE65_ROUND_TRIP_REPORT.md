@@ -1,5 +1,12 @@
 # Phase 6.5 — Aller-retour RÉEL en mode test Stripe
 
+> **Status (2026-11-22).** A point-in-time report of the OLD French product (2026-09-11), kept as the history of the
+> Stripe code. That code came back with the Algerian import (DZ `dev` `7f4cef1c`, 2026-11-22) and is in this tree:
+> `apps/api/app/Domain/Billing/*`, `BillingCheckoutController`, `BillingSubscriptionController`, `POST /webhooks/{provider}`
+> and `/billing/*` in `routes/api.php`. Not true here: no web page calls it — `/tarifs`, `/abonnement`,
+> `/abonnement/retour` are absent from `App.jsx`; paid access is granted by activation codes. Re-attaching Stripe in
+> EUR is plan step 1F (`FRANCE_REBUILD_PLAN.md` §4). Test counts below are the old product's.
+
 > Validation, pas développement. Aucune fonctionnalité ajoutée ; quatre défauts
 > corrigés, tous révélés par les données réelles de Stripe.
 

@@ -1,5 +1,11 @@
 # Smarter Academy — Admin Panel Specification
 
+> **Status (2026-11-22).** Covers the admin panel (`/admin/*`, `pages/admin/`, API `Domain/Admin`) and, in its
+> Annexe, publication, entitlement, tiers, ambassadors, account deletion and the registration switch. Imported from the
+> Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the panel and its API, on an EMPTY catalogue (no lesson
+> to list). Not true here: the panel still speaks Arabic, right to left, `ar-DZ` dates (steps 1C–1E); the commercial
+> rule of Annexe A7 is Algeria's (no online payment) — France sells with Stripe (plan §4 step 1F), not wired yet.
+
 **Document:** `ADMIN_PANEL_ARCHITECTURE.md`  
 **Status:** Approved product/technical specification  
 **Scope:** Full administrator control center for the Smarter Academy platform
@@ -346,19 +352,16 @@ Visibility changes must be backend-enforced.
 # 9. Lesson management
 
 > **Implemented (2026-09-25) — `/admin/contenu/lecons`.** Filters: search,
-> grade, **الوحدة** (the textbook unit, `?unit=<code>`), publication, tier.
+> grade, unit (`?unit=<code>`), publication, tier.
 > The unit options are read from the database by the API
 > (`GET /admin/content/lessons` → `units[]`: only units that carry at least one
 > lesson, active grades only), never listed in the UI — today that is the one
-> unit « الأعداد الطبيعيّة والأعداد النّاطقة », and a unit imported tomorrow
+> nothing: the French catalogue has no lesson yet; a unit imported tomorrow
 > appears on its own. Each row shows its unit under the title
-> (`unit`, `unitTitle`), falling back to the ميدان.
+> (`unit`, `unitTitle`), falling back to the domain (thème).
 >
-> **Terminology (Arabic admin).** A lesson's *module* is **المحور**
-> (plural المحاور); **الوحدة** is only ever the textbook unit — the level
-> between the ميدان and the درس. The admin labels that used « الوحدة » for a
-> module were corrected on 2026-09-25. (« وحدة البيع », the unit of sale of a
-> teacher plan, is a different word use and stays.)
+> **Terminology.** The level between the thème and the lesson is the unit; a lesson's part is a module. The French
+> words of the panel are `FRENCH_LANGUAGE_CONTRACT.md` — not yet applied in the code (the labels are Arabic).
 
 > **« Open lesson » — implemented 2026-10-05.** The lesson detail page
 > (`/admin/contenu/lecons/{code}`) has a « فتح الدرس » link to the lesson
@@ -1104,19 +1107,20 @@ Even if only `super_admin` is implemented initially, keep authorization extensib
 ## 33.0 The panel is the same product as the student space
 
 > **Authoritative since 2026-09-22.** The Student Space is the single source
-> of truth for the visual identity of the DZ platform. The admin panel is
+> of truth for the visual identity of the platform. The admin panel is
 > another **mode of the same application**, not a second application — only
 > the role and the available functionality change.
 
 This is a contract, not a preference, and `apps/web/src/pages/adminContract.test.js`
 enforces it on the source. Four commitments:
 
-**1 · Arabic.** Every user-facing string in the panel is Arabic, read from the
-`admin` i18n namespace (`apps/web/src/i18n/locales/ar/admin.json`). This
+**1 · One language, from i18n.** Every user-facing string in the panel is read from the
+`admin` i18n namespace — today `apps/web/src/i18n/locales/ar/admin.json`, still Arabic (the language rule is
+`FRENCH_LANGUAGE_CONTRACT.md`; not yet applied in the code). This
 covers page titles, `useDocumentMeta` titles, table column headers, filter and
 search labels, buttons, dialog titles and messages, empty/loading/error states,
 status badges, pagination and every `aria-label`. There is no "internal tool"
-exemption — see `ARABIC_RTL_CONTRACT.md` §1.
+exemption.
 
 Since 2026-11-17 the `admin` namespace is loaded **on demand, together with `AdminLayout`** — it is no longer part
 of what every visitor downloads (`BUNDLE_BOUNDARIES.md` §3). Only `pages/admin/` and `components/admin/` may read
@@ -1125,7 +1129,7 @@ it. The primitives of `components/admin/ui/` that other spaces render too (`Moda
 
 Technical and mathematical identifiers are **not** translated (PGCD, PPCM, API,
 CSV, HTML, activity-log action codes, the brand name *Smarter Academy*), but
-the Arabic sentence around them is. `إدارة درس PGCD`, never `إدارة PGCD Lesson`.
+the sentence around them is.
 
 **2 · One design system.** The panel imports the product's tokens; it defines
 none of its own.
@@ -1152,7 +1156,8 @@ The sidebar used to be `bg-slate-900`. It is now the student sidebar: white,
 `border-e border-slate-200`, gradient active pill, identity block in the
 footer. A dark admin theme is a regression the contract test rejects.
 
-**3 · RTL by construction.** `<html lang="ar" dir="rtl">` is global. Admin code
+**3 · Direction by construction.** Today `<html lang="ar" dir="rtl">` is global (step 1E makes it French, left to
+right — `FRENCH_LANGUAGE_CONTRACT.md`). Admin code
 uses **logical** properties only — `ms-`/`me-`, `ps-`/`pe-`, `start-`/`end-`,
 `text-start`/`text-end`, `border-e` — never `ml-`/`mr-`/`left-`/`right-`/
 `text-left`/`text-right`. Directional icons ("previous", "next", the sidebar
@@ -1160,28 +1165,26 @@ rail) come from `components/common/DirectionalIcons`; semantic icons (search,
 trash, user, warning, vertical sort chevrons) are imported straight from lucide
 and are **never** mirrored.
 
-Numbers, ratios (`3 / 10`), emails, activation codes, join codes, IDs and URLs
-stay LTR inside the RTL shell — wrap them in `<Num>` or `dir="ltr"`, the same
-isolation `.sa-math-inline` gives mathematics.
+Numbers, ratios, emails, codes, IDs and URLs are wrapped in `<Num>` or `dir="ltr"` while the shell is RTL.
 
 **4 · Shared chrome, not per-page invention.** `apps/web/src/pages/admin/adminUi.jsx`
 is the panel's only chrome module — the twin of `pages/teacher/teacherUi.jsx`:
 
 - `AdminPage`, `AdminSection`, `AdminCard` — page header and containers
 - `Loading`, `ErrorBox` — states
-- `useAdminLabels()` — the Arabic labels handed to `DataTable`, `Pagination`,
+- `useAdminLabels()` — the labels handed to `DataTable`, `Pagination`,
   `ConfirmDialog` and `FilterBar`
 - `btnPrimary` / `btnSecondary` / `btnDanger` / `btnGhost`, `input`, `label`
-- `formatDate` (`ar-DZ`), `Num`, `ADMIN_GRADIENT`
+- `formatDate` (`ar-DZ` today; `fr-FR` at step 1E), `Num`, `ADMIN_GRADIENT`
 
 A new admin screen composes these. It does not restyle a button, redeclare a
 font, or write a date formatter.
 
-The shared kit (`components/admin/ui/*`) now defaults to Arabic and keeps every
+The shared kit (`components/admin/ui/*`) defaults to the panel's language (Arabic today) and keeps every
 label overridable, so the teacher space can keep passing its own.
 
 **5 · The API sends codes, the panel writes the sentence.** A server response
-is not a localization surface (`ARABIC_RTL_CONTRACT.md` §2), and that applies
+is not a localization surface, and that applies
 to anything the panel *displays*, not just to error messages. Dashboard alerts
 therefore carry a `kind` and structured `params`:
 
@@ -1434,7 +1437,7 @@ Une resynchro ne touche jamais l'état d'une ligne existante.
 La règle ne rétroagit pas — le contenu déjà en base garde son état.
 
 **Et la LEÇON elle-même** (`smarter:import-curriculum`, 2026-10-14) : une leçon `coming_soon` du catalogue
-(1AM–3AM, pas encore écrite) naît `draft` — sinon le défaut de colonne `published` l'ouvrait côté serveur ; une
+(pas encore écrite) naît `draft` — sinon le défaut de colonne `published` l'ouvrait côté serveur ; une
 leçon `available` naît `published`. L'administration garde l'état d'une leçon existante, à deux exceptions dictées
 par le catalogue : une leçon `coming_soon` n'est jamais `published` (→ `draft`), et le passage `coming_soon` →
 `available` (la PUBLICATION d'une leçon générée) promeut le `draft` posé par l'import en `published`
@@ -1498,7 +1501,7 @@ publication module          ContentAccess              (lesson_modules)
       ↓
 publication exercice        ContentAccess              (practice_exercises)
       ↓
-règles de progression       lessonAccess.js            (déverrouillage séquentiel)
+règles de progression       (lessonAccess.js, supprimé le 2026-11-22 — aucun déverrouillage séquentiel codé)
 ```
 
 Chaque maillon a UNE autorité, et `ContentAccess` est le seul endroit qui les
@@ -1585,10 +1588,10 @@ changement de palier                          → administration uniquement : PA
 ```
 
 - Le **catalogue ne porte aucun palier** : ni `coursesData.js`, ni
-  `dz/lessons_4am_*.json`, ni l'export (`exportCurriculum.mjs`). Un `tier`
+  `curriculum/fr/lessons_<classe>_*.json`, ni l'export (`exportCurriculum.mjs`). Un `tier`
   présent dans un export ancien est ignoré, même à la création.
   `scripts/check-dormant-isolation.mjs` fait échouer la CI si un `tier`
-  réapparaît dans le catalogue algérien.
+  réapparaît dans le catalogue.
 - `CurriculumImporter` pose `tier = 'free'` **à la création seulement** ; la
   mise à jour d'une leçon existante ne contient pas la colonne.
   `smarter:curriculum-sql` suit la même règle : `'free'` dans l'`INSERT`,
@@ -1695,13 +1698,10 @@ pour un visiteur) et chaque surface la lit par `isLessonPremium(code)` (badge)
 et `isLessonLocked(code)` (verrou). `isLessonUnlocked(lesson, …)`, qui lisait un
 `lesson.tier` embarqué, a été supprimé. Surfaces concernées : `LessonCard` et
 sa ligne `LessonRow` (catalogue, « دروسي », exploration — état lu une fois par
-`useLessonTileState`), `StudentHome` (compte des leçons premium),
-`LessonIndex` (sommaire), `ModuleLayout` (un module verrouillé n'écrit ni visite
-ni complétion) et **`LessonAccessGate`**, que la fabrique de routes de l'unité
-(`_unit/lessonRoutes.jsx`) pose autour de CHAQUE page d'une leçon — sommaire et
-modules, avant le chargement paresseux du module : une URL de module tapée
-directement tombe sur le même panneau (`PremiumLessonLocked`) que le sommaire,
-et une leçon générée demain en hérite sans code.
+`useLessonTileState`) [NOT CHECKED 2026-11-22], `StudentHome` (compte des leçons premium),
+`LessonIndex` (sommaire) et **`LessonAccessGate`**, que `lessons/common/lessonRuntime.jsx` pose autour de CHAQUE page
+d'une leçon (la fabrique de routes est `lessons/common/lessonRoutes.jsx`) : une URL tapée directement tombe sur le
+même panneau (`PremiumLessonLocked`) que le sommaire, et une leçon générée demain en hérite sans code.
 
 Le contenu d'une leçon est du JSX livré dans le bundle : le serveur ne peut pas
 le retenir. La frontière de sécurité est donc chaque ÉCRITURE et chaque
@@ -1876,6 +1876,10 @@ qui fait autorité ; cette annexe ne dit que ce que le panneau en montre.
 
 ### La règle commerciale du produit algérien
 
+> **Algérienne par nature.** C'est ce que le code fait aujourd'hui (le `PlanSeeder` sème des prix en `DZD`, aucune
+> page ne lit `/billing/*`). La France vend par Stripe (`Domain/Billing`, présent et inutilisé) : plan §4 étape 1F et
+> §7 n° 5 — pas encore appliqué dans le code.
+
 ```text
 aucun paiement en ligne, pour personne     ni tunnel, ni carte, ni fournisseur, ni webhook, ni « payer »
 gratuit                                     automatique : l'offre PAR DÉFAUT du type (plans.is_default), sans ligne
@@ -1896,7 +1900,7 @@ grille se modifie sur une version en BROUILLON et se publie ; un abonné garde
 sa version, ses sièges achetés et son prix figé (`student_seat_limit`,
 `seat_unit_price_cents`, `seat_total_cents`). `PlanCatalog` (dormant,
 `config/billing.php`) reste « config d'abord, base ensuite » : les offres
-commerciales enseignant/élève ne vivent qu'en base et aucun écran DZ ne lit
+commerciales enseignant/élève ne vivent qu'en base et aucun écran ne lit
 `/billing/*`.
 
 ### Ce que le panneau ajoute

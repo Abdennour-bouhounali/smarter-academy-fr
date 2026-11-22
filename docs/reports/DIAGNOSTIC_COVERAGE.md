@@ -1,5 +1,9 @@
 # Diagnostic Coverage
 
+> **Status (2026-11-22).** Historical, imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. The 13
+> skills still exist in `SixiemeDiagnosticProvider`; the lessons and learning points they map to do not (the catalogue
+> is empty). See `docs/architecture/DIAGNOSTIC_6E.md`.
+
 The 6e diagnostic's 13 skills, what each evaluates, and how each relates to
 the learning-point vocabulary. Mapping policy: **uncertain means unmapped** —
 an invented link would poison future analytics, a missing one costs nothing

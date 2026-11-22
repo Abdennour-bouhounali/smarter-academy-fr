@@ -1,5 +1,12 @@
 # Le مختبر الرياضيات (Math Lab)
 
+> **Status (2026-11-22).** Covers the Math Lab (`/espace/atelier`, `features/mathlab/`): its instruments, documents,
+> API and the layer opened over a page. Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True
+> here: every instrument and its engine, as described. Not true here: the interface is Arabic and right to left (steps
+> 1C–1E); the two labs are DZ's cycles (`?lab=moyen|secondaire`, 1AM–4AM / 1AS–3AS) and every « the 4AM programme
+> asks… » below is the ALGERIAN programme — the French split (collège only, lycée not carried: plan §7 n° 6) is not
+> made yet. The 15 lesson-lab instruments lost their DZ lesson tags (`LESSON_LAB.md`); no lesson exists to open the Lab.
+
 > **Authoritative** for the Math Lab: its information architecture — the
 > shared السبّورة and the two labs مخبر المتوسط / مخبر الثانوي, with one
 > registry and curriculum-aware capabilities per instrument (§2.1) — the tool
@@ -42,8 +49,8 @@ own name and icon (`MoveUpRight`), because the curriculum's word is الشعاع
 
 The announced chip « الدائرة المثلثية » left the list when `trigonometry`
 shipped — but the instrument is **not** named after it. The chip promised the
-unit circle, which is lycée material; the 4AM programme asks for
-**النسب المثلثية في مثلث قائم** (`ALGERIA_4AM_CURRICULUM` §4.2). The
+unit circle, which is lycée material; the DZ 4AM programme asks for
+**النسب المثلثية في مثلث قائم**. The
 instrument is therefore **مختبر المثلثات**, it *opens* on the right triangle,
 and the unit circle is one click away (§5g.1).
 
@@ -2285,12 +2292,8 @@ Prompts live in `tools.algebra.practice.*`. The exact tasks of the acceptance ex
 ### 5f.1 Terminology — الشعاع, not المتجه
 
 The instrument is **مختبر الأشعة**, its object is a **شعاع**, its coordinates
-are **المركبتان**, and a translation is an **انسحاب**. This is the register of
-the Algerian textbook, recorded in `ALGERIA_4AM_CURRICULUM.md` (§terminology:
-« الشعاع | vecteur ») and already announced by the Lab home page before the
-tool shipped. `المتجه` — correct in other Arabic-speaking curricula — is **not**
-used here: the student's own book says شعاع, and the Lab speaks the book's
-language (`ARABIC_RTL_CONTRACT.md`).
+are **المركبتان**, and a translation is an **انسحاب** — the Algerian register (« vecteur »). The French vocabulary
+is `FRENCH_LANGUAGE_CONTRACT.md` — not yet applied in the code.
 
 ### 5f.2 One coordinate plane, not a second one
 
@@ -2465,8 +2468,7 @@ never on opening and never as the headline feature (§23 of the brief).
 (23), `vectorFormat.test.js` (17), `experiments.test.js` (33) — **150 tests**,
 covering every case the brief lists (§39) plus the vertical line, the null
 شعاع, the cycle, the dead reference, the relative tolerance, the history depth
-the document's byte budget, and the **lesson seed contract** exactly as
-`LESSON_DEVELOPMENT_GUIDE.md` publishes it. Browser QA:
+the document's byte budget, and the **lesson seed contract** (§6b). Browser QA:
 `apps/web/e2e/mathlab-vectors.mjs`.
 
 ## 5g. مختبر المثلثات — Trigonometry & Unit Circle Lab V1
@@ -2479,9 +2481,9 @@ the document's byte budget, and the **lesson seed contract** exactly as
 
 ### 5g.1 The triangle opens, the circle waits one click
 
-The 4AM programme asks for **النسب المثلثية في مثلث قائم : جيب · جيب تمام ·
-ظل زاوية حادة** — a *right triangle* and *acute* angles
-(`ALGERIA_4AM_CURRICULUM.md` §4.2). The unit circle, the four quadrants, the
+The DZ 4AM programme asks for **النسب المثلثية في مثلث قائم : جيب · جيب تمام ·
+ظل زاوية حادة** — a *right triangle* and *acute* angles (the French 3e programme too:
+`docs/curriculum/officiel/`). The unit circle, the four quadrants, the
 signs and the periodicity belong to the lycée.
 
 So the instrument **opens in `mode: 'triangle'`**, on the figure in the
@@ -2664,8 +2666,7 @@ equations, the laws of sines and cosines.
 
 ### 5h.1 The differences open, convergence waits one click
 
-**Sequences (المتتاليات) are not in the 4AM programme.** The curriculum
-inventory (`ALGERIA_4AM_CURRICULUM.md`) contains no chapter on them. What it
+**Sequences (المتتاليات) are not in the DZ 4AM programme**, which has no chapter on them. What it
 does contain is their authentic anchor — **«الفروق المتتالية»**, successive
 differences, named by the programme itself in LP 2.1 (the PGCD lesson, §2.1)
 — plus **الدوال الخطية** and **الدوال التآلفية** (LP 3.7, 3.8), of which an
@@ -3184,9 +3185,7 @@ and each is now an assertion in `mathlab-transformations.mjs`:
 - `transformState.test.js` — 73 tests: step → matrix, designated centres,
   animation fractions, the stack with disabled and invalid steps, the
   measured invariants for each family, the coordinate formulas, document
-  re-reading, history, the byte bound, **and the lesson seed contract
-  exactly as `LESSON_DEVELOPMENT_GUIDE.md` documents it** — a guide that
-  promises an API the code refuses is worse than no guide.
+  re-reading, history, the byte bound, **and the lesson seed contract** (§6b).
 - `practice.test.js` — 31 tests: 300 generated challenges checked against the
   engine, four distinct choices with the right answer present exactly once,
   every puzzle solved by its own solution and by an alternative route, every
@@ -3752,9 +3751,7 @@ PGCD appears only as the LAST step of the run (in every method since §5l.12):
 used to return the last non-zero difference of an *unfinished* run as the
 `gcd` when `maxSteps` cut it short — a wrong PGCD. It now returns
 `complete: boolean`, and `gcd: null` whenever the zero difference was not
-reached; complete runs are unchanged. Lesson call sites
-(`manipulations/logic/algorithms.js`, `DifferenceAlgorithm.jsx`) use the
-default cap (10 000) on textbook numbers, so they always get complete runs.
+reached; complete runs are unchanged. (Its lesson call sites were in the legacy lab system, deleted 2026-11-22.)
 
 PPCM is now explained in every method (`data-ml-nb-ppcm`): by multiples
 lists, by prime factors, and `PPCM = a × b ÷ PGCD`, with links to the
@@ -4826,8 +4823,7 @@ garder un mensonge en puissance le jour où la proposition change.
 **Pas de HTML5 drag-and-drop.** Comme partout dans le مختبر (les poignées des
 أشعة, la droite du مختبر الأعداد), tout passe par des événements de pointeur
 et — surtout — **tout a un équivalent au clic et au clavier** : on pose une
-carte en la touchant. Sur téléphone c'est le seul geste fiable, et le
-contrat des manipulations l'exige.
+carte en la touchant. Sur téléphone c'est le seul geste fiable.
 
 ### 5n.8 Le dictionnaire des symboles
 
@@ -5054,8 +5050,8 @@ name), never the formula.
 
 ### 5o.6 The scenes are drawn, and they are read
 
-`MeasureStage.jsx` draws every object in **inline SVG** — no image anywhere,
-per `MANIPULATION_CONTRACT.md`. The grid is countable, the handles are
+`MeasureStage.jsx` draws every object in **inline SVG** — no image anywhere
+(lesson content is drawn in code, root `CLAUDE.md`). The grid is countable, the handles are
 grabbed, and the labels are real DOM text, so they stay correct in Arabic
 and reach a screen reader.
 
@@ -5146,9 +5142,9 @@ variable exponent is not a relation the student can lay down).
 ### 6a. « 🧪 المختبر » — the Lab opened ON the lesson (`overlay/`)
 
 Since 2026-09-24 a student or a teacher opens an instrument **without
-leaving the lesson**. The entry point is a pill in the module's marker row
-(beside XP and « Signaler ») and in the lesson index hero, next to
-« 🎓 وضع القسم ».
+leaving the page**. Since 2026-11-22 (the module lesson deleted) the only mounted entry is the pill in the
+presentation toolbar (`ClassroomPresentation`); the module marker row and the lesson-index pill described below as
+history are gone.
 
 ```
 features/mathlab/overlay/
@@ -5170,7 +5166,7 @@ lab description, and two tabs (`data-ml-overlay-lab`, `aria-pressed`) to
 switch labs without leaving the lesson. An opened instrument resolves its
 lab like the page does, receives `scope` / `capabilities`, is created with
 `createInitialData(undefined, { scope, capabilities })`, and the layer's bar
-shows its lab badge. A 4AM lesson therefore opens the grapher without المماس.
+shows its lab badge.
 
 **Why a layer and not a route.** Closing must return the student to the same
 module, the same scroll, the same typed answer, the same reached step. A
@@ -5187,27 +5183,13 @@ registry, i.e. every instrument's state module and math engine — ≈ 700 KB of
 source before the split) behind a `<Suspense>` whose fallback is a spinner
 backdrop. `MathLabEntryButton` calls `preloadMathLabOverlay()` on
 pointer-enter and focus, so the chunk is usually there before the click. The
-`mathlab` i18n namespace is itself loaded on demand (see
-`ARABIC_RTL_CONTRACT.md`); the pill's two strings therefore live in the
+`mathlab` i18n namespace is itself loaded on demand (`BUNDLE_BOUNDARIES.md`); the pill's two strings therefore live in the
 `lesson` namespace (`mathLabEntry.openLab`, `mathLabEntry.openLabShort`) so a
 lesson page never suspends on the Lab's vocabulary. See
 [`BUNDLE_BOUNDARIES.md`](./BUNDLE_BOUNDARIES.md).
 
-**Where the pill is, and why not elsewhere.** It was first placed in the
-floating bottom-left column (with « كرّاسي », « بطاقتي », « عرض »). That
-column already carried three pills; a fourth pushed it to 17 rem and, on a
-short screen, it covered the lesson. A tool opened to *read* a lesson must
-not start by hiding it. The marker row is `sticky` (always reachable) and in
-the flow (covers nothing) — the same reasoning that had already moved
-« Signaler » there.
-
-**During وضع القسم the pill moves into the presentation toolbar.** At the
-board, in front of the class, is exactly when a teacher needs to pull out a
-repère mid-explanation — and the hand is already on the top toolbar. The
-محور's marker row is not rendered during a session (`ModuleLayout` hides it),
-so `ClassroomPresentation` puts the pill in the toolbar's `slot`, **next to**
-whatever the presented page already placed there (`useClassroomStage`), never
-replacing it. There is exactly one pill in each mode.
+**In the presentation toolbar.** `ClassroomPresentation` puts the pill in the toolbar's `slot`, **next to**
+whatever the presented page already placed there (`useClassroomStage`), never replacing it.
 
 **Where the layer is mounted during a session — and the trap.** The provider
 sits *above the router*, therefore above `ClassroomPresentation`: the
@@ -5224,9 +5206,6 @@ with `overflow: hidden`, which would lay the layer out as a column item *and
 clip it*. `.sa-classroom-root--active > .sa-mlo` puts it back to
 `position: absolute; inset: 0; z-index: 100` — absolute against the root,
 which is itself `fixed; inset: 0`, so it covers exactly the screen.
-
-The personal pills (« كرّاسي », « بطاقتي ») keep disappearing during a
-session — they have no place on a projector.
 
 **Fullscreen — NOT Classroom Mode.** Two separate things:
 
@@ -5302,7 +5281,7 @@ another instrument. Each tool documents its own seed shape:
 | The two labs (§2.1): the exact classification of the fourteen instruments, lab resolution order, `?lab=` paths, `data.labScope` strip/attach, summary scope, per-lab opening state, « أعمالي » lab filter, lab strings and plurals | `features/mathlab/labScope.test.js` |
 | Per-lab capabilities of every shared instrument: the college never receives a lycée feature (grapher tangent/keyboard/presets; the statistics filtering mechanism on a restricted fixture; algebra Δ, sum–product, second degree; vectors k·u and analyses; trigonometry circle/radians/panels, 300 drawn exercises; transformations composition and matrix, 400 drawn exercises; logic areas, forms and 900 drawn exercises), the lycée has everything, stored states clamped without data loss | `features/mathlab/labCapabilities.test.js` |
 | The same components rendered in both labs: absent/present DOM hooks per lab | `features/mathlab/labScope.render.test.jsx` |
-| Browser, the two labs: landing order (السبّورة → two choices → أعمالي), exact tool sets per lab, `?lab=` links, switch and back, every shared tool opened in both labs with absent/present hooks, single-lab tools redirected to their lab, a document born in المتوسط reopening there without `?lab=` and even when asked for الثانوي, `data.labScope` and `summary.scope` on the server, « أعمالي » badge / filter / grouped « عمل جديد », teacher routes, the lesson overlay opening on the lesson's lab, 1280 and 390 px without overflow — **141 checks** | `apps/web/e2e/mathlab-labs-scope.mjs` (Vite 5173, API 8000, QA student + QA teacher; the free QA student's document quota is exhausted, so persistence runs on the teacher) |
+| Browser, the two labs: landing order (السبّورة → two choices → أعمالي), exact tool sets per lab, `?lab=` links, switch and back, every shared tool opened in both labs with absent/present hooks, single-lab tools redirected to their lab, a document born in المتوسط reopening there without `?lab=` and even when asked for الثانوي, `data.labScope` and `summary.scope` on the server, « أعمالي » badge / filter / grouped « عمل جديد », teacher routes, the lesson overlay opening on the lesson's lab, 1280 and 390 px without overflow — **141 checks** | `apps/web/e2e/mathlab-labs-scope.mjs` — deleted 2026-11-22 (Vite 5173, API 8000, QA student + QA teacher; the free QA student's document quota is exhausted, so persistence runs on the teacher) |
 | Document helpers, launch helper, whiteboard state, whiteboard import validation, file policy (incl. server parity, size boundary, board/account/combined/multi-select plans) | `mathLabDocument.test.js`, `openMathLab.test.js`, `tools/whiteboard/whiteboardState.test.js`, `tools/whiteboard/whiteboardImport.test.js`, `attachments/attachmentPolicy.test.js` |
 | Grapher: parser and evaluator (the whole subset, every error code, parameters), sampler (poles, domain edges, steep lines, clamping), viewport maths, grid step, number format, state normalisation and seeds | `tools/functionGrapher/*.test.js` (104 tests) |
 | Derivative maths: `derivativeAt` against closed forms, refusals (edge, pole, corner), no false corners on curved functions, tangent, `constrainAlongCurve`, f′ sampled with cuts | `tools/functionGrapher/numericalDerivative.test.js` |
@@ -5315,7 +5294,7 @@ another instrument. Each tool documents its own seed shape:
 | Algebra lab document and helpers: opening on an equation and never its solution, lesson seed accepted and an unreadable one falling back, JSON round trip, survival of any `data`, a history truncated at the first unreadable step, `MAX_STEPS` cap and serialised size under the server limit, an overflowing operation refused **without damaging the document**; history — one step per operation, تراجع/إعادة, steps kept on undo, a new operation cutting the abandoned branch, no-op operations not pushed, reset replacing the history, the flip recorded on its step; generator — every level solvable with an integer solution in [−10, 10] over 200 seeded draws, never degenerate (unknown survives, coefficient ≠ 1 at levels 2–3), inequality generation; verification — substitution shown, a wrong value refused, negatives parenthesised, an exact fractional solution, inequalities | `tools/algebra/algebraState.test.js` (29 tests) |
 | Vectors lab maths: components `⃗AB = B − A` (A(2,3) B(6,5) → (4,2)), norm (‖(3,4)‖ = 5), addition ((3,2)+(1,4) = (4,6)) and its commutativity, subtraction ((3,2)−(1,4) = (2,−2)) shown as `u + (−v)`, scalar ((2,3)×−2 = (−4,−6)), k = 0 giving the null شعاع, |k| > 1 / < 1 / k < 0 on length and direction, midpoint (A(0,0) B(4,6) → (2,3)), distance (A(0,0) B(3,4) → 5), translation (A(2,3) by (4,−1) → A′(6,2)) preserving lengths, dot product ((2,3)·(4,1) = 11), perpendicularity ((1,0)⟂(0,1), the quarter-turn, the null شعاع perpendicular to nothing), **vertical slope returning `{vertical: true, value: null}` and never a number**, horizontal slope 0 ≠ undefined, parallelism with its factor (v = ½u, v = −2u) and the **relative** tolerance in both directions (huge collinear أشعة stay parallel, tiny non-collinear ones do not become so), collinearity of three points including on a vertical and the degenerate case, direction normalised in [0,360[ with `NaN` for the null شعاع, exact norms (5, √5, 2√5, non-exact decimals), and null-safety everywhere | `tools/vectors/vectorMath.test.js` (54 tests) |
 | Vectors lab dependencies (§38): ⃗AB anchored at A and following it, a derived point not draggable, the free شعاع whose **origin** moves without changing components and whose **tip** changes them, sum/difference/scaled resolved from their operands, a sum built on ⃗AB following a drag of A through the whole chain, midpoint and image following, an image of an image, a translated triangle preserving side lengths and following a vertex, the delete cascade (A → ⃗AB → the sum; a vertex → the polygon), a dead reference and a **cycle** breaking only the object concerned, naming, colours and snapping | `tools/vectors/vectorScene.test.js` (23 tests) |
-| Vectors lab document and lesson seed: a new document opening on two points and the شعاع they carry with nothing to undo, JSON round trip, survival of any `data`, dead references pruned in cascade, object and k bounds, an invalid viewport falling back, a stale selection dropped; history — undo/redo, the abandoned branch cut, **a drag replacing the current step so undo undoes a gesture and not a pixel**, the depth cap, survival of a save; the worst-case document staying under the server's 120 KB; and the **seed contract** published by `LESSON_DEVELOPMENT_GUIDE.md` (a seeded ⃗AB resolving by id, the viewport kept, a dangling seed falling back to the default plane) | `tools/vectors/vectorState.test.js` (23 tests) |
+| Vectors lab document and lesson seed: a new document opening on two points and the شعاع they carry with nothing to undo, JSON round trip, survival of any `data`, dead references pruned in cascade, object and k bounds, an invalid viewport falling back, a stale selection dropped; history — undo/redo, the abandoned branch cut, **a drag replacing the current step so undo undoes a gesture and not a pixel**, the depth cap, survival of a save; the worst-case document staying under the server's 120 KB; and the **seed contract** of §6b (a seeded ⃗AB resolving by id, the viewport kept, a dangling seed falling back to the default plane) | `tools/vectors/vectorState.test.js` (23 tests) |
 | Vectors lab display and experiments: the **column** شعاع (`\binom`) beside the point's `(3 ; −2)`, a true minus, a decimal comma and **no** Arabic-Indic digits, `√5 ≈ 2,24`, `2√5`, `1/2` rather than `0,5`, the three distinct slope readings, the null شعاع's « — » direction; and every one of the ten experiments opening fully resolved, surviving a storage round trip and leaving something to pull | `tools/vectors/vectorFormat.test.js` (17), `tools/vectors/experiments.test.js` (33) |
 | Workspace query (§5i.1): Arabic normalisation (تشكيل, tatweel, alif/ya/ta-marbuta variants, Arabic-Indic digits) and Latin case/accents, search over title **and** tool name **and** summary text, each filter (tool, the three periods, favourites), the five sorts, search × filters combining without resetting, sorting on a copy, and `duplicateTitle` never producing « نسخة من نسخة من » | `features/mathlab/work/workFilters.test.js` (33 tests) |
 | Summary contract (§5i.2), across **all eight instruments at once**: every shipped tool declares `summarize`; a new document's summary is a known `kind`, is JSON-pure and stays under the server's 2 KB; `text` is short strings only; **no summarizer ever throws** on a null, empty, foreign or malformed state; plus what each one keeps in particular (visible expressions and colours, solid and dimensions, stroke silhouette capped at 24 with the written text, first *and* current equation, frequencies not draws, terms recomputed from the definition, the resolved current vector scene) | `features/mathlab/work/summaries.test.js` (16 tests) |

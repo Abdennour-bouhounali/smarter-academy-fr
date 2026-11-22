@@ -1,5 +1,9 @@
 # Diagnostic 6e — Report
 
+> **Status (2026-11-22).** Historical report of the first French product, carried through the Algerian platform and
+> imported back on 2026-11-22 (DZ dev 7f4cef1c). The diagnostic engine still exists; the 6e lessons it names are gone.
+> Living document: `docs/architecture/DIAGNOSTIC_6E.md` (its status block says what is true today).
+
 Placed in `docs/reports/`, per this repo's convention for point-in-time phase reports (see `docs/architecture/DIAGNOSTIC_6E.md` for the living architecture this report complements).
 
 ## What was found

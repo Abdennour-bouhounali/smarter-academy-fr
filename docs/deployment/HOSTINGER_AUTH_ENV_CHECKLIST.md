@@ -1,5 +1,12 @@
 # Variables d'environnement — déploiement « légal + authentification »
 
+> **Status (2026-11-22).** The `.env` of the OLD French production for the legal + authentication release (Sept. 2026),
+> imported back with the Algerian tree on 2026-11-22. True here: the traps it names (`APP_URL`, `FRONTEND_URL`,
+> `GOOGLE_REDIRECT_URI`, `MAIL_MAILER=log`) still apply to this API. Not true here: « the site works today, do not touch
+> these variables » — the French database and server are set up FRESH at the cutover (`FRANCE_REBUILD_PLAN.md` §6);
+> the variables added since (registration switch, Stripe, tours…) are not listed here: the complete list is
+> `apps/api/.env.example`.
+
 Ce document liste ce que le fichier `.env` de production doit contenir pour que
 le chantier légal/authentification fonctionne.
 

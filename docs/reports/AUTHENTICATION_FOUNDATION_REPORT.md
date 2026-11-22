@@ -1,5 +1,10 @@
 # Phase 4 — Authentication & Student Identity Foundation
 
+> **Status (2026-11-22).** A point-in-time report of the OLD French product, kept as history. The code it built came
+> back with the Algerian import (DZ `dev` `7f4cef1c`, 2026-11-22) and has moved on since; the living contract is
+> `docs/architecture/ARCHITECTURE.md` §6–§7. Not true here: person names are now refused unless written in Arabic
+> letters and e-mails are Arabic — until plan step 1E (`FRANCE_REBUILD_PLAN.md` §4).
+
 ## 1. What was found
 
 The backend had exactly one identity: a hand-provisioned admin (`php artisan make:admin`, from the Phase 1 security fix). There was no way to become a student. Specifically:

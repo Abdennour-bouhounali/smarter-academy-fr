@@ -3,33 +3,32 @@
 > ## ⚠️ Read this first
 >
 > **This document is NOT the project's engineering constitution, and it is not
-> a description of this codebase.** It was written for the earlier French
-> product, before the Algerian platform existed. It is kept because its
-> pedagogical reasoning (§1–§8, §18–§34, §37–§41, §56–§67) still describes how
-> Smarter Academy thinks about learning.
+> a description of this codebase.** It was written for the first French
+> product (the old site, still on `main`). This repository is again a French
+> product — collège 6e–3e — but it is rebuilt on the Algerian platform's code
+> (`docs/FRANCE_REBUILD_PLAN.md`), not on the code this document describes. It
+> is kept for its pedagogical reasoning (§1–§8, §18–§34, §37–§41, §56–§67).
 >
 > **Its technical sections are wrong for this repository.** Do not follow
-> §9–§17, §42–§55 or §64 as instructions. Specifically:
+> §9–§17, §42–§55 or §64 as instructions:
 >
 > | This document says | This repository actually uses |
 > |---|---|
-> | TypeScript throughout (§9) | JavaScript + JSX; no TypeScript in `apps/web` |
-> | Zustand for lesson state (§11) | React `useState`/context; no Zustand dependency |
+> | TypeScript throughout (§9) | JavaScript + JSX; no TypeScript |
+> | Zustand for lesson state (§11) | React state and context; no Zustand |
 > | TanStack Query for server state (§11) | a fetch-based client in `apps/web/src/services/` |
 > | NestJS + Prisma + PostgreSQL (§15) | Laravel + Eloquent + MySQL, in `apps/api` |
-> | PixiJS / Phaser / Matter.js (§12–§14) | none of them; manipulations are inline SVG + DOM |
-> | "Fractions 6e" as the reference lesson (§33–§34) | the 4AM unit-1 lessons; all French content (6e included) was deleted on 2026-09-25 |
-> | French collège/lycée students (§1, §5, §35) | Algerian المتوسط students; the UI is Arabic and RTL |
-> | `lesson.config.ts`, `Module01.tsx` (§53) | `lesson.config.js`, `Module<NN><Descriptor>.jsx` |
+> | PixiJS / Phaser / Matter.js (§12–§14) | none of them; lessons are inline SVG + DOM, worlds use three.js (`lessons/common/gameworld/`) |
+> | "Fractions 6e" as the reference lesson (§33–§34) | there is no lesson yet; a lesson will be a v2 lesson on a world (`LESSON_V2.md`, `GAME_WORLD.md`) |
+> | `lesson.config.ts`, `Module01.tsx` (§53) | a lesson folder `lessons/college/<grade>/<theme>/<unit>/<lesson>/` with its `lesson.pack.js` |
 >
 > **Where to go instead:** [`../README.md`](../README.md) for the documentation
-> map, [`LESSON_CONTRACT.md`](./LESSON_CONTRACT.md) for the lesson and module
-> contract, [`ARCHITECTURE.md`](./ARCHITECTURE.md) for the real system map, and
-> the root `CLAUDE.md` for the rules that actually bind this repository.
+> map, [`LESSON_V2.md`](./LESSON_V2.md) for the lesson, [`ARCHITECTURE.md`](./ARCHITECTURE.md)
+> for the real system map, and the root `CLAUDE.md` for the rules that bind
+> this repository.
 >
 > The generic engineering advice in §46–§52 (find the source of truth, fix the
-> root cause, don't over-engineer, name things consistently) remains sound and
-> is not contradicted by anything here.
+> root cause, don't over-engineer, name things consistently) remains sound.
 
 ---
 

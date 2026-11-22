@@ -1,5 +1,13 @@
 # Navigation rebuild — plan
 
+> **Status (2026-11-22).** Covers the navigation of the student and teacher spaces: the four doors, one menu, the colour
+> tokens `nav-*` (§0 is what is built; the rest is a plan). Imported from the Algerian platform (DZ `dev` `7f4cef1c`) on
+> 2026-11-22. True here: everything §0 lists as built (checked: `data/doors.js`, `studentNavigation.js`,
+> `teacherNavigation.js`, `components/common/WorkspaceNav.jsx`, `tailwind.config.js › colors.nav`). Not true here: the
+> labels quoted are Arabic and the layout is right to left until plan steps 1C–1D (`FRENCH_LANGUAGE_CONTRACT.md`); with
+> no lesson and an empty school calendar, the lesson lists, the unit page and the teacher's « week » are empty. The
+> measuring sizes 390×844 / 768×1024 predate the rule « 1366×768 alone » for lessons (root `CLAUDE.md`).
+
 Written 2026-11-16 at the owner's request: « the navigation experience for both the student and the teacher must be
 rebuilt in a better way regardless of the docs, also the navigation of lessons, in all the platform, for both accounts ».
 Status: **PLAN — nothing here is built.** It is a proposal to decide on, section 7 lists the decisions.

@@ -4,6 +4,11 @@
 > teacher page — when it opens, how its completion is stored, the registry,
 > the overlay, the replay button, and how to add a page or a step.
 > Implemented 2026-10-07. Code is the source of truth; this file describes it.
+>
+> **Status (2026-11-22).** Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: storage, the
+> provider, the overlay, the replay button and the workspace tours of §4. Not true here: the lesson and lesson-overview
+> tours were deleted with the module lessons (the registry has no `page` tour today); the walk `e2e/page-tours.mjs` is
+> deleted; the text is Arabic (`i18n/locales/ar/tour.json`) until step 1D.
 
 ## 1. Behaviour
 
@@ -82,18 +87,11 @@ i18n/locales/ar/tour.json   all tour text — ON-DEMAND namespace `tour`        
 - `PageTourProvider` wraps the shell in **`StudentLayout`** and
   **`TeacherLayout`**. Lesson pages rendered through `CourseLayout` get the
   provider too.
-- **Two ways to find a page's tour:**
-  - **By path:** the tour has a `path`, a react-router pattern matched
-    exactly against the URL. This is how every workspace page is found.
-  - **By declaration:** the tour has a `page` name instead of a path. The
-    component calls `useDeclarePageTour(page, enabled, { autoStart })`, the
-    declaration takes priority over the path tour, and it is withdrawn when
-    the component unmounts. This is for pages whose URL does not identify
-    them: any lesson module (`lesson-module`) and any lesson overview
-    (`lesson-index`). With `autoStart: false` the tour never opens by itself
-    but the replay button still plays it: lesson modules other than the first
-    declare it that way. Outside a provider (visitor, admin) the hook does
-    nothing.
+- **How a page's tour is found:** the tour has a `path`, a react-router
+  pattern matched exactly against the URL. The other way — a tour declared by
+  its component (`useDeclarePageTour`, `findDeclaredTour`, the `autoStart`
+  option) — served only the lesson tours and was deleted with them on
+  2026-11-22 (commit `4511da19`).
 - **Waiting for the server:** until `GET /me/tours` answers, no tour opens,
   so a tour already seen is never flashed. If the request fails, nothing
   opens.
@@ -149,9 +147,7 @@ i18n/locales/ar/tour.json   all tour text — ON-DEMAND namespace `tour`        
 | `student.notebook` | `/espace/cahier` | new note · search · views · filters (sidebar on desktop, button on phone) |
 | `student.class` | `/espace/qism` | current classes · teacher recommendations · join by code |
 | `student.profile` | `/espace/profil` | identity · access · settings |
-| `student.unit` | `/courses/:levelId/:gradeId/:chapterId/units/:unitId` | objectives · challenge · progress · first lesson card — each target also matches the student view of a converted unit (`UnitMissionView`, 2026-11-09: the goals chip, the challenge card, the lessons-done counter, the unit path) |
-| `student.lesson-index` | **declared** (`lesson-index`) by `LessonIndex`, never in وضع القسم | hero · tools (المختبر) · progress · الكفاءات (`[data-lesson-structure]`) · modules |
-| `student.lesson` | **declared** (`lesson-module`) by `ModuleLayout` on EVERY module, never in وضع القسم; opens by itself only on the first module (position 1, so « أستعدّ » when the lesson starts at module 00), replayable from any module | welcome · module header · position in the lesson · « 🧠 بطاقتي » knowledge map (`[data-km-trigger]`) · « 📓 كرّاسي » notebook (`[data-nb-trigger="lesson"]`) · المختبر (`[data-ml-overlay-trigger]`) · previous/next navigation |
+| `student.unit` | `/courses/:levelId/:gradeId/:chapterId/units/:unitId` | objectives · challenge · progress · first lesson card — each target also matches the student view of a converted unit (`UnitMissionView`) |
 | `teacher.home` | `/enseignant` | welcome · usage · new class · classes · nav · replay button |
 | `teacher.courses` | `/enseignant/cours` | search · grades · ميادين · list |
 | `teacher.mathlab` | `/enseignant/atelier` | same targets as the student, teacher text |
@@ -162,15 +158,8 @@ i18n/locales/ar/tour.json   all tour text — ON-DEMAND namespace `tour`        
 | `teacher.plan` | `/enseignant/offre` | current plan · how-to · seats · activation code |
 | `teacher.profile` | `/enseignant/profil` | name |
 | `teacher.unit` | same path as `student.unit` | objectives · lesson card · محاور chips (`[data-lesson-modules]`) · مذكرة الدرس / وضع القسم (`[data-teacher-lesson-actions]`) |
-| `teacher.lesson-index` | same declaration as `student.lesson-index` | hero · tools (وضع القسم, المختبر) · الكفاءات · modules |
-| `teacher.lesson` | same declaration as `student.lesson` | same targets, teacher text (all modules open, no progress recorded) |
 
-The lesson tour plays **once per account across all lessons**, not once per
-lesson. Opening any lesson's first module after closing it does not reopen
-it. The same holds for `*.lesson-index` and `*.unit`: one tour for every
-lesson overview, one for every unit page. Until 2026-10-08 only the first
-module declared the lesson tour, so the replay button was missing on every
-other module, on the lesson overview and on the unit page.
+The unit tour plays **once per account across all units**, not once per unit.
 
 Shared components (catalogue, Math Lab, notebook) carry role-neutral hooks.
 Each role has its own key and its own text.
@@ -184,21 +173,14 @@ Each role has its own key and its own text.
    loaded.
 2. **Register** in `tourRegistry.js`: `{ key: '<role>.<page>', role, path, steps: [{ id, target? }] }`.
    Use one key per (role, page). `path` is a react-router pattern matched
-   exactly; the query string is ignored. If the URL cannot identify the page,
-   use `page: '<name>'` instead of `path`, and call
-   `useDeclarePageTour('<name>', condition)` in the component, before any
-   early return.
+   exactly; the query string is ignored.
 3. **Write the text** in `i18n/locales/ar/tour.json` under
    `<role>.<page>.<stepId>.title|body`: a short title and one simple sentence.
-4. **Run** `npx vitest run src/features/tours` (registry contract) and
-   `node apps/web/e2e/page-tours.mjs` with Vite running (add the page to its
-   `PAGES` list).
+4. **Run** `npx vitest run src/features/tours` (registry contract).
 
 `tourRegistry.test.js` fails if a step has no Arabic title or body, if a
-`data-*` hook it targets is set nowhere in the code (the scan covers `src/`
-and the shared lesson engine `lessons/common`, but not lesson content), if a
-tour has neither or both of `path` and `page`, if two tours share a
-(role, page), or if a key does not match the server's format.
+`data-*` hook it targets is set nowhere in the code (the scan covers `src/`),
+or if the shared controls or the replay label are missing.
 `tourModel.test.js` covers matching, auto-start, step skipping and placement.
 
 ## 6. Tests
@@ -208,4 +190,3 @@ tour has neither or both of `path` and `page`, if two tours share a
 | `apps/api/tests/Feature/PageTourTest.php` | empty list for a new account; finish and skip are stored per account; replay keeps one row with the last outcome; another role's key → 403, malformed key → 404, bad status → 422; admin → 403; unverified → 403; guest → 401; `eligible_since` |
 | `features/tours/tourModel.test.js` | pure logic and placement |
 | `features/tours/tourRegistry.test.js` | registry ↔ text ↔ code hooks |
-| `apps/web/e2e/page-tours.mjs` | in the browser, student and teacher, desktop 1440 and phone 390: the tour opens on first visit with Arabic text (no raw key), the card stays on screen, there is no horizontal overflow, Finish → `completed`, Esc → `skipped`, a closed tour stays closed after reload, the dimmed layer does not intercept clicks, the replay button plays the tour again, and there are no console errors. For lessons: module « المعارف » does not open the tour, the first module does and includes the بطاقتي and كرّاسي steps, and once closed it stays closed on any lesson. The student sidebar's account tools fit on one row |

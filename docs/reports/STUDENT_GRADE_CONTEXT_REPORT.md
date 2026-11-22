@@ -1,6 +1,11 @@
 # Student Grade & Personalized Learning Context — Report
 
-Placed in `docs/reports/`, per this repo's convention for point-in-time phase reports (see `docs/architecture/ARCHITECTURE.md` §10 for the living contract this report complements).
+> **Status (2026-11-22).** A point-in-time report of the OLD French product, kept as history. The code it built came
+> back with the Algerian import (DZ `dev` `7f4cef1c`, 2026-11-22) and has moved on since; the living contract is
+> `docs/architecture/ARCHITECTURE.md` §6–§7. Not true here: person names are now refused unless written in Arabic
+> letters and e-mails are Arabic — until plan step 1E (`FRANCE_REBUILD_PLAN.md` §4).
+
+Placed in `docs/reports/`, per this repo's convention for point-in-time phase reports (see `docs/architecture/ARCHITECTURE.md` §7 for the living contract this report complements).
 
 ## What was built
 

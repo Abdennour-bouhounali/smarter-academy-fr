@@ -1,7 +1,12 @@
 # CODE_HEALTH — lint, format, and « nothing unused »
 
-Since 2026-11-17 (Phase 0 of the lesson v2 rollout, `docs/reports/LESSON_V2_MASTER_PLAN.md` §4 step 2). This document owns
-the rules that keep the code clean and says which command enforces each one. Every command below runs in CI.
+> **Status (2026-11-22).** Covers lint, format and the unused-code checks. Imported from the Algerian platform (DZ `dev`
+> `7f4cef1c`) on 2026-11-22. True here: every check and rule below (the scripts are the same files). Not true here: the
+> i18n files are still `locales/ar/` (French ones come with plan step 1D); the baseline and the `KEPT` lists were
+> rewritten in step 1B (§3).
+
+Since 2026-11-17 on the Algerian platform. This document owns the rules that keep the code clean and says which command
+enforces each one. Every command below runs in CI.
 
 ## 1. The checks
 
@@ -32,8 +37,8 @@ Choices that are deliberate — do not « fix » them:
 
 | Choice | Why |
 |---|---|
-| `no-irregular-whitespace` skips strings, templates, comments, JSX text | the no-break space is used on purpose in Arabic counters (« 12 تمرينًا ») |
-| `no-constant-condition` / `no-constant-binary-expression` are off in tests and in `scripts/practice-oracle/` | a test writes the arithmetic of a statement on purpose: `expect(3 * 5 > 12 && 3 * 4 <= 12)` |
+| `no-irregular-whitespace` skips strings, templates, comments, JSX text | the no-break space is used on purpose in counters and before French high punctuation (`FRENCH_LANGUAGE_CONTRACT.md`) |
+| `no-constant-condition` / `no-constant-binary-expression` are off in tests and in `scripts/practice-oracle/` (the oracle's engine; its per-lesson files were deleted in step 1B) | a test writes the arithmetic of a statement on purpose: `expect(3 * 5 > 12 && 3 * 4 <= 12)` |
 | `no-empty` allows an empty `catch {}` | « storage may be closed, go on » |
 | unused `eslint-disable` comments are not reported | the tree carries 900+ `react-hooks/exhaustive-deps` comments for a rule this config does not turn on |
 | `no-useless-escape` stays ON | **it catches real mistakes in mathematics**: `'\;'` in an ordinary string is `;`, so the student saw « ; » instead of a LaTeX space, and `'\le'` printed « le ». Write `'\\;'`, or `String.raw` |
@@ -57,8 +62,8 @@ never ask to delete something alive.** Its own test (`scripts/check-unused.test.
 - Files the tools load by a path they BUILD count as used entirely (`READ_BY_PATH`: a lesson's `lesson.config.js` and
   `content/*.js`).
 
-**i18n keys** (`apps/web/src/i18n/locales/ar/*.json`). A key is used when its path is written in the code — whole
-(`t('home.title')`), in parts (`const NS = 'manipulation.eggTrays'` then `${NS}.cp.${id}`), or open
+**i18n keys** (`apps/web/src/i18n/locales/ar/*.json` today). A key is used when its path is written in the code — whole
+(`t('home.title')`), in parts (`const NS = 'status'` then `${NS}.${id}`), or open
 (`t(`status.${kind}`)` uses everything under `status.`). Strings written in `apps/api/app` count too (the server may
 send a key). Plural forms follow their base key.
 
@@ -68,15 +73,15 @@ uses everything under it.
 
 **Keeping something on purpose**: add it to `KEPT` in the script, with the reason. A `KEPT` line that keeps nothing
 any more fails the check.
+On 2026-11-22 (commit `4511da19`) `KEPT` names 72 exports of the lesson engine, each with the reason « lesson engine —
+no French lesson yet »: the engine is kept whole with no lesson to call it. `check:unreached` has its own `KEPT` in
+`scripts/check-unreached.mjs`: 8 files of the lesson path that no lesson mounts yet; each line leaves when the first
+French lesson reaches its file. 1,283 files are reached from `main.jsx`.
 
 ### The baseline — it only shrinks
 
-`scripts/check-unused.baseline.json` names what was already unused on 2026-11-17 and is not removed yet:
-
-| In the baseline | Count | Why it is still there |
-|---|---|---|
-| exports that only a test imports | 494 | mostly exact maths of `packages/core/arithmetic` (237) and helpers of the old labs: tested, used by no screen. A rebuilt lesson either uses one (the line leaves the baseline) or its old lab is deleted with it |
-| i18n keys | 59 | the key is read nowhere, but its last word is also written elsewhere in the code: to be looked at by a person before deletion |
+`scripts/check-unused.baseline.json` names what was already unused and is not removed yet: 233 lines on 2026-11-22
+(175 exports, 58 i18n keys), after the clean-up of step 1B (commit `4511da19`).
 
 Rules: a NEW unused thing fails CI; a baseline line that is no longer unused fails CI too (delete the line).
 `node scripts/check-unused.mjs --update-baseline` rewrites the file — read its diff: it must only remove lines.
@@ -96,15 +101,12 @@ Rules: a NEW unused thing fails CI; a baseline line that is no longer unused fai
 1. Delete what the change makes useless **in the same change** — code, export, i18n key, sentence, test of dead code.
 2. `npm run lint && npm run check:unused && npm run check:unreached` pass.
 3. A new or rebuilt area is added to `format:v2` and `check:format`. A v2 lesson enters with its `world/`, `board/` and
-   `lesson.pack.js` when its pack is written (on 2026-11-19: the six lessons that have a pack, and `scripts/lesson-brief.mjs`).
+   `lesson.pack.js` when its pack is written (no lesson exists yet).
 4. Never add to the baseline, never widen `KEPT` without a reason a reader can check.
 
-## 6. State on 2026-11-17 (the first run)
+## 6. State on 2026-11-17 (the first run, Algerian tree)
 
-Measured on the tree before the clean-up: 2,312 unused imports, 389 unused variables, 62 useless escapes (37 of them
-LaTeX spaces that reached the student as « ; »), 6 duplicated keys, 1 unreachable branch, 1 undefined name;
-1,949 unused exports, 211 unused i18n keys, 30 unused sentences; in the API 3 files with unused imports and 1 unused class.
-
-After it: lint 0 finding on about 6,050 files; exports 494 (baseline), i18n keys 59 (baseline), sentences 0; API 0.
-Twenty-three places where a dead variable looked like a forgotten check or a forgotten feature are listed, not fixed, in
-`docs/reports/LINT_FIRST_RUN_2026-11-17.md`.
+Before the clean-up: 2,312 unused imports, 389 unused variables, 62 useless escapes (37 of them LaTeX spaces that reached
+the student as « ; »), 1,949 unused exports, 211 unused i18n keys. After it: lint 0 finding. The list of 23 dead
+variables that looked like forgotten checks concerned Algerian lessons and was deleted with them on 2026-11-22
+(`git show 049380e:docs/reports/LINT_FIRST_RUN_2026-11-17.md`).

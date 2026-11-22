@@ -1,13 +1,18 @@
 # Le cahier de l'élève (📓 كرّاسي)
 
+> **Status (2026-11-22).** Covers the student's (and the teacher's) notebook: the floating window, « Mon cahier », the
+> teacher's read-only access, the context of a note. Imported from the Algerian platform (DZ dev 7f4cef1c) on
+> 2026-11-22. True here: the API (`NotebookService`, `NotebookFlowTest`) and the web code (`features/practice/notebook/`,
+> `lessons/common/notebook/LessonNotebookAnchor.jsx`). Not true here: no lesson exists, so the lesson side is reachable
+> by no page; the old knowledge map, « أضف إلى كرّاسي » and the « قاعدتي » pilot are deleted; the interface is Arabic.
+
 Le cahier est **la représentation de l'élève** de ce qu'il veut garder : ses
 mots, ses erreurs, ses explications. Il n'est ni une seconde carte des
 connaissances, ni une copie de la leçon.
 
 | Surface | Rôle | Écrit par |
 |---|---|---|
-| 🧠 Carte des connaissances (`lessons/common/knowledge`) | le savoir de la plateforme, cumulé au fil des modules | la leçon (`knowledge.jsx`) — **lecture seule** pour l'élève |
-| ⭐ À retenir (`KnowledgeSnapshot`) | présentation de la carte en fin de module | la leçon |
+| 🧠 La page des savoirs d'une leçon v2 (`gameworld/kit/KnowledgePage.jsx`) | le savoir de la leçon | la leçon — **lecture seule** pour l'élève |
 | 📈 Maîtrise (`LearningPointMastery`, `/practice/overview`) | l'état démontré de l'apprentissage | le moteur d'exercices |
 | 📓 Cahier (`features/practice/notebook`) | les notes personnelles, rattachées à l'endroit où elles ont été prises | **l'élève** |
 
@@ -77,10 +82,7 @@ voit ni la note d'un élève ni celle d'un autre enseignant (404). Une note
 d'exercice ouverte depuis le cahier de l'enseignant renvoie à la leçon, la
 pratique étant une surface d'élève (`TEACHER_CLASSROOM_ARCHITECTURE.md` §8b).
 
-Rien ne passe de la carte au cahier tout seul : « أضف إلى كرّاسي »
-(`AddToNotebookButton`) dépose le titre et le résumé d'une connaissance comme
-*point de départ*, que l'élève réécrit. La carte n'est jamais modifiée depuis
-le cahier ; le cahier ne touche ni à la maîtrise ni à la progression. Une
+Rien ne passe des savoirs de la leçon au cahier tout seul ; le cahier ne touche ni à la maîtrise ni à la progression. Une
 **intervention** de l'enseignant (« تدخّل ») n'écrit jamais dans le cahier de
 l'élève : c'est une donnée de l'enseignant (`classroom_interventions`).
 
@@ -134,9 +136,8 @@ serveur + du catalogue, jamais d'une seconde structure.
 App
 └── NotebookProvider            ← LA fenêtre (NotebookWindow), au-dessus du routeur
     └── Router
-        ├── leçon (buildLessonRoutes → LazyLessonKnowledgeProvider)
-        │   ├── <Module />
-        │   └── <LessonNotebookAnchor config module />   publie la POSITION + déclencheur « 📓 كرّاسي »
+        ├── leçon (lessons/common/lessonRoutes.jsx → lessonRuntime.jsx)
+        │   └── <LessonNotebookAnchor config />           publie la POSITION + déclencheur « 📓 كرّاسي »
         ├── pratique (PracticeSession → NotebookButton)  même pastille « 📓 كرّاسي », contexte exercice/question
         └── Mon cahier (NotebookSpace / NoteDetail)       retrouve, rouvre, révise
 ```
@@ -228,25 +229,10 @@ n'y entre jamais.
 
 - `apps/web/src/features/practice/notebook/*.test.js` — logique pure.
 - `apps/api/tests/Feature/NotebookFlowTest.php` — propriété, contexte, refus.
-- `apps/web/e2e/notebook.mjs` — l'exercice : pastille, ouverture en grand et centrée, huit tailles d'écran, pied de question non recouvert, glisser.
-- `apps/web/e2e/notebook-lesson.mjs` — la leçon : contexte, navigation, brique, retour, sécurité.
-- `apps/web/e2e/notebook-space.mjs` — Mon cahier : compteurs, vues, recherche, filtres, carte, page, groupé, impression, révision, mobile.
+- The walks of the notebook (`e2e/notebook*.mjs`) were deleted with the Algerian lessons (2026-11-22).
 
-## « قاعدتي » — the rule the student writes becomes a card (PILOT, 2026-11-07)
+### Not the notebook: the lesson's saved answers
 
-Council of 2026-11-07 + owner's choices. In the pilot lesson only (`studentView: 'mission'`) and for a real STUDENT account,
-when the student writes a rule in their own words in « أتوقّع القاعدة » (`kit/PredictRule.jsx › PredictPanel`) and reveals the
-official rule, a NORMAL note is created through `POST /practice/notes` (`predictRule.ruleNoteOf`):
-`title` « قاعدتي: <rule title> », `content` « كتبتُ: <their words> » then « القاعدة: <official rule> », `lessonCode`, `noteType: 'note'`.
-- It is an ordinary note, so the class teacher can READ it (read-only, the 2026-09-24 rule); the panel says so before the
-  student writes: « ستُحفظ قاعدتك في كرّاسي — يراها أستاذك. » (`predict.toNotebook`).
-- It is never learning evidence and feeds no mastery. A failed request (offline) never blocks the lesson.
-- Not yet extended to other lessons (pilot rule: extended only after the owner validates the prototype).
-
-
-### Not the notebook: the lesson's saved answers (PILOT, 2026-11-07)
-
-The answers a student gives inside the pilot lesson (choices, numbers, problem progress, written answers) are restored when the
-student comes back. They are NOT notes: they live in their own table `student_lesson_answers`, behind `GET/PUT
-/lessons/{code}/answers` (student only, `learner` routes), and no adult view reads them. Only the rule written in « أتوقّع القاعدة »
-reaches « كرّاسي », as described above. Details: `docs/lessons/LESSON_DEVELOPMENT_GUIDE.md` §4septies « The student's answers come back ».
+A student's answers inside a lesson are NOT notes: the API keeps them in their own table `student_lesson_answers`, behind
+`GET/PUT /lessons/{code}/answers` (student only, `learner` routes), and no adult view reads them. The module-lesson
+code that wrote them is deleted; whether a v2 lesson uses this route is `[NOT CHECKED 2026-11-22]`.

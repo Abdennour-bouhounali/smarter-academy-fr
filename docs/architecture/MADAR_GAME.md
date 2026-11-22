@@ -2,6 +2,13 @@
 
 > **Authoritative** for the student game « مدار » (Madar, "orbit"): the play loop, hearts and the refuel station (« محطة التزوّد »), how a score is bounded by the server, the ships, the weekly class leaderboard, the teacher's settings, tab and board display, the API, data model, frontend files and tests.
 > Implemented 2026-10-22. The code is the source of truth: `apps/api/app/Domain/Madar/` and `apps/web/src/features/madar/`.
+>
+> **Status (2026-11-22).** Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the four
+> games, hearts, runs, ships, turrets, leaderboards, the teacher's tab, the API and the grade entries keyed `6e`–`3e`.
+> Not true here: the refuel station draws from `content/practice`, which is EMPTY, so it has nothing to serve; the
+> interface is Arabic; the week and the day are Algiers time (`config/madar.php › timezone`) — French time zone and week
+> are step 1E of the plan, not yet applied in the code; the level families were cut for the Algerian years, not the French
+> programme.
 
 ## 1. What it is, and what it is not
 
@@ -79,7 +86,7 @@ Rendering rules:
 | Rule | Default | Where |
 |---|---|---|
 | Max hearts | 5 | `config/madar.php › hearts.max` |
-| Daily free hearts: on the first visit of the day (Algiers), hearts rise **to** this number, never above it and never accumulated | 3 (teacher: 0–5) | `hearts.daily_free`, `madar_class_settings.daily_free_hearts` |
+| Daily free hearts: on the first visit of the day (`madar.timezone`, Algiers today — plan 1E), hearts rise **to** this number, never above it and never accumulated | 3 (teacher: 0–5) | `hearts.daily_free`, `madar_class_settings.daily_free_hearts` |
 | A run costs | 1 ❤️ | `MadarService::startRun` |
 | A revive after a crash costs | 1 ❤️, at most 2 per run | `runs.max_revives` |
 | Runs per day: the screen-time limit; a refused start costs nothing | 30 (teacher: 5–100) | `runs.daily_cap`, `daily_run_cap` |
@@ -230,7 +237,7 @@ The lobby shows the **next goal**: the locked ship closest to its threshold, wit
 
 ## 7. Weekly class leaderboard
 
-Season = **one week, Sunday to Saturday (Algiers)**: `madar_runs.week_start`. Everyone starts from zero each Sunday.
+Season = **one week, Sunday to Saturday (`madar.timezone`, Algiers today — plan 1E)**: `madar_runs.week_start`. Everyone starts from zero each Sunday.
 - Players' class = their **primary class** (`StudyContextService`).
 - Ranking = each **active** member's best finished score of the week (`MadarLeaderboard`). Ties go to who reached the score first, then to the lower id. One query.
 - Students see the top 10 (first name + initial, ship, score), their own row and the participant count, **only if** the teacher left « ترتيب الأسبوع ظاهر للتلاميذ » on.
@@ -533,7 +540,7 @@ The **next level unlocks** when the previous one is completed (`madar_level_prog
 
 ### 50 levels × 3 sub-levels, adapted to the student (2026-10-23, owner)
 
-The maths games cover **the whole cycle moyen**: 50 levels in 11 families, each in three sub-levels أ / ب / ج (bigger numbers, subtler traps). A **position** is a sub-level, from 0 to 149, with `position = (level − 1) × 3 + (sub − 1)`. The catalogue is `features/madar/sniper/levels.js`, mirrored in `config/madar.php › sniper`.
+The maths games cover **the four years of the Algerian cycle moyen** (the levels were not re-cut for France): 50 levels in 11 families, each in three sub-levels أ / ب / ج (bigger numbers, subtler traps). A **position** is a sub-level, from 0 to 149, with `position = (level − 1) × 3 + (sub − 1)`. The catalogue is `features/madar/sniper/levels.js`, mirrored in `config/madar.php › sniper`.
 
 | Family | Levels |
 |---|---|
@@ -572,10 +579,10 @@ The maths games cover **the whole cycle moyen**: 50 levels in 11 families, each 
 
 | Year | Entry level |
 |---|---|
-| 1AM | 1 |
-| 2AM | 5 |
-| 3AM | 12 |
-| 4AM | 19 |
+| 6e | 1 |
+| 5e | 5 |
+| 4e | 12 |
+| 3e | 19 |
 
 The entry is taken from what the earlier years already covered: **never start hard** (owner, 2026-10-23).
 
@@ -770,7 +777,7 @@ The game has its own ladder, 3 sub-levels each, in 9 families:
 | المربعات والقوى والجذور | squares to 15, then to 25, and cubes; perfect square roots; powers of 2 and a × 10ᵏ |
 
 - Level 1 starts at « 2 + 1 ». Level 50 draws from the hardest levels at sub-level ج.
-- **Entry by year** (`mental.entry`, mirrored by `MENTAL_ENTRY`): 1AM → 3, 2AM → 7, 3AM → 11, 4AM → 15. Every easier level is open, so « 2 + 1 » can always be replayed.
+- **Entry by year** (`config/madar.php › mental.entry`; the web mirror `MENTAL_ENTRY` is gone from the tree — [NOT CHECKED 2026-11-22] where the web reads it now): `6e` → 3, `5e` → 7, `4e` → 11, `3e` → 15 (the Algerian years' entries, renamed). Every easier level is open, so « 2 + 1 » can always be replayed.
 - **Warm-up.** Like every maths game, it opens two levels lower with a free first round (§16).
 - **Answers** are always an integer or a finite decimal, written with the comma (« 1,2 », « −4 »).
 - **Tests:** `mental/levels.test.js` re-reads every problem (50 levels × 3 sub-levels × 4 seeds × 25) with an independent evaluator, and checks that answers grow from level 1 to 28.

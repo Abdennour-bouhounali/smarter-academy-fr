@@ -1,9 +1,13 @@
 # « بوصلتي » — the year compass (start check, report, year and week plan)
 
-**Status:** P0 implemented 2026-11-09: the school calendar, the four 2026/2027 progressions, `schoolCalendar.js`
-and `check:year-calendar`. P1 implemented 2026-11-09 (4AM only): the question bank, the pure engine, the server
-(`Domain/Compass`, 6 routes), the page `/espace/bawsala` and the home card — §9. The screens were built from the approved
-canvas but **not yet reviewed in a browser**. P2–P4 are **Planned**.
+> **Status (2026-11-22).** Covers the year compass: calendar and progressions as data, scope, engine, server, screens.
+> Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the ENGINE (`schoolCalendar.js`,
+> `packages/core/compass/`, `Domain/Compass`, the page `/espace/bawsala`), on `curriculum/fr/calendar/`, open for 3e
+> only (`config/compass.php`). Not true here: there is no French calendar (the 2026/2027 file has `start`/`end` null and
+> no week — Stage 2D writes it), no progression, no question (the index is empty), so the compass never opens; the
+> screens still speak Arabic; plan §7 row 3 keeps it hidden until French content exists.
+
+**Status (DZ, 2026-11-09):** P0 and P1 implemented (the DZ screens were never reviewed in a browser). P2–P4 are **Planned**.
 **Authoritative for:** what « بوصلتي » is, its owner decisions, the school calendar and progressions as data, the
 scope rules (what a check covers on a given date), the two student cases (on my own / with a class), the bands, the
 plan rules, privacy, and the UI rules of its screens.
@@ -45,17 +49,14 @@ the platform's usual icon style, laptop and tablet first (phones later).
 
 ### 3.1 Files
 
-`packages/core/curriculum/dz/calendar/`:
+`packages/core/curriculum/fr/calendar/`:
 
 | File | Content |
 |---|---|
-| `school_2026_2027.json` | ONE calendar shared by the four grades: `start`, `end`, 25 teaching `weeks` (`id` `w01`…`w25`, `from`, `to`, `term`), and `events` (`evaluation`, `break`, `holiday`, `devoir` = فرض, `exam`, `bem_sprint`). An event with `grades` concerns only those grades (1AM's term-3 فرض is a week later; the BEM sprint is 4AM only). |
-| `progression_<g>_2026_2027.json` | One per grade: `weeks[]` aligned with the calendar weeks, each `{ week, school?, lessons }` — `school` = the titles of the school's sheet (reference, 1AM–3AM), `lessons` = catalogue lesson codes in teaching order. `unscheduled[]` = catalogue lessons the school sheet does not schedule, each with a `reason`. `placedByPlatform[]` = lessons the sheet does not name that the platform placed in their unit's week (4AM: 7, to confirm by the owner). |
-| `schoolCalendar.js` | Pure functions, imported **by path** (never from the core barrel). |
+| `school_2026_2027.json` | ONE calendar shared by the four grades: `start`, `end`, teaching `weeks` (`id` `w01`…, `from`, `to`, `term`), and `events` (`evaluation`, `break`, `holiday`, `devoir`, `exam`, `bem_sprint`). An event with `grades` concerns only those grades. **Today: `start`/`end` null, no week, no event.** The event kinds are DZ's (`bem_sprint` is Algerian); the French ones (trimestres, zones, brevet blanc) come with Stage 2D — not yet applied in the code. |
+| `progression_<g>_2026_2027.json` | One per grade (`6e`…`3e`): `weeks[]` aligned with the calendar weeks, each `{ week, school?, lessons }` (`lessons` = catalogue lesson codes in teaching order); `unscheduled[]` = catalogue lessons not scheduled, each with a `reason`; `placedByPlatform[]`. **Today all empty.** |
+| `schoolCalendar.js` | Pure functions, imported **by path** (never from the core barrel). `GRADES` = `['6e','5e','4e','3e']`. |
 | `schoolCalendar.test.js` | Unit tests. |
-
-Sources: the owner's school sheets of 2026-11-09 — 1AM (high-resolution), 3AM and 4AM 2026/2027; 2AM 2025/2026 placed on
-the 2026/2027 calendar (the order is the same every year).
 
 ### 3.2 The functions (`schoolCalendar.js`)
 
@@ -84,8 +85,8 @@ Dates are ISO strings `YYYY-MM-DD`, compared as strings; no time zone is involve
 - a catalogue lesson is neither placed nor declared `unscheduled` with a reason;
 - a `placedByPlatform` lesson is not placed.
 
-2026/2027 today: 1AM 69/69 placed, 2AM 65/65, 3AM 58/62 (+ the 4 lessons of « البرهان في الرياضيات », unscheduled by the
-school sheet), 4AM 74/74.
+A year NOT YET WRITTEN (no dates, no week, no event) is not validated but announced as such; the only such year allowed
+is the French 2026/2027, until Stage 2D (`check-year-calendar.mjs`). `validateSchoolYear` itself refuses it.
 
 ### 3.4 The yearly renewal (owner rule)
 
@@ -105,7 +106,7 @@ On a date, for a grade, with a pointer (§5), `buildScope({ progression, pointer
   net (`prereqsOf`: `requires`, then `extends`, then `consolidates`), **at most 4**, never the coming lessons' own items.
 - **Rule C — 2 steps, adaptive** (engine, §4.2). **Never step 3.**
 
-`itemInfo(id)` gives what the report shows: the item's Arabic text, its grade and its home lesson (`homeLessonOf`).
+`itemInfo(id)` gives what the report shows: the item's `text`, its grade and its home lesson (`homeLessonOf`).
 
 ### 4.1 The question bank — `content/compass/index.generated.json`
 
@@ -116,15 +117,15 @@ fails when it is stale). From the practice bank, a question enters when:
 - its `answerType` is `choice` or `rational` (graded by `AnswerEvaluator`);
 - it is the first question of its exercise, or a sub-question that does not point back to an earlier answer
   (« استنتج », « السابق », « السؤال »…);
-- its lesson declares **exactly one** programme item; lessons with several items are left out (`gaps.multiItemLessons`, 25 today)
-  because a question cannot be attributed to one الكفاءة.
+- its lesson declares **exactly one** programme item; lessons with several items are left out (`gaps.multiItemLessons`)
+  because a question cannot be attributed to one item;
+- it carries its DATA: a question is refused (`gaps.missingData`) when its text points to a figure, diagram or table the
+  exercise does not carry, or names a letter that no formula, text or table defines. The detector of these references
+  reads Arabic wording `[NOT CHECKED 2026-11-22]` for French.
 
-- it carries its DATA: a question is refused (`gaps.missingData`, 459 on 2026-11-09) when its text points to a figure, diagram or
-  table the exercise does not carry, or names a letter ($A$, $C$…) that no formula, text or table defines.
-
-The file holds references `lesson/exercise/question` only — no answer — and is read by the **server only**. Coverage on
-2026-11-09 (items with both levels): 4AM 36/52, 3AM 16/58, 2AM 12/54, 1AM 10/60. An item without questions stays
-« لم نفحصها بعد » and never blocks the check.
+The file holds references `lesson/exercise/question` only — no answer — and is read by the **server only**. Today it is
+empty (no bank, no item: coverage 0 for every grade). An item without questions stays « not checked yet » and never
+blocks the check.
 
 ### 4.2 The engine — `packages/core/compass/engine.js` (pure, replayable)
 
@@ -186,7 +187,7 @@ SERVER state only (`GET /compass`; a network error renders `off`, never an empty
 
 | State | What shows |
 |---|---|
-| `off` (check not open for the grade: 1AM–3AM today) | the chips, « واصل درسك » beside « التحدّي اليومي », the year strip — the same page without the check. |
+| `off` (check not open for the grade: every grade today) | the chips, « واصل درسك » beside « التحدّي اليومي », the year strip — the same page without the check. |
 | `new` (never checked) | ONE card « اعرف من أين تنطلق » with « ابدأ الجولة », and a quiet link « أو واصل درسك: … ». No other card. |
 | `active` | « واصل جولة الانطلاق » (round, answered count, the round's dots), then « واصل درسك » beside « التحدّي اليومي ». |
 | `done` | « مهمّة اليوم » = the first unticked task of the week; « خطّتي لهذا الأسبوع » (≤ 3 tasks, ticked) beside « خريطة نقاطي » (the server's counts + « ابدأ من هنا »); the lesson and the daily challenge; the YEAR strip (« السنة: الأسبوع N من 25 », taught / now / coming / فرض / exams / holidays / BEM from the real calendar); when the next full check opens. |
@@ -209,10 +210,10 @@ every such read will join the privacy contract tests.
 | Phase | Content | Status |
 |---|---|---|
 | P0 | Decisions, calendar + progressions, `schoolCalendar.js`, `check:year-calendar`, this contract | **Done 2026-11-09** |
-| P1 | 4AM check + report, term-1 scope, both cases (student-tap pointer), server grading, dashboard card, week plan v0 | **Done 2026-11-09** (browser review pending) |
+| P1 | check + report, term-1 scope, both cases (student-tap pointer), server grading, dashboard card, week plan v0 | **Done in DZ 2026-11-09** (browser review pending); here waits for a French calendar, net and bank |
 | P2 | Rolling week plan + « تحقّق » loop | Planned |
 | P3 | Year view + the teacher layer (« بوصلة القسم ») + parent line | Planned |
-| P4 | Full 4AM year, 3AM → 1AM, BEM sprint | Planned |
+| P4 | Every grade, the exam run-up | Planned |
 
 ## 9. Implementation (P1, 2026-11-09)
 
@@ -231,7 +232,7 @@ every such read will join the privacy contract tests.
 |---|---|
 | `GET /compass` | `{ enabled, grade, profile, active, last, nextRetakeAt, availability }` — `availability` = item → levels with questions |
 | `PUT /compass/pointer` | `{ mode: lesson \| not_following, lesson? }` — the lesson must exist (422 `compass_unknown_lesson`) |
-| `POST /compass/sessions` | `{ targets[], pointerLesson, pointerSource: student \| default, schoolYear }` — 403 `compass_grade_unavailable` outside `config('compass.grades')` (`['4am']`), 409 `compass_retake_too_early` + `nextRetakeAt` within 7 days, idempotent while a session is active |
+| `POST /compass/sessions` | `{ targets[], pointerLesson, pointerSource: student \| default, schoolYear }` — 403 `compass_grade_unavailable` outside `config('compass.grades')` (`['3e']`), 409 `compass_retake_too_early` + `nextRetakeAt` within 7 days, idempotent while a session is active |
 | `POST /compass/sessions/{uuid}/questions` | `{ itemId, level }` → the public question; while one awaits its answer, the SAME one comes back (no reroll) |
 | `POST /compass/sessions/{uuid}/answers` | `{ answerId, answer, unsure }` → `{ correct, unsure }`; an answered question is 409 |
 | `POST /compass/sessions/{uuid}/finish` | drops the unanswered question, writes `compass_item_states`, returns `{ bands, finishedAt }` |
@@ -263,7 +264,7 @@ student is served like an independent one (student tap), with a line saying the 
 
 ### 9.5 Tests
 
-`packages/core/curriculum/dz/calendar/schoolCalendar.test.js`, `packages/core/compass/{engine,scope}.test.js` (+ the shared
+`packages/core/curriculum/fr/calendar/schoolCalendar.test.js`, `packages/core/compass/{engine,scope}.test.js` (+ the shared
 fixture), `apps/web/src/features/compass/compassModel.test.js`, `apps/api/tests/Unit/Compass/ItemBandTest.php`,
-`apps/api/tests/Feature/CompassFlowTest.php` (4AM gate, no key in the public question, server grading, bands, no
+`apps/api/tests/Feature/CompassFlowTest.php` (grade gate, no key in the public question, server grading, bands, no
 `learning_evidence`, 7-day retake, ownership, pointer). Checks: `check:year-calendar`, `check:compass-index`.

@@ -4,12 +4,17 @@
 > qu'elles contiennent, comment on les régénère, et les garanties qu'elles
 > offrent. La source de vérité reste le code : `apps/api/database/seeders/DemoDataSeeder.php`
 > et `apps/api/database/seeders/Demo/`.
+>
+> **Status (2026-11-22).** Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the seeder and
+> its personas, now aimed at the grade `3e` (`new DemoContent('3e')`). Not true here: no 3e lesson and no exercise exist
+> (`content/practice/` is empty), so the seeder stops with its « aucune leçon 3e publiée » message and builds nothing;
+> the notes it would write are Arabic and the accounts keep the domain `@smarter-academy-dz.test` (step 1D/1E).
 
 ## Ce que c'est
 
 Un peuplement qui donne à la plateforme l'aspect d'**environ trois mois
-d'enseignement déjà écoulés** : des élèves à des points différents de l'unité
-1, des erreurs concentrées sur certaines notions, un cahier rempli, des
+d'enseignement déjà écoulés** : des élèves à des points différents du programme
+de 3e, des erreurs concentrées sur certaines notions, un cahier rempli, des
 classes avec des leçons masquées, et une administration qui a activé des
 offres à la main.
 
@@ -61,15 +66,15 @@ démonstration**, affiché en avertissement, pas un bug contourné.
 
 Aucun contenu n'est inventé. `DemoContent` lit :
 
-- les leçons, modules et points de savoir **depuis la base** (unité 1 de 4AM
-  telle qu'importée) ;
+- les leçons, modules et points de savoir **depuis la base** (les leçons de 3e publiées —
+  aucune aujourd'hui) ;
 - les exercices, leurs questions, leurs points de savoir et leurs
   **erreurs-types depuis `content/practice/`**, par le même
   `ExerciseRepository` qu'utilise le moteur de pratique en production, filtrés
   sur ce que la base déclare publié.
 
-Les notes du cahier (كرّاسي) sont **en arabe** — le cahier est l'écriture
-privée de l'élève, et cet élève écrit dans la langue de son cours — et chaque
+Les notes du cahier (كرّاسي) sont encore **en arabe** (textes du seeder, non
+traduits — étape 1D du plan) ; chaque
 note d'erreur est accrochée à une vraie erreur-type
 (`content/practice/misconceptions.json`) et au couple exercice/question qui
 l'a provoquée. Une note s'ouvre donc sur la question qui l'a fait naître.
@@ -103,14 +108,14 @@ récentes.
 ### Enseignants et offres
 
 - `teacher01` — offre à sièges activée par l'administration (paiement hors
-  plateforme), deux classes de 4AM, dont la classe mixte qui sert à juger la
+  plateforme), deux classes de 3e, dont la classe mixte qui sert à juger la
   lecture enseignant ;
 - `teacher02` — même modèle, plus petit, une classe de soutien ;
 - `teacher03` — resté sur l'offre **gratuite** (5 sièges) : c'est le compte
   qui montre la limite commerciale à l'œuvre.
 
 La visibilité des leçons diffère d'une classe à l'autre : chaque classe est
-arrivée à un point différent de l'unité, et les leçons suivantes sont
+arrivée à un point différent du programme, et les leçons suivantes sont
 masquées. Aucune classe n'a tout masqué.
 
 Les adhésions passent par le service avec le consentement (`consented:
@@ -164,7 +169,7 @@ php artisan db:seed --class=DemoDataSeeder
 ```
 
 Prérequis : le curriculum doit être importé (sinon le seeder s'arrête avec un
-message explicite — une base sans leçon 4AM publiée ne peut porter aucune
+message explicite — une base sans leçon 3e publiée ne peut porter aucune
 progression). La commande est sûre à relancer autant de fois qu'on veut.
 
 ## Ce que ce jeu de données ne fait pas

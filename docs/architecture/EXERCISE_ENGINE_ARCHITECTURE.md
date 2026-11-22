@@ -1,5 +1,10 @@
 # EXERCISE_ENGINE_ARCHITECTURE.md
 
+> **Status (2026-11-22).** The TARGET design of the practice engine, written for the first French product
+> (2026-09) and carried through the Algerian platform; imported back on 2026-11-22 (DZ dev 7f4cef1c). Largely
+> implemented; some paths in it are illustrative, not real, and it predates Mastery V2. What runs is described by
+> `EXERCISE_CONTRACT.md` and `LEARNING_ARCHITECTURE.md`, which win where they disagree. Not a contract.
+
 ## 1. Purpose
 
 The Exercise Engine is the platform's dedicated system for **repeated mathematical practice**.

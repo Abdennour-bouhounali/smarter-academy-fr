@@ -1,5 +1,12 @@
 # Phase 7 — Le cycle de vie de l'abonnement
 
+> **Status (2026-11-22).** A point-in-time report of the OLD French product (2026-09-11), kept as the history of the
+> Stripe code. That code came back with the Algerian import (DZ `dev` `7f4cef1c`, 2026-11-22) and is in this tree:
+> `apps/api/app/Domain/Billing/*`, `BillingCheckoutController`, `BillingSubscriptionController`, `POST /webhooks/{provider}`
+> and `/billing/*` in `routes/api.php`. Not true here: no web page calls it — `/tarifs`, `/abonnement`,
+> `/abonnement/retour` are absent from `App.jsx`; paid access is granted by activation codes. Re-attaching Stripe in
+> EUR is plan step 1F (`FRANCE_REBUILD_PLAN.md` §4). Test counts below are the old product's.
+
 > Ce que la phase 6 vendait, la phase 7 le rend **gérable** : voir son
 > abonnement, le résilier, revenir sur cette décision, changer de carte.
 > Aucun accès n'est ouvert ou fermé par ces gestes — la règle de la phase 5
