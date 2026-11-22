@@ -11,8 +11,8 @@ import GeometryPanel from './GeometryPanel.jsx';
 const SERIALIZE_MS = 300;
 
 /**
- * La géométrie dans l'espace (الهندسة ثلاثية الأبعاد) dans la coquille du
- * مختبر (MathLabToolProps — toolContract.js).
+ * La géométrie dans l'espace dans la coquille de
+ * l'atelier (MathLabToolProps — toolContract.js).
  *
  * L'état du document (geometryState.js) vit ICI, en état React : un solide,
  * ses dimensions, trois options, la caméra. Chaque changement de solide ou
@@ -27,7 +27,7 @@ export default function Geometry3DTool({ initialData, onChange, onReady }) {
   const { t } = useTranslation('mathlab');
   const [data, setData] = useState(() => normalizeGeometry3DData(initialData));
   const [selectedFace, setSelectedFace] = useState(null);
-  // L'invitation « اسحب لتدوير الشكل », jusqu'au premier geste sur la fenêtre.
+  // L'invitation « Fais glisser pour tourner le solide », jusqu'au premier geste sur la fenêtre.
   const [touched, setTouched] = useState(false);
   const viewerRef = useRef(null);
   const timerRef = useRef(null);

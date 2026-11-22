@@ -9,13 +9,13 @@ import { formatBytes, isDocumentFull, isUserFull } from './attachmentPolicy';
 const KIND_ICON = { image: ImageIcon, svg: Shapes, pdf: FileText };
 
 /**
- * Le panneau des FICHIERS d'une سبّورة — dans le FLUX de la page, sous la barre,
+ * Le panneau des FICHIERS d'un tableau — dans le FLUX de la page, sous la barre,
  * jamais en surimpression : rien à positionner, rien qui puisse sortir de
  * l'écran, et elle défile en elle-même quand l'écran est bas (mathlab.css).
  *
- * Elle dit les limites AVANT le geste (compteurs, سبّورة pleine, compte
+ * Elle dit les limites AVANT le geste (compteurs, tableau pleine, compte
  * plein), n'envoie que ce que le plan accepte, et laisse à l'outil ce qui
- * lui revient : poser une image sur la سبّورة (`capability.place`), oublier
+ * lui revient : poser une image sur le tableau (`capability.place`), oublier
  * un fichier supprimé (`capability.forget`), fondre une bibliothèque ou un
  * dessin (`capability.importFile`).
  */

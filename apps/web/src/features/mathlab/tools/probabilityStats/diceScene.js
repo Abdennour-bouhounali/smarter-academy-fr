@@ -97,9 +97,9 @@ function pipTexture(value) {
 }
 
 /**
- * Une face de pièce : or, un anneau, le mot (« وجه » / « ظهر ») en Cairo.
- * Le texte est dessiné par le navigateur (façonnage arabe correct) ; si
- * Cairo n'est pas encore chargée, la face est redessinée à son arrivée.
+ * Une face de pièce : or, un anneau, le mot (« Face » / « Pile ») en Inter.
+ * Le texte est dessiné par le navigateur ; si Inter n'est pas encore
+ * chargée, la face est redessinée à son arrivée.
  */
 function coinFaceTexture(label, heads) {
   const draw = (ctx, size) => {
@@ -115,7 +115,7 @@ function coinFaceTexture(label, heads) {
     ctx.arc(c, c, c * 0.82, 0, Math.PI * 2);
     ctx.stroke();
     if (heads) {
-      // Une couronne de points : le côté « وجه » se reconnaît même de loin.
+      // Une couronne de points : le côté « Face » se reconnaît même de loin.
       ctx.fillStyle = COLORS.coinDark;
       for (let i = 0; i < 16; i += 1) {
         const angle = (i / 16) * Math.PI * 2;
@@ -130,14 +130,14 @@ function coinFaceTexture(label, heads) {
       ctx.stroke();
     }
     ctx.fillStyle = COLORS.coinDark;
-    ctx.font = `700 ${Math.round(size * 0.3)}px Cairo, Tajawal, sans-serif`;
+    ctx.font = `700 ${Math.round(size * 0.3)}px Inter, sans-serif`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(label, c, c + size * 0.02);
   };
   const texture = makeTexture(512, draw);
   if (typeof document !== 'undefined' && document.fonts?.load) {
-    document.fonts.load('700 150px Cairo').then(() => {
+    document.fonts.load('700 150px Inter').then(() => {
       draw(texture.image.getContext('2d'), texture.image.width);
       texture.needsUpdate = true;
       texture.userData.onUpdate?.();
@@ -252,7 +252,7 @@ export class DiceScene {
       return new MeshStandardMaterial({ map: texture, roughness: 0.38, metalness: 0.45 });
     };
     const edge = new MeshStandardMaterial({ color: COLORS.coinEdge, roughness: 0.45, metalness: 0.5 });
-    // Les groupes de CylinderGeometry : 0 le bord, 1 le dessus (+y = « وجه »), 2 le dessous (−y = « ظهر »).
+    // Les groupes de CylinderGeometry : 0 le bord, 1 le dessus (+y = « Face »), 2 le dessous (−y = « Pile »).
     const mesh = new Mesh(new CylinderGeometry(COIN_RADIUS, COIN_RADIUS, COIN_THICKNESS, 72), [edge, face(heads, true), face(tails, false)]);
 
     return mesh;
@@ -260,7 +260,7 @@ export class DiceScene {
 
   /**
    * L'orientation qui montre `part` : la face d'un dé, ou le côté d'une
-   * pièce (1 = وجه). Le lacet est libre (il ne change pas la face) : un dé
+   * pièce (1 = Face). Le lacet est libre (il ne change pas la face) : un dé
    * se pose à n'importe quel angle ; une pièce se pose de sorte que son MOT
    * soit droit pour qui regarde — à un petit écart près, pour ne pas avoir
    * l'air posée à la main. Les UV des chapeaux d'un cylindre tournent le

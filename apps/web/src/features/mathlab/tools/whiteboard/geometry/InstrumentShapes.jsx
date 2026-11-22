@@ -10,18 +10,18 @@ import { RULER_MARGIN, RULER_WIDTH, PROTRACTOR_INNER, compassGeometry, setSquare
  * centaines de graduations (`memo`).
  *
  * Les couleurs sont des ATTRIBUTS de présentation, pas des classes : le même
- * balisage est copié tel quel dans l'image exportée « مع أدوات الهندسة »,
+ * balisage est copié tel quel dans l'image exportée « avec les instruments »,
  * où aucune feuille de style ne s'applique.
  *
  * `data-geo-hit` nomme la partie qu'un pointeur saisit (GeometryDesk).
  */
 
 const INK = '#3f3a2e';
-const DIGITS = { fontFamily: 'Nunito, Inter, Cairo, sans-serif', direction: 'ltr' };
+const DIGITS = { fontFamily: 'Nunito, Inter, sans-serif', direction: 'ltr' };
 
 export const poseTransform = (inst) => `translate(${inst.x} ${inst.y}) rotate(${toDegrees(inst.angle)})`;
 
-// ── المسطرة ──────────────────────────────────────────────────────────────
+// ── La règle ──────────────────────────────────────────────────────────────
 
 export const RulerShape = memo(function RulerShape({ lengthCm, highlight = false }) {
   const L = lengthCm * UNITS_PER_CM;
@@ -56,7 +56,7 @@ export const RulerShape = memo(function RulerShape({ lengthCm, highlight = false
   );
 });
 
-// ── المنقلة ──────────────────────────────────────────────────────────────
+// ── Le rapporteur ──────────────────────────────────────────────────────────────
 
 export const ProtractorShape = memo(function ProtractorShape({ radiusCm }) {
   const R = radiusCm * UNITS_PER_CM;
@@ -96,7 +96,7 @@ export const ProtractorShape = memo(function ProtractorShape({ radiusCm }) {
   );
 });
 
-// ── الكوس ────────────────────────────────────────────────────────────────
+// ── L'équerre ───────────────────────────────────────────────────────────────
 
 export const SetSquareShape = memo(function SetSquareShape({ kind, sizeCm }) {
   const g = setSquareGeometry({ x: 0, y: 0, angle: 0, kind, sizeCm });
@@ -136,7 +136,7 @@ export const SetSquareShape = memo(function SetSquareShape({ kind, sizeCm }) {
   );
 });
 
-// ── الفرجار ──────────────────────────────────────────────────────────────
+// ── Le compas ─────────────────────────────────────────────────────────────
 
 /**
  * Le compas se dessine dans la SCÈNE (pas dans un repère rigide) : son

@@ -1,7 +1,7 @@
 /**
  * L'AIMANTATION — une seule couche pour tout le bureau de géométrie.
  *
- * Le crayon, le compas, la منقلة et le كوس demandent tous la même chose :
+ * Le crayon, le compas, le rapporteur et l'équerre demandent tous la même chose :
  * « y a-t-il, près d'ici, quelque chose de géométrique sur quoi se poser ? »
  * Ce module répond, par ordre de priorité :
  *

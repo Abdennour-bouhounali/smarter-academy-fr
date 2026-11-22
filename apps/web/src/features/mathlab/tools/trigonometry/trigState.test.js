@@ -1,5 +1,5 @@
 /**
- * Le document du مختبر المثلثات (§42, §43, §49).
+ * Le document du labo de trigonométrie (§42, §43, §49).
  *
  * Ce qui se joue ici : qu'un document venu du serveur — ancien, tronqué,
  * bricolé — ne casse jamais l'instrument, et que l'état TRANSITOIRE (§43 :
@@ -20,7 +20,7 @@ import { PRESETS } from './presets.js';
 describe('le document neuf (§46)', () => {
   const data = createTrigonometryData();
 
-  it('ouvre sur le TRIANGLE — le sujet 4.2 du programme de 4AM', () => {
+  it('ouvre sur le TRIANGLE — la trigonométrie du collège', () => {
     expect(data.mode).toBe('triangle');
     expect(data.layers.triangle).toBe(true);
   });

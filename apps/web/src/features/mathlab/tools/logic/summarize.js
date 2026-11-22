@@ -5,12 +5,12 @@ import {
 import { connectorExpression, formOf, equivalenceOf, SYMBOLS } from './logicFormat.js';
 
 /**
- * Le RÉSUMÉ d'un document du مختبر المنطق والبرهان.
+ * Le RÉSUMÉ d'un document de l'atelier « Logique et raisonnement ».
  *
  * Il dit ce que l'élève A FAIT, pas ce que l'instrument s'appelle : la carte
- * de « أعمالي » montre l'énoncé sur lequel il travaillait et où il en était
+ * de « Mes travaux » montre l'énoncé sur lequel il travaillait et où il en était
  * — « ∀n premier, n > 2 ⇒ n pair » puis « n = 3 » quand le contre-exemple
- * est trouvé. Un titre générique (« منطق ») n'aurait distingué aucun de ses
+ * est trouvé. Un titre générique (« Logique ») n'aurait distingué aucun de ses
  * documents des autres.
  *
  * La forme d'aperçu est `equation` : deux lignes de notation LTR, exactement
@@ -158,6 +158,6 @@ function describe(area, data) {
   }
 }
 
-const verdictSymbol = (verdict) => ({ true: 'ص', false: 'خ', depends: '؟' }[verdict] ?? '');
-const boolLetter = (value) => (value === true ? 'ص' : value === false ? 'خ' : '؟');
+const verdictSymbol = (verdict) => ({ true: 'V', false: 'F', depends: '?' }[verdict] ?? '');
+const boolLetter = (value) => (value === true ? 'V' : value === false ? 'F' : '?');
 const verdictOfNaming = (named, expected) => (named === expected ? '✓' : '?');

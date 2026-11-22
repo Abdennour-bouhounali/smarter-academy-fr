@@ -3,9 +3,9 @@
  *
  * `divisibilityBy` (numberTheory.js) rend déjà la trace (`evidence`,
  * `evidenceText`) ; ce module choisit la PHRASE (une clé i18n et ses
- * paramètres) et sépare la FORMULE (`3 + 6 + 0 = 9`) du texte arabe. La
- * formule est affichée à part, isolée en LTR : dans une phrase arabe, bidi
- * la retournerait (« 9 = 0 + 6 + 3 »).
+ * paramètres) et sépare la FORMULE (`3 + 6 + 0 = 9`) de la phrase. La
+ * formule est affichée à part, isolée en LTR : elle ne se coupe pas et
+ * reste lisible d'un seul bloc.
  *
  * @param {{by:number, divisible:boolean, evidence:number|null, evidenceText:string|null}} row
  * @param {number} value

@@ -2,10 +2,10 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTransformContext, vec } from 'mafs';
 
 /**
- * LA POIGNÉE d'un point mobile du مختبر التحليل (§6, §38, §40).
+ * LA POIGNÉE d'un point mobile du labo d’analyse (§6, §38, §40).
  *
- * Même structure que celles du مختبر الأشعة, du مختبر التحويلات et du
- * مختبر المقاطع المخروطية, et pour la même raison : un disque VISIBLE de
+ * Même structure que celles du labo des vecteurs, du labo des transformations et du
+ * labo des coniques, et pour la même raison : un disque VISIBLE de
  * `radius` px, et par-dessus un disque TRANSPARENT de `hitRadius` px (22 par
  * défaut, soit 44 px de diamètre — la cible tactile recommandée). Le dessin
  * ne grossit pas, la cible oui.

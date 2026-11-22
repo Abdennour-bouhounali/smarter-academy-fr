@@ -18,7 +18,7 @@
  * `points` : les points d'inspection posés sur une courbe — une liste dès
  * aujourd'hui (V1 n'en pose qu'un). `viewport` null = la fenêtre par
  * défaut, ajustée à la boîte. `settings.grid` est la grille que la coquille
- * bascule. `tangent` est le mode « المماس » : UNE fonction étudiée
+ * bascule. `tangent` est le mode « Tangente » : UNE fonction étudiée
  * (`functionId`), le point A en `x`, la courbe de f′ et le triangle de
  * pente en option. Absent d'un document ancien → désactivé.
  *
@@ -210,7 +210,7 @@ export function normalizeTangent(raw, functions) {
  * L'état d'un document neuf.
  *
  * Sans amorce : l'exemple de première visite (`f(x) = x²` ; `2x + 1` dans
- * مخبر المتوسط — `context.capabilities.firstExpression`, voir scope.js). Avec une amorce
+ * labo du collège — `context.capabilities.firstExpression`, voir scope.js). Avec une amorce
  * de leçon (openMathLab.js) : `{ functions: [{ expression, name?, color?, visible?, domain? }],
  * viewport?, points?: [{ functionId | functionIndex, x }],
  * tangent?: { enabled, functionId | functionIndex, x, showDerivative?, showTriangle? } }`.
@@ -233,7 +233,7 @@ export function createFunctionGrapherData(seed = undefined, context = {}) {
     return data;
   }
 
-  // Le مخبر choisit l'exemple d'ouverture : une droite au collège (scope.js).
+  // Le labo choisit l'exemple d'ouverture : une droite au collège (scope.js).
   const firstExpression = context?.capabilities?.firstExpression ?? FIRST_RUN_EXPRESSION;
 
   return normalizeGrapherData({

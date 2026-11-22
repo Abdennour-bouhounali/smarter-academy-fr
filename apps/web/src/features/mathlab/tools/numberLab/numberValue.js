@@ -1,7 +1,7 @@
 /**
  * UNE VALEUR, PLUSIEURS REPRÉSENTATIONS — §46, §47.
  *
- * C'est l'identité du مختبر الأعداد, et donc le module le plus important du
+ * C'est l'identité du labo des nombres, et donc le module le plus important du
  * laboratoire. Tout ce qui s'affiche — une fraction, un décimal, un
  * pourcentage, un point sur la droite — est la MÊME valeur regardée sous un
  * angle différent, et tout ce qui se manipule met les autres à jour.
@@ -139,8 +139,8 @@ export function viewBounds(view) {
 /**
  * Le pas de graduation « rond » (1, 2, 5, 10, 20, 50…) pour cette portée.
  *
- * Même règle que la droite du مختبر الجبر (`algebra/NumberLine.jsx`) et que
- * le grapheur : les instruments du مختبر doivent graduer pareil.
+ * Même règle que la droite du labo d'algèbre (`algebra/NumberLine.jsx`) et que
+ * le grapheur : les instruments de l'atelier doivent graduer pareil.
  */
 export function tickStepFor(span, target = 10) {
   if (!Number.isFinite(span) || span <= 0) return 1;
@@ -230,7 +230,7 @@ export function absoluteValue(frac) {
  *
  * Sert au recadrage (§7) et à chaque fois qu'un mode change de nombres : on
  * ne laisse jamais l'élève devant une droite où son point est hors champ —
- * c'est le défaut que le QA visuel du مختبر a déjà attrapé ailleurs
+ * c'est le défaut que le QA visuel de l'atelier a déjà attrapé ailleurs
  * (`mathlab-visual-qa-traps`).
  */
 export function frameValues(values, { padding = 0.25, minSpan = 1 } = {}) {

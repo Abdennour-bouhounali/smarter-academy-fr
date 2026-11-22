@@ -16,14 +16,14 @@ import { useModeAvailable } from './scope.js';
  *
  * C'est la première page du laboratoire, et elle donne le ton : on ne
  * demande rien à l'élève, on lui MONTRE. Il tape 360 et voit sa place sur la
- * droite, ses mraتب, son écriture développée, ses facteurs premiers, ses
- * قواسم, sa parité, ses voisins premiers — tout en même temps, tout vrai.
+ * droite, ses rangs, son écriture développée, ses facteurs premiers, ses
+ * diviseurs, sa parité, ses voisins premiers — tout en même temps, tout vrai.
  *
- * Chaque bloc porte un « أرسِل إلى » : l'exploration n'est pas une impasse,
+ * Chaque bloc porte un « Envoyer vers » : l'exploration n'est pas une impasse,
  * c'est le point de départ des douze autres modes (§46).
  */
 export default function ExplorerMode({ value, onChangeValue, onSend, compact }) {
-  // La numération de position n'est pas au مخبر الثانوي (scope.js).
+  // La numération de position n'est pas au labo du lycée (scope.js).
   const placeOpen = useModeAvailable('place');
   const { t } = useTranslation('mathlab');
 

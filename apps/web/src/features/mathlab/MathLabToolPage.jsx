@@ -74,7 +74,7 @@ function ToolPage({ tool, documentId }) {
   const location = useLocation();
   const navigate = useNavigate();
   const toolName = t(tool.labelKey);
-  // L'accueil du مختبر dépend de l'espace (élève ou enseignant) : il se lit
+  // L'accueil de l’atelier dépend de l'espace (élève ou enseignant) : il se lit
   // ICI, au corps du composant. Appeler le hook dans le JSX d'une branche
   // d'erreur changerait le NOMBRE de hooks d'un rendu à l'autre — React
   // lève alors « Rendered more hooks than during the previous render ».
@@ -84,14 +84,14 @@ function ToolPage({ tool, documentId }) {
   const launch = useMemo(() => readMathLabLaunch(location.state, tool.id), [location.state, tool.id]);
   const requestedScope = readLabScopeParam(location.search);
   const model = useMathLabDocument(tool, documentId, { launch, defaultTitle: t(tool.defaultTitleKey), requestedScope });
-  // Le مخبر où l'instrument est ouvert (labScope.js) : ce qu'il montre, et où
-  // ramène « retour ». Null pour la سبّورة, commune à tous.
+  // L’atelier où l'instrument est ouvert (labScope.js) : ce qu'il montre, et où
+  // ramène « retour ». Null pour le tableau, commun à tous.
   const scope = model.scope;
   const capabilities = useMemo(() => toolCapabilities(tool, scope), [tool, scope]);
   const labHome = labHomePath(labRoot, scope);
 
-  // L'URL dit toujours dans quel مخبر on est : un document rouvert depuis
-  // « أعمالي » (sans `?lab=`) ou un lien nu reçoit le sien. Sans recharger :
+  // L'URL dit toujours dans quel atelier on est : un document rouvert depuis
+  // « Mes travaux » (sans `?lab=`) ou un lien nu reçoit le sien. Sans recharger :
   // le crochet reconnaît le document déjà ouvert.
   useEffect(() => {
     if (model.status !== 'ready' || !scope) return;

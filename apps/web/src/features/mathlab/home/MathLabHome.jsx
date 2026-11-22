@@ -24,22 +24,22 @@ import '../work/mathlabWork.css';
 import '../../practice/notebook/space/notebookSpace.css';
 
 /**
- * L'accueil du مختبر الرياضيات (/espace/atelier), et celui de chacun de ses
- * deux مخابر (/espace/atelier?lab=moyen · ?lab=secondaire).
+ * L'accueil de l’atelier de mathématiques (/espace/atelier), et celui de chacun de ses
+ * deux ateliers (/espace/atelier?lab=moyen · ?lab=secondaire).
  *
  * ── L'architecture d'information (MATH_LAB.md §2.1) ──────────────────────
  *
- *   /atelier            la سبّورة (commune à tous), puis DEUX choix clairs —
- *                       مخبر المتوسط · مخبر الثانوي — puis « أعمالي »
- *   /atelier?lab=moyen  les instruments de ce مخبر seulement, la سبّورة
- *                       toujours à portée, et « أعمالي » filtré sur ce مخبر
+ *   /atelier            le tableau (commun à tous), puis DEUX choix clairs —
+ *                       atelier du collège · atelier du lycée — puis « Mes travaux »
+ *   /atelier?lab=moyen  les instruments de cet atelier seulement, le tableau
+ *                       toujours à portée, et « Mes travaux » filtré sur cet atelier
  *
- * Un مخبر n'est PAS une route de plus : c'est un paramètre d'URL que la page
+ * Un atelier n'est PAS une route de plus : c'est un paramètre d'URL que la page
  * lit. Les instruments, leurs routes et leurs documents restent uniques —
  * c'est ce qu'ils MONTRENT qui change (labScope.js).
  *
  * Même cadre que les autres pages de l'espace (`.sa-page`), même en-tête
- * (sur-titre, titre, sous-titre). « أعمالي » garde sa place sous les
+ * (sur-titre, titre, sous-titre). « Mes travaux » garde sa place sous les
  * instruments : on ouvre un instrument, puis on revient à ce qu'on y a fait.
  */
 export default function MathLabHome() {
@@ -51,7 +51,7 @@ export default function MathLabHome() {
 
 /** Ce que la page lit du serveur : les instruments visibles, et lesquels sont fermés. */
 function useLabAccess() {
-  // « الوصول والحدود » : lu, jamais décidé ici. Un instrument coupé par
+  // « Accès et limites » : lu, jamais décidé ici. Un instrument coupé par
   // l'administration disparaît ; un instrument fermé au palier reste montré,
   // avec son cadenas — sa page explique pourquoi.
   const { summary } = useFeatureAccess();
@@ -77,7 +77,7 @@ function LabLanding() {
         </p>
         <h1 className="font-space font-bold text-2xl sm:text-3xl text-slate-900">{t('title')}</h1>
         <p className="font-inter text-slate-500 text-sm mt-1">{t('subtitle')}</p>
-        <p className="font-mono-jetbrains text-slate-400 text-xs mt-2" dir="rtl">{t('cycle')}</p>
+        <p className="font-mono-jetbrains text-slate-400 text-xs mt-2">{t('cycle')}</p>
       </div>
 
       {shared.length > 0 && (
@@ -133,8 +133,8 @@ function LabLanding() {
 }
 
 /**
- * L'accueil d'UN مخبر : ses instruments seulement. Un instrument partagé
- * (راسم الدوال, الجبر…) y figure une fois, ouvert dans ce مخبر — c'est lui
+ * L'accueil d'UN atelier : ses instruments seulement. Un instrument partagé
+ * (traceur de courbes, algèbre…) y figure une fois, ouvert dans cet atelier — c'est lui
  * qui décide alors de ce qu'il montre (`capabilities`).
  */
 function LabHome({ scope }) {
@@ -147,7 +147,7 @@ function LabHome({ scope }) {
   const shared = commonTools(tools);
   const { icon: LabIcon } = LAB_META[scope];
 
-  // Entrer dans un مخبر, c'est le choisir : le prochain instrument partagé
+  // Entrer dans un atelier, c'est le choisir : le prochain instrument partagé
   // ouvert sans `?lab=` (un lien nu) s'ouvrira ici.
   useEffect(() => { rememberLabScope(scope); }, [scope]);
 
@@ -193,7 +193,7 @@ function LabHome({ scope }) {
   );
 }
 
-/** Passer d'un مخبر à l'autre sans repasser par l'accueil : deux onglets-liens. */
+/** Passer d'un atelier à l'autre sans repasser par l'accueil : deux onglets-liens. */
 function LabSwitch({ current, labRoot }) {
   const { t } = useTranslation('mathlab');
 

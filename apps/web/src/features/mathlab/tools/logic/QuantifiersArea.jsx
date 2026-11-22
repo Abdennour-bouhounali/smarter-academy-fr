@@ -11,8 +11,8 @@ import { setQuantifier, tryQuantifierValue } from './logicState.js';
 /**
  * §21-23 — LES QUANTIFICATEURS, et la distinction qui compte le plus.
  *
- * §22 : « Clearly distinguish "لم نجد مثالًا مضادًا" from "أثبتنا أن العبارة
- * صحيحة". Do not teach students that checking a few examples proves a
+ * §22 : « Clearly distinguish "on n'a pas trouvé de contre-exemple" from
+ * "on a démontré la proposition". Do not teach students that checking a few examples proves a
  * universal statement. » C'est la règle qui gouverne cet écran.
  *
  * Le laboratoire dit donc toujours DEUX choses distinctes :
@@ -22,7 +22,7 @@ import { setQuantifier, tryQuantifierValue } from './logicState.js';
  *     un témoin suffit.
  *
  * Quand un ∀ résiste à la recherche, l'écran renvoie explicitement vers
- * « بناء البرهان » : la suite du raisonnement n'est pas d'essayer une
+ * « Démonstration » : la suite du raisonnement n'est pas d'essayer une
  * vingt-sixième valeur.
  */
 export default function QuantifiersArea({ data, onChange, announce, onGoToProof }) {

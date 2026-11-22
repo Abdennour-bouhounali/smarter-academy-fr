@@ -9,7 +9,7 @@ import { fracToText, fracToNumber } from './fraction.js';
  * met au dénominateur commun, les parts nouvellement découpées s'éclairent
  * pour qu'on voie d'où viennent les douzièmes.
  *
- * `grid` (« توحيد المقامات ») : le nombre de parts FINES par unité — le PPCM des
+ * `grid` (« mise au même dénominateur ») : le nombre de parts FINES par unité — le PPCM des
  * dénominateurs. Les coupes de la fraction restent en trait plein ; les
  * nouvelles coupes, en pointillé orange, montrent que chaque part se divise
  * EXACTEMENT en `grid / d` parts fines (le PPCM « tombe juste » sur les deux).

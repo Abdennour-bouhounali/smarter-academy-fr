@@ -1,8 +1,8 @@
 /* ── Le bureau de géométrie (GeometryDesk) ───────────────────────────────
    La barre est DANS le flux au-dessus du canevas ; le calque SVG vit DANS
    le conteneur d'Excalidraw, entre son canevas (z 2) et son interface (z 4).
-   Les couleurs sont CELLES de la سبّورة (whiteboard.css : l'accent bleu,
-   le blanc, les rayons) — le bureau s'ajoute à la سبّورة sans en changer
+   Les couleurs sont CELLES du tableau (whiteboard.css : l'accent bleu,
+   le blanc, les rayons) — le bureau s'ajoute au tableau sans en changer
    l'allure. Seuls les instruments ont leurs teintes d'objets réels. */
 
 .sa-geo-bar {
@@ -13,7 +13,7 @@
   padding: 0.35rem 0.5rem;
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
-  font-family: 'Cairo', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   min-width: 0;
 }
 
@@ -211,7 +211,7 @@
   border-radius: 999px;
   background: #ffffff;
   color: #1d4ed8;
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
@@ -237,7 +237,7 @@
 .sa-geo-layer .sa-geo-zone { pointer-events: all; cursor: crosshair; }
 
 /* Écran BAS (portable 1280×500, téléphone couché) : quand le panneau des
-   fichiers est ouvert, la rangée « أدوات الهندسة » se replie le temps de le
+   fichiers est ouvert, la rangée « Instruments de géométrie » se replie le temps de le
    consulter — sinon barres + panneau poussent la bibliothèque d'Excalidraw
    et son menu ⋮ hors de l'écran (§5.7). Elle revient à la fermeture. */
 @media (max-height: 620px) {

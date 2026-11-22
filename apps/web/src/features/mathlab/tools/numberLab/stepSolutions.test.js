@@ -18,7 +18,7 @@ import {
 const settled = (frames) => settledLines(frames, frames.length + 1).map((line) => line.latex);
 const resultRow = (frames) => frames.at(-1).rows[0].map((token) => token.latex).join(' ');
 
-describe('PGCD بالفوارق المتتالية au tableau', () => {
+describe('PGCD par soustractions successives au tableau', () => {
   const { run, frames } = differencesFrames(48, 18);
 
   it('48 ; 18 : cinq soustractions, trois micro-états chacune, puis PGCD = 6 EN DERNIER', () => {
@@ -64,14 +64,14 @@ describe('PGCD بالفوارق المتتالية au tableau', () => {
   });
 });
 
-describe('خوارزمية إقليدس au tableau', () => {
+describe('algorithme d’Euclide au tableau', () => {
   const { frames } = euclidFrames(84, 36);
 
   it('84 ; 36 : deux divisions, puis PGCD = 12', () => {
     expect(validateFrames(frames)).toEqual([]);
     expect(settled(frames)).toEqual([
-      '84 = 2 \\times 36 + 12',
-      '36 = 3 \\times 12 + 0',
+      '84 = 36 \\times 2 + 12',
+      '36 = 12 \\times 3 + 0',
       '\\mathrm{PGCD}(84\\ ;\\ 36) = 12',
     ]);
     expect(frames[1].marks[0]).toMatchObject({ type: 'link', latex: '\\div' });
@@ -83,29 +83,29 @@ describe('خوارزمية إقليدس au tableau', () => {
   });
 });
 
-describe('القسمة الإقليدية au tableau', () => {
+describe('division euclidienne au tableau', () => {
   const { frames } = divisionFrames(38, 7);
 
-  it('38 ÷ 7 : question, rzam (q), reste (r), égalité, condition EN DERNIER', () => {
+  it('38 ÷ 7 : question, paquets (q), reste (r), égalité, condition EN DERNIER', () => {
     expect(validateFrames(frames)).toEqual([]);
     expect(boardProgress(frames, frames.length)).toEqual({ current: 5, total: 5 });
-    expect(settled(frames)).toEqual(['q = 5', 'r = 38 - 35 = 3', '38 = 7 \\times 5 + 3', '0 \\le 3 < 7']);
+    expect(settled(frames)).toEqual(['q = 5', 'r = 38 - 35 = 3', '38 = 7 \\times 5 + 3', '0 \\leqslant 3 < 7']);
     expect(frames[1].marks[0]).toMatchObject({ type: 'under', target: 'q', latex: '7 \\times 5 = 35' });
     expect(frames[0].rows[0].map((token) => token.latex)).toEqual(['38', '=', '7', '\\times', '?', '+', '?']);
   });
 
-  it('ni q ni r avant leur pas ; le dessin suit (vrac → rzam → reste)', () => {
+  it('ni q ni r avant leur pas ; le dessin suit (vrac → paquets → reste)', () => {
     expect(frames[0].rows[0].some((token) => token.latex === '5')).toBe(false);
     expect(frames.slice(0, 3).some((frame) => JSON.stringify(frame.rows).includes('"3"'))).toBe(false);
     expect([0, 1, 2, 3, 4, 7, 8].map((cursor) => divisionDrawStage(frames, cursor))).toEqual([0, 0, 1, 1, 2, 2, 2]);
   });
 
   it('5 ÷ 8 : q = 0, r = 5', () => {
-    expect(settled(divisionFrames(5, 8).frames)).toEqual(['q = 0', 'r = 5 - 0 = 5', '5 = 8 \\times 0 + 5', '0 \\le 5 < 8']);
+    expect(settled(divisionFrames(5, 8).frames)).toEqual(['q = 0', 'r = 5 - 0 = 5', '5 = 8 \\times 0 + 5', '0 \\leqslant 5 < 8']);
   });
 });
 
-describe('شجرة العوامل, une fente par étape', () => {
+describe('arbre des facteurs, une fente par étape', () => {
   it('60 → 2 × 30 → 2 × 2 × 15 → 2 × 2 × 3 × 5, puis 2^2 × 3 × 5', () => {
     const start = { n: 60 };
     const { stages, frames } = factorTreeFrames(start);
@@ -135,7 +135,7 @@ describe('شجرة العوامل, une fente par étape', () => {
   });
 });
 
-describe('أولويات العمليات au tableau', () => {
+describe('priorités opératoires au tableau', () => {
   it('2 × (3 + 4)^2 − 10 : désigner, relier, poser, intégrer — 88 au dernier frame seulement', () => {
     const frames = orderFrames(evaluateStepByStep('2 × (3 + 4)^2 − 10'));
     expect(validateFrames(frames)).toEqual([]);
@@ -238,7 +238,7 @@ describe('les dérivations formule par formule (StepList)', () => {
 
   it('écriture scientifique de 0,00045', () => {
     expect(latex(scientificSteps(scientificNotation('0,00045')))).toEqual([
-      '1 \\le 4{,}5 < 10',
+      '1 \\leqslant 4{,}5 < 10',
       'n = -4',
       '0{,}00045 = 4{,}5 \\times 10^{-4}',
     ]);
@@ -268,7 +268,7 @@ describe('les dérivations formule par formule (StepList)', () => {
   });
 });
 
-describe('« تدرّب بنفسك » : chaque exercice est le vrai geste', () => {
+describe('« Entraîne-toi » : chaque exercice est le vrai geste', () => {
   const tasks = (frames) => frames.map((frame, index) => (frame.task ? { index, targets: frame.task.targets, operator: frame.task.operator } : null)).filter(Boolean);
 
   it('48 ; 18 : les deux nombres du couple, puis « − », à chaque soustraction', () => {

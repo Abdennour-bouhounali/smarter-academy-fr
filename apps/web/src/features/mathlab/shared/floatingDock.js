@@ -1,7 +1,7 @@
 /**
  * LE DOCK FLOTTANT des lecteurs de solution — un petit magasin partagé, sans React.
  *
- * Demande de la propriétaire (2026-09-30) : la barre « الحل خطوة بخطوة » doit
+ * Demande de la propriétaire (2026-09-30) : la barre « Solution pas à pas » doit
  * être PETITE et DÉPLAÇABLE pour ne jamais cacher le contenu. Elle flotte donc
  * au-dessus de l'écran (position fixe), et l'élève la glisse où il veut.
  *

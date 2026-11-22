@@ -14,9 +14,9 @@ import IntersectionSolvePanel from './IntersectionSolvePanel.jsx';
 const missing = new Set();
 const i18n = i18next.createInstance();
 i18n.use(initReactI18next).init({
-  lng: 'ar-DZ',
-  fallbackLng: 'ar-DZ',
-  resources: { 'ar-DZ': { mathlab } },
+  lng: 'fr',
+  fallbackLng: 'fr',
+  resources: { 'fr': { mathlab } },
   ns: ['mathlab'],
   defaultNS: 'mathlab',
   interpolation: { escapeValue: false },
@@ -24,7 +24,7 @@ i18n.use(initReactI18next).init({
   saveMissing: true,
   missingKeyHandler: (_lngs, _ns, key) => missing.add(key),
 });
-const t = i18n.getFixedT('ar-DZ', 'mathlab');
+const t = i18n.getFixedT('fr', 'mathlab');
 const wrap = (element) => renderToStaticMarkup(createElement(I18nextProvider, { i18n }, element));
 const derive = (source) => ({ ...buildCanonicalFrames(source, parseConicEquation(source)), source });
 
@@ -59,6 +59,10 @@ describe('ConicDerivation — la complétion du carré au tableau', () => {
         expect(html).not.toContain('{{');
         expect(html).not.toMatch(/tools\.conics\.derivation/);
       }
+      // Les phrases du déroulé sont en français : aucune lettre arabe.
+      for (const frame of frames) {
+        if (frame.textKey) expect(t(frame.textKey, frame.textParams ?? {})).not.toMatch(/[\u0600-\u06FF]/);
+      }
     }
     expect([...missing]).toEqual([]);
   });
@@ -90,6 +94,7 @@ describe('ConicDerivation — la complétion du carré au tableau', () => {
       for (const step of steps) {
         const text = t(step.textKey, step.params ?? {});
         expect(text).not.toContain('{{');
+        expect(text).not.toMatch(/[\u0600-\u06FF]/);
         expect(i18n.exists(step.textKey)).toBe(true);
       }
     }

@@ -18,7 +18,7 @@ const bytesOf = (value) => new TextEncoder().encode(JSON.stringify(value)).lengt
 describe('le document', () => {
   it('naît sur le laboratoire de la SÉCANTE, avec une fonction affine', () => {
     const data = createAnalysisData();
-    // Le seul ancrage 4AM du calcul différentiel est le taux d'accroissement
+    // Le seul ancrage au collège du calcul différentiel est le taux d'accroissement
     // d'une fonction affine : c'est lui qui ouvre (MATH_LAB §5m.1).
     expect(data.lab).toBe('secant');
     expect(data.functions[0].source).toBe('2x+1');
@@ -157,7 +157,7 @@ describe('les préréglages', () => {
   });
 
   /** §37 : le premier écran ne propose que ce qui relève du programme. */
-  it('distinguent le programme de 4AM du reste', () => {
+  it('distinguent le programme du collège du reste', () => {
     const programme = PRESETS.filter((preset) => preset.level === 'programme');
     expect(programme.length).toBeGreaterThan(0);
     // Les fonctions du programme sont affines ou linéaires — rien d'autre.
@@ -225,14 +225,14 @@ describe('les transformations (§25)', () => {
   });
 });
 
-describe('le résumé pour « أعمالي »', () => {
+describe('le résumé pour « Mes travaux »', () => {
   /**
    * Le résumé doit parler la langue de `WorkPreview`, pas la sienne : forme
    * « curve », `detail.polylines` de points `{x, y}` et `detail.viewport` en
    * quadruplet. Écrit autrement, la carte reste blanche — et rien dans le
    * contrat n'échoue pour le signaler.
    */
-  it('réutilise la forme « curve » de « أعمالي », dans SON écriture', () => {
+  it('réutilise la forme « curve » de « Mes travaux », dans SON écriture', () => {
     const summary = summarizeAnalysis(createAnalysisData());
     expect(summary.kind).toBe('curve');
     expect(summary.text[0]).toBe('2x+1');

@@ -1,5 +1,5 @@
 /**
- * Les JUMLAT MU`ĀDALATAYN — جملة معادلتين من الدرجة الأولى بمجهولين —
+ * Les SYSTÈMES de deux équations du premier degré à deux inconnues —
  * logique pure, sans React.
  *
  *     a₁x + b₁y = c₁
@@ -15,7 +15,7 @@
  *   none      droites parallèles distinctes
  *   infinite  la même droite
  *
- * Deux méthodes écrites pas à pas (التعويض, الجمع) aboutissent au MÊME
+ * Deux méthodes écrites pas à pas (substitution, combinaison) aboutissent au MÊME
  * couple que `classifySystem` — c'est testé. La méthode graphique n'a besoin
  * que des droites et du cadre (`frameSystem`).
  */
@@ -142,7 +142,7 @@ export function verifyInEquation(eq, x, y) {
   };
 }
 
-// ── La méthode par substitution (التعويض) ─────────────────────────────────
+// ── La méthode par substitution ─────────────────────────────────────────────
 
 const coefOf = (eq, v) => (v === 'x' ? eq.a : eq.b);
 const other = (v) => (v === 'x' ? 'y' : 'x');
@@ -251,7 +251,7 @@ export function substitutionSteps(e1, e2) {
   }
 }
 
-// ── La méthode par combinaison (الجمع) ────────────────────────────────────
+// ── La méthode par combinaison ──────────────────────────────────────────────────
 
 /** Le plus petit multiple commun des dénominateurs : l'équation sans fractions. */
 function clearFractions(eq) {

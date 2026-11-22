@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Lightbulb, Eye, Check, ChevronRight, X } from 'lucide-react';
+import { Lightbulb, Eye, Check, X } from 'lucide-react';
+import { ChevronForward } from '../../../../components/common/DirectionalIcons.jsx';
 import MathText from '../../../../lessons/common/components/MathText.jsx';
 import useStepReveal from '../../shared/useStepReveal.js';
 import StepPlayer from '../../shared/StepPlayer.jsx';
@@ -30,7 +31,7 @@ import { formatTerm, termName } from './sequenceFormat.js';
  * ── Deux révélations, pas une (exigence 2026-09-30) ──────────────────────
  * Après une réponse JUSTE (`revealMode: 'answer'`), l'élève a produit la
  * réponse : les termes s'affichent d'un coup, comme avant. Quand il la
- * DEMANDE (« اكشف », `revealMode: 'request'`), la solution se découvre pas à
+ * DEMANDE (« Voir la solution », `revealMode: 'request'`), la solution se découvre pas à
  * pas (`buildRevealSteps` + `useStepReveal`) : u₀, puis u₁ = u₀ + r = …, et la
  * réponse n'est que le DERNIER pas. Les pas futurs ne sont pas dans le DOM.
  * `onRevealDone` prévient l'outil quand le dernier pas est montré : c'est
@@ -199,7 +200,7 @@ export default function PracticePanel({
             * question « quelle est la raison ? », la révélation finissait par
             * un « 2 » solitaire sous la liste des termes, que rien ne
             * rattachait à la question — la QA visuelle l'a vu. Le libellé
-            * « الجواب : … » lève l'ambiguïté quelle que soit la famille.
+            * « Réponse : … » lève l'ambiguïté quelle que soit la famille.
             */}
           <p
             className="sa-ml-seq__explainanswer"
@@ -260,7 +261,7 @@ export default function PracticePanel({
           onClick={onNext}
           data-ml-seq-practice-next
         >
-          <ChevronRight size={16} aria-hidden="true" />
+          <ChevronForward size={16} aria-hidden="true" />
           <span>{t('tools.sequences.practice.next')}</span>
         </button>
       </div>

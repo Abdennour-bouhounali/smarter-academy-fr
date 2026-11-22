@@ -3,7 +3,7 @@ import { formatAxisLabel, formatValue } from '../functionGrapher/grapherFormat.j
 import { cumulativeCrossing } from './descriptiveStats.js';
 
 /**
- * LES EFFECTIFS CUMULÉS CROISSANTS — مضلع التكرارات المجمّعة الصاعدة.
+ * LES EFFECTIFS CUMULÉS CROISSANTS — le polygone des effectifs cumulés croissants.
  *   - série en classes : un POLYGONE (bornes supérieures, effectifs cumulés),
  *     et la médiane ESTIMÉE lue où il coupe n/2 ;
  *   - série discrète : un ESCALIER (la courbe cumulative saute à chaque
@@ -98,8 +98,8 @@ export default function CumulativeChart({ series, title, highlight, onHighlight,
 
       <line x1={PAD.left} y1={baseline} x2={PAD.left + plotW} y2={baseline} stroke="#475569" strokeWidth="1.5" />
       <line x1={PAD.left} y1={PAD.top} x2={PAD.left} y2={baseline} stroke="#475569" strokeWidth="1.5" />
-      {/* Une phrase arabe dans un SVG LTR : son propre sens, ancrée à droite. */}
-      <text x={width - PAD.right} y={14} direction="rtl" textAnchor="start" className="sa-ml-ps__chart-legend">
+      {/* La légende, ancrée au bord droit (elle se termine là). */}
+      <text x={width - PAD.right} y={14} textAnchor="end" className="sa-ml-ps__chart-legend">
         {t(kind === 'polygon' ? 'tools.probabilityStats.charts.cumulativePolygonLegend' : 'tools.probabilityStats.charts.cumulativeStepsLegend')}
       </text>
     </svg>

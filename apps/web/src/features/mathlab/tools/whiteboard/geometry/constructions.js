@@ -1,6 +1,6 @@
 /**
- * Les CONSTRUCTIONS — ce que le قلم الهندسة, le compas et la منقلة laissent
- * sur la سبّورة. Pur : ni DOM, ni Excalidraw.
+ * Les CONSTRUCTIONS — ce que le crayon de géométrie, le compas et le rapporteur laissent
+ * sur le tableau. Pur : ni DOM, ni Excalidraw.
  *
  * Une construction est un VRAI élément Excalidraw (ligne, ellipse, texte) :
  * il s'efface, s'annule, se sélectionne, s'exporte et s'enregistre comme le
@@ -14,7 +14,7 @@
  *   { kind: 'measure', of, what, vertex?, arms? }          « AB = 5,2 », « r = 3 », « ∠ABC = 60° »
  *
  * et, pour tout ce qui se construit : `seq` (l'ordre de construction, pour
- * « إعادة البناء ») et `via` (l'instrument et sa pose à cet instant).
+ * « Rejouer la construction ») et `via` (l'instrument et sa pose à cet instant).
  *
  * Le « segment AB » est donc un segment AB, pas un tracé : ses extrémités
  * sont des POINTS (`from`, `to`), et déplacer A redessine AB
@@ -317,7 +317,7 @@ export function missingMeasureSkeletons(elements) {
     if (l.kind === 'segment' && !measured.has(l.id)) out.push(measureSkeleton(scene, { of: l.id, what: 'length' }));
   }
   for (const c of scene.circles) {
-    // Un arc tracé à la منقلة se lit en DEGRÉS (θ = 60°) ; au compas, par son rayon.
+    // Un arc tracé au rapporteur se lit en DEGRÉS (θ = 60°) ; au compas, par son rayon.
     const what = c.kind === 'arc' && geoOf(c.el)?.via?.tool === 'protractor' ? 'arcAngle' : 'radius';
     if (!measured.has(c.id)) out.push(measureSkeleton(scene, { of: c.id, what }));
   }
@@ -423,7 +423,7 @@ export function nextSeq(elements) {
 }
 
 /**
- * Les étapes de « إعادة البناء », dans l'ordre où elles ont été faites :
+ * Les étapes de « Rejouer la construction », dans l'ordre où elles ont été faites :
  * chaque objet construit, avec l'instrument qui l'a tracé. Les étiquettes
  * suivent leur point, les mesures arrivent à la fin.
  */

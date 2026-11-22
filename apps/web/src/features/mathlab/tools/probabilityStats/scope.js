@@ -2,21 +2,21 @@ import { MODES } from './probabilityState.js';
 import { CHART_TYPES } from './descriptiveStats.js';
 
 /**
- * الاحتمالات والإحصاء — مخبر الثانوي seulement (décision du propriétaire,
+ * Probabilités et statistiques — le labo du lycée (`secondaire`) seulement (décision du propriétaire,
  * 2026-09-30 ; labScope.js, MATH_LAB.md §2.1), avec toutes ses sections.
  *
  * La mécanique ci-dessous reste en place : le laboratoire sait filtrer ses
  * sections, ses graphiques, ses indicateurs et ses plis
  * (`probabilityFeatures`), et ramener un état hors de portée
- * (`clampToFeatures`). Aucun مخبر ne la restreint aujourd'hui ; le jour où
- * l'instrument rejoint un autre مخبر avec moins de capacités, il suffit de
+ * (`clampToFeatures`). Aucun labo ne la restreint aujourd'hui ; le jour où
+ * l'instrument rejoint un autre labo avec moins de capacités, il suffit de
  * les déclarer ici.
  */
 export const PROBABILITY_SCOPES = Object.freeze(['secondaire']);
 
 export const PROBABILITY_CAPABILITIES = Object.freeze({ secondaire: null });
 
-/** Tous les indicateurs de la grille, et tous les plis « كيف تُحسب ؟ ». */
+/** Tous les indicateurs de la grille, et tous les plis « Comment calcule-t-on les indicateurs ? ». */
 const ALL_STATS = Object.freeze(['count', 'min', 'max', 'range', 'mean', 'median', 'mode', 'q1', 'q3', 'iqr', 'variance', 'sd']);
 const ALL_EXPLANATIONS = Object.freeze(['mean', 'median', 'mode', 'quartiles', 'range', 'variance', 'sd']);
 
@@ -31,7 +31,7 @@ export function probabilityFeatures(capabilities) {
 }
 
 /**
- * Un état enregistré ramené à ce que le مخبر montre : une section absente
+ * Un état enregistré ramené à ce que le labo montre : une section absente
  * rouvre sur la première, un graphique absent revient au choix automatique
  * (barres ou histogramme, toujours permis). Le reste de l'état est GARDÉ —
  * rien n'est effacé, seulement pas montré.

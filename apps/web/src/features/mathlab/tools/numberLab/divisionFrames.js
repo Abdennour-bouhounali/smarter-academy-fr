@@ -3,11 +3,11 @@
  * logique pure. Le calcul vient de `euclideanDivision` ; ici, sa mise en scène :
  *
  *   0. [38] = [7] × ? + ?            on désigne a et b : on cherche q et r
- *   1. 38 = 7 × [?] + ?   ↓ 7 × 5 = 35       combien de rzam de 7 tiennent dans 38 ?
+ *   1. 38 = 7 × [?] + ?   ↓ 7 × 5 = 35       combien de paquets de 7 tiennent dans 38 ?
  *      38 = 7 × [5] + ?                    q acquis (les cubes se groupent)
  *   2. [38] ⌒− [35] ↓ 3                     ce qui reste est r (les cubes orange)
  *   3. 38 = 7 × 5 + 3                       l'égalité, pièce par pièce
- *   4. 0 ≤ 3 < 7                            la condition — le DERNIER pas, le résultat
+ *   4. 0 ⩽ 3 < 7                            la condition — le DERNIER pas, le résultat
  *
  * `meta.draw` dit ce que le dessin montre : 0 = les a cubes, en vrac ;
  * 1 = groupés par b ; 2 = le reste en orange.
@@ -20,7 +20,7 @@ const K = 'tools.numberLab.steps.division';
 const PRACTICE = 'tools.numberLab.practice.board';
 
 /** L'énoncé : `38 = 7 \times q + r`. */
-export const divisionProblem = (a, b) => `${a} = ${b} \\times q + r \\quad (0 \\le r < ${b})`;
+export const divisionProblem = (a, b) => `${a} = ${b} \\times q + r \\quad (0 \\leqslant r < ${b})`;
 
 /** @returns {null | { division, frames }} */
 export function divisionFrames(a, b) {
@@ -40,7 +40,7 @@ export function divisionFrames(a, b) {
       textKey: `${K}.question`,
       textParams: { a, b },
     }),
-    // « تدرّب بنفسك » : désigner le dividende et le diviseur, puis « ÷ ».
+    // « Entraîne-toi » : désigner le dividende et le diviseur, puis « ÷ ».
     task: makeTask({ targets: ['a', 'b'], operator: '\\div', promptKey: `${PRACTICE}.division` }),
     meta: { draw: 0 },
   });
@@ -95,7 +95,7 @@ export function divisionFrames(a, b) {
   frames.push({
     ...resultFrame({
       step: 4,
-      row: [tok('zero', '0'), tok('le', '\\le'), tok('r', r, 'result'), tok('lt', '<'), tok('b', b)],
+      row: [tok('zero', '0'), tok('le', '\\leqslant'), tok('r', r, 'result'), tok('lt', '<'), tok('b', b)],
       textKey: r === 0 ? `${K}.conditionExact` : `${K}.condition`,
       textParams: { r, b },
     }),

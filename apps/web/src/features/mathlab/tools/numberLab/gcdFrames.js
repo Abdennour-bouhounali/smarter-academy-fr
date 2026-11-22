@@ -6,14 +6,14 @@
  * leçons) et de `numberTheory.euclideanAlgorithm`. Ce module ne fait que la
  * METTRE EN SCÈNE, élément par élément :
  *
- *   الفوارق المتتالية, pour chaque soustraction (une étape = trois frames) :
+ *   soustractions successives, pour chaque soustraction (une étape = trois frames) :
  *     (48 ; 18)          on désigne les deux nombres du couple
  *     (48 ⌒− 18)         l'arc « − » les relie
  *     (48 ; 18) ↓ 30      le résultat tombe — ligne acquise « 48 − 18 = 30 ⇒ (30 ; 18) »
  *   puis la dernière étape : PGCD(48 ; 18) = 6.
  *
- *   خوارزمية إقليدس, pour chaque division :
- *     [84] ÷ [36]  →  arc « ÷ »  →  ↓ q = 2, r = 12 — ligne acquise « 84 = 2 × 36 + 12 »
+ *   algorithme d'Euclide, pour chaque division :
+ *     [84] ÷ [36]  →  arc « ÷ »  →  ↓ q = 2, r = 12 — ligne acquise « 84 = 36 × 2 + 12 »
  *   puis PGCD(84 ; 36) = 12.
  *
  * Chaque frame porte `meta` (sa soustraction / division, sa phase) : le
@@ -54,7 +54,7 @@ export function differencesFrames(a, b) {
       b: 'small',
       symbolLatex: '-',
       resultLatex: String(s.diff),
-      // « تدرّب بنفسك » : l'élève touche les deux nombres du couple, puis choisit « − ».
+      // « Entraîne-toi » : l'élève touche les deux nombres du couple, puis choisit « − ».
       task: makeTask({ targets: ['big', 'small'], operator: '-', promptKey: `${PRACTICE}.differences` }),
       settle: `${s.big} - ${s.small} = ${s.diff} \\quad\\Rightarrow\\quad ${pairLatex(x, y)}`,
       texts: {
@@ -114,7 +114,7 @@ export function euclidFrames(a, b) {
       symbolLatex: '\\div',
       resultLatex: `q = ${s.quotient},\\ r = ${s.remainder}`,
       task: makeTask({ targets: ['dividend', 'divisor'], operator: '\\div', promptKey: `${PRACTICE}.euclid` }),
-      settle: `${s.dividend} = ${s.quotient} \\times ${s.divisor} + ${s.remainder}`,
+      settle: `${s.dividend} = ${s.divisor} \\times ${s.quotient} + ${s.remainder}`,
       texts: {
         select: { textKey: `${K}.euclid.select`, textParams: { dividend: s.dividend, divisor: s.divisor } },
         operate: { textKey: `${K}.euclid.operate`, textParams: { dividend: s.dividend, divisor: s.divisor } },

@@ -1,5 +1,5 @@
 /**
- * Les tests du MODÈLE et de l'ÉTAT du مختبر التحويلات.
+ * Les tests du MODÈLE et de l'ÉTAT de l'atelier des transformations.
  *
  * Ils couvrent ce que le moteur (transformMath.test.js) ne couvre pas : la
  * pile de transformations et sa composition (§20 – §23), les invariants
@@ -32,15 +32,15 @@ const expectPoint = (actual, expected) => {
 // ── Le modèle : un pas → une matrice ────────────────────────────────────
 
 describe('matrixFor — un pas devient une transformation', () => {
-  it('lit un انسحاب', () => {
+  it('lit une translation', () => {
     expectPoint(M.applyMatrix(matrixFor({ kind: 'translation', vx: 2, vy: -1 }), at(1, 1)), at(3, 0));
   });
 
-  it('lit un دوران autour de l’origine', () => {
+  it('lit une rotation autour de l’origine', () => {
     expectPoint(M.applyMatrix(matrixFor({ kind: 'rotation', angle: 90, center: { type: 'origin' } }), at(1, 0)), at(0, 1));
   });
 
-  it('lit un دوران dont le centre est un SOMMET de la figure (§11)', () => {
+  it('lit une rotation dont le centre est un SOMMET de la figure (§11)', () => {
     const step = { kind: 'rotation', angle: 180, center: { type: 'vertex', index: 1 } };
     // Le centre est (4,0) : ce sommet est fixe.
     expectPoint(M.applyMatrix(matrixFor(step, TRIANGLE), at(4, 0)), at(4, 0));
@@ -78,7 +78,7 @@ describe('matrixFor — un pas devient une transformation', () => {
     expect(matrixFor({ kind: 'reflection', axis: { type: 'twoPoints', a: at(2, 2), b: at(2, 2) } })).toBeNull();
   });
 
-  it('lit un تحاكي et son centre', () => {
+  it('lit une homothétie et son centre', () => {
     expectPoint(M.applyMatrix(matrixFor({ kind: 'dilation', k: 3, center: { type: 'point', point: at(1, 1) } }), at(2, 1)), at(4, 1));
   });
 
@@ -119,7 +119,7 @@ describe('matrixAtFraction — l’animation montre un état qui a un SENS', () 
     expectPoint(M.applyMatrix(half, at(1, 0)), at(2, 0));
   });
 
-  it('une translation à mi-chemin a parcouru la moitié du شعاع', () => {
+  it('une translation à mi-chemin a parcouru la moitié du vecteur', () => {
     expectPoint(M.applyMatrix(matrixAtFraction({ kind: 'translation', vx: 4, vy: 2 }, [], 0.5), at(0, 0)), at(2, 1));
   });
 
@@ -210,7 +210,7 @@ describe('transformStages — la composition, étape par étape', () => {
 describe('analyzeInvariants — ce qui ne change pas, mesuré et non récité', () => {
   const invariantsAfter = (steps) => analyzeInvariants(TRIANGLE, finalFigure(TRIANGLE, steps));
 
-  it('un انسحاب conserve tout sauf les coordonnées', () => {
+  it('une translation conserve tout sauf les coordonnées', () => {
     const result = invariantsAfter([{ kind: 'translation', enabled: true, vx: 3, vy: 2 }]);
     expect(result.distances.preserved).toBe(true);
     expect(result.angles.preserved).toBe(true);
@@ -221,7 +221,7 @@ describe('analyzeInvariants — ce qui ne change pas, mesuré et non récité', 
     expect(result.coordinates.preserved).toBe(false);
   });
 
-  it('un دوران conserve les distances, les angles, l’aire ET l’orientation', () => {
+  it('une rotation conserve les distances, les angles, l’aire ET l’orientation', () => {
     const result = invariantsAfter([{ kind: 'rotation', enabled: true, angle: 37, center: { type: 'origin' } }]);
     expect(result.distances.preserved).toBe(true);
     expect(result.angles.preserved).toBe(true);
@@ -239,7 +239,7 @@ describe('analyzeInvariants — ce qui ne change pas, mesuré et non récité', 
     expect(result.orientation.before).toBe(-result.orientation.after);
   });
 
-  it('un تحاكي conserve les ANGLES et le parallélisme, pas les longueurs', () => {
+  it('une homothétie conserve les ANGLES et le parallélisme, pas les longueurs', () => {
     const result = invariantsAfter([{ kind: 'dilation', enabled: true, k: 2, center: { type: 'origin' } }]);
     expect(result.distances.preserved).toBe(false);
     expect(result.angles.preserved).toBe(true);
@@ -290,7 +290,7 @@ describe('analyzeInvariants — ce qui ne change pas, mesuré et non récité', 
 // ── Les formules (§26) ──────────────────────────────────────────────────
 
 describe('coordinateFormula — la formule porte les VRAIS paramètres', () => {
-  it('un انسحاب rend ses composantes', () => {
+  it('une translation rend ses composantes', () => {
     expect(coordinateFormula({ kind: 'translation', vx: 3, vy: -2 })).toEqual({ key: 'translation', params: { a: 3, b: -2 } });
   });
 
@@ -318,7 +318,7 @@ describe('coordinateFormula — la formule porte les VRAIS paramètres', () => {
     expect(key('diagonal')).toBe('reflectDiagonal');
   });
 
-  it('un تحاكي de centre l’origine dit son rapport', () => {
+  it('une homothétie de centre l’origine dit son rapport', () => {
     const formula = coordinateFormula({ kind: 'dilation', k: 2, center: { type: 'origin' } });
     expect(formula.key).toBe('dilationOrigin');
     expect(formula.params.k).toBe(2);
@@ -423,7 +423,7 @@ describe('le document : relecture, sérialisation, bornes', () => {
 
 // ── L'historique (§48) ──────────────────────────────────────────────────
 
-describe('تراجع / إعادة — l’historique recule le curseur, il ne défait rien', () => {
+describe('Annuler / Rétablir — l’historique recule le curseur, il ne défait rien', () => {
   it('un pas poussé se défait et se refait', () => {
     let data = createTransformationsData();
     const before = currentScene(data);
@@ -437,7 +437,7 @@ describe('تراجع / إعادة — l’historique recule le curseur, il ne d�
     expect(currentScene(data).steps).toHaveLength(before.steps.length + 1);
   });
 
-  it('rejouer après un تراجع ABANDONNE ce qui suivait', () => {
+  it('rejouer après une annulation ABANDONNE ce qui suivait', () => {
     let data = createTransformationsData();
     data = pushScene(data, addStep(currentScene(data), 'rotation'));
     data = pushScene(data, addStep(currentScene(data), 'dilation'));
@@ -466,7 +466,7 @@ describe('تراجع / إعادة — l’historique recule le curseur, il ne d�
     expect(data.cursor).toBe(MAX_HISTORY - 1);
   });
 
-  it('تراجع au tout début et إعادة à la toute fin ne font rien', () => {
+  it('Annuler au tout début et Rétablir à la toute fin ne font rien', () => {
     const data = createTransformationsData();
     expect(undo(data)).toBe(data);
     expect(redo(data)).toBe(data);
@@ -496,7 +496,7 @@ describe('les gestes sur la scène', () => {
     expect(moved.figures[0].vertices[0]).toEqual(TRIANGLE[0]);
   });
 
-  it('déplace une figure ENTIÈRE du même شعاع (§5)', () => {
+  it('déplace une figure ENTIÈRE du même vecteur (§5)', () => {
     const scene = addFigure(emptyScene(), 'triangle', TRIANGLE);
     const moved = moveFigure(scene, scene.figures[0].id, 2, -1);
     moved.figures[0].vertices.forEach((vertex, i) => expectPoint(vertex, at(TRIANGLE[i].x + 2, TRIANGLE[i].y - 1)));

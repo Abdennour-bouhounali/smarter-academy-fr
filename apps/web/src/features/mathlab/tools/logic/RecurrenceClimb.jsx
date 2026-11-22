@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Play, RotateCcw, ChevronLeft, Pencil, Check } from 'lucide-react';
+import { Play, RotateCcw, Pencil, Check } from 'lucide-react';
+import { ChevronForward } from '../../../../components/common/DirectionalIcons.jsx';
 import { Notation } from './LogicPieces.jsx';
 import InductionStairs from './InductionStairs.jsx';
 import { formatNumber } from './logicFormat.js';
@@ -27,8 +28,8 @@ import {
  * `phase: 'test'` est de l'EXPÉRIMENTATION numérique : on calcule P(k) pour
  * des k concrets. `phase: 'prove'` est la démonstration. L'écran ne laisse
  * jamais croire que la première fait la seconde — six marches vertes donnent
- * « تجريبي », jamais « مُبرهن », et c'est précisément à ce moment-là que la
- * question « ماذا يجعلنا ننتقل من درجة إلى التي بعدها ؟ » apparaît (§41).
+ * « expérimental », jamais « démontré », et c'est précisément à ce moment-là que la
+ * question « qu'est-ce qui nous permettrait de passer d'une marche à la suivante ? » apparaît (§41).
  *
  * ── Ce que l'écran ne calcule pas lui-même ──────────────────────────────
  * Rien. Toute la mathématique est dans `inductionModel.js` et
@@ -282,7 +283,7 @@ export default function RecurrenceClimb({ data, onChange, announce }) {
             </div>
           )}
 
-          {/* §17 — un refus se dit en arabe, avec un exemple qui MARCHE.
+          {/* §17 — un refus se dit en français, avec un exemple qui MARCHE.
               Jamais « SyntaxError », jamais « NaN ». */}
           {compiled && !compiled.ok && (
             <p className="sa-ml-lg__message sa-ml-lg__message--warn" role="status" data-ml-lg-rec-error={compiled.error.code}>
@@ -336,7 +337,7 @@ export default function RecurrenceClimb({ data, onChange, announce }) {
             disabled={cursor >= steps.length - 1}
             data-ml-lg-rec-next
           >
-            <ChevronLeft size={15} aria-hidden="true" />
+            <ChevronForward size={15} aria-hidden="true" />
             {t('tools.logic.induction.climb.next')}
           </button>
           <button
@@ -440,7 +441,7 @@ function ResultPanel({ result, proposition, context, exercise, t }) {
   }
 
   const { n, holds, left, right } = result;
-  // Les suites dont ce rang dépend, avec leur valeur — c'est le « الحساب »
+  // Les suites dont ce rang dépend, avec leur valeur — c'est « le calcul »
   // de §6 et de §22.
   const parts = exercise.sequences
     .map((sequence) => ({ name: sequence.name, resolved: valueAt(context, sequence.name, n) }))
@@ -565,7 +566,7 @@ function HeredityBuilder({ exercise, placed, allGreen, onChange, announce, t }) 
         </button>
       </div>
 
-      {/* §25 — le verdict FINAL, qui ne dit « مُبرهن » qu'avec les deux pieds. */}
+      {/* §25 — le verdict FINAL, qui ne dit « démontré » qu'avec les deux pieds. */}
       <p className="sa-ml-lg__question" role="status" data-ml-lg-rec-proofverdict={verdict}>
         {t(`tools.logic.induction.recurrence.verdict.${verdict}`)}
       </p>

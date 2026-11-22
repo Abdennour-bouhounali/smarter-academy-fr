@@ -97,7 +97,7 @@ export default function LineMode({ state, onChange, compact }) {
         height={compact ? 140 : 156}
       />
 
-      {/* §45 : la comparaison (LTR) et la distance (phrase arabe + île LTR), sous le dessin. */}
+      {/* §45 : la comparaison (LTR) et la distance (phrase + île LTR), sous le dessin. */}
       {comparison && (
         <div className="sa-ml-nb__row sa-ml-nb__row--between sa-ml-nb__line-readout">
           <p className="sa-ml-nb__formula sa-ml-nb__formula--big" dir="ltr" data-ml-nb-line-compare>

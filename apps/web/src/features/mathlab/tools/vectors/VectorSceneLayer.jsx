@@ -18,7 +18,7 @@ import { CONSTRUCTION_COLOR, POINT_COLOR } from './vectorScene.js';
  *     géométrie → mathématique → relations → RENDU → contrôles
  *
  * L'ordre de dessin est celui de la lisibilité : les formes au fond, puis
- * les constructions (qui expliquent), puis les أشعة, puis les points, puis
+ * les constructions (qui expliquent), puis les vecteurs, puis les points, puis
  * les poignées — ce qu'on attrape est toujours au-dessus.
  */
 export default function VectorSceneLayer({
@@ -31,7 +31,7 @@ export default function VectorSceneLayer({
   const vectors = [...resolved.vectors.values()];
   const points = [...resolved.points.values()];
 
-  /** Le شعاع est-il mis en avant ? Une sélection estompe le reste. */
+  /** Le vecteur est-il mis en avant ? Une sélection estompe le reste. */
   const anySelected = selectedVectors.size > 0;
   const isFaded = (id) => anySelected && !selectedVectors.has(id);
 
@@ -48,7 +48,7 @@ export default function VectorSceneLayer({
         />
       ))}
 
-      {/* ── Les constructions, sous les أشعة ─────────────────────────── */}
+      {/* ── Les constructions, sous les vecteurs ─────────────────────────── */}
       {vectors.filter((v) => v.resolved).map((vector) => {
         const source = vector.source;
         if (source.kind === 'sum' || source.kind === 'difference') {
@@ -87,7 +87,7 @@ export default function VectorSceneLayer({
         return null;
       })}
 
-      {/* Le tracé d'un انسحاب : A → A′ (§16) */}
+      {/* Le tracé d'une translation : A → A′ (§16) */}
       {points.filter((p) => p.resolved && p.kind === 'image').map((image) => {
         const parent = resolved.points.get(image.source.of);
         if (!parent?.position) return null;
@@ -112,7 +112,7 @@ export default function VectorSceneLayer({
         />
       )}
 
-      {/* ── Les أشعة ─────────────────────────────────────────────────── */}
+      {/* ── Les vecteurs ─────────────────────────────────────────────────── */}
       {vectors.filter((v) => v.resolved).map((vector) => (
         <g key={vector.id}>
           {settings.showLengths && selectedVectors.has(vector.id) && (
@@ -154,7 +154,7 @@ export default function VectorSceneLayer({
         </g>
       ))}
 
-      {/* ── Les poignées des أشعة libres (§6, §7) ────────────────────── */}
+      {/* ── Les poignées des vecteurs libres (§6, §7) ────────────────────── */}
       {vectors.filter((v) => v.resolved && v.source.kind === 'free').map((vector) => (
         <g key={`handles-${vector.id}`}>
           {/* L'ORIGINE : la déplacer ne change pas les composantes (§6). */}
@@ -170,7 +170,7 @@ export default function VectorSceneLayer({
             onDrag={(clientX, clientY, modifiers) => onDragVectorOrigin(vector.id, clientX, clientY, modifiers)}
             onDragEnd={onDragEnd}
           />
-          {/* L'EXTRÉMITÉ : la déplacer change le شعاع (§7). */}
+          {/* L'EXTRÉMITÉ : la déplacer change le vecteur (§7). */}
           <VectorHandle
             position={vector.tip}
             color={vector.source.color}

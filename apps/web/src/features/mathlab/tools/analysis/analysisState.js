@@ -1,5 +1,5 @@
 /**
- * L'ÉTAT du مختبر التحليل والدوال — logique pure, sans React.
+ * L'ÉTAT du labo d’analyse — logique pure, sans React.
  *
  *     data = {
  *       lab:        'secant'|'tangent'|'derivative'|'limit'|'integral'|'study'|'transform',
@@ -72,17 +72,17 @@ const finiteOr = (value, fallback) => (Number.isFinite(value) ? value : fallback
  * L'état d'un document NEUF.
  *
  * ── Pourquoi il s'ouvre sur la SÉCANTE ───────────────────────────────────
- * Le programme de 4AM ne contient ni dérivée, ni limite, ni intégrale : le
+ * Le programme du collège ne contient ni dérivée, ni limite, ni intégrale : le
  * calcul différentiel est matière de lycée. Son seul ancrage authentique est
- * la FONCTION AFFINE et son coefficient directeur (LP 3.7, 3.8) — c'est-à-dire
+ * la FONCTION AFFINE et son coefficient directeur — c'est-à-dire
  * exactement `(f(b) − f(a)) / (b − a)`, le taux d'accroissement moyen.
  *
  * L'instrument ouvre donc sur `f(x) = 2x + 1` avec deux points A et B posés
- * sur la droite et leur pente affichée : un élève de 4AM y reconnaît le geste
+ * sur la droite et leur pente affichée : un élève de 3e y reconnaît le geste
  * de son manuel, et il peut jouer tout de suite (§53). Tout le reste — la
  * tangente, la dérivée, les limites, l'intégrale — est construit, complet, et
  * à un clic. C'est la règle déjà tenue par le produit scalaire (MATH_LAB
- * §5f.10), le cercle trigonométrique (§5g.1), les suites (§5h.1), le تحاكي
+ * §5f.10), le cercle trigonométrique (§5g.1), les suites (§5h.1), le homothétie
  * (§5j.1) et les coniques (§5k.1).
  *
  * @param {object} [seed]  une amorce de leçon (openMathLab.js)

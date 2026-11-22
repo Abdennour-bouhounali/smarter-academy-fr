@@ -11,12 +11,11 @@ import { NUMBER_LINE_MIN_SPAN, NUMBER_LINE_MAX_SPAN } from './algebraState.js';
  *          −3
  *
  * Un cercle VIDE pour une borne exclue (< et >), PLEIN pour une borne
- * incluse (≤ et ≥) : la différence entre les deux est exactement ce que
+ * incluse (⩽ et ⩾) : la différence entre les deux est exactement ce que
  * l'élève confond, et elle se voit ici d'un coup d'œil.
  *
  * Le dessin est en SVG et `direction: ltr` (algebra.css) : les négatifs sont
- * à gauche, comme dans tous les manuels, même sur une page arabe — SVG
- * n'hérite pas de `dir` (ARABIC_RTL_CONTRACT.md §4).
+ * à gauche, comme dans tous les manuels.
  *
  * Zoom (molette, boutons) et déplacement (glissé) suivent la même idée que
  * la fenêtre du grapheur : l'élève cadre ce qu'il veut lire.

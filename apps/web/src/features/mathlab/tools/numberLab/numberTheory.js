@@ -1,5 +1,5 @@
 /**
- * L'ARITHMÉTIQUE du مختبر الأعداد — logique pure, sans React (§60).
+ * L'ARITHMÉTIQUE du labo des nombres — logique pure, sans React (§60).
  *
  * Divisibilité, premiers, factorisation, PGCD, PPCM. Tout y est EXACT et
  * entier : pas un `Math.sqrt` qui décide qu'un nombre est premier, pas un
@@ -251,8 +251,8 @@ export function divisibilityTable(n, rules = DIVISIBILITY_RULES) {
 /**
  * Les DIVISIONS successives d'Euclide (§27) :
  *
- *     84 = 2 × 36 + 12
- *     36 = 3 × 12 + 0      → PGCD = 12
+ *     84 = 36 × 2 + 12
+ *     36 = 12 × 3 + 0      → PGCD = 12
  *
  * Chaque pas porte aussi `square` et `rest`, ce dont §28 a besoin pour
  * dessiner la version GÉOMÉTRIQUE : on découpe `quotient` carrés de côté

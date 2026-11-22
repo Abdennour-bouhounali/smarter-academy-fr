@@ -13,7 +13,7 @@ import {
 import { differencesDrawing, pgcdProblem } from './gcdFrames.js';
 
 /**
- * حساب PGCD بالفوارق المتتالية — l'expérience PGCD PRINCIPALE du laboratoire.
+ * Le PGCD par soustractions successives — l'expérience PGCD PRINCIPALE du laboratoire.
  *
  *     48 − 18 = 30 ; 30 − 18 = 12 ; 18 − 12 = 6 ; 12 − 6 = 6 ; 6 − 6 = 0
  *     → PGCD(48 ; 18) = 6
@@ -41,7 +41,7 @@ export default function DifferencesPanel({ a, b, onChange, reducedMotion, board,
   const revealed = drawing ? drawing.index + (drawing.cut ? 1 : 0) : 0;
   const current = drawing ? run.steps[drawing.index] : null;
   const finished = player.done && run && !run.truncated;
-  // « تدرّب بنفسك » : l'élève désigne lui-même le couple et choisit « − ».
+  // « Entraîne-toi » : l'élève désigne lui-même le couple et choisit « − ».
   const practice = useBoardPractice(frames, player, `${a}|${b}`);
 
   useEffect(() => {
@@ -94,7 +94,7 @@ export default function DifferencesPanel({ a, b, onChange, reducedMotion, board,
 
       {/* « D'un seul regard » (MATH_LAB §3.5) : les rubans À CÔTÉ du tableau qui les coupe. */}
       <div className="sa-ml-nb__duo" dir="ltr">
-        <div className="sa-ml-nb__duo-figure" dir="rtl">
+        <div className="sa-ml-nb__duo-figure">
           <Ribbons
             step={drawing?.cut ? current : null}
             start={current && !drawing.cut
@@ -106,7 +106,7 @@ export default function DifferencesPanel({ a, b, onChange, reducedMotion, board,
           />
         </div>
         {/* Le tableau : l'énoncé, les soustractions acquises, la soustraction EN COURS. */}
-        <div className="sa-ml-nb__board sa-ml-nb__duo-board" dir="rtl" data-ml-nb-diff-board {...(finished ? { 'data-ml-nb-diff-result': run.gcd } : {})}>
+        <div className="sa-ml-nb__board sa-ml-nb__duo-board" data-ml-nb-diff-board {...(finished ? { 'data-ml-nb-diff-result': run.gcd } : {})}>
           <MathBoard {...practice.board} frames={frames} cursor={cursor} problem={pgcdProblem(a, b)} dataAttr="data-ml-nb-diff-frame" />
         </div>
       </div>

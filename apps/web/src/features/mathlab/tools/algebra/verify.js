@@ -1,7 +1,7 @@
 /**
- * La VÉRIFICATION du مختبر الجبر — logique pure, sans React.
+ * La VÉRIFICATION de l'atelier d'algèbre — logique pure, sans React.
  *
- * « التحقق » substitue la valeur trouvée dans l'équation de DÉPART et montre
+ * « Vérifier » substitue la valeur trouvée dans l'équation de DÉPART et montre
  * le calcul des deux membres :
  *
  *     2x + 3 = 11   avec x = 4
@@ -85,8 +85,8 @@ export function verifySolution(equation, value, variable = 'x') {
  *
  * Pour une équation, c'est `verifySolution` en s.
  *
- * Pour une INÉQUATION (متراجحة), substituer la borne s ne vérifie rien :
- * elle rend les deux membres ÉGAUX, donc `<` et `>` y sont fausses — « التحقق »
+ * Pour une INÉQUATION, substituer la borne s ne vérifie rien :
+ * elle rend les deux membres ÉGAUX, donc `<` et `>` y sont fausses — « Vérifier »
  * déclarait alors faux un résultat juste (x − 7 < −7 → x < 0 → « −7 < −7 ✗ »),
  * et pour `≤`/`≥` il présentait la borne comme « la » solution. On vérifie
  * donc DEUX choses, qui suffisent pour une relation affine :

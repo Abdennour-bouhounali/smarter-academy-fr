@@ -8,7 +8,7 @@ const trace = (source) => {
   return { run, lines: run.steps.map((s) => plain(s.latex)), rules: run.steps.map((s) => (s.inGroup ? `(${s.rule})` : s.rule)) };
 };
 
-describe('أولويات العمليات — les déroulés exacts', () => {
+describe('priorités opératoires — les déroulés exacts', () => {
   it('3 + 4 × 5 = 23', () => {
     const { run, lines, rules } = trace('3 + 4 × 5');
     expect(lines).toEqual(['3 + 20', '23']);
@@ -67,7 +67,7 @@ describe('أولويات العمليات — les déroulés exacts', () => {
     expect(evaluateStepByStep('3² + 2³').result.latex).toBe('17');
     expect(evaluateStepByStep('6 * 7 : 2').result.latex).toBe('21');
     expect(evaluateStepByStep('2(3 + 4)').result.latex).toBe('14');
-    expect(evaluateStepByStep('٣ + ٤').result.latex).toBe('7');
+    expect(evaluateStepByStep('\u0663 + \u0664').result.latex).toBe('7');
     expect(evaluateStepByStep('2^3^2').result.latex).toBe('512');
     expect(evaluateStepByStep('2^3/4').result.latex).toBe('2');
   });

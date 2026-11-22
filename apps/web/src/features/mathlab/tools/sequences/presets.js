@@ -1,6 +1,6 @@
 /**
  * LES PRÉRÉGLAGES (§39), LES MODÈLES DU RÉEL (§38) et LES EXPÉRIENCES (§26)
- * du مختبر المتتاليات.
+ * du labo des suites.
  *
  * §39 est catégorique : « The presets should populate the existing workspace
  * rather than open unrelated pages. » Un préréglage n'est donc PAS un écran :
@@ -50,7 +50,7 @@ export const PRESETS = Object.freeze([
     apply: () => ({
       primary: { kind: 'arithmetic', startIndex: 0, first: 2, second: 1, difference: 3, ratio: 2, a: 2, b: 1, explicitSource: '2n + 1', ruleSource: 'u + 3' },
       count: 10,
-      // La différence constante, c'est LE geste de 4AM (§13).
+      // La différence constante, c'est LE geste du collège (§13).
       layers: layers({ differences: true }),
     }),
   },

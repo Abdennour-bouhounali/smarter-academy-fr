@@ -22,20 +22,20 @@ import LogicLabTool from './tools/logic/LogicLabTool.jsx';
 import { createLogicData } from './tools/logic/logicState.js';
 
 /**
- * Le MÊME composant, rendu dans chaque مخبر : ce que le DOM montre.
+ * Le MÊME composant, rendu dans chaque atelier : ce que le DOM montre.
  *
  * Les tests purs (labCapabilities.test.js) disent ce que chaque instrument
  * DÉCLARE ; ceux-ci vérifient qu'il l'OBÉIT — qu'aucun onglet, bouton ou
- * lecture du lycée n'arrive dans le HTML de مخبر المتوسط, et que le lycée
+ * lecture du lycée n'arrive dans le HTML d’atelier du collège, et que le lycée
  * les a tous. Rendu serveur, sans navigateur : c'est le HTML initial, celui
  * que l'élève voit avant tout geste.
  */
 const missing = new Set();
 const i18n = i18next.createInstance();
 i18n.use(initReactI18next).init({
-  lng: 'ar-DZ',
-  fallbackLng: 'ar-DZ',
-  resources: { 'ar-DZ': { mathlab } },
+  lng: 'fr',
+  fallbackLng: 'fr',
+  resources: { fr: { mathlab } },
   ns: ['mathlab'],
   interpolation: { escapeValue: false },
   react: { useSuspense: false },
@@ -59,7 +59,7 @@ const render = (Component, toolId, scope, initialData, explicit = undefined) => 
 };
 const count = (html, pattern) => (html.match(pattern) ?? []).length;
 
-describe('مختبر الجبر', () => {
+describe('outil Algèbre', () => {
   it('au collège, la famille « second degré » n’a pas de bouton ; au lycée, si', () => {
     const data = { ...createAlgebraData(), section: 'functions' };
     const moyen = render(AlgebraTool, 'algebra', 'moyen', data);
@@ -68,7 +68,7 @@ describe('مختبر الجبر', () => {
     expect(render(AlgebraTool, 'algebra', 'secondaire', data)).toContain('data-ml-alg-family="quadratic"');
   });
 
-  it('au collège, x² + 5x + 6 n’est pas déroulé : une phrase renvoie au ثانوي', () => {
+  it('au collège, x² + 5x + 6 n’est pas déroulé : une phrase renvoie au lycée', () => {
     const data = { ...createAlgebraData(), section: 'factor', factor: { source: 'x^2 + 5x + 6' } };
     const moyen = render(AlgebraTool, 'algebra', 'moyen', data);
     expect(moyen).toContain('data-ml-alg-factor-status="beyondLab"');
@@ -78,18 +78,18 @@ describe('مختبر الجبر', () => {
     expect(secondaire).toContain('data-ml-alg-factor-status="factored"');
   });
 
-  it('au collège, une identité remarquable se déroule, et la règle « مجموع وجداء » n’est pas listée', () => {
+  it('au collège, une identité remarquable se déroule, et la règle « somme et produit » n’est pas listée', () => {
     const data = { ...createAlgebraData(), section: 'factor', factor: { source: 'x^2 + 6x + 9' } };
     const moyen = render(AlgebraTool, 'algebra', 'moyen', data);
     expect(moyen).toContain('data-ml-alg-factor-status="factored"');
-    expect(moyen).not.toContain('فرق مربعين أو مجموع وجداء');
+    expect(moyen).not.toContain('Différence de deux carrés ou somme et produit');
     expect(moyen).not.toContain(mathlab.tools.algebra.rules.sumProductRule.slice(0, 20));
   });
 });
 
-// الاحتمالات والإحصاء n'est qu'au ثانوي, sans restriction : on vérifie ici que
+// Probabilités et statistiques n'est qu'au lycée, sans restriction : on vérifie ici que
 // le composant OBÉIT à des capacités restreintes (la mécanique), et que le
-// ثانوي a tout.
+// lycée a tout.
 const RESTRICTED_PS = {
   sections: ['experiment', 'dataset'],
   charts: ['bars', 'histogram', 'pie', 'cumulative'],
@@ -97,8 +97,8 @@ const RESTRICTED_PS = {
   explanations: ['mean', 'median', 'mode', 'range'],
 };
 
-describe('الاحتمالات والإحصاء', () => {
-  it('restreint : deux onglets ; au ثانوي : quatre', () => {
+describe('Probabilités et statistiques', () => {
+  it('restreint : deux onglets ; au lycée : quatre', () => {
     const data = createProbabilityStatsData();
     const restricted = render(ProbabilityStatsTool, 'probabilityStats', 'secondaire', data, RESTRICTED_PS);
     expect(count(restricted, /data-ml-ps-mode="/g)).toBe(2);
@@ -106,7 +106,7 @@ describe('الاحتمالات والإحصاء', () => {
     expect(count(render(ProbabilityStatsTool, 'probabilityStats', 'secondaire', data), /data-ml-ps-mode="/g)).toBe(4);
   });
 
-  it('restreint : ni boîte, ni quartiles, ni variance ; au ثانوي : tout', () => {
+  it('restreint : ni boîte, ni quartiles, ni variance ; au lycée : tout', () => {
     const data = { ...createProbabilityStatsData(), mode: 'dataset' };
     const restricted = render(ProbabilityStatsTool, 'probabilityStats', 'secondaire', data, RESTRICTED_PS);
     expect(restricted).not.toContain('data-ml-ps-chart-type="box"');
@@ -125,15 +125,15 @@ describe('الاحتمالات والإحصاء', () => {
   });
 });
 
-describe('مختبر الأعداد والحساب', () => {
-  it('les seize modes dans chaque مخبر', () => {
+describe('labo des nombres', () => {
+  it('les seize modes dans chaque atelier', () => {
     const data = createNumberLabData();
     expect(count(render(NumberLabTool, 'numberLab', 'moyen', data), /data-ml-nb-modechip="/g)).toBe(16);
     expect(count(render(NumberLabTool, 'numberLab', 'secondaire', data), /data-ml-nb-modechip="/g)).toBe(16);
   });
 });
 
-describe('مختبر المثلثات', () => {
+describe('outil Trigonométrie', () => {
   it('au collège : ni bouton « cercle », ni radians, ni quadrant, ni symétries', () => {
     const moyen = render(TrigonometryTool, 'trigonometry', 'moyen', createTrigonometryData());
     expect(moyen).not.toContain('data-ml-trig-mode="circle"');
@@ -161,8 +161,8 @@ describe('مختبر المثلثات', () => {
   });
 });
 
-describe('مختبر الأشعة', () => {
-  it('au collège : pas de « × عدد », pas de sélecteur d’analyse, pas d’expérience du lycée', () => {
+describe('outil Vecteurs', () => {
+  it('au collège : pas de « × nombre », pas de sélecteur d’analyse, pas d’expérience du lycée', () => {
     const moyen = render(VectorsTool, 'vectors', 'moyen', createVectorsData());
     expect(moyen).not.toContain('data-ml-scale');
     expect(moyen).not.toContain('data-ml-analysis');
@@ -175,8 +175,8 @@ describe('مختبر الأشعة', () => {
   });
 });
 
-describe('مختبر التحويلات', () => {
-  it('au collège : le تحاكي oui, mais ni matrice, ni étapes intermédiaires, ni expérience de l’ordre', () => {
+describe('outil Transformations', () => {
+  it('au collège : l’homothétie oui, mais ni matrice, ni étapes intermédiaires, ni expérience de l’ordre', () => {
     const moyen = render(TransformationsTool, 'transformations', 'moyen', createTransformationsData());
     expect(moyen).toContain('data-ml-add-step="dilation"');
     expect(moyen).not.toContain('data-ml-toggle="showMatrix"');
@@ -191,7 +191,7 @@ describe('مختبر التحويلات', () => {
   });
 });
 
-describe('مختبر المنطق والبرهان', () => {
+describe('outil Logique et raisonnement', () => {
   it('au collège : quatre aires ; au lycée : onze', () => {
     const moyen = render(LogicLabTool, 'logic', 'moyen', createLogicData());
     expect(count(moyen, /data-ml-lg-area-tab="/g)).toBe(4);
@@ -201,7 +201,7 @@ describe('مختبر المنطق والبرهان', () => {
     expect(count(render(LogicLabTool, 'logic', 'secondaire', createLogicData()), /data-ml-lg-area-tab="/g)).toBe(11);
   });
 
-  it('au collège, la شرطية n’a que la propriété et sa réciproque, sans ensembles ni table', () => {
+  it('au collège, l’implication n’a que la propriété et sa réciproque, sans ensembles ni table', () => {
     const data = { ...createLogicData(), area: 'implication' };
     const moyen = render(LogicLabTool, 'logic', 'moyen', data);
     expect(moyen).toContain('data-ml-lg-form="converse"');

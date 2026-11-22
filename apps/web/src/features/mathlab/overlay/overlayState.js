@@ -31,7 +31,7 @@ export function escapeAction({ appFullscreen, browserFullscreen }) {
 }
 
 /**
- * Ce que le bouton « ملء الشاشة » doit tenter.
+ * Ce que le bouton « Plein écran » doit tenter.
  *
  * Le repli est le cœur de §3 : quand le navigateur n'a pas d'API plein
  * écran (Safari iOS) ou qu'il REFUSE la demande (politique d'iframe, pas de

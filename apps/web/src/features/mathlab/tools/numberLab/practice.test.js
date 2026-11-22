@@ -168,7 +168,7 @@ describe('§52 — les indices révèlent la MÉTHODE, progressivement', () => {
   });
 });
 
-describe('§53 — une erreur s’EXPLIQUE par le dessin, jamais par « خطأ »', () => {
+describe('§53 — une erreur s’EXPLIQUE par le dessin, jamais par « faux »', () => {
   it('l’explication dit quoi montrer et quoi demander', () => {
     const challenge = P.generateChallenge(1, 1, ['compare']);
     const wrong = challenge.expected === 'left' ? 'right' : 'left';
@@ -252,10 +252,10 @@ describe('§54 — les expériences ne demandent rien, elles MONTRENT', () => {
  * une réponse juste calculée ici, pas lue dans le défi.
  */
 describe('audit — la bonne réponse de l’élève est acceptée, dans son écriture', () => {
-  const ar = JSON.parse(readFileSync(new URL('../../../../i18n/locales/ar/mathlab.json', import.meta.url), 'utf8'));
-  const at = (key) => key.split('.').reduce((node, k) => node?.[k], ar);
+  const mathlab = JSON.parse(readFileSync(new URL('../../../../i18n/locales/ar/mathlab.json', import.meta.url), 'utf8'));
+  const at = (key) => key.split('.').reduce((node, k) => node?.[k], mathlab);
 
-  it('« اكتب 3/4 على شكل نسبة مئوية » : 75 et 75 % sont justes, 0,75 % ne l’est pas', () => {
+  it('« Écris 3/4 sous forme de pourcentage » : 75 et 75 % sont justes, 0,75 % ne l’est pas', () => {
     for (let seed = 0; seed < 400; seed++) {
       const c = P.generateChallenge(seed, 3, ['representation']);
       if (!c.promptKey.endsWith('Percent')) continue;
@@ -273,12 +273,12 @@ describe('audit — la bonne réponse de l’élève est acceptée, dans son éc
     expect(P.checkAnswer(c, '75').correct).toBe(false);
   });
 
-  it('la consigne d’arrondi NOMME le rang — jamais « إلى -1 »', () => {
+  it('la consigne d’arrondi NOMME le rang — jamais « à -1 »', () => {
     for (let seed = 0; seed < 300; seed++) {
       const c = P.generateChallenge(seed, 3, ['rounding']);
       const text = at(c.promptKey);
       expect(typeof text, c.promptKey).toBe('string');
-      expect(text).toMatch(/أقرب/);
+      expect(text).toMatch(/ (à l’unité|à la dizaine|au dixième|au centième)/);
       expect(text).not.toMatch(/\{\{rank\}\}/);
     }
   });

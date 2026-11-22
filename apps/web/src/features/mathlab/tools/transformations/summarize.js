@@ -3,12 +3,12 @@ import { finalFigure } from './transformModel.js';
 import * as M from './transformMath.js';
 
 /**
- * Le RÉSUMÉ d'un document du مختبر التحويلات : la figure et son image, en
+ * Le RÉSUMÉ d'un document de l'atelier des transformations : la figure et son image, en
  * coordonnées, plus le nom des transformations posées.
  *
- * La vignette de « أعمالي » dessine les deux contours — c'est exactement ce
+ * La vignette de « Mes travaux » dessine les deux contours — c'est exactement ce
  * qui distingue deux documents de cet instrument l'un de l'autre — et la
- * recherche trouve « دوران » en cherchant le nom d'une transformation.
+ * recherche trouve « Rotation » en cherchant le nom d'une transformation.
  *
  * `kind: 'shapes'` est une FORME d'aperçu nouvelle : aucune des huit
  * existantes ne dessine deux polygones superposés (MATH_LAB §5i.2). Le

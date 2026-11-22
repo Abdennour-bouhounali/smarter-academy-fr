@@ -17,7 +17,7 @@ import { MIN_RIEMANN_N, MAX_RIEMANN_N, RIEMANN_MODES } from './analysisState.js'
  * environnement.
  *
  * Les libellés mathématiques (`f(x) =`, `Δx`, `n`) sont enfermés dans des
- * conteneurs `dir="ltr"` : l'interface est RTL, la notation ne l'est pas
+ * conteneurs `dir="ltr"` : la notation garde son ordre quel que soit le texte autour
  * (§2, §39).
  */
 export default function AnalysisControls({
@@ -353,7 +353,7 @@ function ExpressionField({ id, value, color, onCommit, label, t }) {
   );
 }
 
-/** Les fonctions prêtes (§37), rangées par cycle : المتوسط puis الثانوي. */
+/** Les fonctions prêtes (§37), rangées par cycle : Collège puis Lycée. */
 function Presets({ current, onPreset, t }) {
   const programme = PRESETS.filter((preset) => preset.level === 'programme');
   const beyond = PRESETS.filter((preset) => preset.level === 'beyond');

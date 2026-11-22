@@ -24,10 +24,10 @@ describe('lire une probabilité EXACTEMENT', () => {
     expect(parseProbability('2/10')).toEqual({ ok: true, value: r(1, 5) });
   });
 
-  it('accepte les chiffres arabes-indiens, la virgule arabe et ٪', () => {
-    expect(parseProbability('٠٫٢٥')).toEqual({ ok: true, value: r(1, 4) });
-    expect(parseProbability('٢٥٪')).toEqual({ ok: true, value: r(1, 4) });
-    expect(parseProbability('۱/۳')).toEqual({ ok: true, value: r(1, 3) });
+  it('accepte les chiffres arabes-indiens, la virgule arabe et le pour-cent arabe (collés d’un autre clavier)', () => {
+    expect(parseProbability('\u0660\u066B\u0662\u0665')).toEqual({ ok: true, value: r(1, 4) });
+    expect(parseProbability('\u0662\u0665\u066A')).toEqual({ ok: true, value: r(1, 4) });
+    expect(parseProbability('\u06F1/\u06F3')).toEqual({ ok: true, value: r(1, 3) });
   });
 
   it('convertit un décimal sans approximation : 0,1 + 0,2 = 3/10', () => {
@@ -66,8 +66,8 @@ describe('les étiquettes', () => {
     expect(normalizeLabel('\\bar A')).toBe('A\u0304');
     expect(normalizeLabel('\\bar{B}')).toBe('B\u0304');
     expect(normalizeLabel('\\overline{C}')).toBe('C\u0304');
-    expect(normalizeLabel('ليس A')).toBe('A\u0304');
-    expect(normalizeLabel('  ولد  ')).toBe('ولد');
+    expect(normalizeLabel('non A')).toBe('A\u0304');
+    expect(normalizeLabel('  garçon  ')).toBe('garçon');
     expect(normalizeLabel('a$b{c}^_')).toBe('abc');
     expect(Array.from(normalizeLabel('x'.repeat(80)))).toHaveLength(24);
   });
@@ -75,8 +75,8 @@ describe('les étiquettes', () => {
   it('donne le contraire dans les deux sens', () => {
     expect(complementLabel('A')).toBe('A\u0304');
     expect(complementLabel('A\u0304')).toBe('A');
-    expect(complementLabel('ولد')).toBe('ليس ولد');
-    expect(complementLabel('ليس ولد')).toBe('ولد');
+    expect(complementLabel('garçon')).toBe('non garçon');
+    expect(complementLabel('non garçon')).toBe('garçon');
   });
 
   it('écrit l’étiquette en LaTeX, avec l’indice d’étape si besoin', () => {
@@ -85,7 +85,7 @@ describe('les étiquettes', () => {
     expect(labelLatex('R', 2)).toBe('R_{2}');
     expect(labelLatex('R1')).toBe('\\mathrm{R1}');
     expect(labelLatex('4')).toBe('4');
-    expect(labelLatex('ولد')).toBe('\\text{ولد}');
+    expect(labelLatex('garçon')).toBe('\\text{garçon}');
     expect(labelParts('T\u0304')).toEqual({ text: 'T', bar: true });
   });
 });

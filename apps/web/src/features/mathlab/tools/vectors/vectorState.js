@@ -1,10 +1,10 @@
 /**
- * L'ÉTAT du مختبر الأشعة — logique pure, sans React.
+ * L'ÉTAT du labo des vecteurs — logique pure, sans React.
  *
  *     data = {
  *       scene:    { points: [...], vectors: [...], polygons: [...] },
  *       history:  [scene, scene, …],   // le CHEMIN, comme en algèbre
- *       cursor:   number,              // d'où viennent تراجع / إعادة
+ *       cursor:   number,              // d'où viennent Annuler / Rétablir
  *       viewport: {xMin, xMax, yMin, yMax} | null,
  *       selection:{ points: [id…], vectors: [id…] },
  *       settings: { grid, snap, showAngles, showLengths, analysis },
@@ -13,8 +13,8 @@
  *     }
  *
  * L'historique (§30) est le même objet que la scène : un tableau d'états, un
- * curseur. « تراجع » recule le curseur, il ne défait rien — c'est le modèle
- * déjà retenu pour le مختبر الجبر (algebraState.js), et il a le même
+ * curseur. « Annuler » recule le curseur, il ne défait rien — c'est le modèle
+ * déjà retenu pour le labo d'algèbre (algebraState.js), et il a le même
  * avantage : l'élève peut revenir en avant tant qu'il n'a pas rejoué.
  *
  * VECTORS_SCHEMA_VERSION est la version de CE format.
@@ -35,7 +35,7 @@ export const VECTORS_SCHEMA_VERSION = 1;
  * Chaque pas garde une COPIE de la scène entière : le coût du document est
  * donc `MAX_HISTORY × taille de la scène`, et c'est lui qui décide du
  * plafond d'octets côté serveur (MathLabTools.php). Vingt pas couvrent
- * largement une séance — au pire absolu (26 points, 12 أشعة, vingt pas)
+ * largement une séance — au pire absolu (26 points, 12 vecteurs, vingt pas)
  * le document pèse ~65 Ko, très en deçà des 120 Ko accordés ; au-delà, on
  * oublie les plus anciens. `vectorState.test.js` tient cette borne.
  */
@@ -284,7 +284,7 @@ export function normalizeVectorsData(raw) {
   };
 }
 
-/** Ce qui part au serveur : l'historique n'emporte que ce qu'il faut pour تراجع / إعادة. */
+/** Ce qui part au serveur : l'historique n'emporte que ce qu'il faut pour Annuler / Rétablir. */
 export function serializeVectorsData(data) {
   return {
     history: data.history,
@@ -306,7 +306,7 @@ export function currentScene(data) {
 
 /**
  * Empile une nouvelle scène. Rejouer après un retour en arrière COUPE la
- * branche abandonnée : c'est la règle de tout le مختبر, et celle que
+ * branche abandonnée : c'est la règle de tout l'atelier, et celle que
  * l'élève attend de n'importe quel éditeur.
  */
 export function pushScene(data, scene) {
@@ -328,7 +328,7 @@ export function pushScene(data, scene) {
 /**
  * Un changement CONTINU (un glissement, un curseur k) : il remplace la scène
  * courante au lieu d'en empiler une. Sans cela, traverser le plan avec un
- * point produirait deux cents pas d'historique et « تراجع » ne reculerait
+ * point produirait deux cents pas d'historique et « Annuler » ne reculerait
  * que d'un pixel — l'annulation doit défaire un GESTE, pas une image.
  */
 export function replaceScene(data, scene) {
@@ -361,7 +361,7 @@ export function redo(data) {
 const usedPointNames = (scene) => scene.points.map((p) => p.name);
 const usedVectorNames = (scene) => scene.vectors.map((v) => v.name);
 
-/** Une نقطة libre. */
+/** Un point libre. */
 export function addFreePoint(scene, { x, y, name = null }) {
   if (scene.points.length >= MAX_POINTS) return scene;
   const point = {
@@ -393,7 +393,7 @@ export function addPointsVector(scene, fromId, toId) {
   return { ...scene, vectors: [...scene.vectors, vector] };
 }
 
-/** Un شعاع LIBRE, posé où on veut (§6). */
+/** Un vecteur LIBRE, posé où on veut (§6). */
 export function addFreeVector(scene, { x, y, origin = { x: 0, y: 0 }, name = null }) {
   if (scene.vectors.length >= MAX_VECTORS) return scene;
   const vector = {
@@ -459,7 +459,7 @@ export function addMidpoint(scene, aId, bId) {
   return { ...scene, points: [...scene.points, point] };
 }
 
-/** L'image d'un point par un انسحاب (§16) : A′ = A + u. */
+/** L'image d'un point par une translation (§16) : A′ = A + u. */
 export function addImagePoint(scene, pointId, vectorId) {
   if (scene.points.length >= MAX_POINTS) return scene;
   const parent = scene.points.find((p) => p.id === pointId);
@@ -477,7 +477,7 @@ export function addImagePoint(scene, pointId, vectorId) {
   return { ...scene, points: [...scene.points, point] };
 }
 
-/** Un polygone (§17), et son image par un انسحاب. */
+/** Un polygone (§17), et son image par une translation. */
 export function addPolygon(scene, vertexIds, name = null) {
   if (scene.polygons.length >= MAX_POLYGONS) return scene;
   const vertices = vertexIds.filter((id) => scene.points.some((p) => p.id === id));
@@ -524,7 +524,7 @@ export function movePoint(scene, pointId, x, y) {
   };
 }
 
-/** Déplacer l'extrémité d'un شعاع libre : ses composantes changent (§7). */
+/** Déplacer l'extrémité d'un vecteur libre : ses composantes changent (§7). */
 export function moveVectorTip(scene, vectorId, x, y) {
   return {
     ...scene,
@@ -534,7 +534,7 @@ export function moveVectorTip(scene, vectorId, x, y) {
   };
 }
 
-/** Déplacer l'ORIGINE d'un شعاع libre : ses composantes ne changent PAS (§6). */
+/** Déplacer l'ORIGINE d'un vecteur libre : ses composantes ne changent PAS (§6). */
 export function moveVectorOrigin(scene, vectorId, x, y) {
   return {
     ...scene,
@@ -544,7 +544,7 @@ export function moveVectorOrigin(scene, vectorId, x, y) {
   };
 }
 
-/** Poser les composantes d'un شعاع libre (le mode paramétré de §26). */
+/** Poser les composantes d'un vecteur libre (le mode paramétré de §26). */
 export function setVectorComponents(scene, vectorId, x, y) {
   return {
     ...scene,
@@ -572,10 +572,10 @@ export function emptyScene() {
 }
 
 /**
- * Le document NEUF (§28, « Explorer librement ») : deux points et le شعاع
+ * Le document NEUF (§28, « Explorer librement ») : deux points et le vecteur
  * qu'ils portent. Pas un plan vide — l'élève doit voir tout de suite ce
- * qu'est un شعاع et pouvoir le tirer ; et pas une leçon non plus : deux
- * points, un شعاع, rien d'autre.
+ * qu'est un vecteur et pouvoir le tirer ; et pas une leçon non plus : deux
+ * points, un vecteur, rien d'autre.
  */
 export function createVectorsData(seed = undefined) {
   if (seed && typeof seed === 'object') {

@@ -7,7 +7,7 @@ import {
 import { MAX_POINTS, MAX_VECTORS, resolveScene } from './vectorScene.js';
 
 describe('document neuf (§28)', () => {
-  it('ouvre sur deux points et le شعاع qu’ils portent — pas un plan vide, pas une leçon', () => {
+  it('ouvre sur deux points et le vecteur qu’ils portent — pas un plan vide, pas une leçon', () => {
     const data = createVectorsData();
     const scene = currentScene(data);
     expect(scene.points).toHaveLength(2);
@@ -91,7 +91,7 @@ describe('relecture d’un document (persistance)', () => {
     expect(currentScene(data).vectors).toHaveLength(0);
   });
 
-  it('écarte en cascade : la somme d’un شعاع écarté part aussi', () => {
+  it('écarte en cascade : la somme d’un vecteur écarté part aussi', () => {
     const data = normalizeVectorsData({
       scene: {
         points: [],
@@ -112,7 +112,7 @@ describe('relecture d’un document (persistance)', () => {
     expect(currentScene(data).points.length).toBe(MAX_POINTS);
   });
 
-  it('borne k du شعاع mis à l’échelle', () => {
+  it('borne k du vecteur mis à l’échelle', () => {
     const data = normalizeVectorsData({
       scene: {
         points: [],
@@ -143,7 +143,7 @@ describe('relecture d’un document (persistance)', () => {
   });
 });
 
-describe('historique — تراجع / إعادة (§30)', () => {
+describe('historique — Annuler / Rétablir (§30)', () => {
   function withTwoSteps() {
     let data = createVectorsData();
     const aId = currentScene(data).points[0].id;
@@ -206,7 +206,7 @@ describe('historique — تراجع / إعادة (§30)', () => {
 });
 
 describe('bornes de construction', () => {
-  it('n’ajoute pas de شعاع au-delà du maximum', () => {
+  it('n’ajoute pas de vecteur au-delà du maximum', () => {
     let scene = emptyScene();
     for (let i = 0; i < MAX_VECTORS + 5; i += 1) {
       scene = addFreeVector(scene, { x: 1, y: 1, origin: { x: 0, y: 0 } });
@@ -214,7 +214,7 @@ describe('bornes de construction', () => {
     expect(scene.vectors.length).toBe(MAX_VECTORS);
   });
 
-  it('refuse ⃗AA : un شعاع a besoin de deux points distincts', () => {
+  it('refuse ⃗AA : un vecteur a besoin de deux points distincts', () => {
     let scene = addFreePoint(emptyScene(), { x: 0, y: 0 });
     const id = scene.points[0].id;
     scene = addPointsVector(scene, id, id);

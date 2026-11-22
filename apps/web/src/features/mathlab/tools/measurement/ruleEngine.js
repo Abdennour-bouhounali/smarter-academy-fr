@@ -161,8 +161,8 @@ const PRECEDENCE = { '+': 1, '-': 1, '*': 2, '/': 2 };
  *
  * Les parenthèses ne sont posées QUE là où elles changent le sens : une
  * règle lue « L × l + 2 » quand l'élève a construit (L × l) + 2 se lit
- * pareil, mais « L × (l + 2) » doit garder les siennes. L'expression reste
- * en LTR même en arabe (§30) — c'est de la mathématique.
+ * pareil, mais « L × (l + 2) » doit garder les siennes. L'expression se lit
+ * de gauche à droite (§30) — c'est de la mathématique.
  *
  * @param {object} node
  * @param {(name: string) => string} symbolOf   le symbole d'une variable

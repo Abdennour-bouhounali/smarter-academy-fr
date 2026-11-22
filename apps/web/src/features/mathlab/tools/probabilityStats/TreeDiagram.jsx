@@ -3,7 +3,7 @@ import { PILL_HEIGHT, pillWidth } from './treeLayout.js';
 import { labelParts, normalizeLabel } from './probabilityTree.js';
 
 /**
- * L'ARBRE DESSINÉ — شجرة الاحتمالات en SVG, de gauche à droite (LTR, comme au
+ * L'ARBRE DESSINÉ — l'arbre de probabilités en SVG, de gauche à droite (LTR, comme au
  * tableau). Chaque événement est une PASTILLE au bout de sa branche ; la
  * probabilité est écrite SUR la branche, telle que saisie ; au bout de
  * chaque chemin complet, sa probabilité (règle du produit).
@@ -40,7 +40,7 @@ export default function TreeDiagram({
   const describe = (node) => {
     const labels = node.path.map((_, i) => normalizeLabel(ends.get(node.path.slice(0, i + 1).join('.')).branch.label));
 
-    return t('tools.probabilityStats.tree.nodeAria', { path: labels.join(' ← '), p: node.branch.p || '؟' });
+    return t('tools.probabilityStats.tree.nodeAria', { path: labels.join(' → '), p: node.branch.p || '?' });
   };
 
   return (
@@ -82,7 +82,7 @@ export default function TreeDiagram({
               className={`sa-ml-ps-tree__p${issue ? ' is-invalid' : ''}`}
               data-ml-ps-tree-p={node.key}
             >
-              {node.branch.p.trim() === '' ? '؟' : node.branch.p}
+              {node.branch.p.trim() === '' ? '?' : node.branch.p}
             </text>
           </g>
         );
@@ -125,7 +125,7 @@ export default function TreeDiagram({
           >
             <rect x={node.x - width / 2} y={node.y - PILL_HEIGHT / 2} width={width} height={PILL_HEIGHT} rx={PILL_HEIGHT / 2} className="sa-ml-ps-tree__pill" />
             <text x={node.x} y={node.y + 4.5} textAnchor="middle" className="sa-ml-ps-tree__label">
-              {text || '؟'}
+              {text || '?'}
             </text>
             {/* Le contraire : une barre AU-DESSUS de la lettre (Ā), dessinée, pas un caractère. */}
             {bar && <line x1={node.x - 4.5} y1={node.y - 8.5} x2={node.x + 4.5} y2={node.y - 8.5} className="sa-ml-ps-tree__bar" />}

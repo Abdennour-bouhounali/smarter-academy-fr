@@ -1,15 +1,15 @@
 /**
  * LES DÉROULÉS d'une preuve — purs, sans React (exigence 2026-09-30).
  *
- * Une preuve modèle ne s'affiche jamais d'un bloc dans le مختبر المنطق :
+ * Une preuve modèle ne s'affiche jamais d'un bloc dans l'atelier de logique :
  *
  *   - l'ARBRE d'une preuve directe (`ProofArea › ProofTree`) se découvre
  *     rang par rang — un pas = un rang du graphe (`proofLayers`), le dernier
  *     rang est la conclusion. Ce que l'élève a déjà POSÉ reste visible : c'est
  *     sa construction, pas une solution qu'on lui donne ;
- *   - un EXEMPLE de récurrence (`InductionArea`, « أمثلة تنجح وأمثلة تفشل »)
- *     se lit dans l'ordre du raisonnement : la حالة الأولى, puis le انتقال,
- *     puis la خلاصة (l'escalier et l'explication). La conclusion est le
+ *   - un EXEMPLE de récurrence (`InductionArea`, « Des exemples qui marchent, d'autres qui échouent »)
+ *     se lit dans l'ordre du raisonnement : l'initialisation, puis l'hérédité,
+ *     puis la conclusion (l'escalier et l'explication). La conclusion est le
  *     dernier pas.
  *
  * Le composant n'affiche que les pas révélés : un pas futur n'est pas dans le DOM.
@@ -41,7 +41,7 @@ export function visibleTreeRanks(layers, { revealed = 0, placed = [] } = {}) {
 }
 
 /**
- * Les trois temps d'un exemple de récurrence : الحالة الأولى → الانتقال → الخلاصة.
+ * Les trois temps d'un exemple de récurrence : initialisation → hérédité → conclusion.
  *
  * @param {{ baseHolds: boolean, stepHolds: boolean, works: boolean }} item  un `INDUCTION_CASES`
  * @returns {{ kind: 'base'|'heredity'|'conclusion', holds: boolean }[]}

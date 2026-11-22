@@ -22,7 +22,7 @@ const V1_DOCUMENT = {
 };
 
 describe('algebraState V2 — compatibilité et sections', () => {
-  it('un document V1 se rouvre À L’IDENTIQUE, sur « المعادلات »', () => {
+  it('un document V1 se rouvre À L’IDENTIQUE, sur « Équations »', () => {
     const data = normalizeAlgebraData(JSON.parse(JSON.stringify(V1_DOCUMENT)));
     for (const key of Object.keys(V1_DOCUMENT)) expect(data[key]).toEqual(V1_DOCUMENT[key]);
     expect(data.section).toBe('equations');
@@ -114,18 +114,18 @@ describe('algebraState V2 — compatibilité et sections', () => {
 describe('summarizeAlgebra — chaque section se résume', () => {
   const base = createAlgebraData();
 
-  it('المعادلات et المتراجحات : kind « equation »', () => {
+  it('« Équations » et « Inéquations » : kind « equation »', () => {
     expect(summarizeAlgebra(base)).toMatchObject({ kind: 'equation', detail: { first: '2x + 3 = 11' } });
     expect(summarizeAlgebra({ ...base, section: 'inequalities' }).detail.first).toBe('−2x + 3 < 9');
   });
 
-  it('الأنظمة, تبسيط, تحليل : l’entrée et son résultat', () => {
+  it('« Systèmes », « Développer et réduire », « Factoriser » : l’entrée et son résultat', () => {
     expect(summarizeAlgebra({ ...base, section: 'systems' })).toMatchObject({ kind: 'equation', detail: { current: '(6 ; 4)' } });
     expect(summarizeAlgebra({ ...base, section: 'simplify' }).detail.current).toBe('x² − x − 6');
     expect(summarizeAlgebra({ ...base, section: 'factor' }).detail.current).toBe('(x + 2)(x + 3)');
   });
 
-  it('الدوال : une courbe échantillonnée, sous 2 Ko', () => {
+  it('« Fonctions » : une courbe échantillonnée, sous 2 Ko', () => {
     const summary = summarizeAlgebra({ ...base, section: 'functions', functions: { family: 'quadratic', a: 1, b: -2, c: -3, tableStart: -3, tableStep: 1 } });
     expect(summary.kind).toBe('curve');
     expect(summary.detail.polylines[0].p).toHaveLength(24);

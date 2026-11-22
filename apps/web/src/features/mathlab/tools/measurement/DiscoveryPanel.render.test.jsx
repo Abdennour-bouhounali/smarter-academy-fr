@@ -9,8 +9,8 @@ import { getInvestigation } from './investigations.js';
 
 const i18n = i18next.createInstance();
 i18n.use(initReactI18next).init({
-  lng: 'ar-DZ',
-  resources: { 'ar-DZ': { mathlab } },
+  lng: 'fr-FR',
+  resources: { 'fr-FR': { mathlab } },
   ns: ['mathlab'],
   interpolation: { escapeValue: false },
   react: { useSuspense: false },

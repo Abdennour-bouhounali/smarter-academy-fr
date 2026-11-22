@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { euclidSteps, differenceSteps, gcd } from '@smarter-academy/core/arithmetic/divisibility.js';
 import * as D from './differences.js';
 
-describe('PGCD بالفوارق المتتالية', () => {
+describe('PGCD par soustractions successives', () => {
   it('48 et 18 : la trace EXACTE du brief, et le PGCD au fruit nul', () => {
     const run = D.differencesRun(48, 18);
     expect(run.steps.map((s) => D.stepEquation(s))).toEqual([
@@ -12,7 +12,7 @@ describe('PGCD بالفوارق المتتالية', () => {
     expect(run).toMatchObject({ gcd: 6, total: 5, truncated: false, divisions: 3 });
   });
 
-  it('765 et 135 : huit étapes (« ثمان خطوات » du manuel)', () => {
+  it('765 et 135 : huit étapes (« huit étapes »)', () => {
     const run = D.differencesRun(765, 135);
     expect(run.steps).toHaveLength(8);
     expect(run.total).toBe(8);
@@ -83,7 +83,7 @@ describe('les rubans à l’échelle', () => {
 
 describe('la saisie', () => {
   it.each([
-    ['48', { value: 48 }], [' ٤٨ ', { value: 48 }], ['', { error: 'empty' }], ['abc', { error: 'notNumber' }],
+    ['48', { value: 48 }], [' \u0664\u0668 ', { value: 48 }], ['', { error: 'empty' }], ['abc', { error: 'notNumber' }],
     ['2,5', { error: 'notInteger' }], ['0', { error: 'notPositive' }], ['-4', { error: 'notPositive' }],
     ['2000000', { error: 'tooLarge' }],
   ])('%s', (raw, expected) => expect(D.readPositiveInteger(raw)).toEqual(expected));

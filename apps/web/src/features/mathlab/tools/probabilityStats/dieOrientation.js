@@ -67,9 +67,9 @@ export function dieTopFace(quaternion) {
 }
 
 /**
- * La pièce : un cylindre dont la face +y est « وجه » (heads) et la face −y
- * « ظهر » (tails). Côté « وجه » en haut = identité (à un tour près) ; côté
- * « ظهر » en haut = retournée d'un demi-tour autour d'un axe horizontal.
+ * La pièce : un cylindre dont la face +y est « Face » (heads) et la face −y
+ * « Pile » (tails). Côté « Face » en haut = identité (à un tour près) ; côté
+ * « Pile » en haut = retournée d'un demi-tour autour d'un axe horizontal.
  */
 export function coinOrientation(headsUp, yaw = 0) {
   const turn = new Quaternion().setFromAxisAngle(UP, yaw);

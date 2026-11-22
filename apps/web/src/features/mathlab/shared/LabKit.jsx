@@ -1,24 +1,25 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronDown, Lightbulb, BookOpen, StickyNote, ArrowLeftCircle, Shuffle, Eye, EyeOff } from 'lucide-react';
+import { ChevronDown, Lightbulb, BookOpen, StickyNote, Shuffle, Eye, EyeOff } from 'lucide-react';
+import { ArrowForward } from '../../../components/common/DirectionalIcons.jsx';
 import MathText from '../../../lessons/common/components/MathText.jsx';
 import './labKit.css';
 
 /**
- * LE PETIT OUTILLAGE PÉDAGOGIQUE partagé par les laboratoires du مختبر.
+ * LE PETIT OUTILLAGE PÉDAGOGIQUE partagé par les laboratoires de l’atelier.
  *
  * Trois pièces, et seulement celles qui simplifient vraiment :
  *
- *   <LabDisclosure kind="why|rule|next|note">  « لماذا؟ » / « القاعدة » … repliés par défaut :
+ *   <LabDisclosure kind="why|rule|next|note">  « Pourquoi ? » / « La règle » … repliés par défaut :
  *                                               EXPLORER d'abord, COMPRENDRE à la demande (§15 du cahier)
- *   <ExamplePicker examples onPick>             les exemples choisis, par niveau (مبتدئ / متوسط / متقدم)
+ *   <ExamplePicker examples onPick>             les exemples choisis, par niveau (Débutant / Intermédiaire / Avancé)
  *   <StepList steps active>                     un raisonnement pas à pas : LaTeX + une phrase par pas
  *
  * Aucune ne calcule : elles affichent ce que les modules purs ont déjà dit.
  * Les chaînes viennent de `mathlab.json › kit.*`.
  */
 
-const DISCLOSURE_ICONS = { why: Lightbulb, rule: BookOpen, next: ArrowLeftCircle, note: StickyNote };
+const DISCLOSURE_ICONS = { why: Lightbulb, rule: BookOpen, next: ArrowForward, note: StickyNote };
 
 /** Un pli : fermé à l'ouverture, un vrai bouton `aria-expanded`. */
 export function LabDisclosure({ kind = 'why', title = null, defaultOpen = false, children, dataAttr = null }) {
@@ -48,7 +49,7 @@ export function LabDisclosure({ kind = 'why', title = null, defaultOpen = false,
 /**
  * Les exemples d'un outil, rangés par niveau. `examples` :
  * `[{ id, level: 'beginner'|'intermediate'|'advanced', label }]`. Un bouton
- * « مثال عشوائي » s'ajoute quand `onRandom` est fourni.
+ * « Exemple au hasard » s'ajoute quand `onRandom` est fourni.
  */
 export function ExamplePicker({ examples, onPick, onRandom = null, activeId = null, dataAttr = 'data-ml-example' }) {
   const { t } = useTranslation('mathlab');
@@ -87,24 +88,25 @@ export function ExamplePicker({ examples, onPick, onRandom = null, activeId = nu
 }
 
 /**
- * Le sens d'une étiquette d'exemple. `dir="auto"` ne suffit PAS : une
- * étiquette sans lettre forte (« (3 + 4) × 5 », « 84 ; 36 ») hérite du RTL de
- * la page et l'algorithme bidi la retourne en « 5 × (3 + 4) ». Une étiquette
- * sans lettre arabe est donc de la notation, posée LTR ; les autres suivent
- * leur première lettre forte.
+ * La nature d'une étiquette d'exemple, portée par `dir` : une NOTATION
+ * (« (3 + 4) × 5 », « 84 ; 36 », « x + y = 10 ») est posée `ltr` — et la
+ * feuille de style lui donne la fonte à chasse fixe ; une étiquette en
+ * PHRASE (« Tirage sans remise ») est `auto`, dans la fonte du texte. Une
+ * phrase se reconnaît à un mot d'au moins quatre lettres ; une notation n'a
+ * que des lettres isolées ou des noms courts (sin, cos, ln).
  */
 export function labelDirection(label) {
-  return /[\u0600-\u06FF]/.test(String(label)) ? 'auto' : 'ltr';
+  return /\p{L}{4,}/u.test(String(label)) ? 'auto' : 'ltr';
 }
 
 /**
  * Un raisonnement pas à pas. `steps` : `[{ latex?, text?, operation?, operationLatex?, note?, tone? }]`.
- * `operation` / `operationLatex` : ce qui a CHANGÉ à ce pas (« نطرح 3 من الطرفين »,
+ * `operation` / `operationLatex` : ce qui a CHANGÉ à ce pas (« On soustrait 3 aux deux membres »,
  * `-3`), en pastille orange au-dessus du nouvel état — l'élève voit l'opération,
  * pas seulement la formule suivante.
  * Avec `revealUpTo`, les pas FUTURS ne sont pas rendus du tout (ni grisés, ni cachés en CSS).
  * `active` (optionnel) : l'indice du pas mis en avant — les pas suivants sont
- * masqués quand `revealUpTo` est donné (le déroulé « الخطوة التالية »).
+ * masqués quand `revealUpTo` est donné (le déroulé « Ligne suivante »).
  * Le LaTeX est rendu par MathText, donc isolé en LTR ; la phrase suit la page.
  */
 export function StepList({ steps, revealUpTo = null, active = null, label = null, dataAttr = 'data-ml-steps' }) {
@@ -187,7 +189,7 @@ function writePanelOpen(id, open) {
  *
  * Quand un outil porte plus que ce qu'un écran montre, l'élève garde ce dont
  * il a besoin sous les yeux et replie le reste : le titre reste, avec un
- * bouton œil « إخفاء / إظهار ». Ouvert par défaut (rien n'est caché d'office),
+ * bouton œil « Masquer / Afficher ». Ouvert par défaut (rien n'est caché d'office),
  * l'état est mémorisé par navigateur sous `id` (clé stable, ex.
  * `numberLab.fractions.line`).
  */

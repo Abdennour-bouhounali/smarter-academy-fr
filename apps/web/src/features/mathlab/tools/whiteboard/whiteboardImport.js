@@ -1,15 +1,15 @@
 /**
- * L'IMPORT d'un fichier sur la سبّورة — logique pure, sans Excalidraw ni DOM.
+ * L'IMPORT d'un fichier sur le tableau — logique pure, sans Excalidraw ni DOM.
  *
- * Ce que la سبّورة importe : une BIBLIOTHÈQUE D'ANIMATIONS/FORMES d'Excalidraw
+ * Ce que le tableau importe : une BIBLIOTHÈQUE D'ANIMATIONS/FORMES d'Excalidraw
  * (`.excalidrawlib`, du JSON `{ type: "excalidrawlib", version: 1 | 2,
  * libraryItems: [...] }`). C'est le seul format de fichier que l'outil
- * acceptait déjà (le menu « فتح » de sa bibliothèque) ; rien d'autre n'est
+ * acceptait déjà (le menu « Ouvrir » de sa bibliothèque) ; rien d'autre n'est
  * ajouté ici, on le rend seulement fiable.
  *
  * Pourquoi ce module existe : le menu d'Excalidraw ouvre un sélecteur SANS
  * filtre et ramène TOUT échec — image choisie, JSON invalide, sélecteur
- * indisponible — au même « تعذر تحميل المكتبة », sans rien journaliser. Ici
+ * indisponible — au même « impossible de charger la bibliothèque », sans rien journaliser. Ici
  * chaque refus a un CODE (`WhiteboardImportError.code`) que la coquille
  * traduit (`shell.importErrors.<code>` dans mathlab.json), et la cause
  * technique reste attachée (`cause`) pour la console.

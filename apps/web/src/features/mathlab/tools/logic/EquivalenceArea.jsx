@@ -7,7 +7,7 @@ import { formatNumber, formOf, equivalenceOf, valueList } from './logicFormat.js
 import { setEquivalence } from './logicState.js';
 
 /**
- * §17 — L'ÉQUIVALENCE (التكافؤ).
+ * §17 — L'ÉQUIVALENCE.
  *
  * L'équivalence est présentée comme ce qu'elle est : DEUX implications. Les
  * deux sens sont examinés séparément, chacun avec son verdict et son

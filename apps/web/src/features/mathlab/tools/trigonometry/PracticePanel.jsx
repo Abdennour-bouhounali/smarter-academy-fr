@@ -17,7 +17,7 @@ import { formatDegrees } from './trigFormat.js';
  * ── Ce que le panneau ne fait JAMAIS ─────────────────────────────────────
  * Il ne bloque pas. « révéler » est toujours accessible, y compris sans
  * avoir répondu ; une réponse fausse laisse le champ ouvert et le bouton
- * « réessayer » à côté ; « فتح » ferme l'entraînement à tout instant et rend
+ * « réessayer » à côté ; « Fermer » ferme l'entraînement à tout instant et rend
  * le cercle intact. §25 : « never permanently block the student ».
  *
  * Il ne gamifie pas non plus (§45) : un compteur « 3 / 7 », pas de série,

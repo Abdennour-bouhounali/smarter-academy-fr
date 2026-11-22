@@ -168,8 +168,8 @@ describe('les nombres tapés par un élève (§44)', () => {
   });
 
   it('accepte les chiffres arabes-indiens', () => {
-    expect(parseNumberInput('٣')).toBe(3);
-    expect(parseNumberInput('١٢')).toBe(12);
+    expect(parseNumberInput('\u0663')).toBe(3);
+    expect(parseNumberInput('\u0661\u0662')).toBe(12);
   });
 
   it('accepte une fraction simple', () => {

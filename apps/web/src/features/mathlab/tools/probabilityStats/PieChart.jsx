@@ -2,7 +2,7 @@ import { formatValue } from '../functionGrapher/grapherFormat.js';
 import { pieSectors } from './descriptiveStats.js';
 
 /**
- * Le DIAGRAMME CIRCULAIRE — المخطط الدائري. Proposé seulement pour une
+ * Le DIAGRAMME CIRCULAIRE. Proposé seulement pour une
  * série discrète d'au plus 8 modalités (descriptiveStats.chartAvailability) :
  * au-delà, un secteur devient une aiguille. L'angle de chaque secteur vaut
  * 360° × f ; il est aussi écrit dans le tableau.

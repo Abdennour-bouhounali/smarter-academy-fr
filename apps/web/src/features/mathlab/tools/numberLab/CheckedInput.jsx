@@ -4,7 +4,7 @@ import { useEffect, useId, useState } from 'react';
  * Un champ de nombre dont le REFUS est motivé.
  *
  * `read(raw)` (pure, testée dans son module) rend `{ value }` ou `{ error }` ;
- * `errorText(code)` en fait une phrase arabe. Le texte reste celui de l'élève
+ * `errorText(code)` en fait une phrase française. Le texte reste celui de l'élève
  * tant qu'il n'est pas validé (Entrée ou sortie du champ) — on ne corrige pas
  * sous ses doigts. `dir="ltr"` : un nombre s'écrit de gauche à droite (§58).
  */

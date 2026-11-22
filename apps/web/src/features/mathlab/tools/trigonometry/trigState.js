@@ -1,5 +1,5 @@
 /**
- * L'ÉTAT du مختبر المثلثات — logique pure, sans React (§42).
+ * L'ÉTAT du labo de trigonométrie — logique pure, sans React (§42).
  *
  *     data = {
  *       mode:     'circle' | 'triangle',   // le cercle, ou le triangle du programme
@@ -117,7 +117,7 @@ export function createTrigonometryData(seed) {
 /**
  * L'amorce qu'une leçon transmet (openMathLab.js). Le contrat est publié par
  * LESSON_DEVELOPMENT_GUIDE.md ; une amorce illisible ne casse rien — on
- * retombe sur le document par défaut, comme pour les أشعة.
+ * retombe sur le document par défaut, comme pour les vecteurs.
  */
 function applySeed(base, seed) {
   const next = { ...base };

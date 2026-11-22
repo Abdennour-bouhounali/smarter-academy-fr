@@ -11,7 +11,7 @@ import WorkPreview from './WorkPreview';
 import { timeAgo } from '../../practice/notebook/space/noteMeta';
 
 /**
- * UN travail dans « أعمالي ». La même carte sert la grille et la liste : une
+ * UN travail dans « Mes travaux ». La même carte sert la grille et la liste : une
  * seule structure, deux mises en page (`data-view`), pour qu'un geste corrigé
  * le soit dans les deux (§13).
  *
@@ -45,7 +45,7 @@ export default function WorkCard({ work, view = 'grid', selected = false, select
   const toolName = tool ? t(tool.labelKey) : work.tool;
   const title = work.title || t('untitled');
   const to = tool ? mathLabToolPath(tool, work.id, labRoot) : null;
-  // Le مخبر où le travail est né (son résumé), ou celui de son instrument.
+  // L’atelier où le travail est né (son résumé), ou celui de son instrument.
   const lab = workLabScope(work, tool);
   const titleId = `mlw-${work.id}-title`;
 

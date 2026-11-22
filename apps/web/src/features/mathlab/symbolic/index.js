@@ -9,7 +9,7 @@
  *
  * Voir `symbolicEngine.js` pour les trois raisons qui imposent une façade
  * (le moteur peut ne pas rendre la main, il répond parfois par la question,
- * et ses conventions ne sont pas celles du programme algérien).
+ * et ses conventions ne sont pas celles du programme).
  */
 
 export {

@@ -34,12 +34,12 @@ const ICONS = {
 };
 
 /**
- * Le مختبر الجبر dans la coquille du مختبر (MathLabToolProps — toolContract.js).
+ * L'atelier d'algèbre dans la coquille de l'atelier (MathLabToolProps — toolContract.js).
  *
  * V2 : six SECTIONS sous une même barre (shared/LabSectionNav) — un seul
  * document, une seule route. Chaque section garde ses valeurs dans l'état
  * (algebraState.js) ; passer de l'une à l'autre ne perd rien. La section
- * « المعادلات » est le laboratoire V1, intact : balance, opérations aux deux
+ * « Équations » est le laboratoire V1, intact : balance, opérations aux deux
  * membres, historique-annulation, solution jamais à l'ouverture (§5e.6).
  *
  * Toute la mathématique est dans les modules purs ; ce composant ne fait que
@@ -47,11 +47,11 @@ const ICONS = {
  */
 export default function AlgebraTool({ initialData, onChange, onReady, capabilities = null }) {
   const { t } = useTranslation('mathlab');
-  // Le مخبر (scope.js) : au collège, ni مميّز, ni « مجموع وجداء », ni second degré.
+  // Le scope (scope.js) : au collège, ni discriminant, ni « somme et produit », ni second degré.
   const features = useMemo(() => algebraFeatures(capabilities), [capabilities]);
   const [data, setData] = useState(() => clampToFeatures(normalizeAlgebraData(initialData), features));
   const [announcement, setAnnouncement] = useState('');
-  // « مسح الكل » remonte les sections : leurs brouillons et messages repartent de zéro.
+  // « Tout effacer » remonte les sections : leurs brouillons et messages repartent de zéro.
   const [generation, setGeneration] = useState(0);
 
   const timerRef = useRef(null);

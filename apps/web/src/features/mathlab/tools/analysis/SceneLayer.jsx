@@ -4,18 +4,18 @@ import FunctionCurve from '../functionGrapher/FunctionCurve.jsx';
 import { formatValue } from '../functionGrapher/grapherFormat.js';
 
 /**
- * TOUT ce qui se dessine sur le plan du مختبر التحليل.
+ * TOUT ce qui se dessine sur le plan du labo d’analyse.
  *
  * Ce module ne calcule AUCUNE mathématique : il reçoit une scène déjà
  * résolue (AnalysisTool l'a obtenue de analysisMath.js) et la met en pixels.
- * C'est la séparation que MATH_LAB impose depuis le مختبر المثلثات :
+ * C'est la séparation que MATH_LAB impose depuis le labo de trigonométrie :
  * « les étages dessinent un état résolu — ils ne calculent rien ».
  *
  * Toutes les couleurs sont posées en STYLE INLINE et non par attribut : la
  * feuille de mafs (`.MafsView path { stroke: var(--mafs-fg) }`) l'emporte
  * sur l'attribut `stroke`, et toutes les courbes sortiraient noires. Le
  * piège est documenté (MATH_LAB §5k.8) et il a déjà coûté une passe de QA
- * au مختبر المقاطع المخروطية.
+ * au labo des coniques.
  */
 
 const COLORS = {

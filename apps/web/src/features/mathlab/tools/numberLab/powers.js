@@ -1,12 +1,12 @@
 /**
- * القوى والجذور — puissances, règles, écriture scientifique, racines carrées.
+ * Puissances et racines — puissances, règles, écriture scientifique, racines carrées.
  * Logique pure, sans React (§60, §61).
  *
  * Tout est EXACT : les puissances passent par `bigRational.js` (BigInt), les
  * racines par la factorisation. Rien ne s'affiche jamais `1e+21`, `Infinity`
  * ou `NaN` : une puissance trop grande est REFUSÉE avec sa raison, et la
  * seule valeur non exacte du module — la valeur décimale d'une racine — est
- * marquée `approximate` pour que l'écran écrive « قيمة مقرّبة ».
+ * marquée `approximate` pour que l'écran écrive « Valeur approchée ».
  *
  * Chaque fonction rend aussi le LaTeX de son raisonnement (`2^{5} = 2 \times
  * 2 \times … = 32`) : l'écran l'affiche avec MathText, isolé en LTR.
@@ -32,7 +32,7 @@ const baseLatex = (base) => (base < 0 ? `(${base})` : String(base));
  * @returns {{ value: number } | { error: 'notNumber'|'notInteger'|'tooLarge' }}
  */
 export function readIntegerInRange(raw, max) {
-  const text = String(raw ?? '').trim().replace('−', '-').replace(/[٠-٩]/g, (d) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)));
+  const text = String(raw ?? '').trim().replace('−', '-').replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x660));
   if (!/^[-+]?\d+([.,]\d+)?$/.test(text)) return { error: 'notNumber' };
   const value = Number(text.replace(',', '.'));
   if (!Number.isInteger(value)) return { error: 'notInteger' };
@@ -213,10 +213,10 @@ export function powerOfTen(n) {
  */
 export function scientificNotation(raw) {
   const text = String(raw ?? '').trim()
-    .replace(/[٠-٩]/g, (d) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)))
+    .replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x660))
     .replace(/[\s  ]/g, '')
     .replace('−', '-')
-    .replace('٫', ',');
+    .replace('\u066B', ',');
   if (!text) return { error: 'empty' };
   const match = /^([-+]?)(\d*)(?:[.,](\d*))?$/.exec(text);
   if (!match || (!match[2] && !match[3])) return { error: 'notNumber' };

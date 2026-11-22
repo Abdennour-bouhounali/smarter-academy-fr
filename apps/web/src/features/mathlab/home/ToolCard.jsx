@@ -11,13 +11,13 @@ import { Lock, Users } from 'lucide-react';
  * ouvrir un document neuf. Toute la carte est le lien : pas de zone morte
  * sous le doigt.
  *
- * `scope` : le مخبر dont la carte fait partie. Le lien l'emporte (`?lab=`),
- * et la description est celle que l'instrument déclare pour ce مخبر
- * (`capabilities[scope].descriptionKey`) quand elle diffère — راسم الدوال
- * ne promet pas l'المماس au collège.
+ * `scope` : l’atelier dont la carte fait partie. Le lien l'emporte (`?lab=`),
+ * et la description est celle que l'instrument déclare pour cet atelier
+ * (`capabilities[scope].descriptionKey`) quand elle diffère — traceur de courbes
+ * ne promet pas la tangente au collège.
  *
- * `variant="wide"` : la سبّورة, outil commun, en tête de l'accueil — une
- * carte couchée, avec sa pastille « مشتركة ».
+ * `variant="wide"` : le tableau, outil commun, en tête de l'accueil — une
+ * carte couchée, avec sa pastille « Commun ».
  */
 export default function ToolCard({ tool, locked = false, scope = null, variant = 'default' }) {
   const { t } = useTranslation('mathlab');

@@ -13,9 +13,9 @@ import { validateStep, availableSteps, isComplete } from './proofMath.js';
 import { setInduction, placeInductionStep, undoInductionStep, resetInduction } from './logicState.js';
 
 /**
- * §28 — البرهان بالتراجع, son propre laboratoire.
+ * §28 — le raisonnement par récurrence, son propre laboratoire.
  *
- * Ce n'est pas une stratégie de plus dans « بناء البرهان » : c'est une AIRE,
+ * Ce n'est pas une stratégie de plus dans « Démonstration » : c'est une AIRE,
  * parce que la récurrence se comprend par une IMAGE avant de se comprendre
  * par un enchaînement — l'escalier — et parce que ce qu'elle a de propre
  * (deux moitiés dont aucune ne suffit) demande un écran qui le montre.
@@ -44,7 +44,7 @@ export default function InductionArea({ data, onChange, announce }) {
   const [refused, setRefused] = useState(null);
 
   // Un exemple s'ouvre sur son raisonnement pas à pas (exigence 2026-09-30) :
-  // الحالة الأولى → الانتقال → الخلاصة ; l'escalier et le verdict sont le dernier pas.
+  // initialisation → hérédité → conclusion ; l'escalier et le verdict sont le dernier pas.
   const caseSteps = useMemo(
     () => inductionCaseSteps(INDUCTION_CASES.find((item) => item.id === openCase)),
     [openCase],
@@ -272,7 +272,7 @@ export default function InductionArea({ data, onChange, announce }) {
               <>
                 {' '}
                 {t('tools.logic.proof.errors.missingNames', {
-                  steps: refused.missing.map((id) => stepText(id)).join('، '),
+                  steps: refused.missing.map((id) => stepText(id)).join(' ; '),
                 })}
               </>
             )}

@@ -1,7 +1,7 @@
 import { formatValue } from '../functionGrapher/grapherFormat.js';
 
 /**
- * LA BOÎTE À MOUSTACHES — مخطط العلبة, dessinée à partir des
+ * LA BOÎTE À MOUSTACHES, dessinée à partir des
  * cinq nombres de statsUtils.fiveNumberSummary (min, Q1, Me, Q3, max) :
  * les MÊMES nombres que le résumé, avec la même convention de quartiles.
  *

@@ -42,14 +42,14 @@ describe('les expériences (§27)', () => {
     expect(draggable, id).toBe(true);
   });
 
-  it('« جمع » construit bien une somme, et « ضرب » un شعاع mis à l’échelle', () => {
+  it('« Somme » construit bien une somme, et « Produit par un nombre » un vecteur mis à l’échelle', () => {
     const addition = getExperiment('addition').build().scene;
     expect(addition.vectors.some((v) => v.kind === 'sum')).toBe(true);
     const scalar = getExperiment('scalar').build().scene;
     expect(scalar.vectors.some((v) => v.kind === 'scaled')).toBe(true);
   });
 
-  it('« انسحاب مثلث » construit deux polygones : la forme et son image', () => {
+  it('« Translation d’un triangle » construit deux polygones : la forme et son image', () => {
     const shape = getExperiment('shape').build().scene;
     expect(shape.polygons).toHaveLength(2);
     expect(shape.points.filter((p) => p.kind === 'image')).toHaveLength(3);

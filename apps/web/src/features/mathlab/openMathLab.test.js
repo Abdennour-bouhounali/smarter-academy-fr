@@ -1,12 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import { buildMathLabLaunch, readMathLabLaunch } from './openMathLab.js';
 
-/** Le point d'intégration leçon → مختبر : une destination et un état de navigation. */
+/** Le point d'intégration leçon → atelier : une destination et un état de navigation. */
 describe('openMathLab', () => {
   it('construit la destination d’un instrument et transporte l’amorce dans l’état', () => {
-    const launch = buildMathLabLaunch({ tool: 'whiteboard', seed: { elements: [{ type: 'rectangle' }] }, title: 'المثلث', origin: { lessonCode: 'x' } });
+    const launch = buildMathLabLaunch({ tool: 'whiteboard', seed: { elements: [{ type: 'rectangle' }] }, title: 'Le triangle', origin: { lessonCode: 'x' } });
     expect(launch.to).toBe('/espace/atelier/tableau');
-    expect(launch.state.mathLab).toEqual({ tool: 'whiteboard', seed: { elements: [{ type: 'rectangle' }] }, title: 'المثلث', origin: { lessonCode: 'x' } });
+    expect(launch.state.mathLab).toEqual({ tool: 'whiteboard', seed: { elements: [{ type: 'rectangle' }] }, title: 'Le triangle', origin: { lessonCode: 'x' } });
   });
 
   it('refuse un instrument inconnu', () => {

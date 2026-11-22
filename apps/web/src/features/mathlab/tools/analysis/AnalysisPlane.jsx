@@ -16,7 +16,7 @@ const REPORT_VIEW_MS = 400;
 const FALLBACK_VIEWPORT = Object.freeze({ xMin: -6, xMax: 6, yMin: -4, yMax: 4 });
 
 /**
- * LE PLAN du مختبر التحليل.
+ * LE PLAN du labo d’analyse.
  *
  * MATH_LAB §3 et §33 du cahier des charges sont catégoriques : « Do NOT
  * create a second incompatible coordinate system. » Ce composant n'en crée
@@ -35,7 +35,7 @@ const FALLBACK_VIEWPORT = Object.freeze({ xMin: -6, xMax: 6, yMin: -4, yMax: 4 }
  * et c'est toute la leçon de la sécante qui s'effondre.
  *
  * Le plan est `dir="ltr"` : c'est des mathématiques (§39). L'axe des
- * abscisses croît vers la DROITE même quand l'interface est en arabe. Seuls
+ * abscisses croît vers la DROITE, quel que soit le sens de la page. Seuls
  * les panneaux suivent la direction de la page.
  *
  * Les enfants sont rendus dans le SVG de mafs par `children` (une fonction

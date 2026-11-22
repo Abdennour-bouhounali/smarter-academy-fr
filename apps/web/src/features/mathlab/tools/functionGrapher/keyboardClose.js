@@ -1,13 +1,13 @@
 import i18n from 'i18next';
 
 /**
- * Le bouton « إغلاق » du CLAVIER VIRTUEL de MathLive (propriétaire, 2026-10-08 : « ajoute un bouton fermer »).
+ * Le bouton « Fermer » du CLAVIER VIRTUEL de MathLive (propriétaire, 2026-10-08 : « ajoute un bouton fermer »).
  * Les dispositions par défaut de MathLive 0.110 n'ont pas toutes la touche « [hide-keyboard] », et la barre
  * d'outils du clavier est redessinée à chaque état : on n'y injecte rien. Un bouton FIXE, posé sur le bord
  * supérieur du clavier (au-dessus de ses touches, jamais dessus), suit sa géométrie (`geometrychange`) et sa
  * visibilité (`virtual-keyboard-toggle`), et ferme par l'API (`mathVirtualKeyboard.hide()`).
  *
- * Installé UNE fois par `ensureMathLive()` : chaque champ MathLive (feuille d'examen, outils du مخبر) l'a.
+ * Installé UNE fois par `ensureMathLive()` : chaque champ MathLive (feuille d'examen, outils de l’atelier) l'a.
  * Le libellé vient de l'instance PARTAGÉE `i18next` (celle que `src/i18n` initialise), sans importer ce module :
  * son initialisation ferait suspendre les composants des tests qui chargent MathLive.
  */
@@ -17,7 +17,7 @@ export function placeCloseButton(button, keyboard, viewportHeight) {
   const rect = keyboard?.visible ? keyboard.boundingRect : null;
   if (!rect || !(rect.height > 0)) { button.hidden = true; return; }
   button.hidden = false;
-  // Collé au bord haut du clavier, à droite (début de ligne en arabe).
+  // Collé au bord haut du clavier, à droite, là où l'on cherche la croix de fermeture.
   button.style.bottom = `${Math.max(0, viewportHeight - rect.top)}px`;
   button.style.right = `${Math.max(8, window.innerWidth - rect.right + 8)}px`;
 }
@@ -45,7 +45,6 @@ export function installKeyboardCloseButton() {
   button.type = 'button';
   button.hidden = true;
   button.dataset.mathKeyboardClose = '';
-  button.setAttribute('dir', 'rtl');
   button.className = 'sa-math-keyboard-close';
   const label = () => {
     button.textContent = `✕ ${i18n.t('common:mathKeyboard.close')}`;

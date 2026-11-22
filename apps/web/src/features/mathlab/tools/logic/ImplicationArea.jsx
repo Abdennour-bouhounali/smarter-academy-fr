@@ -7,7 +7,7 @@ import { formatNumber, formOf } from './logicFormat.js';
 import { IMPLICATION_FORMS, setImplication, setImplicationForm, setImplicationX, toggleSets } from './logicState.js';
 
 /**
- * §13-16, §20 — LA CONDITIONNELLE (الشرطية).
+ * §13-16, §20 — L'IMPLICATION.
  *
  * Trois choses se passent au même endroit, parce qu'elles sont la même
  * chose vue de trois côtés :
@@ -23,7 +23,7 @@ import { IMPLICATION_FORMS, setImplication, setImplicationForm, setImplicationX,
  */
 export default function ImplicationArea({ data, onChange, features = null }) {
   const { t } = useTranslation('mathlab');
-  // Le مخبر (scope.js) : au collège, la propriété et sa réciproque seulement,
+  // Le niveau (scope.js) : au collège, la propriété et sa réciproque seulement,
   // sans diagramme d'ensembles ni table de vérité.
   const forms = features?.implicationForms ?? IMPLICATION_FORMS;
   const showSets = features?.implicationSets !== false;

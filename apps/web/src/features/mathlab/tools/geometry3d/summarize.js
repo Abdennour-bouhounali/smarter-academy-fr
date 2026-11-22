@@ -2,7 +2,7 @@ import { PARAM_SYMBOLS, getShape, isShapeId } from './geometryState.js';
 
 /**
  * Le RÉSUMÉ d'un document de géométrie dans l'espace. Le solide et ses
- * dimensions — c'est tout ce qu'il faut pour que « أعمالي » dessine sa
+ * dimensions — c'est tout ce qu'il faut pour que « Mes travaux » dessine sa
  * silhouette en SVG, sans jamais monter une scène three.js pour une vignette.
  *
  * @param {object} data

@@ -5,7 +5,7 @@ import { formatLength, formatDegrees } from './trigFormat.js';
 
 const shown = (latex) => latex.replace(/\{,\}/g, ',').replace(/-/g, '−');
 
-describe('buildTriangleSolveSteps — « حلّ المثلث خطوة بخطوة »', () => {
+describe('buildTriangleSolveSteps — « Résoudre le triangle pas à pas »', () => {
   const cases = [
     ['angle-hyp', { angle: 35, hypotenuse: 10 }, 11],
     ['angle-opp', { angle: 30, opposite: 5 }, 11],
@@ -39,7 +39,7 @@ describe('buildTriangleSolveSteps — « حلّ المثلث خطوة بخطوة
     expect(last).toContain(formatDegrees(solved.angle, 1).replace('°', ''));
   });
 
-  it('angle + وتر : sin puis cos, on multiplie, et 30° donne la valeur exacte', () => {
+  it('angle + hypoténuse : sin puis cos, on multiplie, et 30° donne la valeur exacte', () => {
     const { steps } = buildTriangleSolveSteps('angle-hyp', { angle: 30, hypotenuse: 10 });
     expect(steps[1].latex).toBe('\\sin\\theta = \\dfrac{a}{c}');
     expect(steps[2].latex).toBe('\\sin 30^\\circ = \\dfrac{a}{10}');
@@ -51,7 +51,7 @@ describe('buildTriangleSolveSteps — « حلّ المثلث خطوة بخطوة
     expect(steps[8].latex).toMatch(/\\approx 8\{,\}66$/);
   });
 
-  it('angle + مقابل : l’inconnue au dénominateur, on divise', () => {
+  it('angle + côté opposé : l’inconnue au dénominateur, on divise', () => {
     const { steps } = buildTriangleSolveSteps('angle-opp', { angle: 35, opposite: 5 });
     const isolate = steps.find((step) => step.kind === 'isolate');
     expect(isolate.textKey).toMatch(/isolateDivide$/);

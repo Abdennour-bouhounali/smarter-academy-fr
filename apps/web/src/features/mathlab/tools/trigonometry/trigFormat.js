@@ -1,19 +1,16 @@
 /**
- * L'AFFICHAGE du مختبر المثلثات — la frontière entre le calcul exact et ce
+ * L'AFFICHAGE du labo de trigonométrie — la frontière entre le calcul exact et ce
  * que l'élève lit. Tout arrondi de l'instrument passe ici, et nulle part
  * ailleurs (la règle de vectorFormat.js, tenue une seconde fois).
  *
- * Le format des nombres est celui de tout le مختبر —
+ * Le format des nombres est celui de tout l'atelier —
  * `grapherFormat.formatValue` : virgule décimale, vrai signe moins (−,
- * U+2212), chiffres LATINS, comme les manuels algériens (ARABIC_RTL_CONTRACT).
+ * U+2212), chiffres latins (FRENCH_LANGUAGE_CONTRACT §5).
  *
  * ── Le sens de lecture (§36) ─────────────────────────────────────────────
- * `sin(θ) = √3/2` se lit de GAUCHE à DROITE même dans une page arabe. Le
- * bidi ne le ferait pas tout seul : une parenthèse est un caractère miroir,
- * une barre de fraction et une virgule sont neutres, et `(0,5 ; √3/2)`
- * deviendrait `(√3/2 ; 0,5)` à l'affichage — la MÊME chaîne, lue à l'envers.
- * Toutes les fonctions d'ici rendent donc des chaînes que l'interface pose
- * dans un conteneur `dir="ltr"`, et trigFormat.test.js le vérifie.
+ * `sin(θ) = √3/2` se lit de gauche à droite, comme la page. L'interface pose
+ * encore ces chaînes dans des îlots `dir="ltr"` hérités de la version
+ * arabe : ils sont sans effet dans une page LTR et peuvent rester.
  */
 
 import { formatValue } from '../functionGrapher/grapherFormat.js';
@@ -21,8 +18,8 @@ import { exactValue, radianFraction, numericOf } from './exactValues.js';
 
 export { formatValue };
 
-/** Le mot que l'interface traduit quand un rapport n'existe pas (§11). */
-export const UNDEFINED_MARK = 'غير معرّف';
+/** Le mot que l'interface écrit quand un rapport n'existe pas (§11) : la tangente à 90°. */
+export const UNDEFINED_MARK = 'non définie';
 
 /**
  * Une forme exacte en TEXTE : `√3/2`, `1/2`, `−1`, `0`, `√3`.
@@ -62,7 +59,7 @@ export function exactToLatex(exact) {
  *
  * En mode `exact`, un angle remarquable rend SA forme et la décimale à côté
  * — « √3/2 ≈ 0,87 » apprend plus que l'une des deux seule, exactement comme
- * « √5 ≈ 2,24 » pour les أشعة. Un angle quelconque n'a pas de forme exacte :
+ * « √5 ≈ 2,24 » pour les vecteurs. Un angle quelconque n'a pas de forme exacte :
  * il rend la décimale, sans faire semblant.
  *
  * @returns {{text: string, approx: string|null, isExact: boolean, isUndefined: boolean, latex: string|null}}

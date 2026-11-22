@@ -7,18 +7,18 @@ import { mathLabToolPath } from '../mathLabDocument';
 import { LAB_SCOPES, commonTools, toolsForScope } from '../labScope';
 
 /**
- * « + عمل جديد » : choisir l'instrument, puis commencer. Les instruments
+ * « + Nouveau travail » : choisir l'instrument, puis commencer. Les instruments
  * offerts sont ceux du REGISTRE (§5) — jamais une liste écrite à la main,
  * jamais un instrument annoncé mais pas construit.
  *
- * Rangés comme l'accueil (MATH_LAB.md §2.1) : la سبّورة « للجميع », puis
- * chaque مخبر et ses instruments, chaque lien ouvrant l'instrument DANS ce
- * مخبر (`?lab=`). Sur l'accueil d'un مخبر (`scope`), seulement la سبّورة et
- * les instruments de ce مخبر.
+ * Rangés comme l'accueil (MATH_LAB.md §2.1) : le tableau « Pour tous », puis
+ * chaque atelier et ses instruments, chaque lien ouvrant l'instrument DANS ce
+ * atelier (`?lab=`). Sur l'accueil d'un atelier (`scope`), seulement le tableau et
+ * les instruments de cet atelier.
  *
  * Le menu s'ouvre SOUS le bouton et se replie au clic ailleurs ou à Échap ;
- * en RTL il s'aligne sur le bord de départ, donc il ne sort jamais de
- * l'écran (`inset-inline-start: 0`, voir mathlabWork.css).
+ * il s'aligne sur le bord de fin du bouton, donc il ne sort jamais de
+ * l'écran (`inset-inline-end: 0`, voir mathlabWork.css).
  */
 export default function NewWorkMenu({ labRoot, tools = null, scope = null }) {
   const { t } = useTranslation('mathlab');

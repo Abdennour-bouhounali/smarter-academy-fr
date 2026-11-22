@@ -1,21 +1,21 @@
 /**
- * Le مختبر المتتاليات — mise en page et dessin.
+ * Le labo des suites — mise en page et dessin.
  *
- * Les conventions sont celles du grapheur, des أشعة et des المثلثات
+ * Les conventions sont celles du grapheur, des vecteurs et des trigonométrie
  * (functionGrapher.css, vectors.css, trigonometry.css) : mêmes teintes, mêmes
  * rayons, mêmes familles de police. Préfixe `sa-ml-seq`.
  *
- * ── RTL (§44) ────────────────────────────────────────────────────────────
- * Aucun sélecteur `[dir="rtl"]`, aucune déclaration `direction` sur la mise en
+ * ── Sens de lecture (§44) ────────────────────────────────────────────────────────────
+ * Aucun sélecteur de direction, aucune déclaration `direction` sur la mise en
  * page : tout passe par des propriétés LOGIQUES (`inset-inline-start`,
  * `border-inline-start`, `text-align: start`), si bien que le panneau suit la
  * direction de la page sans une ligne de plus. Le DESSIN, lui, est en
  * `dir="ltr"` depuis le JSX : c'est de la mathématique, l'axe des indices
- * croît vers la droite même en arabe.
+ * croît vers la droite.
  *
  * Et la paire que §44 exige partout où une notation est posée : `dir="ltr"`
  * fixe l'ORDRE des caractères, `text-align: left` + `unicode-bidi: isolate`
- * la remettent à leur place dans une page arabe. Sans la seconde moitié, une
+ * la remettent à leur place dans la page. Sans la seconde moitié, une
  * formule reste collée au bord droit et paraît lue à l'envers.
  *
  * ── Mobile (§45) ─────────────────────────────────────────────────────────
@@ -31,7 +31,7 @@
   display: flex;
   flex-direction: column-reverse;
   background: #ffffff;
-  font-family: 'Cairo', sans-serif;
+  font-family: sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -133,7 +133,7 @@
  * `--mafs-fg: white`, `node_modules/mafs/core.css`). Sans ces variables le
  * repère s'affiche NOIR, ce que la QA visuelle a vu tout de suite : un plan
  * d'encre au milieu d'une page blanche, à côté de sept instruments clairs.
- * Ce sont exactement les valeurs du grapheur et des أشعة — un seul repère sur
+ * Ce sont exactement les valeurs du grapheur et des vecteurs — un seul repère sur
  * la plateforme, donc une seule apparence.
  */
 .sa-ml-seq__plane .MafsView {
@@ -806,7 +806,7 @@
   accent-color: #7c3aed;
   cursor: pointer;
   /* L'axe d'un curseur est une grandeur mathématique : il croît vers la
-     droite, comme les axes du graphe, même dans une page arabe. */
+     droite, comme les axes du graphe, quel que soit le sens de la page. */
   direction: ltr;
 }
 

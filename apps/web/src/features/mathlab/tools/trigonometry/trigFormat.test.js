@@ -3,7 +3,7 @@
  *
  * Deux exigences croisées se vérifient ici :
  *   — §19 : jamais `0.7071067811865476` quand `√2/2` existe ;
- *   — §36/ARABIC_RTL_CONTRACT : chiffres LATINS, virgule décimale, vrai
+ *   — §36/FRENCH_LANGUAGE_CONTRACT : chiffres LATINS, virgule décimale, vrai
  *     signe moins, et une notation qui se lit de gauche à droite.
  */
 
@@ -200,7 +200,7 @@ describe('les clés de quadrant (§5)', () => {
   });
 });
 
-describe('les chiffres restent LATINS (ARABIC_RTL_CONTRACT)', () => {
+describe('les chiffres restent LATINS (FRENCH_LANGUAGE_CONTRACT §5)', () => {
   it('aucun chiffre arabe-indien nulle part', () => {
     const samples = [
       formatDegrees(45), formatRadians(120), formatLength(5.74),
@@ -208,7 +208,7 @@ describe('les chiffres restent LATINS (ARABIC_RTL_CONTRACT)', () => {
       exactToText(exactValue(30, 'cos')), formatRatio(60, 'sin', sinOf(60), 'exact').text,
     ];
     for (const sample of samples) {
-      expect(sample, sample).not.toMatch(/[٠-٩]/);
+      expect(sample, sample).not.toMatch(/[\u0660-\u0669]/);
     }
   });
 

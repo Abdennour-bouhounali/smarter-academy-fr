@@ -10,7 +10,7 @@
  * `UNITS_PER_CM` unités de scène font un « cm » du bureau. Ce n'est PAS un
  * centimètre physique : rien n'étalonne l'écran, un projecteur l'agrandit,
  * un zoom le change. C'est une unité mathématique cohérente — la règle, le
- * compas, la منقلة et les mesures parlent tous la même — et l'interface ne
+ * compas, le rapporteur et les mesures parlent tous la même — et l'interface ne
  * prétend jamais le contraire (docs/architecture/MATH_LAB.md §5.8).
  */
 

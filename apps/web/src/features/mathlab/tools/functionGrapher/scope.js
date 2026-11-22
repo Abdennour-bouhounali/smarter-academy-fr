@@ -1,16 +1,16 @@
 import { FIRST_RUN_EXPRESSION, FUNCTION_PRESETS } from './grapherState.js';
 
 /**
- * راسم الدوال dans les deux مخابر (labScope.js, MATH_LAB.md §2.1).
+ * Le traceur de courbes dans les deux labos — `moyen` (collège) et `secondaire` (lycée) (labScope.js, MATH_LAB.md §2.1).
  *
  * UN grapheur. Au collège, le programme s'arrête aux fonctions LINÉAIRES et
- * AFFINES (4AM 3.7–3.9) et à leur représentation graphique : pas de
- * tangente ni de dérivée, pas de sin, ln ou exp. Le mode « المماس », les
+ * AFFINES (programme de 3e) et à leur représentation graphique : pas de
+ * tangente ni de dérivée, pas de sin, ln ou exp. Le mode « Tangente », les
  * exemples transcendants et les touches correspondantes du clavier virtuel
- * n'existent donc pas dans مخبر المتوسط. Au lycée : tout.
+ * n'existent donc pas dans le labo du collège. Au lycée : tout.
  *
  * Ce qu'un élève TAPE reste lu tel quel — le parseur est celui de la
- * plateforme ; on ne propose simplement pas ce qui dépasse son مخبر.
+ * plateforme ; on ne propose simplement pas ce qui dépasse son labo.
  */
 export const GRAPHER_SCOPES = Object.freeze(['moyen', 'secondaire']);
 

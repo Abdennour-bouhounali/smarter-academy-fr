@@ -104,7 +104,7 @@ export function orderFrames(run) {
         b: 'r',
         symbolLatex: step.target.symbolLatex,
         resultLatex: step.resultLatex,
-        // « تدرّب بنفسك » : les deux opérandes de l'opération PRIORITAIRE, puis son opérateur.
+        // « Entraîne-toi » : les deux opérandes de l'opération PRIORITAIRE, puis son opérateur.
         task: makeTask({ targets: ['l', 'r'], operator: step.target.symbolLatex, promptKey: `${PRACTICE}.order` }),
         texts: { select: { textKey }, operate: { textKey }, result: { textKey, operationLatex: step.operationLatex } },
       }));

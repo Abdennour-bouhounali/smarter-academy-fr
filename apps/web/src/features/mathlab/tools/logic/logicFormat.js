@@ -1,12 +1,10 @@
 /**
- * La NOTATION du مختبر المنطق والبرهان. Aucun mot traduisible ici : les
- * phrases vivent dans mathlab.json, ce fichier ne rend que des SYMBOLES —
+ * La NOTATION de l'atelier « Logique et raisonnement ». Aucune phrase ici :
+ * les phrases vivent dans mathlab.json, ce fichier ne rend que des SYMBOLES —
  * comme grapherFormat.js ne rend que des nombres.
  *
- * Tout ce qui sort d'ici est destiné à un conteneur `dir="ltr"` :
- * « ¬P ⇒ Q » se lit de gauche à droite même dans une page arabe
- * (ARABIC_RTL_CONTRACT §4 ; les flèches mathématiques ne se retournent
- * JAMAIS, contrairement à une flèche de prose arabe).
+ * Tout ce qui sort d'ici se lit de gauche à droite (« ¬P ⇒ Q ») ; les
+ * flèches mathématiques ne se retournent jamais.
  */
 
 import { CONNECTOR_SYMBOLS } from './logicMath.js';
@@ -18,20 +16,18 @@ export const SYMBOLS = Object.freeze({
 });
 
 /**
- * ص / خ / ؟ — la troisième case existe : une valeur non réglée n'est pas
- * « faux ».
+ * V / F / ? — la troisième case existe : une valeur non réglée n'est pas
+ * « fausse ».
  *
- * Les lettres sont ARABES : « ص » pour صحيحة, « خ » pour خاطئة. `V`/`F`
- * étaient un reste de français — un élève algérien ne lit pas « Vrai » dans
- * une case de jadwal al-haqiqa. Les VARIABLES (P, Q, n, k, x) restent
- * latines, elles : c'est la notation du manuel de 4AM, et le dictionnaire
- * de l'instrument les explique (mathlab.json, `tools.logic.dictionary`).
+ * « V » pour vraie, « F » pour fausse : les abréviations d'une table de
+ * vérité au lycée. Le lexique de l'instrument les explique avec les
+ * variables (mathlab.json, `tools.logic.dictionary`).
  */
 export function boolText(value) {
-  if (value === true) return 'ص';
-  if (value === false) return 'خ';
+  if (value === true) return 'V';
+  if (value === false) return 'F';
 
-  return '؟';
+  return '?';
 }
 
 /** Un nombre en notation mathématique : virgule décimale, vrai signe moins. */
@@ -62,7 +58,7 @@ export function connectorExpression(connector, p = 'P', q = 'Q') {
   return `${p} ${SYMBOLS[connector]} ${q}`;
 }
 
-/** Une liste de valeurs pour l'affichage : « 2 ; 4 ; 6 » (point-virgule arabe usuel). */
+/** Une liste de valeurs pour l'affichage : « 2 ; 4 ; 6 » (le point-virgule sépare des nombres à virgule). */
 export function valueList(values, max = 8) {
   const shown = values.slice(0, max).map((v) => formatNumber(v));
   const text = shown.join(' ; ');

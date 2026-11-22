@@ -32,7 +32,7 @@ const SERIALIZE_MS = 300;
 const SPEEDS = Object.freeze([0.5, 1, 2, 4]);
 
 /**
- * Le مختبر المتتاليات dans la coquille du مختبر (MathLabToolProps).
+ * Le labo des suites dans la coquille du atelier (MathLabToolProps).
  *
  * L'état du document (`sequenceState.js`) vit ICI ; toute la mathématique est
  * dans les modules purs que ce composant se contente d'appeler — aucun calcul
@@ -336,7 +336,7 @@ export default function SequencesTool({ initialData, onChange, onReady }) {
   }, []);
 
   /**
-   * « اكشف » DEMANDÉ : la solution se déroule pas à pas dans le panneau
+   * « Voir la solution » DEMANDÉ : la solution se déroule pas à pas dans le panneau
    * (exigence 2026-09-30). La suite n'est posée dans l'espace — curseur sur
    * le terme demandé, tableau allumé — qu'au DERNIER pas (`completeReveal`) :
    * sinon le tableau donnerait la réponse avant la fin du déroulé.

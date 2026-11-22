@@ -1,10 +1,10 @@
 /**
- * L'ÉTAT du مختبر المقاطع المخروطية — logique pure, sans React.
+ * L'ÉTAT du labo des coniques — logique pure, sans React.
  *
  *     data = {
  *       scene:    { objects: [...], selectedId, probe, trace, locus },
- *       history:  [scene, scene, …],      // le CHEMIN, comme en algèbre, أشعة et تحويلات
- *       cursor:   number,                 // d'où viennent تراجع / إعادة
+ *       history:  [scene, scene, …],      // le CHEMIN, comme en algèbre, vecteurs et transformations
+ *       cursor:   number,                 // d'où viennent Annuler / Rétablir
  *       viewport: {xMin, xMax, yMin, yMax} | null,
  *       reference: scene | null,          // §44 — l'état figé « avant »
  *       settings: { grid, snap, snapStep, showFoci, showDirectrix, showAsymptotes,
@@ -28,10 +28,10 @@
  * AUCUN champ dans `data` et ne peut donc pas y arriver par accident.
  *
  * ── Deux régimes de changement ───────────────────────────────────────────
- * Comme le مختبر الأشعة (§5f.5 de son cahier) : un GESTE (glisser un centre,
+ * Comme le labo des vecteurs (§5f.5 de son cahier) : un GESTE (glisser un centre,
  * pousser un curseur) modifie la scène courante en continu sans rien
  * empiler ; c'est son RELÂCHEMENT qui pousse un pas dans l'historique. Sans
- * cela, « تراجع » reculerait d'un pixel et l'élève devrait l'actionner trois
+ * cela, « Annuler » reculerait d'un pixel et l'élève devrait l'actionner trois
  * cents fois pour défaire un glissement.
  */
 
@@ -42,7 +42,7 @@ export const CONICS_SCHEMA_VERSION = 1;
 
 /**
  * La profondeur de l'historique. Chaque pas garde une COPIE de la scène
- * entière — le modèle déjà retenu pour l'algèbre, les أشعة et les تحويلات.
+ * entière — le modèle déjà retenu pour l'algèbre, les vecteurs et les transformations.
  * Le coût du document est `MAX_HISTORY × taille de la scène`, et c'est lui
  * qui décide du plafond d'octets côté serveur (MathLabTools.php) ;
  * `conicState.test.js` tient cette borne.
@@ -344,13 +344,13 @@ function normalizePractice(raw) {
  * La scène d'OUVERTURE : un CERCLE.
  *
  * C'est le choix de programme du laboratoire, et il est délibéré. Les
- * coniques appartiennent au lycée ; ce que le programme de 4AM demande, et
+ * coniques appartiennent au lycée ; ce que le programme du collège demande, et
  * la seule de ces quatre courbes que l'élève a déjà rencontrée, c'est la
  * DAIRA — le cercle, son centre, son rayon, et la distance au centre. Le
  * laboratoire ouvre donc sur `x² + y² = 9` et sa sonde, et la parabole,
  * l'ellipse et l'hyperbole sont complètes mais à un clic. C'est la règle
- * déjà tenue par le produit scalaire du مختبر الأشعة (MATH_LAB §5f.10), le
- * cercle trigonométrique (§5g.1), les suites (§5h) et le تحاكي (§5j).
+ * déjà tenue par le produit scalaire du labo des vecteurs (MATH_LAB §5f.10), le
+ * cercle trigonométrique (§5g.1), les suites (§5h) et l'homothétie (§5j).
  */
 export function createConicsData(seed) {
   const base = {
@@ -412,7 +412,7 @@ export function normalizeConicsData(raw) {
  * Pousse une scène dans l'historique — un PAS, pas un pixel.
  *
  * Appelée au RELÂCHEMENT d'un geste, jamais pendant. Comme en algèbre et en
- * أشعة, « تراجع » recule le curseur sans rien détruire : tant que l'élève ne
+ * vecteurs, « Annuler » recule le curseur sans rien détruire : tant que l'élève ne
  * rejoue pas, il peut revenir en avant.
  */
 export function pushScene(data, scene) {
@@ -442,7 +442,7 @@ export function pushScene(data, scene) {
 /**
  * Remplace la scène courante SANS toucher à l'historique — le régime du
  * geste en cours (§5f.5). C'est ce qui rend un glissement fluide et
- * « تراجع » utile.
+ * « Annuler » utile.
  */
 export function replaceScene(data, scene) {
   const next = normalizeScene(scene);

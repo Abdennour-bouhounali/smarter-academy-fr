@@ -13,13 +13,13 @@ import { simplifyFrames } from './simplifyFrames.js';
 import { SIMPLIFY_EXAMPLES } from './examples.js';
 
 /**
- * تبسيط التعابير — l'expression, puis le tableau qui se construit terme par
- * terme (simplifyFrames.js) : le produit désigné, l'arc « × » (التوزيع), les
+ * « Développer et réduire » — l'expression, puis le tableau qui se construit terme par
+ * terme (simplifyFrames.js) : le produit désigné, l'arc « × » (distributivité), les
  * produits posés puis calculés, les termes semblables désignés et regroupés
- * (تجميع الحدود المتشابهة), chaque famille réduite (التبسيط) — le résultat
+ * (regroupement des termes semblables), chaque famille réduite (réduction) — le résultat
  * au DERNIER frame. Le calcul est entièrement dans simplify.js.
  *
- * « بسّط خطوة بخطوة » charge la saisie ET démarre le déroulé ; un exemple
+ * « Développer et réduire pas à pas » charge la saisie ET démarre le déroulé ; un exemple
  * ne fait que poser l'énoncé (le bouton d'action démarre).
  */
 export default function SimplifySection({ value, onChange, announce, examples = SIMPLIFY_EXAMPLES }) {
@@ -33,7 +33,7 @@ export default function SimplifySection({ value, onChange, announce, examples = 
   // Le calcul se DÉROULE : l'énoncé d'abord, puis un geste par clic ou en
   // lecture automatique ; le résultat n'arrive qu'avec le dernier frame.
   const player = useStepReveal(frames.length, { resetKey: value.source });
-  // « تدرّب بنفسك » : l'élève désigne lui-même les éléments et choisit l'opération.
+  // « Entraîne-toi » : l'élève désigne lui-même les éléments et choisit l'opération.
   const practice = useBoardPractice(frames, player, value.source);
   const finished = player.phase === 'completed';
 

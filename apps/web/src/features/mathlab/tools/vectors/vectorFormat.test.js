@@ -18,8 +18,8 @@ describe('écriture d’un POINT — un couple sur une ligne', () => {
     expect(formatPair(P(Number.NaN, 1))).toBe('—');
   });
 
-  it('n’utilise JAMAIS de chiffres arabo-indiens — convention des manuels algériens', () => {
-    expect(formatPair(P(3, -2))).not.toMatch(/[٠-٩]/);
+  it('n’utilise JAMAIS de chiffres arabo-indiens — des chiffres usuels, comme en France', () => {
+    expect(formatPair(P(3, -2))).not.toMatch(/[\u0660-\u0669]/);
   });
 
   it('utilise le signe moins typographique, pas le trait d’union', () => {
@@ -55,7 +55,7 @@ describe('écriture de la direction (§10)', () => {
     expect(formatAngle(53.13010235)).toBe('53,13°');
   });
 
-  it('le شعاع nul n’a pas de direction : « — », jamais 0°', () => {
+  it('le vecteur nul n’a pas de direction : « — », jamais 0°', () => {
     expect(formatAngle(Number.NaN)).toBe('—');
   });
 });
@@ -91,17 +91,17 @@ describe('écriture de la pente (§20)', () => {
   });
 });
 
-// ── LE شعاع S'ÉCRIT EN COLONNE, LE POINT SUR UNE LIGNE ────────────────────
+// ── LE VECTEUR S'ÉCRIT EN COLONNE, LE POINT SUR UNE LIGNE ────────────────────
 // La distinction est le contrat : `formatPair` sert les POINTS (A(3 ; −2)),
-// `vectorColumnLatex` sert les شعاع. Changer l'un ne doit jamais changer
+// `vectorColumnLatex` sert les vecteurs. Changer l'un ne doit jamais changer
 // l'autre — c'est ce que ce bloc verrouille.
-describe('écriture d’un شعاع — en COLONNE', () => {
+describe('écriture d’un vecteur — en COLONNE', () => {
   it('donne les deux composantes formatées, dans l’ordre x puis y', () => {
     expect(vectorComponents(P(3, -2))).toEqual({ x: '3', y: '−2' });
     expect(vectorComponents(P(1.5, 0))).toEqual({ x: '1,5', y: '0' });
   });
 
-  it('n’invente rien pour un شعاع non résolu', () => {
+  it('n’invente rien pour un vecteur non résolu', () => {
     expect(vectorComponents(null)).toBeNull();
     expect(vectorComponents(P(Number.NaN, 1))).toBeNull();
     expect(vectorColumnLatex(null)).toBeNull();
@@ -111,7 +111,7 @@ describe('écriture d’un شعاع — en COLONNE', () => {
     expect(vectorColumnLatex(P(3, -2))).toBe('\\binom{3}{-2}');
   });
 
-  it('n’écrit JAMAIS un شعاع comme un couple sur une ligne', () => {
+  it('n’écrit JAMAIS un vecteur comme un couple sur une ligne', () => {
     const latex = vectorColumnLatex(P(3, -2));
     expect(latex).not.toContain(' ; ');
     expect(latex).not.toContain(', ');

@@ -1,5 +1,5 @@
 /**
- * MathLive pour le مختبر التحليل : le clavier, et rien d'autre.
+ * MathLive pour le labo d’analyse : le clavier, et rien d'autre.
  *
  * La CONFIGURATION (polices locales, sons coupés) vit dans
  * `functionGrapher/mathliveSetup.js` et n'est pas réécrite ici : `ensureMathLive`
@@ -52,7 +52,7 @@ const ANALYSIS_FUNCTION_KEYBOARD = Object.freeze({
     ],
     [
       { label: '4', latex: '4' }, { label: '5', latex: '5' }, { label: '6', latex: '6' },
-      { latex: '\\times', insert: '\\cdot' },
+      { latex: '\\times', insert: '\\times' },
       { latex: '\\ln', insert: '\\ln(#0)' },
       { latex: '\\log', insert: '\\log(#0)' },
       { latex: 'e^{x}', insert: 'e^{#0}' },
@@ -101,7 +101,7 @@ const ANALYSIS_ANSWER_KEYBOARD = Object.freeze({
     ],
     [
       { label: '0', latex: '0' },
-      // La virgule décimale : c'est ce que l'élève algérien écrit. MathLive
+      // La virgule décimale : c'est ce que l'élève écrit. MathLive
       // insère un point, que l'analyseur lit indifféremment.
       { label: ',', latex: '.' },
       { latex: '\\pi' },

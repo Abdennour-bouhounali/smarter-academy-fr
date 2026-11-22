@@ -1,9 +1,9 @@
 /**
- * LES JETONS DU TABLEAU du مختبر الجبر — logique pure, sans React.
+ * LES JETONS DU TABLEAU de l'atelier d'algèbre — logique pure, sans React.
  *
  * Le tableau partagé (shared/mathBoard/frames.js) désigne des JETONS : des
  * morceaux d'expression qu'on peut colorer, sous lesquels on pose une flèche.
- * Ce module découpe ce que les moteurs du مختبر écrivent (equation.js,
+ * Ce module découpe ce que les moteurs de l'atelier écrivent (equation.js,
  * simplify.js, systems.js, factor.js) en jetons — sans jamais recalculer :
  *
  *   formTokens      a·x + b (equation.js)          → [2x] [+ 3]

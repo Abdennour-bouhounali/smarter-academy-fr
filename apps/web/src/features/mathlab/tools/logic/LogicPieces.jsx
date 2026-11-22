@@ -4,7 +4,7 @@ import { TRUTH_ROWS, rowIndexOf, truthTable, formTable } from './logicMath.js';
 import { boolText, formatNumber, SYMBOLS } from './logicFormat.js';
 
 /**
- * Les PIÈCES communes du مختبر المنطق : la notation isolée, la pastille de
+ * Les PIÈCES communes de l'atelier de logique : la notation isolée, la pastille de
  * vérité, la table de vérité, le diagramme d'ensembles.
  *
  * Elles vivent ici parce que six aires les réutilisent — écrire une table de
@@ -13,14 +13,14 @@ import { boolText, formatNumber, SYMBOLS } from './logicFormat.js';
  * valeurs déjà décidées par logicMath.js.
  *
  * ── Deux règles tenues dans CHAQUE pièce ─────────────────────────────────
- * 1. Toute notation est `dir="ltr"` (ARABIC_RTL_CONTRACT §4) : « P ⇒ Q » se
- *    lit de gauche à droite même dans une page arabe.
+ * 1. Toute notation est un îlot `dir="ltr"` isolé : « P ⇒ Q » se lit de
+ *    gauche à droite et ne se mêle pas au flux de la phrase.
  * 2. La couleur n'est jamais seule (§45) : V / F accompagne toujours le vert
  *    et le rouge, et un lecteur d'écran reçoit le mot entier.
  */
 
 /**
- * Une notation mathématique, isolée du flux arabe.
+ * Une notation mathématique, isolée du flux de la phrase.
  *
  * Elle s'appelle `Notation` et NON `Math` : un composant nommé `Math`
  * masquerait l'objet global `Math` dans tout le module, et le premier
@@ -37,18 +37,12 @@ export function Notation({ children, block = false, lead = false, className = ''
 }
 
 /**
- * Un ÉNONCÉ : une phrase arabe qui CONTIENT de la notation.
+ * Un ÉNONCÉ : une phrase qui CONTIENT de la notation (« Si n est pair,
+ * alors n² est pair »).
  *
- * Elle ne va PAS en `dir="ltr"`. « إذا كان n زوجيًا فإنّ n² زوجي » est une
- * phrase arabe ; la forcer en LTR en retourne les mots et l'affiche
- * « زوجي n² زوجيًا فإنّ n إذا كان » — ce qui s'était produit sur les titres
- * de preuves, les énoncés à réfuter et les arguments fallacieux.
- *
- * La bonne règle est celle d'ARABIC_RTL_CONTRACT §4 : la PAGE (et donc la
- * phrase) est RTL, et seule la NOTATION s'isole. `dir="auto"` laisse le
- * navigateur suivre le premier caractère fort — arabe ici — et les `n`, `n²`
- * ou `⇒` qu'elle contient sont des runs neutres que l'algorithme bidi place
- * correctement d'eux-mêmes.
+ * Elle suit la direction de la page : `dir="auto"` laisse le navigateur
+ * suivre le premier caractère fort, et les `n`, `n²` ou `⇒` qu'elle contient
+ * restent à leur place. Seule la NOTATION pure s'isole.
  *
  * `<Notation>` reste pour ce qui est PUREMENT de la notation (« P ⇒ Q »,
  * « x² > x ») : là, le LTR est juste.
@@ -61,7 +55,7 @@ export function Statement({ children, className = '', ...rest }) {
   );
 }
 
-/** V / F / ؟ — la lettre, la couleur, et le mot pour le lecteur d'écran. */
+/** V / F / ? — la lettre, la couleur, et le mot pour le lecteur d'écran. */
 export function TruthBadge({ value }) {
   const { t } = useTranslation('mathlab');
   const tone = value === true ? 'true' : value === false ? 'false' : 'unknown';
@@ -77,7 +71,7 @@ export function TruthBadge({ value }) {
   );
 }
 
-/** Une pastille « صحيحة / خاطئة » avec son mot — jamais la couleur seule. */
+/** Une pastille « vraie / fausse » avec son mot — jamais la couleur seule. */
 export function VerdictPill({ value, label = null }) {
   const { t } = useTranslation('mathlab');
   const tone = value === true ? 'true' : value === false ? 'false' : 'unknown';

@@ -3,10 +3,11 @@ import {
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  ChevronLeft, ChevronRight, Play, Pause, RotateCcw, ListChecks, Footprints, Timer,
+  Play, Pause, RotateCcw, ListChecks, Footprints, Timer,
   GripVertical, Minimize2, Maximize2, Gauge, PenLine, Eye,
 } from 'lucide-react';
 import { AuthContext } from '../../../context/AuthContext';
+import { ChevronBack, ChevronForward } from '../../../components/common/DirectionalIcons.jsx';
 import {
   subscribeDock, registerFloating, unregisterFloating, activateFloating, getActiveFloating,
   getDockPrefs, setDockPosition, setDockMinimized, clampToViewport,
@@ -27,7 +28,7 @@ function scrollArea(node) {
 const useIsoLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect;
 
 /**
- * « الحل خطوة بخطوة » — la PETITE barre d'un déroulé (`useStepReveal`).
+ * « Solution pas à pas » — la PETITE barre d'un déroulé (`useStepReveal`).
  *
  * Demandes de la propriétaire (2026-09-30) : une barre discrète, en icônes,
  * DÉPLAÇABLE pour ne jamais cacher le tableau, et réductible à ses seuls
@@ -37,9 +38,9 @@ const useIsoLayoutEffect = typeof window === 'undefined' ? useEffect : useLayout
  *   ⋮⋮  ‹  [ › ]  ⤢                             (réduite : les boutons, rien d'autre)
  *
  * Chaque bouton est une icône avec son nom accessible (`aria-label` + `title`).
- * Deux modes, jamais un affichage d'un bloc : « خطوة بخطوة » (‹ السابقة,
- * › التالية) et « عرض تلقائي » (▶ / ❚❚, et la vitesse بطيء → عادي → سريع en un
- * bouton). « عرض الحل كاملاً » n'existe que dans l'espace enseignant.
+ * Deux modes, jamais un affichage d'un bloc : « Pas à pas » (‹ précédente,
+ * › suivante) et « Défilement automatique » (▶ / ❚❚, et la vitesse lente → normale → rapide en un
+ * bouton). « Afficher toute la solution » n'existe que dans l'espace enseignant.
  *
  * `sticky` (le nom est gardé) = la barre FLOTTE : position fixe, glissée par
  * la poignée ⋮⋮ (souris, doigt, ou flèches du clavier ; Début / double-clic la
@@ -48,8 +49,8 @@ const useIsoLayoutEffect = typeof window === 'undefined' ? useEffect : useLayout
  * un autre flotte, la même pastille compacte reste à sa place dans la page.
  *
  * `progress` : `{ current, total }` en ÉTAPES logiques (MathBoard).
- * `blocked` / `onReveal` (useBoardPractice) : en mode « تدرّب بنفسك », « التالي »
- * attend la réponse de l'élève ; « أرني » (l'œil) montre le geste attendu.
+ * `blocked` / `onReveal` (useBoardPractice) : en mode « Entraîne-toi », « Suivant »
+ * attend la réponse de l'élève ; « Montre-moi » (l'œil) montre le geste attendu.
  * Attributs e2e préfixés par `dataAttr` : `-player` (phase), `-mode`, `-speed`,
  * `-start`, `-next`, `-previous`, `-pause`, `-resume`, `-restart`,
  * `-reveal-all`, `-position`, `-grip`, `-minimize`.
@@ -95,12 +96,12 @@ export default function StepPlayer({
       if (!node) return;
       const size = { width: node.offsetWidth, height: node.offsetHeight };
       const viewport = { width: window.innerWidth, height: window.innerHeight };
-      // En haut à DROITE de la zone qui défile (la scène de l'outil) : le
-      // bord de départ en arabe, là où l'œil commence, et jamais sur le tableau
-      // centré (demande de la propriétaire).
-      const area = scrollArea(node)?.getBoundingClientRect() ?? { right: viewport.width, top: 0 };
+      // En haut à GAUCHE de la zone qui défile (la scène de l'outil) : le
+      // bord de départ, là où l'œil commence, et jamais sur le tableau centré
+      // (demande de la propriétaire).
+      const area = scrollArea(node)?.getBoundingClientRect() ?? { left: 0, top: 0 };
       const wanted = prefs.position ?? {
-        x: area.right - size.width - 12,
+        x: Math.max(area.left, 0) + 12,
         y: Math.max(area.top, 0) + 10,
       };
       setPosition(clampToViewport(wanted, size, viewport));
@@ -241,14 +242,14 @@ export default function StepPlayer({
           {...label(mode === 'auto' && !single ? 'kit.stepper.play' : 'kit.stepper.start')}
           {...attr('start')}
         >
-          {mode === 'auto' && !single ? <Play size={16} aria-hidden="true" /> : <ChevronLeft size={18} aria-hidden="true" />}
+          {mode === 'auto' && !single ? <Play size={16} aria-hidden="true" /> : <ChevronForward size={18} aria-hidden="true" />}
         </button>
       )}
 
       {inProgress && mode !== 'auto' && (
         <>
           <button type="button" className="sa-ml-kit-player__icon" onClick={act(p.previous)} disabled={cursor <= 1} {...label('kit.stepper.previous')} {...attr('previous')}>
-            <ChevronRight size={18} aria-hidden="true" />
+            <ChevronBack size={18} aria-hidden="true" />
           </button>
           {blocked && onReveal && (
             <button type="button" className="sa-ml-kit-player__icon" onClick={act(onReveal)} {...label('kit.practice.reveal')} {...attr('reveal-step')}>
@@ -263,7 +264,7 @@ export default function StepPlayer({
             {...label(blocked ? 'kit.practice.blocked' : 'kit.stepper.next')}
             {...attr('next')}
           >
-            <ChevronLeft size={18} aria-hidden="true" />
+            <ChevronForward size={18} aria-hidden="true" />
           </button>
         </>
       )}

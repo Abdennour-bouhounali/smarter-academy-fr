@@ -1,7 +1,7 @@
 /**
- * Les FRACTIONS du مختبر الأعداد — logique pure, sans React (§60, §61).
+ * Les FRACTIONS du labo des nombres — logique pure, sans React (§60, §61).
  *
- * Le مختبر الجبر a déjà des rationnels (`tools/algebra/rational.js`) et ce
+ * Le labo d'algèbre a déjà des rationnels (`tools/algebra/rational.js`) et ce
  * module les RÉUTILISE : `makeRational`, `add`, `multiply`, `toLatex`… ne
  * sont pas réécrits ici. Ce que ce fichier ajoute est ce qu'une fraction doit
  * savoir faire quand elle est l'OBJET du laboratoire et non le coefficient
@@ -11,7 +11,7 @@
  *     deux fractions différentes : §9 fait découvrir l'équivalence en
  *     coupant les parts en deux, et un moteur qui réduit tout seul détruit
  *     exactement ce qu'on veut montrer. D'où `Frac` — `{n, d}` brut, jamais
- *     normalisé — à côté du rationnel réduit du مختبر الجبر.
+ *     normalisé — à côté du rationnel réduit du labo d'algèbre.
  *   - dire son dénominateur commun (§12), sa forme décimale (§13), son
  *     pourcentage (§46), sa place sur une droite (§7).
  *
@@ -25,7 +25,7 @@ import { gcd, lcm } from './numberTheory.js';
 /**
  * Une fraction TELLE QUE L'ÉLÈVE L'ÉCRIT : `{n, d}`, d > 0, non réduite.
  *
- * C'est la différence avec le rationnel du مختبر الجبر, qui réduit toujours.
+ * C'est la différence avec le rationnel du labo d'algèbre, qui réduit toujours.
  * Ici `{n: 2, d: 4}` reste `2/4` : c'est le sujet du chapitre.
  *
  * @typedef {{n: number, d: number}} Frac
@@ -317,7 +317,7 @@ export function fracToText(frac) {
  */
 export function parseNumberInput(raw) {
   if (typeof raw !== 'string') return null;
-  const text = raw.trim().replace(/٫|،/g, ',').replace(/\s+/g, ' ');
+  const text = raw.trim().replace(/\u066B|\u060C/g, ',').replace(/\s+/g, ' ');
   if (!text) return null;
 
   const percent = /^(-?[\d,. ]+)\s*%$/.exec(text);

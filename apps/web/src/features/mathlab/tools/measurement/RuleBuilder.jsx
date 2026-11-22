@@ -18,9 +18,8 @@ import { ruleVariablesFor, ruleNumbersFor } from './investigations.js';
  * vient de mesurer, pas une expression arbitraire. Les priorités sont celles
  * de l'écriture (× avant +), et `formatRule` pose les parenthèses.
  *
- * L'expression reste en LTR même en arabe (§30) : « A = L × l » se lit de
- * gauche à droite, c'est de la mathématique. Ce sont les BOUTONS qui suivent
- * la direction de la page.
+ * L'expression se lit de gauche à droite (§30) : « A = L × l », c'est de la
+ * mathématique, comme la page.
  */
 export default function RuleBuilder({ investigation, rule, onChange, onTest, disabled }) {
   const { t } = useTranslation('mathlab');

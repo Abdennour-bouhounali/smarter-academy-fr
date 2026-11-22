@@ -19,7 +19,7 @@ import { formatNumber } from './numberValue.js';
  * champ se corriger sous ses doigts au milieu d'un mot.
  *
  * `dir="ltr"` sur le champ : un nombre est de la notation mathématique, et
- * elle s'écrit de gauche à droite même sur une page arabe (§58).
+ * elle s'écrit de gauche à droite (§58).
  */
 export default function ValueInput({
   value,
@@ -40,7 +40,7 @@ export default function ValueInput({
   const [text, setText] = useState(() => initialText(value, fraction));
   const [error, setError] = useState(null);
 
-  // Le champ suit la valeur quand elle change AILLEURS (« أرسِل إلى », un
+  // Le champ suit la valeur quand elle change AILLEURS (« Envoyer vers », un
   // glissé, une remise à zéro) — mais pas pendant la frappe.
   useEffect(() => {
     setText(initialText(value, fraction));

@@ -56,7 +56,7 @@ describe('le déroulé d\'une solution — jamais d\'un bloc', () => {
     expect(run(begun, 'clearAutostart', { type: 'reset', total: 2, key: 'c' }).cursor).toBe(0);
   });
 
-  it('« عرض الحل كاملاً » est un geste délibéré ; recommencer repart du premier pas', () => {
+  it('« Afficher toute la solution » est un geste délibéré ; recommencer repart du premier pas', () => {
     const all = run(initialStepState(4), 'revealAll');
     expect(all.cursor).toBe(4);
     expect(run(all, 'restart').cursor).toBe(1);

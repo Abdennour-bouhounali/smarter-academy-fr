@@ -25,7 +25,7 @@ const point = (x, y) => `(${plain(x)} ; ${plain(y)})`;
 const FIELDS = { linear: ['a'], affine: ['a', 'b'], quadratic: ['a', 'b', 'c'] };
 
 /**
- * الدوال — la famille, les coefficients (curseur ET champ numérique), la
+ * « Fonctions » — la famille, les coefficients (curseur ET champ numérique), la
  * courbe sur LE plan, et ce qu'on y lit : ordonnée à l'origine, racines,
  * sommet et axe, le triangle de pente d'une affine (« quand x augmente de 1,
  * f(x) augmente de a »), le sens de variation, un tableau de valeurs.
@@ -34,7 +34,7 @@ const FIELDS = { linear: ['a'], affine: ['a', 'b'], quadratic: ['a', 'b', 'c'] }
  * famille ou un exemple le fait.
  */
 /**
- * `features` : les familles et exemples du مخبر (scope.js) — linéaire et
+ * `features` : les familles et exemples du scope (scope.js) — linéaire et
  * affine seulement au collège.
  */
 export default function FunctionsSection({ value, onChange, features = null }) {
@@ -276,7 +276,7 @@ function KeyFacts({ fn, info, t }) {
   if (info.rootsKind === 'none') facts.push({ id: 'roots', text: t('tools.algebra.functions.facts.noRoot') });
   else if (info.rootsKind === 'all') facts.push({ id: 'roots', text: t('tools.algebra.functions.facts.allRoots') });
   else {
-    const list = info.roots.map((root) => math(`x = ${root.latex}`)).join(' ، ');
+    const list = info.roots.map((root) => math(`x = ${root.latex}`)).join(` ${t('tools.algebra.functions.facts.rootsAnd')} `);
     facts.push({ id: 'roots', text: t(info.roots.length === 1 ? 'tools.algebra.functions.facts.oneRoot' : 'tools.algebra.functions.facts.twoRoots', { roots: list }) });
   }
 

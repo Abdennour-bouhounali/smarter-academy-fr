@@ -4,7 +4,7 @@ import { deleteMathLabFile, fetchMathLabFiles, fetchMathLabQuota, uploadMathLabF
 import { errorKeyFrom, planSelection } from './attachmentPolicy';
 
 /**
- * Les fichiers d'un document du مختبر, côté client : la liste, les
+ * Les fichiers d'un document de l’atelier, côté client : la liste, les
  * compteurs, l'envoi, la suppression.
  *
  * Les compteurs sont ceux du SERVEUR : ils arrivent avec le document, et
@@ -38,13 +38,13 @@ export function useMathLabAttachments({ documentId, initialFiles, initialQuota, 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loadKey]);
 
-  // Une سبّورة neuve n'a pas de document, mais l'élève a déjà un total : on le demande une fois.
+  // Une tableau neuve n'a pas de document, mais l'élève a déjà un total : on le demande une fois.
   useEffect(() => {
     if (documentId != null || !token || quotaAskedRef.current) return;
     quotaAskedRef.current = true;
     fetchMathLabQuota(token)
-      // Une سبّورة pas encore enregistrée n'a pas de document côté serveur,
-      // donc pas de compteur « dans cette سبّورة » — il vaut 0, et l'élève
+      // Une tableau pas encore enregistrée n'a pas de document côté serveur,
+      // donc pas de compteur « dans ce tableau » — il vaut 0, et l'élève
       // doit le lire tout de suite, pas après son premier fichier.
       .then((res) => setQuota((q) => q ?? { ...res.quota, document: { used: 0, max: res.quota?.limits?.maxFilesPerDocument ?? 3 } }))
       .catch(() => {});
@@ -77,7 +77,7 @@ export function useMathLabAttachments({ documentId, initialFiles, initialQuota, 
     let uploaded = 0;
     let imported = 0;
     try {
-      // Les formes et dessins se fondent dans la سبّورة : pas de fichier, pas de quota.
+      // Les formes et dessins se fondent dans le tableau : pas de fichier, pas de quota.
       for (const { file } of plan.imports) {
         if (!importFile) continue;
         setBusy({ name: file.name, index: 1, total: 1 });
@@ -120,7 +120,9 @@ export function useMathLabAttachments({ documentId, initialFiles, initialQuota, 
       if (uploaded > 0) {
         setMessage({ tone: 'success', key: 'files.uploadDone', params: { count: uploaded } });
       } else if (plan.imports.length > 0) {
-        setMessage({ tone: 'success', key: 'shell.importDone', params: { count: imported } });
+        setMessage(imported > 0
+          ? { tone: 'success', key: 'shell.importDone', params: { count: imported } }
+          : { tone: 'success', key: 'shell.importNone' });
       }
     } finally {
       busyRef.current = false;

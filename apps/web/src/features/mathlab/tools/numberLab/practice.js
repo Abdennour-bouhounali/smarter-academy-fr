@@ -8,7 +8,7 @@
  *    il ne peut pas en arriver un. L'élève réessaie, révèle, ou part explorer.
  * 2. **L'erreur s'EXPLIQUE par le dessin (§53).** Un défi ne porte pas un
  *    message d'erreur mais un `reveal` : les valeurs à montrer sur la droite
- *    graduée, et la question à poser (« أيهما يقع إلى اليمين؟ »). Le module
+ *    graduée, et la question à poser (« Lequel est le plus à droite ? »). Le module
  *    dit QUOI montrer ; l'écran le montre.
  * 3. **Les indices dévoilent la MÉTHODE, pas la réponse (§52).** `hintKeys`
  *    est une suite : comparer sur la droite → convertir → la valeur. Le
@@ -35,7 +35,7 @@ import { percentageOf, percentageChange } from './proportion.js';
  * Un tirage reproductible : la même graine rend la même suite.
  *
  * La graine est BROUILLÉE avant le premier tirage, pour la raison que le
- * مختبر المثلثات a documentée (`trigonometry/practice.js`) : un Lehmer nu
+ * Le labo de trigonométrie a documentée (`trigonometry/practice.js`) : un Lehmer nu
  * rend un premier tirage quasi nul sur les petites graines, et toutes les
  * questions tomberaient dans la même famille.
  */
@@ -299,7 +299,7 @@ function equivalentChallenge(random) {
     kind: 'equivalent',
     answerType: 'fraction',
     promptKey: `${KEY}.q.equivalent`,
-    // from/to : l'indice « بكم نضرب {{from}} لنحصل على {{to}} » lit les mêmes paramètres.
+    // from/to : l'indice « Par combien faut-il multiplier {{from}} pour obtenir {{to}} ? » lit les mêmes paramètres.
     promptParams: { value: fracToText(base), denominator: target.d, from: base.d, to: target.d },
     expected: target,
     base,
@@ -364,7 +364,7 @@ function roundingChallenge(random, level) {
   return {
     kind: 'rounding',
     answerType: 'number',
-    // Le rang se DIT (« أقرب جزء من عشرة »), jamais la puissance brute (-1).
+    // Le rang se DIT (« au dixième »), jamais la puissance brute (-1).
     promptKey: `${KEY}.q.roundingTo.${power}`,
     promptParams: { value: formatShort(value) },
     expected: detail.rounded,
@@ -475,7 +475,7 @@ export function checkAnswer(challenge, answer) {
     case 'number': {
       let value = readAnswerNumber(answer);
       if (value === null) return { ...base, correct: false, unreadable: true };
-      // « اكتب … على شكل نسبة مئوية » : `75` et `75 %` disent la même chose.
+      // « Écris … sous forme de pourcentage » : `75` et `75 %` disent la même chose.
       // `75 %` se lit 0,75 — on le ramène à l'échelle de la réponse attendue.
       if (challenge.unit === 'percent' && typeof answer === 'string' && parseNumberInput(answer)?.source === 'percent') value *= 100;
       const tolerance = challenge.tolerance ?? 1e-9;
@@ -567,8 +567,8 @@ export function nextHint(challenge, used = 0) {
 /**
  * §53 — ce qu'il faut MONTRER après une erreur.
  *
- * Ce n'est jamais « خطأ » : c'est un mode à ouvrir, des valeurs à poser, et
- * une question à poser à l'élève (« أيهما يقع إلى اليمين؟ »). L'écran n'a
+ * Ce n'est jamais « faux » : c'est un mode à ouvrir, des valeurs à poser, et
+ * une question à poser à l'élève (« Lequel est le plus à droite ? »). L'écran n'a
  * plus qu'à obéir.
  */
 export function explainError(challenge, verdict) {

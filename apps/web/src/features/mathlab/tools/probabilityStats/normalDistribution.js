@@ -1,5 +1,5 @@
 /**
- * LA LOI NORMALE — التوزيع الطبيعي (الغاوسي). Logique pure, sans React.
+ * LA LOI NORMALE (de Gauss). Logique pure, sans React.
  *
  *     X ~ N(μ, σ²),  z = (x − μ) / σ,  P(X ≤ x) = Φ(z)
  *

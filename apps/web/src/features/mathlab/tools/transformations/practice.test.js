@@ -17,7 +17,7 @@ import { matrixFor } from './transformModel.js';
 import {
   normalizeScene, setSteps, addFigure, emptyScene, createTransformationsData, resolveData,
 } from './transformState.js';
-import mathlabAr from '../../../../i18n/locales/ar/mathlab.json';
+import mathlab from '../../../../i18n/locales/ar/mathlab.json';
 
 const at = (x, y) => ({ x, y });
 
@@ -154,7 +154,7 @@ describe('les puzzles (§42)', () => {
 
   it('la solution n’est pas UNIQUE — une autre route est acceptée (§42)', () => {
     const puzzle = getPuzzle('slide');
-    // La même image, obtenue par deux انسحاب successifs au lieu d'un.
+    // La même image, obtenue par deux translations successives au lieu d'un.
     const twoHops = [
       { kind: 'translation', enabled: true, vx: 4, vy: -1 },
       { kind: 'translation', enabled: true, vx: 3, vy: -1 },
@@ -339,7 +339,7 @@ const close = (a, b) => Math.abs(a.x - b.x) < 1e-9 && Math.abs(a.y - b.y) < 1e-9
 function stepSentence(step, vertices) {
   const description = describeChallengeStep(step, vertices);
   if (!description) return null;
-  const template = mathlabAr.tools.transformations.practice.stepText[description.key];
+  const template = mathlab.tools.transformations.practice.stepText[description.key];
   if (typeof template !== 'string') return null;
 
   return template.replace(/\{\{(\w+)\}\}/g, (match, name) => {
@@ -350,7 +350,7 @@ function stepSentence(step, vertices) {
 }
 
 describe('T1 — la réponse n’est pas à l’écran avant d’être donnée', () => {
-  it('l’image est masquée en entraînement tant qu’il n’y a ni verdict ni « أرني »', () => {
+  it('l’image est masquée en entraînement tant qu’il n’y a ni verdict ni « Montre-moi »', () => {
     const challenge = { point: at(1, 2) };
     expect(isImageHidden({ mode: 'practice', challenge, verdict: null })).toBe(true);
     expect(isImageHidden({ mode: 'practice', challenge, verdict: { correct: true } })).toBe(false);
@@ -408,18 +408,18 @@ describe('T2 — l’énoncé détermine la transformation', () => {
         expect(sentence).not.toMatch(/\{\{|\}\}/);
         if (step.kind === 'reflection') {
           const expectedAxis = {
-            xAxis: 'محور الفواصل', yAxis: 'محور التراتيب', diagonal: 'y = x', origin: 'تناظر مركزي مركزه O',
+            xAxis: 'axe des abscisses', yAxis: 'axe des ordonnées', diagonal: 'y = x', origin: 'Symétrie de centre O',
           }[step.axis.type];
           expect(sentence).toContain(expectedAxis);
         }
         if (step.kind === 'rotation') {
-          expect(sentence).toContain('مركزه O');
+          expect(sentence).toContain('de centre O');
           expect(sentence).toContain(`${step.angle}°`);
-          expect(sentence).toContain('الاتجاه الموجب');
+          expect(sentence).toContain('sens direct');
         }
         if (step.kind === 'dilation') {
-          expect(sentence).toContain('مركزه O');
-          expect(sentence).toContain(`نسبته ${String(step.k).replace('-', '−')}`);
+          expect(sentence).toContain('de centre O');
+          expect(sentence).toContain(`de rapport ${String(step.k).replace('-', '−')}`);
         }
       }
     }
@@ -464,11 +464,11 @@ describe('T2 — l’énoncé détermine la transformation', () => {
     expect(bySentence.size).toBeGreaterThan(150);
   });
 
-  it('le sens d’un دوران est dit : 90° direct et 90° indirect ne se confondent pas', () => {
+  it('le sens d’une rotation est dit : 90° direct et 90° indirect ne se confondent pas', () => {
     const direct = stepSentence({ kind: 'rotation', angle: 90, center: { type: 'origin' } }, []);
     const indirect = stepSentence({ kind: 'rotation', angle: -90, center: { type: 'origin' } }, []);
-    expect(direct).toContain('الاتجاه الموجب');
-    expect(indirect).toContain('الاتجاه السالب');
+    expect(direct).toContain('sens direct');
+    expect(indirect).toContain('sens indirect');
     expect(direct).not.toBe(indirect);
   });
 
@@ -488,7 +488,7 @@ describe('T3 — pas de question dont la réponse est le point lui-même', () =>
   });
 
   it('un tirage dégénéré (constante) rend quand même une question non triviale', () => {
-    // random() = 0,5 donne le point O et le تناظر مركزي : trivial à chaque tirage.
+    // random() = 0,5 donne le point O et la symétrie centrale : trivial à chaque tirage.
     for (const kind of CHALLENGE_KINDS) {
       const challenge = generateChallenge(() => 0.5, { kind });
       expect(close(byHand(challenge.point, challenge.steps), challenge.point)).toBe(false);

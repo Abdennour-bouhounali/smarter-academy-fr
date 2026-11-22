@@ -115,7 +115,7 @@ function ConicInspector({
           </button>
         </form>
 
-        {/* §51 — un refus qui ENSEIGNE, en arabe, jamais « erreur » */}
+        {/* §51 — un refus qui ENSEIGNE, en mots, jamais « erreur » */}
         {error && (
           <p className="sa-ml-cn__error" id="sa-ml-cn-eqerror" role="alert" data-ml-cn-eqerror={error.error}>
             <AlertCircle size={15} aria-hidden="true" />
@@ -178,7 +178,7 @@ function ConicInspector({
             {conic.kind !== 'circle' && features.foci?.length > 0 && (
               <Fact
                 label={t('tools.conics.features.foci')}
-                value={features.foci.map(pointText).join('  ·  ')}
+                value={features.foci.map(pointText).join(' et ')}
                 name="foci"
               />
             )}
@@ -192,7 +192,7 @@ function ConicInspector({
             {features.asymptotes?.length > 0 && (
               <Fact
                 label={t('tools.conics.features.asymptotes')}
-                value={features.asymptotes.map(lineText).join('  ·  ')}
+                value={features.asymptotes.map(lineText).join(' et ')}
                 name="asymptotes"
               />
             )}

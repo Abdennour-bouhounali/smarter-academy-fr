@@ -1,5 +1,5 @@
 /**
- * « أرني » — LA SOLUTION D'UNE QUESTION D'ENTRAÎNEMENT, PAS À PAS (logique pure).
+ * « Montre-moi » — LA SOLUTION D'UNE QUESTION D'ENTRAÎNEMENT, PAS À PAS (logique pure).
  *
  * Exigence de la propriétaire (2026-09-30) : une solution ne tombe jamais
  * d'un bloc. Quand l'élève demande la réponse (§38 – §40), l'instrument ne
@@ -118,7 +118,7 @@ export function imageName(index, count, base = 'A') {
   return index === count - 1 ? `${base}'` : `${base}_{${index + 1}}`;
 }
 
-/** Le même nom, en texte (pour une phrase arabe, où il sera isolé). */
+/** Le même nom, en texte (pour une phrase, où il sera isolé). */
 function plainName(index, count, base = 'A') {
   return index === count - 1 ? `${base}′` : `${base}${String(index + 1).replace(/\d/g, (d) => '₀₁₂₃₄₅₆₇₈₉'[d])}`;
 }

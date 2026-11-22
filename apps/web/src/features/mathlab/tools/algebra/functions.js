@@ -1,5 +1,5 @@
 /**
- * Les FONCTIONS — الدوال الخطية، التآلفية ودوال الدرجة الثانية — logique pure.
+ * Les FONCTIONS — linéaires, affines et du second degré — logique pure.
  *
  *     linéaire    f(x) = a·x
  *     affine      f(x) = a·x + b

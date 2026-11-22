@@ -23,8 +23,8 @@ const AXIS_CHOICES = ['xAxis', 'yAxis', 'origin', 'diagonal', 'antidiagonal', 'h
  * LA PILE des transformations (§20, §21, §22).
  *
  *     Original
- *        ↓  T₁ : انسحاب (3 ; 2)
- *        ↓  T₂ : دوران 90°
+ *        ↓  T₁ : Translation (3 ; 2)
+ *        ↓  T₂ : Rotation 90°
  *     Image
  *
  * Chaque ligne est À LA FOIS l'affichage du pas et son éditeur : les

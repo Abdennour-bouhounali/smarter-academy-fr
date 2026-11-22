@@ -1,5 +1,5 @@
 /**
- * L'ARBRE DE PROBABILITÉS — شجرة الاحتمالات. Logique pure, sans React.
+ * L'ARBRE DE PROBABILITÉS. Logique pure, sans React.
  *
  *     tree   = { stages: 1…3, branches: Branch[], presetId: string | null, query: Query | null }
  *     Branch = { id, label, p, children: Branch[] }
@@ -18,7 +18,7 @@
  *
  * Tant que l'arbre n'est pas VALIDE (chaque p dans [0 ; 1], chaque groupe
  * de branches issues d'un même nœud de somme exactement 1), aucun résultat
- * n'est calculé — l'interface dit « غير محسوبة » et montre pourquoi. C'est
+ * n'est calculé — l'interface dit « Non calculée » et montre pourquoi. C'est
  * le choix constant du laboratoire : jamais un nombre tiré d'un arbre faux.
  */
 
@@ -38,13 +38,16 @@ const MACRON = '̄';
 
 // ── Lire une probabilité ─────────────────────────────────────────────────
 
-const ARABIC_DIGITS = /[٠-٩۰-۹]/g;
+// Chiffres arabes-indiens et persans (U+0660–0669, U+06F0–06F9), la virgule
+// (U+066B) et le pour-cent (U+066A) arabes : tolérés à la saisie, ramenés aux
+// chiffres usuels — un collage depuis un autre clavier ne casse rien.
+const ARABIC_DIGITS = /[\u0660-\u0669\u06F0-\u06F9]/g;
 
 function normalizeNumberText(text) {
   return String(text)
     .replace(ARABIC_DIGITS, (d) => String((d.charCodeAt(0) & 0xf)))
-    .replace(/٫/g, '.')
-    .replace(/٪/g, '%')
+    .replace(/\u066B/g, '.')
+    .replace(/\u066A/g, '%')
     .replace(/[−–—]/g, '-')
     .replace(/,/g, '.')
     .replace(/\s+/g, '');
@@ -120,9 +123,9 @@ function decimalText(r) {
 
 function styleOf(text) {
   const t = String(text ?? '');
-  if (t.includes('%') || t.includes('٪')) return 'percent';
+  if (t.includes('%') || t.includes('\u066A')) return 'percent';
   if (t.includes('/')) return 'fraction';
-  if (/[.,٫]/.test(t)) return 'decimal';
+  if (/[.,\u066B]/.test(t)) return 'decimal';
 
   return 'fraction';
 }
@@ -133,28 +136,28 @@ function styleOf(text) {
  * Une étiquette saisie → sa forme canonique. Le contraire d'un événement
  * d'une lettre s'écrit avec un MACRON combinant (« Ā ») : lisible tel quel
  * dans le champ, dans le dessin et par un lecteur d'écran, et traduit en
- * `\bar{A}` pour KaTeX. `\bar A`, `\bar{A}`, `\overline{A}` et « ليس A »
+ * `\bar{A}` pour KaTeX. `\bar A`, `\bar{A}`, `\overline{A}` et « non A »
  * (une lettre) y sont ramenés. Les caractères qui casseraient une formule
  * (`$ \ { } ^ _ & % # ~`) sont retirés ; longueur bornée.
  */
 export function normalizeLabel(text) {
   // eslint-disable-next-line no-control-regex -- control characters are exactly what is removed from a pasted label
   let label = String(text ?? '').replace(/[\u0000-\u001f]/g, '').trim();
-  const bar = label.match(/^\\(?:bar|overline)\s*\{?\s*([A-Za-z])\s*\}?$/) || label.match(/^ليس\s+([A-Za-z])$/);
+  const bar = label.match(/^\\(?:bar|overline)\s*\{?\s*([A-Za-z])\s*\}?$/) || label.match(/^non\s+([A-Za-z])$/i);
   if (bar) return `${bar[1]}${MACRON}`;
   label = label.replace(/[$\\{}^_&%#~]/g, '').replace(/\s+/g, ' ');
 
   return Array.from(label).slice(0, MAX_LABEL_LENGTH).join('');
 }
 
-/** Le contraire d'une étiquette : A ↔ Ā ; une étiquette longue devient « ليس … ». */
+/** Le contraire d'une étiquette : A ↔ Ā ; une étiquette longue devient « non … ». */
 export function complementLabel(label) {
   const text = normalizeLabel(label);
   if (/^[A-Za-z]̄$/.test(text)) return text[0];
   if (/^[A-Za-z]$/.test(text)) return `${text}${MACRON}`;
-  if (text.startsWith('ليس ')) return text.slice(4);
+  if (text.startsWith('non ')) return text.slice(4);
 
-  return normalizeLabel(`ليس ${text}`);
+  return normalizeLabel(`non ${text}`);
 }
 
 /** L'étiquette en LaTeX (pour MathText). `stage` ajoute l'indice d'étape quand l'étiquette est ambiguë. */
@@ -627,7 +630,7 @@ export function setLabel(tree, path, text) {
 }
 
 /**
- * « أكمل تلقائيًا » : la DERNIÈRE branche d'un nœud reçoit 1 − (somme des
+ * « Compléter automatiquement » : la DERNIÈRE branche d'un nœud reçoit 1 − (somme des
  * autres), écrite dans le style des autres (fraction, décimal, %). Refusé
  * (arbre inchangé) si une autre branche est illisible ou si leur somme
  * dépasse 1.
@@ -651,7 +654,7 @@ export function autoCompleteNode(tree, nodePath) {
   return setProbability(tree, [...nodePath, siblings.length - 1], formatProbabilityText(rest, style));
 }
 
-/** Ce que « أكمل تلقائيًا » écrirait (ou `null` s'il n'y a rien à écrire ou si c'est impossible) — pour activer le bouton honnêtement. */
+/** Ce que « Compléter automatiquement » écrirait (ou `null` s'il n'y a rien à écrire ou si c'est impossible) — pour activer le bouton honnêtement. */
 export function autoCompletePreview(tree, nodePath) {
   const next = autoCompleteNode(tree, nodePath);
   if (next === tree) return null;

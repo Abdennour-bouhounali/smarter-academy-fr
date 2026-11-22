@@ -11,8 +11,8 @@ import { VERDICTS } from './logicState.js';
  *
  * L'élève ne lit pas « x² > x est parfois vraie » : il prédit, puis il
  * DÉPLACE x et voit la phrase basculer de vraie à fausse sous son doigt. La
- * droite montre les deux régions, et la troisième réponse — « تتعلّق بقيمة
- * المتغيّر » — devient la seule honnête.
+ * droite montre les deux régions, et la troisième réponse — « Dépend de la
+ * variable » — devient la seule honnête.
  *
  * §6 : le domaine est montré, et les valeurs exclues sont barrées sur la
  * droite. « 1/x > 0 » et « 1/n > 0 sur ℕ* » sont le même texte avec deux

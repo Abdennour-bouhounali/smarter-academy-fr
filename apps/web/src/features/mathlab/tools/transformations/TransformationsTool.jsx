@@ -33,7 +33,7 @@ const SERIALIZE_MS = 300;
 const ANIMATION_MS = 1400;
 
 /**
- * Le مختبر التحويلات dans la coquille du مختبر (MathLabToolProps).
+ * L'atelier des transformations dans la coquille de l'atelier (MathLabToolProps).
  *
  *     on attrape un sommet → la figure suit → l'image suit → les mesures
  *     suivent → les invariants se recalculent → une loi apparaît
@@ -50,7 +50,7 @@ const ANIMATION_MS = 1400;
  */
 export default function TransformationsTool({ initialData, onChange, onReady, capabilities = null }) {
   const { t } = useTranslation('mathlab');
-  // Le مخبر (scope.js) : au collège, une transformation à la fois, sans composition ni matrice.
+  // Le labo (scope.js) : au collège, une transformation à la fois, sans composition ni matrice.
   const features = useMemo(() => transformationsFeatures(capabilities), [capabilities]);
   const [data, setData] = useState(() => clampToFeatures(initialData && Object.keys(initialData).length
     ? normalizeTransformationsData(initialData)
@@ -124,7 +124,7 @@ export default function TransformationsTool({ initialData, onChange, onReady, ca
   const { settings } = data;
   const firstFigure = resolved.figures[0] ?? null;
 
-  /** Le pas sur lequel portent l'axe, le centre et le شعاع dessinés. */
+  /** Le pas sur lequel portent l'axe, le centre et le vecteur dessinés. */
   const effectiveStepId = activeStepId && scene.steps.some((step) => step.id === activeStepId)
     ? activeStepId
     : scene.steps[0]?.id ?? null;
@@ -247,7 +247,7 @@ export default function TransformationsTool({ initialData, onChange, onReady, ca
     });
   }, [commit, snapIfEnabled]);
 
-  /** Le bout du شعاع d'un انسحاب, tiré à la main (§7, §9). */
+  /** Le bout du vecteur d'une translation, tiré à la main (§7, §9). */
   const handleVectorTipDrag = useCallback((stepId) => (clientX, clientY, modifiers) => {
     const position = planeRef.current?.toMath(clientX, clientY);
     if (!position) return;
@@ -303,7 +303,7 @@ export default function TransformationsTool({ initialData, onChange, onReady, ca
   }, [commit]);
 
   /**
-   * Ajouter un pas. Là où le مخبر n'en permet qu'UN (le collège : pas de
+   * Ajouter un pas. Là où le labo n'en permet qu'UN (le collège : pas de
    * composition), le nouveau REMPLACE l'ancien — sinon un préréglage choisi
    * ne ferait rien.
    */
@@ -327,7 +327,7 @@ export default function TransformationsTool({ initialData, onChange, onReady, ca
     const experiment = getExperiment(id);
     if (!experiment || !features.experiments.some((entry) => entry.id === id)) return;
     // La scène de l'expérience est construite EN UNE FOIS, puis poussée :
-    // un seul pas d'historique, donc un seul « تراجع » pour revenir.
+    // un seul pas d'historique, donc un seul « Annuler » pour revenir.
     const prepared = setSteps(
       addFigure(emptyScene(), 'polygon', experiment.figure),
       experiment.steps,
@@ -417,7 +417,7 @@ export default function TransformationsTool({ initialData, onChange, onReady, ca
     return patternCopies(firstFigure.figure.vertices, step, pattern);
   }, [pattern, firstFigure, scene.steps, effectiveStepId, hideImage]);
 
-  // ── La coquille : « مسح الكل » et la grille ─────────────────────────
+  // ── La coquille : « Tout effacer » et la grille ─────────────────────────
   useEffect(() => {
     onReady?.({
       clear: () => {
@@ -493,8 +493,8 @@ export default function TransformationsTool({ initialData, onChange, onReady, ca
                 />
               )))}
 
-              {/* La poignée du CENTRE (§11) ou du bout du شعاع (§7). */}
-              {/* Masqué avant le verdict : le bout du شعاع tiré depuis A EST A′. */}
+              {/* La poignée du CENTRE (§11) ou du bout du vecteur (§7). */}
+              {/* Masqué avant le verdict : le bout du vecteur tiré depuis A EST A′. */}
               {activeStep?.kind === 'translation' && firstFigure && !hideImage && (
                 <DragHandle
                   position={{

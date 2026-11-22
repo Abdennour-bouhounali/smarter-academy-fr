@@ -17,7 +17,7 @@ import { ensureMathLive } from './mathFieldSetup.js';
  *     quand un champ vit dans un panneau qu'on peut quitter.
  *
  * Le champ est LTR par nature — une expression se lit de gauche à droite
- * dans une page arabe — et ISOLÉ du bidi environnant (ARABIC_RTL_CONTRACT).
+ * dans la page — et ISOLÉ du texte environnant (FRENCH_LANGUAGE_CONTRACT §8).
  */
 export default function MathField({
   value,

@@ -1,8 +1,8 @@
 /**
- * L'ÉTAT du مختبر المتتاليات — logique pure, sans React (§46).
+ * L'ÉTAT du labo des suites — logique pure, sans React (§46).
  *
  *     data = {
- *       primary:   SequenceSpec,          // la متتالية étudiée
+ *       primary:   SequenceSpec,          // la suite étudiée
  *       secondary: SequenceSpec | null,   // celle qu'on lui compare (§33)
  *       count:     number,                // combien de termes engendrés (§4)
  *       cursor:    number,                // l'indice MIS EN AVANT (§6, §7)
@@ -25,7 +25,7 @@
  * Une exception assumée : `cursor`. C'est l'indice mis en avant, pas une
  * étape d'animation — un élève qui a marché jusqu'à u₇ et revient demain
  * doit retrouver u₇ en avant, comme il retrouverait son angle dans le
- * مختبر المثلثات.
+ * labo de trigonométrie.
  *
  * SEQUENCES_SCHEMA_VERSION est la version de CE format.
  */
@@ -61,7 +61,7 @@ const isPlainObject = (value) => Boolean(value) && typeof value === 'object' && 
 
 /**
  * Un nombre borné, ou la valeur de repli — jamais NaN, jamais Infinity.
- * Accepte la virgule décimale : un élève algérien écrit « 1,5 ».
+ * Accepte la virgule décimale : un élève écrit « 1,5 ».
  */
 function readNumber(raw, fallback, min, max) {
   const value = typeof raw === 'string' ? Number(raw.replace(',', '.')) : raw;
@@ -89,7 +89,7 @@ function readSource(raw, fallback) {
 }
 
 /**
- * ── LA SPÉCIFICATION d'une متتالية, telle qu'elle est ENREGISTRÉE ────────
+ * ── LA SPÉCIFICATION d'une suite, telle qu'elle est ENREGISTRÉE ────────
  *
  * C'est du JSON pur : des nombres et des chaînes. Les FONCTIONS (l'explicite
  * compilée, la règle compilée) n'y sont pas — elles sont recalculées à
@@ -128,17 +128,17 @@ export function createSpec(patch = {}) {
 }
 
 /**
- * Le document d'ouverture : une متتالية ARITHMÉTIQUE, u₀ = 2, r = 3.
+ * Le document d'ouverture : une suite ARITHMÉTIQUE, u₀ = 2, r = 3.
  *
  * ── Pourquoi celle-là (§5h.1 de MATH_LAB.md) ─────────────────────────────
- * Les متتاليات ne sont pas au programme de 4AM ; leur seul ancrage
- * authentique y est « الفروق المتتالية » (LP 2.1, la leçon du PGCD). La
+ * Les suites ne sont pas au programme du collège ; leur seul ancrage
+ * authentique y est « différences successives » (LP 2.1, la leçon du PGCD). La
  * règle de la plateforme — appliquée au produit scalaire (§5f.10) puis au
  * cercle trigonométrique (§5g.1) — veut que ce qui dépasse le programme ne
  * prenne jamais le premier écran.
  *
  * L'instrument ouvre donc sur la suite arithmétique 2, 5, 8, 11… avec ses
- * différences AFFICHÉES : l'élève de 4AM y reconnaît le geste de son manuel.
+ * différences AFFICHÉES : l'élève de 3e y reconnaît le geste de son manuel.
  * La toile d'araignée, les points fixes, la convergence — tout le lycée —
  * existent, complets, à une bascule de là.
  *
@@ -168,7 +168,7 @@ export function createSequencesData(seed) {
 /**
  * L'amorce qu'une leçon transmet (openMathLab.js). Le contrat est publié par
  * LESSON_DEVELOPMENT_GUIDE.md ; une amorce illisible ne casse rien — on
- * retombe sur le document par défaut, comme pour les أشعة et les المثلثات.
+ * retombe sur le document par défaut, comme pour les vecteurs et les trigonométrie.
  */
 function applySeed(base, seed) {
   const next = { ...base };
@@ -203,7 +203,7 @@ export function createPracticeState() {
     solved: 0,
     seen: 0,
     // La révélation : 'answer' (après une réponse juste, entière) ou
-    // 'request' (« اكشف », pas à pas) ; `revealPending` demande de poser la
+    // 'request' (« Voir la solution », pas à pas) ; `revealPending` demande de poser la
     // suite dans l'espace, `revealPosed` dit qu'elle l'a été.
     revealMode: null,
     revealPending: false,
@@ -319,7 +319,7 @@ function round(value, decimals) {
 // Chacune rend le MÊME objet quand rien ne change : §48 veut que le rendu ne
 // reparte pas pour rien, et l'égalité référentielle est ce qui le garantit.
 
-/** Un paramètre de la متتالية étudiée (ou de la comparée). */
+/** Un paramètre de la suite étudiée (ou de la comparée). */
 export function setParameter(data, key, value, target = 'primary') {
   const spec = target === 'secondary' ? data.secondary : data.primary;
   if (!spec) return data;
@@ -434,7 +434,7 @@ export function setCobwebView(data, view) {
 }
 
 /**
- * La comparaison (§33) : on l'ouvre sur une COPIE de la متتالية étudiée,
+ * La comparaison (§33) : on l'ouvre sur une COPIE de la suite étudiée,
  * dont on change un paramètre.
  *
  * Ouvrir sur une suite identique serait inutile (la différence serait nulle

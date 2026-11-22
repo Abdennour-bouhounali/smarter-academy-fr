@@ -1,17 +1,17 @@
 /**
- * L'ÉTAT du مختبر الجبر — logique pure, sans React.
+ * L'ÉTAT de l'atelier d'algèbre — logique pure, sans React.
  *
- * V2 (2026-09-30) : le laboratoire a six SECTIONS (المعادلات، المتراجحات،
- * الأنظمة، تبسيط التعابير، التحليل إلى عوامل، الدوال). Le niveau SUPÉRIEUR du
+ * V2 (2026-09-30) : le laboratoire a six SECTIONS (« Équations », « Inéquations »,
+ * « Systèmes », « Développer et réduire », « Factoriser », « Fonctions »). Le niveau SUPÉRIEUR du
  * document reste exactement le format V1 ci-dessous — c'est la section
- * « المعادلات » — pour qu'un document enregistré avant V2 se rouvre tel quel.
+ * « Équations » — pour qu'un document enregistré avant V2 se rouvre tel quel.
  * Chaque nouvelle section a son sous-objet (`inequalities`, `systems`,
  * `simplify`, `factor`, `functions`) et `section` dit laquelle est affichée.
  *
  *     data = {
  *       source:  '2x + 3 = 11',     // la saisie d'origine, telle qu'écrite
  *       steps:   [ { equation, operation | null, flipped } , … ],
- *       cursor:  number,            // le pas AFFICHÉ — d'où viennent تراجع / إعادة
+ *       cursor:  number,            // le pas AFFICHÉ — d'où viennent Annuler / Rétablir
  *       showSolution: boolean,
  *       parameters:   { a, b, c } | null,   // le panneau ax + b = c, s'il est ouvert
  *       numberLine:   { center, span }      // la droite graduée d'une inégalité
@@ -20,7 +20,7 @@
  * `steps[0]` est l'équation de départ (operation: null) ; chaque opération
  * empile un pas. Le document ne garde donc pas un état courant mais un
  * CHEMIN — l'historique de §21 et l'annulation de §22 sont le même objet, et
- * « تراجع » n'est qu'un curseur qui recule. Refaire une opération après un
+ * « Annuler » n'est qu'un curseur qui recule. Refaire une opération après un
  * retour en arrière coupe la branche abandonnée, comme partout ailleurs.
  *
  * Un rationnel est stocké `{n, d}` : du JSON pur, relisible sans code.
@@ -40,14 +40,14 @@ export const ALGEBRA_SCHEMA_VERSION = 2;
 export const ALGEBRA_SECTIONS = Object.freeze(['equations', 'inequalities', 'systems', 'simplify', 'factor', 'functions']);
 export const SYSTEM_METHODS = Object.freeze(['substitution', 'elimination', 'graphical']);
 
-/** La متراجحة d'ouverture de sa section : un coefficient négatif, pour que le sens se retourne. */
+/** L'inéquation d'ouverture de sa section : un coefficient négatif, pour que le sens se retourne. */
 export const DEFAULT_INEQUALITY_SOURCE = '-2x + 3 < 9';
 const DEFAULT_SIMPLIFY_SOURCE = '(x + 2)(x - 3)';
 const DEFAULT_FACTOR_SOURCE = 'x^2 + 5x + 6';
-/** La factorisation d'ouverture de مخبر المتوسط (scope.js). */
+/** La factorisation d'ouverture du collège (scope.js). */
 const MOYEN_FACTOR_SOURCE = 'x^2 + 6x + 9';
 
-/** Le chemin des متراجحات est plus court : deux chemins doivent tenir ensemble sous le plafond. */
+/** Le chemin des inéquations est plus court : deux chemins doivent tenir ensemble sous le plafond. */
 export const MAX_INEQUALITY_STEPS = 30;
 
 /** Le document sérialisé reste SOUS ce budget (le serveur refuse au-delà de 20 000 octets). */
@@ -210,7 +210,7 @@ function normalizeFunctions(raw) {
 
 /**
  * N'importe quel `data` → l'état V2 complet et sûr. Un document V1 (sans
- * `section`) s'ouvre sur « المعادلات », son chemin intact ; les autres
+ * `section`) s'ouvre sur « Équations », son chemin intact ; les autres
  * sections prennent leurs valeurs d'ouverture. Ne jette jamais.
  */
 export function normalizeAlgebraData(raw) {
@@ -244,8 +244,8 @@ export function createAlgebraData(seed = undefined, context = {}) {
     showSolution: false,
     parameters: isPlainObject(seed) && seed.parameters === true ? { a: 2, b: 3, c: 11 } : null,
     section: isPlainObject(seed) && ALGEBRA_SECTIONS.includes(seed.section) ? seed.section : 'equations',
-    // Le مخبر choisit la factorisation d'ouverture : une identité remarquable
-    // au collège, pas un trinôme à « مجموع وجداء » (scope.js).
+    // Le scope choisit la factorisation d'ouverture : une identité remarquable
+    // au collège, pas un trinôme à « somme et produit » (scope.js).
     factor: { source: context?.capabilities?.factor?.methods === 'moyen' ? MOYEN_FACTOR_SOURCE : DEFAULT_FACTOR_SOURCE },
   });
 }
@@ -287,7 +287,7 @@ export function pushStep(data, equation, operation, flipped = false, maxSteps = 
 
 /**
  * Repart d'une NOUVELLE équation : l'historique précédent n'a plus de sens,
- * il est remplacé. C'est ce que font « استكشاف », « معادلة جديدة » et le
+ * il est remplacé. C'est ce que font « Explorer », « Nouvelle équation » et le
  * panneau de paramètres.
  */
 export function resetTo(data, equation, source) {

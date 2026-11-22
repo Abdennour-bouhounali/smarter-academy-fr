@@ -15,7 +15,7 @@ import { DEFAULT_VECTORS_VIEWPORT } from './vectorState.js';
 const REPORT_VIEW_MS = 400;
 
 /**
- * LE PLAN du مختبر الأشعة.
+ * LE PLAN du labo des vecteurs.
  *
  * Le cahier des charges (§3) est catégorique : « Do NOT create a second
  * coordinate-system implementation ». Ce composant n'en crée pas. La CAMÉRA
@@ -27,11 +27,11 @@ const REPORT_VIEW_MS = 400;
  * ce qu'on pose DESSUS : des objets glissables, pas des courbes échantillonnées.
  *
  * Le plan est `dir="ltr"` — c'est des mathématiques (§35) : l'axe des
- * abscisses croît vers la DROITE même quand l'interface est en arabe. Seuls
+ * abscisses croît vers la DROITE, quelle que soit la page. Seuls
  * les panneaux suivent la direction de la page.
  *
  * Les enfants sont rendus dans le SVG de mafs via `children` : le plan ne
- * sait rien des أشعة, il sait dessiner un repère et écouter des gestes.
+ * sait rien des vecteurs, il sait dessiner un repère et écouter des gestes.
  */
 const VectorPlane = forwardRef(function VectorPlane({
   initialViewport, grid = true, onViewportChange, onTap, canvasLabel = null,

@@ -1,10 +1,10 @@
 /**
- * « إعادة البناء » — la construction rejouée pas à pas, pure.
+ * « Rejouer la construction » — la construction rejouée pas à pas, pure.
  *
  * Une étape par objet construit, dans l'ordre `seq`, chacune avec sa durée :
  * l'instrument apparaît à la pose qu'il avait, le trait se dessine, le compas
  * tourne. Le rejeu ne touche JAMAIS au dessin : il se joue sur une scène à
- * part, par-dessus la سبّورة (GeometryDesk), puis s'efface.
+ * part, par-dessus le tableau (GeometryDesk), puis s'efface.
  */
 import { UNITS_PER_CM, angleOf, dist, sub } from './geoMath.js';
 import { RULER_LENGTHS_CM } from './instruments.js';

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import ar from '../../../../i18n/locales/ar/mathlab.json';
+import mathlab from '../../../../i18n/locales/ar/mathlab.json';
 import { MODES, GCD_METHODS, POWER_TABS } from './numberState.js';
 import { MODE_SECTIONS, MODE_GROUPS } from './modeCatalog.js';
 import { divisibilityReason } from './divisibilityReasons.js';
@@ -9,7 +9,7 @@ import * as Q from './bigRational.js';
 import { summarizeNumberLab } from './summarize.js';
 import { createNumberLabData, patchMode, setMode } from './numberState.js';
 
-const L = ar.tools.numberLab;
+const L = mathlab.tools.numberLab;
 const get = (path) => path.split('.').reduce((o, k) => (o == null ? undefined : o[k]), L);
 
 describe('la barre des modes', () => {
@@ -27,7 +27,7 @@ describe('la barre des modes', () => {
   });
 });
 
-describe('les chaînes arabes existent', () => {
+describe('les chaînes françaises existent', () => {
   it('nom court, nom long et description de chaque mode ; titre de chaque groupe', () => {
     for (const mode of MODES) {
       expect(get(`modes.${mode}`), mode).toBeTruthy();
@@ -39,12 +39,17 @@ describe('les chaînes arabes existent', () => {
     for (const tab of POWER_TABS) expect(get(`powers.tabs.${tab}`)).toBeTruthy();
   });
 
-  it('les pluriels arabes ont leurs six formes (« 8 خطوات »، « خطوتان »…)', () => {
+  it('les pluriels français ont leurs deux formes (« 1 étape », « 8 étapes »), et seulement elles', () => {
     for (const key of ['gcdLcm.differences.stepsCount', 'gcdLcm.differences.divisionsCount', 'gcdLcm.squareCount']) {
-      for (const form of ['zero', 'one', 'two', 'few', 'many', 'other']) expect(get(`${key}_${form}`), `${key}_${form}`).toBeTruthy();
+      for (const form of ['one', 'other']) expect(get(`${key}_${form}`), `${key}_${form}`).toBeTruthy();
+      for (const form of ['zero', 'two', 'few', 'many']) expect(get(`${key}_${form}`), `${key}_${form}`).toBeUndefined();
     }
-    expect(get('gcdLcm.differences.stepsCount_few')).toBe('{{count}} خطوات');
-    expect(get('gcdLcm.differences.stepsCount_two')).toBe('خطوتان');
+    expect(get('gcdLcm.differences.stepsCount_one')).toBe('{{count}} étape');
+    expect(get('gcdLcm.differences.stepsCount_other')).toBe('{{count}} étapes');
+  });
+
+  it('aucune lettre arabe dans les chaînes du labo des nombres', () => {
+    expect(JSON.stringify(L)).not.toMatch(/[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]/);
   });
 
   it('chaque code d’erreur des moteurs a sa phrase', () => {
@@ -56,7 +61,7 @@ describe('les chaînes arabes existent', () => {
     for (const rule of ['power', 'multiplyDivide', 'addSubtract', 'removeBrackets']) expect(get(`order.rules.${rule}`)).toBeTruthy();
   });
 
-  it('aucune formule nue « a − b = c » dans une phrase arabe des modes neufs (bidi la retournerait)', () => {
+  it('aucune formule nue « a − b = c » dans une phrase des modes neufs (elle doit être en $…$, rendue d’un bloc)', () => {
     const texts = JSON.stringify([L.division, L.powers, L.order, L.gcdLcm.differences]);
     // Une formule hors de $…$ : deux nombres de part et d'autre d'un opérateur puis « = ».
     const stripped = texts.replace(/\$[^$]*\$/g, '');

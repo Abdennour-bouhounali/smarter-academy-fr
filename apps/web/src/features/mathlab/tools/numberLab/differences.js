@@ -1,5 +1,5 @@
 /**
- * PGCD بالفوارق المتتالية — la méthode des différences successives, logique
+ * PGCD par soustractions successives — la méthode des différences successives, logique
  * pure, sans React.
  *
  *     PGCD(48 ; 18) :  48 − 18 = 30
@@ -17,7 +17,7 @@
  *     `DISPLAY_CAP` ; le nombre TOTAL de pas, lui, est connu sans les faire :
  *     c'est la somme des quotients d'Euclide (chaque division `a = b × q + r`
  *     remplace exactement `q` soustractions de `b`). L'écran peut donc dire
- *     « 999 خطوة، نعرض منها 200 » sans geler, et proposer Euclide.
+ *     « 999 étapes, 200 affichées » sans geler, et proposer Euclide.
  *   - LA COMPARAISON avec Euclide (nombre de pas des deux méthodes).
  *   - LA GÉOMÉTRIE des deux rubans à l'échelle (le petit coupé du grand).
  *   - LA VALIDATION des deux nombres, avec une raison lisible.
@@ -37,7 +37,7 @@ const DIFF_MAX_VALUE = 1_000_000;
  */
 export function readPositiveInteger(raw, { max = DIFF_MAX_VALUE } = {}) {
   const text = typeof raw === 'number' ? String(raw) : String(raw ?? '').trim()
-    .replace(/[٠-٩]/g, (d) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)))
+    .replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x660))
     .replace(/[\s  ]/g, '');
   if (!text) return { error: 'empty' };
   if (!/^[-+]?\d+([.,]\d+)?$/.test(text)) return { error: 'notNumber' };
@@ -97,7 +97,7 @@ export function differencesRun(a, b, { cap = DISPLAY_CAP } = {}) {
   };
 }
 
-/** Les deux méthodes, comptées : « بالفوارق: 8 · بالقسمات: 3 ». */
+/** Les deux méthodes, comptées : « par soustractions : 8 · par divisions : 3 ». */
 export function compareMethods(a, b) {
   if (!Number.isInteger(a) || !Number.isInteger(b) || a <= 0 || b <= 0) return null;
   const euclid = euclidSteps(a, b);

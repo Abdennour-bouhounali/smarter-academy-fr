@@ -4,7 +4,7 @@ import { useTransformContext, vec } from 'mafs';
 /**
  * UNE POIGNÉE : le point qu'on attrape avec le doigt (§6, §47).
  *
- * Même structure que celle du مختبر الأشعة et du مختبر التحويلات, et pour la
+ * Même structure que celle du labo des vecteurs et du labo des transformations, et pour la
  * même raison : un disque VISIBLE de `radius` px, et par-dessus un disque
  * TRANSPARENT de `hitRadius` px (22 par défaut, soit 44 px de diamètre — la
  * cible tactile recommandée). Le dessin ne grossit pas, la cible oui.

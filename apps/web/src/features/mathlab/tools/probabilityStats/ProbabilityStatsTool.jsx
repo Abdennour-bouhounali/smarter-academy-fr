@@ -35,8 +35,8 @@ const DATASET_DEBOUNCE_MS = 250;
 export const WATCH_MAX = 10;
 
 /**
- * الاحتمالات والإحصاء — le laboratoire des probabilités et des statistiques,
- * dans la coquille du مختبر (MathLabToolProps — toolContract.js).
+ * Le laboratoire des probabilités et des statistiques,
+ * dans la coquille de l'atelier (MathLabToolProps — toolContract.js).
  *
  *     choisir une expérience → lancer → voir les données s'accumuler →
  *     comparer au théorique → changer les paramètres → recommencer
@@ -51,7 +51,7 @@ export const WATCH_MAX = 10;
  */
 export default function ProbabilityStatsTool({ initialData, onChange, onReady, capabilities = null }) {
   const { t } = useTranslation('mathlab');
-  // Le مخبر (scope.js) : ce que l'instrument montre — tout, au ثانوي.
+  // Le labo (scope.js) : ce que l'instrument montre — tout, au lycée.
   const features = useMemo(() => probabilityFeatures(capabilities), [capabilities]);
   const [data, setData] = useState(() => clampToFeatures(normalizeProbabilityStatsData(initialData), features));
   const [running, setRunning] = useState(false);
@@ -317,13 +317,13 @@ export default function ProbabilityStatsTool({ initialData, onChange, onReady, c
     [simulation, data.experiment, data.range.min, data.range.max],
   );
 
-  /** L'étiquette d'une issue : « وجه » / « ظهر » pour la pièce, le nombre sinon. */
+  /** L'étiquette d'une issue : « Face » / « Pile » pour la pièce, le nombre sinon. */
   const labelFor = useCallback(
     (row) => (data.experiment === 'coin' ? t(`tools.probabilityStats.coin.${row.key}`) : row.key),
     [data.experiment, t],
   );
 
-  /** Une composante physique en clair : « وجه » / « ظهر » pour la pièce, le nombre sinon. */
+  /** Une composante physique en clair : « Face » / « Pile » pour la pièce, le nombre sinon. */
   const labelForPart = useCallback(
     (part) => (data.experiment === 'coin' ? t(`tools.probabilityStats.coin.${part === 1 ? 'heads' : 'tails'}`) : String(part)),
     [data.experiment, t],
@@ -466,7 +466,7 @@ function ExperimentStage({
   const { t } = useTranslation('mathlab');
   const total = simulation?.total ?? 0;
   const last = simulation?.last ?? null;
-  // La pose de repos des objets : le dernier tirage, ou la face 1 / « وجه » d'un document neuf.
+  // La pose de repos des objets : le dernier tirage, ou la face 1 / « Face » d'un document neuf.
   const idleParts = last?.parts ?? (physical?.count === 2 ? [1, 1] : [1]);
 
   return (
@@ -495,7 +495,7 @@ function ExperimentStage({
             {phase === 'idle' && (last ? (
               <ResultText experiment={experiment} parts={last.parts} labelForPart={labelForPart} />
             ) : (
-              <span>{physical.kind === 'coin' ? '🪙' : '🎲'} {t('tools.probabilityStats.resultLabel')}: —</span>
+              <span>{physical.kind === 'coin' ? '🪙' : '🎲'} {t('tools.probabilityStats.resultLabel')}{'\u00a0:'} —</span>
             ))}
           </p>
         </>
@@ -551,7 +551,7 @@ function ExperimentStage({
 
 /**
  * Le résultat en clair, tel qu'on le lit sur la table :
- *   🎲 النتيجة: 4 · 🎲 4 + 🎲 5 = 9 · 🪙 النتيجة: وجه
+ *   🎲 Résultat : 4 · 🎲 4 + 🎲 5 = 9 · 🪙 Résultat : Face
  * L'égalité des deux dés se lit de gauche à droite, comme toute écriture mathématique.
  */
 function ResultText({ experiment, parts, labelForPart }) {
@@ -566,7 +566,7 @@ function ResultText({ experiment, parts, labelForPart }) {
 
   return (
     <>
-      <span>{experiment === 'coin' ? '🪙' : '🎲'} {t('tools.probabilityStats.resultLabel')}:</span>
+      <span>{experiment === 'coin' ? '🪙' : '🎲'} {t('tools.probabilityStats.resultLabel')}{'\u00a0:'}</span>
       <span className="sa-ml-ps__result-value">{labelForPart(parts[0])}</span>
     </>
   );

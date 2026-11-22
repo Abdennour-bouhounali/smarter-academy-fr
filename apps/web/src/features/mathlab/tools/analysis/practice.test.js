@@ -23,12 +23,12 @@ describe('la saisie d’une réponse', () => {
     ['\\sqrt{4}', 2],
     ['\\pi', Math.PI],
     ['0', 0],
-    // Clavier arabe : chiffres arabes-indiens, persans, virgule décimale « ٫ ».
-    ['٢٫٥', 2.5],
-    ['١٢', 12],
-    ['−٣', -3],
-    ['۱۲', 12],
-    ['٣/٤', 0.75],
+    // Clavier arabe : chiffres arabes-indiens, persans, virgule décimale U+066B.
+    ['\u0662\u066B\u0665', 2.5],
+    ['\u0661\u0662', 12],
+    ['\u2212\u0663', -3],
+    ['\u06F1\u06F2', 12],
+    ['\u0663/\u0664', 0.75],
     // La notation scientifique d'une calculatrice, pas 1 × e × 3.
     ['1e3', 1000],
     ['2.5E-2', 0.025],
@@ -57,7 +57,7 @@ describe('les défis', () => {
     }
   });
 
-  /** §37 : au niveau « programme », on ne pose que ce qui relève de 4AM. */
+  /** §37 : au niveau « programme », on ne pose que ce qui relève du collège. */
   it('ne pose au niveau programme que le taux d’accroissement', () => {
     for (let seed = 1; seed <= 60; seed += 1) {
       const challenge = generateChallenge(seed * 13, { level: 'programme' });
@@ -134,11 +134,11 @@ describe('les défis', () => {
     expect(checkAnswer(sqrtOne, '11').correct).toBe(false);
   });
 
-  /** La question dit « يسارية », et « أرني على الرسم » règle le mode gauche. */
+  /** La question dit « à gauche », et « Montre-moi sur le graphique » règle le mode gauche. */
   it('annonce des rectangles à gauche et règle le laboratoire en conséquence', () => {
     const challenge = generateChallenge(5, { kinds: ['riemannClose'] });
     expect(challenge.focus.riemann.mode).toBe('left');
-    expect(ar.tools.analysis.practice.q.riemannClose).toMatch(/يسارية/);
+    expect(ar.tools.analysis.practice.q.riemannClose).toMatch(/rectangles à gauche/);
   });
 
   /**
@@ -193,15 +193,15 @@ describe('les expériences et les prédictions', () => {
       expect(prediction.choices).toContain(prediction.expected);
       expect(compileSource(prediction.source).ok, prediction.source).toBe(true);
       expect(prediction.setup.lab).toBe(prediction.lab);
-      // Chaque choix a son libellé : « same » (لا تتغيّر) ne répond pas à « مساوية؟ ».
+      // Chaque choix a son libellé : « same » (« Elle ne change pas ») ne répond pas à « égales ? ».
       for (const choice of prediction.choices) expect(ar.tools.analysis.predict.choices[choice], choice).toBeTruthy();
     }
   });
 
   /**
    * La réponse d'une prédiction se CALCULE sur sa propre scène, ici
-   * recalculée à la main : elle ne peut plus dire « تكبر » pour une aire qui
-   * rétrécit, ni « مختلفة » pour une fonction continue.
+   * recalculée à la main : elle ne peut plus dire « Elle augmente » pour une aire qui
+   * rétrécit, ni « Différentes » pour une fonction continue.
    */
   it('calcule la réponse de chaque prédiction sur sa scène', () => {
     const byId = Object.fromEntries(PREDICTIONS.map((prediction) => [prediction.id, prediction]));

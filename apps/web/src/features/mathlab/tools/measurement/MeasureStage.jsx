@@ -9,7 +9,7 @@ import { formatValue } from '../functionGrapher/grapherFormat.js';
  *
  * Tout est DESSINÉ — pas une image, pas une texture. La grille se compte, la
  * poignée se tire, les étiquettes sont du vrai texte du DOM (donc lisible
- * par un lecteur d'écran, et correct en arabe). C'est la règle des
+ * par un lecteur d'écran). C'est la règle des
  * manipulations de la plateforme (MANIPULATION_CONTRACT.md), et elle vaut
  * ici pour la même raison : le dessin n'illustre pas la mesure, il EST la
  * mesure.
@@ -243,7 +243,7 @@ function RectangleScene({ view, toPx, settings }) {
   );
 }
 
-/** Le TOUR du rectangle, ضلعًا بعد ضلع — l'outil « tracer la frontière ». */
+/** Le TOUR du rectangle, côté après côté — l'outil « tracer la frontière ». */
 function BoundaryTrace({ toPx, length, width }) {
   const corners = [{ x: 0, y: 0 }, { x: length, y: 0 }, { x: length, y: width }, { x: 0, y: width }];
 
@@ -507,7 +507,7 @@ function SectorFan({ centre, radiusPx, sectors }) {
  * Le pavé en perspective cavalière — des cubes unités qu'on COMPTE.
  *
  * Ce n'est pas de la 3D : c'est une projection à 30°, dessinée en SVG. Le
- * مختبر a déjà un explorateur 3D (three.js) ; en embarquer un second pour
+ * l'atelier a déjà un explorateur 3D (three.js) ; en embarquer un second pour
  * montrer vingt-quatre petits cubes serait absurde, et l'élève doit COMPTER,
  * pas tourner autour.
  */

@@ -1,5 +1,5 @@
 /**
- * LES MOTS du مختبر المنطق والبرهان.
+ * LES MOTS de l'atelier « Logique et raisonnement ».
  *
  * Une clé manquante ne casse rien : elle s'AFFICHE, telle quelle, en plein
  * milieu de l'écran — « tools.logic.proof.chooseProof » là où l'élève
@@ -33,6 +33,7 @@ const catalog = JSON.parse(readFileSync(resolve(here, '../../../../i18n/locales/
 const lookup = (key) => key.split('.').reduce((node, part) => (node && typeof node === 'object' ? node[part] : undefined), catalog);
 const exists = (key) => typeof lookup(key) === 'string' && lookup(key).length > 0;
 const K = 'tools.logic';
+const ARABIC = /[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]/;
 
 /** Toutes les clés doivent exister ET ne pas être vides. */
 function expectKeys(keys) {
@@ -214,7 +215,7 @@ describe('l’aire de la récurrence (§28)', () => {
     expectKeys(['untested', 'testing', 'correct', 'incorrect'].map((s) => `${K}.induction.status.${s}`));
   });
 
-  it('chaque famille de la grammaire ANNONCÉE a son nom arabe (§7)', () => {
+  it('chaque famille de la grammaire ANNONCÉE a son nom (§7)', () => {
     expectKeys(SUPPORTED_GRAMMAR.map((g) => `${K}.induction.climb.grammar.${g.id}`));
     expectKeys(UNSUPPORTED_NOTES.map((id) => `${K}.induction.climb.unsupported.${id}`));
   });
@@ -269,9 +270,8 @@ describe('l’entraînement : chaque question, chaque indice, chaque explication
 });
 
 /**
- * « قاموس الرموز » — l'instrument garde de la notation latine (∀, ⇒, P, n),
- * parce que c'est celle du manuel ; le dictionnaire est ce qui la rend
- * lisible. Une entrée sans son nom ou sa lecture laisserait un symbole
+ * « Lexique des symboles » — l'instrument écrit de la notation (∀, ⇒, P, n,
+ * V / F) ; le lexique est ce qui la rend lisible. Une entrée sans son nom ou sa lecture laisserait un symbole
  * inexpliqué, c'est-à-dire exactement le problème qu'il vient résoudre.
  */
 describe('le dictionnaire des symboles', () => {
@@ -295,16 +295,18 @@ describe('le dictionnaire des symboles', () => {
 
   it('couvre les symboles que l’instrument affiche vraiment', () => {
     const symbols = new Set(DICTIONARY.map((entry) => entry.symbol));
-    for (const symbol of ['¬', '∧', '∨', '⇒', '⇔', '∀', '∃', '∈', 'ℝ', 'ℕ', 'P', 'Q', 'ص', 'خ']) {
+    for (const symbol of ['¬', '∧', '∨', '⇒', '⇔', '∀', '∃', '∈', 'ℝ', 'ℕ', 'P', 'Q', 'V', 'F']) {
       expect(symbols, `« ${symbol} » n’est pas au dictionnaire`).toContain(symbol);
     }
   });
 
-  it('les noms et lectures sont en ARABE (c’est là toute leur raison d’être)', () => {
+  it('les noms et lectures sont des MOTS français (c’est là toute leur raison d’être)', () => {
     for (const entry of DICTIONARY) {
       for (const field of ['name', 'reading']) {
         const value = lookup(`${K}.dictionary.entries.${entry.id}.${field}`);
-        expect(/[\u0600-\u06FF]/.test(value), `${entry.id}.${field} = ${value}`).toBe(true);
+        // Un mot (pas seulement le symbole recopié) et aucune lettre arabe.
+        expect(/[A-Za-zÀ-ÿ]{3,}/.test(value), `${entry.id}.${field} = ${value}`).toBe(true);
+        expect(ARABIC.test(value), `${entry.id}.${field} = ${value}`).toBe(false);
       }
     }
   });
@@ -312,32 +314,59 @@ describe('le dictionnaire des symboles', () => {
 
 describe('les mots ne mentent pas sur la langue', () => {
   /**
-   * Une PHRASE latine oubliée serait une traduction manquante ; une
-   * NOTATION latine (« P ⇒ Q », « n² = 2(2k²) », « {{solved}} / {{seen}} »)
-   * est au contraire ce qu'il faut écrire — elle sera rendue en `dir="ltr"`.
-   * On distingue les deux par la présence de MOTS : deux lettres latines
-   * consécutives qui ne sont ni une variable (n, k, x, P, Q, A, B, V, F) ni
-   * un marqueur i18n.
+   * L'interface est FRANÇAISE ; la notation (« P ⇒ Q », « n² = 2(2k²) »,
+   * « {{solved}} / {{seen}} ») s'écrit telle quelle. Ce qui ne doit plus
+   * jamais apparaître : une lettre arabe (une traduction oubliée), une marque
+   * de direction invisible héritée de la mise en page arabe, un mot anglais
+   * laissé en attente, une apostrophe droite ou une ponctuation haute collée.
    */
-  const looksLikeProse = (value) => {
-    const withoutPlaceholders = value.replace(/\{\{\w+\}\}/g, '');
-    const words = withoutPlaceholders.match(/[A-Za-z]{2,}/g) ?? [];
+  const values = [];
+  const walk = (node, path) => {
+    if (typeof node === 'string') {
+      values.push([path, node]);
 
-    return words.length > 0;
+      return;
+    }
+    if (node && typeof node === 'object') for (const [k, v] of Object.entries(node)) walk(v, `${path}.${k}`);
   };
+  walk(catalog.tools.logic, 'tools.logic');
+  const offending = (test) => values.filter(([, value]) => test(value)).map(([path, value]) => `${path} = ${value}`);
 
-  it('aucune PHRASE latine oubliée dans le bloc arabe', () => {
-    const suspicious = [];
-    const walk = (node, path) => {
-      if (typeof node === 'string') {
-        if (!/[؀-ۿ]/.test(node) && looksLikeProse(node)) suspicious.push(`${path} = ${node}`);
+  it('le bloc a bien été parcouru', () => {
+    expect(values.length).toBeGreaterThan(600);
+  });
 
-        return;
-      }
-      if (node && typeof node === 'object') for (const [k, v] of Object.entries(node)) walk(v, `${path}.${k}`);
-    };
-    walk(catalog.tools.logic, 'tools.logic');
-    expect(suspicious, suspicious.join(' | ')).toEqual([]);
+  it('aucune lettre arabe dans le bloc', () => {
+    const found = offending((value) => ARABIC.test(value));
+    expect(found, found.join(' | ')).toEqual([]);
+  });
+
+  it('aucune marque de direction invisible (LRM, RLM, isolats)', () => {
+    const found = offending((value) => /[\u200e\u200f\u202a-\u202e\u2066-\u2069]/.test(value));
+    expect(found, found.join(' | ')).toEqual([]);
+  });
+
+  it('aucun mot anglais ni texte d’attente oublié', () => {
+    const placeholder = /\b(the|and|of|is|are|with|not|true|false|TODO|FIXME|TBD|XXX|lorem|ipsum|translate|placeholder)\b/i;
+    const found = offending((value) => placeholder.test(value.replace(/\{\{\w+\}\}/g, '')));
+    expect(found, found.join(' | ')).toEqual([]);
+  });
+
+  it('chaque PHRASE est du français : elle contient un mot-outil français', () => {
+    // Une phrase = au moins cinq mots de deux lettres ou plus ; la notation
+    // pure (« P ⇒ Q », « ¬(P ∧ Q) ») n'en a pas et n'est pas concernée.
+    const glue = /(^|[^A-Za-zÀ-ÿ])(le|la|les|l’|un|une|de|des|du|d’|est|et|ou|à|au|en|pour|par|sur|tu|ta|ton|tes|on|il|elle|si|ce|qui|que|ne|pas|se|sa|son|dans|avec|sans|ces|cette|sont)(?=[^A-Za-zÀ-ÿ]|$)/i;
+    const found = offending((value) => {
+      const words = value.replace(/\{\{\w+\}\}/g, '').match(/[A-Za-zÀ-ÿ’]{2,}/g) ?? [];
+
+      return words.length >= 5 && !glue.test(value);
+    });
+    expect(found, found.join(' | ')).toEqual([]);
+  });
+
+  it('la typographie française : apostrophe courbe, espace fine avant ; ! ?', () => {
+    const found = offending((value) => /[A-Za-zÀ-ÿ]'[A-Za-zÀ-ÿ]/.test(value) || /[A-Za-zÀ-ÿ]{2}[;!?]/.test(value) || / [;!?]/.test(value));
+    expect(found, found.join(' | ')).toEqual([]);
   });
 
   it('aucune valeur vide', () => {
@@ -359,7 +388,7 @@ describe('les mots ne mentent pas sur la langue', () => {
  * L'ESCALIER DES PROPOSITIONS — ses mots.
  *
  * Comme ailleurs dans ce fichier, on parcourt les EXERCICES réels : ajouter
- * un exercice sans son nom arabe ni le texte de ses étapes fait échouer la
+ * un exercice sans son nom ni le texte de ses étapes fait échouer la
  * suite, au lieu d'afficher « tools.logic.induction.exercises.x.name » en
  * plein milieu de l'écran d'un élève.
  */
@@ -383,7 +412,7 @@ describe('l’escalier des propositions (récurrence)', () => {
   });
 
   // §17 — aucun refus ne doit tomber sur une clé absente et montrer du code.
-  it('a une phrase arabe pour CHAQUE code de refus du moteur', () => {
+  it('a une phrase pour CHAQUE code de refus du moteur', () => {
     expectKeys([...FAILURES, 'empty', 'syntax', 'unknownSymbol', 'incomplete', 'relation']
       .map((code) => `${K}.induction.recurrence.errors.${code}`));
   });
@@ -392,7 +421,7 @@ describe('l’escalier des propositions (récurrence)', () => {
     expectKeys(INDUCTION_EXERCISES.map((e) => `${K}.induction.exercises.${e.id}.name`));
   });
 
-  it('a le texte arabe de CHAQUE maillon d’hérédité', () => {
+  it('a le texte de CHAQUE maillon d’hérédité', () => {
     expectKeys(INDUCTION_EXERCISES.flatMap((exercise) => exercise.chain.map(
       (link) => `${K}.induction.exercises.${exercise.id}.steps.${link.id}`,
     )));

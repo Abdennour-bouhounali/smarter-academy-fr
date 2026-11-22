@@ -68,7 +68,7 @@ export const SPECIAL_ANGLES = Object.freeze([
 ]);
 
 /**
- * Les angles AIGUS du programme de 4AM : 30°, 45°, 60° — ceux dont le manuel
+ * Les angles AIGUS du programme du collège : 30°, 45°, 60° — ceux dont le manuel
  * demande les rapports par cœur, et les seuls que l'instrument met en avant
  * dans le mode triangle. Le reste du tour appartient au cercle (lycée).
  */

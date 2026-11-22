@@ -41,7 +41,7 @@ describe('normalizeProposition — l\'élève écrit comme dans son manuel', () 
   });
 
   it('lit les chiffres arabes-indiens', () => {
-    expect(normalizeProposition('٣')).toBe('3');
+    expect(normalizeProposition('\u0663')).toBe('3');
   });
 });
 

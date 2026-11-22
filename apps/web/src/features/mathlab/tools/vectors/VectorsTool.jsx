@@ -25,7 +25,7 @@ import { clampToFeatures, vectorsFeatures } from './scope.js';
 const SERIALIZE_MS = 300;
 
 /**
- * Le مختبر الأشعة dans la coquille du مختبر (MathLabToolProps — toolContract.js).
+ * Le labo des vecteurs dans la coquille de l'atelier (MathLabToolProps — toolContract.js).
  *
  * L'état du document (vectorState.js) vit ICI ; toute la mathématique est
  * dans les modules purs (vectorMath.js, vectorScene.js, analysis.js) que ce
@@ -35,12 +35,12 @@ const SERIALIZE_MS = 300;
  *
  * Deux régimes de modification, et la différence compte :
  *   - un GESTE CONTINU (glisser un point, bouger un curseur) remplace la
- *     scène courante (`replaceScene`) : « تراجع » défait le geste entier ;
+ *     scène courante (`replaceScene`) : « Annuler » défait le geste entier ;
  *   - un ACTE (créer, combiner, supprimer) empile un pas (`pushScene`).
  */
 export default function VectorsTool({ initialData, onChange, onReady, capabilities = null }) {
   const { t } = useTranslation('mathlab');
-  // Le مخبر (scope.js) : au collège, ni k·u, ni v = k·u, ni produit scalaire.
+  // Le labo (scope.js) : au collège, ni k·u, ni v = k·u, ni produit scalaire.
   const features = useMemo(() => vectorsFeatures(capabilities), [capabilities]);
   const [data, setData] = useState(() => clampToFeatures(initialData && Object.keys(initialData).length
     ? normalizeVectorsData(initialData)
@@ -81,7 +81,7 @@ export default function VectorsTool({ initialData, onChange, onReady, capabiliti
   const scene = currentScene(data);
   const resolved = useMemo(() => resolveScene(scene), [scene]);
 
-  // ── La coquille : « إعادة ضبط » repart d'un plan neuf (§29) ────────────
+  // ── La coquille : « Réinitialiser » repart d'un plan neuf (§29) ────────────
   useEffect(() => {
     onReady?.({
       clear: () => {
@@ -133,7 +133,7 @@ export default function VectorsTool({ initialData, onChange, onReady, capabiliti
 
   /**
    * La fin d'un glissement ouvre un NOUVEAU pas : le geste suivant ne
-   * s'écrasera pas sur celui-ci, et « تراجع » revient bien avant ce geste.
+   * s'écrasera pas sur celui-ci, et « Annuler » revient bien avant ce geste.
    */
   const endDrag = useCallback(() => {
     commit((current) => pushScene(current, currentScene(current)));
@@ -317,7 +317,7 @@ export default function VectorsTool({ initialData, onChange, onReady, capabiliti
     [data.selection.points, resolved],
   );
 
-  /** Le شعاع de base d'un شعاع mis à l'échelle — pour écrire « v = k · u ». */
+  /** Le vecteur de base d'un vecteur mis à l'échelle — pour écrire « v = k · u ». */
   const inspectorVectors = useMemo(() => selectedVectors.map((vector) => ({
     ...vector,
     baseName: vector.source.kind === 'scaled' ? resolved.vectors.get(vector.source.of)?.name ?? 'u' : null,
@@ -352,7 +352,7 @@ export default function VectorsTool({ initialData, onChange, onReady, capabiliti
       const [a, b, c] = selectedPoints;
       const verdict = analyseCollinearity(a.position, b.position, c.position);
       if (verdict) {
-        out.collinear = { ...verdict, anchor: a.position, names: `${a.name}، ${b.name}، ${c.name}` };
+        out.collinear = { ...verdict, anchor: a.position, names: `${a.name}, ${b.name} et ${c.name}` };
       }
     }
 
@@ -392,7 +392,7 @@ export default function VectorsTool({ initialData, onChange, onReady, capabiliti
           )}
         </VectorPlane>
 
-        {/* تراجع / إعادة, posés sur le plan : la main y est déjà (§30). */}
+        {/* Annuler / Rétablir, posés sur le plan : la main y est déjà (§30). */}
         <div className="sa-ml-vec__history" role="group" aria-label={t('tools.vectors.historyLabel')}>
           <button
             type="button"

@@ -1,5 +1,5 @@
 /**
- * L'ÉTAT du مختبر المنطق : le document, sa frontière, ses transitions.
+ * L'ÉTAT de l'atelier de logique : le document, sa frontière, ses transitions.
  *
  * Deux exigences du cahier des charges sont vérifiées ici plutôt que relues :
  * §54 (le laboratoire ouvre sur une EXPÉRIENCE, pas sur un menu) et la règle
@@ -283,7 +283,7 @@ describe('les transitions — pures, et jamais destructrices par surprise', () =
     expect(JSON.stringify(base)).toBe(snapshot);
   });
 
-  it('« مسح الكل » rend exactement un document neuf', () => {
+  it('« Tout recommencer » rend exactement un document neuf', () => {
     expect(clearLogicData()).toEqual(createLogicData());
   });
 });
@@ -359,7 +359,7 @@ describe('l’escalier : son état et ses transitions', () => {
     expect(setStairsMode(base, 'triche')).toBe(base);
   });
 
-  it('« أعِد الاختبار » efface les verdicts mais GARDE la règle', () => {
+  it('« Reprendre le test depuis le début » efface les verdicts mais GARDE la règle', () => {
     let data = setStairsRule(base, 'n^2');
     data = recordStairVerdict(data, 0, 'correct');
     const reset = resetStairs(data);

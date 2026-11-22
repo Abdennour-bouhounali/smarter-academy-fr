@@ -17,8 +17,8 @@ const expectPoint = (actual, expected) => {
   expect(actual.y).toBeCloseTo(expected.y, 12);
 };
 
-describe('الانسحاب — translation', () => {
-  it('ajoute les composantes du شعاع', () => {
+describe('la translation', () => {
+  it('ajoute les composantes du vecteur', () => {
     const t = M.translation(3, -2);
     expectPoint(M.applyMatrix(t, at(2, 5)), at(5, 3));
     expectPoint(M.applyMatrix(t, at(-1, 0)), at(2, -2));
@@ -42,7 +42,7 @@ describe('الانسحاب — translation', () => {
   });
 });
 
-describe('الدوران — rotation', () => {
+describe('la rotation', () => {
   it('90° autour de l’origine : (x,y) → (−y,x), EXACTEMENT', () => {
     const r = M.rotation(90);
     const image = M.applyMatrix(r, at(3, 1));
@@ -107,7 +107,7 @@ describe('الدوران — rotation', () => {
   });
 });
 
-describe('التناظر المحوري — réflexion', () => {
+describe('la symétrie axiale — réflexion', () => {
   it('axe des abscisses : (x,y) → (x,−y)', () => {
     const image = M.applyMatrix(M.reflection(M.horizontalLine(0)), at(3, 4));
     expect(image.x).toBe(3);
@@ -177,7 +177,7 @@ describe('التناظر المحوري — réflexion', () => {
   });
 });
 
-describe('التحاكي — homothétie', () => {
+describe('l’homothétie', () => {
   it('k = 2 autour de l’origine double les coordonnées', () => {
     expectPoint(M.applyMatrix(M.dilation(2), at(3, -1)), at(6, -2));
   });
@@ -246,7 +246,7 @@ describe('composition (§20, §23)', () => {
     expectPoint(M.applyMatrix(M.composeAll([]), at(4, 4)), at(4, 4));
   });
 
-  it('l’ORDRE compte : انسحاب puis دوران ≠ دوران puis انسحاب (§23)', () => {
+  it('l’ORDRE compte : translation puis rotation ≠ rotation puis translation (§23)', () => {
     const t = M.translation(3, 0);
     const r = M.rotation(90);
     const first = M.applyMatrix(M.composeAll([t, r]), at(0, 0));   // T puis R

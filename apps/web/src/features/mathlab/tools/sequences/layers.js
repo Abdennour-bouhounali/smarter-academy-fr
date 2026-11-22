@@ -1,5 +1,5 @@
 /**
- * LES COUCHES du مختبر المتتاليات — le vocabulaire visuel de l'instrument.
+ * LES COUCHES du labo des suites — le vocabulaire visuel de l'instrument.
  *
  * Module FEUILLE : il n'importe rien. `presets.js` a besoin de la liste et
  * `sequenceState.js` a besoin des préréglages ; mettre la liste dans l'état
@@ -16,11 +16,11 @@
  * Tout ce qui INTERPRÈTE attend d'être demandé : la toile d'araignée, les
  * points fixes, les sommes partielles, les sous-suites, la comparaison. Ce
  * ne sont pas des détails avancés par timidité — ce sont les couches qui
- * dépassent le programme de 4AM (voir §5h.1 de MATH_LAB.md), et la règle de
+ * dépassent le programme du collège (voir §5h.1 de MATH_LAB.md), et la règle de
  * la plateforme est qu'elles existent sans jamais prendre le premier écran.
  *
  * `differences` est la SEULE lecture allumée d'emblée, et c'est un choix de
- * programme : « الفروق المتتالية » est le geste du manuel de 4AM (LP 2.1).
+ * programme : « différences successives » est le geste du manuel du collège.
  * L'élève voit donc, sans rien cliquer, que la différence est constante.
  */
 
@@ -34,7 +34,7 @@ export const DEFAULT_LAYERS = Object.freeze({
 
   // Les lectures sur les termes.
   table: true,
-  differences: true,   // le geste du programme de 4AM (LP 2.1)
+  differences: true,   // le geste du programme du collège
   ratios: false,
   sums: false,         // §36
   secondDifferences: false,  // §41

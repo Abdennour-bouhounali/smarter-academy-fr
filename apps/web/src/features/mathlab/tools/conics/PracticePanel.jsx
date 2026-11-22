@@ -12,12 +12,12 @@ import { formatValue } from '../functionGrapher/grapherFormat.js';
  * L'ENTRAÎNEMENT (§36 – §42) — prédire, révéler, vérifier.
  *
  * ── Ce panneau ne BLOQUE jamais ──────────────────────────────────────────
- * C'est la règle du مختبر, tenue par la trigonométrie, les suites et les
- * تحويلات avant lui : une réponse fausse ne ferme aucune porte. Elle montre
+ * C'est la règle de l'atelier, tenue par la trigonométrie, les suites et les
+ * transformations avant lui : une réponse fausse ne ferme aucune porte. Elle montre
  * la bonne réponse, la géométrie se met en évidence sur le plan (le parent
- * s'en charge via `revealFor`), et le bouton « السؤال التالي » reste là.
+ * s'en charge via `revealFor`), et le bouton « Question suivante » reste là.
  * §42 est explicite : l'élève doit pouvoir quitter l'entraînement à tout
- * moment et retrouver son plan intact — d'où « الخروج من التدرّب », toujours
+ * moment et retrouver son plan intact — d'où « Quitter l’entraînement », toujours
  * visible.
  *
  * ── Les indices ne donnent pas la réponse (§40) ──────────────────────────

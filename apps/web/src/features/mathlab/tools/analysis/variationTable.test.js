@@ -4,7 +4,7 @@ import { buildScene } from './buildScene.js';
 import { createAnalysisData, setSource, setLab } from './analysisState.js';
 import { layersForLab } from './layers.js';
 
-/** Le tableau tel que le laboratoire « دراسة الدالة » le construit. */
+/** Le tableau tel que le laboratoire « Étude de fonction » le construit. */
 const tableFor = (source, view) => {
   let data = setSource(createAnalysisData(), 'f', source);
   data = { ...setLab(data, 'study'), layers: layersForLab('study', data.layers) };
@@ -17,7 +17,7 @@ const arrows = (table) => table.intervals.map((interval) => interval.direction);
 const positions = (table) => table.columns.map((column) => (column.middle ? 'middle' : column.high ? 'high' : 'low'));
 const signs = (table) => table.intervals.map((interval) => interval.sign);
 
-describe('جدول التغيّرات', () => {
+describe('tableau de variations', () => {
   it('lit une parabole : descend jusqu’au minimum, puis monte', () => {
     const table = tableFor('x^2-4x+3', { xMin: -1, xMax: 5, yMin: -3, yMax: 6 });
     expect(table.ok).toBe(true);
@@ -155,7 +155,7 @@ describe('جدول التغيّرات', () => {
   });
 });
 
-describe('la construction pas à pas du جدول التغيّرات', () => {
+describe('la construction pas à pas du tableau de variations', () => {
   const VIEW = { xMin: -1, xMax: 5, yMin: -3, yMax: 6 };
   const sceneFor = (source, view = VIEW) => {
     let data = setSource(createAnalysisData(), 'f', source);

@@ -14,10 +14,10 @@ import {
 import { divisionFrames, divisionDrawStage, divisionProblem } from './divisionFrames.js';
 
 /**
- * القسمة الإقليدية — a = b × q + r, 0 ≤ r < b.
+ * Division euclidienne — a = b × q + r, 0 ⩽ r < b.
  *
  * La division se CONSTRUIT au tableau (MathBoard, frames de `divisionFrames.js`),
- * déroulée par le lecteur partagé : a et b désignés → combien de rzam de b
+ * déroulée par le lecteur partagé : a et b désignés → combien de paquets de b
  * tiennent dans a (q) → ce qui reste (r) → l'égalité, pièce par pièce → la
  * condition `0 ≤ r < b`, DERNIER pas. Ni q ni r ne sont écrits avant leur pas.
  *
@@ -26,7 +26,7 @@ import { divisionFrames, divisionDrawStage, divisionProblem } from './divisionFr
  * groupés par b quand q tombe, puis le reste en orange quand r tombe. Petit
  * a : des cubes qu'on compte ; grand a : un ruban à l'échelle, coupé tous les b.
  *
- * Le mode « العمليات » garde sa lecture de la division (partage/groupement
+ * Le mode « Opérations » garde sa lecture de la division (partage/groupement
  * sur des jetons) ; celui-ci est la division EUCLIDIENNE du programme de 4AM.
  */
 export default function DivisionMode({ state, onChange, compact }) {
@@ -88,10 +88,10 @@ export default function DivisionMode({ state, onChange, compact }) {
           {/* « D'un seul regard » (MATH_LAB §3.5) : le dessin AU-DESSUS du tableau
               qui le calcule — les paquets et le pas courant dans le même regard. */}
           <div className="sa-ml-nb__duo" dir="ltr">
-            <div className="sa-ml-nb__duo-figure" dir="rtl">
+            <div className="sa-ml-nb__duo-figure">
               <DivisionDrawing layout={layout} division={division} compact={compact} stage={stage} />
             </div>
-            <div className="sa-ml-nb__board sa-ml-nb__duo-board" dir="rtl" {...(done ? { 'data-ml-nb-division-result': '', 'data-q': division.q, 'data-r': division.r } : {})}>
+            <div className="sa-ml-nb__board sa-ml-nb__duo-board" {...(done ? { 'data-ml-nb-division-result': '', 'data-q': division.q, 'data-r': division.r } : {})}>
               <MathBoard {...practice.board} frames={frames} cursor={player.cursor} problem={divisionProblem(a, b)} dataAttr="data-ml-nb-division-frame" />
             </div>
           </div>

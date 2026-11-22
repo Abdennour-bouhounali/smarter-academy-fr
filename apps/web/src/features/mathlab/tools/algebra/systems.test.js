@@ -65,7 +65,7 @@ describe('systems — verdicts et méthodes', () => {
     expect(eliminationSteps(eq('x = 2'), eq('y = 3'))).toMatchObject({ kind: 'unique', x: r(2), y: r(3) });
   });
 
-  it('sur 500 جمل tirées au hasard, les deux méthodes aboutissent au couple de classifySystem', () => {
+  it('sur 500 systèmes tirés au hasard, les deux méthodes aboutissent au couple de classifySystem', () => {
     let seed = 3;
     const random = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
     const int = () => Math.floor(random() * 13) - 6;
@@ -101,7 +101,7 @@ describe('systems — verdicts et méthodes', () => {
 describe('systems — le tableau (frames), geste par geste', () => {
   const lines = (frames) => frames.filter((f) => f.settle).map((f) => f.settle);
 
-  it('الجمع sur x + y = 10, x − y = 2 : ±y désignés → ↓0 → (x + y) + (x − y) = 10 + 2 → 2x = 12 → x = 6 → 6 + y = 10 → y = 4 → (6 ; 4) en dernier', () => {
+  it('combinaison sur x + y = 10, x − y = 2 : ±y désignés → ↓0 → (x + y) + (x − y) = 10 + 2 → 2x = 12 → x = 6 → 6 + y = 10 → y = 4 → (6 ; 4) en dernier', () => {
     const e1 = eq('x + y = 10');
     const e2 = eq('x - y = 2');
     const frames = eliminationFrames(eliminationSteps(e1, e2), e1, e2);
@@ -126,7 +126,7 @@ describe('systems — le tableau (frames), geste par geste', () => {
     expect(frames.slice(0, -1).some((f) => JSON.stringify(f).includes('\\left(6\\,;\\,4\\right)'))).toBe(false);
   });
 
-  it('التعويض : isoler, remplacer, développer, résoudre, revenir — puis le couple', () => {
+  it('substitution : isoler, remplacer, développer, résoudre, revenir — puis le couple', () => {
     const e1 = eq('x + y = 10');
     const e2 = eq('x - y = 2');
     const frames = substitutionFrames(substitutionSteps(e1, e2), e1);
@@ -143,14 +143,14 @@ describe('systems — le tableau (frames), geste par geste', () => {
     ]);
   });
 
-  it('البياني : droite (1), droite (2), le point, la lecture — le plan suit `draw`', () => {
+  it('graphique : droite (1), droite (2), le point, la lecture — le plan suit `draw`', () => {
     const frames = graphicalFrames(eq('x + y = 10'), eq('x - y = 2'));
     expect(validateFrames(frames)).toEqual([]);
     expect(frames.map((f) => f.draw)).toEqual([1, 2, 3, 4]);
     expect(graphicalFrames(eq('x + 2y = 4'), eq('2x + 4y = 3')).map((f) => f.draw)).toEqual([1, 2, 2]);
   });
 
-  it('chaque exemple, chaque méthode, 300 جمل au hasard : un tableau sain qui finit sur le verdict', () => {
+  it('chaque exemple, chaque méthode, 300 systèmes au hasard : un tableau sain qui finit sur le verdict', () => {
     for (const example of SYSTEM_EXAMPLES) {
       const e1 = eq(example.first);
       const e2 = eq(example.second);

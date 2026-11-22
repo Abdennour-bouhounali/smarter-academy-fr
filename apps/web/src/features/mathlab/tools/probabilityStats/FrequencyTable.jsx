@@ -3,8 +3,8 @@ import { formatValue } from '../functionGrapher/grapherFormat.js';
 
 /**
  * LE TABLEAU DES EFFECTIFS — la représentation textuelle de tous les
- * graphiques (§ 31) : valeur ou classe, التكرار (effectif), التواتر
- * (fréquence, %), التكرار المجمّع الصاعد (effectifs cumulés croissants) et,
+ * graphiques (§ 31) : valeur ou classe, effectif, fréquence (%),
+ * effectifs cumulés croissants et,
  * pour le diagramme circulaire, l'angle 360° × f. Une ligne focalisée ou
  * survolée éclaire sa barre, son secteur, ses valeurs dans la série ordonnée.
  */

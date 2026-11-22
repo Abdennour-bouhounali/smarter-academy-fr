@@ -219,7 +219,7 @@ describe('le moteur de simulation', () => {
       expect(a + b - 2).toBe(after.last.index);
       expect(after.counts[after.last.index]).toBe(1);
     }
-    // La pièce : 0 = ظهر, 1 = وجه ; le générateur : le nombre lui-même.
+    // La pièce : 0 = Pile, 1 = Face ; le générateur : le nombre lui-même.
     const coin = runBatch(createSimulation('coin', {}, 3), 1);
     expect([0, 1]).toContain(coin.last.parts[0]);
     const params = { min: 10, max: 12 };

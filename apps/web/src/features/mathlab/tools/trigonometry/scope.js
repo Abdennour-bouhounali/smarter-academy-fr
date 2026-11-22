@@ -3,9 +3,9 @@ import { CURRICULUM_ANGLES, SPECIAL_DEGREES } from './exactValues.js';
 import { PRESETS } from './presets.js';
 
 /**
- * مختبر المثلثات dans les deux مخابر (labScope.js, MATH_LAB.md §2.1).
+ * labo de trigonométrie dans les deux labos (labScope.js, MATH_LAB.md §2.1).
  *
- * Au collège (4AM 4.2–4.3) : les rapports trigonométriques d'un angle AIGU
+ * Au collège (cycle 4) : les rapports trigonométriques d'un angle AIGU
  * dans un triangle rectangle — sin, cos, tan —, leurs valeurs exactes à 30°,
  * 45°, 60° et leurs relations (tan = sin/cos). Le cercle trigonométrique, les
  * radians, les quadrants et les signes, la rotation, la périodicité, les
@@ -49,7 +49,7 @@ export function trigonometryFeatures(capabilities) {
 }
 
 /**
- * Un état ramené à ce que le مخبر montre : au collège, le triangle, les
+ * Un état ramené à ce que le labo montre : au collège, le triangle, les
  * degrés, et ni symétrie, ni réciproque, ni comparaison allumées. Les
  * valeurs du triangle sont GARDÉES.
  */

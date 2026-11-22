@@ -35,7 +35,7 @@ describe('la scène résolue', () => {
   /**
    * §16 : les bascules commandent ce qui se DESSINE, pas ce qu'on SAIT.
    *
-   * La QA visuelle a vu « لا تقطع المنحنى محور الفواصل » — aucune racine —
+   * La QA visuelle a vu « La courbe ne coupe pas l’axe des abscisses » — aucune racine —
    * affiché pour x² − 4x + 3, dont les racines 1 et 3 traversent l'écran,
    * simplement parce que la mise en évidence venait d'être éteinte. Une
    * réponse fausse à une question de mathématiques, causée par un réglage

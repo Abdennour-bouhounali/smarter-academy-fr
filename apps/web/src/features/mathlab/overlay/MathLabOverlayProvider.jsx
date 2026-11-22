@@ -1,7 +1,7 @@
 import { Suspense, createContext, lazy, useCallback, useContext, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 /**
- * La racine d'une séance de وضع القسم EN COURS, ou `document.body`.
+ * La racine d'une séance de mode classe EN COURS, ou `document.body`.
  *
  * Pourquoi on la cherche dans le DOM plutôt qu'avec `useClassroomPortalTarget()` :
  * ce fournisseur est monté AU-DESSUS du routeur (pour que la leçon ne soit
@@ -61,7 +61,7 @@ function OverlayLoading() {
 }
 
 /**
- * LE مختبر OUVERT PAR-DESSUS LA LEÇON — une seule instance, montée au-dessus
+ * LE atelier OUVERT PAR-DESSUS LA LEÇON — une seule instance, montée au-dessus
  * du routeur, exactement comme le cahier (NotebookProvider).
  *
  * ── Pourquoi au-dessus du routeur ────────────────────────────────────────
@@ -75,17 +75,17 @@ function OverlayLoading() {
  *
  * ── Ce que ce fournisseur porte ──────────────────────────────────────────
  *  - `tool` : l'instrument ouvert (`null` = fermé, `'#picker'` = le choix) ;
- *  - l'élément qui a ouvert le مختبر, pour LUI RENDRE le focus en fermant
+ *  - l'élément qui a ouvert l’atelier, pour LUI RENDRE le focus en fermant
  *    (§9 du brief) — un `ref`, jamais de l'état : le rendre ne regarde pas.
  *
  * Le plein écran, lui, appartient au calque (MathLabOverlay) : c'est lui qui
  * possède l'élément que le navigateur met en plein écran.
  *
- * ── Le plein écran du مختبر n'est PAS « وضع القسم » ──────────────────────
+ * ── Le plein écran de l’atelier n'est PAS « mode classe » ──────────────────────
  * Deux notions distinctes, et ce fichier ne connaît que la première :
  *
- *   plein écran du مختبر  → élève ET enseignant, aucune permission
- *   وضع القسم (présentation) → canPresentClassroom(), inchangé
+ *   plein écran de l’atelier  → élève ET enseignant, aucune permission
+ *   mode classe (présentation) → canPresentClassroom(), inchangé
  *
  * Rien ici n'importe `packages/core/auth.js` : donner de la place à un
  * instrument n'est pas présenter à une classe.
@@ -95,9 +95,9 @@ const MathLabOverlayContext = createContext(null);
 export function MathLabOverlayProvider({ children }) {
   // `null` fermé · PICKER le sélecteur · sinon l'id de l'instrument.
   const [tool, setTool] = useState(null);
-  // Le مخبر proposé par le sélecteur (MATH_LAB.md §2.1) : celui de la leçon
+  // L’atelier proposé par le sélecteur (MATH_LAB.md §2.1) : celui de la leçon
   // qui ouvre le calque, ou null — le calque retombe alors sur le dernier
-  // choisi. Une simple chaîne ici : la logique des مخابر (labScope.js) vit
+  // choisi. Une simple chaîne ici : la logique des ateliers (labScope.js) vit
   // dans le calque, chargé à la demande.
   const [scope, setScope] = useState(null);
   const openerRef = useRef(null);

@@ -1,5 +1,5 @@
 /**
- * L'ENTRAÎNEMENT « prédire → révéler → vérifier » (§27) du مختبر المتتاليات.
+ * L'ENTRAÎNEMENT « prédire → révéler → vérifier » (§27) du labo des suites.
  *
  * §27 fixe ce que ce module doit être ET ce qu'il ne doit pas devenir :
  *   « The student can always retry · Wrong answers must not block exploration »
@@ -178,18 +178,18 @@ export const BEHAVIOUR_CHOICES = Object.freeze(['increasing', 'decreasing', 'alt
  * calculées sur la forme fermée, pas lues sur quelques termes.
  *
  * Les cinq étiquettes ne s'excluent PAS : une suite arithmétique de raison 4
- * est متزايدة ET تتباعد ; une géométrique de raison 0,5 et de premier terme
- * positif est متناقصة ET تقترب من قيمة. Le défi n'en désignait qu'une, et
+ * est croissante ET divergente ; une géométrique de raison 0,5 et de premier terme
+ * positif est décroissante ET convergente. Le défi n'en désignait qu'une, et
  * l'élève qui choisissait l'autre — tout aussi vraie — recevait « faux ».
  * C'est une fausseté enseignée, pas une sévérité.
  *
  * Le sens de chaque étiquette (mathlab.json) :
- *   increasing  متزايدة           uₙ₊₁ − uₙ > 0 pour tout n
- *   decreasing  متناقصة           uₙ₊₁ − uₙ < 0 pour tout n
- *   alternating متناوبة الإشارة   uₙ · uₙ₊₁ < 0 pour tout n
- *   approaching تقترب من قيمة     la suite converge (limite finie)
- *   diverging   تتباعد            la suite ne converge pas — au sens du
- *                                 programme : « متباعدة » = non convergente,
+ *   increasing  croissante           uₙ₊₁ − uₙ > 0 pour tout n
+ *   decreasing  décroissante           uₙ₊₁ − uₙ < 0 pour tout n
+ *   alternating de signe alterné   uₙ · uₙ₊₁ < 0 pour tout n
+ *   approaching convergente     la suite converge (limite finie)
+ *   diverging   divergente            la suite ne converge pas — au sens du
+ *                                 programme : « divergente » = non convergente,
  *                                 d'où (−1)ⁿ, qui oscille sans limite, en fait partie.
  *
  * @returns {string[]|null} `null` si la famille n'est pas couverte.
@@ -295,7 +295,7 @@ function findRuleChallenge(rng, difficulty) {
     const ratio = pick(rng, [2, 3, -2]);
     const spec = { kind: 'geometric', startIndex: 0, first, ratio };
     const shown = generate({ kind: 'geometric', startIndex: 0, initial: [first], ratio }, 4)
-      .terms.map((term) => formatTerm(term.value)).join(' · ');
+      .terms.map((term) => formatTerm(term.value)).join('  ; ');
 
     return baseChallenge(spec, {
       kind: 'findRule',
@@ -311,7 +311,7 @@ function findRuleChallenge(rng, difficulty) {
   const difference = nonZero(rng, difficulty === 'easy' ? 5 : 9);
   const spec = { kind: 'arithmetic', startIndex: 0, first, difference };
   const shown = generate({ kind: 'arithmetic', startIndex: 0, initial: [first], difference }, 4)
-    .terms.map((term) => formatTerm(term.value)).join(' · ');
+    .terms.map((term) => formatTerm(term.value)).join('  ; ');
 
   return baseChallenge(spec, {
     kind: 'findRule',
@@ -328,9 +328,9 @@ function findRuleChallenge(rng, difficulty) {
 /**
  * La lecture d'une réponse (§27).
  *
- * Un élève écrit `17`, `−2,5`, `1/2`, `٣`, `0.5`. Toutes ces écritures disent
+ * Un élève écrit `17`, `−2,5`, `1/2`, `\u0663` (chiffre arabe-indien), `0.5`. Toutes ces écritures disent
  * la même chose et sont acceptées ; la comparaison est NUMÉRIQUE. Refuser
- * « 0,5 » quand on attend « 1/2 » n'enseignerait rien sur les متتاليات —
+ * « 0,5 » quand on attend « 1/2 » n'enseignerait rien sur les suites —
  * seulement sur le parseur.
  *
  * Aucun `eval` : on lit quatre formes au motif, rien de plus.
@@ -341,9 +341,9 @@ export function parseAnswer(text) {
 
   const source = text
     .trim()
-    .replace(/[٠-٩]/g, (digit) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(digit)))
+    .replace(/[\u0660-\u0669]/g, (digit) => String(digit.charCodeAt(0) - 0x0660))
     .replace(/[−–—]/g, '-')
-    .replace(/،/g, ',')
+    .replace(/\u060C/g, ',')
     .replace(/\s| /g, '')
     .replace(',', '.');
   if (!source) return NaN;
@@ -417,7 +417,7 @@ export function relativeTolerance(expected) {
  * §29 est explicite — ne pas dire « Incorrect » mais montrer le raisonnement,
  * « use the actual sequence state to explain ». Ce module rend donc la
  * matière de l'explication (les termes) et non une phrase : l'interface
- * l'affiche en arabe, et la mathématique reste ici.
+ * l'affiche en français, et la mathématique reste ici.
  *
  * @returns {{ terms: Array<{n, value}>, expected: number|string, truncated: boolean } | null}
  */

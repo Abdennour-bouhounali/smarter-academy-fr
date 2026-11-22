@@ -1,8 +1,8 @@
 /**
- * Les BASCULES du مختبر التحليل — un module FEUILLE, sans import.
+ * Les BASCULES du labo d’analyse — un module FEUILLE, sans import.
  *
  * Chaque couche est une chose qu'on peut allumer sur le graphe. Elles vivent
- * ici, à part de l'état, pour la même raison que dans le مختبر المثلثات : le
+ * ici, à part de l'état, pour la même raison que dans le labo de trigonométrie : le
  * composant, l'état, le résumé et les tests ont tous besoin de la LISTE, et
  * aucun ne doit dépendre des autres pour l'obtenir.
  *

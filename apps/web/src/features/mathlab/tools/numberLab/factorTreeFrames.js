@@ -36,7 +36,7 @@ export function factorTreeFrames(tree) {
       b: 'p',
       symbolLatex: '\\div',
       resultLatex: String(q),
-      // « تدرّب بنفسك » : le nombre à fendre et son plus petit facteur premier, puis « ÷ ».
+      // « Entraîne-toi » : le nombre à fendre et son plus petit facteur premier, puis « ÷ ».
       task: makeTask({ targets: ['n', 'p'], operator: '\\div', promptKey: `${PRACTICE}.tree`, promptParams: { n } }),
       settle: `${root} = ${stage.leaves.join(' \\times ')}`,
       texts: {

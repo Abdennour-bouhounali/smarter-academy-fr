@@ -1,6 +1,6 @@
 /**
  * LE MODÈLE : une spécification ENREGISTRÉE (`SequenceSpec`, du JSON) devient
- * une متتالية VIVANTE (une définition, des termes, des lectures).
+ * une suite VIVANTE (une définition, des termes, des lectures).
  *
  * C'est la charnière entre `sequenceState.js` (ce qu'on stocke) et
  * `sequenceMath.js` (ce qu'on calcule). Elle existe pour une raison précise :

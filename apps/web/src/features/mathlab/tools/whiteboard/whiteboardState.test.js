@@ -4,7 +4,7 @@ import {
   toExcalidrawInitialData, isWhiteboardEmpty, whiteboardChangeSignature,
 } from './whiteboardState.js';
 
-describe('état de la سبّورة', () => {
+describe('état du tableau', () => {
   it('a une version de format entière', () => {
     expect(Number.isInteger(WHITEBOARD_SCHEMA_VERSION)).toBe(true);
   });

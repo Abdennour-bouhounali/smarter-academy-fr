@@ -5,7 +5,7 @@ import { MODES } from './numberState.js';
 import { NumberLabModesContext } from './scope.js';
 
 /**
- * « أرسِل إلى » — LE PONT entre les modes (§46).
+ * « Envoyer vers » — LE PONT entre les modes (§46).
  *
  * C'est la pièce qui fait des treize modes UN laboratoire plutôt que treize
  * outils : on explore 360, on l'envoie au crible, du crible à l'arbre de
@@ -39,7 +39,7 @@ export default function SendToMenu({ value, onSend, exclude = null, label = null
     };
   }, [open]);
 
-  // Seulement vers les modes que le مخبر montre (scope.js).
+  // Seulement vers les modes que le labo montre (scope.js).
   const open_ = useContext(NumberLabModesContext);
   const targets = RECEIVERS.filter((mode) => mode !== exclude && MODES.includes(mode) && open_.includes(mode));
   if (!Number.isFinite(value) || targets.length === 0) return null;

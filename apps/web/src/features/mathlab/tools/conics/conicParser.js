@@ -282,8 +282,8 @@ function parseError(code, detail = null) {
 /**
  * Le TOKENISEUR — il connaît six sortes de lexèmes et rien d'autre.
  *
- * La virgule décimale arabe/française est acceptée (`2,5`) : l'élève écrit
- * comme il lit (ARABIC_RTL_CONTRACT), et le point l'est aussi.
+ * La virgule décimale est acceptée (`2,5`) : l'élève écrit comme il lit
+ * (FRENCH_LANGUAGE_CONTRACT §5), et le point l'est aussi.
  */
 function tokenize(source) {
   const tokens = [];
@@ -291,9 +291,9 @@ function tokenize(source) {
     .replace(/[−–—]/g, '-') // le vrai signe moins typographique
     .replace(/[×·]/g, '*')
     .replace(/[÷]/g, '/')
-    .replace(/[٫]/g, ',') // la virgule décimale arabe
+    .replace(/[\u066B]/g, ',') // la virgule décimale arabe
     .replace(/²/g, '^2')
-    .replace(/[٠-٩]/g, (d) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(d))); // chiffres arabo-hindis
+    .replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x0660)); // chiffres arabo-hindis
   let i = 0;
   while (i < text.length) {
     const ch = text[i];

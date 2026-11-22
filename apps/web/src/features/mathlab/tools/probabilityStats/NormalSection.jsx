@@ -92,11 +92,11 @@ function ParamField({ name, symbol, value, min, max, step, validate, onApply }) 
   );
 }
 
-const QUERY_LATEX = { le: 'P(X \\le x)', ge: 'P(X \\ge x)', between: 'P(a \\le X \\le b)' };
+const QUERY_LATEX = { le: 'P(X \\leqslant x)', ge: 'P(X \\geqslant x)', between: 'P(a \\leqslant X \\leqslant b)' };
 
 /**
- * التوزيع الطبيعي — la loi normale : choisir μ, σ et une question, VOIR
- * l'aire, lire le calcul (z puis Φ). Au-delà du programme de 4AM : la
+ * La loi normale : choisir μ, σ et une question, VOIR
+ * l'aire, lire le calcul (z puis Φ). Au-delà du programme du collège : la
  * section n'est jamais celle qui s'ouvre par défaut.
  *
  * Deux régimes (exigence 2026-09-30) :
@@ -108,8 +108,8 @@ const QUERY_LATEX = { le: 'P(X \\le x)', ge: 'P(X \\ge x)', between: 'P(a \\le X
  *     règle (P = Φ(z)) ; le bandeau du résultat pose la question
  *     « P(X ≤ 170) = ? » jusqu'au dernier frame.
  * Toute nouvelle question (μ, σ, x, a, b, type) ramène à l'énoncé ; l'élève
- * relance avec « ابدأ الحل ». L'axe X / Z n'est PAS la question (l'aire ne
- * change pas, c'est ce que « لماذا نحوّل إلى Z؟ » invite à vérifier) : le
+ * relance avec « Commencer le calcul ». L'axe X / Z n'est PAS la question (l'aire ne
+ * change pas, c'est ce que « Pourquoi passer à Z ? » invite à vérifier) : le
  * basculer garde le pas courant.
  */
 export default function NormalSection({ title, normal, compact, reducedMotion, onChange }) {
@@ -278,7 +278,7 @@ export default function NormalSection({ title, normal, compact, reducedMotion, o
           <tbody>
             {rule.map((row) => (
               <tr key={row.k}>
-                <th scope="row" dir="ltr"><MathText>{`$P(\\mu - ${row.k === 1 ? '' : row.k}\\sigma \\le X \\le \\mu + ${row.k === 1 ? '' : row.k}\\sigma)$`}</MathText></th>
+                <th scope="row" dir="ltr"><MathText>{`$P(\\mu - ${row.k === 1 ? '' : row.k}\\sigma \\leqslant X \\leqslant \\mu + ${row.k === 1 ? '' : row.k}\\sigma)$`}</MathText></th>
                 <td dir="ltr">≈ {formatValue(row.probability * 100, 2)} %</td>
               </tr>
             ))}

@@ -14,10 +14,10 @@ import { formatDegrees, formatRatio, formatValue } from './trigFormat.js';
  * Tout ce que l'élève voit est dessiné ICI, en SVG inline, à partir de
  * valeurs que ce composant ne calcule pas : `geometry.js` traduit en pixels,
  * `trigMath.js` fournit la mathématique. Ce fichier n'a le droit que de
- * DESSINER (la règle de `VectorSceneLayer.jsx` pour les أشعة).
+ * DESSINER (la règle de `VectorSceneLayer.jsx` pour les vecteurs).
  *
  * ── Le glissement (§3, §35) ──────────────────────────────────────────────
- * Le point se tire au doigt comme à la souris. Comme pour les أشعة : un
+ * Le point se tire au doigt comme à la souris. Comme pour les vecteurs : un
  * disque VISIBLE de 8 px dans une cible INVISIBLE de 22 px de rayon (44 px
  * de diamètre, le minimum tactile), des écouteurs NATIFS avec capture du
  * pointeur, et `touch-action: none` pour que le doigt ne fasse pas défiler
@@ -515,7 +515,7 @@ function Axes({ origin, unit, extent }) {
  * LA TANGENTE (§11) — la droite d'abscisse 1 et le point qu'y coupe le rayon.
  *
  * Quand `cos θ = 0`, il n'y a pas d'intersection : on dessine la droite, le
- * rayon PARALLÈLE à elle, et le mot « غير معرّف ». C'est la leçon entière
+ * rayon PARALLÈLE à elle, et le mot « non définie ». C'est la leçon entière
  * en une image — pas un très grand nombre, une absence d'intersection.
  */
 function TangentLayer({ tangent, origin, unit, radius, angle, extent, t }) {

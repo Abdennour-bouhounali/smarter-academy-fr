@@ -5,10 +5,10 @@ import { NUMBER_LAB_CAPABILITIES, NUMBER_LAB_SCOPES } from './scope.js';
 import { summarizeNumberLab } from './summarize.js';
 
 /**
- * Le مختبر الأعداد والحساب (Laboratoire des nombres et du calcul) — le
- * onzième instrument du مختبر الرياضيات.
+ * Le labo des nombres (« Le labo des nombres ») — le
+ * onzième instrument de l'atelier.
  *
- *     لا تحسب فقط — العب بالعدد، غيّره، فكّكه، قارن، واكتشف ما يحدث.
+ *     Ne te contente pas de calculer : manipule le nombre, change-le, décompose-le, compare.
  *
  * Ce n'est PAS une calculatrice, et c'est la seule phrase de conception qui
  * compte. Une calculatrice répond `24 ÷ 6 = 4` ; ce laboratoire laisse
@@ -29,7 +29,7 @@ import { summarizeNumberLab } from './summarize.js';
  * l'arbre de facteurs, en ENVOYANT son nombre (`sendTo`), jamais en le
  * retapant.
  *
- * Il prend la place que l'accueil annonçait sous « المستقيم المدرّج » : la
+ * Il prend la place que l'accueil annonçait sous « La droite graduée » : la
  * droite graduée promise est là (§7), mais elle est un mode parmi treize —
  * un instrument entier pour une seule droite aurait été une promesse tenue
  * trop petitement.
@@ -52,7 +52,7 @@ export const numberLabTool = defineMathLabTool({
   defaultTitleKey: 'tools.numberLab.defaultTitle',
   icon: Hash,
   schemaVersion: NUMBER_LAB_SCHEMA_VERSION,
-  // Les deux مخابر, les seize modes dans chacun (scope.js).
+  // Les deux labos, les seize modes dans chacun (scope.js).
   scopes: NUMBER_LAB_SCOPES,
   capabilities: NUMBER_LAB_CAPABILITIES,
   createInitialData: createNumberLabData,

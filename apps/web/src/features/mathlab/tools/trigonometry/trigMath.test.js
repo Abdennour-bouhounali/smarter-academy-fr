@@ -1,5 +1,5 @@
 /**
- * La mathématique du مختبر المثلثات, prouvée (§49).
+ * La mathématique du labo de trigonométrie, prouvée (§49).
  *
  * Ce que ces tests défendent avant tout, c'est l'HONNÊTETÉ numérique (§40) :
  * `cos(90°)` doit valoir 0 et non 6,12e−17 ; `tan(90°)` doit être indéfini et
@@ -476,7 +476,7 @@ describe('les symétries (§21)', () => {
     expect(near(s.values.cos, -s.origin.cos, 1e-9)).toBe(true);
   });
 
-  it('sin(90° − θ) = cos θ — la complémentarité du manuel de 4AM', () => {
+  it('sin(90° − θ) = cos θ — la complémentarité vue au collège', () => {
     const s = symmetryOf(40, 'complement');
     expect(s.image).toBe(50);
     expect(near(s.values.sin, s.origin.cos, 1e-9)).toBe(true);

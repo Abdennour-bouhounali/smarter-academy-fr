@@ -23,7 +23,7 @@ import { clampToFeatures, trigonometryFeatures } from './scope.js';
 const SERIALIZE_MS = 300;
 
 /**
- * Le مختبر المثلثات dans la coquille du مختبر (MathLabToolProps).
+ * Le labo de trigonométrie dans la coquille de l'atelier (MathLabToolProps).
  *
  * L'état du document (`trigState.js`) vit ICI ; toute la mathématique est
  * dans les modules purs que ce composant se contente d'appeler — aucun
@@ -47,7 +47,7 @@ const SERIALIZE_MS = 300;
  */
 export default function TrigonometryTool({ initialData, onChange, onReady, capabilities = null }) {
   const { t } = useTranslation('mathlab');
-  // Le مخبر (scope.js) : au collège, le triangle rectangle en degrés — ni
+  // Le labo (scope.js) : au collège, le triangle rectangle en degrés — ni
   // cercle, ni radians, ni quadrants.
   const features = useMemo(() => trigonometryFeatures(capabilities), [capabilities]);
   const [data, setData] = useState(() => clampToFeatures(initialData && Object.keys(initialData).length
@@ -477,7 +477,7 @@ export default function TrigonometryTool({ initialData, onChange, onReady, capab
             tanPanel
             onHighlight={(ratio) => commit((current) => setHighlight(current, ratio))}
           >
-            {/* « حلّ المثلث خطوة بخطوة » — le dessin reste vivant, le raisonnement
+            {/* « Résoudre le triangle pas à pas » — le dessin reste vivant, le raisonnement
                 se déroule, juste sous les rapports (§3.5). */}
             {data.mode === 'triangle' && <TriangleSolvePanel triangle={data.triangle} />}
           </TrigInspector>

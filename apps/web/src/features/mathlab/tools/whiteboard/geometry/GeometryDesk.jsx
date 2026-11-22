@@ -31,7 +31,7 @@ import {
 } from './constraints.js';
 
 /**
- * LE BUREAU DE GÉOMÉTRIE — des instruments posés sur la سبّورة.
+ * LE BUREAU DE GÉOMÉTRIE — des instruments posés sur le tableau.
  *
  * Excalidraw reste le moteur du dessin. Le bureau ajoute par-dessus une
  * couche SVG, glissée DANS le conteneur d'Excalidraw (`host`) entre son
@@ -45,7 +45,7 @@ import {
  *     sens dans `customData.geo` — constructions.js). Annulable, exporté.
  *   · le BUREAU : où sont les instruments, leur ouverture, les réglages
  *     (`desk`, instruments.js). Déplacer une règle n'écrit RIEN dans
- *     l'historique d'Excalidraw — cent mouvements ne font pas cent « تراجع ».
+ *     l'historique d'Excalidraw — cent mouvements ne font pas cent « Annuler ».
  *
  * ── Performance ──────────────────────────────────────────────────────────
  * L'état vit dans des refs ; un geste le modifie à chaque mouvement et
@@ -55,10 +55,10 @@ import {
  *
  * ── Qui voit quoi ─────────────────────────────────────────────────────────
  * Il n'existe pas de synchronisation temps réel dans la plateforme : l'élève
- * voit la سبّورة de l'enseignant projetée (plein écran du مختبر). C'est pour
+ * voit le tableau de l'enseignant projeté (plein écran de l'atelier). C'est pour
  * cela que les instruments se DESSINENT à l'écran et que le trait se fait
  * devant la classe. L'état du bureau est enregistré avec le document : une
- * سبّورة rouverte retrouve ses instruments là où on les avait laissés.
+ * tableau rouvert retrouve ses instruments là où on les avait laissés.
  */
 const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, onDeskChange }, ref) {
   const { t } = useTranslation('mathlab');
@@ -207,7 +207,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
     return created;
   }, [api]);
 
-  /** Le point sur lequel on s'est aimanté, ou un nouveau point (nommé si « تسمية النقاط »). */
+  /** Le point sur lequel on s'est aimanté, ou un nouveau point (nommé si « Nommer les points automatiquement »). */
   const pointMaker = (via) => {
     const used = [...geo().points.values()].map((p) => p.label).filter(Boolean);
     let seq = nextSeq(sceneRef.current.elements);
@@ -297,7 +297,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
     updateDesk((d) => ({ ...d, instruments: { ...d.instruments, [kind]: { ...d.instruments[kind], ...patch } } }));
   }, [updateDesk]);
 
-  /** « إظهار القياسات » : des mesures SUR le dessin (exportées, annulables), ou aucune. */
+  /** « Afficher les mesures » : des mesures SUR le dessin (exportées, annulables), ou aucune. */
   const toggleMeasures = useCallback(() => {
     const on = !deskRef.current.settings.measures;
     updateDesk((d) => ({ ...d, settings: { ...d.settings, measures: on } }));
@@ -315,7 +315,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
     }
   }, [api, addToScene, updateDesk]);
 
-  // ── Ce que lit la منقلة ─────────────────────────────────────────────
+  // ── Ce que lit le rapporteur ─────────────────────────────────────────────
   const protractorReading = () => {
     const p = deskRef.current.instruments.protractor;
     if (!p.visible) return null;
@@ -341,7 +341,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
     return { vertex, arms, reading, fromId: from?.id, toId: to?.id };
   };
 
-  /** « ضع علامة » / « ارسم الضلع » : la منقلة aide à CONSTRUIRE un angle. */
+  /** « Placer un repère » / « Tracer le second côté » : le rapporteur aide à CONSTRUIRE un angle. */
   const protractorConstruct = useCallback((withRay) => {
     const p = deskRef.current.instruments.protractor;
     if (!p.visible || !api) return;
@@ -360,7 +360,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
     const vertexId = maker.ensure(centerSnap, g.center);
     const ray = linearSkeleton('ray', found?.vertex?.p ?? g.center, markAt, pencilStyle(), { from: vertexId, to: markId, seq: maker.nextSeq(), via });
     const skeletons = [...maker.skeletons, ray];
-    // L'angle construit, mesuré sur la سبّورة — s'il a un premier côté.
+    // L'angle construit, mesuré sur le tableau — s'il a un premier côté.
     const base = found?.arms?.find((a) => {
       const deg = protractorDegreeOf(p, a.d);
 
@@ -375,7 +375,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [api, addToScene]);
 
-  /** « ثبّت القياس » : la lecture de la منقلة devient une étiquette ∠ABC = 42° sur la سبّورة. */
+  /** « Écrire la mesure sur le tableau » : la lecture du rapporteur devient une étiquette ∠ABC = 42° sur le tableau. */
   const pinProtractorReading = useCallback(() => {
     const found = protractorReading();
     if (!found?.reading || !found.fromId || !found.toId) return;
@@ -384,7 +384,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [addToScene]);
 
-  // ── « إعادة البناء » ────────────────────────────────────────────────
+  // ── « Rejouer la construction » ────────────────────────────────────────────────
   const stopReplay = useCallback(() => {
     uiRef.current.replay = null;
     schedule();
@@ -406,7 +406,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
     requestAnimationFrame(tick);
   }, [stopReplay]);
 
-  // ── L'API vers la سبّورة (export) ──────────────────────────────────
+  // ── L'API vers le tableau (export) ──────────────────────────────────
   useImperativeHandle(ref, () => ({
     includeInstruments: () => deskRef.current.settings.exportInstruments,
     instrumentsBounds: () => {
@@ -444,9 +444,9 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
   //   drawing | released ──(lever)──▶ idle     le trait est posé
   //
   // Hors de portée d'un instrument, l'appui n'arrive même pas ici : il va à
-  // Excalidraw, et le القلم dessine à main levée comme avant.
+  // Excalidraw, et le stylo dessine à main levée comme avant.
 
-  /** Le crayon est-il en main ? Le قلم الهندسة, ou le القلم d'Excalidraw. */
+  /** Le crayon est-il en main ? Le crayon de géométrie, ou le stylo d'Excalidraw. */
   const penInHand = () => (uiRef.current.tool === 'pencil' ? 'geo' : (!uiRef.current.tool && lastExToolRef.current === 'freedraw' ? 'free' : null));
 
   const settingOn = (key) => snapOn(deskRef.current.settings, key);
@@ -460,7 +460,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
     detachDistance: px(DETACH_PX),
   });
 
-  /** Le style du trait : celui du القلم d'Excalidraw (couleur, épaisseur, tirets) ou celui du قلم الهندسة. */
+  /** Le style du trait : celui du stylo d'Excalidraw (couleur, épaisseur, tirets) ou celui du crayon de géométrie. */
   const strokeStyleFor = (pen) => {
     if (pen === 'geo' || !api) return pencilStyle();
     const s = api.getAppState();
@@ -562,7 +562,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
 
       return;
     }
-    // Sans instrument : le قلم الهندسة seul — points, directions.
+    // Sans instrument : le crayon de géométrie seul — points, directions.
     let end = q;
     let endSnap = null;
     let dirSnap = null;
@@ -590,7 +590,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
     const style = strokeStyleFor(g.pen);
     const via = c ? { tool: c.instrument, edge: c.id, pose: { ...d.instruments[c.instrument] } } : { tool: 'pencil' };
     const maker = pointMaker(via);
-    // Le crayon ordinaire ne pose des points (A, B…) que si on les nomme ; le قلم الهندسة toujours.
+    // Le crayon ordinaire ne pose des points (A, B…) que si on les nomme ; le crayon de géométrie toujours.
     const ensure = (snap, p) => (g.pen === 'geo' || d.settings.autoLabels || snap?.kind === 'point' ? maker.ensure(snap, p) : null);
 
     if (c?.family === 'arc') {
@@ -601,7 +601,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
       const centerId = c.instrument === 'compass'
         ? (uiRef.current.compassCenterId && geo().points.has(uiRef.current.compassCenterId) ? uiRef.current.compassCenterId : centerPoint?.id ?? null)
         : centerPoint?.id ?? null;
-      // Seul le compas ferme un cercle ; la منقلة est un demi-disque.
+      // Seul le compas ferme un cercle ; le rapporteur est un demi-disque.
       const full = c.instrument === 'compass' && Math.abs(sweep) >= 2 * Math.PI - toRadians(1);
       const start = g.state.startAngle ?? c.startAngle;
       const skeleton = full
@@ -694,7 +694,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
     uiRef.current.marker = null;
     uiRef.current.hint = null;
     if (settingOn('points') && (kind === 'ruler' || kind === 'protractor' || kind === 'compass')) {
-      // Le ZÉRO de la règle, le CENTRE de la منقلة, la POINTE du compas se posent sur un point.
+      // Le ZÉRO de la règle, le CENTRE du rapporteur, la POINTE du compas se posent sur un point.
       const hit = snapPoint({ x: inst.x, y: inst.y }, targets(), px(SNAP_PX));
       if (hit) {
         inst = { ...inst, x: hit.point.x, y: hit.point.y };
@@ -708,7 +708,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
       const ruler = deskRef.current.instruments.ruler;
       const guides = instrumentEdges('ruler', ruler).map((e) => ({ ...e, source: 'ruler' }));
       if (settingOn('perpSnap')) guides.push(...geo().linears.map((l) => ({ id: l.id, a: l.a, b: l.b, source: 'line' })));
-      // Une fois plaqué, le كوس TIENT contre son guide : la main peut dériver
+      // Une fois plaquée, l'équerre TIENT contre son guide : la main peut dériver
       // un peu pendant le glissement sans le décoller (hystérésis).
       const held = g.dockedTo ? guides.filter((gd) => gd.id === g.dockedTo) : [];
       const docked = (held.length ? dockSetSquare(inst, held, px(36), toRadians(6)) : null) ?? dockSetSquare(inst, guides, px(10), toRadians(3));
@@ -758,7 +758,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
     if (uiRef.current.replay) return;
     const p = toScene(event);
     const g = gestureRef.current;
-    // Un second doigt : tourner l'instrument tenu, ou zoomer la سبّورة.
+    // Un second doigt : tourner l'instrument tenu, ou zoomer le tableau.
     if (g) {
       if (g.type === 'move' && g.pointers.size < 2) {
         g.pointers.set(event.pointerId, p);
@@ -776,7 +776,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
     event.preventDefault();
     const what = part?.split(':')[1] ?? null;
     // Le crayon en main, près d'un bord, de la pointe du compas ou du sommet de
-    // la منقلة : l'INSTRUMENT conduit le trait. Les poignées (tourner, ouvrir,
+    // le rapporteur : l'INSTRUMENT conduit le trait. Les poignées (tourner, ouvrir,
     // l'aiguille) restent des poignées.
     const pen = penInHand();
     if (pen && (!what || what === 'body' || what === 'tip')) {
@@ -787,8 +787,8 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
         return;
       }
     }
-    // Le المدوّر en main, un clic sur un point (A, une intersection) y pose la
-    // pointe sèche — même si ce point est sous une règle ou un كوس.
+    // Le compas en main, un clic sur un point (A, une intersection) y pose la
+    // pointe sèche — même si ce point est sous une règle ou une équerre.
     if (tool === 'compass' && !part?.startsWith('compass:') && settingOn('points')) {
       const hit = snapPoint(p, targets(), px(SNAP_PX));
       if (hit) {
@@ -809,12 +809,12 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
       return;
     }
     if (tool === 'compass') {
-      // « انقر لتضع الرأس » : la pointe sèche va là où l'on touche.
+      // « Clique pour poser la pointe » : la pointe sèche va là où l'on touche.
       placeCompassPivot(event, settingOn('points') ? snapPoint(p, targets(), px(SNAP_PX)) : null, p);
     }
   };
 
-  /** « انقر لتضع الرأس » : la pointe sèche va là où l'on touche (sur le point visé s'il y en a un). */
+  /** « Clique pour poser la pointe » : la pointe sèche va là où l'on touche (sur le point visé s'il y en a un). */
   const placeCompassPivot = (event, hit, raw = null) => {
     const at = hit?.point ?? raw;
     const c = deskRef.current.instruments.compass;
@@ -975,7 +975,7 @@ const GeometryDesk = forwardRef(function GeometryDesk({ api, host, initialDesk, 
         const inst = deskRef.current.instruments[kind];
         // Après un geste, l'instrument reste ATTEIGNABLE (§26 du brief).
         if (inst?.visible) setInstrument(kind, keepReachable(kind, inst, viewRect(), px(48)));
-        // La منقلة posée sur un sommet s'aligne sur un côté : elle a « trouvé » la base.
+        // Le rapporteur posé sur un sommet s'aligne sur un côté : il a « trouvé » la base.
         if (kind === 'protractor' && g.type === 'move' && settingOn('angles')) {
           const p = deskRef.current.instruments.protractor;
           const through = geo().linears.filter((l) => dist(l.a, p) < 1 || dist(l.b, p) < 1).map((l) => angleOf(sub(l.b, l.a)));
@@ -1150,8 +1150,8 @@ export default GeometryDesk;
 
 /**
  * Les zones d'ACCROCHE du crayon : une bande de ±ATTACH_PX px d'écran le long
- * de chaque bord, un disque autour de la mine du compas et du sommet de la
- * منقلة. Transparentes — ce qui se voit, c'est le bord qui s'allume quand la
+ * de chaque bord, un disque autour de la mine du compas et du sommet du
+ * rapporteur. Transparentes — ce qui se voit, c'est le bord qui s'allume quand la
  * mine s'approche (« near ») et pendant qu'il la tient.
  */
 function ConstraintZones({ constraints, z, near }) {
@@ -1185,7 +1185,7 @@ function ConstraintZones({ constraints, z, near }) {
           );
         }
         if (c.instrument === 'protractor') {
-          // Le bord COURBE de la منقلة : un demi-cercle, du côté de ses graduations.
+          // Le bord COURBE du rapporteur : un demi-cercle, du côté de ses graduations.
           const pts = arcPoints(c.center, c.radius, c.baseAngle, -Math.PI, 60);
           const d = pts.map((q, i) => `${i ? 'L' : 'M'}${q.x} ${q.y}`).join('');
 
@@ -1274,7 +1274,7 @@ function Handles({ inst, r, t, tool, pen, view }) {
   return <g data-geo-handles>{out}</g>;
 }
 
-/** L'aiguille de la منقلة, la lecture de l'angle posé et son secteur. */
+/** L'aiguille du rapporteur, la lecture de l'angle posé et son secteur. */
 function ProtractorOverlay({ p, found, z }) {
   const g = protractorGeometry(p);
   const tipN = add(g.center, scale(g.directionOf(p.needleDeg), g.R * 0.97));
@@ -1299,15 +1299,15 @@ function ProtractorOverlay({ p, found, z }) {
 }
 
 /** Une étiquette lisible au tableau : fond blanc, taille constante à l'écran. */
-function Pill({ at, z, text, color = '#1e1e1e', small = false, rtl = false, ...rest }) {
+function Pill({ at, z, text, color = '#1e1e1e', small = false, ...rest }) {
   const fs = (small ? 12 : 15) / z;
-  const w = (text.length * (small ? 7.4 : rtl ? 8 : 9) + 16) / z;
+  const w = (text.length * (small ? 7.4 : 9) + 16) / z;
   const h = fs * 1.7;
 
   return (
     <g pointerEvents="none" data-geo-ui {...rest}>
       <rect x={at.x - w / 2} y={at.y - h / 2} width={w} height={h} rx={h / 2} fill="#ffffff" fillOpacity={0.94} stroke={color} strokeWidth={1 / z} />
-      <text x={at.x} y={at.y} fontSize={fs} textAnchor="middle" dominantBaseline="central" fill={color} fontFamily={rtl ? 'Cairo, Nunito, sans-serif' : 'Nunito, Inter, sans-serif'} fontWeight={700} direction={rtl ? 'rtl' : 'ltr'}>{text}</text>
+      <text x={at.x} y={at.y} fontSize={fs} textAnchor="middle" dominantBaseline="central" fill={color} fontFamily="Nunito, Inter, sans-serif" fontWeight={700} direction="ltr">{text}</text>
     </g>
   );
 }
@@ -1315,12 +1315,12 @@ function Pill({ at, z, text, color = '#1e1e1e', small = false, rtl = false, ...r
 /** Le trait en cours : ce que le crayon, ou le compas, est en train de tracer. */
 function Preview({ preview, z, desk, t }) {
   if (!preview) return null;
-  // Le trait prend le style du crayon qui le fait : celui du القلم d'Excalidraw, ou du قلم الهندسة.
+  // Le trait prend le style du crayon qui le fait : celui du stylo d'Excalidraw, ou du crayon de géométrie.
   const style = preview.style ?? { width: PENCIL_WIDTHS[desk.pencil.width], style: desk.pencil.style, color: '#1e1e1e' };
   const stroke = style.color ?? '#1e1e1e';
   const width = style.width ?? 1.5;
   const dash = style.style === 'dashed' ? '8 6' : style.style === 'dotted' ? '1.5 5' : undefined;
-  const lengthLabel = (units) => `${t('tools.whiteboard.geo.segmentLength')} ${formatLength(units)} ${t('tools.whiteboard.geo.unitShort')}`;
+  const lengthLabel = (units) => `${t('tools.whiteboard.geo.segmentLength')} ${formatLength(units)}\u00A0${t('tools.whiteboard.geo.unitShort')}`;
   if (preview.kind === 'arc') {
     const pts = arcPoints(preview.c, preview.r, preview.start, preview.sweep);
     const d = pts.map((q, i) => `${i ? 'L' : 'M'}${q.x} ${q.y}`).join('');
@@ -1332,10 +1332,9 @@ function Preview({ preview, z, desk, t }) {
         <Pill
           at={add(end, scale(unit(preview.start + preview.sweep), 26 / z))} z={z} color="#1971c2" data-geo-live="arc"
           data-geo-degrees={formatNumber(Math.abs(toDegrees(preview.sweep)), 0)}
-          rtl={preview.instrument === 'protractor'}
           text={preview.instrument === 'protractor'
             ? `${t('tools.whiteboard.geo.arcSpan')} ${formatNumber(Math.abs(toDegrees(preview.sweep)), 0)}°`
-            : `r = ${formatLength(preview.r)} · ${formatNumber(Math.abs(toDegrees(preview.sweep)), 0)}°`}
+            : `r = ${formatLength(preview.r)}\u202F; ${formatNumber(Math.abs(toDegrees(preview.sweep)), 0)}°`}
         />
       </g>
     );
@@ -1359,7 +1358,7 @@ function Preview({ preview, z, desk, t }) {
   const [p0, p1] = dist(start, end) > 1e-6 ? drawnEnds(kind, start, end) : [start, end];
   // Le long d'un instrument gradué, la longueur est celle que la RÈGLE lit.
   const length = preview.measure?.length ?? dist(start, end);
-  const label = preview.measure?.angle !== undefined ? `${preview.measure.angle}° · ${lengthLabel(length)}` : lengthLabel(length);
+  const label = preview.measure?.angle !== undefined ? `${preview.measure.angle}°\u202F; ${lengthLabel(length)}` : lengthLabel(length);
 
   return (
     <g pointerEvents="none" data-geo-preview={kind}>
@@ -1367,7 +1366,7 @@ function Preview({ preview, z, desk, t }) {
       <circle cx={start.x} cy={start.y} r={3} fill={stroke} />
       <circle cx={end.x} cy={end.y} r={3} fill={stroke} />
       {dist(start, end) > 4 / z && (
-        <Pill at={add(scale(add(start, end), 0.5), scale(labelSide(sub(end, start), scale(add(start, end), 0.5), preview.awayFrom), 22 / z))} z={z} text={label} color="#1971c2" rtl data-geo-live="length" data-geo-length={formatLength(length)} />
+        <Pill at={add(scale(add(start, end), 0.5), scale(labelSide(sub(end, start), scale(add(start, end), 0.5), preview.awayFrom), 22 / z))} z={z} text={label} color="#1971c2" data-geo-live="length" data-geo-length={formatLength(length)} />
       )}
       <PencilCursor at={end} zoom={z} />
     </g>
@@ -1445,7 +1444,7 @@ function Readouts({ inst, ui, z, gesture }) {
   return <g data-geo-ui>{out}</g>;
 }
 
-/** « إعادة البناء » : la construction se refait devant la classe, instrument en main. */
+/** « Rejouer la construction » : la construction se refait devant la classe, instrument en main. */
 function ReplayStage({ replay, view, zoom }) {
   const { done, current } = frameAt(replay.timeline, replay.t);
   const pad = 200;

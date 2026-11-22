@@ -125,7 +125,7 @@ export default function ProportionMode({ state, onChange, compact }) {
       {/* Le verdict, et la case fautive DÉSIGNÉE. */}
       {/* « D'un seul regard » (MATH_LAB §3.5) : le graphique et son verdict CÔTE À CÔTE. */}
       <div className="sa-ml-nb__duo sa-ml-nb__duo--proportion" dir="ltr">
-        <div className="sa-ml-nb__duo-figure" dir="rtl">
+        <div className="sa-ml-nb__duo-figure">
           {/* §18 : le graphique — l'alignement AVEC l'origine est la signature. */}
           <ProportionGraph
             rows={rows}
@@ -135,7 +135,7 @@ export default function ProportionMode({ state, onChange, compact }) {
             compact={compact}
           />
         </div>
-        <div className="sa-ml-nb__duo-board" dir="rtl">
+        <div className="sa-ml-nb__duo-board">
           <section className={`sa-ml-nb__panel sa-ml-nb__panel--${analysis.proportional ? 'increase' : 'decrease'}`}>
             <h4 className="sa-ml-nb__change-head">
               {analysis.proportional ? <Check size={18} aria-hidden="true" /> : <X size={18} aria-hidden="true" />}

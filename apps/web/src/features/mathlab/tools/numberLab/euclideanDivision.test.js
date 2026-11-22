@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import * as E from './euclideanDivision.js';
 
-describe('القسمة الإقليدية', () => {
+describe('la division euclidienne', () => {
   it('38 = 7 × 5 + 3, et la condition r < b', () => {
     expect(E.euclideanDivision(38, 7)).toMatchObject({
       q: 5, r: 3, exact: false, check: { product: 35, sum: 38, holds: true, rLessThanB: true },

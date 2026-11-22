@@ -3,7 +3,7 @@ import { placeCloseButton, closeKeyboard } from './keyboardClose';
 
 const button = () => ({ hidden: false, style: {} });
 
-describe('keyboardClose — le bouton « إغلاق » suit le clavier virtuel', () => {
+describe('keyboardClose — le bouton « Fermer » suit le clavier virtuel', () => {
   it('caché quand le clavier est fermé ou sans géométrie', () => {
     const b = button();
     placeCloseButton(b, { visible: false }, 800);

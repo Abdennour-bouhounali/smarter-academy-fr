@@ -19,29 +19,29 @@ import { refreshFeatureAccess, reportRefusal } from '../../hooks/useFeatureAcces
  * titre, état, et sauvegarde AUTOMATIQUE.
  *
  * ── Ce que la coquille possède, ce que l'outil possède ───────────────────
- * L'outil (Excalidraw pour la سبّورة) possède son état vivant et son
+ * L'outil (Excalidraw pour le tableau) possède son état vivant et son
  * historique ; il n'en remet ici qu'un instantané sérialisé par `updateData`.
  * Ce crochet ne garde donc JAMAIS l'état du dessin dans un état React — il
  * vit dans une référence, et seuls le titre et l'état de sauvegarde
- * (« محفوظ », « جارٍ الحفظ… ») provoquent un rendu.
+ * (« Enregistré », « Enregistrement… ») provoquent un rendu.
  *
  * ── Naissance et sauvegarde ──────────────────────────────────────────────
  * Un document neuf n'existe pas sur le serveur tant que rien n'a changé :
- * ouvrir la سبّورة et repartir ne crée rien. Au premier changement, POST ;
+ * ouvrir le tableau et repartir ne crée rien. Au premier changement, POST ;
  * l'URL est réécrite avec l'identifiant (sans rechargement, sans démontage
  * de l'outil) ; ensuite, PATCH. Chaque changement attend MATH_LAB_AUTOSAVE_MS
  * de calme avant de partir ; un seul envoi à la fois, et ce qui change
- * pendant l'envoi repart après. « حفظ » force l'envoi tout de suite.
+ * pendant l'envoi repart après. « Enregistrer » force l'envoi tout de suite.
  *
  * @param {import('./toolContract.js').MathLabTool} tool
  * @param {number | null} documentId      l'identifiant de l'URL, ou null pour un document neuf
- * ── Le مخبر ───────────────────────────────────────────────────────────────
- * Un instrument partagé s'ouvre dans مخبر المتوسط ou مخبر الثانوي
- * (labScope.js). Le crochet le RÉSOUT au chargement — le مخبر enregistré dans
+ * ── L’atelier ───────────────────────────────────────────────────────────────
+ * Un instrument partagé s'ouvre dans atelier du collège ou atelier du lycée
+ * (labScope.js). Le crochet le RÉSOUT au chargement — l’atelier enregistré dans
  * le document d'abord, puis celui de l'URL (`requestedScope`), puis le
  * dernier choisi — et le rend (`scope`). L'outil ne voit jamais la clé
  * `labScope` de son état : elle est retirée à la lecture et remise à l'envoi,
- * avec le résumé de « أعمالي ».
+ * avec le résumé de « Mes travaux ».
  *
  * @param {{launch: object | null, defaultTitle: string, requestedScope?: string|null}} options
  */
@@ -49,7 +49,7 @@ export function useMathLabDocument(tool, documentId, { launch, defaultTitle, req
   const { token } = useContext(AuthContext);
   const navigate = useNavigate();
   /**
-   * La racine du مختبر DANS L'ESPACE DU LECTEUR.
+   * La racine de l’atelier DANS L'ESPACE DU LECTEUR.
    *
    * À la naissance d'un document, l'adresse est réécrite avec l'identifiant.
    * Elle l'était vers `/espace/atelier/...` en dur : un ENSEIGNANT, qui
@@ -60,7 +60,7 @@ export function useMathLabDocument(tool, documentId, { launch, defaultTitle, req
    * au bout de quelques secondes, et le travail en cours partait avec lui.
    *
    * L'espace se lit donc ici, comme `MathLabToolPage` le fait déjà pour le
-   * lien « retour au مختبر ». Cela vaut pour TOUS les instruments : le bogue
+   * lien « retour à l’atelier ». Cela vaut pour TOUS les instruments : le bogue
    * était dans la coquille partagée, pas dans l'un d'eux.
    */
   const labRoot = mathLabBasePath(useWorkspaceBase());
@@ -105,13 +105,13 @@ export function useMathLabDocument(tool, documentId, { launch, defaultTitle, req
           title: cleanTitle(doc.title, defaultTitle),
           schemaVersion: doc.schemaVersion,
           data: attachLabScope(doc.data, doc.scope),
-          // Le RÉSUMÉ part avec l'état, jamais séparément : « أعمالي » dessine
+          // Le RÉSUMÉ part avec l'état, jamais séparément : « Mes travaux » dessine
           // ainsi un aperçu juste dès la première sauvegarde.
           summary: attachScopeToSummary(summarizeDocument(tool, doc.data), doc.scope),
         });
         const saved = fromApiDocument(document);
         docRef.current = { ...docRef.current, id: saved.id, createdAt: saved.createdAt, updatedAt: saved.updatedAt };
-        // Un travail de plus : le compteur « X متبقّية » change.
+        // Un travail de plus : le compteur « X restants » change.
         refreshFeatureAccess(token);
         if (!unmountedRef.current) {
           setLoad((s) => ({ ...s, document: docRef.current }));
@@ -156,7 +156,7 @@ export function useMathLabDocument(tool, documentId, { launch, defaultTitle, req
   }, [token, tool, defaultTitle, navigate, schedule, labRoot]);
   flushRef.current = flush;
 
-  // Le مخبر demandé ne compte que pour un document NEUF : un document
+  // L’atelier demandé ne compte que pour un document NEUF : un document
   // enregistré garde le sien, et changer l'URL ne le rouvre pas.
   const newDocumentScope = documentId == null ? requestedScope : null;
 
@@ -164,7 +164,7 @@ export function useMathLabDocument(tool, documentId, { launch, defaultTitle, req
   useEffect(() => {
     // L'identifiant qu'on vient de créer nous-mêmes : rien à recharger.
     if (documentId != null && docRef.current?.id === documentId) return undefined;
-    // Un document neuf déjà ouvert dans ce مخبر : l'URL vient seulement de
+    // Un document neuf déjà ouvert dans cet atelier : l'URL vient seulement de
     // recevoir son `?lab=` (MathLabToolPage la complète) — rien à rouvrir.
     if (documentId == null && docRef.current && !isPersisted(docRef.current)
       && docRef.current.scope === resolveToolScope(tool, { requested: requestedScope, remembered: readRememberedLabScope() })) {
@@ -199,8 +199,8 @@ export function useMathLabDocument(tool, documentId, { launch, defaultTitle, req
       .then(({ document, files, quota }) => {
         if (seq !== loadSeqRef.current) return;
         const raw = fromApiDocument(document);
-        // Un travail appartient au مخبر où il est né ; un document plus
-        // ancien que les مخابر prend celui de l'URL, ou le dernier choisi.
+        // Un travail appartient à l’atelier où il est né ; un document plus
+        // ancien que les ateliers prend celui de l'URL, ou le dernier choisi.
         const scope = resolveToolScope(tool, {
           stored: storedLabScope(raw.data),
           requested: requestedScope,
@@ -248,7 +248,7 @@ export function useMathLabDocument(tool, documentId, { launch, defaultTitle, req
   /**
    * Le document existe sur le serveur — ou y naît maintenant. Un fichier ne
    * peut se rattacher qu'à un document enregistré : le premier fichier d'une
-   * سبّورة neuve commence par la faire naître. Rend l'identifiant, ou null
+   * tableau neuve commence par la faire naître. Rend l'identifiant, ou null
    * si l'envoi a échoué.
    */
   const ensurePersisted = useCallback(async () => {
@@ -286,7 +286,7 @@ export function useMathLabDocument(tool, documentId, { launch, defaultTitle, req
     files: load.files,
     quota: load.quota,
     loadKey: load.loadKey,
-    // Le مخبر résolu (null pour un instrument commun, ou pendant le chargement).
+    // L’atelier résolu (null pour un instrument commun, ou pendant le chargement).
     scope: load.scope,
     ensurePersisted,
     error: load.error,

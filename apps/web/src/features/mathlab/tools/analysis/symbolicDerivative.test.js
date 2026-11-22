@@ -68,7 +68,7 @@ describe('dérivée symbolique — les règles', () => {
 /**
  * L'épreuve DÉCISIVE : la dérivée symbolique est confrontée à la dérivée
  * NUMÉRIQUE du grapheur, qui est écrite, testée et utilisée depuis
- * longtemps par le mode « المماس ». Deux implémentations indépendantes qui
+ * longtemps par le mode « Tangente ». Deux implémentations indépendantes qui
  * s'accordent à 1e−6 près sur des dizaines de points : c'est ce qui permet
  * d'AFFICHER f′(x) à un élève.
  */
@@ -120,7 +120,7 @@ describe('l’imprimeur', () => {
    */
   it('n’accole jamais deux nombres', () => {
     expect(text('3x^4')).toBe('12x^3');
-    expect(text('\\cos(x^2)')).toBe('-sin(x^2)·2x');
+    expect(text('\\cos(x^2)')).toBe('-sin(x^2)×2x');
     // Un chiffre immédiatement suivi d'un chiffre séparé par rien : interdit.
     for (const source of ['3x^4', '5x^3', 'x^4-2x^2', '\\cos(x^2)', '\\sin(3x)']) {
       expect(text(source), source).not.toMatch(/\d\s+\d/);

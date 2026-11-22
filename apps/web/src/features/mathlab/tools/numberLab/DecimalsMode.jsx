@@ -16,7 +16,7 @@ import { decimalTextOf, formatNumber, formatPercent } from './numberValue.js';
  *
  * `0,75` → `75/100` → `3/4`. Les DEUX étapes sont montrées, et c'est tout le
  * propos : la première est ce que le nombre dit littéralement (« soixante-
- * quinze centièmes », qu'on lit dans les mraتب), la seconde est ce qu'on
+ * quinze centièmes », qu'on lit dans les rangs), la seconde est ce qu'on
  * obtient en simplifiant. Sauter de l'une à l'autre cacherait l'essentiel.
  *
  * Le mode dit aussi POURQUOI certaines fractions tombent juste et d'autres
@@ -60,7 +60,7 @@ export default function DecimalsMode({ state, onChange, compact }) {
       <h3 className="sa-ml-nb__heading">{t('tools.numberLab.decimals.heading')}</h3>
       <p className="sa-ml-nb__hint">{t('tools.numberLab.decimals.hint')}</p>
 
-      {/* §6 : les mраتب — d'où vient « soixante-quinze centièmes ». */}
+      {/* §6 : les rangs — d'où vient « soixante-quinze centièmes ». */}
       <div className="sa-ml-nb__places" dir="ltr">
         {places.map((place) => (
           <span key={place.power} className={`sa-ml-nb__place${place.digit ? ' is-filled' : ''}`}>

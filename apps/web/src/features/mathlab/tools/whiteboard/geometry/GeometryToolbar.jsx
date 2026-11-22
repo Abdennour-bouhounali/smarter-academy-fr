@@ -8,7 +8,7 @@ import { PENCIL_KINDS, PENCIL_STYLES, PENCIL_WIDTHS, RULER_LENGTHS_CM, clampRadi
 import { cmValue } from './constructions.js';
 import { UNITS_PER_CM } from './geoMath.js';
 
-/** La منقلة n'a pas d'icône lucide : un demi-disque gradué, dans le même trait (24 × 24, stroke 2). */
+/** Le rapporteur n'a pas d'icône lucide : un demi-disque gradué, dans le même trait (24 × 24, stroke 2). */
 function ProtractorIcon({ size = 18, ...rest }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...rest}>
@@ -46,7 +46,7 @@ function Chip({ id, pressed, onClick, children, title }) {
 }
 
 /**
- * La barre « أدوات الهندسة » — DANS le flux, au-dessus du canevas, jamais
+ * La barre « Instruments de géométrie » — DANS le flux, au-dessus du canevas, jamais
  * en surimpression : rien à positionner, rien qui puisse sortir de l'écran
  * (le défaut qu'avait le menu de la bibliothèque, §5.7). Sur un écran
  * étroit, la rangée DÉFILE horizontalement : aucun outil ne disparaît.
@@ -195,7 +195,7 @@ export default function GeometryToolbar({
   return (
     <div
       className="sa-geo-bar" role="toolbar" aria-label={k('title')} data-geo-toolbar
-      // Après un bouton (pas un champ), le clavier revient à la سبّورة :
+      // Après un bouton (pas un champ), le clavier revient au tableau :
       // Ctrl+Z annule le trait qu'on vient de faire, comme avant.
       onClick={(e) => { if (e.target.closest('button') && !e.target.closest('input')) onAfterAction?.(); }}
     >

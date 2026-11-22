@@ -6,11 +6,11 @@ import { formatValue, formatMaybeExact, formatApproximate, formatPoint } from '.
  * TOUJOURS visibles, quel que soit l'onglet ouvert.
  *
  * ── Pourquoi ce composant existe ─────────────────────────────────────────
- * Le panneau a trois onglets : الضبط (on règle), القراءة (on lit), التمارين.
+ * Le panneau a trois onglets : Réglages (on règle), Lecture (on lit), Exercices.
  * Tant que la lecture n'existait QUE dans son onglet, un élève qui tirait le
- * curseur de b dans الضبط ne voyait AUCUN nombre changer : il fallait
- * basculer sur القراءة, où plus rien ne bougeait. La boucle même de
- * l'instrument — « أغيّر شيئًا → أرى النتيجة مباشرة → ألاحظ العلاقة » (§3) —
+ * curseur de b dans Réglages ne voyait AUCUN nombre changer : il fallait
+ * basculer sur Lecture, où plus rien ne bougeait. La boucle même de
+ * l'instrument — « je change quelque chose → je vois le résultat aussitôt → je remarque la relation » (§3) —
  * était coupée en deux par une navigation.
  *
  * La QA l'a rendu visible sans le nommer : le script de test devait basculer
@@ -18,12 +18,12 @@ import { formatValue, formatMaybeExact, formatApproximate, formatPoint } from '.
  * Si le test doit le faire, l'élève aussi.
  *
  * Ce bandeau porte donc l'ESSENTIEL — jamais toute l'analyse, qui reste dans
- * القراءة — au-dessus des onglets, là où il ne peut pas disparaître. Il ne
+ * Lecture — au-dessus des onglets, là où il ne peut pas disparaître. Il ne
  * calcule rien : il lit la scène déjà résolue, comme le reste de l'affichage.
  *
  * Ce qu'il montre dépend du laboratoire, parce que « le nombre qui compte »
- * n'est pas le même : le ميل pour la sécante, f′(a) pour le مماس, la valeur
- * de la limite, l'aire pour le تكامل.
+ * n'est pas le même : le coefficient directeur pour la sécante, f′(a) pour le tangente, la valeur
+ * de la limite, l'aire pour le intégrale.
  */
 export default function LiveReadout({ data, scene }) {
   const { t } = useTranslation('mathlab');
@@ -49,7 +49,7 @@ export default function LiveReadout({ data, scene }) {
  *
  * On en montre DEUX ou TROIS, jamais plus : un bandeau de huit valeurs ne se
  * lit pas d'un coup d'œil pendant qu'on tire un curseur, et §44 interdit le
- * fouillis. Le reste vit dans القراءة.
+ * fouillis. Le reste vit dans Lecture.
  */
 function cellsFor(data, scene, t) {
   const key = 'tools.analysis';
@@ -125,7 +125,7 @@ function cellsFor(data, scene, t) {
         cells.push({
           key: 'roots',
           label: t(`${key}.study.roots`),
-          value: scene.roots.length ? scene.roots.map((root) => formatValue(root.x, 2)).join(' ؛ ') : '—',
+          value: scene.roots.length ? scene.roots.map((root) => formatValue(root.x, 2)).join(' ; ') : '—',
         });
       }
       if (Array.isArray(scene.extrema) && scene.extrema.length > 0) {

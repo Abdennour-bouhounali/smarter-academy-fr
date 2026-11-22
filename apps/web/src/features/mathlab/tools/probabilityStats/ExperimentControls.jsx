@@ -4,6 +4,7 @@ import { Play, RotateCcw, Square } from 'lucide-react';
 import {
   EXPERIMENT_IDS, MAX_DRAWS, RANDOM_MAX_BOUND, RANDOM_MAX_SPAN, RANDOM_MIN_BOUND, SAMPLE_SIZES,
 } from './experiments.js';
+import { LOCALE } from '../../../../locale.js';
 
 /**
  * Le pupitre de l'expérience : laquelle, avec quels paramètres, combien de
@@ -66,7 +67,7 @@ export default function ExperimentControls({
               aria-pressed={draws === size}
               data-ml-ps-draws={size}
             >
-              {size.toLocaleString('en-US')}
+              {size.toLocaleString(LOCALE)}
             </button>
           ))}
         </div>
@@ -222,7 +223,7 @@ function DrawsField({ value, onCommit }) {
       />
       {invalid && (
         <p id="ml-ps-draws-error" className="sa-ml-ps__error" role="alert">
-          {t('tools.probabilityStats.drawsError', { max: MAX_DRAWS.toLocaleString('en-US') })}
+          {t('tools.probabilityStats.drawsError', { max: MAX_DRAWS.toLocaleString(LOCALE) })}
         </p>
       )}
     </div>

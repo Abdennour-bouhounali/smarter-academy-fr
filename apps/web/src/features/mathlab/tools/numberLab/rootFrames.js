@@ -86,7 +86,7 @@ export function rootFrames(result) {
         textKey: `${K}.extract`,
         textParams: { square, outer },
       }),
-      // « تدرّب بنفسك » : quelle racine sait-on calculer ? (celle du carré parfait)
+      // « Entraîne-toi » : quelle racine sait-on calculer ? (celle du carré parfait)
       task: makeTask({ targets: ['sa'], kind: 'pick', promptKey: 'tools.numberLab.practice.board.rootExtract' }),
     },
     stateFrame({

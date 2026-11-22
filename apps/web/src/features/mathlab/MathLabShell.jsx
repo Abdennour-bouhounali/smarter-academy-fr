@@ -12,13 +12,13 @@ import AttachmentsPanel from './attachments/AttachmentsPanel';
 import './mathlab.css';
 
 /**
- * La COQUILLE commune à tous les instruments du مختبر : une barre (retour,
+ * La COQUILLE commune à tous les instruments de l’atelier : une barre (retour,
  * icône et nom de l'outil, titre du document, état de sauvegarde, actions)
  * au-dessus d'un espace de travail qui prend TOUT le reste de l'écran.
  *
  * Les actions viennent de l'outil (`toolApi`, voir toolContract.js) : la
  * coquille n'affiche que celles qu'il expose, et c'est elle qui demande
- * confirmation avant « مسح الكل » — avec les textes de l'outil s'il en
+ * confirmation avant « Tout effacer » — avec les textes de l'outil s'il en
  * fournit (`tools.<id>.clearTitle` / `clearBody`), ceux de la coquille
  * sinon. Un instrument qui n'exporte pas d'image n'a simplement pas ce bouton.
  */
@@ -40,8 +40,8 @@ export default function MathLabShell({
   const Icon = tool.icon;
   const toolName = t(tool.labelKey);
   const workspaceLabHome = mathLabBasePath(useWorkspaceBase());
-  // « Retour » ramène au مخبر où l'instrument est ouvert (MathLabToolPage),
-  // à l'accueil du مختبر pour la سبّورة.
+  // « Retour » ramène à l’atelier où l'instrument est ouvert (MathLabToolPage),
+  // à l'accueil de l’atelier pour le tableau.
   const labHome = labHomeProp ?? workspaceLabHome;
 
   useEffect(() => {

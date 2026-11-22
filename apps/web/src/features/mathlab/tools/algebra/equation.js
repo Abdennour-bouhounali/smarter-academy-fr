@@ -1,5 +1,5 @@
 /**
- * L'ÉQUATION du مختبر الجبر — logique pure, sans React.
+ * L'ÉQUATION de l'atelier d'algèbre — logique pure, sans React.
  *
  * Une équation, ici, est une RELATION entre deux formes linéaires :
  *
@@ -17,7 +17,7 @@
  *
  * Ce module ne résout rien tout seul : `classify` dit ce que l'état COURANT
  * signifie (une solution, aucune, une infinité), et l'élève y arrive par ses
- * opérations. `solve` existe pour « إظهار الحل » et pour les tests, pas pour
+ * opérations. `solve` existe pour « Afficher la solution » et pour les tests, pas pour
  * l'écran d'ouverture — voir docs/architecture/MATH_LAB.md §5e.
  */
 
@@ -28,8 +28,8 @@ import { toLinearForm, formToLatex, addForms, subtractForms, scaleForm, isConsta
 const RELATIONS = Object.freeze(['=', '<', '>', '<=', '>=']);
 
 /** Le symbole tel qu'il s'écrit en LaTeX et se lit à l'écran. */
-export const RELATION_LATEX = Object.freeze({ '=': '=', '<': '<', '>': '>', '<=': '\\leq', '>=': '\\geq' });
-export const RELATION_TEXT = Object.freeze({ '=': '=', '<': '<', '>': '>', '<=': '≤', '>=': '≥' });
+export const RELATION_LATEX = Object.freeze({ '=': '=', '<': '<', '>': '>', '<=': '\\leqslant', '>=': '\\geqslant' });
+export const RELATION_TEXT = Object.freeze({ '=': '=', '<': '<', '>': '>', '<=': '⩽', '>=': '⩾' });
 
 export function isRelation(value) { return RELATIONS.includes(value); }
 export function isInequality(relation) { return relation !== '='; }
@@ -57,6 +57,8 @@ const RELATION_TOKENS = [
   { text: '>=', relation: '>=' },
   { text: '≤', relation: '<=' },
   { text: '≥', relation: '>=' },
+  { text: '⩽', relation: '<=' },
+  { text: '⩾', relation: '>=' },
   { text: '=', relation: '=' },
   { text: '<', relation: '<' },
   { text: '>', relation: '>' },
@@ -231,7 +233,7 @@ export function isSolvedForm(equation) {
 }
 
 /**
- * La forme résolue — ce que « إظهار الحل » montre, et ce que les tests
+ * La forme résolue — ce que « Afficher la solution » montre, et ce que les tests
  * attendent. Rend l'équation `x RELATION valeur` en plus du verdict, pour
  * que l'affichage n'ait pas à la reconstruire.
  */

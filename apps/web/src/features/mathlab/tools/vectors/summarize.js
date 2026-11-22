@@ -1,12 +1,12 @@
 import { resolveScene } from './vectorScene.js';
 
 /**
- * Le RÉSUMÉ d'un document du مختبر الأشعة : la scène OÙ L'ÉLÈVE EN EST —
- * les points et les أشعة, résolus, en coordonnées. La miniature les dessine
- * telles quelles ; la recherche trouve « AB » en cherchant un شعاع nommé.
+ * Le RÉSUMÉ d'un document du labo des vecteurs : la scène OÙ L'ÉLÈVE EN EST —
+ * les points et les vecteurs, résolus, en coordonnées. La miniature les dessine
+ * telles quelles ; la recherche trouve « AB » en cherchant un vecteur nommé.
  *
  * On résout la scène ici (les définitions stockées désignent souvent
- * d'autres objets : « le شعاع de A vers B »), et on ne garde que le pas
+ * d'autres objets : « le vecteur de A vers B »), et on ne garde que le pas
  * courant de l'historique — vingt copies de la même scène n'apprennent rien
  * à une vignette.
  *

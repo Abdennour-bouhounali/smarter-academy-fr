@@ -53,7 +53,7 @@ describe('résultat → orientation → face lue', () => {
     expect(dieTopFace(tilted)).toBe(4);
   });
 
-  it('la pièce : « وجه » et « ظهر », pour tout lacet', () => {
+  it('la pièce : « Face » et « Pile », pour tout lacet', () => {
     for (let k = 0; k < 8; k += 1) {
       const yaw = (k / 8) * 2 * Math.PI;
       expect(coinTopFace(coinOrientation(true, yaw))).toBe('heads');

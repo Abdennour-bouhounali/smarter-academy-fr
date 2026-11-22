@@ -15,23 +15,23 @@ import {
 } from './logicState.js';
 
 /**
- * §26-36 — LE CONSTRUCTEUR DE PREUVE (بناء البرهان).
+ * §26-36 — LE CONSTRUCTEUR DE PREUVE (« Démonstration »).
  *
  * Trois modes sur le même graphe (`presets.PROOFS`, `proofMath.js`) :
- *   ابنِ    — les cartes disponibles, une à la fois, dans l'ordre logique ;
- *   رتّب    — toutes les cartes mêlées, à remettre en ordre (§35) ;
- *   الناقصة — une étape retirée, à retrouver parmi des distracteurs (§34).
+ *   Construire       — les cartes disponibles, une à la fois, dans l'ordre logique ;
+ *   Ordonner         — toutes les cartes mêlées, à remettre en ordre (§35) ;
+ *   L'étape manquante — une étape retirée, à retrouver parmi des distracteurs (§34).
  *
  * ── Le geste (§44) ───────────────────────────────────────────────────────
  * Pas de HTML5 drag-and-drop : Pointer Events, comme partout ailleurs dans
- * le مختبر (DragHandle des أشعة, NumberLineStage du مختبر الأعداد). Et
+ * l'atelier (DragHandle des vecteurs, NumberLineStage de l'atelier des nombres). Et
  * SURTOUT : toute manipulation a un équivalent au clic et au clavier — on
  * pose une carte en la touchant, on la déplace avec les flèches. Le contrat
  * des manipulations l'exige, et sur téléphone c'est le seul geste fiable.
  *
  * ── Le refus qui enseigne (§27) ──────────────────────────────────────────
- * Une carte posée trop tôt n'est pas refusée d'un « خطأ » : le laboratoire
- * dit « هذه النتيجة لا تتبع مباشرةً من المعطيات الحالية » et NOMME ce qui
+ * Une carte posée trop tôt n'est pas refusée d'un « faux » : le laboratoire
+ * dit « Ce résultat ne découle pas directement de ce qui est déjà posé » et NOMME ce qui
  * manque. Il ne dit jamais quelle carte poser — c'est le travail de l'élève.
  */
 export default function ProofArea({ data, onChange, announce }) {
@@ -70,7 +70,7 @@ export default function ProofArea({ data, onChange, announce }) {
     announce?.(t('tools.logic.announce.stepPlaced'));
   }, [proof, placed, onChange, announce, t]);
 
-  /** En mode « رتّب », toutes les cartes sont proposées, mêlées mais stables. */
+  /** En mode « Ordonner », toutes les cartes sont proposées, mêlées mais stables. */
   const pool = useMemo(() => {
     if (state.mode === 'gap') return gap?.candidates ?? [];
     const ids = state.mode === 'order'
@@ -151,7 +151,7 @@ export default function ProofArea({ data, onChange, announce }) {
                   <>
                     {' '}
                     {t('tools.logic.proof.errors.missingNames', {
-                      steps: refused.missing.map((id) => stepText(id)).join('، '),
+                      steps: refused.missing.map((id) => stepText(id)).join(' ; '),
                     })}
                   </>
                 )}
@@ -341,12 +341,12 @@ function GapMode({ gap, proof, stepText, answer, onAnswer, onNext }) {
  * deux branches apparaît APRÈS elles et les réunit.
  *
  * ── L'arbre ne donne pas la preuve d'un bloc (exigence 2026-09-30) ───────
- * Il était dessiné en entier dès l'ouverture — l'ordre des modes « رتّب »
- * et la carte retirée du mode « الناقصة » s'y lisaient avant que l'élève
+ * Il était dessiné en entier dès l'ouverture — l'ordre des modes « Ordonner »
+ * et la carte retirée du mode « L'étape manquante » s'y lisaient avant que l'élève
  * ait rien fait. Désormais il montre :
  *   - les étapes que l'élève a POSÉES (sa construction — la carte d'avancement) ;
  *   - et, sur demande, le reste rang par rang (`useStepReveal`, un pas = un
- *     rang du graphe, chaque nœud avec son rôle : معطى, قاعدة, استنتاج, النتيجة) ;
+ *     rang du graphe, chaque nœud avec son rôle : donnée, propriété, déduction, conclusion) ;
  *     le dernier rang est la conclusion.
  * Une preuve que l'élève a achevée s'affiche entière : il l'a produite.
  * Un rang futur n'est pas dans le DOM.

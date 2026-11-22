@@ -1,12 +1,12 @@
-/* ── Le مختبر المثلثات ─────────────────────────────────────────────────────
+/* ── Le labo de trigonométrie ─────────────────────────────────────────────────────
    Le dessin prend tout ce qu'il peut ; le panneau se range sur le bord de
-   départ (à droite en arabe) sur grand écran, et devient un TIROIR en bas
+   départ (à gauche) sur grand écran, et devient un TIROIR en bas
    sous 768 px (§35). Le dessin est LTR par nature — c'est des mathématiques
    (§36) ; le panneau suit la direction de la page.
 
-   Les conventions sont celles du grapheur et des أشعة (functionGrapher.css,
+   Les conventions sont celles du grapheur et des vecteurs (functionGrapher.css,
    vectors.css) : mêmes teintes, mêmes rayons, mêmes familles — les
-   instruments du مختبر doivent se ressembler. */
+   instruments de l'atelier doivent se ressembler. */
 
 .sa-ml-trig {
   position: absolute;
@@ -64,7 +64,7 @@
 .sa-ml-trig__arrowhead { fill: #94a3b8; }
 
 .sa-ml-trig__axisname {
-  font-family: 'Inter', 'Cairo', serif;
+  font-family: 'Inter', serif;
   font-style: italic;
   font-size: 15px;
   fill: #334155;
@@ -221,7 +221,7 @@
 .sa-ml-trig__tangentray-dot { fill: #db2777; opacity: 0.6; }
 
 .sa-ml-trig__tangentlabel {
-  font-family: 'Cairo', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 12px;
   font-weight: 600;
   fill: #be185d;
@@ -364,7 +364,7 @@
   background: #fef2f2;
   border: 1px solid #fecaca;
   color: #b91c1c;
-  font-family: 'Cairo', sans-serif;
+  font-family: sans-serif;
   font-size: 0.9rem;
   text-align: center;
 }
@@ -392,7 +392,7 @@
 .sa-ml-trig__formula-eq { color: #64748b; }
 .sa-ml-trig__formula-value { font-weight: 700; }
 .sa-ml-trig__formula-value--undef {
-  font-family: 'Cairo', sans-serif;
+  font-family: sans-serif;
   font-size: 0.85rem;
   color: #be185d;
 }
@@ -408,7 +408,7 @@
 .sa-ml-trig__formula-num,
 .sa-ml-trig__formula-den {
   font-size: 0.8rem;
-  font-family: 'Cairo', 'JetBrains Mono', sans-serif;
+  font-family: 'JetBrains Mono', sans-serif;
   padding: 0 0.25rem;
 }
 
@@ -432,7 +432,7 @@
   border-radius: 999px;
   background: rgba(124, 58, 237, 0.08);
   color: #6d28d9;
-  font-family: 'Cairo', sans-serif;
+  font-family: sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   pointer-events: none;
@@ -447,7 +447,7 @@
   border-radius: 0.7rem;
   background: rgba(15, 23, 42, 0.9);
   color: #f8fafc;
-  font-family: 'Cairo', sans-serif;
+  font-family: sans-serif;
   font-size: 0.83rem;
   line-height: 1.5;
   text-align: center;
@@ -464,7 +464,7 @@
   background: #ffffff;
   border: 1px solid #ddd6fe;
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
-  font-family: 'Cairo', sans-serif;
+  font-family: sans-serif;
 }
 
 .sa-ml-trig__guide-question {
@@ -493,7 +493,7 @@
   max-height: 52%;
   border-top: 1px solid #e2e8f0;
   background: #ffffff;
-  font-family: 'Cairo', sans-serif;
+  font-family: sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -645,7 +645,7 @@
 }
 
 .sa-ml-trig__ratio--undefined .sa-ml-trig__ratio-value {
-  font-family: 'Cairo', sans-serif;
+  font-family: sans-serif;
   font-size: 0.72rem;
   color: #be185d;
 }
@@ -828,7 +828,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-family: 'Cairo', sans-serif;
+  font-family: sans-serif;
   font-size: 0.86rem;
   font-weight: 700;
   color: #0f172a;
@@ -865,7 +865,7 @@
   min-height: 44px;
 }
 
-.sa-ml-trig__select { font-family: 'Cairo', sans-serif; }
+.sa-ml-trig__select { font-family: sans-serif; }
 
 .sa-ml-trig__input:focus-visible,
 .sa-ml-trig__select:focus-visible {
@@ -898,7 +898,7 @@
   border-radius: 0.45rem;
   background: transparent;
   cursor: pointer;
-  font-family: 'Cairo', sans-serif;
+  font-family: sans-serif;
   font-size: 0.82rem;
   color: #475569;
   min-height: 40px;
@@ -924,7 +924,7 @@
   border: 1.5px solid #e2e8f0;
   background: #ffffff;
   cursor: pointer;
-  font-family: 'Cairo', 'JetBrains Mono', sans-serif;
+  font-family: 'JetBrains Mono', sans-serif;
   font-size: 0.8rem;
   color: #334155;
   /* §35 : les cibles tactiles ne descendent pas sous 36 px, et les boutons
@@ -979,7 +979,7 @@
   border: 1.5px solid #e2e8f0;
   background: #ffffff;
   cursor: pointer;
-  font-family: 'Cairo', sans-serif;
+  font-family: sans-serif;
   font-size: 0.82rem;
   color: #334155;
   min-height: 44px;
@@ -1045,10 +1045,8 @@
   color: #9d174d;
 }
 
-/* `dir="ltr"` fixe l'ORDRE des caractères, pas l'ALIGNEMENT : dans une page
-   arabe le bloc reste collé au bord droit et la formule paraît lue à
-   l'envers. `text-align: left` est ce qui la remet à sa place — c'est la
-   même paire que §36 demande partout où une notation est posée. */
+/* Une notation posée dans le panneau s'aligne à gauche, comme la formule
+   qu'on écrit au cahier (§36). */
 .sa-ml-trig__arcreadout {
   display: block;
   margin-top: 0.35rem;
@@ -1201,7 +1199,7 @@
   }
 }
 
-/* ── « حلّ المثلث خطوة بخطوة » — le raisonnement déroulé (StepPlayer + StepList) ── */
+/* ── « Résoudre le triangle pas à pas » — le raisonnement déroulé (StepPlayer + StepList) ── */
 
 .sa-ml-trig__solve {
   display: flex;

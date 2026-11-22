@@ -19,9 +19,9 @@ export const EQUATION_EXAMPLES = Object.freeze([
 
 export const INEQUALITY_EXAMPLES = Object.freeze([
   ex('in-add', 'beginner', 'x + 4 > 1'),
-  ex('in-times', 'beginner', '3x <= 12', '3x ≤ 12'),
+  ex('in-times', 'beginner', '3x <= 12', '3x ⩽ 12'),
   ex('in-flip', 'intermediate', '-2x + 3 < 9'),
-  ex('in-flip-eq', 'intermediate', '-x >= 2', '−x ≥ 2'),
+  ex('in-flip-eq', 'intermediate', '-x >= 2', '−x ⩾ 2'),
   ex('in-both', 'advanced', '5 - 2x > 3x + 20'),
   ex('in-brackets', 'advanced', '2(x - 1) < 3x + 1'),
 ]);
@@ -61,7 +61,7 @@ export const FACTOR_EXAMPLES = Object.freeze([
 export const FUNCTION_EXAMPLES = Object.freeze([
   { id: 'fn-linear', level: 'beginner', label: 'f(x) = 2x', value: { family: 'linear', a: 2, b: 0, c: 0 } },
   { id: 'fn-affine', level: 'beginner', label: 'f(x) = 2x + 1', value: { family: 'affine', a: 2, b: 1, c: 0 } },
-  { id: 'fn-decreasing', level: 'intermediate', label: 'f(x) = −0.5x + 3', value: { family: 'affine', a: -0.5, b: 3, c: 0 } },
+  { id: 'fn-decreasing', level: 'intermediate', label: 'f(x) = −0,5x + 3', value: { family: 'affine', a: -0.5, b: 3, c: 0 } },
   { id: 'fn-square', level: 'intermediate', label: 'f(x) = x²', value: { family: 'quadratic', a: 1, b: 0, c: 0 } },
   { id: 'fn-roots', level: 'advanced', label: 'f(x) = x² − 2x − 3', value: { family: 'quadratic', a: 1, b: -2, c: -3 } },
   { id: 'fn-down', level: 'advanced', label: 'f(x) = −x² + 4', value: { family: 'quadratic', a: -1, b: 0, c: 4 } },

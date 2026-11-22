@@ -25,7 +25,7 @@ import {
 const VIEW_STORAGE_KEY = 'sa.mathlab.work.view';
 
 /**
- * « أعمالي » — l'ATELIER personnel de l'élève.
+ * « Mes travaux » — l'ATELIER personnel de l'élève.
  *
  * Le modèle mental est : créer → enregistrer → revenir → continuer → ranger.
  * La page sert le dernier verbe : retrouver un travail parmi cinquante, et
@@ -45,9 +45,9 @@ const VIEW_STORAGE_KEY = 'sa.mathlab.work.view';
  * et on ne recharge pas cinquante travaux pour en avoir renommé un.
  */
 /**
- * `initialLab` : le مخبر dont l'accueil montre l'atelier (`moyen`,
- * `secondaire`) — le filtre « المخبر » part posé dessus, et se retire comme
- * tout autre filtre. `all` sur l'accueil du مختبر.
+ * `initialLab` : l’atelier dont l'accueil montre l'atelier (`moyen`,
+ * `secondaire`) — le filtre « Atelier » part posé dessus, et se retire comme
+ * tout autre filtre. `all` sur l'accueil de l’atelier.
  */
 export default function MyWorkSpace({ labRoot, initialLab = 'all' }) {
   const { t } = useTranslation('mathlab');
@@ -66,7 +66,7 @@ export default function MyWorkSpace({ labRoot, initialLab = 'all' }) {
   const [renaming, setRenaming] = useState(null); // le travail à renommer
   const [actionError, setActionError] = useState(null);
   // Une copie refusée par le serveur (instrument fermé, quota atteint) :
-  // on l'explique avec ses nombres, pas avec « تعذّر النسخ ».
+  // on l'explique avec ses nombres, pas avec « Impossible de dupliquer ».
   const [refusal, setRefusal] = useState(null);
   const [busy, setBusy] = useState(false);
   const searchRef = useRef(null);
@@ -95,7 +95,7 @@ export default function MyWorkSpace({ labRoot, initialLab = 'all' }) {
     return tool ? t(tool.labelKey) : id ?? '';
   }, [t]);
 
-  /** Le مخبر d'un travail : son résumé, ou l'instrument s'il n'en a qu'un (labScope.js). */
+  /** L’atelier d'un travail : son résumé, ou l'instrument s'il n'en a qu'un (labScope.js). */
   const labOf = useCallback((work) => workLabScope(work, getMathLabTool(work?.tool)), []);
 
   const visible = useMemo(
@@ -103,7 +103,7 @@ export default function MyWorkSpace({ labRoot, initialLab = 'all' }) {
     [state.works, q, filters, sort, toolLabel, labOf],
   );
 
-  /** Combien de travaux par instrument et par مخبر — les pastilles des filtres. */
+  /** Combien de travaux par instrument et par atelier — les pastilles des filtres. */
   const counts = useMemo(() => {
     const byTool = {};
     const byLab = {};
@@ -295,7 +295,7 @@ export default function MyWorkSpace({ labRoot, initialLab = 'all' }) {
       {/* ── La barre : compteur, tri, vue, filtres ──────────────────── */}
       <div className="sa-mlw-toolbar">
         <p className="sa-mlw-count" aria-live="polite" data-ml-work-count>
-          {filtered ? w('countFiltered', { shown: visible.length, total: state.works.length }) : w('count', { count: state.works.length })}
+          {filtered ? w('countFiltered', { shown: visible.length, total: state.works.length }) : (state.works.length === 0 ? w('countEmpty') : w('count', { count: state.works.length }))}
         </p>
 
         <label className="sa-mlw-sort">
@@ -451,7 +451,7 @@ export default function MyWorkSpace({ labRoot, initialLab = 'all' }) {
 /** Aucun travail : on montre par où commencer, pas un vide (§24). */
 function EmptyWorkspace({ labRoot, scope = null }) {
   const { t } = useTranslation('mathlab');
-  // Dans un مخبر, on propose ses instruments (et la سبّورة), ouverts dans ce مخبر.
+  // Dans un atelier, on propose ses instruments (et le tableau), ouverts dans cet atelier.
   const suggestions = scope ? [...commonTools(MATH_LAB_TOOLS), ...toolsForScope(MATH_LAB_TOOLS, scope)].slice(0, 4) : MATH_LAB_TOOLS.slice(0, 4);
 
   return (

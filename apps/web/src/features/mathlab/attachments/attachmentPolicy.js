@@ -1,5 +1,5 @@
 /**
- * La politique des fichiers du مختبر, côté client — logique pure.
+ * La politique des fichiers de l’atelier, côté client — logique pure.
  *
  * COPIE de App\Domain\MathLab\MathLabFilePolicy (le serveur fait foi ;
  * `attachmentPolicy.test.js` vérifie que les deux disent la même chose).
@@ -14,10 +14,10 @@ export const MAX_FILE_BYTES = 1_000_000;
 export const MAX_FILES_PER_DOCUMENT = 3;
 export const MAX_FILES_PER_USER = 50;
 
-/** Ce qui devient un FICHIER de la سبّورة (une ligne, des octets, un quota). */
+/** Ce qui devient un FICHIER du tableau (une ligne, des octets, un quota). */
 export const ATTACHMENT_KINDS = Object.freeze({ png: 'image', jpg: 'image', jpeg: 'image', webp: 'image', svg: 'svg', pdf: 'pdf' });
 
-/** Ce qui se FOND dans la سبّورة (formes, dessin) sans devenir un fichier. */
+/** Ce qui se FOND dans le tableau (formes, dessin) sans devenir un fichier. */
 const IMPORT_KINDS = Object.freeze({ excalidrawlib: 'library', excalidraw: 'scene', json: 'json' });
 
 export const ATTACHMENT_ACCEPT = '.png,.jpg,.jpeg,.webp,.svg,.pdf,.excalidraw,.excalidrawlib,.json';

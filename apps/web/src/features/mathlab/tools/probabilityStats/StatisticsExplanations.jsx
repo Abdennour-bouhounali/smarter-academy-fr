@@ -38,7 +38,7 @@ function Derivation({ kind, values, stats, seriesKey }) {
 }
 
 /**
- * « كيف تُحسب المؤشّرات؟ » — un pli par indicateur, FERMÉ à l'ouverture :
+ * « Comment calcule-t-on les indicateurs ? » — un pli par indicateur, FERMÉ à l'ouverture :
  * explorer d'abord, comprendre à la demande.
  *
  * Choix (exigence 2026-09-30, « ne pas forcer le pas à pas là où il nuit ») :
@@ -55,7 +55,7 @@ export default function StatisticsExplanations({ values, stats, shown = null }) 
   if (stats.n === 0) return null;
   const k = (key) => `tools.probabilityStats.explain.${key}`;
   const derivation = (kind) => <Derivation kind={kind} values={values} stats={stats} seriesKey={seriesKey} />;
-  // `shown` : les plis de ce مخبر (scope.js) — au collège, ni quartiles ni variance.
+  // `shown` : les plis de ce labo (scope.js) — au collège, ni quartiles ni variance.
   const show = (kind) => !shown || shown.includes(kind);
 
   return (

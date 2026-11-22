@@ -15,20 +15,20 @@ import { DEFAULT_CONICS_VIEWPORT } from './conicState.js';
 const REPORT_VIEW_MS = 400;
 
 /**
- * LE PLAN du مختبر المقاطع المخروطية (§4).
+ * LE PLAN du labo des coniques (§4).
  *
  * Il ne crée PAS un cinquième repère : la caméra (viewport.js), le pas de
  * grille (gridStep.js), les gestes (useViewportGestures.js) et le format des
  * étiquettes (grapherFormat.js) sont les modules du grapheur, importés tels
  * quels — une seule implémentation du plan sur la plateforme, un seul zoom,
  * un seul pincement, une seule graduation. C'est la décision déjà prise par
- * le مختبر الأشعة (MATH_LAB §5f.2) et le مختبر التحويلات (§5j), et §1 du
+ * le labo des vecteurs (MATH_LAB §5f.2) et le labo des transformations (§5j), et §1 du
  * cahier des charges la réclame explicitement : « ne pas créer de système de
  * coordonnées en double ».
  *
  * Le plan est `dir="ltr"` — c'est des mathématiques (§48) : l'axe des
- * abscisses croît vers la DROITE même quand l'interface est en arabe. Seuls
- * les panneaux suivent la direction de la page.
+ * abscisses croît vers la DROITE, quelle que soit la direction de la page.
+ * Seuls les panneaux suivent la direction de la page.
  *
  * Les enfants sont rendus dans le SVG de mafs via `children` : le plan ne
  * sait rien des coniques, il sait dessiner un repère et écouter des gestes.
@@ -119,7 +119,7 @@ const ConicPlane = forwardRef(function ConicPlane({
    * cadrage automatique permanent : la fenêtre appartient à l'élève dès
    * qu'il l'a touchée, et seule une scène entièrement remplacée la reprend.
    *
-   * Contrairement au مختبر التحويلات, l'origine n'est PAS forcée dans le
+   * Contrairement au labo des transformations, l'origine n'est PAS forcée dans le
    * cadre : une conique de centre (40, 40) se comprend parfaitement sans
    * l'origine, et l'y inclure la réduirait à un point.
    */

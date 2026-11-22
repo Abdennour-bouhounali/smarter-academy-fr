@@ -20,7 +20,7 @@ import { fractionSteps, ppcmSteps, powerSteps, localizeSteps } from './solutionS
 // Une instance i18n LOCALE, le namespace chargé d'avance : sinon useTranslation suspend.
 const i18n = i18next.createInstance();
 i18n.use(initReactI18next).init({
-  lng: 'ar-DZ', fallbackLng: 'ar-DZ', resources: { 'ar-DZ': { mathlab } }, ns: ['mathlab'],
+  lng: 'fr-FR', fallbackLng: 'fr-FR', resources: { 'fr-FR': { mathlab } }, ns: ['mathlab'],
   interpolation: { escapeValue: false }, react: { useSuspense: false },
 });
 
@@ -40,10 +40,10 @@ describe('le laboratoire se rend dans chaque mode', () => {
     expect(html).toContain('role="tablist"');
   });
 
-  it('le PGCD s’ouvre sur les fuvāriq, sans donner le PGCD avant le dernier pas', () => {
+  it('le PGCD s’ouvre sur les soustractions successives, sans donner le PGCD avant le dernier pas', () => {
     const html = render(setMode(createNumberLabData(), 'gcdLcm'));
     expect(html).toContain('data-ml-nb-differences');
-    // Le lecteur PARTAGÉ, sur l'énoncé : « ابدأ الحل », et aucun « كل الخطوات » pour l'élève.
+    // Le lecteur PARTAGÉ, sur l'énoncé : le bouton de départ, et aucun « Toutes les étapes » pour l'élève.
     expect(html).toContain('data-ml-nb-step-start');
     expect(html).not.toContain('data-ml-nb-step-reveal-all');
     expect(html).not.toContain('data-ml-nb-diff-all');
@@ -54,14 +54,14 @@ describe('le laboratoire se rend dans chaque mode', () => {
     expect(html).toContain('data-ml-nb-ppcm-locked');
     expect(html).not.toContain('data-ml-nb-ppcm-steps');
     expect(html).not.toContain('data-ml-nb-relation-check');
-    expect(html).toContain('حساب PGCD بالفوارق المتتالية');
+    expect(html).toContain('Le PGCD par soustractions successives');
   });
 
   it.each([
     ['euclid', 'data-ml-nb-euclid-divisions'],
     ['factors', 'class="is-gcd"'],
     ['lists', 'sa-ml-kit-steps__item'],
-  ])('PGCD par %s : l’énoncé seul avant « ابدأ الحل »', (method, marker) => {
+  ])('PGCD par %s : l’énoncé seul avant le départ', (method, marker) => {
     const html = render(patchMode(setMode(createNumberLabData(), 'gcdLcm'), 'gcdLcm', { method }));
     expect(html).toContain('data-ml-nb-step-start');
     expect(html).not.toContain(marker);
@@ -87,12 +87,13 @@ describe('le laboratoire se rend dans chaque mode', () => {
     expect(html).not.toContain('sa-ml-kit-steps__item');
   });
 
-  it('l’accord arabe du nombre de pas : خطوتان، 5 خطوات، 11 خطوة', () => {
-    expect(i18n.t('tools.numberLab.gcdLcm.differences.stepsCount', { ns: 'mathlab', count: 2 })).toBe('خطوتان');
-    expect(i18n.t('tools.numberLab.gcdLcm.differences.stepsCount', { ns: 'mathlab', count: 5 })).toBe('5 خطوات');
-    expect(i18n.t('tools.numberLab.gcdLcm.differences.stepsCount', { ns: 'mathlab', count: 11 })).toBe('11 خطوة');
-    expect(i18n.t('tools.numberLab.gcdLcm.differences.divisionsCount', { ns: 'mathlab', count: 3 })).toBe('3 قسمات');
-    expect(i18n.t('tools.numberLab.gcdLcm.squareCount', { ns: 'mathlab', count: 1, side: 36 })).toBe('مربّع واحد ضلعه 36');
+  it('l’accord français du nombre de pas : 1 étape, 2 étapes, 11 étapes', () => {
+    expect(i18n.t('tools.numberLab.gcdLcm.differences.stepsCount', { ns: 'mathlab', count: 1 })).toBe('1 étape');
+    expect(i18n.t('tools.numberLab.gcdLcm.differences.stepsCount', { ns: 'mathlab', count: 2 })).toBe('2 étapes');
+    expect(i18n.t('tools.numberLab.gcdLcm.differences.stepsCount', { ns: 'mathlab', count: 5 })).toBe('5 étapes');
+    expect(i18n.t('tools.numberLab.gcdLcm.differences.stepsCount', { ns: 'mathlab', count: 11 })).toBe('11 étapes');
+    expect(i18n.t('tools.numberLab.gcdLcm.differences.divisionsCount', { ns: 'mathlab', count: 3 })).toBe('3 divisions');
+    expect(i18n.t('tools.numberLab.gcdLcm.squareCount', { ns: 'mathlab', count: 1, side: 36 })).toBe('1 carré de côté 36');
   });
 
   it('un document V1 en euclid garde les carrés d’Euclide', () => {
@@ -141,7 +142,7 @@ describe('au dernier pas, le résultat est rendu — pas avant', () => {
     I18nextProvider, { i18n }, createElement(MathBoard, { frames, cursor, problem }),
   ));
   const list = (steps, revealUpTo) => renderToStaticMarkup(createElement(
-    I18nextProvider, { i18n }, createElement(StepList, { steps: localizeSteps(i18n.getFixedT('ar-DZ', 'mathlab'), steps), revealUpTo }),
+    I18nextProvider, { i18n }, createElement(StepList, { steps: localizeSteps(i18n.getFixedT('fr-FR', 'mathlab'), steps), revealUpTo }),
   ));
 
   it.each([
@@ -163,7 +164,7 @@ describe('au dernier pas, le résultat est rendu — pas avant', () => {
     ['1/3 + 1/4', fractionSteps({ n: 1, d: 3 }, { n: 1, d: 4 }, 'add').steps],
     ['PPCM(84 ; 36)', ppcmSteps(84, 36)],
     ['2^5', powerSteps(2, 5)],
-  ])('%s : aucun pas avant « ابدأ الحل », le résultat au dernier', (_, steps) => {
+  ])('%s : aucun pas avant le départ, le résultat au dernier', (_, steps) => {
     expect(list(steps, -1)).not.toContain('sa-ml-kit-steps__item');
     expect(list(steps, steps.length - 2)).not.toContain('sa-ml-kit-steps__item--result');
     expect(list(steps, steps.length - 1)).toContain('sa-ml-kit-steps__item--result');

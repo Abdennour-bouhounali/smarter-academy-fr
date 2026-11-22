@@ -113,9 +113,8 @@ export default function NormalCurve({
         );
       })}
 
-      {/* Une phrase ARABE dans un SVG posé en LTR : sans son propre sens,
-          le bidi la brouille (« …المطلوبX منحنى كثافة »). Ancrée à droite. */}
-      <text x={width - PAD.right} y={HEIGHT - 6} direction="rtl" textAnchor="start" className="sa-ml-ps__chart-legend">
+      {/* La légende, ancrée au bord droit (elle se termine là). */}
+      <text x={width - PAD.right} y={HEIGHT - 6} textAnchor="end" className="sa-ml-ps__chart-legend">
         {t(scale === 'z' ? 'tools.probabilityStats.normal.legendZ' : 'tools.probabilityStats.normal.legendX')}
       </text>
     </svg>

@@ -6,8 +6,8 @@ import { ensureMathLive } from './mathliveSetup.js';
  * chaque frappe : on pose la valeur quand elle diffère (chargement,
  * exemple choisi), on écoute `input`. Le curseur ne saute jamais.
  *
- * Le champ est LTR par nature — une expression se lit de gauche à droite
- * dans une page arabe — et isolé du bidi environnant (ARABIC_RTL_CONTRACT).
+ * Le champ est LTR par nature — une expression se lit de gauche à droite —
+ * et garde son `dir="ltr"` (îlot de formule, FRENCH_LANGUAGE_CONTRACT §8).
  */
 export default function ExpressionField({ value, onInput, onCommit, ariaLabel, ariaDescribedBy, invalid, autoFocus, className = '' }) {
   const ref = useRef(null);

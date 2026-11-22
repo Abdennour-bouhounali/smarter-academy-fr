@@ -1,7 +1,7 @@
 /**
- * Le GÉNÉRATEUR d'équations du مختبر الجبر — logique pure, sans React.
+ * Le GÉNÉRATEUR d'équations de l'atelier d'algèbre — logique pure, sans React.
  *
- * « معادلة جديدة » doit rendre un exercice de manuel, pas une équation
+ * « Nouvelle équation » doit rendre un exercice de manuel, pas une équation
  * tirée au hasard : une équation pédagogique se reconnaît à ce qu'elle
  * ÉVITE.
  *
@@ -14,7 +14,7 @@
  *
  * Les niveaux 5 et 6 rendent une SAISIE (`source`) avec ses parenthèses ou
  * ses fractions : c'est elle que le laboratoire montre développée
- * (« نشر وتبسيط كل طرف ») avant le travail sur la balance.
+ * (« Développer et réduire chaque membre ») avant le travail sur la balance.
  *
  * Les garde-fous, tous délibérés :
  *   — la solution est un ENTIER de [−10, 10] : l'élève doit pouvoir
@@ -39,7 +39,7 @@ import { lcmInt } from './polynomial.js';
 
 export const LEVELS = Object.freeze([1, 2, 3, 4, 5, 6]);
 
-/** Les niveaux d'une متراجحة : les quatre premiers, le sens tiré au hasard. */
+/** Les niveaux d'une inéquation : les quatre premiers, le sens tiré au hasard. */
 export const INEQUALITY_LEVELS = Object.freeze([1, 2, 3, 4]);
 const INEQUALITY_RELATIONS = Object.freeze(['<', '>', '<=', '>=']);
 export const DEFAULT_LEVEL = 3;
@@ -172,7 +172,7 @@ function generateWritten(level, solution, random, relation) {
   return { equation: parsed.equation, source, level, solution: x };
 }
 
-/** Une متراجحة d'un niveau 1–4, le sens tiré au hasard. */
+/** Une inéquation d'un niveau 1–4, le sens tiré au hasard. */
 export function generateInequality(options = {}) {
   const random = typeof options.random === 'function' ? options.random : Math.random;
   const level = INEQUALITY_LEVELS.includes(options.level) ? options.level : DEFAULT_LEVEL;

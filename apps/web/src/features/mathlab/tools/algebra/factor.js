@@ -1,25 +1,25 @@
 /**
- * L'ANALYSE EN FACTEURS (التحليل إلى عوامل) — logique pure, sans React.
+ * L'ANALYSE EN FACTEURS (« Factoriser ») — logique pure, sans React.
  *
  * Un polynôme à UNE lettre, à coefficients rationnels, est factorisé comme
  * au tableau, en montrant le RAISONNEMENT et pas seulement le résultat :
  *
- *   1. عامل مشترك        6x² + 9x = 3x × 2x + 3x × 3 = 3x(2x + 3)
- *   2. فرق مربعين         4x² − 9 = (2x)² − 3² = (2x − 3)(2x + 3)
- *   3. مربع تام           x² + 6x + 9 = x² + 2 × x × 3 + 3² = (x + 3)²
- *   4. مجموع وجداء        x² + 5x + 6 : deux nombres de produit 6 et de somme 5
+ *   1. facteur commun    6x² + 9x = 3x × 2x + 3x × 3 = 3x(2x + 3)
+ *   2. a² − b²           4x² − 9 = (2x)² − 3² = (2x − 3)(2x + 3)
+ *   3. carré parfait     x² + 6x + 9 = x² + 2 × x × 3 + 3² = (x + 3)²
+ *   4. somme et produit  x² + 5x + 6 : deux nombres de produit 6 et de somme 5
  *                         → les couples candidats, celui qui convient → (x + 2)(x + 3)
- *   5. تفكيك الحد الأوسط  6x² + 5x + 1 = 6x² + 2x + 3x + 1 = 2x(3x + 1) + 1(3x + 1)
+ *   5. méthode « ac »    6x² + 5x + 1 = 6x² + 2x + 3x + 1 = 2x(3x + 1) + 1(3x + 1)
  *                         = (3x + 1)(2x + 1)     (méthode « ac »)
  *
  * Les étapes s'enchaînent (`2x² − 8 = 2(x² − 4) = 2(x − 2)(x + 2)`). Le
  * discriminant n'est PAS la méthode d'ouverture : il est rendu à part
- * (`discriminant`), pour un pli « طريقة المميّز » — au-delà du programme de
- * quatrième, à un clic. Δ < 0 : « لا يمكن تحليله في ℝ » ; racines
+ * (`discriminant`), pour un pli « Méthode du discriminant » — au-delà du programme de
+ * quatrième, à un clic. Δ < 0 : « ne se factorise pas dans ℝ » ; racines
  * irrationnelles : écrites avec radical, et « pas de coefficients rationnels ».
  *
  * TOUJOURS vérifié : la factorisation est redéveloppée par le moteur de
- * polynômes et comparée à l'expression de départ (« تحقّق: بالنشر نجد … »).
+ * polynômes et comparée à l'expression de départ (« Vérification : en développant, on obtient … »).
  */
 
 import * as R from './rational.js';
@@ -121,7 +121,7 @@ function factorQuadratic(q0, q1, q2, variable) {
   const sa = exactSqrtInt(q2);
   const sc = exactSqrtInt(Math.abs(q0));
 
-  // 1. فرق مربعين : a²x² − c²
+  // 1. différence de deux carrés : a²x² − c²
   if (q1 === 0 && q0 < 0 && sa !== null && sc !== null) {
     return {
       status: 'factored',
@@ -134,7 +134,7 @@ function factorQuadratic(q0, q1, q2, variable) {
     };
   }
 
-  // 2. مربع تام : a²x² ± 2acx + c²
+  // 2. carré parfait : a²x² ± 2acx + c²
   if (q0 > 0 && sa !== null && sc !== null && Math.abs(q1) === 2 * sa * sc) {
     const minus = q1 < 0;
     const coefs = linear(sa, minus ? -sc : sc);
@@ -151,7 +151,7 @@ function factorQuadratic(q0, q1, q2, variable) {
     };
   }
 
-  // 3. مجموع وجداء (q2 = 1) — ou 4. تفكيك الحد الأوسط (méthode ac)
+  // 3. somme et produit (q2 = 1) — ou 4. décomposition du terme du milieu (méthode ac)
   const product = q2 * q0;
   const pairs = integerPairs(product);
   const candidates = pairs.map(([p, q]) => ({ p, q, sum: p + q, ok: p + q === q1 }));
@@ -410,7 +410,7 @@ function factorHigher(coefs, variable) {
 }
 
 /**
- * La méthode du مميّز, pour le pli secondaire : Δ, les racines, et
+ * La méthode du discriminant, pour le pli secondaire : Δ, les racines, et
  * `a(x − x₁)(x − x₂)` quand elles sont rationnelles.
  */
 function discriminantSteps({ a, b, c }, content, power, variable) {

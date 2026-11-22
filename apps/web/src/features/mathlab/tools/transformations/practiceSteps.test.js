@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { buildRevealSteps, latexNumber, imageName } from './practiceSteps.js';
 import { generateChallenge, CHALLENGE_KINDS } from './practice.js';
-import mathlabAr from '../../../../i18n/locales/ar/mathlab.json';
+import mathlab from '../../../../i18n/locales/ar/mathlab.json';
 
 function seeded(seed = 1) {
   let state = seed;
@@ -13,7 +13,7 @@ function seeded(seed = 1) {
   };
 }
 
-describe('buildRevealSteps — « أرني » pas à pas', () => {
+describe('buildRevealSteps — « Montre-moi » pas à pas', () => {
   it('trois pas par transformation, le dernier est la réponse du moteur', () => {
     const random = seeded(7);
     for (let i = 0; i < 300; i += 1) {
@@ -86,10 +86,11 @@ describe('buildRevealSteps — « أرني » pas à pas', () => {
     expect(imageName(1, 2)).toBe("A'");
   });
 
-  it('chaque clé de texte existe en arabe', () => {
-    const solution = mathlabAr.tools.transformations.practice.solution;
+  it('chaque clé de texte existe en français', () => {
+    const solution = mathlab.tools.transformations.practice.solution;
     for (const key of ['rule', 'ruleOf', 'substitute', 'image', 'result', 'show', 'heading']) {
       expect(typeof solution?.[key]).toBe('string');
+      expect(solution[key]).not.toMatch(/[\u0600-\u06FF]/);
     }
   });
 });

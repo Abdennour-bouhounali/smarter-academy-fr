@@ -1,5 +1,5 @@
 /**
- * Le SEUL endroit où un nombre du مختبر التحليل est arrondi pour l'écran.
+ * Le SEUL endroit où un nombre du labo d’analyse est arrondi pour l'écran.
  *
  * Le reste du laboratoire calcule en double précision et ne tronque rien ;
  * ici on décide ce que l'élève LIT. C'est la règle déjà tenue par
@@ -7,7 +7,7 @@
  * dispersé dans les composants finit par arrondir deux fois, et par afficher
  * deux valeurs différentes du même nombre sur le même écran.
  *
- * Le format est celui des manuels algériens : virgule décimale, vrai signe
+ * Le format est celui des manuels français : virgule décimale, vrai signe
  * moins (−, U+2212), chiffres latins. On réutilise `formatValue` du grapheur
  * plutôt que d'en réécrire un troisième.
  *
@@ -44,7 +44,7 @@ export function formatMaybeExact(value, exact, decimals = 3) {
   return exact ? formatValue(value, decimals) : formatApproximate(value, decimals);
 }
 
-/** Un couple (x ; y) à l'algérienne : point-virgule séparateur, virgule décimale. */
+/** Un couple (x ; y) à la française : point-virgule séparateur, virgule décimale. */
 export function formatPoint(x, y, decimals = 2) {
   return `(${formatValue(x, decimals)} ; ${formatValue(y, decimals)})`;
 }
@@ -57,8 +57,8 @@ function formatInfinity(sign) {
 /**
  * Une LIMITE telle qu'elle doit s'écrire — et jamais autrement.
  *
- * Rend une clé i18n et ses paramètres plutôt qu'une phrase : l'arabe vit
- * dans `mathlab.json`, pas dans un module de calcul (contrat RTL).
+ * Rend une clé i18n et ses paramètres plutôt qu'une phrase : le texte vit
+ * dans `mathlab.json`, pas dans un module de calcul.
  *
  * @param {{kind: string, value?: number, sign?: number, uncertain?: boolean}} limit
  * @returns {{text: string, tone: 'finite'|'infinite'|'none'|'undefined'}}
@@ -80,7 +80,7 @@ export function formatLimit(limit) {
 
 /**
  * Un INTERVALLE en notation mathématique : ]−2 ; 3[ — crochets sortants,
- * comme au manuel algérien (et français), pas les parenthèses anglo-saxonnes.
+ * comme au manuel français, pas les parenthèses anglo-saxonnes.
  */
 export function formatInterval(from, to, options = {}) {
   const left = options.closedLeft ? '[' : ']';

@@ -15,18 +15,17 @@ import { DEFAULT_TRANSFORM_VIEWPORT } from './transformState.js';
 const REPORT_VIEW_MS = 400;
 
 /**
- * LE PLAN du مختبر التحويلات (§3).
+ * LE PLAN de l'atelier des transformations (§3).
  *
  * Il ne crée PAS un second repère : la caméra (viewport.js), le pas de
  * grille (gridStep.js), les gestes (useViewportGestures.js) et le format des
  * étiquettes (grapherFormat.js) sont les modules du grapheur, importés tels
  * quels — une seule implémentation du plan sur la plateforme, un seul zoom,
  * un seul pincement, une seule graduation. C'est la même décision que le
- * مختبر الأشعة, et pour la même raison (MATH_LAB §5f.2).
+ * l'atelier des vecteurs, et pour la même raison (MATH_LAB §5f.2).
  *
  * Le plan est `dir="ltr"` — c'est des mathématiques (§52) : l'axe des
- * abscisses croît vers la DROITE même quand l'interface est en arabe. Seuls
- * les panneaux suivent la direction de la page.
+ * abscisses croît vers la DROITE.
  *
  * Les enfants sont rendus dans le SVG de mafs via `children` : le plan ne
  * sait rien des figures ni des transformations, il sait dessiner un repère
@@ -113,7 +112,7 @@ const TransformPlane = forwardRef(function TransformPlane({
    * CADRER un ensemble de points : la fenêtre s'ouvre sur eux.
    *
    * Sans cela, une scène posée d'un bloc (une expérience, un puzzle, un
-   * تحاكي de rapport 3) se retrouve hors de la fenêtre enregistrée, et
+   * homothétie de rapport 3) se retrouve hors de la fenêtre enregistrée, et
    * l'élève voit un plan vide ou une figure minuscule dans un coin. On ne
    * fait pourtant PAS un cadrage automatique permanent : la fenêtre
    * appartient à l'élève dès qu'il l'a touchée, et seule une scène

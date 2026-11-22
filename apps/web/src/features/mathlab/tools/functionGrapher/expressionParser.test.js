@@ -133,7 +133,7 @@ describe('erreurs — jamais un plantage, toujours un code', () => {
  * MathLive n'écrit pas toujours les accolades : dès qu'un argument tient en
  * UN caractère, il produit la forme courte de LaTeX. `\frac12` est une demie,
  * et un élève qui tape ½ au clavier virtuel envoie exactement cela. La QA
- * navigateur du مختبر التحليل l'a trouvé : la bonne réponse était rejetée.
+ * navigateur du labo d'analyse l'a trouvé : la bonne réponse était rejetée.
  */
 describe('la forme courte de \\frac (sans accolades)', () => {
   const value = (source, x = 2) => {

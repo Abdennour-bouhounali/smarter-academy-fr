@@ -9,7 +9,7 @@ import {
 import { compileSequenceExpression } from './sequenceExpression.js';
 
 /**
- * La MATHÉMATIQUE des متتاليات (§52). Chaque famille, chaque lecture, et
+ * La MATHÉMATIQUE des suites (§52). Chaque famille, chaque lecture, et
  * surtout chaque cas pathologique : §32 et §47 demandent qu'aucune expression
  * d'élève ne casse ni ne gèle quoi que ce soit, et c'est ici que ça se vérifie.
  */
@@ -29,7 +29,7 @@ const recurrenceOf = (source, first, startIndex = 0) => {
   return { kind: 'recurrence', startIndex, initial: [first], step: compiled.evaluate };
 };
 
-describe('les familles de متتاليات (§3)', () => {
+describe('les familles de suites (§3)', () => {
   it('arithmétique : u₀ = 2, r = 3 donne 2, 5, 8, 11…', () => {
     expect(values(arithmetic(2, 3), 6)).toEqual([2, 5, 8, 11, 14, 17]);
   });
@@ -190,7 +190,7 @@ describe('un terme lointain (§12)', () => {
 describe('les lectures sur les termes (§17, §34, §35, §36)', () => {
   const terms = generate(arithmetic(2, 3), 5).terms;
 
-  it('les différences d’une arithmétique sont CONSTANTES — le geste de 4AM (LP 2.1)', () => {
+  it('les différences d’une arithmétique sont CONSTANTES — le geste du collège', () => {
     expect(differences(terms).map((delta) => delta.value)).toEqual([3, 3, 3, 3]);
   });
 
@@ -384,7 +384,7 @@ describe('la toile d’araignée (§9)', () => {
   });
 });
 
-describe('la comparaison de deux متتاليات (§33)', () => {
+describe('la comparaison de deux suites (§33)', () => {
   it('ne compare que les indices COMMUNS, avec différence et rapport', () => {
     const left = generate(arithmetic(0, 2), 4).terms;
     const right = generate(arithmetic(0, 1), 3).terms;

@@ -6,7 +6,7 @@
  * phrase mais un CONSTAT : ce qui est vrai, avec de quoi le DESSINER (le
  * facteur k, la droite portante, le sommet de l'angle droit).
  *
- * Le produit scalaire est HORS PROGRAMME de 4AM (§23 : « Do not make dot
+ * Le produit scalaire est HORS PROGRAMME du collège (§23 : « Do not make dot
  * product the dominant V1 feature »). Il n'est donc jamais calculé d'office :
  * l'analyse est un choix explicite de l'élève (`settings.analysis`).
  */
@@ -14,7 +14,7 @@
 import * as V from './vectorMath.js';
 
 /**
- * Deux أشعة → ce qu'on peut en dire.
+ * Deux vecteurs → ce qu'on peut en dire.
  *
  * @returns {{
  *   parallel: boolean, factor: number|null, perpendicular: boolean,
@@ -36,7 +36,7 @@ export function compareVectors(u, v) {
 }
 
 /**
- * Trois points → l'alignement, et le شعاع porteur pour le tracer.
+ * Trois points → l'alignement, et le vecteur porteur pour le tracer.
  *
  * @returns {{collinear: boolean, degenerate: boolean, through: {x,y}|null} | null}
  */

@@ -5,14 +5,14 @@ import { AuthContext } from '../../../context/AuthContext';
 import { preloadMathLabOverlay, useMathLabOverlay } from './MathLabOverlayProvider.jsx';
 
 /**
- * « 🧪 المختبر » — LE POINT D'ENTRÉE du مختبر depuis une leçon ou un محور.
+ * « 🧪 L’atelier » — LE POINT D'ENTRÉE de l’atelier depuis une leçon ou une étape.
  *
  * ── Où il est, et pourquoi PAS ailleurs ─────────────────────────────────
  * Dans la RANGÉE DE REPÈRES du haut, à côté du compteur XP et de
  * « Signaler » : une pastille bordée, de la même famille que ses voisines.
  *
- * Il a d'abord été posé dans la colonne flottante du bas (avec « كرّاسي »,
- * « بطاقتي », « عرض »). C'était une erreur : cette colonne portait déjà
+ * Il a d'abord été posé dans la colonne flottante du bas (avec « Mon cahier »,
+ * « ma fiche », « Afficher »). C'était une erreur : cette colonne portait déjà
  * trois pastilles, une quatrième la faisait monter à 17 rem de hauteur, et
  * sur un écran court elle passait DEVANT le contenu de la leçon. Un outil
  * qu'on ouvre pour lire une leçon ne doit pas commencer par la cacher.
@@ -23,12 +23,12 @@ import { preloadMathLabOverlay, useMathLabOverlay } from './MathLabOverlayProvid
  * du module. Le même raisonnement avait déjà déplacé « Signaler » du bas de
  * page vers cette rangée.
  *
- * Sans compte, pas de مختبر — comme le cahier, comme le signalement. Le
+ * Sans compte, pas d’atelier — comme le cahier, comme le signalement. Le
  * visiteur voit la leçon sans le déclencheur.
  *
- * Aucune permission au-delà : le مختبر est ouvert à l'élève comme à
+ * Aucune permission au-delà : l’atelier est ouvert à l'élève comme à
  * l'enseignant (MATH_LAB.md §2, « Access follows the student space »). Ce
- * n'est pas « وضع القسم », qui reste réservé aux présentateurs — et il
+ * n'est pas « mode classe », qui reste réservé aux présentateurs — et il
  * RESTE disponible pendant une séance : c'est au tableau, devant la classe,
  * qu'on a le plus besoin de sortir un instrument au milieu d'une
  * explication. La rangée de repères fait partie de ce que la présentation
@@ -36,8 +36,8 @@ import { preloadMathLabOverlay, useMathLabOverlay } from './MathLabOverlayProvid
  */
 /**
  * `scope` : le cycle de la leçon (`levelId` du catalogue — « moyen » pour
- * 4AM). Le sélecteur s'ouvre sur le مخبر correspondant (labScope.js) ; un
- * identifiant qui n'est pas un مخبر est ignoré par le calque.
+ * le collège). Le sélecteur s'ouvre sur l’atelier correspondant (labScope.js) ; un
+ * identifiant qui n'est pas un atelier est ignoré par le calque.
  */
 export default function MathLabEntryButton({ className = '', scope = null }) {
   // Namespace `lesson`, pas `mathlab` : ce bouton est rendu sur CHAQUE page

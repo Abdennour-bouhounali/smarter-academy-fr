@@ -166,7 +166,7 @@ export default function OperationsMode({ state, onChange, compact, onGoMode = nu
             )}
           </div>
 
-          {/* Une phrase arabe reste RTL ; seule la formule est une île LTR (MathText). */}
+          {/* La phrase suit la page ; la formule est une île LTR (MathText). */}
           {remainder === 0
             ? <p className="sa-ml-nb__verdict is-prime">{t('tools.numberLab.operations.exactDivision')}</p>
             : <p className="sa-ml-nb__formula" dir="ltr">{t('tools.numberLab.operations.withRemainder', { a, b, quotient, remainder })}</p>}

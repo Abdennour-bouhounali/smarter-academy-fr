@@ -1,7 +1,7 @@
 /**
  * Le FORMAT des nombres du grapheur : virgule décimale, vrai signe moins,
- * comme partout sur la plateforme (statsUtils.formatNumber). Les chiffres
- * restent latins — convention des manuels algériens de mathématiques.
+ * comme partout sur la plateforme (statsUtils.formatNumber) et comme
+ * l'écrit l'école française.
  */
 
 /** Une valeur pour une lecture (curseur, point) : `2,35`, `−4`, `—` si non définie. */

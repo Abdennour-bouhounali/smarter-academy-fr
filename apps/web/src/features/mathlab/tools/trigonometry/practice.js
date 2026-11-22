@@ -86,7 +86,7 @@ export const CHALLENGE_KINDS = Object.freeze([
  * pose pas de question sur les quadrants, qui n'y ont pas de sens.
  *
  * `options.mode === 'triangle'` restreint AUSSI les angles : le programme
- * de 4AM est celui du triangle rectangle, donc des angles AIGUS
+ * du collège est celui du triangle rectangle, donc des angles AIGUS
  * (`CURRICULUM_ANGLES` : 30°, 45°, 60°). Demander cos 210° dans ce mode
  * poserait une question du lycée sous l'étiquette du collège.
  *
@@ -111,7 +111,7 @@ export function generateChallenge(seed, kinds = CHALLENGE_KINDS, options = {}) {
 
 /**
  * Challenge 1 — `sin(30°) = ?` La réponse est un NOMBRE, exact ou décimal.
- * `acuteOnly` : le mode triangle ne tire que les angles du programme de 4AM.
+ * `acuteOnly` : le mode triangle ne tire que les angles du programme du collège.
  */
 function ratioValueChallenge(random, acuteOnly = false) {
   const pool = acuteOnly
@@ -182,7 +182,7 @@ function quadrantChallenge(random) {
     angle: entry.degrees,
     hintKeys: ['tools.trigonometry.practice.h.signTable', 'tools.trigonometry.practice.h.twoSolutions'],
     explainKey: 'tools.trigonometry.practice.e.quadrantOf',
-    explainParams: { ratio, quadrants: expected.join('، ') },
+    explainParams: { ratio, quadrants: expected.join(' et ') },
   };
 }
 
@@ -213,7 +213,7 @@ function signsChallenge(random) {
  *
  * Les triplets sont PYTHAGORICIENS : (3,4,5) et ses cousins. Le troisième
  * côté est alors entier, le rapport est une fraction simple, et l'élève
- * peut vérifier de tête — c'est le triangle du manuel de 4AM, pas un
+ * peut vérifier de tête — c'est le triangle du collège, pas un
  * exercice de calculatrice.
  */
 const TRIPLES = Object.freeze([[3, 4, 5], [6, 8, 10], [5, 12, 13], [8, 15, 17], [9, 12, 15], [7, 24, 25]]);
@@ -329,10 +329,10 @@ export function parseAnswer(text) {
   if (!source) return NaN;
 
   source = source
-    .replace(/[٠-٩]/g, (d) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)))  // chiffres arabes-indiens
-    .replace(/[۰-۹]/g, (d) => String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)))  // chiffres persans
+    .replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x0660))  // chiffres arabes-indiens
+    .replace(/[\u06F0-\u06F9]/g, (d) => String(d.charCodeAt(0) - 0x06F0))  // chiffres persans
     .replace(/[−–]/g, '-')                                      // vrai signe moins
-    .replace(/[،٫]/g, ',')
+    .replace(/[\u060C\u066B]/g, ',')
     .replace(/,/g, '.')
     .replace(/\s+/g, '')
     .replace(/×/g, '*')
@@ -468,7 +468,7 @@ export function revealTarget(challenge) {
 /**
  * Les familles de questions qui ont un sens dans le mode courant.
  *
- * Le mode triangle est celui de 4AM : le radian n'y figure pas (il arrive
+ * Le mode triangle est celui du collège : le radian n'y figure pas (il arrive
  * avec le cercle trigonométrique, au lycée), donc pas de `degToRad` ici.
  * `generateChallenge(seed, kinds, { mode: 'triangle' })` restreint en plus
  * `ratioValue` aux angles aigus du programme.

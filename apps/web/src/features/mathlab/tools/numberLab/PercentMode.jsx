@@ -20,7 +20,7 @@ import { formatNumber, formatPercent } from './numberValue.js';
  * de se mémoriser.
  *
  * §16 est traité avec un soin particulier : la hausse et la baisse ne sont
- * JAMAIS distinguées par la seule couleur. Il y a un mot (ارتفاع / انخفاض),
+ * JAMAIS distinguées par la seule couleur. Il y a un mot (hausse / baisse),
  * une flèche, et un signe — trois signaux indépendants, comme §16 l'exige.
  */
 export default function PercentMode({ state, onChange, compact }) {

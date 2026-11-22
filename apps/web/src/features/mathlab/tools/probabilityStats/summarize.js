@@ -4,7 +4,7 @@ import { sampleCurve } from './normalDistribution.js';
 import { normalizeNormal } from './probabilityState.js';
 
 /**
- * Le RÉSUMÉ d'un document d'احتمالات وإحصاء : l'expérience (ou la série),
+ * Le RÉSUMÉ d'un document de probabilités et statistiques : l'expérience (ou la série),
  * et les EFFECTIFS déjà obtenus — quelques nombres, jamais les tirages.
  * La miniature en fait un diagramme en barres, dessiné en SVG comme
  * l'instrument lui-même le fait (aucune bibliothèque de graphiques).

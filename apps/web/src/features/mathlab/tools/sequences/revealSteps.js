@@ -2,7 +2,7 @@
  * LA RÉVÉLATION PAS À PAS d'un défi de l'entraînement (§27, §29).
  *
  * Exigence de la propriétaire (2026-09-30) : quand l'élève DEMANDE la
- * réponse (« اكشف »), la solution ne tombe pas d'un bloc. On calcule ici la
+ * réponse (« Voir la solution »), la solution ne tombe pas d'un bloc. On calcule ici la
  * suite des états réels — u₀ = 4, puis u₁ = u₀ + r = 4 + 3 = 7, puis … — et
  * l'interface les découvre un à un (`useStepReveal`). Le DERNIER pas est
  * toujours la réponse du défi, identique à `challenge.expected`.
@@ -13,7 +13,7 @@
  *       kind     'given' | 'term' | 'formula' | 'difference' | 'ratio' |
  *                'compare' | 'settle' | 'fixedPoint' | 'answer'
  *       latex    l'état mathématique (KaTeX, rendu dans un îlot LTR)
- *       textKey  la phrase arabe, relative à `tools.sequences.practice.steps`
+ *       textKey  la phrase française, relative à `tools.sequences.practice.steps`
  *       n/value  le terme que ce pas établit (la pastille « u₅ = 17 »)
  *       target   ce terme est celui que la question demandait
  *

@@ -1,5 +1,5 @@
 /**
- * L'ENTRAÎNEMENT « prédire → révéler → vérifier » du مختبر التحليل
+ * L'ENTRAÎNEMENT « prédire → révéler → vérifier » du labo d’analyse
  * (§28 – §31, §43).
  *
  * Le cahier des charges fixe ce que ce module doit être ET ce qu'il ne doit
@@ -41,7 +41,7 @@ const KEY = 'tools.analysis.practice';
 
 /** Les familles de défis de §30, dans son ordre. */
 export const CHALLENGE_KINDS = Object.freeze([
-  'averageRate',       // (f(b) − f(a))/(b − a) = ?           — programme 4AM
+  'averageRate',       // (f(b) − f(a))/(b − a) = ?           — programme du collège
   'horizontalTangent', // où la tangente est-elle horizontale ?
   'slopeSign',         // f′ > 0 ou f′ < 0 sur cet intervalle ?
   'readLimit',         // lim x→a f(x) ≈ ?
@@ -107,7 +107,7 @@ function build(source) {
  */
 export function generateChallenge(seed, options = {}) {
   const rng = makeRng(Number.isFinite(seed) ? Math.floor(seed) : Date.now());
-  // §37 : au niveau « programme », on ne pose que ce qui relève de 4AM —
+  // §37 : au niveau « programme », on ne pose que ce qui relève du collège —
   // le taux d'accroissement moyen sur une fonction affine.
   const pool = options.level === 'programme'
     ? ['averageRate']
@@ -130,7 +130,7 @@ export function generateChallenge(seed, options = {}) {
 }
 
 /**
- * §30 (programme 4AM) : le taux d'accroissement moyen entre deux points.
+ * §30 (programme du collège) : le taux d'accroissement moyen entre deux points.
  * Sur une fonction AFFINE, c'est le coefficient directeur — et il ne dépend
  * pas des points choisis, ce que l'élève découvre en changeant a et b.
  */
@@ -163,7 +163,7 @@ function averageRateChallenge(rng, difficulty) {
   };
 }
 
-/** §30 : « عند أي قيمة لـ x يكون المماس أفقيًا؟ » sur f(x) = x² − 4x + 3. */
+/** §30 : « Pour quelle valeur de x la tangente est-elle horizontale ? » sur f(x) = x² − 4x + 3. */
 function horizontalTangentChallenge(rng, difficulty) {
   const root1 = randomInt(rng, -4, 2);
   const root2 = root1 + randomInt(rng, 2, difficulty === 'hard' ? 6 : 4);
@@ -297,8 +297,8 @@ function monotonicChallenge(rng) {
  * §30 : « Adjust n until the Riemann approximation is sufficiently close. »
  *
  * Trois choses sont FIXÉES par l'énoncé, et le juge s'y tient :
- *   · les rectangles sont à GAUCHE (la question le dit, et « اعرض على
- *     الرسم » règle le laboratoire en mode gauche) — l'énoncé ne le disait
+ *   · les rectangles sont à GAUCHE (la question le dit, et « Montre-moi sur
+ *     le graphique » règle le laboratoire en mode gauche) — l'énoncé ne le disait
  *     pas, et un élève en mode milieu lisait d'autres sommes ;
  *   · le seuil est celui qu'on AFFICHE (arrondi au millième) : on ne juge
  *     pas à 0,09428 une question qui dit 0,094 ;
@@ -357,13 +357,13 @@ function rootCountChallenge(rng) {
     explainKey: `${KEY}.e.rootCount`,
     explainParams: {
       count: roots.length,
-      xs: roots.map((root) => formatNumberForPrompt(root.x)).join(' ؛ '),
+      xs: roots.map((root) => formatNumberForPrompt(root.x)).join(' ; '),
     },
   };
 }
 
 /**
- * Le nombre tel qu'il doit APPARAÎTRE dans une question arabe : virgule
+ * Le nombre tel qu'il doit APPARAÎTRE dans une question en français : virgule
  * décimale et vrai signe moins, comme partout ailleurs. On ne peut pas
  * appeler analysisFormat ici sans créer un cycle (practice ← format ←
  * grapheur) : la règle est courte, on la tient sur place.
@@ -443,7 +443,7 @@ export function checkAnswer(challenge, answer) {
  * La saisie d'un élève → un nombre.
  *
  * Elle accepte la virgule décimale (« 2,5 »), le vrai signe moins (« −3 »),
- * les espaces, et une fraction simple (« 1/2 ») — ce qu'un élève algérien
+ * les espaces, et une fraction simple (« 1/2 ») — ce qu'un élève
  * écrit vraiment. Rend null si ce n'est pas un nombre, JAMAIS NaN (qui se
  * comparerait silencieusement faux).
  */
@@ -460,9 +460,10 @@ export function parseStudentNumber(input) {
   if (!raw) return null;
 
   /**
-   * Les chiffres ARABES-INDIENS (٠-٩, et leur variante persane ۰-۹) et la
-   * virgule décimale arabe « ٫ » sont ceux d'un clavier arabe de téléphone :
-   * « ٢٫٥ » est 2,5, pas une saisie incomprise.
+   * Les chiffres ARABES-INDIENS (U+0660–U+0669, et leur variante persane
+   * U+06F0–U+06F9) et la virgule décimale arabe (U+066B) sont ceux d'un
+   * clavier arabe de téléphone : la lecture les accepte toujours (2,5 écrit
+   * ainsi reste 2,5, pas une saisie incomprise).
    */
   const text = latinDigits(raw)
     .replace(/\u2212/g, '-')
@@ -599,7 +600,7 @@ export const EXPERIMENTS = Object.freeze([
  * le geste révélé), comme une expérience. Leur réponse était écrite en dur
  * (« la limite diffère », « l'aire grandit ») et jugeait la fonction que
  * l'élève avait tapée : pour 4 − x², l'aire de 0 à 3 est PLUS PETITE que de
- * 0 à 2, et la prédiction « تكبر » était pourtant annoncée juste. Désormais
+ * 0 à 2, et la prédiction « Elle augmente » était pourtant annoncée juste. Désormais
  * la question se pose sur une scène connue, et la réponse est CALCULÉE sur
  * cette scène (`predictionOutcome`), jamais recopiée.
  */

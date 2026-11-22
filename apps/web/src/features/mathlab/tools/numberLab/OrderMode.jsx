@@ -11,16 +11,16 @@ import { evaluateStepByStep, ORDER_EXAMPLES, randomExpression } from './orderOfO
 import { orderFrames } from './orderFrames.js';
 
 /**
- * أولويات العمليات — l'élève TAPE une expression, et la voit se réduire
+ * Priorités opératoires — l'élève TAPE une expression, et la voit se réduire
  * une opération à la fois, dans l'ordre de l'école.
  *
  * Chaque réduction se fait AU TABLEAU (MathBoard, frames de `orderFrames.js`) :
  * l'opération prioritaire désignée dans l'expression entière, l'arc qui porte
  * son opérateur, la valeur qui tombe, puis la valeur qui prend sa place —
- * ligne acquise « = … ». La règle appliquée est dite en arabe à chaque pas.
- * La valeur finale n'est écrite qu'au DERNIER pas (le cadre « النتيجة » aussi).
+ * ligne acquise « = … ». La règle appliquée est dite en français à chaque pas.
+ * La valeur finale n'est écrite qu'au DERNIER pas (le cadre « Résultat » aussi).
  *
- * « احسب » lance le déroulé (`player.start()`) ; changer l'expression ou
+ * « Calculer » lance le déroulé (`player.start()`) ; changer l'expression ou
  * d'exemple ramène à l'énoncé. Seul le TEXTE tapé est enregistré
  * (`order.expression`), jamais le curseur.
  */

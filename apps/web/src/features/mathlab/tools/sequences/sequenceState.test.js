@@ -12,7 +12,7 @@ import { PRESETS, EXPERIMENTS } from './presets.js';
 import { buildModel } from './sequenceModel.js';
 
 /**
- * L'ÉTAT du مختبر المتتاليات : le document, sa frontière, ses transitions.
+ * L'ÉTAT du labo des suites : le document, sa frontière, ses transitions.
  *
  * Deux exigences du cahier des charges sont vérifiées ici plutôt que
  * relues : §48 (« do not persist unnecessary transient animation state ») et
@@ -22,14 +22,14 @@ import { buildModel } from './sequenceModel.js';
 describe('le document d’ouverture (§5h.1)', () => {
   const data = createSequencesData();
 
-  it('ouvre sur une ARITHMÉTIQUE u₀ = 2, r = 3 — le geste du programme de 4AM', () => {
+  it('ouvre sur une ARITHMÉTIQUE u₀ = 2, r = 3 — le geste du programme du collège', () => {
     expect(data.primary.kind).toBe('arithmetic');
     expect(data.primary.first).toBe(2);
     expect(data.primary.difference).toBe(3);
     expect(data.primary.startIndex).toBe(0);
   });
 
-  it('montre les DIFFÉRENCES d’emblée : « الفروق المتتالية » est au programme (LP 2.1)', () => {
+  it('montre les DIFFÉRENCES d’emblée : « différences successives » est au programme', () => {
     expect(data.layers.differences).toBe(true);
     expect(data.layers.table).toBe(true);
     expect(data.layers.points).toBe(true);

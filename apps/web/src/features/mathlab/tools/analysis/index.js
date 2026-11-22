@@ -4,8 +4,8 @@ import { ANALYSIS_SCHEMA_VERSION, createAnalysisData } from './analysisState.js'
 import { summarizeAnalysis } from './summarize.js';
 
 /**
- * Le مختبر التحليل والدوال (Laboratoire d'analyse et des fonctions) — le
- * douzième instrument du مختبر الرياضيات.
+ * Le labo d’analyse (Laboratoire d'analyse et des fonctions) — le
+ * douzième instrument du atelier.
  *
  * L'élève ne lit pas « la dérivée est la limite du taux d'accroissement » :
  * il pose A et B sur une courbe, tire B vers A, et VOIT la sécante pivoter
@@ -15,20 +15,20 @@ import { summarizeAnalysis } from './summarize.js';
  * les rectangles se resserrer sur l'aire.
  *
  * ── Le taux d'accroissement d'abord, le calcul différentiel ensuite ──────
- * Le programme de 4AM ne contient NI dérivée, NI limite, NI intégrale : tout
+ * Le programme du collège ne contient NI dérivée, NI limite, NI intégrale : tout
  * le calcul différentiel est matière de lycée. Contrairement aux coniques
- * (dont la دائرة est au programme) ou à la trigonométrie (dont le triangle
+ * (dont la cercle est au programme) ou à la trigonométrie (dont le triangle
  * rectangle l'est), cet instrument n'a qu'un seul ancrage authentique en
- * 4AM : les الدوال الخطية والتآلفية (LP 3.7, 3.8) et leur COEFFICIENT
+ * collège : les fonctions linéaires et affines et leur COEFFICIENT
  * DIRECTEUR — c'est-à-dire, exactement, `(f(b) − f(a)) / (b − a)`.
  *
  * L'instrument ouvre donc sur le laboratoire de la SÉCANTE, avec
- * `f(x) = 2x + 1`, deux points et leur pente : un élève de 4AM y reconnaît
+ * `f(x) = 2x + 1`, deux points et leur pente : un élève de 3e y reconnaît
  * le geste de son manuel et joue immédiatement. La tangente, la dérivée, les
  * limites, l'intégrale et l'étude de fonction sont construites, complètes, et
  * à un clic — mais ne font jamais la première page. C'est la règle déjà tenue
  * par le produit scalaire (MATH_LAB §5f.10), le cercle trigonométrique
- * (§5g.1), les suites (§5h.1), le تحاكي (§5j.1) et les coniques (§5k.1).
+ * (§5g.1), les suites (§5h.1), le homothétie (§5j.1) et les coniques (§5k.1).
  *
  * ── Ce qui n'a PAS été réécrit ──────────────────────────────────────────
  * Le REPÈRE est celui du grapheur : viewport.js, gridStep.js,
@@ -56,8 +56,8 @@ export const analysisTool = defineMathLabTool({
   // vignette seraient indiscernables sur l'accueil.
   icon: Spline,
   schemaVersion: ANALYSIS_SCHEMA_VERSION,
-  // مخبر الثانوي seulement : limites, dérivée, intégrale et étude de
-  // fonction ; les fonctions affines du collège sont au جبر et au راسم (§5m.1).
+  // Lycée (scope « secondaire ») seulement : limites, dérivée, intégrale et étude de
+  // fonction ; les fonctions affines du collège sont au labo d’algèbre et au traceur de courbes (§5m.1).
   scopes: ['secondaire'],
   createInitialData: createAnalysisData,
   summarize: summarizeAnalysis,

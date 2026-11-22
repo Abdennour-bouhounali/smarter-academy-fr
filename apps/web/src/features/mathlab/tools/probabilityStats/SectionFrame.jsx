@@ -4,7 +4,7 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 
 /**
  * Le CADRE commun des quatre sections : le pupitre sur le bord de départ
- * (à droite en arabe) et la scène qui prend le reste ; sous 768 px, la scène
+ * (à gauche) et la scène qui prend le reste ; sous 768 px, la scène
  * en haut et le pupitre dessous, repliable (MATH_LAB.md § 5d.7). Chaque
  * section fournit son pupitre et sa scène ; le cadre ne calcule rien.
  */

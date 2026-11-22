@@ -21,13 +21,13 @@ import { StepList } from '../../shared/LabKit.jsx';
  *      transformation sur le plan — c'est la figure qui explique, pas le
  *      texte.
  *
- * « أرني » ne pose plus A′ d'un bloc (exigence du 2026-09-30) : il DÉROULE
+ * « Montre-moi » ne pose plus A′ d'un bloc (exigence du 2026-09-30) : il DÉROULE
  * le calcul (`buildRevealSteps` : règle → substitution → image, par
  * transformation) avec le lecteur partagé. Tant que le dernier pas n'est pas
  * atteint, il n'y a ni verdict, ni A′, ni image sur le plan, et la réponse
  * est gelée ; au dernier pas, `onReveal` pose le verdict et l'animation
  * confirme sur la figure. Après une réponse de l'élève, le même déroulé est
- * proposé (« شاهد الحلّ خطوة بخطوة ») — la réponse est déjà donnée, il
+ * proposé (« Voir la solution pas à pas ») — la réponse est déjà donnée, il
  * explique d'où elle vient.
  */
 export default function PracticePanel({
@@ -248,9 +248,9 @@ export default function PracticePanel({
   );
 }
 
-/** Un pas de `buildRevealSteps`, habillé pour `StepList` : la phrase arabe (notations isolées) + le LaTeX. */
+/** Un pas de `buildRevealSteps`, habillé pour `StepList` : la phrase du pas (notations isolées) + le LaTeX. */
 function solutionStep(step, t) {
-  // Les notations (A(3 ; 2), A₁, 1 من 2) sont isolées en LTR ; la phrase arabe du pas, non.
+  // Les notations (A(3 ; 2), A₁, 1 sur 2) sont isolées en LTR ; la phrase du pas, non.
   const params = isolateParams(step.params);
   if (step.describe) {
     params.transformation = t(`tools.transformations.practice.stepText.${step.describe.key}`, isolateParams(step.describe.params));
@@ -264,10 +264,9 @@ function solutionStep(step, t) {
 }
 
 /**
- * Les paramètres de l'énoncé sont de la NOTATION (LTR) posée dans une phrase
- * arabe (RTL) : chacun est enfermé dans un isolat bidi (LRI … PDI), sinon
- * « (−2 ; 3) » ou « y = x » se retrouveraient retournés par l'algorithme
- * bidi (ARABIC_RTL_CONTRACT).
+ * Les paramètres de l'énoncé sont de la NOTATION posée dans une phrase :
+ * chacun est enfermé dans un isolat bidi (LRI … PDI), qui le garde d'un seul
+ * tenant (« (−2 ; 3) », « y = x ») quelle que soit la phrase autour.
  */
 function isolateParams(params) {
   return Object.fromEntries(Object.entries(params ?? {}).map(([key, value]) => [key, `\u2066${value}\u2069`]));

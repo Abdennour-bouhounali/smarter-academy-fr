@@ -1,9 +1,9 @@
 /**
- * Les POLYNÔMES du مختبر الجبر — logique pure, sans React.
+ * Les POLYNÔMES de l'atelier d'algèbre — logique pure, sans React.
  *
  * Un polynôme à plusieurs lettres, à coefficients RATIONNELS exacts
- * (rational.js) : c'est l'objet que manipulent les sections « تبسيط التعابير »,
- * « التحليل إلى عوامل », « الأنظمة » et le nouveau pas « نشر وتبسيط » des
+ * (rational.js) : c'est l'objet que manipulent les sections « Développer et réduire »,
+ * « Factoriser », « Systèmes » et le nouveau pas « développer et réduire » des
  * équations. Aucune chaîne n'est jamais retouchée : on part de l'AST de
  * l'analyseur unique (functionGrapher/expressionParser.js) et on revient au
  * LaTeX par des fonctions d'écriture dédiées.
@@ -350,8 +350,8 @@ export function latexToText(latex) {
     .replace(/\\times/g, '×')
     .replace(/\\cdot/g, '·')
     .replace(/\\neq/g, '≠')
-    .replace(/\\leq/g, '≤')
-    .replace(/\\geq/g, '≥')
+    .replace(/\\leqslant|\\leq/g, '⩽')
+    .replace(/\\geqslant|\\geq/g, '⩾')
     .replace(/\\,/g, ' ')
     .replace(/[{}]/g, '')
     .replace(/-/g, '−')

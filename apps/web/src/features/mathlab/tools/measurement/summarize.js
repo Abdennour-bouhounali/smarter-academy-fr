@@ -1,13 +1,13 @@
 import { INVESTIGATIONS } from './investigations.js';
 
 /**
- * Le RÉSUMÉ d'un document du مختبر القياس : l'enquête ouverte, où en est la
+ * Le RÉSUMÉ d'un document de « Grandeurs et mesures » : l'enquête ouverte, où en est la
  * découverte, et combien de mesures ont été prises.
  *
  * C'est ce qui distingue deux documents de cet instrument l'un de l'autre —
  * « l'aire du triangle, 6 mesures, règle trouvée » n'est pas « le cercle,
  * 2 mesures, en cours ». La vignette réutilise la forme `shapes` (déjà
- * dessinée par « أعمالي » pour les تحويلات) : aucun dessin nouveau n'est
+ * dessinée par « Mes travaux » pour les transformations) : aucun dessin nouveau n'est
  * nécessaire, et l'aperçu montre l'objet mesuré.
  *
  * La fonction est PURE et ne jette jamais : une vignette ne vaut pas un

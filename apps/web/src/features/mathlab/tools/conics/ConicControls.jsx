@@ -27,7 +27,7 @@ import { formatValue } from '../functionGrapher/grapherFormat.js';
  * précise.
  *
  * ── L'ÉQUATION EST ICI AUSSI, et c'est essentiel (§2, §7) ────────────────
- * Le champ d'équation ÉDITABLE vit dans l'inspecteur (« القياسات ») : c'est
+ * Le champ d'équation ÉDITABLE vit dans l'inspecteur (« Mesures ») : c'est
  * lui qui tient le sens équation → géométrie. Mais §2 exige que l'élève voie
  * l'équation changer PENDANT qu'il manipule — or manipuler se fait ici, et
  * l'inspecteur est alors sur l'autre onglet, donc invisible. Sans un second

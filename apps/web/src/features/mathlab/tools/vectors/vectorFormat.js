@@ -1,27 +1,24 @@
 /**
- * L'AFFICHAGE des أشعة : la frontière entre le calcul exact et ce que
+ * L'AFFICHAGE des vecteurs : la frontière entre le calcul exact et ce que
  * l'élève lit. Tout arrondi du laboratoire passe ici, et nulle part ailleurs
  * (§37 : « Use exact values internally. Round only for display »).
  *
- * Le format des nombres est celui de tout le مختبر — `grapherFormat.formatValue` :
- * virgule décimale, vrai signe moins (−, U+2212), chiffres LATINS, comme les
- * manuels algériens de mathématiques (ARABIC_RTL_CONTRACT).
+ * Le format des nombres est celui de tout l'atelier — `grapherFormat.formatValue` :
+ * virgule décimale, vrai signe moins (−, U+2212), chiffres usuels, comme
+ * l'écrit l'école française (FRENCH_LANGUAGE_CONTRACT §5, §7).
  *
  * ── Le sens de lecture ───────────────────────────────────────────────────
- * Une écriture mathématique se lit de GAUCHE à DROITE même dans une page
- * arabe : `u = (3, −2)` doit rester `u = (3, −2)`, jamais `(2− ,3) = u`.
- * Le bidi ferait le second si on laissait faire : une parenthèse est un
- * caractère « miroir » et une virgule est neutre. Les fonctions de ce module
- * rendent donc des chaînes que l'interface pose TOUJOURS dans un conteneur
- * `dir="ltr"` — la règle est vérifiée par vectorFormat.test.js et rappelée
- * dans docs/architecture/MATH_LAB.md.
+ * Une écriture mathématique se lit de GAUCHE à DROITE : `u = (3 ; −2)`.
+ * La page est LTR ; l'interface pose quand même ces chaînes dans un îlot
+ * `dir="ltr"` (inoffensif, FRENCH_LANGUAGE_CONTRACT §8) — rappelé dans
+ * docs/architecture/MATH_LAB.md.
  */
 
 import { formatValue } from '../functionGrapher/grapherFormat.js';
 
 export { formatValue };
 
-/** Le couple `(x, y)` — l'écriture du manuel pour des composantes comme pour un point. */
+/** Le couple `(x ; y)` — l'écriture d'un point, avec le point-virgule de l'école française. */
 export function formatPair(v, decimals = 2) {
   if (!v || !Number.isFinite(v.x) || !Number.isFinite(v.y)) return '—';
 
@@ -52,7 +49,7 @@ export function formatNorm(exact, decimals = 2) {
   return { text: formatValue(exact.value, decimals), approx: null, isExact: false };
 }
 
-/** Une direction en degrés : `53,13°`, ou « — » pour le شعاع nul (§10). */
+/** Une direction en degrés : `53,13°`, ou « — » pour le vecteur nul (§10). */
 export function formatAngle(degrees, decimals = 2) {
   if (!Number.isFinite(degrees)) return '—';
 
@@ -90,21 +87,21 @@ export function formatSlope(slope, decimals = 2) {
 }
 
 /**
- * ── L'ÉCRITURE EN COLONNE D'UN شعاع ──────────────────────────────────────
+ * ── L'ÉCRITURE EN COLONNE D'UN VECTEUR ──────────────────────────────────────
  *
- * Un شعاع n'est PAS un point. Le manuel algérien écrit un point « A(3 ; −2) »
+ * Un vecteur n'est PAS un point. On écrit un point « A(3 ; −2) »
  * — un couple, sur une ligne — et ses composantes EN COLONNE :
  *
  *        ⎛  3 ⎞
  *    u = ⎝ −2 ⎠
  *
  * La colonne dit ce que la ligne cache : la première composante est celle de
- * l'axe des abscisses, la seconde celle des ordonnées, et une somme de شعاعين
+ * l'axe des abscisses, la seconde celle des ordonnées, et une somme de deux vecteurs
  * s'obtient en additionnant LIGNE À LIGNE. C'est la même écriture qui
  * deviendra une matrice colonne au lycée.
  *
  * `formatPair` reste donc ce qu'il est — l'écriture d'un POINT — et ces deux
- * fonctions-ci servent les شعاع. Les deux délimiteurs doivent s'étendre sur
+ * fonctions-ci servent les vecteurs. Les deux délimiteurs doivent s'étendre sur
  * les deux composantes : ni « (x ; y) » retourné à la verticale, ni deux
  * parenthèses d'une seule ligne empilées.
  *
@@ -114,7 +111,7 @@ export function formatSlope(slope, decimals = 2) {
  *     colonne en SVG, car KaTeX ne rend rien dans un <text> SVG.
  */
 
-/** Les deux composantes, formatées, ou `null` si le شعاع n'est pas lisible. */
+/** Les deux composantes, formatées, ou `null` si le vecteur n'est pas lisible. */
 export function vectorComponents(v, decimals = 2) {
   if (!v || !Number.isFinite(v.x) || !Number.isFinite(v.y)) return null;
 
@@ -122,13 +119,13 @@ export function vectorComponents(v, decimals = 2) {
 }
 
 /**
- * Le شعاع en colonne, en LaTeX : `\binom{3}{-2}` rendu par KaTeX avec des
+ * Le vecteur en colonne, en LaTeX : `\binom{3}{-2}` rendu par KaTeX avec des
  * parenthèses qui s'étendent sur les deux lignes. Le vrai signe moins de
  * `formatValue` (U+2212) est rendu à LaTeX sous la forme qu'il comprend, et
  * la virgule décimale est protégée par une accolade — sans quoi KaTeX la
  * traiterait comme un séparateur et ouvrirait une espace.
  *
- * @returns {string|null} le LaTeX, ou null pour un شعاع illisible
+ * @returns {string|null} le LaTeX, ou null pour un vecteur illisible
  */
 export function vectorColumnLatex(v, decimals = 2) {
   const c = vectorComponents(v, decimals);
@@ -143,7 +140,7 @@ function latexNumber(text) {
 }
 
 /**
- * Le شعاع en colonne pour un contexte qui ne peut recevoir QUE du texte :
+ * Le vecteur en colonne pour un contexte qui ne peut recevoir QUE du texte :
  * le résumé d'un pas sur sa ligne, l'énoncé d'un exercice, un aria-label.
  * On y empile les deux composantes avec les demi-crochets d'Unicode, qui
  * donnent une colonne à deux étages là où KaTeX ne peut pas aller :
@@ -155,7 +152,7 @@ function latexNumber(text) {
  * VectorColumnSvg le sont. C'est le repli honnête d'une chaîne nue, et il
  * ne doit jamais réintroduire « (x ; y) ».
  *
- * @returns {string} la colonne, ou « — » pour un شعاع illisible
+ * @returns {string} la colonne, ou « — » pour un vecteur illisible
  */
 export function vectorColumnText(v, decimals = 2) {
   const c = vectorComponents(v, decimals);

@@ -2,7 +2,7 @@ import { useTransformContext, vec } from 'mafs';
 import VectorPlane from '../vectors/VectorPlane.jsx';
 
 /**
- * LE PLAN du مختبر الجبر — celui du مختبر الأشعة, réutilisé tel quel
+ * LE PLAN de l'atelier d'algèbre — celui de l'atelier des vecteurs, réutilisé tel quel
  * (MATH_LAB.md §5f.2 : un seul repère sur la plateforme). VectorPlane
  * importe la caméra, la grille, les gestes et le format du grapheur ; on ne
  * fait ici que CADRER et poser des objets dessus.
@@ -10,7 +10,7 @@ import VectorPlane from '../vectors/VectorPlane.jsx';
  * Cadrage : `frame` est la fenêtre qui montre les objets qui comptent
  * (intersection, sommet, racines). Elle ne s'applique qu'à l'OUVERTURE du
  * plan — `frameKey` change quand un nouvel objet est chargé (nouvelle
- * جملة, nouvelle famille, exemple), ce qui remonte le plan sur le nouveau
+ * système, nouvelle famille, exemple), ce qui remonte le plan sur le nouveau
  * cadre. Un curseur qui bouge ne recadre pas : l'élève garde son zoom et
  * son déplacement. Le bouton ⌖ (resetView) revient au cadre des objets.
  *

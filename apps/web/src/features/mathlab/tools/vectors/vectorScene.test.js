@@ -50,7 +50,7 @@ describe('résolution : ⃗AB (§5)', () => {
   });
 });
 
-describe('résolution : le شعاع libre (§6, §7)', () => {
+describe('résolution : le vecteur libre (§6, §7)', () => {
   it('déplacer son ORIGINE ne change pas ses composantes', () => {
     let scene = addFreeVector(emptyScene(), { x: 3, y: 2, origin: { x: 0, y: 0 } });
     const id = scene.vectors[0].id;
@@ -68,7 +68,7 @@ describe('résolution : le شعاع libre (§6, §7)', () => {
     expect(resolveScene(scene).vectors.get(id).components).toEqual({ x: 5, y: 4 });
   });
 
-  it('l’extrémité est relative à l’origine : un شعاع posé en (1,1) tiré en (5,4) vaut (4,3)', () => {
+  it('l’extrémité est relative à l’origine : un vecteur posé en (1,1) tiré en (5,4) vaut (4,3)', () => {
     let scene = addFreeVector(emptyScene(), { x: 3, y: 2, origin: { x: 1, y: 1 } });
     const id = scene.vectors[0].id;
     scene = moveVectorTip(scene, id, 5, 4);
@@ -98,7 +98,7 @@ describe('résolution : les opérations (§11, §13, §14)', () => {
     expect(resolveScene(withDiff).vectors.get(withDiff.vectors[2].id).components).toEqual({ x: 2, y: -2 });
   });
 
-  it('k·u suit le curseur, et k = 0 donne le شعاع nul', () => {
+  it('k·u suit le curseur, et k = 0 donne le vecteur nul', () => {
     const { scene, uId } = twoVectors();
     let withScaled = addScaled(scene, uId, 3);
     const id = withScaled.vectors[2].id;
@@ -138,7 +138,7 @@ describe('résolution : milieu et image (§16, §18)', () => {
     expect(resolveScene(scene).points.get(scene.points[1].id).position).toEqual({ x: 6, y: 2 });
   });
 
-  it('changer le شعاع de l’انسحاب déplace l’image, pas l’original', () => {
+  it('changer le vecteur de la translation déplace l’image, pas l’original', () => {
     let scene = addFreePoint(emptyScene(), { x: 2, y: 3, name: 'A' });
     scene = addFreeVector(scene, { x: 4, y: -1, origin: { x: 0, y: 0 } });
     const aId = scene.points[0].id;

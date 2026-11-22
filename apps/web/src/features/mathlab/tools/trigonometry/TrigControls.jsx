@@ -1,8 +1,9 @@
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  Play, Pause, RotateCcw, RotateCw, ChevronsLeft, Minus, Plus,
+  Play, Pause, RotateCcw, RotateCw, Minus, Plus,
 } from 'lucide-react';
+import { ChevronsBack } from '../../../../components/common/DirectionalIcons.jsx';
 import { SPECIAL_DEGREES } from './exactValues.js';
 import { PRESETS, EXPERIMENTS } from './presets.js';
 import { LAYER_GROUPS } from './layers.js';
@@ -29,7 +30,7 @@ export default function TrigControls({
   onTriangleValue, onPlayToggle, onSpeed, onDirection, onPractice, features = null,
 }) {
   const { t } = useTranslation('mathlab');
-  // Le مخبر (scope.js) : au collège, un seul mode (le triangle), une seule
+  // Le labo (scope.js) : au collège, un seul mode (le triangle), une seule
   // unité (le degré), trois angles remarquables, et pas de panneau du cercle.
   const modes = features?.modes ?? ['triangle', 'circle'];
   const units = features?.units ?? ['deg', 'rad'];
@@ -172,7 +173,7 @@ export default function TrigControls({
             title={t('tools.trigonometry.resetAngle')}
             data-ml-trig-resetangle
           >
-            <ChevronsLeft size={16} aria-hidden="true" />
+            <ChevronsBack size={16} aria-hidden="true" />
           </button>
         </div>
         )}
@@ -265,7 +266,7 @@ export default function TrigControls({
             />
             {/* §17 : ℓ = r·θ, la longueur d'arc en direct. */}
             <span className="sa-ml-trig__arcreadout" dir="ltr" data-ml-trig-arclength>
-              {`ℓ = r·θ = ${formatLength(arcLength(data.radius, data.angle), 3)}`}
+              {`ℓ = r × θ = ${formatLength(arcLength(data.radius, data.angle), 3)}`}
             </span>
             {Math.abs(data.radius - 1) < 1e-9 && (
               <span className="sa-ml-trig__note">{t('tools.trigonometry.radiusOneNote')}</span>

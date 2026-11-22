@@ -4,7 +4,7 @@ import { WHITEBOARD_SCHEMA_VERSION, createWhiteboardData } from './whiteboardSta
 import { summarizeWhiteboard } from './summarize.js';
 
 /**
- * La سبّورة — le premier instrument du مختبر الرياضيات.
+ * Le tableau — le premier instrument de l'atelier.
  *
  * Un espace libre pour dessiner, écrire, esquisser, annoter : croquis de
  * géométrie, calculs à la main, schémas, brouillons de résolution. Le moteur
@@ -21,7 +21,7 @@ export const whiteboardTool = defineMathLabTool({
   defaultTitleKey: 'tools.whiteboard.defaultTitle',
   icon: Presentation,
   schemaVersion: WHITEBOARD_SCHEMA_VERSION,
-  // Commune à tous, hors des مخابر : en tête de l'accueil (MATH_LAB.md §2.1).
+  // Commune à tous, hors des labos : en tête de l'accueil (MATH_LAB.md §2.1).
   scopes: 'common',
   createInitialData: createWhiteboardData,
   summarize: summarizeWhiteboard,

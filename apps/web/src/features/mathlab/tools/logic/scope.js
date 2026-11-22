@@ -2,10 +2,11 @@ import { AREAS, IMPLICATION_FORMS, MAX_PRACTICE_LEVEL } from './logicState.js';
 import { CHALLENGE_KINDS, kindsForLevel } from './practice.js';
 
 /**
- * مختبر المنطق والبرهان dans les deux مخابر (labScope.js, MATH_LAB.md §2.1).
+ * « Logique et raisonnement » dans les deux niveaux de l'atelier — ids
+ * `'moyen'` (Collège) et `'secondaire'` (Lycée), labScope.js, MATH_LAB.md §2.1.
  *
- * Au collège : une عبارة vraie, fausse ou qui dépend de x ; la propriété et
- * sa RÉCIPROQUE (« الخاصية العكسية » — Pythagore et Thalès, 4AM 4.1) ; le
+ * Au collège : une proposition vraie, fausse ou qui dépend de x ; la propriété
+ * et sa RÉCIPROQUE (Pythagore et Thalès, cycle 4) ; le
  * contre-exemple ; les erreurs de raisonnement. Les connecteurs et leurs
  * tables, l'équivalence, nécessaire/suffisant, les quantificateurs et leur
  * négation, la contraposée et l'inverse, l'implication comme inclusion
@@ -42,8 +43,8 @@ export function logicFeatures(capabilities) {
 }
 
 /**
- * Les familles d'exercices d'un niveau, dans ce مخبر. Un niveau dont aucune
- * famille n'est du مخبر retombe sur toutes celles du مخبر : jamais de liste
+ * Les familles d'exercices d'un niveau, dans ce niveau de l'atelier. Un niveau
+ * d'exercices dont aucune famille n'en fait partie retombe sur toutes les siennes : jamais de liste
  * vide, jamais une question du lycée au collège.
  */
 export function practiceKindsFor(level, features) {
@@ -52,7 +53,7 @@ export function practiceKindsFor(level, features) {
   return kinds.length ? kinds : features.practiceKinds;
 }
 
-/** Un état ramené à ce que le مخبر montre : l'aire, la forme, le niveau. Le reste est gardé. */
+/** Un état ramené à ce que le niveau de l'atelier montre : l'aire, la forme, le niveau. Le reste est gardé. */
 export function clampToFeatures(data, features) {
   let next = data;
   if (!features.areas.includes(next.area)) next = { ...next, area: features.areas.includes('counterexample') ? 'counterexample' : features.areas[0] };

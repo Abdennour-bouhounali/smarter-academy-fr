@@ -181,8 +181,8 @@ describe('§46 — lire toutes les écritures d’une même valeur', () => {
     expect(parsed.source).toBe(source);
   });
 
-  it('accepte la virgule arabe ٫ et l’espace autour de la barre', () => {
-    expect(F.parseNumberInput('0٫5').frac).toEqual({ n: 5, d: 10 });
+  it('accepte le séparateur décimal arabe (U+066B) et l’espace autour de la barre', () => {
+    expect(F.parseNumberInput('0\u066B5').frac).toEqual({ n: 5, d: 10 });
     expect(F.parseNumberInput('3 / 4').frac).toEqual({ n: 3, d: 4 });
   });
 

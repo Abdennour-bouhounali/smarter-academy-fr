@@ -56,6 +56,8 @@ describe('parseEquation', () => {
     expect(parse('2x <= 10').relation).toBe('<=');
     expect(parse('2x \\leq 10').relation).toBe('<=');
     expect(parse('2x ≤ 10').relation).toBe('<=');
+    expect(parse('2x ⩽ 10').relation).toBe('<=');
+    expect(parse('x ⩾ 1').relation).toBe('>=');
     expect(parse('x \\geqslant 1').relation).toBe('>=');
   });
 
@@ -192,7 +194,7 @@ describe('inégalités — le sens se retourne', () => {
   it('multiplier par un négatif retourne aussi le sens', () => {
     const result = applyOperation(parse('x <= 4'), { kind: 'multiply', value: R.makeRational(-1) });
     expect(result.flipped).toBe(true);
-    expect(equationToText(result.equation)).toBe('−x ≥ −4');
+    expect(equationToText(result.equation)).toBe('−x ⩾ −4');
   });
 
   it('ajouter ou retrancher ne retourne JAMAIS le sens, même un négatif', () => {
@@ -220,7 +222,7 @@ describe('écriture', () => {
     expect(equationToLatex(parse('x - 3 = 7'))).toBe('x - 3 = 7');
     expect(equationToLatex(parse('-x = 5'))).toBe('-x = 5');
     expect(equationToLatex(parse('x/3 = 5'))).toBe('\\frac{1}{3}x = 5');
-    expect(equationToLatex(parse('2x <= 10'))).toBe('2x \\leq 10');
+    expect(equationToLatex(parse('2x <= 10'))).toBe('2x \\leqslant 10');
   });
 
   it('sameEquation distingue deux états', () => {

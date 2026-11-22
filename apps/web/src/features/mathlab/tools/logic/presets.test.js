@@ -103,11 +103,11 @@ describe('IMPLICATIONS — chaque verdict et chaque contre-exemple est réel', (
     }
   }
 
-  it('au moins une implication FAUSSE existe — sinon « صحيحة » serait toujours juste', () => {
+  it('au moins une implication FAUSSE existe — sinon « vraie » serait toujours juste', () => {
     expect(IMPLICATIONS.some((p) => !p.implicationHolds)).toBe(true);
   });
 
-  it('au moins une réciproque VRAIE existe — sinon « خاطئة » serait toujours juste', () => {
+  it('au moins une réciproque VRAIE existe — sinon « fausse » serait toujours juste', () => {
     expect(IMPLICATIONS.some((p) => p.converseCounterexample === undefined)).toBe(true);
   });
 });
@@ -241,7 +241,7 @@ describe('PROOFS — des graphes cohérents, chacun résoluble', () => {
   });
 
   /**
-   * §28 — البرهان بالتراجع. L'énoncé qu'il porte doit être VRAI avant
+   * §28 — le raisonnement par récurrence. L'énoncé qu'il porte doit être VRAI avant
    * d'être mis en scène : on le vérifie terme à terme, comme tout le reste
    * de ce fichier (§48). Une preuve par récurrence d'une formule fausse
    * enseignerait la méthode ET une fausseté.
@@ -287,7 +287,7 @@ describe('PROOFS — des graphes cohérents, chacun résoluble', () => {
 });
 
 /**
- * §28 — البرهان بالتراجع, et surtout les exemples qui NE MARCHENT PAS.
+ * §28 — le raisonnement par récurrence, et surtout les exemples qui NE MARCHENT PAS.
  *
  * Un contre-exemple de méthode doit être aussi vrai qu'un exemple : si
  * « 2ⁿ > n² » était en réalité vraie partout, l'écran enseignerait une
@@ -335,7 +335,7 @@ describe('INDUCTION_CASES — ce qui marche et ce qui ne marche pas', () => {
 });
 
 describe('les deux listes de preuves', () => {
-  it('les récurrences sont hors de « بناء البرهان »', () => {
+  it('les récurrences sont hors de « Démonstration »', () => {
     expect(DIRECT_PROOFS.every((p) => p.strategy !== 'induction')).toBe(true);
     expect(INDUCTIONS.every((p) => p.strategy === 'induction')).toBe(true);
   });

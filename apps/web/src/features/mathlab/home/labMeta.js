@@ -1,7 +1,7 @@
 import { GraduationCap, School } from 'lucide-react';
 
 /**
- * Ce qu'un مخبر montre de lui-même hors des textes (`mathlab.json › labs.*`) :
+ * Ce qu'un atelier montre de lui-même hors des textes (`mathlab.json › labs.*`) :
  * son icône. Les couleurs sont dans mathlab.css (`--moyen`, `--secondaire`).
  */
 export const LAB_META = Object.freeze({

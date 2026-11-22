@@ -22,9 +22,9 @@ import { runExperiment } from './practice.js';
  * ── Rien n'est donné d'avance (exigence de la propriétaire, 2026-09-30) ──
  * Aucun PGCD ni PPCM n'est écrit en tête du mode. Chaque méthode est une
  * DÉRIVATION déroulée par le lecteur partagé (`useStepReveal` + `StepPlayer`) :
- *   الفوارق المتتالية, إقليدس   au tableau (MathBoard, frames de gcdFrames.js),
+ *   soustractions, Euclide       au tableau (MathBoard, frames de gcdFrames.js),
  *                              une soustraction / une division à la fois ;
- *   العوامل الأولية, القوائم   formule par formule (StepList, solutionSteps.js).
+ *   facteurs premiers, listes     formule par formule (StepList, solutionSteps.js).
  * Le PGCD est le DERNIER pas. Le PPCM se calcule ENSUITE (il a besoin du
  * PGCD) : son panneau reste fermé tant que le PGCD n'est pas atteint, puis se
  * déroule à son tour ; la relation `PGCD × PPCM = a × b` n'est vérifiée à
@@ -32,7 +32,7 @@ import { runExperiment } from './practice.js';
  *
  * ── §28 : la géométrie d'Euclide ────────────────────────────────────────
  * Le rectangle 84 × 36 se remplit de carrés de 36 QUAND la division
- * « 84 = 2 × 36 + 12 » tombe au tableau, puis le reste 36 × 12 de carrés de
+ * « 84 = 36 × 2 + 12 » tombe au tableau, puis le reste 36 × 12 de carrés de
  * 12. Le dernier carré EST le PGCD — il ne prend sa couleur qu'au dernier pas.
  *
  * ── §31 : une loi qu'on MESURE ──────────────────────────────────────────
@@ -121,7 +121,7 @@ export default function GcdLcmMode({ state, onChange, compact, onSaveNote, reduc
         />
       </div>
 
-      {/* ── PGCD بالفوارق المتتالية — la méthode par défaut ─────────── */}
+      {/* ── PGCD par soustractions successives — la méthode par défaut ─────────── */}
       {method === 'differences' && board && (
         <DifferencesPanel key={`${a}-${b}`} a={a} b={b} onChange={onChange} reducedMotion={reducedMotion} board={board} player={player} />
       )}
@@ -306,7 +306,7 @@ function EuclidPanel({ a, b, board, player, compact, activeStep, onHoverStep }) 
 
       {/* « D'un seul regard » (MATH_LAB §3.5) : les carrés À CÔTÉ du tableau qui les pose. */}
       <div className="sa-ml-nb__duo" dir="ltr">
-        <div className="sa-ml-nb__duo-figure" dir="rtl">
+        <div className="sa-ml-nb__duo-figure">
           {/* §28 : LE MÊME calcul, en rectangles — au rythme du tableau. */}
           <h5 className="sa-ml-nb__subheading">{t('tools.numberLab.gcdLcm.geometric')}</h5>
           <p className="sa-ml-nb__muted">{t('tools.numberLab.gcdLcm.geometricHint')}</p>
@@ -346,7 +346,7 @@ function EuclidPanel({ a, b, board, player, compact, activeStep, onHoverStep }) 
             </ol>
           )}
         </div>
-        <div className="sa-ml-nb__duo-board" dir="rtl">
+        <div className="sa-ml-nb__duo-board">
           <MathBoard {...practice.board} frames={frames} cursor={player.cursor} problem={pgcdProblem(a, b)} dataAttr="data-ml-nb-euclid-frame" />
         </div>
       </div>

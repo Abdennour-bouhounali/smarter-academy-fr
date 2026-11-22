@@ -1,6 +1,6 @@
 /**
- * Le RÉSUMÉ d'un document du مختبر المثلثات : ce que l'instrument MONTRE —
- * le triangle rectangle du programme de 4AM, ou le cercle si l'élève y est
+ * Le RÉSUMÉ d'un document du labo de trigonométrie : ce que l'instrument MONTRE —
+ * le triangle rectangle du programme du collège, ou le cercle si l'élève y est
  * passé — et l'angle. La miniature dessine l'un ou l'autre, en SVG.
  *
  * @param {object} data

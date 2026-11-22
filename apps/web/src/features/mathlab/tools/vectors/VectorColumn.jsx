@@ -3,7 +3,7 @@ import 'katex/dist/katex.min.css';
 import { vectorColumnLatex } from './vectorFormat.js';
 
 /**
- * LE شعاع EN COLONNE, EN HTML.
+ * LE VECTEUR EN COLONNE, EN HTML.
  *
  *     ⎛  3 ⎞
  *     ⎝ −2 ⎠
@@ -14,8 +14,8 @@ import { vectorColumnLatex } from './vectorFormat.js';
  * celui-ci prend une CHAÎNE à découper sur les `$…$`, alors qu'ici le LaTeX
  * est produit par `vectorColumnLatex` et n'a rien à faire analyser.
  *
- * L'isolation `dir="ltr"` est celle de tout le مختبر : une écriture
- * mathématique se lit de gauche à droite même dans une page arabe.
+ * L'isolation `dir="ltr"` est celle de tout l'atelier : une écriture
+ * mathématique se lit de gauche à droite, quelle que soit la page.
  *
  * Optionnellement précédé de son nom (`u = ⎛3⎞⎝−2⎠`), pour les endroits qui
  * écrivaient « u = (3 ; −2) » d'un seul tenant.

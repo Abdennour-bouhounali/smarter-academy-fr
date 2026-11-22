@@ -5,7 +5,7 @@ import { formatValue } from './analysisFormat.js';
 const TRACK = 92;
 
 /**
- * جدول التغيّرات — le tableau de variations du manuel algérien.
+ * Le tableau de variations, tel qu'on l'écrit au lycée.
  *
  * Il ne calcule rien : `variationTable.js` a déjà posé les colonnes, les
  * signes et la hauteur de chaque valeur. Ce composant les met en page.
@@ -20,13 +20,12 @@ const TRACK = 92;
  * On garde donc la lisibilité pour un lecteur d'écran par une description
  * textuelle complète (`aria-label` sur chaque colonne et un résumé caché),
  * et la mise en page par une grille CSS. C'est le même arbitrage que le
- * مختبر المثلثات fait pour son cercle.
+ * labo de trigonométrie fait pour son cercle.
  *
- * ── RTL ──────────────────────────────────────────────────────────────────
- * Le tableau est `dir="ltr"` : l'axe des x croît vers la DROITE, comme sur
- * le graphe juste à côté. Un tableau de variations miroité ferait décroître
- * x de gauche à droite et contredirait la courbe. Seuls les libellés de
- * ligne (« اتجاه التغيّر ») suivent la page.
+ * ── Sens de lecture ──────────────────────────────────────────────────────
+ * Le tableau se lit de gauche à droite : x croît vers la DROITE (−∞ à
+ * gauche), comme sur le graphe juste à côté. Le `dir="ltr"` de la grille
+ * le garantit même si la page changeait de sens.
  */
 export default function VariationTable({ table, functionName = 'f', rows = 4 }) {
   const { t } = useTranslation('mathlab');
@@ -219,8 +218,8 @@ function describe(table, functionName, t) {
         ? t('tools.analysis.study.decreasing')
         : t('tools.analysis.study.constant');
 
-    return `${t('tools.analysis.variationTable.on')} ]${formatValue(interval.from, 2)} ; ${formatValue(interval.to, 2)}[ ${direction}`;
+    return `${direction} ${t('tools.analysis.variationTable.on')} ]${formatValue(interval.from, 2)} ; ${formatValue(interval.to, 2)}[`;
   });
 
-  return `${functionName} : ${[...parts, ...edges].join(' ؛ ')}`;
+  return `${functionName} : ${[...parts, ...edges].join(' ; ')}`;
 }

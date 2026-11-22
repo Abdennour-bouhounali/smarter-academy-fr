@@ -1,13 +1,13 @@
-/* ── Le مختبر التحليل والدوال ──────────────────────────────────────────────
+/* ── Le labo d’analyse ──────────────────────────────────────────────
    Le plan prend tout ce qu'il peut ; le panneau se range sur le bord de
-   départ (à droite en arabe) sur grand écran, et devient un TIROIR en bas
+   départ (à gauche en français) sur grand écran, et devient un TIROIR en bas
    sous 768 px (§38). Le plan est LTR par nature — c'est des mathématiques
    (§39) ; le panneau suit la direction de la page.
 
-   Les conventions sont celles du grapheur, du مختبر الأشعة, du مختبر
-   التحويلات et du مختبر المقاطع المخروطية (functionGrapher.css, vectors.css,
+   Les conventions sont celles du grapheur, du labo des vecteurs, du atelier
+   transformations et du labo des coniques (functionGrapher.css, vectors.css,
    transformations.css, conics.css) : mêmes teintes, mêmes rayons, mêmes
-   familles — les instruments du مختبر doivent se ressembler (§45). */
+   familles — les instruments du atelier doivent se ressembler (§45). */
 
 /* La barre des laboratoires en haut, puis le plan et le panneau côte à côte.
    Une GRILLE, et non un flex qui s'enroule : la QA a montré qu'un
@@ -22,7 +22,7 @@
   grid-template-rows: auto minmax(0, 1fr);
   grid-template-columns: minmax(0, 1fr);
   background: #ffffff;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   min-height: 0;
 }
 
@@ -939,7 +939,7 @@
   }
 }
 
-/* ── جدول التغيّرات — le tableau de variations ─────────────────────────────
+/* ── tableau de variations — le tableau de variations ─────────────────────────────
    Une GRILLE, pas un `<table>` : dans un tableau de variations la POSITION
    VERTICALE d'une valeur porte du sens (en haut un maximum, en bas un
    minimum, au milieu un point stationnaire), et une cellule de tableau

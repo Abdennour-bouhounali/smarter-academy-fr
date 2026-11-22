@@ -20,14 +20,14 @@ import {
 const SERIALIZE_MS = 300;
 
 /**
- * Le مختبر القياس dans la coquille du مختبر (MathLabToolProps).
+ * L'atelier « Grandeurs et mesures » dans la coquille de l'atelier (MathLabToolProps).
  *
  *     on tire une poignée → l'objet change → on mesure → on SÉLECTIONNE
  *     ce qu'on garde → le tableau se remplit → une relation apparaît
  *     → on la construit → on l'éprouve → on comprend pourquoi
  *
  * ── Dix enquêtes, UN laboratoire ────────────────────────────────────────
- * Comme le مختبر الأعداد (§3 de son cahier), les enquêtes ne sont pas des
+ * Comme l'atelier des nombres (§3 de son cahier), les enquêtes ne sont pas des
  * routes : ce sont des vues d'un même atelier, et chacune garde SON objet et
  * SES mesures (`measureState.js`). Un élève qui remplit le tableau de l'aire,
  * part voir le cercle et revient retrouve ses quatre lignes.
@@ -83,7 +83,7 @@ export default function MeasurementTool({ initialData, onChange, onReady }) {
     }
   }, []);
 
-  /** La coquille peut vider le document (« مسح الكل ») et basculer la grille. */
+  /** La coquille peut vider le document (« Tout effacer ») et basculer la grille. */
   useEffect(() => {
     onReady?.({
       clear: () => {
@@ -234,7 +234,7 @@ export default function MeasurementTool({ initialData, onChange, onReady }) {
         </div>
 
         {/* Les LECTURES vivent au-dessus des onglets : elles ne doivent
-            jamais disparaître derrière « القاعدة » (règle du مختبر). */}
+            jamais disparaître derrière « Règle » (règle de l'atelier). */}
         <dl className="sa-ml-ms__readout" dir="ltr">
           {investigation.quantities
             .filter((entry) => entry.symbol !== '—')

@@ -1,7 +1,7 @@
 /**
  * LA DÉRIVÉE NUMÉRIQUE — logique pure, sans DOM, sans calcul formel.
  *
- * Le mode « المماس » du grapheur ne dérive pas de formule : il MESURE la pente. En un point x,
+ * Le mode « Tangente » du grapheur ne dérive pas de formule : il MESURE la pente. En un point x,
  * la différence centrée  D(h) = (f(x+h) − f(x−h)) / 2h  est corrigée par
  * extrapolation de Richardson,  D = (4·D(h/2) − D(h)) / 3 , ce qui donne une
  * erreur en O(h⁴) : pour x², x³, sin, cos, exp, la valeur affichée est

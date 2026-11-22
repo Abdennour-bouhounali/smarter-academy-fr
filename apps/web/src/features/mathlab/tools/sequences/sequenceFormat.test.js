@@ -55,9 +55,9 @@ describe('les nombres (§44)', () => {
     expect(formatTerm(1 / 3)).toBe('0,3333');
   });
 
-  it('les chiffres restent LATINS — convention des manuels algériens', () => {
-    expect(formatTerm(1234.5)).not.toMatch(/[٠-٩]/);
-    expect(formatLargeInteger(1048576)).not.toMatch(/[٠-٩]/);
+  it('les chiffres restent LATINS — convention des manuels français', () => {
+    expect(formatTerm(1234.5)).not.toMatch(/[\u0660-\u0669]/);
+    expect(formatLargeInteger(1048576)).not.toMatch(/[\u0660-\u0669]/);
   });
 
   it('un grand entier reçoit des séparateurs de milliers, jamais une virgule', () => {
@@ -251,6 +251,6 @@ describe('aucune chaîne traduisible dans ce module', () => {
       .join('\n');
     // Les symboles mathématiques sont les mêmes dans toutes les langues ;
     // les mots ne le sont pas et vivent dans mathlab.json.
-    expect(code).not.toMatch(/[؀-ۿ]/);
+    expect(code).not.toMatch(/[\u0600-\u06FF]/);
   });
 });

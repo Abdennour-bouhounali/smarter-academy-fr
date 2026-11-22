@@ -4,8 +4,8 @@ import { CONICS_SCHEMA_VERSION, createConicsData } from './conicState.js';
 import { summarizeConics } from './summarize.js';
 
 /**
- * Le مختبر المقاطع المخروطية (Laboratoire des coniques et de la géométrie
- * analytique) — le dixième instrument du مختبر الرياضيات.
+ * Le labo des coniques (coniques et géométrie analytique) — le dixième
+ * instrument de l'atelier.
  *
  * Une conique n'est pas une formule à retenir : c'est une courbe qu'on
  * ATTRAPE. L'élève tire le centre d'un cercle et voit `(x − h)² + (y − k)²`
@@ -15,13 +15,13 @@ import { summarizeConics } from './summarize.js';
  * bouge pas — sans qu'aucun texte ne le lui ait dit d'abord.
  *
  * ── Le programme d'abord, le reste d'un clic ────────────────────────────
- * Les coniques sont matière de LYCÉE ; le programme de 4AM demande la
- * DAIRA — la دائرة, son centre, son rayon, la distance au centre. L'instrument
- * ouvre donc sur `x² + y² = 9` et son point sonde — le geste du manuel — et
- * le قطع مكافئ, le قطع ناقص et le قطع زائد existent, complets, mais ne font
+ * Les coniques sont matière de LYCÉE et au-delà ; le premier objet est le
+ * CERCLE — son centre, son rayon, la distance au centre. L'instrument
+ * ouvre donc sur `x² + y² = 9` et son point sonde, et la parabole,
+ * l'ellipse et l'hyperbole existent, complètes, mais ne font
  * jamais la première page. C'est la règle déjà tenue par le produit scalaire
- * du مختبر الأشعة (MATH_LAB §5f.10), le cercle trigonométrique (§5g.1), les
- * suites (§5h) et le تحاكي (§5j).
+ * du labo des vecteurs (MATH_LAB §5f.10), le cercle trigonométrique (§5g.1), les
+ * suites (§5h) et l'homothétie (§5j).
  *
  * Le REPÈRE est celui du grapheur : viewport.js, gridStep.js,
  * useViewportGestures.js et grapherFormat.js sont importés tels quels — une
@@ -42,8 +42,8 @@ export const conicsTool = defineMathLabTool({
   defaultTitleKey: 'tools.conics.defaultTitle',
   icon: Circle,
   schemaVersion: CONICS_SCHEMA_VERSION,
-  // مخبر الثانوي seulement : l'équation d'une conique — cercle compris — est
-  // du lycée ; le collège mesure des distances au مختبر الأشعة (§5k.1).
+  // Labo du lycée seulement : l'équation d'une conique — cercle compris — est
+  // du lycée ; le collège mesure des distances au labo des vecteurs (§5k.1).
   scopes: ['secondaire'],
   createInitialData: createConicsData,
   summarize: summarizeConics,

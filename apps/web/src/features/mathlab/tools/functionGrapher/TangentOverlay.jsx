@@ -3,7 +3,7 @@ import { formatValue } from './grapherFormat.js';
 import { CONSTRUCTION_COLOR } from './grapherState.js';
 
 /**
- * Les CONSTRUCTIONS du mode « المماس » du grapheur, dessinées dans le plan :
+ * Les CONSTRUCTIONS du mode « Tangente » du grapheur, dessinées dans le plan :
  *   - la tangente en A (une droite entière, y = f(a) + f′(a)(x − a)) ;
  *   - le triangle de pente : un pas horizontal `run` (un carreau de la
  *     grille) et la montée f′(a)·run, avec ses deux mesures ;

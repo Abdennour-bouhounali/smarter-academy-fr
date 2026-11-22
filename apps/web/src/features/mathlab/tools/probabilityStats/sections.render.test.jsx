@@ -30,9 +30,9 @@ vi.mock('../../shared/useStepReveal.js', async (importOriginal) => {
 const missing = new Set();
 const i18n = i18next.createInstance();
 i18n.use(initReactI18next).init({
-  lng: 'ar-DZ',
-  fallbackLng: 'ar-DZ',
-  resources: { 'ar-DZ': { mathlab } },
+  lng: 'fr',
+  fallbackLng: 'fr',
+  resources: { fr: { mathlab } },
   ns: ['mathlab'],
   interpolation: { escapeValue: false },
   react: { useSuspense: false },
@@ -78,7 +78,7 @@ describe('le laboratoire se rend dans chaque section', () => {
       expect(html).not.toMatch(/NaN|Infinity/);
     }
     expect(render({ mode: 'dataset', dataset: '' })).toContain('data-ml-ps-chart-empty');
-    expect(render({ mode: 'dataset', dataset: '1, 2, 3' })).toContain('لا يوجد منوال');
+    expect(render({ mode: 'dataset', dataset: '1, 2, 3' })).toContain('Pas de mode');
     expect([...missing]).toEqual([]);
   });
 
@@ -91,12 +91,12 @@ describe('le laboratoire se rend dans chaque section', () => {
     expect([...missing]).toEqual([]);
   });
 
-  it('arbre faux : « غير محسوبة », marqueur « ! »', () => {
+  it('arbre faux : « Non calculée », marqueur « ! »', () => {
     const tree = setProbability(TREE_PRESETS[2].create(), [0, 0], '3/4');
     const html = render({ mode: 'tree', tree });
     expect(html).toContain('data-ml-ps-tree-valid="false"');
     expect(html).toContain('data-ml-ps-tree-issue');
-    expect(html).toContain('غير محسوبة');
+    expect(html).toContain('Non calculée');
     expect([...missing]).toEqual([]);
   });
 
@@ -112,7 +112,7 @@ describe('le laboratoire se rend dans chaque section', () => {
     expect([...missing]).toEqual([]);
   });
 
-  it('un document V1 en mode série se rouvre dans la section الإحصاء الوصفي', () => {
+  it('un document V1 en mode série se rouvre dans la section Statistique descriptive', () => {
     const html = render(normalizeProbabilityStatsData({ mode: 'dataset', dataset: '10, 20, 30' }));
     expect(html).toContain('data-ml-ps-section="dataset"');
     expect(html).toContain('10, 20, 30');
@@ -120,7 +120,7 @@ describe('le laboratoire se rend dans chaque section', () => {
 });
 
 /**
- * LE DÉROULÉ (exigence 2026-09-30) : avant « ابدأ الحل », le résultat du calcul
+ * LE DÉROULÉ (exigence 2026-09-30) : avant « Commencer le calcul », le résultat du calcul
  * n'est nulle part dans le DOM (ni au tableau, ni sur le dessin, ni dans un
  * attribut) ; une fois tous les pas révélés, il y est.
  */

@@ -14,7 +14,7 @@ import { logicTool } from './tools/logic/index.js';
 import { measurementTool } from './tools/measurement/index.js';
 
 /**
- * Le REGISTRE des instruments du مختبر الرياضيات (Math Lab).
+ * Le REGISTRE des instruments de l’atelier de mathématiques (Math Lab).
  *
  * Ajouter un instrument = un dossier `tools/<nom>/` qui exporte une
  * définition (`defineMathLabTool`), une ligne dans `MATH_LAB_TOOLS`, et son
@@ -46,7 +46,7 @@ export const MATH_LAB_TOOLS = Object.freeze([
 /**
  * Les instruments ANNONCÉS, pas encore construits : un nom et une icône,
  * rien d'autre — ni route, ni composant, ni faux écran. L'accueil les montre
- * désactivés, marqués « قريبًا », comme le catalogue montre une leçon à venir.
+ * désactivés, marqués « Bientôt », comme le catalogue montre une leçon à venir.
  * Un instrument passe d'ici à MATH_LAB_TOOLS le jour où il existe.
  */
 export const PLANNED_MATH_LAB_TOOLS = Object.freeze([]);

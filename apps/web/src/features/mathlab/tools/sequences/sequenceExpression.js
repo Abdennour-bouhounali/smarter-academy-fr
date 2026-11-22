@@ -1,5 +1,5 @@
 /**
- * L'ÉCRITURE LIBRE d'une متتالية (§31) — du texte de l'élève vers une
+ * L'ÉCRITURE LIBRE d'une suite (§31) — du texte de l'élève vers une
  * fonction sûre.
  *
  * ── On n'écrit PAS un second analyseur (§1, §31) ─────────────────────────
@@ -49,7 +49,7 @@ export const SECOND_ORDER_VARIABLES = Object.freeze(['u', 'v', 'n']);
  *
  * On accepte aussi les indices en toutes lettres — `u_n`, `u_{n+1}`, `uₙ` —
  * parce qu'un élève qui copie son manuel écrit cela, et refuser sa notation
- * ne lui apprendrait rien sur les متتاليات.
+ * ne lui apprendrait rien sur les suites.
  */
 export function normalizeSource(source, order = 1) {
   let text = String(source ?? '');
@@ -97,7 +97,7 @@ export function stripLeftHandSide(source) {
 }
 
 /**
- * Compile une expression de متتالية.
+ * Compile une expression de suite.
  *
  * @param {string} source
  * @param {{ order?: 1 | 2, explicit?: boolean }} [options]
@@ -168,12 +168,11 @@ function safe(compiled, scope) {
 }
 
 /**
- * Un nombre tapé par un élève : `3`, `−2,5`, `1/2`, `٣`.
+ * Un nombre tapé par un élève : `3`, `−2,5`, `1/2`, `\u0663` (chiffre arabe-indien).
  *
  * Les champs de paramètres (u₀, r, q, a, b) ne méritent pas l'analyseur
  * complet, mais ils méritent la virgule décimale, le vrai signe moins, les
- * chiffres arabes-indiens et la fraction simple — tout ce qu'un élève
- * algérien a sous les doigts (ARABIC_RTL_CONTRACT). Rendre `NaN` laisse
+ * chiffres arabes-indiens et la fraction simple — tout ce qu'un élève a sous les doigts (FRENCH_LANGUAGE_CONTRACT §5). Rendre `NaN` laisse
  * l'appelant garder l'ancienne valeur (`readNumber` de l'état).
  */
 export function parseNumberInput(text) {
@@ -182,9 +181,9 @@ export function parseNumberInput(text) {
 
   const source = text
     .trim()
-    .replace(/[٠-٩]/g, (d) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)))
+    .replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x0660))
     .replace(/[−–—]/g, '-')
-    .replace(/،/g, ',')
+    .replace(/\u060C/g, ',')
     .replace(/\s+/g, '')
     .replace(',', '.');
   if (!source) return NaN;

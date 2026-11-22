@@ -9,7 +9,7 @@ import { analyzeInvariants, coordinateFormula, cumulativeMatrix } from './transf
 /**
  * L'INSPECTEUR : tout ce que l'élève LIT — les mesures de la figure (§6), la
  * table original/image (§25), les invariants (§24), la formule en
- * coordonnées (§26), le شعاع du déplacement (§28) et, sur demande, la
+ * coordonnées (§26), le vecteur du déplacement (§28) et, sur demande, la
  * matrice (§27).
  *
  * Il ne calcule RIEN : `analyzeInvariants`, `coordinateFormula` et
@@ -18,10 +18,9 @@ import { analyzeInvariants, coordinateFormula, cumulativeMatrix } from './transf
  * quel ordre.
  *
  * ── La direction ─────────────────────────────────────────────────────────
- * Le panneau suit la page (RTL, arabe). Mais chaque NOTATION — `A(3, 2)`,
- * `AB = 5`, la formule, la matrice — est enfermée dans un `dir="ltr"` :
- * l'écriture mathématique est LTR partout dans le monde, y compris dans un
- * manuel algérien (§52, ARABIC_RTL_CONTRACT).
+ * Chaque NOTATION — `A(3 ; 2)`, `AB = 5`, la formule, la matrice — est
+ * enfermée dans un `dir="ltr"` : un îlot sans effet en français, qui garde la
+ * notation d'un seul tenant (§52).
  */
 export default function TransformInspector({ figures, steps, settings, activeStepId }) {
   const { t } = useTranslation('mathlab');
@@ -164,7 +163,7 @@ export default function TransformInspector({ figures, steps, settings, activeSte
         </section>
       )}
 
-      {/* ── §28 : le شعاع du déplacement ─────────────────────────────── */}
+      {/* ── §28 : le vecteur du déplacement ─────────────────────────────── */}
       {moved && (
         <section className="sa-ml-tr__panelsection">
           <h3 className="sa-ml-tr__paneltitle">{t('tools.transformations.inspector.displacement')}</h3>
@@ -238,7 +237,7 @@ function Coords({ point }) {
 /**
  * Une ligne d'invariant.
  *
- * ✓ / ✗ ne sont PAS seuls : chacun porte un mot (« محفوظ » / « يتغيّر ») et
+ * ✓ / ✗ ne sont PAS seuls : chacun porte un mot (« Conservé » / « Change ») et
  * un `aria-label`. §53 interdit de distinguer par la seule couleur ou la
  * seule icône.
  */

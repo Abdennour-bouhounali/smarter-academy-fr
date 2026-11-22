@@ -1,5 +1,5 @@
 /**
- * Le plan → une image PNG, pour « تصدير صورة » de la coquille.
+ * Le plan → une image PNG, pour « Exporter en image » de la coquille.
  *
  * Le SVG de mafs est cloné, ses variables CSS (couleurs de grille, d'axes…)
  * recopiées en style inline à sa racine, un fond blanc ajouté, puis il est
@@ -14,7 +14,7 @@ const COPIED_VARIABLES = [
 ];
 
 const INLINE_STYLE = `
-  text { fill: var(--mafs-fg); font-family: "JetBrains Mono", "Inter", "Cairo", sans-serif; font-size: 12px; }
+  text { fill: var(--mafs-fg); font-family: "JetBrains Mono", "Inter", sans-serif; font-size: 12px; }
   .mafs-shadow { paint-order: stroke; stroke-width: 3px; stroke: var(--mafs-bg); stroke-opacity: 0.75; stroke-linejoin: round; }
   .mafs-movable-point-hitbox { fill: transparent; }
   .mafs-movable-point-focus { display: none; }

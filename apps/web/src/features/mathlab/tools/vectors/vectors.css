@@ -1,6 +1,6 @@
-/* ── Le مختبر الأشعة ───────────────────────────────────────────────────────
+/* ── Le labo des vecteurs ──────────────────────────────────────────────────
    Le plan prend tout ce qu'il peut ; le panneau se range sur le bord de
-   départ (à droite en arabe) sur grand écran, et devient un TIROIR en bas
+   départ (à gauche) sur grand écran, et devient un TIROIR en bas
    sous 768 px (§33). Le plan est LTR par nature — c'est des mathématiques
    (§35) ; le panneau suit la direction de la page.
 
@@ -75,12 +75,12 @@
 .sa-ml-vec__plane .mafs-axis text { fill: #475569; }
 
 .sa-ml-vec__axisnames text {
-  font-family: 'Inter', 'Cairo', serif;
+  font-family: 'Inter', serif;
   font-size: 15px;
   fill: #334155;
 }
 
-/* ── Les أشعة ──────────────────────────────────────────────────────────── */
+/* ── Les vecteurs ──────────────────────────────────────────────────────────── */
 
 .sa-ml-vec__arrow { pointer-events: none; }
 .sa-ml-vec__arrow--pickable { cursor: pointer; }
@@ -111,13 +111,13 @@
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* ── LE شعاع EN COLONNE, SUR LE PLAN ───────────────────────────────────────
+/* ── LE VECTEUR EN COLONNE, SUR LE PLAN ───────────────────────────────────────
    VectorColumnSvg dessine un <g> : les deux composantes en <text> et les
    deux délimiteurs en <path>. Le halo blanc qui détachait l'ancienne ligne
    de coordonnées du quadrillage est donc porté par les GLYPHES, pas par le
    groupe — `paint-order: stroke` peint le contour avant le remplissage, de
    sorte que le trait blanc reste derrière le chiffre. Les délimiteurs
-   prennent la couleur du شعاع par `currentColor` : le groupe la reçoit de
+   prennent la couleur du vecteur par `currentColor` : le groupe la reçoit de
    l'attribut `fill` posé par VectorArrow. */
 .sa-ml-vec__columnvalue {
   font-family: 'JetBrains Mono', monospace;
@@ -317,7 +317,7 @@
   max-height: max(9rem, calc(var(--sa-ml-avail, 100dvh) * 0.38));
   border-top: 1px solid #e2e8f0;
   background: #ffffff;
-  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -347,7 +347,7 @@
 
 .sa-ml-vec__panel-title {
   margin: 0;
-  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 0.9375rem;
   color: #0f172a;
@@ -407,7 +407,7 @@
   font-style: italic;
 }
 
-/* La flèche du nom : un trait dessiné, pas U+20D7 — les polices arabes le
+/* La flèche du nom : un trait dessiné, pas U+20D7 — bien des polices le
    placent mal (voir vectorFormat.js). */
 .sa-ml-vec__arrowhat {
   position: absolute;
@@ -467,7 +467,7 @@
 }
 
 .sa-ml-vec__approx { font-weight: 400; color: #64748b; }
-.sa-ml-vec__special { font-family: 'Cairo', 'Tajawal', sans-serif; color: #b45309; font-weight: 600; }
+.sa-ml-vec__special { font-family: sans-serif; color: #b45309; font-weight: 600; }
 
 .sa-ml-vec__relations {
   margin: 0.5rem 0 0;
@@ -601,7 +601,7 @@
   align-items: center;
   gap: 0.375rem;
   margin: 0;
-  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 0.8125rem;
   color: #334155;

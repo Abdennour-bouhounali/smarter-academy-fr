@@ -1,7 +1,7 @@
 /**
- * LE DÉROULÉ D'UNE RÉSOLUTION (معادلة / متراجحة) — logique pure, sans React.
+ * LE DÉROULÉ D'UNE RÉSOLUTION (équation / inéquation) — logique pure, sans React.
  *
- * « حلّ خطوة بخطوة » ne montre jamais la réponse d'un bloc : à partir de
+ * « Résoudre pas à pas » ne montre jamais la réponse d'un bloc : à partir de
  * l'équation COURANTE (celle où l'élève en est sur la balance), on applique la
  * première opération que proposerait un professeur (`suggestOperations`, dans
  * l'ordre du tableau : x d'un seul côté, puis la constante, puis le
@@ -9,11 +9,11 @@
  *
  *     2x + 3 < 9   −3 →  2x < 6   ÷2 →  x < 3   → S = ]−∞ ; 3[
  *     −2x < 6      ÷(−2) → x > −3   (flipped : le sens s'inverse)
- *     2x + 3 = 2x + 5   −2x → 3 = 5   → « لا يوجد حل »
+ *     2x + 3 = 2x + 5   −2x → 3 = 5   → « Pas de solution »
  *
  * Chaque pas : `{ before, equation, operation, flipped, intermediateLatex,
  * resultLatex, explanationKey }`. Le résultat est un pas À PART (`final`) :
- * `solved` (la forme `x REL s`, l'ensemble S pour une متراجحة), `none`,
+ * `solved` (la forme `x REL s`, l'ensemble S pour une inéquation), `none`,
  * `infinite` — jamais un faux nombre.
  */
 

@@ -1,22 +1,18 @@
 /**
- * Le مختبر المنطق والبرهان — mise en page et dessin. Préfixe `sa-ml-lg`.
+ * L'atelier « Logique et raisonnement » — mise en page et dessin. Préfixe `sa-ml-lg`.
  *
  * Les conventions sont celles des autres instruments (numberLab.css,
  * sequences.css) : mêmes teintes, mêmes rayons, même famille de police.
  *
- * ── RTL (§2) ─────────────────────────────────────────────────────────────
- * Aucun sélecteur `[dir="rtl"]`, aucune déclaration `direction` sur la mise
- * en page : tout passe par des propriétés LOGIQUES (`inset-inline-start`,
- * `margin-inline-start`, `padding-inline`, `border-inline-start`,
- * `text-align: start`), si bien que tout suit la direction de la page sans
- * une ligne de plus.
+ * ── Direction (§2) ───────────────────────────────────────────────────────
+ * Aucun sélecteur `[dir]` sur la mise en page : tout passe par des
+ * propriétés LOGIQUES (`inset-inline-start`, `margin-inline-start`,
+ * `padding-inline`, `border-inline-start`, `text-align: start`).
  *
- * La NOTATION, elle, est en `dir="ltr"` depuis le JSX, et cette feuille
- * fournit l'autre moitié de la paire exigée par ARABIC_RTL_CONTRACT §4 :
- * `text-align: left` + `unicode-bidi: isolate` sur `.sa-ml-lg__math`. Sans
- * la seconde moitié, « P ⇒ Q » reste collée au bord droit et paraît lue à
- * l'envers. Les flèches ⇒ ⇔ ∀ ∃ ne se retournent JAMAIS : ce sont des
- * symboles mathématiques, pas des flèches de prose.
+ * La NOTATION est un îlot `dir="ltr"` isolé (`unicode-bidi: isolate` sur
+ * `.sa-ml-lg__math`) : une formule ne se mêle jamais au flux de la phrase
+ * qui l'entoure. Les flèches ⇒ ⇔ ∀ ∃ ne se retournent JAMAIS : ce sont des
+ * symboles mathématiques, pas des flèches de lecture.
  *
  * ── Mobile (§44) ─────────────────────────────────────────────────────────
  * Mobile d'abord : la scène en haut, le pupitre dessous, repliable. À partir
@@ -25,11 +21,9 @@
  * tactile fait au moins 44 px.
  *
  * ── Couleur jamais seule (§45) ───────────────────────────────────────────
- * Vrai/faux ne se distinguent pas par la seule couleur : une lettre ARABE
- * (ص / خ) et un libellé accompagnent chaque teinte. Les lettres sont arabes
- * parce que ce sont des MOTS abrégés (صحيحة / خاطئة) — contrairement aux
- * symboles et aux variables, qui restent en notation internationale et que
- * « قاموس الرموز » explique.
+ * Vrai/faux ne se distinguent pas par la seule couleur : une lettre (V / F)
+ * et un libellé accompagnent chaque teinte ; le « Lexique des symboles »
+ * explique ces lettres avec le reste de la notation.
  */
 
 .sa-ml-lg {
@@ -50,7 +44,7 @@
   flex-direction: column;
   background: #f8fafc;
   overflow: hidden;
-  font-family: 'Cairo', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   color: var(--lg-ink);
 }
 
@@ -195,13 +189,13 @@
   text-transform: none;
 }
 
-/* ── La NOTATION : LTR, isolée du texte arabe ─────────────────────────── */
+/* ── La NOTATION : LTR, isolée du texte qui l'entoure ─────────────────── */
 
 .sa-ml-lg__math {
   direction: ltr;
   text-align: left;
   unicode-bidi: isolate;
-  font-family: 'Inter', 'Cairo', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
@@ -221,7 +215,7 @@
 .sa-ml-lg__math--lead { font-size: 1.25rem; }
 
 /**
- * Un ÉNONCÉ : une phrase arabe qui contient de la notation. Elle suit la
+ * Un ÉNONCÉ : une phrase qui contient de la notation. Elle suit la
  * direction de la page (`dir="auto"` côté JSX) — surtout PAS `direction: ltr`,
  * qui en retournerait les mots. Seule la notation qu'elle contient s'isole,
  * et l'algorithme bidi s'en charge sans qu'on ait à la baliser.
@@ -510,7 +504,7 @@
   font-weight: 700;
 }
 
-/* Un exemple de récurrence, pas à pas : الحالة الأولى → الانتقال → الخلاصة. */
+/* Un exemple de récurrence, pas à pas : initialisation → hérédité → conclusion. */
 .sa-ml-lg__caseSteps { margin: 0.5rem 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
 .sa-ml-lg__caseStep {
   padding: 0.45rem 0.6rem;
@@ -569,7 +563,7 @@
 /* ── Le dictionnaire des symboles ─────────────────────────────────────────
  *
  * Deux colonnes : le SYMBOLE (en `dir="ltr"`, c'est de la notation) et son
- * sens en arabe. La colonne du symbole a une largeur fixe pour que les
+ * nom et sa lecture. La colonne du symbole a une largeur fixe pour que les
  * signes s'alignent et se comparent d'un coup d'œil.
  */
 
@@ -759,7 +753,7 @@
  *
  * Une liste sans puces : ce sont des lignes de tableau noir, pas une
  * énumération de prose. Chaque ligne est de la NOTATION (`Notation` l'isole
- * déjà en LTR) posée dans une page RTL.
+ * déjà) posée dans la page.
  */
 .sa-ml-lg__defs {
   list-style: none;
@@ -777,7 +771,7 @@
   background: #f8fafc;
 }
 
-/* La proposition à démontrer, et son bouton « جرّب عبارة أخرى ». */
+/* La proposition à démontrer, et son bouton « Essayer une autre proposition ». */
 .sa-ml-lg__propose {
   margin-block-start: 0.75rem;
   display: flex;
@@ -807,10 +801,10 @@
 /**
  * Les maillons d'hérédité POSÉS : une suite numérotée.
  *
- * Le numéro n'est pas décoratif. L'écran demande « رتّب الخطوات » — ranger
+ * Le numéro n'est pas décoratif. L'écran demande « Range les étapes » — ranger
  * les étapes — et sans repère visuel d'ORDRE la liste ne montrait pas ce
- * qu'elle demandait. Le compteur est placé côté début de ligne (RTL) et
- * reste en chiffres latins, comme toute la notation du laboratoire.
+ * qu'elle demandait. Le compteur est placé côté début de ligne (propriétés
+ * logiques), comme toute la mise en page du laboratoire.
  */
 .sa-ml-lg__chain {
   counter-reset: sa-ml-lg-link;
@@ -869,7 +863,7 @@
 }
 
 /* ── « D'un seul regard » (MATH_LAB §3.5) ─────────────────────────────────
- * 1. Le pupitre (cycle, تمارين، كرّاسي، قاموس الرموز) n'occupe une colonne
+ * 1. Le pupitre (cycle, exercices, mon cahier, lexique des symboles) n'occupe une colonne
  *    que lorsqu'il contient quelque chose à lire : les exercices ou le
  *    lexique ouverts (`--side`). Sinon, c'est une barre compacte au-dessus
  *    de la scène.
@@ -937,8 +931,8 @@
 .sa-ml-lg__stage > :first-child:nth-last-child(n + 3),
 .sa-ml-lg__stage > .sa-ml-lg__card--wide { grid-column: 1 / -1; }
 
-/* بناء البرهان : l'énoncé À CÔTÉ du tableau (cartes + preuve empilées), la
-   شجرة البرهان dessous sur toute la largeur. */
+/* Démonstration : l'énoncé À CÔTÉ du tableau (cartes + preuve empilées), la
+   l'arbre de la démonstration dessous sur toute la largeur. */
 .sa-ml-lg__stage:has(> .sa-ml-lg__proof) > :first-child { grid-column: auto; }
 .sa-ml-lg__stage:has(> .sa-ml-lg__proof) > :last-child:not(.sa-ml-lg__proof) { grid-column: 1 / -1; }
 

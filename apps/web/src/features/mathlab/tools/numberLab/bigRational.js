@@ -101,7 +101,7 @@ export function groupDigits(digits, separator = ' ') {
  *
  * `exact: true` si l'écriture est finie (dénominateur en 2ᵃ5ᵇ) ; sinon elle
  * est tronquée à `places` décimales et `exact: false` — l'interface l'annonce
- * « قيمة مقرّبة » au lieu de la faire passer pour la valeur.
+ * « Valeur approchée » au lieu de la faire passer pour la valeur.
  *
  * @returns {{ text: string, exact: boolean }}
  */

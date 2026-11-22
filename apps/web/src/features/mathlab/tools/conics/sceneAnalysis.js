@@ -14,6 +14,7 @@
 
 import * as C from './conicMath.js';
 import * as I from './intersections.js';
+import { formatValue } from '../functionGrapher/grapherFormat.js';
 import { isConicObject, isLineObject } from './conicState.js';
 
 /**
@@ -205,14 +206,15 @@ export function comparisonRows(conic, features) {
       values: {
         circle: has('circle') ? { key: 'generic.value', params: { v: `r = ${round(conic.r)}` } } : { key: 'generic.radius' },
         parabola: has('parabola') ? { key: 'generic.value', params: { v: `a = ${round(conic.a)}` } } : { key: 'generic.coefficient' },
-        ellipse: has('ellipse') ? { key: 'generic.value', params: { v: `a = ${round(conic.a)} · b = ${round(conic.b)}` } } : { key: 'generic.semiAxes' },
-        hyperbola: has('hyperbola') ? { key: 'generic.value', params: { v: `a = ${round(conic.a)} · b = ${round(conic.b)}` } } : { key: 'generic.semiAxes' },
+        ellipse: has('ellipse') ? { key: 'generic.value', params: { v: `a = ${round(conic.a)} ; b = ${round(conic.b)}` } } : { key: 'generic.semiAxes' },
+        hyperbola: has('hyperbola') ? { key: 'generic.value', params: { v: `a = ${round(conic.a)} ; b = ${round(conic.b)}` } } : { key: 'generic.semiAxes' },
       },
     },
   ];
 }
 
-const round = (value) => (Number.isFinite(value) ? Math.round(value * 100) / 100 : '—');
+/** Un nombre LU dans le tableau : virgule décimale, vrai signe moins (grapherFormat). */
+const round = (value) => formatValue(value, 2);
 const point = (p) => (C.isPoint(p)
   ? { key: 'generic.point', params: { x: round(p.x), y: round(p.y) } }
   : { key: 'generic.none' });

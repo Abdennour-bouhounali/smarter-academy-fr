@@ -91,7 +91,7 @@ const uniform = (k) => new Array(k).fill(1 / k);
  * ordre) mais rend aussi ses composantes physiques — les deux dés d'une
  * somme — pour que l'objet animé montre exactement ce qui a été tiré.
  * `parts` est ce que l'élève verrait sur la table : la face de chaque dé,
- * le côté de la pièce (0 = ظهر, 1 = وجه), le nombre tiré.
+ * le côté de la pièce (0 = Pile, 1 = Face), le nombre tiré.
  */
 export const EXPERIMENTS = Object.freeze({
   coin: Object.freeze({

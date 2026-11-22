@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { formatValue } from './grapherFormat.js';
 
 /**
- * Le bloc « المماس » du panneau du grapheur : un interrupteur, puis — quand
+ * Le bloc « Tangente » du panneau du grapheur : un interrupteur, puis — quand
  * il est allumé — la fonction étudiée (si plusieurs), les valeurs en A
  * (x, f(x), f′(x)), l'alternative au glisser (le champ « x = » et un
  * curseur sur l'étendue visible), et deux options : la courbe de f′ et le

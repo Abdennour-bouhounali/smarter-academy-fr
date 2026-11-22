@@ -239,7 +239,7 @@ describe('les DROITES (§26) — même analyseur, mêmes règles', () => {
     expect(r.line.intercept).toBeCloseTo(2, 12);
   });
 
-  it('hérite de la multiplication implicite et de la typographie arabe', () => {
+  it('hérite de la multiplication implicite et de la virgule décimale', () => {
     expect(parseLineEquation('y = 2,5x').line.slope).toBe(2.5);
     expect(parseLineEquation('y = −x + 1').line).toEqual({ vertical: false, slope: -1, intercept: 1 });
   });

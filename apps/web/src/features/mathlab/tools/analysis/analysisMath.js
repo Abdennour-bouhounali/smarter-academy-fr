@@ -1,5 +1,5 @@
 /**
- * LA MATHÉMATIQUE du مختبر التحليل — pure, sans React, sans pixels.
+ * LA MATHÉMATIQUE du labo d’analyse — pure, sans React, sans pixels.
  *
  * Ce module ne trace rien et n'arrondit rien pour l'affichage : il rend des
  * nombres et des verdicts. Tout ce qui se dessine (AnalysisPlane, les
@@ -973,8 +973,8 @@ export function findAsymptotes(fn, a, b, options = {}) {
  * Le taux d'accroissement moyen entre a et b — LA pente de la sécante.
  *
  * C'est le seul objet de cet instrument qui appartienne vraiment au
- * programme de 4AM : `(f(b) − f(a)) / (b − a)` est le coefficient directeur
- * d'une droite passant par deux points (LP 3.7, 3.8). C'est pourquoi
+ * programme du collège : `(f(b) − f(a)) / (b − a)` est le coefficient directeur
+ * d'une droite passant par deux points. C'est pourquoi
  * l'instrument OUVRE dessus (MATH_LAB §5m.1).
  *
  * @returns {{ok: true, slope: number, fa: number, fb: number} | {ok: false, reason: string}}

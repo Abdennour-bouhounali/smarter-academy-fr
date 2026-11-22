@@ -1,12 +1,12 @@
-/* ── Le مختبر المقاطع المخروطية ────────────────────────────────────────────
+/* ── Le labo des coniques ────────────────────────────────────────────
    Le plan prend tout ce qu'il peut ; le panneau se range sur le bord de
-   départ (à droite en arabe) sur grand écran, et devient un TIROIR en bas
+   départ (à gauche) sur grand écran, et devient un TIROIR en bas
    sous 768 px (§47). Le plan est LTR par nature — c'est des mathématiques
    (§48) ; le panneau suit la direction de la page.
 
-   Les conventions sont celles du grapheur, du مختبر الأشعة et du مختبر
-   التحويلات (functionGrapher.css, vectors.css, transformations.css) : mêmes
-   teintes, mêmes rayons, mêmes familles — les instruments du مختبر doivent
+   Les conventions sont celles du grapheur, du labo des vecteurs et du labo
+   des transformations (functionGrapher.css, vectors.css, transformations.css) : mêmes
+   teintes, mêmes rayons, mêmes familles — les instruments de l'atelier doivent
    se ressembler. */
 
 .sa-ml-cn {
@@ -73,7 +73,7 @@
 .sa-ml-cn__plane .mafs-axis text { fill: #475569; }
 
 .sa-ml-cn__axisnames text {
-  font-family: 'Inter', 'Cairo', serif;
+  font-family: 'Inter', serif;
   font-size: 15px;
   fill: #334155;
 }
@@ -513,7 +513,7 @@
   accent-color: #2563eb;
   cursor: pointer;
   /* Le curseur est un objet MATHÉMATIQUE : −20 est à gauche et +20 à droite,
-     comme sur l'axe, même quand la page est en arabe. Sans cela, pousser le
+     comme sur l'axe, quelle que soit la direction de la page. Sans cela, pousser le
      curseur « vers la droite » ferait DÉCROÎTRE h, à rebours du plan qui est
      juste à côté. */
   direction: ltr;

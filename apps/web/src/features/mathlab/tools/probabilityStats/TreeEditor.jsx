@@ -10,7 +10,7 @@ import {
 } from './probabilityTree.js';
 import { TREE_PRESETS, getTreePreset } from './treePresets.js';
 
-/** Le nom lisible d'un nœud : « الجذر », ou le chemin qui y mène (« A ثم B »). */
+/** Le nom lisible d'un nœud : « La racine », ou le chemin qui y mène (« A puis B »). */
 function nodeName(tree, key, t) {
   if (key === '') return t('tools.probabilityStats.tree.root');
   const path = parsePathKey(key);
@@ -42,7 +42,7 @@ function LabelField({ value, onCommit, label, invalid, attr }) {
 /**
  * LE PUPITRE de l'arbre : les exemples, la structure (étapes), le nœud
  * choisi et ses branches (nom, probabilité, contraire, dupliquer, supprimer,
- * ajouter, « أكمل تلقائيًا »), et ce qu'on veut calculer. Chaque bouton
+ * ajouter, « Compléter automatiquement »), et ce qu'on veut calculer. Chaque bouton
  * appelle une transition pure de probabilityTree.js ; un bouton qui ne
  * ferait rien est DÉSACTIVÉ (jamais un faux contrôle).
  */
@@ -224,7 +224,7 @@ export default function TreeEditor({ tree, validation, selectedNode, onSelectNod
   );
 }
 
-/** « ماذا نحسب؟ » — un chemin (choisi dans le dessin), un événement, une probabilité conditionnelle. */
+/** « Que calcule-t-on ? » — un chemin (choisi dans le dessin), un événement, une probabilité conditionnelle. */
 function QueryControls({ tree, onChange }) {
   const { t } = useTranslation('mathlab');
   const k = (key) => `tools.probabilityStats.tree.${key}`;

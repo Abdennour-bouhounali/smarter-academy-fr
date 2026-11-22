@@ -152,8 +152,8 @@ describe('l’amorce d’une leçon (openMathLab)', () => {
 
 describe('les notes et l’entraînement', () => {
   it('une note se garde une seule fois (§55)', () => {
-    let data = S.addNote(S.createNumberLabData(), 'كل عدد يقبل القسمة على 6 يقبل القسمة على 2 وعلى 3.');
-    data = S.addNote(data, 'كل عدد يقبل القسمة على 6 يقبل القسمة على 2 وعلى 3.');
+    let data = S.addNote(S.createNumberLabData(), 'Tout nombre divisible par 6 est divisible par 2 et par 3.');
+    data = S.addNote(data, 'Tout nombre divisible par 6 est divisible par 2 et par 3.');
     expect(data.notes).toHaveLength(1);
   });
 
@@ -181,7 +181,7 @@ describe('le document tient dans ce que le serveur accepte', () => {
     let tree = { n: 2 };
     for (let i = 0; i < 20; i += 1) tree = { n: 2 ** (i + 2), left: tree, right: { n: 2 } };
     data = { ...data, primes: { ...data.primes, limit: 10000, factorTree: S.normalizeTree(tree) } };
-    for (let i = 0; i < S.MAX_NOTES; i += 1) data = S.addNote(data, 'ن'.repeat(200) + i);
+    for (let i = 0; i < S.MAX_NOTES; i += 1) data = S.addNote(data, 'n'.repeat(200) + i);
 
     const bytes = new TextEncoder().encode(JSON.stringify(S.serializeNumberLabData(data))).length;
     expect(bytes, `${bytes} octets`).toBeLessThan(20_000);
@@ -281,7 +281,7 @@ describe('les modes du 2026-09-30 et les documents V1', () => {
     data = S.patchMode(data, 'proportion', {
       rows: Array.from({ length: S.MAX_ROWS }, (_, i) => ({ x: -123456.789, y: 987654.321 - i })),
     });
-    for (let i = 0; i < S.MAX_NOTES; i += 1) data = S.addNote(data, 'ن'.repeat(200) + i);
+    for (let i = 0; i < S.MAX_NOTES; i += 1) data = S.addNote(data, 'n'.repeat(200) + i);
     const bytes = new TextEncoder().encode(JSON.stringify(S.serializeNumberLabData(data))).length;
     expect(bytes, `${bytes} octets`).toBeLessThan(20_000);
   });

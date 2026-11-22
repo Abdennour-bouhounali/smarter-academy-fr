@@ -22,7 +22,7 @@ describe('politique des fichiers', () => {
     expect(extensions).toEqual(Object.keys(ATTACHMENT_KINDS).sort());
   });
 
-  it('1 Mo vaut 1 000 000 octets, 3 par سبّورة, 50 par élève', () => {
+  it('1 Mo vaut 1 000 000 octets, 3 par tableau, 50 par élève', () => {
     expect(MAX_FILE_BYTES).toBe(1_000_000);
     expect(MAX_FILES_PER_DOCUMENT).toBe(3);
     expect(MAX_FILES_PER_USER).toBe(50);
@@ -46,7 +46,7 @@ describe('politique des fichiers', () => {
     expect(planSelection([f('a.png', 0)], q(0, 0)).error.code).toBe('empty');
   });
 
-  it('le quota de la سبّورة : 0, 1, 2 passent, 3 refuse', () => {
+  it('le quota du tableau : 0, 1, 2 passent, 3 refuse', () => {
     for (const used of [0, 1, 2]) expect(planSelection([f('a.png')], q(used, 10)).error).toBeNull();
     expect(planSelection([f('a.png')], q(3, 10)).error.code).toBe('boardLimit');
   });
@@ -74,7 +74,7 @@ describe('politique des fichiers', () => {
     const plan = planSelection([f('a.png'), f('formes.excalidrawlib')], q(0, 0));
     expect(plan.attachments).toHaveLength(1);
     expect(plan.imports).toEqual([{ file: f('formes.excalidrawlib'), kind: 'library' }]);
-    // Les imports (formes, dessin) ne prennent pas de place : une سبّورة pleine les accepte.
+    // Les imports (formes, dessin) ne prennent pas de place : un tableau pleine les accepte.
     expect(planSelection([f('formes.excalidrawlib')], q(3, 50)).error).toBeNull();
   });
 

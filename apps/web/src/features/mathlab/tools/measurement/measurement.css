@@ -1,12 +1,11 @@
-/* ── Le مختبر القياس ────────────────────────────────────────────────────────
+/* ── « Grandeurs et mesures » ─────────────────────────────────────────────
    La scène prend tout ce qu'elle peut ; la lucarne se range sur le bord de
-   départ (à droite en arabe) sur grand écran, et devient un TIROIR en bas
-   sous 900 px (§29). La scène est LTR par nature — c'est des mathématiques
-   (§30) ; la lucarne suit la direction de la page.
+   fin sur grand écran, et devient un TIROIR en bas sous 900 px (§29). La
+   scène se lit de gauche à droite — c'est des mathématiques (§30).
 
-   Les conventions sont celles du grapheur et des تحويلات
+   Les conventions sont celles du grapheur et des transformations
    (functionGrapher.css, transformations.css) : mêmes teintes, mêmes rayons,
-   mêmes familles — les instruments du مختبر doivent se ressembler. */
+   mêmes familles — les instruments de l'atelier doivent se ressembler. */
 
 .sa-ml-ms {
   position: absolute;
@@ -74,7 +73,7 @@
   border-radius: 999px;
   background: transparent;
   color: #475569;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.86rem;
   font-weight: 600;
   white-space: nowrap;
@@ -112,7 +111,7 @@
 
 .sa-ml-ms__question {
   margin: 0 0 10px;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.65;
@@ -248,7 +247,7 @@
 /* ── Les lectures, TOUJOURS visibles ───────────────────────────────────── */
 
 /* La mesure se place SOUS la figure, jamais par-dessus : une pastille
-   « المساحة 28 » posée sur le rectangle cache précisément ce qu'on mesure.
+   « Aire 28 » posée sur le rectangle cache précisément ce qu'on mesure.
    C'est la colonne entière qui est dimensionnée pour tenir dans la hauteur
    disponible (le SVG en vh), de sorte que la figure ET ses nombres soient
    à l'écran en même temps — le défaut que la capture mobile avait montré. */
@@ -290,7 +289,7 @@
 }
 
 .sa-ml-ms__readoutName {
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.76rem;
   color: #64748b;
 }
@@ -316,7 +315,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.8rem;
   color: #475569;
 }
@@ -348,7 +347,7 @@
   border-top: 1px solid #e2e8f0;
   background: #f8fafc;
   color: #1d4ed8;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.86rem;
   font-weight: 600;
   cursor: pointer;
@@ -412,7 +411,7 @@
   border-bottom: 3px solid transparent;
   background: transparent;
   color: #64748b;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
@@ -443,7 +442,7 @@
   align-items: center;
   gap: 6px;
   margin: 0;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   color: #0f172a;
@@ -451,7 +450,7 @@
 
 .sa-ml-ms__count,
 .sa-ml-ms__hintCount {
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.76rem;
   color: #64748b;
 }
@@ -462,7 +461,7 @@
 .sa-ml-ms__emptyHint,
 .sa-ml-ms__compareHint {
   margin: 0 0 10px;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.82rem;
   line-height: 1.7;
   color: #64748b;
@@ -470,7 +469,7 @@
 
 .sa-ml-ms__compare {
   margin: 10px 0 2px;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
   color: #0f172a;
@@ -482,7 +481,7 @@
   border-radius: 8px;
   background: #fef3c7;
   color: #92400e;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.82rem;
   line-height: 1.65;
 }
@@ -502,7 +501,7 @@
   border-radius: 10px;
   background: #1d4ed8;
   color: #ffffff;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.88rem;
   font-weight: 700;
   cursor: pointer;
@@ -525,7 +524,7 @@
   border-radius: 9px;
   background: #ffffff;
   color: #475569;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
@@ -574,7 +573,7 @@
 
 .sa-ml-ms__empty p {
   margin: 0 0 6px;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.85rem;
   color: #475569;
 }
@@ -604,7 +603,7 @@
 
 .sa-ml-ms__colName {
   display: block;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
   color: #64748b;
@@ -621,8 +620,7 @@
   border-bottom: 1px solid #f1f5f9;
   text-align: center;
   color: #0f172a;
-  /* Les NOMBRES restent LTR même quand la page est en arabe (§30) : c'est
-     de la mathématique, pas du texte. L'attribut `dir` du JSX le dit déjà,
+  /* Les NOMBRES sont LTR (§30) : c'est de la mathématique, pas du texte. L'attribut `dir` du JSX le dit déjà,
      mais l'écrire ici garantit la direction calculée quel que soit le
      rendu — c'est elle que la QA mesure. */
   direction: ltr;
@@ -636,7 +634,7 @@
 /* L'information n'est JAMAIS portée par la seule couleur (§33). */
 .sa-ml-ms__verdict {
   display: block;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
   color: #475569;
@@ -675,7 +673,7 @@
 
 .sa-ml-ms__group legend {
   padding: 0 0 6px;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
   color: #64748b;
@@ -715,7 +713,7 @@
 .sa-ml-ms__chip--var.is-active .sa-ml-ms__chipSymbol { color: #ffffff; }
 
 .sa-ml-ms__chipName {
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.66rem;
   font-weight: 600;
   color: #64748b;
@@ -736,7 +734,7 @@
 
 .sa-ml-ms__counterTitle {
   margin: 0 0 8px;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.86rem;
   font-weight: 700;
   color: #991b1b;
@@ -758,7 +756,7 @@
 
 .sa-ml-ms__counterLine {
   margin: 3px 0;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
   color: #0f172a;
@@ -768,7 +766,7 @@
 
 .sa-ml-ms__counterAsk {
   margin: 10px 0 0;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.86rem;
   font-weight: 700;
   line-height: 1.7;
@@ -791,7 +789,7 @@
   align-items: center;
   gap: 7px;
   margin: 0;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.88rem;
   font-weight: 700;
   color: #065f46;
@@ -799,7 +797,7 @@
 
 .sa-ml-ms__notProof {
   margin: 8px 0 0;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.8rem;
   line-height: 1.7;
   color: #047857;
@@ -817,7 +815,7 @@
   align-items: center;
   gap: 6px;
   margin: 0 0 8px;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.84rem;
   font-weight: 700;
   color: #334155;
@@ -830,7 +828,7 @@
   align-items: center;
   gap: 8px;
   padding: 5px 0;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.82rem;
   color: #64748b;
 }
@@ -862,7 +860,7 @@
 .sa-ml-ms__hintList {
   margin: 0 0 8px;
   padding-inline-start: 20px;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.84rem;
   line-height: 1.75;
   color: #92400e;
@@ -876,7 +874,7 @@
   border-radius: 10px;
   background: #f5f3ff;
   border-inline-start: 4px solid #7c3aed;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.86rem;
   line-height: 1.85;
   color: #4c1d95;
@@ -894,7 +892,7 @@
 .sa-ml-ms__storySteps {
   margin: 0;
   padding: 0;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.83rem;
   line-height: 1.85;
   color: #475569;
@@ -921,7 +919,7 @@
 .sa-ml-ms__phase--explained {
   padding: 3px 10px;
   border-radius: 999px;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
   white-space: nowrap;
@@ -940,7 +938,7 @@
   align-items: center;
   gap: 7px;
   min-height: 44px;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 0.83rem;
   color: #334155;
   cursor: pointer;

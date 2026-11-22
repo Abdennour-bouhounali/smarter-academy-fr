@@ -8,8 +8,8 @@ import PracticePanel from './PracticePanel.jsx';
 
 const i18n = i18next.createInstance();
 i18n.use(initReactI18next).init({
-  lng: 'ar-DZ',
-  resources: { 'ar-DZ': { mathlab } },
+  lng: 'fr-FR',
+  resources: { 'fr-FR': { mathlab } },
   ns: ['mathlab'],
   interpolation: { escapeValue: false },
   react: { useSuspense: false },
@@ -30,7 +30,7 @@ const render = (props) => renderToStaticMarkup(createElement(I18nextProvider, { 
   ...props,
 })));
 
-describe('PracticePanel — « أرني » ne pose pas la réponse d’un bloc', () => {
+describe('PracticePanel — « Montre-moi » ne pose pas la réponse d’un bloc', () => {
   it('avant toute demande : ni déroulé, ni A′, ni verdict', () => {
     const html = render();
     expect(html).toContain('data-ml-practice-reveal');

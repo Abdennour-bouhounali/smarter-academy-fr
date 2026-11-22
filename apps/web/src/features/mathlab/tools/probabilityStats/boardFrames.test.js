@@ -123,15 +123,15 @@ describe('la loi normale au tableau (normalFrames)', () => {
     const params = { mu: 100, sigma: 15, x: 130, a: 85, b: 115, query: 'ge' };
     const { frames, problem, questionLatex } = normalFrames(params, normalQuery(params));
     expect(validateFrames(frames)).toEqual([]);
-    expect(problem).toBe('P(X \\ge 130) = \\,?');
-    expect(questionLatex).toBe('P(X \\ge 130)');
+    expect(problem).toBe('P(X \\geqslant 130) = \\,?');
+    expect(questionLatex).toBe('P(X \\geqslant 130)');
     expect(frames.filter((f) => f.settle).map((f) => f.settle)).toEqual([
       'z = \\frac{x - \\mu}{\\sigma}',
       'z = \\frac{130 - 100}{15}',
       'z = \\frac{30}{15} = 2',
-      'P(X \\ge 130) = P(Z \\ge 2) = 1 - \\Phi(2)',
+      'P(X \\geqslant 130) = P(Z \\geqslant 2) = 1 - \\Phi(2)',
       '\\Phi(2) \\approx 0{,}9772',
-      'P(X \\ge 130) \\approx 0{,}0228 \\approx 2{,}28\\,\\%',
+      'P(X \\geqslant 130) \\approx 0{,}0228 \\approx 2{,}28\\,\\%',
     ]);
     expect(frames.find((f) => marks(f).includes('link:-'))).toBeTruthy();
     expect(frames.at(-1).textKey).toBe('tools.probabilityStats.normal.frames.interpret.ge');
@@ -152,7 +152,7 @@ describe('la loi normale au tableau (normalFrames)', () => {
     expect(normalReveal(frames, zaAt).z.has('b')).toBe(false);
     expect(normalReveal(frames, areaAt - 1).area).toBe(false);
     expect(normalReveal(frames, frames.length)).toEqual({ z: new Set(['a', 'b']), area: true });
-    expect(frames.at(-1).settle).toMatch(/^P\(160 \\le X \\le 180\) \\approx 0\{,\}/);
+    expect(frames.at(-1).settle).toMatch(/^P\(160 \\leqslant X \\leqslant 180\) \\approx 0\{,\}/);
   });
 
   it.each(NORMAL_PRESETS.map((p) => p.id))('%s : chaque type de question se déroule, le dernier frame est Φ', (id) => {
@@ -196,7 +196,7 @@ describe('les indicateurs au tableau (statsFrames)', () => {
     const { frames } = statFrames('median', EXAMPLE, stats);
     expect(validateFrames(frames)).toEqual([]);
     expect(frames.filter((f) => f.settle).map((f) => f.settle)).toEqual([
-      '12 \\le 15 \\le 15 \\le 18 \\le 20 \\le 21 \\le 21 \\le 25',
+      '12 \\leqslant 15 \\leqslant 15 \\leqslant 18 \\leqslant 20 \\leqslant 21 \\leqslant 21 \\leqslant 25',
       '\\frac{8}{2} = 4 \\qquad \\frac{8}{2} + 1 = 5',
       'x_{4} = 18 \\qquad x_{5} = 20',
       'x_{4} + x_{5} = 18 + 20 = 38',
@@ -240,7 +240,7 @@ describe('les indicateurs au tableau (statsFrames)', () => {
   });
 });
 
-describe('chaque phrase d’un frame existe en arabe', () => {
+describe('chaque phrase d’un frame existe, en français', () => {
   it('textKey / operationKey de tous les déroulés → mathlab.json', async () => {
     const { default: mathlab } = await import('../../../../i18n/locales/ar/mathlab.json');
     const lookup = (key) => key.split('.').reduce((node, part) => node?.[part], mathlab);
@@ -265,11 +265,13 @@ describe('chaque phrase d’un frame existe en arabe', () => {
       for (const kind of STAT_KINDS) collect(statFrames(kind, values, describeDataset(values)));
     }
     expect([...keys].filter((key) => typeof lookup(key) !== 'string')).toEqual([]);
+    // Les phrases de ce labo (celles du kit relèvent de l'atelier) : du français, aucune lettre arabe.
+    expect([...keys].filter((key) => key.startsWith('tools.probabilityStats.') && /[\u0600-\u06FF]/.test(lookup(key)))).toEqual([]);
     expect(keys.size).toBeGreaterThan(30);
   });
 });
 
-describe('« تدرّب بنفسك » : chaque exercice est le vrai geste', () => {
+describe('« Entraîne-toi » : chaque exercice est le vrai geste', () => {
   /** [indice du frame, cibles, opération] de chaque exercice d'un déroulé. */
   const tasks = (frames) => frames.flatMap((f, i) => (f.task ? [[i, f.task.targets, f.task.operator]] : []));
 

@@ -10,7 +10,7 @@ import { formatNumber } from './numberValue.js';
  * §5, §6 — LA VALEUR DE POSITION, rendue physique.
  *
  * L'élève ajoute des unités une à une ; à la dixième, la colonne est pleine
- * et le bouton « اجمع » s'allume. Il l'actionne, les dix unités glissent
+ * et le bouton « Échanger » s'allume. Il l'actionne, les dix unités glissent
  * ensemble et deviennent UNE dizaine. C'est le système décimal non pas
  * expliqué mais VÉCU — et c'est ce que §5 demande explicitement
  * (« the regrouping must be animated »).

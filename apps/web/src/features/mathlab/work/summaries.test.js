@@ -3,7 +3,7 @@ import { MATH_LAB_TOOLS } from '../toolRegistry.js';
 import { summarizeDocument } from '../toolContract.js';
 
 /**
- * Le RÉSUMÉ est le contrat entre un instrument et « أعمالي » : c'est lui
+ * Le RÉSUMÉ est le contrat entre un instrument et « Mes travaux » : c'est lui
  * qui permet à une carte de dessiner un aperçu vrai sans charger l'outil.
  * Ces épreuves le tiennent pour TOUS les instruments à la fois — un nouveau
  * qui oublierait `summarize`, ou qui rendrait un résumé trop gros, échoue ici
@@ -25,7 +25,7 @@ describe('chaque instrument sait se résumer', () => {
   it('le résumé d’un document NEUF est valide, nommé et minuscule', () => {
     for (const tool of MATH_LAB_TOOLS) {
       const summary = summarizeDocument(tool, tool.createInitialData());
-      // La سبّورة naît VIDE : elle n'a rien à résumer, et c'est correct —
+      // Le tableau naît VIDE : il n'a rien à résumer, et c'est correct —
       // sa carte montre alors l'aperçu de repli.
       if (summary == null) {
         expect(tool.id, 'seul un instrument vide à la naissance n’a pas de résumé').toBe('whiteboard');
@@ -109,11 +109,11 @@ describe('ce que chaque résumé dit, en particulier', () => {
     expect(summarize('geometry3d', { shape: 'dodecahedron' })).toBeNull();
   });
 
-  it('la سبّورة garde la silhouette et le TEXTE écrit — jamais les 2 Mo du dessin', () => {
+  it('le tableau garde la silhouette et le TEXTE écrit — jamais les 2 Mo du dessin', () => {
     const summary = summarize('whiteboard', {
       elements: [
         { type: 'rectangle', x: 0, y: 0, width: 100, height: 50, strokeColor: '#1e1e1e' },
-        { type: 'text', x: 10, y: 10, width: 60, height: 20, text: 'المثلث ABC' },
+        { type: 'text', x: 10, y: 10, width: 60, height: 20, text: 'Le triangle ABC' },
         { type: 'freedraw', x: 5, y: 5, width: 20, height: 20, isDeleted: true },
         // Les lettres et les mesures du bureau de géométrie ne sont pas du texte écrit.
         { type: 'text', x: 0, y: 0, width: 10, height: 20, text: 'A', customData: { geo: { kind: 'label', of: 'p1' } } },
@@ -121,13 +121,13 @@ describe('ce que chaque résumé dit, en particulier', () => {
       ],
     });
     expect(summary.kind).toBe('strokes');
-    expect(summary.text).toEqual(['المثلث ABC']);
+    expect(summary.text).toEqual(['Le triangle ABC']);
     // L'élément supprimé ne compte pas ; les lettres restent dans la silhouette.
     expect(summary.detail.total).toBe(4);
     expect(summary.detail.box).toMatchObject({ w: 100, h: 50 });
   });
 
-  it('la سبّورة plafonne sa silhouette : un dessin énorme tient quand même dans le résumé', () => {
+  it('le tableau plafonne sa silhouette : un dessin énorme tient quand même dans le résumé', () => {
     const elements = Array.from({ length: 500 }, (_, i) => ({ type: 'freedraw', x: i, y: i, width: 3, height: 3, strokeColor: '#1e1e1e' }));
     const summary = summarize('whiteboard', { elements });
     expect(summary.detail.shapes.length).toBeLessThanOrEqual(40);
@@ -143,7 +143,7 @@ describe('ce que chaque résumé dit, en particulier', () => {
     expect(summary.detail.steps).toBeGreaterThanOrEqual(1);
   });
 
-  it('les متتاليات RECALCULENT leurs termes : ils ne sont jamais stockés', () => {
+  it('les suites RECALCULENT leurs termes : ils ne sont jamais stockés', () => {
     const summary = summarize('sequences', {
       primary: { kind: 'arithmetic', startIndex: 0, first: 2, difference: 3, second: 1, ratio: 2, a: 2, b: 1, explicitSource: '2n + 1', ruleSource: '2u - 1' },
       count: 20,
@@ -170,13 +170,13 @@ describe('ce que chaque résumé dit, en particulier', () => {
     expect(summary.detail.draws).toBe(60);
   });
 
-  it('les أشعة résolvent la scène du pas COURANT, pas tout l’historique', () => {
+  it('les vecteurs résolvent la scène du pas COURANT, pas tout l’historique', () => {
     const tool = MATH_LAB_TOOLS.find((t) => t.id === 'vectors');
     const summary = summarizeDocument(tool, tool.createInitialData());
     expect(summary.kind).toBe('vectors');
     expect(summary.detail.points.length).toBeGreaterThan(0);
     expect(summary.detail.vectors.length).toBeGreaterThan(0);
-    // Chaque شعاع est résolu en coordonnées, prêt à être dessiné.
+    // Chaque vecteur est résolu en coordonnées, prêt à être dessiné.
     for (const v of summary.detail.vectors) {
       expect([v.x1, v.y1, v.x2, v.y2].every(Number.isFinite)).toBe(true);
     }

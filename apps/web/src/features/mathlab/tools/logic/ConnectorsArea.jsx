@@ -13,7 +13,7 @@ import { setConnector, setOperand } from './logicState.js';
  * devenir la carte de ce qu'il vient de faire.
  *
  * Les interrupteurs sont des `aria-pressed` (pas des cases à cocher) parce
- * que ce sont des BASCULES de valeur, et chacun porte sa lettre arabe (ص/خ)
+ * que ce sont des BASCULES de valeur, et chacun porte sa lettre (V/F)
  * en plus de sa couleur (§45).
  */
 export default function ConnectorsArea({ data, onChange }) {

@@ -11,7 +11,7 @@ import { formatValue } from './vectorFormat.js';
  * LES COMMANDES : créer, combiner, analyser, explorer.
  *
  * Chaque commande dit ce dont elle a besoin et se DÉSACTIVE tant qu'elle ne
- * l'a pas — « ⃗AB » attend deux points, « u + v » attend deux أشعة. Rien ne
+ * l'a pas — « ⃗AB » attend deux points, « u + v » attend deux vecteurs. Rien ne
  * s'ouvre sur un dialogue qui demanderait « quels objets ? » : l'élève
  * sélectionne dans le plan, puis la commande devient cliquable. C'est le
  * geste du laboratoire, pas celui d'un formulaire.
@@ -22,7 +22,7 @@ export default function VectorControls({
   onMakePolygon, onTranslatePolygon, onToggleSetting, onAnalysis, onExperiment,
   onExplorerComponent, onToggleExplorer, features = null,
 }) {
-  // Le مخبر (scope.js) : sans k·u ni analyse avancée au collège.
+  // Le labo (scope.js) : sans k·u ni analyse avancée au collège.
   const canScale = features?.scale !== false;
   const analysisKinds = features?.analysis ?? ANALYSIS_KINDS;
   const experiments = features?.experiments ?? EXPERIMENTS;

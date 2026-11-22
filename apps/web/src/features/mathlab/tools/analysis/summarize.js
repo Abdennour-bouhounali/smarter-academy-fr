@@ -1,5 +1,5 @@
 /**
- * Le RÉSUMÉ d'un document du مختبر التحليل, pour « أعمالي » (§5i.2).
+ * Le RÉSUMÉ d'un document du labo d’analyse, pour « Mes travaux » (§5i.2).
  *
  * Fonction PURE : ni React, ni moteur, ni DOM. Elle tourne dans la coquille à
  * chaque sauvegarde et doit rester minuscule (le serveur ignore au-delà de
@@ -7,7 +7,7 @@
  * d'un élève (toolContract.summarizeDocument).
  *
  * L'aperçu réutilise la forme `curve` que le grapheur a déjà : une carte
- * dessine une courbe échantillonnée, et « أعمالي » n'a pas une ligne à
+ * dessine une courbe échantillonnée, et « Mes travaux » n'a pas une ligne à
  * ajouter pour ce nouvel instrument. C'est exactement ce que le contrat
  * promet — « un futur instrument qui produit une courbe réutilise l'aperçu
  * curve sans une ligne de plus ».
@@ -48,7 +48,7 @@ export function summarizeAnalysis(data) {
    * `WorkPreview` accepte les deux écritures de la forme « curve » :
    * `detail.curves` (des expressions qu'il rééchantillonne avec son petit
    * reconnaisseur de formes) et `detail.polylines` (des points déjà
-   * calculés). On choisit la seconde, comme le مختبر المقاطع المخروطية, parce
+   * calculés). On choisit la seconde, comme le labo des coniques, parce
    * que le reconnaisseur de la vignette ne comprend que « les formes
    * courantes du programme » et transformerait `\frac{x^2-1}{x-1}` en une
    * droite — une vignette qui MENT sur le contenu du document.

@@ -22,7 +22,7 @@
  *
  * 3. **Ses conventions ne sont pas celles du programme.** `limit(1/x, x, 0)`
  *    rend `Infinity` — une convention parfaitement défendable (droite réelle
- *    achevée), mais pas celle qu'enseigne le manuel algérien, où la limite en
+ *    achevée), mais pas celle qu'enseigne le lycée, où la limite en
  *    0 de 1/x N'EXISTE PAS parce que les deux côtés divergent en sens
  *    contraires. La façade rend donc le résultat BRUT, et c'est l'appelant
  *    (analysisMath.js) qui décide de la lecture pédagogique. Le moteur
@@ -38,7 +38,7 @@
  *
  * ── Chargement PARESSEUX ─────────────────────────────────────────────────
  * Nerdamer pèse ~1,8 Mo décompressé. Il n'est chargé qu'au PREMIER appel,
- * par un `import()` dynamique : un élève qui ouvre la سبّورة ou le grapheur
+ * par un `import()` dynamique : un élève qui ouvre le tableau ou le grapheur
  * ne le télécharge jamais. `ensureEngine()` est idempotent.
  *
  * ── Extensions prévues ───────────────────────────────────────────────────
@@ -234,7 +234,7 @@ function askLimit(expression, variable, target) {
  * `e^Infinity` au lieu de `+∞`. Les formes indéterminées `∞ − ∞` le mettent
  * en échec, et la factorisation qui sauve `x²−4x+3` casse `x³−3x`.
  *
- * Écrire ces réponses dans un جدول التغيّرات, c'est enseigner une faute à un
+ * Écrire ces réponses dans un tableau de variations, c'est enseigner une faute à un
  * élève qui n'a aucun moyen de la contester. §35 l'interdit, et c'est aussi
  * simplement le devoir d'un outil scolaire.
  *

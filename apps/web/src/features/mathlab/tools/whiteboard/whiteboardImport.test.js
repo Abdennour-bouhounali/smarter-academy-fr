@@ -7,7 +7,7 @@ import {
 const file = (name, size = 10, type = '') => ({ name, size, type });
 const codeOf = (fn) => { try { fn(); } catch (e) { return e instanceof WhiteboardImportError ? e.code : `not-import-error:${e}`; } return 'no-error'; };
 
-describe('import sur la سبّورة', () => {
+describe('import sur le tableau', () => {
   it('propose la bibliothèque au sélecteur, et borne la taille comme le serveur', () => {
     expect(WHITEBOARD_IMPORT_ACCEPT).toContain('.excalidrawlib');
     expect(WHITEBOARD_IMPORT_MAX_BYTES).toBe(2_000_000);

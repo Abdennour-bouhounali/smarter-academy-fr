@@ -1,5 +1,5 @@
 /**
- * Les ÉNONCÉS du مختبر المنطق والبرهان — chaque préréglage est un fait
+ * Les ÉNONCÉS de l'atelier « Logique et raisonnement » — chaque préréglage est un fait
  * mathématique vérifié, jamais un énoncé fabriqué à la volée dans un
  * composant (§48 du cahier des charges : « Every generated problem […] must
  * be mathematically verified »). `presets.test.js` exécute chaque prédicat
@@ -46,8 +46,8 @@ const REALS = Object.freeze({ min: -6, max: 6, integer: false, step: 0.5, symbol
  * droite graduée montre.
  *
  * `min`/`max` bornent l'ÉCHANTILLON (la droite, le tirage au hasard, la
- * recherche systématique) ; ils ne font PAS partie de l'énoncé. « كلّ عدد
- * أوّلي أكبر من 2 زوجي » est réfuté par 31 autant que par 3 : refuser 31
+ * recherche systématique) ; ils ne font PAS partie de l'énoncé. « Tout nombre
+ * premier supérieur à 2 est pair » est réfuté par 31 autant que par 3 : refuser 31
  * parce que la droite s'arrête à 30 enseignerait une fausseté. Le juge ne
  * connaît donc que l'ensemble nommé par `symbol` (ℕ, ℕ*, ℤ, ℝ), plus les
  * valeurs `excluded` du domaine s'il en déclare.
@@ -95,7 +95,7 @@ export function domainStatus(value, domain) {
 
 /**
  * Le domaine tel qu'on l'ÉCRIT à côté de l'énoncé : « n ∈ ℕ* », « x ∈ ℝ ».
- * Sans lui, « 1/n > 0 » (toujours vrai sur ℕ*) et « 1/x > 0 » (يعتمد sur ℝ)
+ * Sans lui, « 1/n > 0 » (toujours vrai sur ℕ*) et « 1/x > 0 » (dépend de x sur ℝ)
  * ne se distinguent pas (§6). La lettre est `variable` si le préréglage la
  * déclare, sinon n pour un ensemble d'entiers et x pour ℝ.
  */
@@ -141,7 +141,7 @@ export const COUNTEREXAMPLE_CHALLENGES = Object.freeze([
     hintKeys: ['tools.logic.counterexample.hints.listPrimes', 'tools.logic.counterexample.hints.smallestPrime'],
   },
   {
-    // « إذا كان n² زوجيًا فإن n فردي » — faux pour TOUT n pair.
+    // « Si n² est pair, alors n est impair » — faux pour TOUT n pair.
     id: 'squareEvenImpliesOdd',
     textKey: 'tools.logic.counterexample.claims.squareEvenImpliesOdd',
     domain: INTEGERS,
@@ -150,7 +150,7 @@ export const COUNTEREXAMPLE_CHALLENGES = Object.freeze([
     hintKeys: ['tools.logic.counterexample.hints.whenIsSquareEven', 'tools.logic.counterexample.hints.tryEven'],
   },
   {
-    // « كل عدد يقبل القسمة على 4 يقبل القسمة على 8 » — 4 lui-même.
+    // « Tout nombre divisible par 4 est divisible par 8 » — 4 lui-même.
     id: 'divisibleByFourImpliesByEight',
     textKey: 'tools.logic.counterexample.claims.divisibleByFourImpliesByEight',
     domain: { min: 1, max: 40, integer: true, symbol: 'ℕ*' },
@@ -173,13 +173,13 @@ export const COUNTEREXAMPLE_CHALLENGES = Object.freeze([
 
 export const DEFAULT_COUNTEREXAMPLE_ID = 'primeGtTwoIsEven';
 
-/* ── §5-7 — Statement Lab : صحيح / خطأ / يعتمد, et la vérité sur la droite ── */
+/* ── §5-7 — Statement Lab : vraie / fausse / dépend, et la vérité sur la droite ── */
 
 export const STATEMENTS = Object.freeze([
   { id: 'fiveGtThree', kind: 'fixed', formula: '5 > 3', verdict: 'true' },
   { id: 'sevenIsEven', kind: 'fixed', textKey: 'tools.logic.statements.items.sevenIsEven', formula: null, verdict: 'false' },
   {
-    id: 'squareNonNegative', kind: 'variable', formula: 'x² ≥ 0', domain: REALS,
+    id: 'squareNonNegative', kind: 'variable', formula: 'x² ⩾ 0', domain: REALS,
     verdict: 'true', predicate: (x) => x * x >= 0,
   },
   {
@@ -216,7 +216,7 @@ export const IMPLICATIONS = Object.freeze([
     q: { formula: 'x > 1', test: (x) => x > 1 },
     domain: REALS,
     implicationHolds: true,
-    // La réciproque est fausse : x = 2 vérifie Q (2 > 1), pas P (2 ≤ 3).
+    // La réciproque est fausse : x = 2 vérifie Q (2 > 1), pas P (2 ⩽ 3).
     converseCounterexample: 2,
   },
   {
@@ -236,7 +236,7 @@ export const IMPLICATIONS = Object.freeze([
     converseCounterexample: 6,
   },
   {
-    // Une implication FAUSSE — sans elle, « صحيحة » serait toujours la
+    // Une implication FAUSSE — sans elle, « vraie » serait toujours la
     // bonne réponse et la question n'apprendrait rien. x = −3 : P vrai
     // (9 > 4), Q faux. Sa réciproque, elle, est vraie.
     id: 'squareGtFourImpliesGtTwo',
@@ -257,7 +257,7 @@ export const EQUIVALENCES = Object.freeze([
   {
     // Vrai sur ℤ : pair ⇒ carré pair (produit), et carré pair ⇒ pair
     // (contraposée : impair ⇒ carré impair) — le 2e sens est prouvé dans
-    // « بناء البرهان » (squareEvenImpliesEven).
+    // « Démonstration » (squareEvenImpliesEven).
     id: 'evenIffSquareEven',
     // `formula` est de la NOTATION, lisible dans toutes les langues : « n pair »
     // (du français) s'affichait tel quel dans l'aire et dans l'entraînement.
@@ -316,24 +316,24 @@ export const DEFAULT_CONDITION_ID = 'multipleOfFourAndEven';
  * `negatedInner`) : l'entraînement en tire les deux erreurs classiques de
  * la négation (changer le seul quantificateur, nier le seul prédicat) au
  * lieu d'emprunter la négation d'un AUTRE énoncé — qui pouvait être
- * l'énoncé de départ lui-même (¬∃x, x² < 0 s'écrit ∀x, x² ≥ 0) ou trahir la
+ * l'énoncé de départ lui-même (¬∃x, x² < 0 s'écrit ∀x, x² ⩾ 0) ou trahir la
  * réponse par son seul ensemble (ℕ). presets.test.js vérifie que la
  * structure réécrit exactement `formula` et `negationFormula`.
  */
 export const QUANTIFIER_STATEMENTS = Object.freeze([
   {
-    id: 'squareNonNegative', kind: 'forall', formula: '∀x ∈ ℝ, x² ≥ 0', domain: REALS,
+    id: 'squareNonNegative', kind: 'forall', formula: '∀x ∈ ℝ, x² ⩾ 0', domain: REALS,
     predicate: (x) => x * x >= 0,
     truth: true, // vrai — et un ÉCHANTILLON ne suffit pas à le dire : c'est une propriété du carré
     negationFormula: '∃x ∈ ℝ, x² < 0',
-    variable: 'x', inner: 'x² ≥ 0', negatedInner: 'x² < 0',
+    variable: 'x', inner: 'x² ⩾ 0', negatedInner: 'x² < 0',
   },
   {
     id: 'naturalPositive', kind: 'forall', formula: '∀n ∈ ℕ, n > 0', domain: NATURALS,
     predicate: (n) => n > 0,
     truth: false, // n = 0
-    negationFormula: '∃n ∈ ℕ, n ≤ 0',
-    variable: 'n', inner: 'n > 0', negatedInner: 'n ≤ 0',
+    negationFormula: '∃n ∈ ℕ, n ⩽ 0',
+    variable: 'n', inner: 'n > 0', negatedInner: 'n ⩽ 0',
   },
   {
     id: 'existsSquareFour', kind: 'exists', formula: '∃x ∈ ℝ, x² = 4', domain: REALS,
@@ -346,8 +346,8 @@ export const QUANTIFIER_STATEMENTS = Object.freeze([
     id: 'existsNegativeSquare', kind: 'exists', formula: '∃x ∈ ℝ, x² < 0', domain: REALS,
     predicate: (x) => x * x < 0,
     truth: false, // aucun témoin — et ne pas en trouver ne le PROUVE pas non plus
-    negationFormula: '∀x ∈ ℝ, x² ≥ 0',
-    variable: 'x', inner: 'x² < 0', negatedInner: 'x² ≥ 0',
+    negationFormula: '∀x ∈ ℝ, x² ⩾ 0',
+    variable: 'x', inner: 'x² < 0', negatedInner: 'x² ⩾ 0',
   },
 ]);
 
@@ -362,9 +362,9 @@ export const DEFAULT_QUANTIFIER_ID = 'naturalPositive';
  * disjonction se posent dans l'ordre qu'on veut. Le même graphe dessine
  * l'arbre de preuve (§32).
  *
- * `role` est le type de bloc de §26 (معطى · ملاحظة · قاعدة · استنتاج ·
- * النتيجة). `distractors` sont des blocs FAUX, chacun avec la raison qui le
- * rend faux (§27 : jamais un simple « خطأ »). `alternatives` sont des
+ * `role` est le type de bloc de §26 (donnée · observation · propriété ·
+ * déduction · conclusion). `distractors` sont des blocs FAUX, chacun avec la raison qui le
+ * rend faux (§27 : jamais un simple « faux »). `alternatives` sont des
  * écritures équivalentes acceptées à la place d'une étape (§36).
  */
 
@@ -411,7 +411,7 @@ export const PROOFS = Object.freeze([
   },
   {
     /**
-     * §28 — البرهان بالتراجع. Sa forme n'est celle d'AUCUNE des quatre
+     * §28 — le raisonnement par récurrence. Sa forme n'est celle d'AUCUNE des quatre
      * autres : deux racines indépendantes (le cas de base et l'hypothèse au
      * rang n), un pas qui a besoin des deux, et une conclusion qui ne suit
      * que si le pas ET la base sont posés. Le graphe le dit ; c'est
@@ -473,8 +473,8 @@ export const DEFAULT_PROOF_ID = 'evenSquareIsEven';
 /**
  * §28 — LES RÉCURRENCES, dans leur propre liste.
  *
- * البرهان بالتراجع est une AIRE du laboratoire, pas une stratégie parmi
- * d'autres dans « بناء البرهان » : sa forme n'est celle d'aucune des quatre
+ * La récurrence est une AIRE du laboratoire, pas une stratégie parmi
+ * d'autres dans « Démonstration » : sa forme n'est celle d'aucune des quatre
  * autres (deux chemins qui partent du but et se rejoignent seulement dans la
  * conclusion), et le mélanger aux preuves directes aurait laissé croire
  * qu'on choisit sa méthode au hasard. Les deux listes partagent le même
@@ -483,7 +483,7 @@ export const DEFAULT_PROOF_ID = 'evenSquareIsEven';
  */
 export const INDUCTIONS = Object.freeze(PROOFS.filter((proof) => proof.strategy === 'induction'));
 
-/** Les preuves de « بناء البرهان » : toutes SAUF les récurrences. */
+/** Les preuves de « Démonstration » : toutes SAUF les récurrences. */
 export const DIRECT_PROOFS = Object.freeze(PROOFS.filter((proof) => proof.strategy !== 'induction'));
 
 export const DEFAULT_INDUCTION_ID = 'sumOfFirstIntegers';
@@ -497,7 +497,7 @@ export const DEFAULT_INDUCTION_ID = 'sumOfFirstIntegers';
  * valeurs à la main, comme pour tout le reste de ce fichier.
  *
  * `answer` n'est PAS montrée : elle sert aux tests (« une règle juste fait
- * verdir toutes les marches ») et au mode « اكتشف القاعدة » pour ne proposer
+ * verdir toutes les marches ») et au mode « termes cachés » (découvrir la règle) pour ne proposer
  * que des suites qui ont réellement une règle simple. L'interface ne la
  * révèle jamais d'elle-même — §16 veut que l'élève la cherche.
  *
@@ -635,9 +635,9 @@ export const FALLACY_KINDS = Object.freeze(['invalidConverse', 'affirmingConsequ
 export const FALLACIES = Object.freeze([
   {
     // L'argument conclut « x² = 4 ⇒ x = 2 » à partir de « x = 2 ⇒ x² = 4 » :
-    // c'est un passage de P ⇒ Q à Q ⇒ P, donc استعمال العكس (kindHints). Il
-    // affirmait autrefois « وبما أنّ x² = 4 فإنّ x = 2 » — de P ⇒ Q et Q vers
-    // P, soit إثبات التالي selon les propres définitions du laboratoire.
+    // c'est un passage de P ⇒ Q à Q ⇒ P, donc « utiliser la réciproque » (kindHints). Il
+    // affirmait autrefois « or x² = 4, donc x = 2 » — de P ⇒ Q et Q vers
+    // P, soit « déduire l'hypothèse de la conclusion » selon les propres définitions du laboratoire.
     id: 'squareFourConverse',
     kind: 'invalidConverse',
     domain: INTEGERS,

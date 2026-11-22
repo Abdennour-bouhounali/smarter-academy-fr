@@ -28,7 +28,7 @@ import { useCompactCharts } from '../probabilityStats/useMediaQuery.js';
 const SERIALIZE_MS = 300;
 
 /**
- * Le مختبر المقاطع المخروطية dans la coquille du مختبر (MathLabToolProps).
+ * Le labo des coniques dans la coquille de l'atelier (MathLabToolProps).
  *
  *     on tire le centre → l'équation change → on écrit l'équation → la
  *     courbe change → on pose un point → la propriété focale se mesure
@@ -41,7 +41,7 @@ const SERIALIZE_MS = 300;
  * Un GESTE (glisser un centre, pousser un curseur) appelle `slide`, qui
  * remplace la scène vivante sans rien empiler ; son RELÂCHEMENT appelle
  * `commitGesture`, qui pousse UN pas dans l'historique. C'est ce qui fait
- * que « تراجع » défait un glissement entier et non un pixel.
+ * que « Annuler » défait un glissement entier et non un pixel.
  *
  * ── Ce qui n'est PAS persisté ────────────────────────────────────────────
  * La question d'entraînement courante, le texte en cours de saisie et son

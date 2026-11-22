@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { commonDenominatorStory, multiplesUpTo } from './commonDenominatorStory.js';
 import { fineCuts } from './FractionShape.jsx';
 
-describe('توحيد المقامات — le nombre de parts qui convient aux deux découpages', () => {
+describe('mise au même dénominateur — le nombre de parts qui convient aux deux découpages', () => {
   it('1/3 et 1/4 : les multiples se rencontrent d\'abord en 12', () => {
     const story = commonDenominatorStory(3, 4);
     expect(story.denominator).toBe(12);

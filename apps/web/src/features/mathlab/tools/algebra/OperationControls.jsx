@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Plus, Minus, X, Divide } from 'lucide-react';
 
 /**
- * LES OPÉRATIONS — « ماذا أفعل بالطرفين ؟ »
+ * LES OPÉRATIONS — « Que fais-je aux deux membres ? »
  *
  * Quatre boutons, une valeur. L'élève choisit l'opération PUIS le nombre, et
  * l'opération part aux deux membres : l'interface ne laisse littéralement

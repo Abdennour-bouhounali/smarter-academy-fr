@@ -5,7 +5,7 @@ import { WORK_LABS, WORK_PERIODS, DEFAULT_WORK_FILTERS } from './workFilters';
 import { isLabScope, toolInScope } from '../labScope';
 
 /**
- * Les filtres de « أعمالي ». Le MÊME panneau sert la colonne de bureau et la
+ * Les filtres de « Mes travaux ». Le MÊME panneau sert la colonne de bureau et la
  * feuille de téléphone (§11) : un seul jeu de commandes à tenir juste.
  *
  * Les instruments proposés sont ceux du REGISTRE (§8) — jamais une liste
@@ -13,12 +13,12 @@ import { isLabScope, toolInScope } from '../labScope';
  * nombre de travaux qu'il contient : un filtre qui ne donnerait rien se voit
  * avant d'être cliqué.
  *
- * Le premier filtre est le مخبر (labScope.js) : l'architecture du مختبر
- * elle-même. Un مخبر choisi, seuls ses instruments restent proposés — et
+ * Le premier filtre est l’atelier (labScope.js) : l'architecture de l’atelier
+ * elle-même. Un atelier choisi, seuls ses instruments restent proposés — et
  * celui qu'on avait déjà coché, pour pouvoir le décocher.
  *
  * @param {Record<string, number>} counts     combien de travaux par instrument
- * @param {Record<string, number>} labCounts  combien de travaux par مخبر
+ * @param {Record<string, number>} labCounts  combien de travaux par atelier
  */
 export default function WorkFilterPanel({ filters, counts = {}, labCounts = {}, total = 0, onChange, onReset }) {
   const { t } = useTranslation('mathlab');

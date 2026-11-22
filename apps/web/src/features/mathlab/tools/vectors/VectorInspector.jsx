@@ -11,10 +11,9 @@ import { formatPair, formatNorm, formatAngle, formatFactor, formatValue, formatS
  * pour chacun les trois lectures du cahier des charges — composantes, norme,
  * direction — dans cet ordre.
  *
- * Toute écriture mathématique est posée dans un conteneur `dir="ltr"` : en
- * page arabe, sans cela, `u = (3 ; −2)` se retournerait (§35). Les LIBELLÉS,
- * eux, restent en arabe et suivent la page — c'est la règle de
- * ARABIC_RTL_CONTRACT : on isole la formule, pas le texte.
+ * Toute écriture mathématique est posée dans un îlot `dir="ltr"` (§35) ;
+ * la page est elle-même LTR, l'îlot est sans effet mais inoffensif
+ * (FRENCH_LANGUAGE_CONTRACT §8). Les LIBELLÉS suivent la page.
  */
 export default function VectorInspector({
   vectors, points, relations, settings, onRemoveVector, onRemovePoint, onScalarChange, showFactor = true,
@@ -76,7 +75,7 @@ export default function VectorInspector({
               </div>
             </dl>
 
-            {/* Le curseur k (§15) : la « wow » interaction, rendue là où on lit le شعاع. */}
+            {/* Le curseur k (§15) : la « wow » interaction, rendue là où on lit le vecteur. */}
             {vector.source.kind === 'scaled' && (
               <ScalarSlider
                 value={vector.source.k}
@@ -127,7 +126,7 @@ export default function VectorInspector({
             {relations.pair.parallel && (
               <li data-ml-relation="parallel">
                 {t('tools.vectors.relations.parallel')}
-                {/* v = k·u : l'écriture du lycée (scope.js) — le collège lit « متوازيان ». */}
+                {/* v = k·u : l'écriture du lycée (scope.js) — le collège lit « colinéaires ». */}
                 {showFactor && relations.pair.factor !== null && (
                   <span className="sa-ml-vec__factor" dir="ltr">
                     {` ${relations.pair.vName} = ${formatFactor(relations.pair.factor)} ${relations.pair.uName}`}
@@ -212,7 +211,7 @@ function SlopeReading({ slope }) {
  * Il va de −3 à 3 par dixièmes, avec des crans repères aux entiers. Le
  * changement est CONTINU : chaque mouvement redessine k·u tout de suite,
  * sans validation (§7). Les trois états que §15 demande de faire voir —
- * renversement, étirement, شعاع nul — sont annoncés en toutes lettres
+ * renversement, étirement, vecteur nul — sont annoncés en toutes lettres
  * sous le curseur, pour que ce que l'œil voit ait un nom.
  */
 function ScalarSlider({ value, name, baseName = 'u', onChange }) {

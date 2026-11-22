@@ -16,11 +16,11 @@ import { operationLatex } from './equationDisplay.js';
  * Chaque pas montre l'opération PUIS ce qu'elle donne, comme un cahier. Le
  * pas courant est mis en avant ; cliquer sur un pas antérieur y revient (le
  * curseur de algebraState), ce qui fait de l'historique la commande de
- * « تراجع » autant que sa trace.
+ * « Annuler » autant que sa trace.
  *
  * V2 : chaque pas montre trois lignes — l'opération, la ligne INTERMÉDIAIRE
  * (l'opération posée aux deux membres, non simplifiée, en orange), puis le
- * résultat. Quand la saisie a demandé un « نشر وتبسيط », le premier pas le
+ * résultat. Quand la saisie a demandé un « développer et réduire », le premier pas le
  * rappelle.
  *
  * Un retournement du sens d'une inégalité est SIGNALÉ sur le pas qui l'a
@@ -59,7 +59,7 @@ export default function StepHistory({ steps, cursor, onSelect, expanded = false,
                 <span className="sa-ml-alg__step-expanded">{t('tools.algebra.expansion.historyNote')}</span>
               )}
               {step.operation && (
-                <span className="sa-ml-alg__step-op" dir="ltr" lang="en">
+                <span className="sa-ml-alg__step-op" dir="ltr">
                   {operationLabel(step.operation)}
                   <span className="sa-ml-alg__step-op-sides">{t('tools.algebra.bothSides')}</span>
                 </span>

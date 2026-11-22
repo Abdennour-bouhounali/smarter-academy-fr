@@ -46,7 +46,7 @@ describe('la table dit la vérité — chaque entrée contre Math (§19)', () =>
     expect(SPECIAL_DEGREES.at(-1)).toBe(360);
   });
 
-  it('les trois angles du programme de 4AM sont dedans', () => {
+  it('les trois angles du programme du collège sont dedans', () => {
     for (const angle of CURRICULUM_ANGLES) {
       expect(isSpecialAngle(angle)).toBe(true);
     }

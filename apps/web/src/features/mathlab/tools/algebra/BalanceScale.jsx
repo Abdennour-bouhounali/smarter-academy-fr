@@ -19,9 +19,8 @@ import * as R from './rational.js';
  * le dessin abandonne le comptage et n'écrit plus que la valeur : dix-sept
  * carrés alignés ne se lisent plus.
  *
- * Le SVG est explicitement `direction: ltr` (algebra.css) : la page est RTL
- * mais un repère mathématique ne se renverse pas, et SVG n'hérite pas de
- * `dir` (ARABIC_RTL_CONTRACT.md §4).
+ * Le SVG est explicitement `direction: ltr` (algebra.css) : le membre de
+ * gauche de l'équation est sur le plateau de gauche, comme on l'écrit.
  */
 
 const MAX_TOKENS = 8;
@@ -39,6 +38,13 @@ const ARM = 132;
 /** La demi-largeur d'un plateau — le dessin ne doit jamais déborder du viewBox. */
 const PAN_HALF = 96;
 
+/** Un coefficient écrit devant x comme dans un cahier : « 12x », « 0,5x », « (1/3)x ». */
+function coefficientLabel(a) {
+  const text = R.toPlainText(a);
+
+  return text.includes('/') ? `(${text})x` : `${text}x`;
+}
+
 /** Les jetons d'un membre : n fois `x`, puis la constante. */
 function tokensFor(form) {
   const tokens = [];
@@ -49,7 +55,7 @@ function tokensFor(form) {
     if (Number.isInteger(count) && count <= MAX_TOKENS) {
       for (let i = 0; i < count; i += 1) tokens.push({ kind: 'x', negative: a < 0, label: 'x' });
     } else {
-      tokens.push({ kind: 'x', negative: a < 0, label: `${R.toPlainText(form.a)}·x`, wide: true });
+      tokens.push({ kind: 'x', negative: a < 0, label: coefficientLabel(form.a), wide: true });
     }
   }
   if (!R.isZero(form.b)) {

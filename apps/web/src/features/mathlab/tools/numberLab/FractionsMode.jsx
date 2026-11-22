@@ -82,7 +82,7 @@ export default function FractionsMode({ state, onChange, compact }) {
   }, [left, right, operation]);
 
   const common = useMemo(() => commonDenominator(left, right), [left, right]);
-  // Les valeurs (عشري، %، مختزل) de chaque carte : l'élève peut les masquer.
+  // Les valeurs (décimal, %, simplifiée) de chaque carte : l'élève peut les masquer.
   const [showFacts, setShowFacts] = useState(() => {
     try { return window.localStorage.getItem('sa-ml-panel:numberLab.fractions.facts') !== '0'; } catch { return true; }
   });
@@ -194,7 +194,7 @@ export default function FractionsMode({ state, onChange, compact }) {
         {operation !== 'compare' && (
           <>
             <div className="sa-ml-nb__fraction-operator" aria-hidden="true">=</div>
-            {/* La colonne du résultat existe dès le départ (« ؟ ») : la ligne ne
+            {/* La colonne du résultat existe dès le départ (« ? ») : la ligne ne
                 saute pas quand il arrive, au DERNIER pas du déroulé. */}
             {result && done ? (
               <output className="sa-ml-nb__fraction-card sa-ml-nb__fraction-card--result" data-ml-nb-fraction-answer>
@@ -234,7 +234,7 @@ export default function FractionsMode({ state, onChange, compact }) {
           </div>
           <StepPlayer player={player} sticky dataAttr="data-ml-nb-step" />
           <StepList steps={localizeSteps(t, solution.steps)} revealUpTo={player.cursor - 1} dataAttr="data-ml-nb-fraction-steps" />
-          {/* « توحيد المقامات » : au pas du PPCM, les deux formes redécoupées par le PPCM. */}
+          {/* « Mise au même dénominateur » : au pas du PPCM, les deux formes redécoupées par le PPCM. */}
           {solution.commonIndex > 0 && player.cursor >= solution.commonIndex && (
             <CommonDenominatorFigure left={left} right={right} model={model} />
           )}
@@ -332,7 +332,7 @@ function FractionCard({ frac, source, model, tone, highlight, onSplit, onMerge, 
         width={model === 'circle' ? 132 : 240}
         showLabel={false}
       />
-      <div className="sa-ml-nb__fraction-side" dir="rtl">
+      <div className="sa-ml-nb__fraction-side">
         <span className={`sa-ml-nb__fraction-name sa-ml-nb__fraction-name--${tone}`} dir="ltr">{fracToText(frac)}</span>
         <span className="sa-ml-nb__fraction-actions">
           <button type="button" className="sa-ml-nb__tiny" onClick={onSplit} disabled={!canSplit} title={t('tools.numberLab.fractions.split')} aria-label={t('tools.numberLab.fractions.split')}>

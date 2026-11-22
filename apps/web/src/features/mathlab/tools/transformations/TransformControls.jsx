@@ -19,7 +19,7 @@ export default function TransformControls({
   pattern, onPatternChange, canUndo, canRedo, onUndo, onRedo, features = null,
 }) {
   const { t } = useTranslation('mathlab');
-  // Le مخبر (scope.js) : ses préréglages, ses expériences, ses réglages.
+  // Le labo (scope.js) : ses préréglages, ses expériences, ses réglages.
   const presets = features?.presets ?? PRESETS;
   const experiments = features?.experiments ?? EXPERIMENTS;
   const toggles = features ? displayToggles(features) : [

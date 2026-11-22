@@ -5,15 +5,15 @@ import {
 import { MODES } from './numberState.js';
 
 /**
- * LA BARRE du مختبر الأعداد — l'ordre d'affichage, les groupes, les icônes.
+ * LA BARRE du labo des nombres — l'ordre d'affichage, les groupes, les icônes.
  *
  * Seize modes en une rangée de puces nues ne se DÉCOUVRENT pas : l'élève ne
  * voit que les cinq premiers. Ils sont donc rangés en trois familles, dans
  * l'ordre du programme :
  *
- *   العدد            ce qu'EST un nombre   (explorer, place, line, rounding)
- *   الحساب           ce qu'on en FAIT      (operations, order, powers, fractions, decimals, percent, proportion)
- *   الحساب في ℕ      l'ARITHMÉTIQUE        (division, divisibility, factors, primes, gcdLcm)
+ *   Le nombre        ce qu'EST un nombre   (explorer, place, line, rounding)
+ *   Le calcul        ce qu'on en FAIT      (operations, order, powers, fractions, decimals, percent, proportion)
+ *   Arithmétique     l'ARITHMÉTIQUE        (division, divisibility, factors, primes, gcdLcm)
  *
  * La barre elle-même est `shared/LabSectionNav.jsx` (onglets WAI-ARIA, la
  * description du mode actif sous la barre) ; ce fichier n'en fournit que les

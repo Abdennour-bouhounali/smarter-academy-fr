@@ -1,5 +1,5 @@
 /**
- * L'ÉTAT du مختبر الأعداد — logique pure, sans React.
+ * L'ÉTAT du labo des nombres — logique pure, sans React.
  *
  *     data = {
  *       mode:    'explorer' | 'place' | 'line' | 'fractions' | 'decimals' |
@@ -19,9 +19,9 @@
  *       gcdLcm:       { a, b, method },   // method : 'differences' (défaut des NOUVEAUX documents) | 'euclid' | 'factors' | 'lists'
  *       rounding:     { value, power },
  *       operations:   { a, b, operation },
- *       division:     { a, b },                       // القسمة الإقليدية (2026-09-30)
+ *       division:     { a, b },                       // division euclidienne (2026-09-30)
  *       powers:       { tab, base, exponent, rule, ruleBase, m, n, scientific, root },
- *       order:        { expression },                 // أولويات العمليات — le TEXTE tapé, jamais ses pas
+ *       order:        { expression },                 // priorités opératoires — le TEXTE tapé, jamais ses pas
  *       practice:     { level, solved, attempts, hintsUsed },
  *       notes:        string[]      // ce que l'élève a gardé (§55)
  *     }
@@ -51,8 +51,8 @@ import { MAX_EXPRESSION_LENGTH } from './orderOfOperations.js';
 export const NUMBER_LAB_SCHEMA_VERSION = 1;
 
 /**
- * Les seize modes. Les treize de §3, puis les trois du 2026-09-30 (القسمة
- * الإقليدية، القوى والجذور، أولويات العمليات). L'ORDRE D'AFFICHAGE et les
+ * Les seize modes. Les treize de §3, puis les trois du 2026-09-30 (division
+ * euclidienne, puissances et racines, priorités opératoires). L'ORDRE D'AFFICHAGE et les
  * groupes de la barre vivent dans `modeCatalog.js` ; cette liste n'est que
  * l'ensemble des modes valides.
  */
@@ -338,7 +338,7 @@ export function normalizeNumberLabData(raw) {
 }
 
 /**
- * Le TEXTE d'une expression (أولويات العمليات). On garde ce que l'élève a
+ * Le TEXTE d'une expression (priorités opératoires). On garde ce que l'élève a
  * tapé, même mal formé : l'écran lui dit où est l'erreur, il ne la corrige
  * pas en silence. Seule la longueur est bornée.
  */
@@ -349,7 +349,7 @@ function readExpression(raw, fallback) {
   return text.trim() ? text : fallback;
 }
 
-/** Le sous-état « القوى والجذور », relu champ par champ. */
+/** Le sous-état « Puissances et racines », relu champ par champ. */
 function normalizePowers(raw, base) {
   const source = isPlainObject(raw) ? raw : {};
   const ruleBase = readInteger(source.ruleBase, base.ruleBase, -20, 20);

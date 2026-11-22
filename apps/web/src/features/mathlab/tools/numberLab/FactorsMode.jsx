@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronBack, ChevronForward } from '../../../../components/common/DirectionalIcons.jsx';
 import { LabPanel } from '../../shared/LabKit.jsx';
 import ValueInput from './ValueInput.jsx';
 import SendToMenu from './SendToMenu.jsx';
@@ -55,10 +55,10 @@ export default function FactorsMode({ state, onChange, onSend, compact }) {
       <section className="sa-ml-nb__panel">
         <h4>{t('tools.numberLab.factors.rectangle')}</h4>
         <div className="sa-ml-nb__duo sa-ml-nb__duo--factors" dir="ltr">
-          <div className="sa-ml-nb__duo-figure" dir="rtl">
+          <div className="sa-ml-nb__duo-figure">
             <Rectangle rows={pair[0]} cols={pair[1]} value={value} compact={compact} />
           </div>
-          <div className="sa-ml-nb__duo-board sa-ml-nb__factor-side" dir="rtl">
+          <div className="sa-ml-nb__duo-board sa-ml-nb__factor-side">
             <div className="sa-ml-nb__controls">
               <button
                 type="button" className="sa-ml-nb__mini"
@@ -67,7 +67,7 @@ export default function FactorsMode({ state, onChange, onSend, compact }) {
                 aria-label={t('tools.numberLab.factors.previousPair')}
                 title={t('tools.numberLab.factors.previousPair')}
               >
-                <ChevronRight size={15} aria-hidden="true" />
+                <ChevronBack size={15} aria-hidden="true" />
               </button>
               <span className="sa-ml-nb__count">
                 {t('tools.numberLab.factors.pairCount', { index: index + 1, total: pairs.length })}
@@ -79,7 +79,7 @@ export default function FactorsMode({ state, onChange, onSend, compact }) {
                 aria-label={t('tools.numberLab.factors.nextPair')}
                 title={t('tools.numberLab.factors.nextPair')}
               >
-                <ChevronLeft size={15} aria-hidden="true" />
+                <ChevronForward size={15} aria-hidden="true" />
               </button>
             </div>
 

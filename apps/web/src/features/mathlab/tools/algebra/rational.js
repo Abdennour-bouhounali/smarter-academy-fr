@@ -1,5 +1,5 @@
 /**
- * Les RATIONNELS du مختبر الجبر — logique pure, sans React.
+ * Les RATIONNELS de l'atelier d'algèbre — logique pure, sans React.
  *
  * Une équation scolaire se résout EXACTEMENT ou pas du tout : `x/3 = 5`
  * donne 15, `3x = 1` donne 1/3, et l'élève doit lire « ⅓ », jamais

@@ -1,5 +1,5 @@
-/* ── الاحتمالات والإحصاء — le laboratoire des probabilités et statistiques ──
-   Le pupitre sur le bord de départ (à droite en arabe), les graphiques qui
+/* ── Probabilités et statistiques — le laboratoire ───────────────────────
+   Le pupitre sur le bord de départ (à gauche), les graphiques qui
    prennent tout le reste. Sous 768 px : les graphiques en haut, le pupitre
    en bas, repliable. Les graphiques sont LTR par nature (un axe de valeurs
    croissantes va de gauche à droite en mathématiques) ; le pupitre suit la
@@ -41,7 +41,7 @@
   max-height: 48%;
   border-top: 1px solid #e2e8f0;
   background: #ffffff;
-  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -85,7 +85,7 @@
 /* Le titre du pupitre : le nom de la section (la barre du haut dit déjà laquelle est active). */
 .sa-ml-ps__panel-title {
   margin: 0;
-  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.9375rem;
   font-weight: 700;
   color: #1a1a1a;
@@ -107,7 +107,7 @@
 
 .sa-ml-ps__heading {
   margin: 0;
-  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 0.8125rem;
   color: #475569;
@@ -120,7 +120,7 @@
   border: 1px solid #e2e8f0;
   border-radius: 0.75rem;
   background: #f8fafc;
-  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1rem;
   font-weight: 600;
   color: #0f172a;
@@ -308,13 +308,9 @@
   background: #ffffff;
 }
 
-/* L'attribut HTML `dir` ne s'applique PAS aux éléments SVG : sans cette
-   règle, le graphique hérite du `direction: rtl` de la page, et
-   `text-anchor: start` fait courir les légendes vers la GAUCHE (par-dessus
-   les étiquettes d'axe) tandis que `end` sort du cadre à droite. Un axe de
-   valeurs croissantes est LTR par nature ; les textes arabes qu'il porte
-   restent des passages RTL, rendus correctement par l'algorithme bidi. */
-.sa-ml-ps__chart { direction: ltr; }
+/* Un graphique se lit de gauche à droite, comme la page : l'axe des valeurs
+   croissantes va vers la droite, les légendes ancrées au bord droit portent
+   `text-anchor: end`. Aucune règle de direction n'est nécessaire. */
 
 .sa-ml-ps__scroll {
   position: absolute;
@@ -329,7 +325,7 @@
 
 .sa-ml-ps__stage-title {
   margin: 0;
-  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 1.0625rem;
   color: #0f172a;
@@ -379,7 +375,7 @@
 }
 
 .sa-ml-ps__chart-legend {
-  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 12px;
   fill: #475569;
 }
@@ -417,7 +413,7 @@
   border: 2px dashed #e2e8f0;
   border-radius: 1rem;
   text-align: center;
-  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.9375rem;
   color: #94a3b8;
 }
@@ -455,8 +451,7 @@
   margin: 0;
   padding: 1rem 2rem;
   text-align: center;
-  direction: rtl;
-  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.9375rem;
   color: #475569;
 }
@@ -469,13 +464,13 @@
   gap: 0.375rem 0.625rem;
   margin: 0;
   min-height: 2.25rem;
-  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1rem;
   color: #475569;
 }
 
 .sa-ml-ps__result-value {
-  font-family: 'JetBrains Mono', 'Cairo', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 1.5rem;
   font-weight: 700;
   color: #0f172a;
@@ -495,7 +490,7 @@
   padding: 0.625rem 0.75rem;
   border-radius: 0.875rem;
   background: #f8fafc;
-  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.9375rem;
   color: #475569;
 }
@@ -524,7 +519,7 @@
 
 .sa-ml-ps__prompt {
   margin: 0;
-  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
   line-height: 1.6;
   color: #64748b;
@@ -537,7 +532,7 @@
 .sa-ml-ps__table {
   width: 100%;
   border-collapse: collapse;
-  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
 }
 
@@ -585,7 +580,7 @@
 
 .sa-ml-ps__percent--strong { font-weight: 700; color: #1d4ed8; }
 
-/* ══ V2 — الإحصاء الوصفي, شجرة الاحتمالات, التوزيع الطبيعي ════════════════
+/* ══ V2 — statistique descriptive, arbre de probabilités, loi normale ═════
    Palette de la plateforme via les jetons du kit (--sa-kit-*) : vert = ce que
    l'élève touche et ce qui est juste, orange = ce qui est mis en évidence.
    Surfaces claires uniquement. */
@@ -600,7 +595,7 @@
   border: 1px solid var(--sa-kit-line, #e2e8f0);
   border-radius: 0.75rem;
   background: #ffffff;
-  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.8125rem;
   font-weight: 700;
   color: var(--sa-kit-primary, #008443);
@@ -653,7 +648,7 @@
   border: 1px solid var(--sa-kit-line, #e2e8f0);
   border-radius: 999px;
   background: #ffffff;
-  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.8125rem;
   font-weight: 600;
   color: #334155;
@@ -819,7 +814,7 @@ g.is-highlighted .sa-ml-ps__bar { fill: var(--sa-kit-accent, #f36d21); }
   .sa-ml-ps__pie-label { font-size: 15px; }
 }
 
-/* ── شجرة الاحتمالات ──────────────────────────────────────────────────── */
+/* ── L'arbre de probabilités ───────────────────────────────────────────── */
 
 .sa-ml-ps__tree-scroll { max-width: 46rem; }
 .sa-ml-ps-tree { max-width: 46rem; }
@@ -866,7 +861,7 @@ g.is-highlighted .sa-ml-ps__bar { fill: var(--sa-kit-accent, #f36d21); }
 .sa-ml-ps-tree__node:focus-visible .sa-ml-ps-tree__pill,
 .sa-ml-ps-tree__root:focus-visible circle { stroke: var(--sa-kit-accent, #f36d21); stroke-width: 4; }
 .sa-ml-ps-tree__root circle { fill: #1a1a1a; stroke: #1a1a1a; stroke-width: 1; }
-.sa-ml-ps-tree__label { font-family: 'JetBrains Mono', 'Cairo', monospace; font-size: 13px; font-weight: 700; fill: #1a1a1a; pointer-events: none; }
+.sa-ml-ps-tree__label { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; fill: #1a1a1a; pointer-events: none; }
 .sa-ml-ps-tree__bar { stroke: #1a1a1a; stroke-width: 1.6; pointer-events: none; }
 .sa-ml-ps-tree__result { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; font-weight: 700; fill: var(--sa-kit-primary, #008443); }
 .sa-ml-ps-tree__result.is-pending { fill: #94a3b8; }
@@ -907,7 +902,7 @@ g.is-highlighted .sa-ml-ps__bar { fill: var(--sa-kit-accent, #f36d21); }
   border: 1px solid var(--sa-kit-line, #e2e8f0);
   border-radius: 0.5rem;
   background: #ffffff;
-  font-family: 'JetBrains Mono', 'Cairo', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.9375rem;
   font-weight: 700;
   color: #0f172a;
@@ -926,13 +921,13 @@ g.is-highlighted .sa-ml-ps__bar { fill: var(--sa-kit-accent, #f36d21); }
   border-inline-start: 4px solid var(--sa-kit-primary, #008443);
   border-radius: 0.5rem;
   background: #f8fafc;
-  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
   color: #1a1a1a;
   max-width: 46rem;
 }
 
-/* ── التوزيع الطبيعي ──────────────────────────────────────────────────── */
+/* ── La loi normale ────────────────────────────────────────────────────── */
 
 .sa-ml-ps__param { display: flex; flex-direction: column; gap: 0.25rem; }
 .sa-ml-ps__param-head { display: flex; align-items: baseline; gap: 0.375rem; font-size: 0.875rem; font-weight: 600; color: #334155; }
@@ -961,7 +956,7 @@ g.is-highlighted .sa-ml-ps__bar { fill: var(--sa-kit-accent, #f36d21); }
   padding: 0.625rem 0.75rem;
   border-radius: 0.875rem;
   background: var(--sa-kit-primary-soft, #e6f4ec);
-  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #065f46;
   max-width: 46rem;
 }
@@ -997,7 +992,7 @@ g.is-highlighted .sa-ml-ps__bar { fill: var(--sa-kit-accent, #f36d21); }
 /* ── Téléphone : UN seul défilement, celui de l'écran ──────────────────────
    Sous 768 px, plus de scène ni de panneau qui défilent chacun dans leur
    boîte : l'outil entier devient une colonne qui défile (scène d'abord), et
-   les barres « الحل خطوة بخطوة » restent collées en haut de l'écran. */
+   les barres « Le calcul pas à pas » restent collées en haut de l'écran. */
 @media (max-width: 767px) {
   .sa-ml-ps { overflow-y: auto; overflow-x: hidden; }
   .sa-ml-ps__body { flex: none; min-height: auto; }

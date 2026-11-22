@@ -6,7 +6,7 @@
  * `random`, ce qui rend chaque question reproductible dans un test.
  *
  * ── Le principe qui gouverne tout ce fichier ─────────────────────────────
- * Une réponse fausse ne BLOQUE jamais (c'est la règle du مختبر, déjà tenue
+ * Une réponse fausse ne BLOQUE jamais (c'est la règle de l'atelier, déjà tenue
  * par la trigonométrie et les suites) : l'élève prédit, l'instrument ANIME
  * la transformation, et la figure lui montre elle-même où il en était. Rien
  * ici ne rend « faux » sans rendre en même temps la bonne réponse et de quoi
@@ -55,8 +55,8 @@ function randomStep(random, { allowDilation = true, stepKinds = null } = {}) {
  * positions proposées. L'interface n'en calcule aucune.
  */
 export function generateChallenge(random = Math.random, options = {}) {
-  // `kinds` / `stepKinds` : ce que le مخبر pose (scope.js) — au collège, une
-  // seule transformation, jamais de تحاكي.
+  // `kinds` / `stepKinds` : ce que le labo pose (scope.js) — au collège, une
+  // seule transformation (MATH_LAB §2.1).
   const kinds = Array.isArray(options.kinds) && options.kinds.length
     ? CHALLENGE_KINDS.filter((entry) => options.kinds.includes(entry))
     : CHALLENGE_KINDS;
@@ -65,7 +65,7 @@ export function generateChallenge(random = Math.random, options = {}) {
     ? options.kind
     : pick(random, kinds);
 
-  // Une question dont la réponse est le point LUI-MÊME (انسحاب nul, point
+  // Une question dont la réponse est le point LUI-MÊME (translation nulle, point
   // sur l'axe, centre de rotation…) ne demande rien : on la retire. Le
   // plafond ne sert qu'à un `random` dégénéré (une constante, dans un test) ;
   // il rend alors une question sûre, jamais triviale.
@@ -103,11 +103,11 @@ function finishChallenge(random, kind, point, steps) {
  * (`tools.transformations.practice.stepText.<key>`) et ses paramètres, déjà
  * écrits en notation (virgule décimale, vrai moins).
  *
- * « تناظر » seul ne dit pas QUEL تناظر, « دوران 90° » ne dit ni le centre ni
+ * « Symétrie » seul ne dit pas QUELLE symétrie, « Rotation de 90° » ne dit ni le centre ni
  * le sens : l'élève ne pouvait pas répondre, il devinait. Chaque pas nomme
- * donc tout ce qui fixe sa matrice — l'axe (ou le centre d'un تناظر مركزي),
- * le centre ET le sens d'un دوران, le centre ET la نسبة d'un تحاكٍ, le شعاع
- * d'un انسحاب. Deux pas de matrices différentes ont toujours deux textes
+ * donc tout ce qui fixe sa matrice — l'axe (ou le centre d'une symétrie centrale),
+ * le centre ET le sens d'une rotation, le centre ET le rapport d'une homothétie, le vecteur
+ * d'une translation. Deux pas de matrices différentes ont toujours deux textes
  * différents (c'est testé).
  *
  * `vertices` résout un centre posé sur un sommet (`center.type = 'vertex'`).
@@ -190,7 +190,7 @@ function lineEquation(slope, intercept) {
  * Tant que c'est le cas, l'IMAGE ne doit être ni dessinée ni lue : le plan
  * la calculait et la dessinait dès la pose de la question (avec son
  * étiquette A′), si bien que la réponse était à l'écran avant que l'élève
- * ne réponde. Elle réapparaît au verdict ou à « أرني » — et c'est alors
+ * ne réponde. Elle réapparaît au verdict ou à « Montre-moi » — et c'est alors
  * l'animation qui la montre.
  */
 export function isImageHidden({ mode, challenge, verdict }) {

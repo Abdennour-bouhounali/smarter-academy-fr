@@ -1,5 +1,5 @@
 /**
- * Les ENQUÊTES du مختبر القياس — le catalogue déclaratif.
+ * Les ENQUÊTES de « Grandeurs et mesures » — le catalogue déclaratif.
  *
  * §17 exige une primitive réutilisable plutôt que dix interfaces codées à la
  * main. Une enquête est donc une DONNÉE : l'objet qu'on manipule, ses

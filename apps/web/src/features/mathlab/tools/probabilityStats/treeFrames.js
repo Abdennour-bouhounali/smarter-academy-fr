@@ -24,7 +24,7 @@
  * fonctions ne calcule une probabilité : probabilityTree.js reste la seule
  * source de vérité, ici on ne fait que mettre SES nombres en scène.
  *
- * « تدرّب بنفسك » : chaque opération posée (chainFrames → binaryOperationFrames)
+ * « Entraîne-toi » : chaque opération posée (chainFrames → binaryOperationFrames)
  * porte l'exercice par défaut — désigner les deux opérandes, choisir ×, + ou ÷ ;
  * la lecture d'un facteur demande de désigner le symbole de la branche qui
  * s'allume sur l'arbre (`practice.readBranch`).
@@ -80,7 +80,7 @@ export function operandOf(text, value) {
     latex: factorTex(text, value),
     value,
     frac: fraction ? { n: Number(fraction[1]), d: Number(fraction[2]) } : null,
-    decimal: !fraction && (/[.,٫%٪]/.test(source) || /^\d+$/.test(source)),
+    decimal: !fraction && (/[.,\u066B%\u066A]/.test(source) || /^\d+$/.test(source)),
   };
 }
 

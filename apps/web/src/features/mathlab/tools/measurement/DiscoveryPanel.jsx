@@ -22,13 +22,13 @@ import useStepReveal from '../../shared/useStepReveal.js';
  *   4. l'EXPLICATION géométrique, une fois la règle trouvée : pourquoi elle
  *      DOIT valoir, ce qu'aucun tableau de mesures ne dira jamais (§21).
  *
- * « كيف ظهرت هذه القاعدة؟ » (§22) se DÉROULE (exigence du 2026-09-30) :
+ * « Comment cette règle est-elle apparue ? » (§22) se DÉROULE (exigence du 2026-09-30) :
  * `buildStorySteps` + le lecteur partagé, une étape du chemin à la fois ; la
  * dernière est la règle — celle de l'élève s'il l'a trouvée, sinon « à toi ».
  * Ouvrir le récit en montre la première étape ; les suivantes ne sont pas
  * dans le DOM avant d'être atteintes.
  *
- * Le mot « démontré » n'apparaît nulle part. « صمدت » (elle a tenu) oui.
+ * Le mot « démontré » n'apparaît nulle part. « elle a tenu » oui.
  */
 export default function DiscoveryPanel({
   investigation, record, evidence, solved, onHint, onUnseenTest, onExplained, onReset,
@@ -231,7 +231,7 @@ export default function DiscoveryPanel({
         </div>
       )}
 
-      {/* « كيف ظهرت هذه القاعدة؟ » (§22) — le chemin, pas la formule. */}
+      {/* « Comment cette règle est-elle apparue ? » (§22) — le chemin, pas la formule. */}
       <div className="sa-ml-ms__story">
         <button
           type="button"

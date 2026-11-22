@@ -184,7 +184,7 @@ export function scientificSteps(result) {
   const original = result.original.replace(',', '{,}');
 
   return [
-    { textKey: `${K}.scientific.mantissa`, latex: `1 \\le ${abs} < 10` },
+    { textKey: `${K}.scientific.mantissa`, latex: `1 \\leqslant ${abs} < 10` },
     {
       textKey: result.direction === 'none' ? `${K}.scientific.shiftNone` : `${K}.scientific.shift.${result.direction}`,
       textParams: { count: result.shift },

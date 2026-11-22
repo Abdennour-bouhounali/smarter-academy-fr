@@ -1,7 +1,7 @@
 /**
- * LA MATHÉMATIQUE des متتاليات — pure, sans React, sans pixels (§46).
+ * LA MATHÉMATIQUE des suites — pure, sans React, sans pixels (§46).
  *
- * Une متتالية n'est pas un tableau de nombres : c'est une DÉFINITION qui
+ * Une suite n'est pas un tableau de nombres : c'est une DÉFINITION qui
  * engendre des nombres. Ce module tient la définition, l'engendrement, et
  * tout ce qu'on peut LIRE sur les termes engendrés (différences, rapports,
  * sommes, sous-suites, points fixes, tendance). Il ne tient aucune couleur,
@@ -16,7 +16,7 @@
  * telle (`observedOnly: true`).
  *
  * ── Le contrat de sûreté (§32, §47) ──────────────────────────────────────
- * Engendrer une متتالية, c'est itérer une fonction que l'ÉLÈVE a écrite.
+ * Engendrer une suite, c'est itérer une fonction que l'ÉLÈVE a écrite.
  * `u(n+1) = u(n)^u(n)` diverge en quatre pas ; `u(n+1) = 1/(u(n)-2)` tombe
  * sur une division par zéro ; `n = 100000` gèlerait l'onglet. Aucune de ces
  * trois choses ne doit casser quoi que ce soit. D'où trois règles tenues
@@ -78,7 +78,7 @@ export function cleanFloat(value) {
   return Number(value.toPrecision(15));
 }
 
-/** Les familles de متتاليات (§3). */
+/** Les familles de suites (§3). */
 export const SEQUENCE_KINDS = Object.freeze([
   'arithmetic',   // u(n+1) = u(n) + r
   'geometric',    // u(n+1) = q·u(n)
@@ -117,7 +117,7 @@ export const TERM_FAILURES = Object.freeze([
 ]);
 
 /**
- * ── LA DÉFINITION d'une متتالية ──────────────────────────────────────────
+ * ── LA DÉFINITION d'une suite ──────────────────────────────────────────
  *
  * @typedef {object} SequenceDefinition
  * @property {'arithmetic'|'geometric'|'affine'|'explicit'|'recurrence'|'secondOrder'} kind
@@ -327,8 +327,8 @@ function readIndex(raw) {
 /**
  * Les différences Δu(n) = u(n+1) − u(n) (§34).
  *
- * Constante ⟺ arithmétique : c'est LE geste du programme de 4AM
- * (« الفروق المتتالية », LP 2.1), et la raison pour laquelle cette lecture
+ * Constante ⟺ arithmétique : c'est LE geste du programme du collège
+ * (« différences successives », LP 2.1), et la raison pour laquelle cette lecture
  * est allumée par défaut là où les autres attendent.
  */
 export function differences(terms) {
@@ -622,7 +622,7 @@ export function cobwebPath(definition, terms, maxSteps = 60) {
 }
 
 /**
- * Deux متتاليات comparées (§33) : les indices COMMUNS, et sur chacun la
+ * Deux suites comparées (§33) : les indices COMMUNS, et sur chacun la
  * différence et le rapport. Comparer sur des indices qui n'existent pas dans
  * les deux ne dirait rien.
  */

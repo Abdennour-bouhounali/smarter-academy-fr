@@ -53,7 +53,7 @@ function Latex({ latex, className = '' }) {
  *     │  ↓      ↓                 │     flèches et résultats posés dessus
  *     │  ÷2     ÷2                │
  *     └──────────────────────────┘
- *     « نقسم الطرفين على 2 »       ← la phrase de ce micro-état
+ *     « On divise les deux membres par 2 »  → la phrase de ce micro-état
  *
  * Ne rend JAMAIS un frame futur : `frames.slice(0, cursor)` au plus. Avant le
  * premier pas (`cursor = 0`), seul l'énoncé (`problem`, LaTeX) est au tableau.
@@ -238,7 +238,7 @@ function MarksLayer({ marks, geometry }) {
 }
 
 /**
- * « تدرّب بنفسك » — le frame devient un petit exercice : les jetons sont des
+ * « Entraîne-toi » — le frame devient un petit exercice : les jetons sont des
  * boutons, l'élève désigne les éléments puis choisit l'opération. Rien du
  * frame n'est révélé avant la bonne réponse (ni les tons, ni les flèches, ni
  * la pastille de l'opération).
@@ -386,8 +386,8 @@ function PracticeCanvas({ frame, onSolved, answer = null, answerContext = null }
       )}
 
       {stage === 'answer' && (
-        // Les mathématiques se lisent de GAUCHE à DROITE, même sur une page
-        // arabe : « 84 − 36 = [ ؟ ] » — la case vient APRÈS le signe égal.
+        // La ligne se lit de gauche à droite : « 84 − 36 = [ ? ] » — la case
+        // vient APRÈS le signe égal.
         <form className="sa-ml-board__answer" onSubmit={submitAnswer} dir="ltr" data-ml-board-answer>
           {answerContext ? (
             // Un geste sur les deux membres : la ligne où l'opération est écrite,
@@ -414,7 +414,6 @@ function PracticeCanvas({ frame, onSolved, answer = null, answerContext = null }
             type="text"
             inputMode="decimal"
             dir="ltr"
-            lang="en"
             autoComplete="off"
             value={typed}
             onChange={(event) => setTyped(event.target.value)}
@@ -423,7 +422,7 @@ function PracticeCanvas({ frame, onSolved, answer = null, answerContext = null }
             autoFocus
             data-mb-answer-input
           />
-          <button type="submit" className="sa-ml-board__answer-check" dir="rtl" data-mb-answer-check>{t('kit.practice.check')}</button>
+          <button type="submit" className="sa-ml-board__answer-check" data-mb-answer-check>{t('kit.practice.check')}</button>
         </form>
       )}
 

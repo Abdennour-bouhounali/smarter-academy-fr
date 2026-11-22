@@ -33,7 +33,7 @@ function maximalTree() {
   }
   const visit = (branches, path) => branches.forEach((b, index) => {
     const p = [...path, index];
-    tree = setLabel(tree, p, `حدث طويل جدا ${p.join('')}xxxxxxxxxxxx`);
+    tree = setLabel(tree, p, `événement très long ${p.join('')}xxxxxxxxxxxx`);
     tree = setProbability(tree, p, '123456789/9876543');
     visit(b.children, p);
   });
@@ -120,7 +120,7 @@ describe('les sections V2', () => {
   });
 });
 
-describe('le résumé de « أعمالي »', () => {
+describe('le résumé de « Mes travaux »', () => {
   it('résume l’arbre par la loi de ses chemins, et un arbre faux par un plateau vide', () => {
     const summary = summarizeProbabilityStats({ mode: 'tree', tree: createDefaultTree() });
     expect(summary.kind).toBe('chart');

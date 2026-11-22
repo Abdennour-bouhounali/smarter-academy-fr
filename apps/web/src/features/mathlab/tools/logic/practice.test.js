@@ -28,7 +28,7 @@ const SEEDS = Array.from({ length: 400 }, (_, i) => i + 1);
  * La VÉRITÉ des énoncés à réfuter, réécrite ici SANS passer par presets.js :
  * un juge et son test qui partagent le même prédicat seraient toujours
  * d'accord. Primalité par division naïve, parité par BigInt-free modulo
- * positif — assez pour |n| ≤ 10⁶.
+ * positif — assez pour |n| ⩽ 10⁶.
  */
 const primeT = (n) => {
   if (!Number.isInteger(n) || n < 2) return false;
@@ -176,8 +176,8 @@ describe('parseNumericAnswer — accepter large, car la question porte sur la lo
   });
 
   it('lit les chiffres arabes-indiens', () => {
-    expect(parseNumericAnswer('٤')).toBe(4);
-    expect(parseNumericAnswer('٢٠')).toBe(20);
+    expect(parseNumericAnswer('\u0664')).toBe(4);
+    expect(parseNumericAnswer('\u0662\u0660')).toBe(20);
   });
 
   it('rend NaN sur une saisie illisible, sans lever', () => {
@@ -309,33 +309,33 @@ describe('inDomain — l’ensemble déclaré', () => {
 
 /*
  * Les définitions du laboratoire (fallacy.kindHints) :
- *   استعمال العكس : de P ⇒ Q on passe à Q ⇒ P — la CONCLUSION est une implication ;
- *   إثبات التالي  : de P ⇒ Q et de Q on passe à P — la conclusion est un fait.
- * Le test lit l'argument arabe lui-même et le classe par sa forme.
+ *   « utiliser la réciproque » : de P ⇒ Q on passe à Q ⇒ P — la CONCLUSION est une implication ;
+ *   « déduire l'hypothèse de la conclusion » : de P ⇒ Q et de Q on passe à P — la conclusion est un fait.
+ * Le test lit l'argument français lui-même et le classe par sa forme.
  */
 describe('#2 — le nom attendu d’un sophisme suit la forme de son argument', () => {
-  const ar = JSON.parse(readFileSync(new URL('../../../../i18n/locales/ar/mathlab.json', import.meta.url), 'utf8'));
-  const args = ar.tools.logic.fallacy.arguments;
+  const catalog = JSON.parse(readFileSync(new URL('../../../../i18n/locales/ar/mathlab.json', import.meta.url), 'utf8'));
+  const args = catalog.tools.logic.fallacy.arguments;
   const clean = (text) => text.replace(/[\u200e\u200f.]/g, '').trim();
 
   function classify(text) {
-    const [premises, conclusion] = clean(text).split(/إذن|فإنّ/).map((part) => part.replace(/[،,]\s*$/, '').trim());
+    const [premises, conclusion] = clean(text).split(/\bdonc\b|\balors\b/).map((part) => part.replace(/[,;]\s*$/, '').trim());
     if (conclusion === undefined) return 'examplesNotProof';
     if (conclusion.includes('⇒')) {
       const [p, q] = premises.split('⇒').map((x) => x.trim());
       const [q2, p2] = conclusion.split('⇒').map((x) => x.trim());
       return p === p2 && q === q2 ? 'invalidConverse' : 'unknown';
     }
-    if (/أوّلي عند|n = 0/.test(premises)) return 'examplesNotProof';
+    if (/premier pour|n = 0/.test(premises)) return 'examplesNotProof';
 
     return 'affirmingConsequent';
   }
 
-  it('le classement lit bien la forme : l’ANCIEN texte était un إثبات التالي', () => {
-    expect(classify('‏x = 2 ⇒ x² = 4، وبما أنّ x² = 4 فإنّ x = 2.')).toBe('affirmingConsequent');
+  it('le classement lit bien la forme : l’ANCIEN texte « déduisait l’hypothèse de la conclusion »', () => {
+    expect(classify('x = 2 ⇒ x² = 4 ; or x² = 4, donc x = 2.')).toBe('affirmingConsequent');
   });
 
-  it('squareFourConverse ÉNONCE une réciproque : استعمال العكس', () => {
+  it('squareFourConverse ÉNONCE une réciproque : « utiliser la réciproque »', () => {
     expect(classify(args.squareFourConverse)).toBe('invalidConverse');
     expect(findPreset(FALLACIES, 'squareFourConverse').kind).toBe('invalidConverse');
   });
@@ -346,7 +346,7 @@ describe('#2 — le nom attendu d’un sophisme suit la forme de son argument', 
     }
   });
 
-  it('le juge accepte le nom juste avec −2, refuse إثبات التالي', () => {
+  it('le juge accepte le nom juste avec −2, refuse « déduire l’hypothèse de la conclusion »', () => {
     const preset = findPreset(FALLACIES, 'squareFourConverse');
     // −2 : x² = 4 vrai, x = 2 faux — la réciproque tombe.
     expect((-2) ** 2 === 4 && -2 !== 2).toBe(true);
@@ -435,9 +435,9 @@ describe('#4 — réfuter un sophisme exige une valeur de l’ensemble déclaré
 
 describe('#5 — la négation ne se trahit pas et ne se propose pas elle-même', () => {
   // La négation construite ICI, indépendamment : ∀ ↔ ∃ et relation contraire.
-  const OPPOSITE = { '≥': '<', '<': '≥', '>': '≤', '≤': '>', '=': '≠', '≠': '=' };
+  const OPPOSITE = { '⩾': '<', '<': '⩾', '>': '⩽', '⩽': '>', '=': '≠', '≠': '=' };
   const negateT = (formula) => {
-    const [, q, rest, rel, right] = formula.match(/^([∀∃])(.*?, .*?) ([≥<>≤=≠]) (.*)$/);
+    const [, q, rest, rel, right] = formula.match(/^([∀∃])(.*?, .*?) ([⩾<>⩽=≠]) (.*)$/);
     return `${q === '∀' ? '∃' : '∀'}${rest} ${OPPOSITE[rel]} ${right}`;
   };
 
@@ -457,6 +457,6 @@ describe('#5 — la négation ne se trahit pas et ne se propose pas elle-même',
 
   it('les leurres sont les deux erreurs classiques', () => {
     const preset = findPreset(QUANTIFIER_STATEMENTS, 'naturalPositive');
-    expect(negationDistractors(preset).sort()).toEqual(['∃n ∈ ℕ, n > 0', '∀n ∈ ℕ, n ≤ 0'].sort());
+    expect(negationDistractors(preset).sort()).toEqual(['∃n ∈ ℕ, n > 0', '∀n ∈ ℕ, n ⩽ 0'].sort());
   });
 });

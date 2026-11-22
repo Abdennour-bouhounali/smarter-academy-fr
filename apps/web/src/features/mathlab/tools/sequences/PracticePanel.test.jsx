@@ -12,7 +12,7 @@ import { createPracticeState } from './sequenceState.js';
 // Une instance i18n LOCALE, le namespace chargé d'avance : sinon useTranslation suspend.
 const i18n = i18next.createInstance();
 i18n.use(initReactI18next).init({
-  lng: 'ar-DZ', fallbackLng: 'ar-DZ', resources: { 'ar-DZ': { mathlab } }, ns: ['mathlab'],
+  lng: 'fr-FR', fallbackLng: 'fr-FR', resources: { 'fr-FR': { mathlab } }, ns: ['mathlab'],
   interpolation: { escapeValue: false }, react: { useSuspense: false },
 });
 
@@ -24,7 +24,7 @@ const challenge = generateChallenge(4, { kinds: ['arithmeticTerm'] });
 const base = { ...createPracticeState(), active: true, challenge };
 
 /**
- * « اكشف » DEMANDÉ ne jette pas la solution d'un bloc (exigence 2026-09-30) :
+ * « Voir la solution » DEMANDÉ ne jette pas la solution d'un bloc (exigence 2026-09-30) :
  * le panneau s'ouvre sur le déroulé, sans aucun pas, sans la réponse.
  */
 describe('PracticePanel — la révélation', () => {
@@ -37,7 +37,7 @@ describe('PracticePanel — la révélation', () => {
     expect(html).not.toContain('data-ml-seq-reveal-steps');
   });
 
-  it('les pas ont tous leur phrase arabe', () => {
+  it('les pas ont tous leur phrase française', () => {
     const keys = new Set(['title']);
     for (const kind of CHALLENGE_KINDS) {
       for (let seed = 1; seed <= 60; seed += 1) {

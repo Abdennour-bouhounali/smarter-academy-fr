@@ -1,12 +1,11 @@
-/* ── Le مختبر التحويلات ─────────────────────────────────────────────────────
-   Le plan prend tout ce qu'il peut ; le panneau se range sur le bord de
-   départ (à droite en arabe) sur grand écran, et devient un TIROIR en bas
-   sous 768 px (§51). Le plan est LTR par nature — c'est des mathématiques
-   (§52) ; le panneau suit la direction de la page.
+/* ── L'atelier des transformations ─────────────────────────────────────────
+   Le plan prend tout ce qu'il peut ; le panneau se range sur un bord sur
+   grand écran, et devient un TIROIR en bas sous 768 px (§51). Le plan se lit
+   de gauche à droite — c'est des mathématiques (§52).
 
-   Les conventions sont celles du grapheur et du مختبر الأشعة
+   Les conventions sont celles du grapheur et de l'atelier des vecteurs
    (functionGrapher.css, vectors.css) : mêmes teintes, mêmes rayons, mêmes
-   familles — les instruments du مختبر doivent se ressembler. */
+   familles — les instruments de l'atelier doivent se ressembler. */
 
 .sa-ml-tr {
   position: absolute;
@@ -72,7 +71,7 @@
 .sa-ml-tr__plane .mafs-axis text { fill: #475569; }
 
 .sa-ml-tr__axisnames text {
-  font-family: 'Inter', 'Cairo', serif;
+  font-family: 'Inter', serif;
   font-size: 15px;
   fill: #334155;
 }
@@ -165,7 +164,7 @@
   pointer-events: none;
 }
 
-/* Le شعاع de l'انسحاب (§7, §28). */
+/* Le vecteur de la translation (§7, §28). */
 .sa-ml-tr__vector line {
   stroke: #7c3aed;
   stroke-width: 2.5;
@@ -329,7 +328,7 @@
   max-height: max(9rem, calc(var(--sa-ml-avail, 100dvh) * 0.45));
   border-top: 1px solid #e2e8f0;
   background: #ffffff;
-  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -406,7 +405,7 @@
   align-items: center;
   gap: 0.375rem;
   margin: 0 0 0.5rem;
-  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 0.875rem;
   font-weight: 700;
   color: #0f172a;
@@ -457,7 +456,7 @@
 
 /* Les nœuds « Original » et « Image » encadrent la pile : la flèche
    descendante du cahier des charges (§20) est rendue par le trait vertical
-   des ::before, pas par un caractère — elle reste juste en RTL. */
+   des ::before, pas par un caractère. */
 .sa-ml-tr__stacknode {
   position: relative;
   margin: 0.25rem 0;
@@ -886,7 +885,7 @@
   color: #334155;
 }
 
-/* « أرني » pas à pas : le lecteur partagé en haut, les pas montrés en dessous. */
+/* « Montre-moi » pas à pas : le lecteur partagé en haut, les pas montrés en dessous. */
 .sa-ml-tr__solution {
   display: flex;
   flex-direction: column;
@@ -986,7 +985,7 @@
 }
 
 /* Ce que seul le lecteur d'écran lit (§53) — même définition que les autres
-   instruments du مختبر (trigonometry.css, vectors.css). SANS elle, le texte
+   instruments de l'atelier (trigonometry.css, vectors.css). SANS elle, le texte
    destiné à la synthèse vocale s'affiche EN CLAIR par-dessus l'interface :
    c'est exactement ce qu'une capture d'écran de la QA a montré. */
 .sa-ml-tr__sr {
@@ -1009,8 +1008,8 @@
 
 /* ── Les très petits écrans (§51) ──────────────────────────────────────── */
 
-/* Sous 768 px le panneau est un tiroir SOUS le plan, et le bouton « إخفاء
-   اللوحة » occupe déjà le coin bas-gauche : les commandes de zoom remontent
+/* Sous 768 px le panneau est un tiroir SOUS le plan, et le bouton « Masquer
+   le panneau » occupe déjà le coin bas-gauche : les commandes de zoom remontent
    pour ne pas sortir de la zone visible du plan (défaut vu en QA mobile). */
 @media (max-width: 767px) {
   .sa-ml-tr__zoom {

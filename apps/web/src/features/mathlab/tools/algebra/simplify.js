@@ -5,9 +5,9 @@
  * exacts) est ramenée à sa forme réduite comme au tableau :
  *
  *     original           (x + 2)(x - 3)
- *     produits posés     x × x + x × (−3) + 2 × x + 2 × (−3)     التوزيع المضاعف
- *     produits calculés  x² − 3x + 2x − 6                         نحسب كل جداء
- *     regroupement       x² + (−3x + 2x) − 6                      نجمع الحدود المتشابهة
+ *     produits posés     x × x + x × (−3) + 2 × x + 2 × (−3)     double distributivité
+ *     produits calculés  x² − 3x + 2x − 6                         on calcule chaque produit
+ *     regroupement       x² + (−3x + 2x) − 6                      on regroupe les termes semblables
  *     résultat           x² − x − 6
  *
  * Le moteur travaille sur l'AST de l'analyseur UNIQUE (expressionParser.js),

@@ -2,16 +2,16 @@ import { getMathLabTool } from './toolRegistry.js';
 import { mathLabToolPath } from './mathLabDocument.js';
 
 /**
- * LE POINT D'INTÉGRATION leçon → مختبر (architecture seulement, aucune leçon
+ * LE POINT D'INTÉGRATION leçon → atelier (architecture seulement, aucune leçon
  * ne l'appelle encore — docs/architecture/MATH_LAB.md §« Depuis une leçon »).
  *
  * Le geste futur :
  *
- *     Leçon → « استكشف في المختبر » → l'instrument s'ouvre → état initial fourni par la leçon
+ *     Leçon → « Explore dans l’atelier » → l'instrument s'ouvre → état initial fourni par la leçon
  *
  * La leçon ne construit pas l'état de l'outil elle-même : elle passe une
  * AMORCE (`seed`) que `tool.createInitialData(seed)` sait lire — chaque
- * instrument documente la sienne (pour la سبّورة : des éléments-squelettes,
+ * instrument documente la sienne (pour le tableau : des éléments-squelettes,
  * voir tools/whiteboard/whiteboardState.js). Le tout voyage dans l'état de
  * navigation du routeur, jamais dans l'URL : une amorce peut être longue.
  *

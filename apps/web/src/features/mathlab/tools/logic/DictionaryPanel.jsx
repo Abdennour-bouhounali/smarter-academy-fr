@@ -5,13 +5,11 @@ import { Notation } from './LogicPieces.jsx';
 import { DICTIONARY_GROUPS, entriesOfGroup } from './dictionary.js';
 
 /**
- * « قاموس الرموز » — comment se LIT ce qui n'est pas écrit en arabe.
+ * « Lexique des symboles » — comment se LIT la notation.
  *
- * Il est là parce que toute l'interface est arabe sauf la notation, et que
- * la notation ne peut pas l'être (ARABIC_RTL_CONTRACT §4). Un élève qui voit
- * « ⇒ » pour la première fois n'a sinon aucun moyen d'apprendre qu'on le lit
- * « يستلزم » — et un symbole qu'on ne sait pas prononcer est un symbole
- * qu'on ne pense pas.
+ * Un élève qui voit « ⇒ » pour la première fois n'a sinon aucun moyen
+ * d'apprendre qu'on le lit « implique » — et un symbole qu'on ne sait pas
+ * prononcer est un symbole qu'on ne pense pas.
  *
  * Il est REPLIÉ par défaut : on ne commence pas un laboratoire par un
  * lexique. Il s'ouvre quand l'élève bute, et il reste ouvert tant qu'il veut.

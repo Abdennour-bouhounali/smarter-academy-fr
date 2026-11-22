@@ -18,7 +18,7 @@ import FunctionPanel from './FunctionPanel.jsx';
 const SERIALIZE_MS = 300;
 
 /**
- * Le grapheur (راسم الدوال) dans la coquille du مختبر (MathLabToolProps —
+ * Le grapheur (traceur de courbes) dans la coquille de l’atelier (MathLabToolProps —
  * toolContract.js).
  *
  * L'état du document (grapherState.js) vit ICI, en état React — il est
@@ -29,7 +29,7 @@ const SERIALIZE_MS = 300;
  *
  *     saisie MathLive → expression (chaîne) → compileSource → fn(x) → échantillons → SVG
  *
- * ── Le mode « المماس » (data.tangent) ────────────────────────────────────
+ * ── Le mode « Tangente » (data.tangent) ────────────────────────────────────
  * Une option du grapheur, pas un autre outil : sur UNE fonction étudiée,
  * le point A glissable le long de la courbe (le même point mobile que
  * l'inspection, contraint par constrainAlongCurve), la tangente en A, sa
@@ -37,8 +37,8 @@ const SERIALIZE_MS = 300;
  * une fonction VIRTUELLE ajoutée au plan, jamais au document — avec le
  * point B = (a ; f′(a)). Éteint, le grapheur est exactement celui d'avant.
  *
- * ── Le مخبر (scope.js) ───────────────────────────────────────────────────
- * Dans مخبر المتوسط, le mode tangente n'existe pas (ni panneau, ni calque,
+ * ── Le labo (scope.js) ───────────────────────────────────────────────────
+ * Dans le labo du collège, le mode tangente n'existe pas (ni panneau, ni calque,
  * ni état : un document qui l'avait allumé s'ouvre éteint), les exemples
  * sont des droites et le clavier n'a ni sin ni ln.
  */
@@ -53,7 +53,7 @@ export default function FunctionGrapherTool({ initialData, onChange, onReady, ca
       : { ...normalized, tangent: { ...normalized.tangent, enabled: false } };
   });
   const [focusId, setFocusId] = useState(null);
-  // L'invitation « اسحب النقطة » du mode tangente, jusqu'au premier geste sur A.
+  // L'invitation « Fais glisser le point A » du mode tangente, jusqu'au premier geste sur A.
   const [tangentTouched, setTangentTouched] = useState(false);
   const planeRef = useRef(null);
   const timerRef = useRef(null);
@@ -127,7 +127,7 @@ export default function FunctionGrapherTool({ initialData, onChange, onReady, ca
         onChangeRef.current?.(dataRef.current);
       }
     };
-    // Le مخبر ne change pas pendant la vie de l'outil (la page le remonte).
+    // Le labo ne change pas pendant la vie de l'outil (la page le remonte).
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

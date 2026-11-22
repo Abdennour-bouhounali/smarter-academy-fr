@@ -1,11 +1,11 @@
 /**
- * LA MATHÉMATIQUE du مختبر المثلثات — pure, sans React, sans pixels, sans
+ * LA MATHÉMATIQUE du labo de trigonométrie — pure, sans React, sans pixels, sans
  * arrondi d'affichage (§39 : « Do NOT put mathematical calculations directly
  * throughout React components »).
  *
  * Tout ce que l'instrument sait de la trigonométrie est ICI, et rien d'autre
  * n'en sait quoi que ce soit : les composants appellent, ils ne calculent
- * pas. C'est la même frontière que vectorMath.js tient pour les أشعة.
+ * pas. C'est la même frontière que vectorMath.js tient pour les vecteurs.
  *
  * ── Le zéro qui n'en est pas un ──────────────────────────────────────────
  * `Math.cos(Math.PI / 2)` vaut 6,12e−17, pas 0. Un instrument qui affiche
@@ -102,7 +102,7 @@ export function cosOf(degrees) {
  * serait mentir, et c'est exactement ce que fait `Math.tan(Math.PI / 2)`.
  * On passe donc par le quotient sin/cos APRÈS nettoyage : quand cos vaut
  * exactement 0, le quotient n'est pas calculé, et l'appelant reçoit `null`
- * — que l'interface écrit « غير معرّف », jamais un nombre.
+ * — que l'interface écrit « non définie », jamais un nombre.
  */
 export function tanOf(degrees) {
   if (!Number.isFinite(degrees)) return NaN;
@@ -191,13 +191,13 @@ export function quadrantSigns(quadrant) {
   return table[quadrant] ?? null;
 }
 
-// ── Le triangle rectangle (§8, §9) — LE cœur du programme de 4AM ──────────
+// ── Le triangle rectangle (§8, §9) — LE cœur du programme du collège ──────────
 
 /**
  * Résout un triangle rectangle à partir de DEUX données (§9).
  *
- * C'est le sujet 4.2 du programme algérien — « النسب المثلثية في مثلث قائم :
- * جيب · جيب تمام · ظل زاوية حادة » — et donc le cœur de cet instrument, pas
+ * C'est la trigonométrie du collège — cosinus, sinus et tangente d'un angle
+ * aigu dans un triangle rectangle — et donc le cœur de cet instrument, pas
  * un supplément. L'angle y est AIGU : un triangle rectangle n'en a pas
  * d'autre, et la fonction refuse ce qui n'en est pas un.
  *

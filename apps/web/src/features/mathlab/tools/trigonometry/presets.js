@@ -1,5 +1,5 @@
 /**
- * LES PRÉRÉGLAGES (§27) et LES EXPÉRIENCES (§26) du مختبر المثلثات.
+ * LES PRÉRÉGLAGES (§27) et LES EXPÉRIENCES (§26) du labo de trigonométrie.
  *
  * §27 est précis sur ce qu'un préréglage doit être : « Presets should
  * configure the workspace rather than open completely separate unrelated
@@ -8,7 +8,7 @@
  * rayon aussi — on ne lui reprend pas son travail pour lui montrer autre
  * chose. `apply(data)` rend un PATCH, jamais un document entier.
  *
- * Les expériences (§26) suivent la règle des أشعة : « an experiment is a
+ * Les expériences (§26) suivent la règle des vecteurs : « an experiment is a
  * plane already set up, nothing more ». Elles portent une question — ce que
  * §26 demande explicitement (« What happens to tan(θ) near 90° ? ») — mais
  * AUCUNE réponse et aucune validation : on pose l'espace et on se tait.

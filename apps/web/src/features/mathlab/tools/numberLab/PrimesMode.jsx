@@ -32,7 +32,7 @@ import { factorTreeFrames, treeAtCursor } from './factorTreeFrames.js';
  * `360 = 4 × 90`, les deux sont permises. Le système ne valide qu'une chose :
  * que le produit soit juste. Et au bout, quel que soit le chemin, la même
  * décomposition apparaît : c'est le théorème fondamental, découvert au lieu
- * d'être énoncé. Le bouton « جرّب تفكيكًا آخر » existe pour cela.
+ * d'être énoncé. Le bouton « Essaie une autre décomposition » existe pour cela.
  */
 
 const SPEEDS = Object.freeze({ slow: 1100, normal: 520, fast: 180 });
@@ -186,7 +186,7 @@ export default function PrimesMode({ state, onChange, compact, reducedMotion }) 
  * décomposition s'écrit toute seule — et on VÉRIFIE que son produit fait bien
  * le nombre de départ, parce que §24 le demande.
  *
- * « فكّكه تلقائيًّا » ne pose PLUS l'arbre entier d'un coup : il ouvre un
+ * « Décomposer automatiquement » ne pose PLUS l'arbre entier d'un coup : il ouvre un
  * DÉROULÉ (lecteur partagé + MathBoard, frames de `factorTreeFrames.js`) qui
  * fend une feuille par étape — [60] ÷ [2] ↓ 30, puis 30, puis 15 — l'arbre
  * dessiné poussant quand le quotient tombe ; la décomposition (puissances

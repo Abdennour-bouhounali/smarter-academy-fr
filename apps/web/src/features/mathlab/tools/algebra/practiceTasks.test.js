@@ -10,7 +10,7 @@ import { factorFrames } from './factorFrames.js';
 import { parseLinearEquation, eliminationSteps, substitutionSteps } from './systems.js';
 import { eliminationFrames, substitutionFrames } from './systemsFrames.js';
 
-/** Les exercices « تدرّب بنفسك » d'un tableau : [latex des jetons à choisir, opérateur]. */
+/** Les exercices « Entraîne-toi » d'un tableau : [latex des jetons à choisir, opérateur]. */
 function tasks(frames) {
   return frames.filter((f) => f.task).map((f) => {
     const tokens = new Map(f.rows.flat().map((t) => [t.id, t.latex]));
@@ -20,7 +20,7 @@ function tasks(frames) {
 }
 const eq = (s) => parseLinearEquation(s).equation;
 
-describe('« تدرّب بنفسك » — chaque exercice est la VRAIE transformation suivante', () => {
+describe('« Entraîne-toi » — chaque exercice est la VRAIE transformation suivante', () => {
   it('2x + 3 = 9 : choisir +3 puis −, choisir 2x puis ÷', () => {
     const frames = resolutionFrames(buildWalkthrough(parseEquation('2x + 3 = 9').equation));
     expect(validateFrames(frames)).toEqual([]);
@@ -52,7 +52,7 @@ describe('« تدرّب بنفسك » — chaque exercice est la VRAIE transform
     ]);
   });
 
-  it('الجمع sur x + y = 10, x − y = 2 : choisir +y et −y puis + ; x = 6 : ÷ ; remplacer x ; −6', () => {
+  it('combinaison sur x + y = 10, x − y = 2 : choisir +y et −y puis + ; x = 6 : ÷ ; remplacer x ; −6', () => {
     const e1 = eq('x + y = 10');
     const e2 = eq('x - y = 2');
     const frames = eliminationFrames(eliminationSteps(e1, e2), e1, e2);
@@ -65,7 +65,7 @@ describe('« تدرّب بنفسك » — chaque exercice est la VRAIE transform
     ]);
   });
 
-  it('التعويض : isoler (x puis −), désigner y à remplacer, résoudre, désigner x à remplacer', () => {
+  it('substitution : isoler (x puis −), désigner y à remplacer, résoudre, désigner x à remplacer', () => {
     const e1 = eq('x + y = 10');
     const frames = substitutionFrames(substitutionSteps(e1, eq('x - y = 2')), e1);
     expect(validateFrames(frames)).toEqual([]);

@@ -1,5 +1,5 @@
 /**
- * La logique du مختبر, prouvée (§49).
+ * La logique de l'atelier, prouvée (§49).
  *
  * Ce que ces épreuves défendent : les cinq connecteurs sont exacts sur
  * {V,F}², la contraposée coïncide avec l'implication et la réciproque NON,
@@ -227,7 +227,7 @@ describe('§14, §17 — la partition en ensembles', () => {
   /**
    * Le défaut trouvé en QA visuelle : la RÉCIPROQUE était évaluée comme la
    * forme directe, si bien qu'à x = 2 sur « x > 3 ⇒ x > 1 » l'écran disait
-   * « صحيحة, car P est fausse ici » — alors que la réciproque « x > 1 ⇒
+   * « vraie, car P est fausse ici » — alors que la réciproque « x > 1 ⇒
    * x > 3 » est justement FAUSSE en ce point. Cela enseignait l'inverse de
    * ce que §15 veut faire découvrir.
    */

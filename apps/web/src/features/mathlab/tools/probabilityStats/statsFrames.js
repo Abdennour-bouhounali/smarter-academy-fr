@@ -1,5 +1,5 @@
 /**
- * « كيف يُحسب؟ » AU TABLEAU — les FRAMES (shared/mathBoard/frames.js) de
+ * « Comment le calculer ? » AU TABLEAU — les FRAMES (shared/mathBoard/frames.js) de
  * chaque indicateur d'une série : la formule, puis les opérations VISIBLES
  * sur les nombres de LA série, le résultat en dernier.
  *
@@ -14,7 +14,7 @@
  *
  * Les nombres viennent de `describeDataset` (descriptiveStats.js), seule
  * source de vérité ; ce module ne fait que les mettre en scène.
- * « تدرّب بنفسك » : chaque opération posée porte l'exercice par défaut
+ * « Entraîne-toi » : chaque opération posée porte l'exercice par défaut
  * (désigner les deux nombres, choisir l'opération) ; en plus, l'élève
  * désigne TOUS les termes d'une somme puis choisit + (`practice.sumAll`),
  * la valeur de rang r dans la série ordonnée (`practice.readRank(s)`), le
@@ -54,23 +54,23 @@ function interleave(tokens, opLatex, prefix) {
 /** La série ordonnée en jetons (`s0`, `s1`…) — ou ses extrémités si elle est longue. */
 function sortedRow(s, tones = {}) {
   if (s.length <= MAX_SORTED_TOKENS) {
-    return interleave(s.map((value, i) => tok(`s${i}`, num(value), tones[i] ?? 'neutral')), '\\le', 'le');
+    return interleave(s.map((value, i) => tok(`s${i}`, num(value), tones[i] ?? 'neutral')), '\\leqslant', 'le');
   }
 
-  return [tok('s0', num(s[0]), tones[0] ?? 'neutral'), tok('le1', '\\le'), tok('dots', '\\cdots'), tok('le2', '\\le'), tok(`s${s.length - 1}`, num(s.at(-1)), tones[s.length - 1] ?? 'neutral')];
+  return [tok('s0', num(s[0]), tones[0] ?? 'neutral'), tok('le1', '\\leqslant'), tok('dots', '\\cdots'), tok('le2', '\\leqslant'), tok(`s${s.length - 1}`, num(s.at(-1)), tones[s.length - 1] ?? 'neutral')];
 }
 
 function sortedLatex(s) {
-  if (s.length <= MAX_SORTED_TOKENS) return s.map((v) => num(v)).join(' \\le ');
+  if (s.length <= MAX_SORTED_TOKENS) return s.map((v) => num(v)).join(' \\leqslant ');
 
-  return `x_{1} = ${num(s[0])} \\le \\cdots \\le x_{${s.length}} = ${num(s.at(-1))}`;
+  return `x_{1} = ${num(s[0])} \\leqslant \\cdots \\leqslant x_{${s.length}} = ${num(s.at(-1))}`;
 }
 
 function sortFrame(step, s) {
   return stateFrame({ step, rows: [sortedRow(s)], textKey: `${K}.sort`, settle: sortedLatex(s) });
 }
 
-/** La phrase de la lecture : « la valeur de rang r » / « les valeurs de rangs a et b » (accord arabe). */
+/** La phrase de la lecture : « la valeur de rang r » / « les valeurs de rangs a et b » (singulier ou pluriel). */
 function rankText(ranks) {
   return ranks.length === 1
     ? { textKey: `${K}.readRank`, textParams: { rank: `$${ranks[0]}$` } }

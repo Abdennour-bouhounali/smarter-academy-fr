@@ -27,7 +27,7 @@ const SNAP_PX = 40;
  * Le plan sait accueillir des CONSTRUCTIONS au-dessus des courbes :
  * `renderOverlay({ view, step })` dessine, dans le SVG de mafs, celles d'un
  * mode (tangente, triangle de pente…) ;
- * `defaultViewport` est la fenêtre de « إعادة ضبط » ; `canvasLabel` son nom
+ * `defaultViewport` est la fenêtre de « Revenir à la vue de départ » ; `canvasLabel` son nom
  * pour les technologies d'assistance ; `constrainPointX(next, current)` peut
  * refuser un déplacement du point (ne pas traverser un pôle, par exemple).
  */

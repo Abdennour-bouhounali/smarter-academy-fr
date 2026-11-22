@@ -23,14 +23,14 @@ if (typeof window !== 'undefined' && window.EXCALIDRAW_ASSET_PATH === undefined)
 
 /**
  * Ce qu'Excalidraw n'offre PAS ici, et pourquoi :
- *  - image : les images entrent par le panneau « الملفات » (fichiers du
+ *  - image : les images entrent par le panneau « Fichiers » (fichiers du
  *    serveur, sous quota), jamais par un collage ou un glisser-déposer qui
  *    les enfouirait en base64 dans le document ;
- *  - « فتح » dans le menu de la bibliothèque (whiteboard.css) : l'import
+ *  - « Ouvrir » dans le menu de la bibliothèque (whiteboard.css) : l'import
  *    passe par le même panneau, avec un vrai filtre et des refus nommés ;
  *  - loadScene / saveToActiveFile / export : le document vit sur le serveur,
- *    pas dans les fichiers de l'élève — la coquille tient « حفظ » ;
- *  - clearCanvas : la coquille tient « مسح الكل », AVEC confirmation ;
+ *    pas dans les fichiers de l'élève — la coquille tient « Enregistrer » ;
+ *  - clearCanvas : la coquille tient « Tout effacer », AVEC confirmation ;
  *  - toggleTheme : la plateforme est claire.
  * « Enregistrer en image » et « fond » restent dans son menu ☰.
  */
@@ -48,8 +48,8 @@ const UI_OPTIONS = Object.freeze({
 });
 
 /**
- * Le JARDIN CLOS (docs/architecture/PARENT_SPACE.md §7) : la سبّورة est la
- * seule surface de l'espace élève où l'élève pourrait faire entrer le web.
+ * Le JARDIN CLOS (docs/architecture/PARENT_SPACE.md §7) : le tableau est le
+ * seul endroit de l'espace élève où l'élève pourrait faire entrer le web.
  * Excalidraw accepte par défaut d'y INTÉGRER YouTube, Vimeo, Figma… (outil
  * « embeddable », ou un lien collé) et ouvre dans un nouvel onglet le lien
  * posé sur une forme. Ici : aucune intégration, et aucun lien sortant ne
@@ -68,14 +68,14 @@ function keepLinksInside(element, event) {
 /** Le délai entre un trait et sa sérialisation : un dessin en cours bouge à chaque pixel. */
 const SERIALIZE_MS = 300;
 
-/** Une image posée sur la سبّورة ne dépasse pas cette taille à l'arrivée (unités de scène). */
+/** Une image posée sur le tableau ne dépasse pas cette taille à l'arrivée (unités de scène). */
 const PLACED_IMAGE_MAX = 480;
 
 /**
  * La bibliothèque de formes de l'élève, gardée dans le navigateur (clé par
  * élève, `scopedStorage`). Excalidraw ne la persiste pas lui-même : sans ceci,
  * une bibliothèque importée disparaissait au rechargement. Ce n'est pas le
- * document — la bibliothèque n'appartient à aucune سبّورة en particulier —
+ * document — la bibliothèque n'appartient à aucun tableau en particulier —
  * et localStorage reste un confort : son absence ne casse rien.
  */
 const LIBRARY_STORAGE_KEY = 'sa_ml_whiteboard_library';
@@ -109,7 +109,7 @@ export const attachmentFileId = (file) => `sa-${file.id}`;
 const EXPORT_PADDING = 32;
 
 /**
- * L'export « مع أدوات الهندسة » : le dessin d'Excalidraw, dans un cadre
+ * L'export « avec les instruments » : le dessin d'Excalidraw, dans un cadre
  * élargi aux instruments, puis les instruments DESSINÉS par-dessus — le même
  * balisage SVG qu'à l'écran, en coordonnées de scène. Deux rectangles
  * invisibles, passés à l'export seulement (jamais à la scène), fixent le
@@ -166,7 +166,7 @@ const imageSize = (dataURL) => new Promise((resolve) => {
 });
 
 /**
- * La سبّورة : Excalidraw dans la coquille du مختبر (MathLabToolProps —
+ * Le tableau : Excalidraw dans la coquille de l'atelier (MathLabToolProps —
  * toolContract.js).
  *
  * Excalidraw possède l'état du dessin et son historique ; rien n'en passe par
@@ -174,7 +174,7 @@ const imageSize = (dataURL) => new Promise((resolve) => {
  * la SIGNATURE du contenu a changé — pas à chaque déplacement de la vue.
  *
  * ── Les images ───────────────────────────────────────────────────────────
- * Une image sur la سبّورة est un FICHIER du serveur (props.attachments) :
+ * Une image sur le tableau est un FICHIER du serveur (props.attachments) :
  * l'élément Excalidraw ne porte que son identifiant (`attachmentFileId`),
  * et les octets sont rechargés à l'ouverture (`rehydrate`). Le document ne
  * contient donc jamais de base64 (whiteboardState.toWhiteboardData), et une
@@ -193,14 +193,14 @@ export default function WhiteboardTool({ initialData, title, onChange, onReady, 
   onNoticeRef.current = onNotice;
   const attachmentsRef = useRef(attachments);
   attachmentsRef.current = attachments;
-  // Les identifiants d'image que la سبّورة a le droit de porter : les
+  // Les identifiants d'image que le tableau a le droit de porter : les
   // fichiers du serveur, plus ceux que le document apportait déjà.
   const knownFileIdsRef = useRef(new Set());
   // Les octets déjà rechargés dans Excalidraw (pas deux fois).
   const hydratedRef = useRef(new Set());
   const strayNoticeRef = useRef(0);
   // Le bureau de géométrie : son état enregistrable (absent tant qu'on n'y a
-  // pas touché — une سبّورة ouverte puis quittée ne devient pas « modifiée »),
+  // pas touché — un tableau ouvert puis quitté ne devient pas « modifié »),
   // l'API d'Excalidraw et le conteneur où son calque se glisse.
   const deskDataRef = useRef(initialData?.geometry ?? null);
   const deskApiRef = useRef(null);
@@ -324,10 +324,10 @@ export default function WhiteboardTool({ initialData, title, onChange, onReady, 
     };
 
     onReady?.({
-      // Vider en passant par l'historique : « تراجع » ramène le dessin.
+      // Vider en passant par l'historique : « Annuler » ramène le dessin.
       clear: () => api.updateScene({ elements: [], captureUpdate: CaptureUpdateAction.IMMEDIATELY }),
       // Par défaut, l'image est le TRAVAIL mathématique ; les instruments
-      // n'y entrent que si l'on a choisi « تصدير مع أدوات الهندسة ».
+      // n'y entrent que si l'on a choisi « Exporter avec les instruments ».
       exportPng: () => (deskApiRef.current?.includeInstruments() && deskApiRef.current.instrumentsBounds()
         ? exportWithInstruments(api, deskApiRef.current)
         : exportToBlob({
@@ -352,7 +352,7 @@ export default function WhiteboardTool({ initialData, title, onChange, onReady, 
       attachments: {
         accept: ATTACHMENT_ACCEPT,
         // Une bibliothèque de formes (ou un JSON qui en est une) se fond dans
-        // la سبّورة sans devenir un fichier. Un dessin `.excalidraw` aussi,
+        // le tableau sans devenir un fichier. Un dessin `.excalidraw` aussi,
         // quand il n'embarque pas d'image — ses images auraient contourné le quota.
         importFile: async (file) => {
           checkImportFile(file);
@@ -459,7 +459,7 @@ export default function WhiteboardTool({ initialData, title, onChange, onReady, 
         initialData={excalidrawInitialData}
         onChange={handleChange}
         excalidrawAPI={handleApi}
-        langCode="ar-SA"
+        langCode="fr-FR"
         theme="light"
         name={title}
         UIOptions={UI_OPTIONS}

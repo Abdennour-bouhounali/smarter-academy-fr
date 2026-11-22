@@ -1,5 +1,5 @@
 /**
- * LE TABLEAU D'UNE RÉSOLUTION (معادلة / متراجحة) — logique pure, sans React.
+ * LE TABLEAU D'UNE RÉSOLUTION (équation / inéquation) — logique pure, sans React.
  *
  * Met en scène le déroulé de walkthrough.js avec le tableau partagé
  * (shared/mathBoard/frames.js) : chaque opération est un GESTE visible,
@@ -82,7 +82,7 @@ function targetOf(operation, row) {
 
 /**
  * Les frames des opérations d'un déroulé (walkthrough.steps), à partir de
- * l'étape logique `stepBase`. Réutilisé par la section الأنظمة (une équation
+ * l'étape logique `stepBase`. Réutilisé par la section « Systèmes » (une équation
  * à une inconnue, `variable` = x ou y).
  */
 export function operationFrames(steps, { stepBase = 0, variable = 'x' } = {}) {
@@ -171,7 +171,7 @@ function finalFrame(final, { step, variable = 'x' } = {}) {
 }
 
 /**
- * « نشر وتبسيط كل طرف » d'une saisie à parenthèses ou fractions — les lignes
+ * « Développer et réduire chaque membre » d'une saisie à parenthèses ou fractions — les lignes
  * de simplify.js, un membre après l'autre, l'autre membre restant en place.
  * Le dernier frame pose l'équation réduite (celle que la balance porte).
  */
@@ -224,7 +224,7 @@ function expansionFrames(expansion, start, { relation = '=' } = {}) {
 }
 
 /**
- * Tout le tableau d'une résolution : [نشر وتبسيط] → opérations → résultat.
+ * Tout le tableau d'une résolution : [développer et réduire] → opérations → résultat.
  * @param {{steps: object[], final: object}} walkthrough  buildWalkthrough()
  * @param {{expansion?: object|null, start?: object}} [options]
  */
@@ -236,7 +236,7 @@ export function resolutionFrames(walkthrough, { expansion = null, start = null, 
   return [...expanded.frames, ...operations, final];
 }
 
-// ── التحقق ────────────────────────────────────────────────────────────────
+// ── Vérifier ────────────────────────────────────────────────────────────────
 
 function substitutionRow(start, value, relation, tone) {
   return [
@@ -253,7 +253,7 @@ function evaluatedRow(check, relation, holds = null) {
   return row;
 }
 
-/** La phrase de la borne d'une متراجحة (même logique que l'ancien affichage). */
+/** La phrase de la borne d'une inéquation (même logique que l'ancien affichage). */
 function boundaryText(verification) {
   const { boundary } = verification;
   const params = { value: R.toPlainText(boundary.value), symbol: RELATION_TEXT[verification.startRelation] };
@@ -264,8 +264,8 @@ function boundaryText(verification) {
 }
 
 /**
- * « التحقق » qui se déroule aussi : substitution → calcul → verdict (et, pour
- * une متراجحة, une valeur de l'ensemble PUIS la borne). verify.js a tout calculé.
+ * « Vérifier » qui se déroule aussi : substitution → calcul → verdict (et, pour
+ * une inéquation, une valeur de l'ensemble PUIS la borne). verify.js a tout calculé.
  * @param {object} start          l'équation de départ
  * @param {object} verification   verifyResolution()
  */

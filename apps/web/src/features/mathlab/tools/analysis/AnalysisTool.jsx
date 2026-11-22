@@ -33,9 +33,9 @@ const APPROACH_MS = 2600;
 const APPROACH_FLOOR = 0.02;
 
 /**
- * Le مختبر التحليل والدوال dans la coquille du مختبر (MathLabToolProps).
+ * Le labo d’analyse dans la coquille du atelier (MathLabToolProps).
  *
- *     on tire B vers A → le قاطع pivote → son ميل converge → il devient مماس
+ *     on tire B vers A → le sécante pivote → son coefficient directeur converge → il devient tangente
  *
  * L'état du document (`analysisState.js`) vit ICI ; toute la mathématique est
  * dans les modules purs que ce composant se contente d'appeler — aucun calcul
@@ -171,9 +171,9 @@ export default function AnalysisTool({ initialData, onChange, onReady }) {
 
   /**
    * LES DÉROULÉS PAS À PAS (exigence 2026-09-30) : f′(x) écrite, et la
-   * construction du جدول التغيّرات. Les lecteurs vivent ICI et non dans
-   * l'inspecteur : l'inspecteur se démonte quand l'élève passe à الضبط, et
-   * revenir à القراءة ne doit pas le renvoyer au début.
+   * construction du tableau de variations. Les lecteurs vivent ICI et non dans
+   * l'inspecteur : l'inspecteur se démonte quand l'élève passe à Réglages, et
+   * revenir à Lecture ne doit pas le renvoyer au début.
    *
    * La question, c'est la FONCTION : changer f ramène à l'énoncé. Tirer un
    * curseur de paramètre ou déplacer la fenêtre garde le pas atteint — le
@@ -229,7 +229,7 @@ export default function AnalysisTool({ initialData, onChange, onReady }) {
 
   /**
    * L'EXPÉRIENCE de §8 et §29 : B glisse vers A, et l'élève VOIT la sécante
-   * se coucher sur la tangente pendant que le ميل converge.
+   * se coucher sur la tangente pendant que le coefficient directeur converge.
    *
    * Ce n'est pas une décoration : c'est le phénomène lui-même (§32 — « every
    * animation should have pedagogical purpose »). On s'arrête à

@@ -25,7 +25,7 @@ import { useTranslation } from 'react-i18next';
  * ── Direction ───────────────────────────────────────────────────────────
  * `direction: ltr` explicite : SVG n'hérite pas de `dir`, et l'escalier
  * monte vers la droite comme un axe des n. C'est de la notation, pas de la
- * prose (ARABIC_RTL_CONTRACT §4).
+ * prose.
  *
  * ── Mouvement (§13, §22) ────────────────────────────────────────────────
  * L'animation est portée par une classe CSS qui se désactive entière sous

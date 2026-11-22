@@ -19,7 +19,7 @@
  * ce frame ('x' | 'a' | 'b' → la valeur z de la borne ; 'area' → l'aire
  * ombrée). `normalReveal(frames, cursor)` les cumule.
  *
- * « تدرّب بنفسك » : l'élève désigne le symbole qui reçoit chaque valeur
+ * « Entraîne-toi » : l'élève désigne le symbole qui reçoit chaque valeur
  * (`practice.substitute`), puis [x] et [μ] avec −, puis [x − μ] et [σ] avec ÷
  * (exercices par défaut des opérations posées), puis 1 et Φ avec −. Logique pure : les
  * nombres viennent de `normalQuery` (normalDistribution.js), seule source de vérité.
@@ -134,7 +134,7 @@ export function normalFrames(params, result) {
   });
 
   if (result.query === 'between') {
-    const questionLatex = `P(${n(a)} \\le X \\le ${n(b)})`;
+    const questionLatex = `P(${n(a)} \\leqslant X \\leqslant ${n(b)})`;
     const frames = [
       rule,
       ...standardizeFrames({ step: 1, zName: 'z_a', letter: 'a', value: a, mu, sigma, z: result.za, bound: 'a' }),
@@ -170,7 +170,7 @@ export function normalFrames(params, result) {
     return { frames, problem: `${questionLatex} = \\,?`, questionLatex };
   }
 
-  const symbol = result.query === 'ge' ? '\\ge' : '\\le';
+  const symbol = result.query === 'ge' ? '\\geqslant' : '\\leqslant';
   const questionLatex = `P(X ${symbol} ${n(x)})`;
   const phiTex = `\\Phi(${n(result.z)})`;
   const frames = [

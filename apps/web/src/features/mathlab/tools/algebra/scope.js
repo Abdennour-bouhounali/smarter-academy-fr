@@ -3,14 +3,14 @@ import { FUNCTION_FAMILIES } from './functions.js';
 import { FACTOR_EXAMPLES, FUNCTION_EXAMPLES, SIMPLIFY_EXAMPLES } from './examples.js';
 
 /**
- * مختبر الجبر dans les deux مخابر (labScope.js, MATH_LAB.md §2.1).
+ * L'atelier d'algèbre dans les deux scopes (labScope.js, MATH_LAB.md §2.1).
  *
- * Le programme de 4AM (ميدان الحساب الحرفي, 3.1–3.9) couvre les six sections —
+ * Le découpage hérité du programme algérien de 4AM (calcul littéral, 3.1–3.9) couvre les six sections —
  * équations, inéquations, systèmes 2×2, développement, factorisation,
  * fonctions — mais pas tout ce qu'elles savent faire :
  *
  *   factorisation  facteur commun et identités remarquables SEULEMENT
- *                  (3.2) ; « مجموع وجداء », la méthode « ac » et le مميّز
+ *                  (3.2) ; « somme et produit », la méthode « ac » et le discriminant
  *                  (Δ) sont du lycée ;
  *   fonctions      linéaires et affines (3.7, 3.8) ; pas de second degré ;
  *   simplification pas de fraction rationnelle (x² − 1)/(x − 1).
@@ -21,7 +21,7 @@ export const ALGEBRA_SCOPES = Object.freeze(['moyen', 'secondaire']);
 
 /** Les étapes du moteur qui dépassent le collège (factor.js). */
 const BEYOND_MOYEN_STEPS = new Set(['sumProduct', 'acPairs', 'acSplit']);
-/** Les issues qui ne se lisent qu'avec le مميّز ou « مجموع وجداء ». */
+/** Les issues qui ne se lisent qu'avec le discriminant ou « somme et produit ». */
 const BEYOND_MOYEN_STATUSES = new Set(['noPair', 'irreducibleReal', 'irreducibleRational']);
 
 export const ALGEBRA_CAPABILITIES = Object.freeze({
@@ -74,7 +74,7 @@ export function algebraFeatures(capabilities) {
 /**
  * Cette factorisation dépasse-t-elle les méthodes du collège ? Vrai quand le
  * moteur a dû chercher « deux nombres de somme b et de produit c », scinder
- * le terme du milieu, ou conclure par le مميّز.
+ * le terme du milieu, ou conclure par le discriminant.
  */
 export function isBeyondMoyenFactorization(result) {
   if (!result?.ok) return false;
@@ -84,8 +84,8 @@ export function isBeyondMoyenFactorization(result) {
 }
 
 /**
- * Un état ramené à ce que le مخبر montre : une section absente rouvre sur
- * « المعادلات », une famille de fonctions absente (le second degré au
+ * Un état ramené à ce que le scope montre : une section absente rouvre sur
+ * « Équations », une famille de fonctions absente (le second degré au
  * collège) revient à l'affine. Le reste est GARDÉ.
  */
 export function clampToFeatures(data, features) {

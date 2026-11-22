@@ -101,7 +101,7 @@ describe('algebraState — document', () => {
   });
 });
 
-describe('algebraState — historique, تراجع et إعادة', () => {
+describe('algebraState — historique, Annuler et Rétablir', () => {
   it('empile un pas par opération', () => {
     const data = step(step(createAlgebraData(), 'subtract', 3), 'divide', 2);
     expect(data.steps).toHaveLength(3);
@@ -117,7 +117,7 @@ describe('algebraState — historique, تراجع et إعادة', () => {
     expect(canRedo(redo(redo(back)))).toBe(false);
   });
 
-  it('ne perd pas les pas en annulant — إعادة les retrouve', () => {
+  it('ne perd pas les pas en annulant — Rétablir les retrouve', () => {
     const data = step(step(createAlgebraData(), 'subtract', 3), 'divide', 2);
     expect(redo(redo(undo(undo(data)))).steps).toHaveLength(3);
   });
@@ -251,7 +251,7 @@ describe('rational', () => {
   });
 });
 
-// ── A1 : « التحقق » d'une متراجحة ne déclare jamais faux un résultat juste ──
+// ── A1 : « Vérifier » d'une inéquation ne déclare jamais faux un résultat juste ──
 //
 // Attentes calculées À LA MAIN, en nombres ordinaires : pas de `classify`
 // pour dire quelle est la bonne solution.
@@ -322,7 +322,7 @@ describe('A1 — vérifier une inéquation résolue', () => {
           const expected = a - c < 0 ? HAND_FLIP[relation] : relation;
 
           // L'état « résolu » tel que l'outil le voit : par les opérations
-          // (niveaux 1–3), ou par « إظهار الحل » (niveau 4, x des deux côtés).
+          // (niveaux 1–3), ou par « Afficher la solution » (niveau 4, x des deux côtés).
           const current = level <= 3 ? resolveByOperations(start) : start;
           const verdict = classify(current);
           if (level <= 3) expect(verdict.kind).toBe('solved');

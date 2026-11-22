@@ -81,7 +81,7 @@ describe('the compass, the protractor and the set square constrain too', () => {
     close(start.x, 0); close(start.y, 0);
     // 60° « scolaire » = vers le haut de l'écran.
     close(angleOf(sub(end, start)), toRadians(-60));
-    // En mode « قياس », pas de demi-droite : le diamètre seulement.
+    // En mode « Mesurer », pas de demi-droite : le diamètre seulement.
     expect(constraintsFor({ protractor: { ...protractor, mode: 'measure' } }).map((c) => c.family)).toEqual(['straight']);
   });
 

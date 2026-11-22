@@ -4,12 +4,12 @@ import { powerOf, scientificNotation, simplifySqrt } from './powers.js';
 import { evaluateStepByStep } from './orderOfOperations.js';
 
 /**
- * Le RÉSUMÉ d'un document du مختبر الأعداد (§5i.2 de MATH_LAB.md).
+ * Le RÉSUMÉ d'un document du labo des nombres (§5i.2 de MATH_LAB.md).
  *
  * Un laboratoire à treize modes pose une question que les autres instruments
  * n'avaient pas : que montre la carte ? La réponse est **le mode où l'élève
  * travaillait**, et le nombre qu'il y manipulait — c'est ce qui permet de
- * reconnaître son document dans « أعمالي » sans l'ouvrir.
+ * reconnaître son document dans « Mes travaux » sans l'ouvrir.
  *
  * La forme d'aperçu réutilise celles qui existent déjà plutôt que d'en
  * ajouter une : `equation` pour ce qui s'écrit (360 = 2³ × 3² × 5), `chart`
@@ -195,7 +195,7 @@ function describe(mode, data) {
         const s = scientificNotation(p.scientific);
         written = s.error ? p.scientific.slice(0, 32) : `${s.sign < 0 ? '−' : ''}${s.mantissa} × 10^${s.exponent}`;
       } else if (p.tab === 'rules' && typeof p.rule === 'string') {
-        written = `${p.ruleBase}^${p.m} · ${p.ruleBase}^${p.n}`;
+        written = `${p.ruleBase}^${p.m} × ${p.ruleBase}^${p.n}`;
       } else if (int(p.base) !== null && int(p.exponent) !== null) {
         const r = powerOf(p.base, p.exponent);
         written = r.error ? `${p.base}^${p.exponent}` : `${p.base}^${p.exponent} = ${r.text}`;

@@ -7,7 +7,7 @@ import { StepList } from '../../shared/LabKit.jsx';
 import { buildTriangleSolveSteps, solveKey } from './triangleSolveSteps.js';
 
 /**
- * « حلّ المثلث خطوة بخطوة » — l'écriture du manuel, pas à pas.
+ * « Résoudre le triangle pas à pas » — l'écriture du manuel, pas à pas.
  *
  * Le dessin reste VIVANT (la règle « on lit en manipulant ») : il se résout à
  * chaque frappe et à chaque glissement, ses longueurs suivent le doigt. Ce

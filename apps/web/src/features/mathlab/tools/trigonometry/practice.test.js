@@ -143,7 +143,7 @@ describe('les questions sont JUSTES — deux cents tirages vérifiés', () => {
     }
   });
 
-  it('le mode triangle reste dans le programme de 4AM : angles aigus, pas de radians (régression)', () => {
+  it('le mode triangle reste dans le programme du collège : angles aigus, pas de radians (régression)', () => {
     const kinds = kindsForMode('triangle');
     expect(kinds).not.toContain('degToRad');
     let ratioQuestions = 0;
@@ -232,8 +232,8 @@ describe('la lecture d’une réponse — la syntaxe n’est pas le sujet', () =
       ['-(√3)/2', -Math.sqrt(3) / 2],
       ['2/√3', 2 / Math.sqrt(3)],
       ['√3 / 2', Math.sqrt(3) / 2],
-      ['٠٫٥', 0.5],
-      ['۱/۲', 0.5],
+      ['\u0660\u066B\u0665', 0.5],
+      ['\u06F1/\u06F2', 0.5],
     ];
     for (const [text, expected] of cases) {
       expect(Math.abs(parseAnswer(text) - expected), text).toBeLessThan(1e-12);
@@ -253,7 +253,7 @@ describe('la lecture d’une réponse — la syntaxe n’est pas le sujet', () =
   it('lit le « ° » final — la forme que la révélation affiche (régression)', () => {
     expect(parseAnswer('60°')).toBe(60);
     expect(parseAnswer('60 °')).toBe(60);
-    expect(parseAnswer('٦٠°')).toBe(60);
+    expect(parseAnswer('\u0666\u0660°')).toBe(60);
     const toDegrees = { answerType: 'number', expected: 180 / 3, tolerance: 0.5 };
     expect(checkAnswer(toDegrees, '60°').correct).toBe(true);
     expect(checkAnswer(toDegrees, '°')).toEqual({ correct: false, readable: false });
@@ -271,7 +271,7 @@ describe('la lecture d’une réponse — la syntaxe n’est pas le sujet', () =
   });
 
   it('lit les chiffres arabes-indiens si l’élève les tape', () => {
-    expect(parseAnswer('٤٥')).toBe(45);
+    expect(parseAnswer('\u0664\u0665')).toBe(45);
   });
 
   it('ignore les espaces', () => {

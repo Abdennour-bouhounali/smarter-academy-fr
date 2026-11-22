@@ -2,12 +2,12 @@ import { describe, it, expect } from 'vitest';
 import { buildStorySteps, STORY_LENGTH } from './storySteps.js';
 import { INVESTIGATIONS, getInvestigation } from './investigations.js';
 import * as R from './ruleEngine.js';
-import mathlabAr from '../../../../i18n/locales/ar/mathlab.json';
+import mathlab from '../../../../i18n/locales/ar/mathlab.json';
 
-const story = mathlabAr.tools.measurement.story;
-const lookup = (key) => key.split('.').reduce((node, part) => node?.[part], mathlabAr.tools.measurement);
+const story = mathlab.tools.measurement.story;
+const lookup = (key) => key.split('.').reduce((node, part) => node?.[part], mathlab.tools.measurement);
 
-describe('buildStorySteps — « كيف ظهرت هذه القاعدة؟ » pas à pas', () => {
+describe('buildStorySteps — « Comment cette règle est-elle apparue ? » pas à pas', () => {
   it('sept étapes, la règle en DERNIER, jamais avant', () => {
     for (const investigation of INVESTIGATIONS) {
       const { ok, steps } = buildStorySteps(investigation);
@@ -47,8 +47,10 @@ describe('buildStorySteps — « كيف ظهرت هذه القاعدة؟ » pas 
     expect(buildStorySteps(null)).toEqual({ ok: false, steps: [] });
   });
 
-  it('les notes du dernier pas existent en arabe', () => {
+  it('les notes du dernier pas existent en français', () => {
     expect(typeof story.ruleAwaits).toBe('string');
     expect(typeof story.ruleFound).toBe('string');
+    expect(story.ruleAwaits).toMatch(/règle/);
+    expect(`${story.ruleAwaits}${story.ruleFound}`).not.toMatch(/[\u0600-\u06FF]/);
   });
 });

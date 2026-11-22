@@ -7,7 +7,7 @@ import { SYMBOLS, boolText } from './logicFormat.js';
 import { NEGATION_KINDS, setNegationKind, setNegationQuantifier } from './logicState.js';
 
 /**
- * §24-25 — LA NÉGATION (النفي).
+ * §24-25 — LA NÉGATION.
  *
  * Deux moitiés, la même idée :
  *
@@ -19,7 +19,7 @@ import { NEGATION_KINDS, setNegationKind, setNegationQuantifier } from './logicS
  *   Les quantificateurs — sur un énoncé concret, l'écran montre que
  *   « ¬(∀x, P) » et « ∃x, ¬P » ont la même valeur. §25 dit que c'est « one
  *   of the most important reasoning ideas » : elle est donc écrite en toutes
- *   lettres — نفي «لكلّ» يصير «يوجد مثال مضاد».
+ *   lettres — la négation de « pour tout » devient « il existe un contre-exemple ».
  */
 export default function NegationArea({ data, onChange }) {
   const { t } = useTranslation('mathlab');

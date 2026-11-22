@@ -30,7 +30,7 @@ describe('buildWalkthrough — les VRAIS états successifs, le résultat en dern
     expect(walk.final.latex).toBe('x > -3');
   });
 
-  it('2x + 3 = 2x + 5 : −2x → 3 = 5, puis « لا يوجد حل » (aucun faux nombre)', () => {
+  it('2x + 3 = 2x + 5 : −2x → 3 = 5, puis « Pas de solution » (aucun faux nombre)', () => {
     const walk = buildWalkthrough(eq('2x + 3 = 2x + 5'));
     expect(summary(walk)).toEqual([['- 2x', '3 = 5', false]]);
     expect(walk.steps[0].explanationKey).toBe('subtractX');
@@ -110,7 +110,7 @@ describe('le tableau d’une résolution (frames)', () => {
     expect(frames.at(-1).rows[1].map((t) => t.latex)).toEqual(['S =', '\\left]-3\\,;\\,+\\infty\\right[']);
   });
 
-  it('une saisie à parenthèses commence par « نشر وتبسيط » de chaque membre', () => {
+  it('une saisie à parenthèses commence par « développer et réduire » de chaque membre', () => {
     const source = '3(x + 2) = 2x - 1';
     const start = eq(source);
     const frames = resolutionFrames(buildWalkthrough(start), { expansion: equationExpansion(source), start });
@@ -127,7 +127,7 @@ describe('le tableau d’une résolution (frames)', () => {
     }
   });
 
-  it('« التحقق » se déroule : substitution → calcul → verdict (et la borne pour une متراجحة)', () => {
+  it('« Vérifier » se déroule : substitution → calcul → verdict (et la borne pour une inéquation)', () => {
     const start = eq('2x + 3 = 11');
     const frames = verificationFrames(start, verifyResolution(start, R.makeRational(4), '='));
     expect(validateFrames(frames)).toEqual([]);

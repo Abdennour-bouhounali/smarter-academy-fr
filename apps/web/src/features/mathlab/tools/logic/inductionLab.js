@@ -7,8 +7,8 @@
  *
  * ── On n'écrit PAS un second analyseur (§6, §7) ──────────────────────────
  * Il en existe un sur la plateforme : celui du grapheur, déjà réutilisé par
- * le مختبر المتتاليات via `sequenceExpression.js`. On l'appelle, exactement
- * comme les متتاليات l'appellent — mêmes variables (`n`), même grammaire,
+ * l'atelier des suites via `sequenceExpression.js`. On l'appelle, exactement
+ * comme l'atelier des suites l'appelle — mêmes variables (`n`), même grammaire,
  * mêmes codes d'erreur, même contrat « ne lève jamais, rend NaN hors
  * domaine », et surtout **aucun `eval`, aucun `new Function`** : la saisie
  * de l'élève devient un arbre, jamais du JavaScript exécuté.

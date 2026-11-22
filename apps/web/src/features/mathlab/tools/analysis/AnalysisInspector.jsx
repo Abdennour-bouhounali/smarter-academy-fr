@@ -159,8 +159,8 @@ function TangentReadout({ scene, t, bare = false }) {
 /**
  * §9, §17, §18 : f′ écrite, f″ si on sait, et les points critiques CLASSÉS.
  *
- * f′(x) ne s'affiche plus d'un bloc (exigence 2026-09-30) : « اشتقّ خطوة
- * بخطوة » déroule `derivativeSteps.js` — la structure, la règle nommée, les
+ * f′(x) ne s'affiche plus d'un bloc (exigence 2026-09-30) : « Dériver pas
+ * à pas » déroule `derivativeSteps.js` — la structure, la règle nommée, les
  * morceaux dérivés, la règle remplie — et la dérivée simplifiée est le
  * DERNIER pas. La ligne « f′(x) = … » et f″ n'existent qu'une fois ce pas
  * atteint. Les points critiques et la courbe de f′ restent VIVANTS : ce
@@ -399,13 +399,13 @@ function IntegralReadout({ data, scene, t }) {
  * §16 : l'étude complète — mais JAMAIS comme un grand tableau statique.
  *
  * Chaque ligne est un BOUTON qui allume sa couche sur le graphe : cliquer
- * « الجذور » met les racines en évidence sur la courbe. C'est l'exigence
+ * « Racines » met les racines en évidence sur la courbe. C'est l'exigence
  * explicite de §16 — « connect every result to the graph ».
  *
- * Le جدول التغيّرات, lui, se CONSTRUIT (exigence 2026-09-30) : « أنشئ جدول
- * التغيّرات خطوة بخطوة » déroule les six pas du manuel (variationTable.js ›
+ * Le tableau de variations, lui, se CONSTRUIT (exigence 2026-09-30) : « Construire le tableau
+ * de variations pas à pas » déroule les six pas du manuel (variationTable.js ›
  * buildVariationSteps) et la grille ne rend que les lignes atteintes. La
- * ligne « اتّجاه التغيّر » de la liste, qui ÉNONCE en mots les flèches du
+ * ligne « Sens de variation » de la liste, qui ÉNONCE en mots les flèches du
  * tableau, attend que le tableau soit complet ; les racines, les extrema,
  * les asymptotes et les discontinuités restent des lectures VIVES du graphe
  * (les extrema sont aussi dans la lecture vive au-dessus des onglets).
@@ -422,7 +422,7 @@ function StudyReadout({ scene, data, onHighlight, player, t }) {
       key: 'roots',
       label: t('tools.analysis.study.roots'),
       content: Array.isArray(scene.roots) && scene.roots.length > 0
-        ? scene.roots.map((root) => formatValue(root.x, 3)).join(' ؛ ')
+        ? scene.roots.map((root) => formatValue(root.x, 3)).join(' ; ')
         : t('tools.analysis.study.rootsNone'),
     },
     {
@@ -488,8 +488,8 @@ function StudyReadout({ scene, data, onHighlight, player, t }) {
         </>
       )}
 
-      {/* جدول التغيّرات : la synthèse du manuel. C'est la forme sous laquelle
-          un élève algérien REND une étude de fonction — et il la construit. */}
+      {/* tableau de variations : la synthèse du manuel. C'est la forme sous laquelle
+          un élève REND une étude de fonction — et il la construit. */}
       {(!building || rowsShown > 0) && (
         <VariationTable
           table={table}
@@ -511,7 +511,7 @@ function StudyReadout({ scene, data, onHighlight, player, t }) {
               data-ml-an-study={row.key}
             >
               <span className="sa-ml-an__studylabel">{row.label}</span>
-              <span className="sa-ml-an__studyvalue" dir={row.pending ? 'rtl' : 'ltr'}>{row.content}</span>
+              <span className="sa-ml-an__studyvalue" dir={row.pending ? undefined : 'ltr'}>{row.content}</span>
             </button>
           </li>
         ))}
@@ -524,7 +524,7 @@ function StudyReadout({ scene, data, onHighlight, player, t }) {
 
 /**
  * Les pas de la construction du tableau, jusqu'au pas courant SEULEMENT.
- * Le texte arabe ne porte aucune formule : la notation est dans un îlot LTR.
+ * Le texte français ne porte aucune formule : la notation est dans un îlot LTR.
  */
 function VariationStepList({ steps, cursor, t }) {
   const shown = steps.slice(0, cursor);
@@ -653,7 +653,7 @@ function Row({ label, children, stacked = false }) {
 /**
  * La notation mathématique : TOUJOURS `dir="ltr"`.
  *
- * C'est l'exigence §2 et §39 : l'interface est RTL, mais `f(x) = x² − 3x + 2`
+ * C'est l'exigence §2 et §39 : la notation est isolée du texte, et `f(x) = x² − 3x + 2`
  * ne se lit pas à l'envers. Ce composant est le seul endroit où cette
  * décision est prise, pour qu'aucune expression ne puisse y échapper.
  *

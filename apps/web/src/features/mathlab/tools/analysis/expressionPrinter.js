@@ -2,15 +2,15 @@
  * L'AST → une expression LISIBLE, en notation du manuel.
  *
  * §2 du cahier des charges : la notation mathématique reste LTR et correcte,
- * même dans une interface RTL. Ce module ne produit donc que des caractères
- * mathématiques (chiffres latins, `x`, opérateurs), jamais un mot arabe :
+ * quel que soit le sens de la page. Ce module ne produit donc que des caractères
+ * mathématiques (chiffres latins, `x`, opérateurs), jamais un mot :
  * c'est l'interface qui l'enferme dans un conteneur `dir="ltr"`.
  *
  * Deux sorties, une seule traversée :
  *   - `printExpression` : du texte simple (`2x`, `-x^2 + 3`) pour une
- *     étiquette, un `aria-label`, un résumé « أعمالي », un test ;
+ *     étiquette, un `aria-label`, un résumé « Mes travaux », un test ;
  *   - `printLatex`      : du LaTeX (`\frac{1}{x^{2}}`) pour MathLive, qui
- *     rend déjà les expressions partout ailleurs dans le مختبر.
+ *     rend déjà les expressions partout ailleurs dans le atelier.
  *
  * Les PARENTHÈSES sont posées par PRIORITÉ, jamais « au cas où » : on
  * n'écrit pas `(2)·(x)`. Un nœud est parenthésé quand sa priorité est plus
@@ -139,7 +139,7 @@ function renderBinary(node, latex) {
     const numericRight = right.type === 'num' || (right.type === 'bin' && right.op === '*' && right.left.type === 'num');
     if ((!endsWithDigit || !startsWithDigit) && !numericRight) return `${leftText}${rightText}`;
 
-    return latex ? `${leftText}\\cdot ${rightText}` : `${leftText}·${rightText}`;
+    return latex ? `${leftText}\\times ${rightText}` : `${leftText}×${rightText}`;
   }
 
   return `${leftText} ${op === '-' ? '-' : op} ${rightText}`;

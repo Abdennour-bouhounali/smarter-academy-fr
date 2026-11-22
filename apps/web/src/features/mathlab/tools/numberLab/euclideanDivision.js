@@ -1,5 +1,5 @@
 /**
- * القسمة الإقليدية — a = b × q + r, 0 ≤ r < b. Logique pure, sans React.
+ * Division euclidienne — a = b × q + r, 0 ⩽ r < b. Logique pure, sans React.
  *
  * Le calcul lui-même est une ligne (`divmod` du core, celui des leçons) ; ce
  * module porte ce que le laboratoire DESSINE, et la règle qui le rend
@@ -28,7 +28,7 @@ export const DIVISION_MAX = 10_000_000;
  */
 export function readDivisionOperand(raw, role) {
   const text = String(raw ?? '').trim()
-    .replace(/[٠-٩]/g, (d) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)))
+    .replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x660))
     .replace(/[\s  ]/g, '');
   if (!text) return { error: 'empty' };
   if (!/^[-−+]?\d+([.,]\d+)?$/.test(text)) return { error: 'notNumber' };

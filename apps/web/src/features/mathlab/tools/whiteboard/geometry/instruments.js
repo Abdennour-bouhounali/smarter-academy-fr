@@ -3,14 +3,14 @@
  * purs, sans DOM.
  *
  * Un instrument n'est PAS un élément du dessin. C'est un objet posé sur la
- * سبّورة : l'enseignant le déplace, le tourne, l'ouvre, trace le long de lui,
+ * tableau : l'enseignant le déplace, le tourne, l'ouvre, trace le long de lui,
  * puis le range. Son état vit à part (`desk.instruments`), si bien que le
  * manipuler ne touche jamais au dessin, ni à l'historique d'Excalidraw.
  *
  *   ruler      { visible, x, y, angle, lengthCm }        (x, y) = le ZÉRO, sur le bord gradué
  *   compass    { visible, x, y, angle, radius, locked }  (x, y) = la POINTE sèche ; angle = vers la mine
  *   protractor { visible, x, y, angle, radiusCm, needleDeg, mode }  (x, y) = le CENTRE ; angle = vers 0° ;
- *              mode 'measure' (قياس) | 'construct' (إنشاء زاوية) | 'arc' (رسم قوس)
+ *              mode 'measure' (« Mesurer ») | 'construct' (« Construire un angle ») | 'arc' (« Tracer un arc »)
  *   setSquare  { visible, x, y, angle, kind, sizeCm }    (x, y) = le sommet de l'ANGLE DROIT
  *
  * Tout est en unités de scène (geoMath.UNITS_PER_CM par « cm » du bureau).
@@ -28,7 +28,7 @@ export const RULER_MARGIN = 0.5 * UNITS_PER_CM;
 const COMPASS_MIN_RADIUS = 0.2 * UNITS_PER_CM;
 const COMPASS_MAX_RADIUS = 25 * UNITS_PER_CM;
 
-/** Le rayon de l'évidement de la منقلة, en fraction de son rayon (le bord courbe intérieur). */
+/** Le rayon de l'évidement du rapporteur, en fraction de son rayon (le bord courbe intérieur). */
 export const PROTRACTOR_INNER = 0.42;
 
 const SET_SQUARE_KINDS = Object.freeze(['45', '3060']);
@@ -136,14 +136,14 @@ export function instrumentGeometry(kind, inst) {
   }
 }
 
-/** Les bords le long desquels le قلم الهندسة peut glisser. Le compas n'en a pas. */
+/** Les bords le long desquels le crayon de géométrie peut glisser. Le compas n'en a pas. */
 export function instrumentEdges(kind, inst) {
   if (!inst?.visible) return [];
 
   return instrumentGeometry(kind, inst)?.edges ?? [];
 }
 
-/** La boîte (scène) d'un instrument — pour l'export « مع أدوات الهندسة » et le recentrage. */
+/** La boîte (scène) d'un instrument — pour l'export « avec les instruments » et le recentrage. */
 export function instrumentBounds(kind, inst) {
   const g = instrumentGeometry(kind, inst);
   let pts;
@@ -180,8 +180,8 @@ export function placeAnchorAt(kind, inst, point) {
 }
 
 /**
- * Un instrument qu'on SORT se met à la taille de la سبّورة visible : sur un
- * téléphone, une règle de 15 cm ou une منقلة de 12 cm dépasseraient l'écran
+ * Un instrument qu'on SORT se met à la taille du tableau visible : sur un
+ * téléphone, une règle de 15 cm ou un rapporteur de 12 cm dépasseraient l'écran
  * et leur zéro, leur centre, seraient hors d'atteinte. On choisit la plus
  * grande taille qui tient dans 90 % de la largeur (et de la hauteur) vue.
  */
@@ -236,11 +236,11 @@ export function isAnchorVisible(kind, inst, view) {
   return g.anchor.x >= view.minX && g.anchor.x <= view.maxX && g.anchor.y >= view.minY && g.anchor.y <= view.maxY;
 }
 
-// ── La منقلة lit un angle ────────────────────────────────────────────────
+// ── Le rapporteur lit un angle ────────────────────────────────────────────────
 
 /**
- * La graduation (0 à 180, sens scolaire) que la direction `d` croise sur la
- * منقلة — ou null si `d` part du mauvais côté du diamètre.
+ * La graduation (0 à 180, sens scolaire) que la direction `d` croise sur le
+ * rapporteur — ou null si `d` part du mauvais côté du diamètre.
  */
 export function protractorDegreeOf(p, d) {
   const g = protractorGeometry(p);
@@ -254,13 +254,13 @@ export function protractorDegreeOf(p, d) {
 }
 
 /**
- * La mesure d'un angle de sommet `vertex` par la منقلة : on cherche, parmi
+ * La mesure d'un angle de sommet `vertex` par le rapporteur : on cherche, parmi
  * les directions des côtés qui partent du sommet, celle qui est posée sur le
  * diamètre (0° ou 180°), puis l'autre côté du demi-disque le plus proche de
- * l'aiguille. Rend { degrees, from, to } ou null quand la منقلة n'est pas
+ * l'aiguille. Rend { degrees, from, to } ou null quand le rapporteur n'est pas
  * posée sur un angle (centre loin du sommet, pas de côté sur le diamètre).
  *
- * @param {object} p           la منقلة
+ * @param {object} p           le rapporteur
  * @param {{x:number,y:number}} vertex
  * @param {Array<{x:number,y:number}>} directions   les côtés, du sommet vers l'extérieur
  * @param {number} tolerance   écart toléré entre le centre et le sommet (unités de scène)
@@ -323,19 +323,19 @@ export const PENCIL_WIDTHS = Object.freeze({ thin: 1.5, medium: 2.5, thick: 4 })
 export const PENCIL_STYLES = Object.freeze(['solid', 'dashed', 'dotted']);
 
 /**
- * « التثبيت الذكي » est l'interrupteur général ; chaque aimant a le sien,
+ * « Aimantation » est l'interrupteur général ; chaque aimant a le sien,
  * et ne marche que si l'interrupteur général est ouvert (`snapOn`).
  */
 const DEFAULT_SETTINGS = Object.freeze({
-  snap: true, // التثبيت الذكي — l'interrupteur général
-  attach: true, // التثبيت على الأداة : le crayon s'accroche au bord, à la pointe, au sommet
-  graduations: true, // التثبيت على التدريج : le mm toujours, le cm quand on en passe près
-  points: true, // التثبيت على النقاط : points nommés, intersections, extrémités
-  angles: true, // التثبيت على الزوايا : horizontale, verticale, parallèle, perpendiculaire, rotations
-  perpSnap: true, // تثبيت عمودي : le كوس se cale sur une droite
-  measures: false, // إظهار القياسات
+  snap: true, // Aimantation — l'interrupteur général
+  attach: true, // Accrocher aux instruments : le crayon s'accroche au bord, à la pointe, au sommet
+  graduations: true, // Accrocher aux graduations : le mm toujours, le cm quand on en passe près
+  points: true, // Accrocher aux points : points nommés, intersections, extrémités
+  angles: true, // Accrocher aux angles : horizontale, verticale, parallèle, perpendiculaire, rotations
+  perpSnap: true, // Caler à angle droit : l'équerre se cale sur une droite
+  measures: false, // Afficher les mesures
   autoLabels: true, // A, B, C… aux extrémités
-  exportInstruments: false, // تصدير مع أدوات الهندسة
+  exportInstruments: false, // Exporter avec les instruments
 });
 
 /** Un aimant est-il actif ? L'interrupteur général ET le sien. */
@@ -393,16 +393,16 @@ export function snapRulerToPoints(origin, angle, points, tolerance, maxLength) {
 }
 
 /**
- * Plaque un كوس contre une droite-guide : quand l'un de ses bords est
+ * Plaque une équerre contre une droite-guide : quand l'un de ses bords est
  * presque parallèle et tout près d'une droite (le bord d'une règle, une
  * droite de la construction), il tourne autour de son angle droit pour s'y
  * aligner exactement, puis glisse jusqu'à la toucher.
  *
- * Contre la RÈGLE, c'est le glissement du parallélisme (« نحافظ على الاتجاه
- * نفسه ») ; contre une DROITE par l'un de ses côtés de l'angle droit, c'est
+ * Contre la RÈGLE, c'est le glissement du parallélisme (« La direction reste
+ * la même ») ; contre une DROITE par l'un de ses côtés de l'angle droit, c'est
  * l'équerrage (l'autre côté est perpendiculaire).
  *
- * @param {object} square  l'état du كوس
+ * @param {object} square  l'état de l'équerre
  * @param {Array<{id: string, a: object, b: object, source: 'ruler'|'line'}>} guides
  * @returns {{inst: object, edgeId: string, guide: object} | null}
  */

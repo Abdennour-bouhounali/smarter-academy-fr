@@ -1,18 +1,16 @@
 /**
- * LA MATHÉMATIQUE des أشعة — logique PURE : pas de React, pas de DOM, pas de
+ * LA MATHÉMATIQUE des vecteurs — logique PURE : pas de React, pas de DOM, pas de
  * pixels. Tout ce que le laboratoire affiche se calcule ICI et nulle part
- * ailleurs (règle §38 du cahier des charges, et celle de tout le مختبر :
+ * ailleurs (règle §38 du cahier des charges, et celle de tout l'atelier :
  * rational.js / equation.js pour l'algèbre, geometryCalculations.js pour les
  * solides).
  *
- * Le vocabulaire est celui du programme algérien de 4AM :
+ * Le vocabulaire est celui de l'école française : vecteur, coordonnées
+ * d'un vecteur (les « composantes » du code), milieu, translation.
  *
- *     الشعاع = vecteur            المركبتان = les composantes
- *     المنتصف = milieu             الانسحاب = translation
- *
- * Un شعاع est ici un COUPLE de composantes `{x, y}` — un déplacement, pas un
- * segment : c'est exactement la définition du manuel (« الانسحاب والشعاع »,
- * LP 4.5), et c'est ce qui rend le شعاع libre de §6 possible sans code en
+ * Un vecteur est ici un COUPLE de coordonnées `{x, y}` — un déplacement, pas un
+ * segment : c'est exactement la définition par la translation qui envoie A
+ * sur B, et c'est ce qui rend le vecteur libre de §6 possible sans code en
  * plus. Une NOTATION (⃗AB) est une manière de désigner ce couple ; elle vit
  * dans l'état du document (vectorState.js), pas ici.
  *
@@ -50,7 +48,7 @@ export function fromPoints(a, b) {
   return { x: b.x - a.x, y: b.y - a.y };
 }
 
-/** Le point d'arrivée d'un شعاع posé en `origin` : `origin + v` (§16, l'انسحاب). */
+/** Le point d'arrivée d'un vecteur posé en `origin` : `origin + v` (§16, la translation). */
 export function translatePoint(point, v) {
   if (!isVector(point) || !isVector(v)) return null;
 
@@ -71,12 +69,12 @@ export function subtract(u, v) {
   return { x: u.x - v.x, y: u.y - v.y };
 }
 
-/** L'opposé : `−v`, le شعاع du retour. Ce qui fait de `u − v` un `u + (−v)` (§13). */
+/** L'opposé : `−v`, le vecteur du retour. Ce qui fait de `u − v` un `u + (−v)` (§13). */
 export function negate(v) {
   return isVector(v) ? { x: -v.x, y: -v.y } : null;
 }
 
-/** `k·u` (§14). k = 0 rend le شعاع nul : ce n'est pas une erreur, c'est le sens. */
+/** `k·u` (§14). k = 0 rend le vecteur nul : ce n'est pas une erreur, c'est le sens. */
 export function scale(v, k) {
   if (!isVector(v) || !finite(k)) return null;
 
@@ -97,7 +95,7 @@ export function distance(a, b) {
 
 /**
  * La direction en DEGRÉS, mesurée depuis l'axe des abscisses, dans [0, 360[
- * (§10 : « appropriate angle normalization »). Le شعاع nul n'a pas de
+ * (§10 : « appropriate angle normalization »). Le vecteur nul n'a pas de
  * direction — NaN, et l'interface écrira « — », jamais 0°.
  */
 export function direction(v) {
@@ -151,7 +149,7 @@ export function slope(a, b) {
 // ── Le produit scalaire (§23) ─────────────────────────────────────────────
 
 /**
- * u · v. HORS PROGRAMME de 4AM (le produit scalaire est du lycée) : le
+ * u · v. HORS PROGRAMME du collège (le produit scalaire est du lycée) : le
  * laboratoire le calcule mais ne le met jamais en avant — §23 le dit, et
  * l'interface le range dans une analyse facultative.
  */
@@ -175,11 +173,11 @@ function cross(u, v) {
 // ── Les relations (§21, §22, §24) ─────────────────────────────────────────
 
 /**
- * La tolérance d'une relation, RELATIVE à la taille des أشعة comparés.
+ * La tolérance d'une relation, RELATIVE à la taille des vecteurs comparés.
  *
  * Un test absolu (`|det| < 1e-9`) ment deux fois : il déclare non parallèles
- * des أشعة énormes que le flottant a écartés d'un cheveu, et parallèles des
- * أشعة minuscules qui ne le sont pas. On compare donc le déterminant au
+ * des vecteurs énormes que le flottant a écartés d'un cheveu, et parallèles des
+ * vecteurs minuscules qui ne le sont pas. On compare donc le déterminant au
  * produit des normes — c'est |sin θ| que l'on borne, une vraie mesure
  * d'angle, et l'élève qui glisse un point voit la relation apparaître
  * exactement quand elle est vraie à l'œil.
@@ -193,7 +191,7 @@ function relativeScale(u, v) {
 }
 
 /**
- * u ∥ v (§21) : leur déterminant est nul. Le شعاع nul est colinéaire à tout
+ * u ∥ v (§21) : leur déterminant est nul. Le vecteur nul est colinéaire à tout
  * — vrai mathématiquement, mais inutile à montrer : `strict` l'exclut.
  */
 export function areParallel(u, v, { strict = true, tolerance = RELATIVE_TOLERANCE } = {}) {
@@ -214,8 +212,8 @@ export function arePerpendicular(u, v, { tolerance = RELATIVE_TOLERANCE } = {}) 
 
 /**
  * Le coefficient k tel que `v = k·u` — le « v = ½ u » que §21 demande de
- * MONTRER. Null si les أشعة ne sont pas colinéaires, ou si u est nul (aucun
- * k ne fabrique un شعاع non nul à partir de rien).
+ * MONTRER. Null si les vecteurs ne sont pas colinéaires, ou si u est nul (aucun
+ * k ne fabrique un vecteur non nul à partir de rien).
  */
 export function collinearFactor(u, v) {
   if (!areParallel(u, v, { strict: false }) || isZero(u)) return null;

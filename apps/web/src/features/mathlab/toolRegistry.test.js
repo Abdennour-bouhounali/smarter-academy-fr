@@ -9,7 +9,7 @@ import { WORK_SORTS, WORK_PERIODS } from './work/workFilters.js';
 const here = dirname(fileURLToPath(import.meta.url));
 
 /**
- * Le registre du مختبر : chaque instrument respecte le contrat, aucun n'en
+ * Le registre de l’atelier : chaque instrument respecte le contrat, aucun n'en
  * cache un autre, et le serveur connaît exactement les mêmes identifiants.
  */
 describe('registre des instruments', () => {
@@ -27,7 +27,7 @@ describe('registre des instruments', () => {
     expect(new Set(slugs).size).toBe(slugs.length);
   });
 
-  it('expose la سبّورة sous /espace/atelier/tableau, le grapheur sous /espace/atelier/grapheur, la géométrie 3D sous /espace/atelier/geometrie-3d', () => {
+  it('expose le tableau sous /espace/atelier/tableau, le grapheur sous /espace/atelier/grapheur, la géométrie 3D sous /espace/atelier/geometrie-3d', () => {
     expect(getMathLabTool('whiteboard')?.slug).toBe('tableau');
     expect(getMathLabToolBySlug('tableau')?.id).toBe('whiteboard');
     expect(getMathLabTool('functionGrapher')?.slug).toBe('grapheur');
@@ -53,9 +53,9 @@ describe('registre des instruments', () => {
     expect(getMathLabTool('graph')).toBeNull();
   });
 
-  // Un instrument construit ne doit pas rester annoncé « قريبًا » : le
+  // Un instrument construit ne doit pas rester annoncé « Bientôt » : le
   // laboratoire des probabilités et statistiques livre à lui seul ce que
-  // « الإحصاء » et « الاحتمالات » promettaient, donc les deux ont quitté
+  // « Statistiques » et « Probabilités » promettaient, donc les deux ont quitté
   // la liste des instruments à venir.
   it('n’annonce plus ce qui est livré', () => {
     const plannedIds = PLANNED_MATH_LAB_TOOLS.map((tool) => tool.id);
@@ -63,29 +63,29 @@ describe('registre des instruments', () => {
     expect(plannedIds).not.toContain('probability');
     expect(plannedIds).not.toContain('probabilityStats');
     expect(plannedIds).not.toContain('algebra');
-    // Le مختبر الأشعة est livré : « الأشعة » a quitté les instruments annoncés.
+    // L’outil Vecteurs est livré : « Vecteurs » a quitté les instruments annoncés.
     expect(plannedIds).not.toContain('vectors');
-    // Le مختبر المثلثات a livré ce que « الدائرة المثلثية » promettait.
+    // L’outil Trigonométrie a livré ce que « Cercle trigonométrique » promettait.
     expect(plannedIds).not.toContain('trigonometry');
-    // Le مختبر المتتاليات est livré : il n'a jamais été annoncé, et il ne
-    // remplaçait PAS « المستقيم المدرّج » — placer et comparer des nombres
-    // quelconques n'est pas manipuler des suites. C'est le مختبر الأعداد qui
+    // L’outil Suites est livré : il n'a jamais été annoncé, et il ne
+    // remplaçait PAS « droite graduée » — placer et comparer des nombres
+    // quelconques n'est pas manipuler des suites. C'est le labo des nombres qui
     // a fini par le livrer (ci-dessous).
     expect(plannedIds).not.toContain('sequences');
-    // Le مختبر التحويلات a livré ce que « الهندسة » promettait : un plan où
+    // L’outil Transformations a livré ce que « Géométrie » promettait : un plan où
     // l'on construit des figures et où on les transforme. Le chip a donc
     // quitté la liste des instruments à venir.
     expect(plannedIds).not.toContain('geometry');
     expect(plannedIds).not.toContain('transformations');
-    // Le مختبر الأعداد a livré ce que « المستقيم المدرّج » promettait — placer,
+    // Le labo des nombres a livré ce que « droite graduée » promettait — placer,
     // comparer et ordonner des nombres, des fractions et des décimaux sur une
     // droite — mais comme UN mode parmi treize : une droite graduée seule
     // aurait tenu la promesse trop petitement. Le chip a donc quitté la liste.
     expect(plannedIds).not.toContain('numberLine');
     expect(plannedIds).not.toContain('numberLab');
-    // Le مختبر القياس est livré : mesurer des grandeurs (longueurs, aires,
+    // L’outil Grandeurs et mesures est livré : mesurer des grandeurs (longueurs, aires,
     // volumes, unités) est bien un instrument à part, et c'est le
-    // quatorzième. « القياس » a donc quitté la liste des instruments à venir.
+    // quatorzième. « Mesure » a donc quitté la liste des instruments à venir.
     expect(plannedIds).not.toContain('measurement');
   });
 
@@ -101,12 +101,12 @@ describe('registre des instruments', () => {
   });
 
   /**
-   * « أعمالي » dessine l'aperçu d'un travail à partir du seul RÉSUMÉ que son
+   * « Mes travaux » dessine l'aperçu d'un travail à partir du seul RÉSUMÉ que son
    * instrument a laissé. Un instrument qui n'en produit pas n'est pas en
    * faute — sa carte a un repli — mais les huit livrés le font, et un
    * neuvième doit y penser plutôt que le découvrir en production.
    */
-  it('chaque instrument sait résumer son document pour « أعمالي »', () => {
+  it('chaque instrument sait résumer son document pour « Mes travaux »', () => {
     for (const tool of MATH_LAB_TOOLS) {
       expect(typeof tool.summarize, `${tool.id} n’a pas de summarize`).toBe('function');
     }
@@ -119,7 +119,7 @@ describe('registre des instruments', () => {
     expect(serverIds).toEqual(clientIds);
   });
 
-  it('chaque libellé du registre existe dans le catalogue arabe', () => {
+  it('chaque libellé du registre existe dans le catalogue', () => {
     const catalog = JSON.parse(readFileSync(resolve(here, '../../i18n/locales/ar/mathlab.json'), 'utf8'));
     const lookup = (key) => key.split('.').reduce((node, part) => node?.[part], catalog);
     for (const tool of MATH_LAB_TOOLS) {
@@ -148,14 +148,14 @@ describe('defineMathLabTool', () => {
     expect(() => defineMathLabTool({ ...valid, summarize: 'pas une fonction' })).toThrow(/summarize/);
   });
 
-  it('exige que l’instrument dise dans quel مخبر il vit (labScope.js)', () => {
+  it('exige que l’instrument dise dans quel atelier il vit (labScope.js)', () => {
     expect(() => defineMathLabTool({ ...valid, scopes: undefined })).toThrow(/scopes/);
     expect(() => defineMathLabTool({ ...valid, scopes: [] })).toThrow(/scopes/);
     expect(() => defineMathLabTool({ ...valid, scopes: ['college'] })).toThrow(/scopes/);
     expect(() => defineMathLabTool({ ...valid, scopes: ['moyen', 'moyen'] })).toThrow(/scopes/);
     // Un instrument commun n'a pas de capacités à déclarer…
     expect(() => defineMathLabTool({ ...valid, capabilities: { moyen: null } })).toThrow(/commun/);
-    // …et un instrument ne déclare de capacités QUE pour ses مخابر.
+    // …et un instrument ne déclare de capacités QUE pour ses ateliers.
     expect(() => defineMathLabTool({ ...valid, scopes: ['moyen'], capabilities: { secondaire: null } })).toThrow(/secondaire/);
     expect(() => defineMathLabTool({ ...valid, scopes: ['moyen', 'secondaire'], capabilities: { moyen: { tangent: false }, secondaire: null } })).not.toThrow();
   });
@@ -172,12 +172,12 @@ describe('defineMathLabTool', () => {
 });
 
 /**
- * Le catalogue arabe de « أعمالي » : chaque clé que l'atelier demande doit
+ * Le catalogue de « Mes travaux » : chaque clé que l'atelier demande doit
  * exister. Une clé manquante s'affiche à l'élève telle quelle
  * (« work.bulk.delete ») — c'est un défaut visible, et c'est ici qu'on
  * l'attrape.
  */
-describe('les mots de « أعمالي »', () => {
+describe('les mots de « Mes travaux »', () => {
   const REQUIRED = [
     'work.newWork', 'work.searchPlaceholder', 'work.searchAria', 'work.clearSearch',
     'work.countFiltered', 'work.sortLabel', 'work.viewLabel', 'work.viewGrid', 'work.viewList', 'work.copyPrefix',
@@ -196,7 +196,7 @@ describe('les mots de « أعمالي »', () => {
   const catalog = JSON.parse(readFileSync(resolve(here, '../../i18n/locales/ar/mathlab.json'), 'utf8'));
   const lookup = (key) => key.split('.').reduce((node, part) => node?.[part], catalog);
 
-  it('chaque libellé de l’atelier existe en arabe', () => {
+  it('chaque libellé de l’atelier existe en français', () => {
     for (const key of REQUIRED) {
       expect(typeof lookup(key), key).toBe('string');
     }
@@ -208,16 +208,22 @@ describe('les mots de « أعمالي »', () => {
   });
 
   /**
-   * L'arabe compte en six formes (zéro, un, deux, quelques, beaucoup,
-   * autre). i18next les choisit par SUFFIXE : une forme manquante fait
-   * retomber sur `_other`, et « عملان » devient « 2 عمل ».
+   * Le français compte en deux formes : `_one` (0 et 1) et `_other`.
+   * i18next les choisit par SUFFIXE : une forme manquante ferait retomber
+   * sur la clé nue, et « 2 travaux » deviendrait « 2 travail ». Le zéro a
+   * sa propre phrase (« Aucun travail »), et les formes arabes sont parties.
    */
-  it('les compteurs portent les six formes du pluriel arabe', () => {
+  it('les compteurs portent les deux formes du pluriel français', () => {
     for (const base of ['work.count', 'work.bulk.selected']) {
-      for (const form of ['one', 'two', 'few', 'many', 'other']) {
+      for (const form of ['one', 'other']) {
         expect(typeof lookup(`${base}_${form}`), `${base}_${form}`).toBe('string');
       }
+      for (const form of ['zero', 'two', 'few', 'many']) {
+        expect(lookup(`${base}_${form}`), `${base}_${form}`).toBeUndefined();
+      }
     }
+    expect(typeof lookup('work.countEmpty')).toBe('string');
+    expect(lookup('work.count_other')).toContain('travaux');
   });
 });
 
@@ -230,5 +236,55 @@ describe('segments d\'URL', () => {
         seen.set(segment, tool.id);
       }
     }
+  });
+});
+
+/**
+ * Le catalogue ENTIER de l'atelier est français : aucune lettre arabe,
+ * aucune marque de direction (LRM, RLM, isolats) héritée de l'interface
+ * arabe, aucune forme du pluriel arabe, et la typographie française de base
+ * (apostrophe typographique, espace insécable avant les deux-points hors
+ * formule).
+ */
+describe('le catalogue de l’atelier est en français', () => {
+  const catalog = JSON.parse(readFileSync(resolve(here, '../../i18n/locales/ar/mathlab.json'), 'utf8'));
+  const entries = [];
+  const walk = (node, path) => {
+    for (const [key, value] of Object.entries(node)) {
+      const next = path ? `${path}.${key}` : key;
+      if (value && typeof value === 'object') walk(value, next);
+      else entries.push([next, value]);
+    }
+  };
+  walk(catalog, '');
+  const offending = (test) => entries.filter(([, value]) => typeof value === 'string' && test(value)).map(([key]) => key);
+  const outsideMath = (value) => value.replace(/\$[^$]*\$/g, '').replace(/\\\(.*?\\\)/g, '').replace(/\{\{[^}]*\}\}/g, '');
+
+  it('porte des milliers de phrases', () => {
+    expect(entries.length).toBeGreaterThan(4000);
+  });
+
+  it('ne contient aucune lettre arabe', () => {
+    expect(offending((value) => /[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]/.test(value))).toEqual([]);
+  });
+
+  it('ne contient aucune marque de direction', () => {
+    expect(offending((value) => /[\u200E\u200F\u202A-\u202E\u2066-\u2069]/.test(value))).toEqual([]);
+  });
+
+  it('n’a que les deux formes du pluriel français', () => {
+    expect(entries.map(([key]) => key).filter((key) => /_(zero|two|few|many)$/.test(key))).toEqual([]);
+  });
+
+  it('écrit l’apostrophe typographique et l’espace insécable avant les deux-points', () => {
+    expect(offending((value) => /[A-Za-zÀ-ÿ]'[A-Za-zÀ-ÿ]/.test(outsideMath(value)))).toEqual([]);
+    expect(offending((value) => / :/.test(outsideMath(value)))).toEqual([]);
+  });
+
+  it('nomme ses deux ateliers « Collège » et « Lycée »', () => {
+    expect(catalog.labs.moyen.short).toBe('Collège');
+    expect(catalog.labs.secondaire.short).toBe('Lycée');
+    expect(catalog.work.filters.labs.moyen).toBe('Collège');
+    expect(catalog.work.filters.labs.secondaire).toBe('Lycée');
   });
 });

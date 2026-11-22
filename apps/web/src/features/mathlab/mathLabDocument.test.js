@@ -5,12 +5,12 @@ import {
 
 const tool = { id: 'whiteboard', slug: 'tableau', schemaVersion: 3, createInitialData: (seed) => ({ seed: seed ?? null }) };
 
-describe('document du مختبر', () => {
+describe('document de l’atelier', () => {
   it('construit les adresses depuis le registre, jamais à la main', () => {
     expect(MATH_LAB_BASE_PATH).toBe('/espace/atelier');
     expect(mathLabToolPath(tool)).toBe('/espace/atelier/tableau');
     expect(mathLabToolPath(tool, 42)).toBe('/espace/atelier/tableau/42');
-    // L'enseignant a le même مختبر dans son espace.
+    // L'enseignant a le même atelier dans son espace.
     expect(mathLabToolPath(tool, null, '/enseignant/atelier')).toBe('/enseignant/atelier/tableau');
     expect(mathLabToolPath(tool, 7, '/enseignant/atelier')).toBe('/enseignant/atelier/tableau/7');
   });
@@ -39,7 +39,7 @@ describe('document du مختبر', () => {
     // …et l'adresse réécrite l'utilise : `mathLabToolPath(tool, id)` à deux
     // arguments retomberait sur `/espace/atelier`.
     expect(source).toMatch(/navigate\(mathLabToolPath\(tool, saved\.id, labRoot[,)]/);
-    // …et garde le مخبر (`?lab=`) : un document né dans مخبر المتوسط n'est
+    // …et garde l’atelier (`?lab=`) : un document né dans atelier du collège n'est
     // pas renvoyé sans lui (labScope.js).
     expect(source).toMatch(/navigate\(mathLabToolPath\(tool, saved\.id, labRoot, doc\.scope\)/);
   });
@@ -51,7 +51,7 @@ describe('document du مختبر', () => {
   });
 
   it('un document neuf n’a pas d’identifiant et tient l’état initial de son instrument', () => {
-    const doc = newMathLabDocument(tool, { title: 'سبّورة', seed: { elements: [1] } });
+    const doc = newMathLabDocument(tool, { title: 'tableau', seed: { elements: [1] } });
     expect(doc.id).toBeNull();
     expect(isPersisted(doc)).toBe(false);
     expect(doc.tool).toBe('whiteboard');
@@ -75,8 +75,8 @@ describe('document du مختبر', () => {
   });
 
   it('nettoie et borne le titre, avec le titre par défaut en repli', () => {
-    expect(cleanTitle('  رسم   المثلث ', 'سبّورة')).toBe('رسم المثلث');
-    expect(cleanTitle('   ', 'سبّورة')).toBe('سبّورة');
+    expect(cleanTitle('  Tracé   du triangle ', 'tableau')).toBe('Tracé du triangle');
+    expect(cleanTitle('   ', 'tableau')).toBe('tableau');
     expect(cleanTitle('a'.repeat(200), 'x')).toHaveLength(160);
   });
 });

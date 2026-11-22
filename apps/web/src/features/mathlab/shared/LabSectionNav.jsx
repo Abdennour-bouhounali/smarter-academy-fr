@@ -2,9 +2,9 @@ import { useCallback, useRef } from 'react';
 import './labKit.css';
 
 /**
- * LA BARRE DES LABORATOIRES d'un instrument — partagée par les مختبرات qui
- * rassemblent plusieurs outils sous un même toit (الجبر، الاحتمالات والإحصاء،
- * الأعداد والحساب).
+ * LA BARRE DES LABORATOIRES d'un instrument — partagée par les ateliers qui
+ * rassemblent plusieurs outils sous un même toit (Algèbre ; Probabilités et statistiques ;
+ * Le labo des nombres).
  *
  * Un instrument = UN document, UNE route ; les sections ne sont PAS des pages
  * (MATH_LAB.md §5l.2 : un élève qui passe d'un outil à l'autre travaille sur
@@ -12,7 +12,7 @@ import './labKit.css';
  * garde ses propres valeurs dans l'état du document.
  *
  * Accessibilité : un `tablist` WAI-ARIA avec focus itinérant ; les flèches
- * suivent le SENS DE LECTURE (← avance en arabe), Début/Fin sautent aux
+ * suivent le SENS DE LECTURE (→ avance, ← recule), Début/Fin sautent aux
  * extrémités. L'icône n'est jamais seule : chaque puce porte son nom, et la
  * description de la section active est lue sous la barre (et en `title`).
  *
@@ -35,13 +35,12 @@ export default function LabSectionNav({
     const keys = ['ArrowLeft', 'ArrowRight', 'Home', 'End'];
     if (!keys.includes(event.key)) return;
     event.preventDefault();
-    const rtl = getComputedStyle(listRef.current ?? document.body).direction === 'rtl';
     const index = sections.findIndex((section) => section.id === active);
     let next = index;
     if (event.key === 'Home') next = 0;
     else if (event.key === 'End') next = sections.length - 1;
     else {
-      const forward = (event.key === 'ArrowLeft') === rtl;
+      const forward = event.key === 'ArrowRight';
       next = (index + (forward ? 1 : -1) + sections.length) % sections.length;
     }
     const target = sections[next];

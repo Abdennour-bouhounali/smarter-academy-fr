@@ -11,9 +11,9 @@ import { buildTriangleSolveSteps, GIVEN_FIELDS } from './triangleSolveSteps.js';
 const missing = new Set();
 const i18n = i18next.createInstance();
 i18n.use(initReactI18next).init({
-  lng: 'ar-DZ',
-  fallbackLng: 'ar-DZ',
-  resources: { 'ar-DZ': { mathlab } },
+  lng: 'fr',
+  fallbackLng: 'fr',
+  resources: { 'fr': { mathlab } },
   ns: ['mathlab'],
   defaultNS: 'mathlab',
   interpolation: { escapeValue: false },
@@ -55,11 +55,13 @@ describe('TriangleSolvePanel — le raisonnement se déroule, il ne s’affiche 
       const { steps } = buildTriangleSolveSteps(given, TRIANGLES[given]);
       for (const step of steps) {
         expect(i18n.exists(step.textKey)).toBe(true);
+        // Les phrases du déroulé sont en français : aucune lettre arabe.
+        expect(i18n.t(step.textKey, step.params)).not.toMatch(/[\u0600-\u06FF]/);
       }
     }
     // Rendre la liste COMPLÈTE (ce que montre le dernier pas) par le vrai panneau n'est pas
     // possible en rendu statique ; on rend donc la StepList avec les mêmes textes.
-    const t = i18n.getFixedT('ar-DZ', 'mathlab');
+    const t = i18n.getFixedT('fr', 'mathlab');
     const { steps } = buildTriangleSolveSteps('angle-hyp', TRIANGLES['angle-hyp']);
     const html = wrap(createElement(StepList, {
       steps: steps.map((step) => ({ latex: step.latex, tone: step.tone, text: t(step.textKey, step.params) })),

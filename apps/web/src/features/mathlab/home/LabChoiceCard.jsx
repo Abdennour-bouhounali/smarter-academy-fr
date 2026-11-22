@@ -7,9 +7,9 @@ import { LAB_META } from './labMeta';
 const MAX_ICONS = 8;
 
 /**
- * UN des deux choix de l'accueil : مخبر المتوسط ou مخبر الثانوي.
+ * UN des deux choix de l'accueil : atelier du collège ou atelier du lycée.
  *
- * Toute la carte est le lien (comme ToolCard) : icône du مخبر, nom, les
+ * Toute la carte est le lien (comme ToolCard) : icône de l’atelier, nom, les
  * classes qu'il couvre, une phrase, et la RANGÉE des instruments qu'on y
  * trouvera — l'élève voit ce qu'il choisit avant de choisir. Les icônes sont
  * décoratives ; leur nom complet est dans `aria-label` du lien.
@@ -19,7 +19,7 @@ export default function LabChoiceCard({ scope, to, tools, onChoose }) {
   const { icon: LabIcon } = LAB_META[scope];
   const shown = tools.slice(0, MAX_ICONS);
   const rest = tools.length - shown.length;
-  const names = tools.map((tool) => t(tool.labelKey)).join('، ');
+  const names = tools.map((tool) => t(tool.labelKey)).join(', ');
 
   return (
     <Link
@@ -50,7 +50,7 @@ export default function LabChoiceCard({ scope, to, tools, onChoose }) {
         {rest > 0 && <span className="sa-ml-labcard__more" dir="ltr">{`+${rest}`}</span>}
       </span>
       <span className="sa-ml-labcard__foot">
-        <span className="sa-ml-labcard__count">{t('labs.toolCount', { count: tools.length })}</span>
+        <span className="sa-ml-labcard__count">{tools.length === 0 ? t('labs.toolCountEmpty') : t('labs.toolCount', { count: tools.length })}</span>
         <span className="sa-ml-labcard__cta">
           {t('labs.enter')}
           <ArrowForward size={15} aria-hidden="true" />

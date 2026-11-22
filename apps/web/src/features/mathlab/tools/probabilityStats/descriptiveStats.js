@@ -1,5 +1,5 @@
 /**
- * LA STATISTIQUE DESCRIPTIVE du laboratoire — ce que « الإحصاء الوصفي » lit
+ * LA STATISTIQUE DESCRIPTIVE du laboratoire — ce que « Statistique descriptive » lit
  * dans une série : les indicateurs, le tableau des effectifs et des effectifs
  * cumulés, les positions du tri, et quels graphiques sont HONNÊTES pour
  * cette série. Fonctions pures, sans React.
@@ -31,10 +31,10 @@ export const CHART_TYPES = Object.freeze(['bars', 'histogram', 'pie', 'box', 'cu
 export const MAX_SUBSTITUTION_TERMS = 8;
 
 /**
- * Le(s) MODE(S) d'une série — المنوال. Trois cas, et aucun n'est inventé :
+ * Le(s) MODE(S) d'une série. Trois cas, et aucun n'est inventé :
  *   - une seule valeur distincte     → elle est le mode ;
  *   - toutes les valeurs distinctes ont le MÊME effectif (1, 2, 3 ; ou
- *     2, 2, 5, 5)                      → « لا يوجد منوال » ;
+ *     2, 2, 5, 5)                      → « Pas de mode » ;
  *   - sinon                           → la ou les valeurs d'effectif maximal
  *                                       (une série peut être bimodale).
  */
@@ -82,7 +82,7 @@ export function describeDataset(values) {
 
 /**
  * Le tableau par VALEUR : effectif, fréquence, effectifs cumulés croissants
- * (التكرار المجمّع الصاعد) et l'angle d'un secteur (360° × f).
+ * (effectifs cumulés croissants) et l'angle d'un secteur (360° × f).
  */
 export function valueRows(values) {
   if (!Array.isArray(values) || values.length === 0) return [];

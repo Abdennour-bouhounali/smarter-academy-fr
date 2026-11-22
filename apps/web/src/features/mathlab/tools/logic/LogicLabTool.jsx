@@ -27,7 +27,7 @@ import './logic.css';
 import { clampToFeatures, logicFeatures, practiceKindsFor } from './scope.js';
 
 /**
- * مختبر المنطق والبرهان — le composant de l'instrument.
+ * « Logique et raisonnement » — le composant de l'instrument.
  *
  * Il ne fait presque rien lui-même, et c'est voulu : il tient l'état du
  * document, choisit l'aire à montrer, et laisse chaque aire parler à
@@ -46,7 +46,7 @@ import { clampToFeatures, logicFeatures, practiceKindsFor } from './scope.js';
  */
 export default function LogicLabTool({ initialData, onChange, onReady, capabilities = null }) {
   const { t } = useTranslation('mathlab');
-  // Le مخبر (scope.js) : au collège, l'énoncé, la réciproque, le contre-exemple
+  // Le niveau (scope.js) : au collège, l'énoncé, la réciproque, le contre-exemple
   // et les erreurs de raisonnement — ni quantificateurs, ni tables, ni preuves.
   const features = useMemo(() => logicFeatures(capabilities), [capabilities]);
   const [data, setData] = useState(() => clampToFeatures(normalizeLogicData(initialData), features));
@@ -73,7 +73,7 @@ export default function LogicLabTool({ initialData, onChange, onReady, capabilit
 
   const announce = useCallback((message) => setAnnouncement(message ?? ''), []);
 
-  /* ── La coquille : « مسح الكل » ─────────────────────────────────────── */
+  /* ── La coquille : « Tout recommencer » ─────────────────────────────────────── */
   useEffect(() => {
     onReady?.({
       clear: () => commit(() => {
@@ -103,7 +103,7 @@ export default function LogicLabTool({ initialData, onChange, onReady, capabilit
     commit(recordSeen);
   }, [challenge, challengeSeed, data.practice.level, commit]);
 
-  /** §37 — « اعرضه في المختبر » : ouvrir l'aire qui MONTRE la réponse. */
+  /** §37 — « Le voir dans l'atelier » : ouvrir l'aire qui MONTRE la réponse. */
   const showInLab = useCallback((target) => {
     if (!target || !features.areas.includes(target.area)) return;
     commit((current) => {
@@ -216,7 +216,7 @@ export default function LogicLabTool({ initialData, onChange, onReady, capabilit
             )}
           </div>
 
-          {/* « قاموس الرموز » : comment se lit ce qui n'est pas en arabe. */}
+          {/* « Lexique des symboles » : comment se lit la notation. */}
           <DictionaryPanel open={dictionaryOpen} onToggle={setDictionaryOpen} />
 
           {data.practice.open && (

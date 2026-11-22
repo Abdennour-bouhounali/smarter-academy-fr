@@ -17,12 +17,12 @@ import {
 import { POWER_TABS } from './numberState.js';
 
 /**
- * القوى والجذور — quatre onglets d'un même mode :
+ * Puissances et racines — quatre onglets d'un même mode :
  *
- *   القوّة               a^n écrite en produit, a^0 = 1, a^{-n} = 1/a^n, puissances de 10
- *   قواعد الحساب         produit, quotient, puissance de puissance — VÉRIFIÉES par le calcul
- *   الكتابة العلمية      d'un nombre TAPÉ, lue depuis ses chiffres (jamais un flottant)
- *   الجذر التربيعي       carré parfait dessiné, simplification exacte, valeur « مقرّبة »
+ *   Puissance            a^n écrite en produit, a^0 = 1, a^{-n} = 1/a^n, puissances de 10
+ *   Règles de calcul     produit, quotient, puissance de puissance — VÉRIFIÉES par le calcul
+ *   Écriture scientifique d'un nombre TAPÉ, lue depuis ses chiffres (jamais un flottant)
+ *   Racine carrée        carré parfait dessiné, simplification exacte, valeur « approchée »
  *
  * Toute la mathématique est dans `powers.js` (BigInt) ; ce composant affiche
  * le LaTeX qu'il reçoit, par MathText (isolé en LTR).

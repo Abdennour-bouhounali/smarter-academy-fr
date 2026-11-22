@@ -4,8 +4,8 @@ import { MEASUREMENT_SCHEMA_VERSION, createMeasurementData } from './measureStat
 import { summarizeMeasurement } from './summarize.js';
 
 /**
- * Le مختبر القياس (Laboratoire de la mesure) — le quatorzième instrument du
- * مختبر الرياضيات.
+ * L'atelier « Grandeurs et mesures » — le quatorzième instrument de
+ * l'atelier.
  *
  * Ce n'est PAS une calculatrice de formules. C'est un atelier où l'élève
  * fabrique la formule :
@@ -45,7 +45,7 @@ export const measurementTool = defineMathLabTool({
   defaultTitleKey: 'tools.measurement.defaultTitle',
   icon: Ruler,
   schemaVersion: MEASUREMENT_SCHEMA_VERSION,
-  // Les deux مخابر : aires, volumes, π, Pythagore et la somme des angles
+  // Les deux labos : aires, volumes, π, Pythagore et la somme des angles
   // s'initialisent au collège et se RÉUTILISENT au lycée (programme 2025 :
   // initialisée → réutilisée → approfondie). Rien n'y est à retirer.
   scopes: ['moyen', 'secondaire'],

@@ -40,7 +40,7 @@ import StepHistory from './StepHistory.jsx';
 import ParameterPanel from './ParameterPanel.jsx';
 
 /**
- * LA SECTION-CHEMIN : المعادلات et المتراجحات partagent CE composant — la
+ * LA SECTION-CHEMIN : « Équations » et « Inéquations » partagent CE composant — la
  * balance, les opérations aux deux membres, l'historique qui est aussi
  * l'annulation. Le mode ne change que ce qui doit changer :
  *
@@ -51,18 +51,18 @@ import ParameterPanel from './ParameterPanel.jsx';
  *                  écrit l'ensemble des solutions en intervalle ET en mots.
  *
  * Nouveautés V2 communes : la ligne INTERMÉDIAIRE de chaque opération (posée
- * aux deux membres, en orange, avant simplification), le « نشر وتبسيط كل
- * طرف » d'une saisie à parenthèses ou fractions, et les exemples par niveau.
+ * aux deux membres, en orange, avant simplification), le « Développer et réduire
+ * chaque membre » d'une saisie à parenthèses ou fractions, et les exemples par niveau.
  * Toute la mathématique reste dans les modules purs.
  *
- * « حلّ خطوة بخطوة » (2026-09-30) : la réponse n'apparaît JAMAIS d'un bloc.
+ * « Résoudre pas à pas » (2026-09-30) : la réponse n'apparaît JAMAIS d'un bloc.
  * Depuis l'équation COURANTE, walkthrough.js calcule tout le chemin
  * (applyOperation, les opérations d'un professeur) ; equationFrames.js en
  * fait des gestes au tableau (MathBoard) : désigner, poser l'opération sous
  * les deux membres, l'écrire, simplifier. Le résultat est le DERNIER frame ;
  * la droite graduée n'a sa borne qu'à ce moment-là, et la balance suit le
  * frame courant. Manipuler la balance, changer d'équation : retour à l'énoncé.
- * « التحقق » se déroule de la même façon, sur son propre tableau.
+ * « Vérifier » se déroule de la même façon, sur son propre tableau.
  */
 export default function PathSection({
   mode, path, commitPath, parameters = null, onToggleParameters = null, onChangeParameters = null, announce,
@@ -88,7 +88,7 @@ export default function PathSection({
   const studentSolved = verdict.kind === 'solved';
   const noUnknown = hasNoUnknown(equation);
 
-  // Le déroulé « حلّ خطوة بخطوة » : tout est calculé, rien n'est montré avant le geste.
+  // Le déroulé « Résoudre pas à pas » : tout est calculé, rien n'est montré avant le geste.
   const expandFirst = path.cursor === 0 && expansion ? expansion : null;
   const frames = useMemo(
     () => resolutionFrames(buildWalkthrough(equation), { expansion: expandFirst, start: equation }),
@@ -98,7 +98,7 @@ export default function PathSection({
     ? `${expandFirst.left?.steps[0].latex ?? formToLatex(equation.left)} ${RELATION_LATEX[equation.relation]} ${expandFirst.right?.steps[0].latex ?? formToLatex(equation.right)}`
     : equationToLatex(equation)), [expandFirst, equation]);
   const player = useStepReveal(frames.length, { resetKey: `${mode}|${problemLatex}` });
-  // « تدرّب بنفسك » : l'élève fait lui-même les gestes (désigner, choisir l'opération).
+  // « Entraîne-toi » : l'élève fait lui-même les gestes (désigner, choisir l'opération).
   const practice = useBoardPractice(frames, player, `${mode}|${problemLatex}`);
   const boardActive = player.started;
   const walkthroughDone = player.phase === 'completed';
@@ -106,7 +106,7 @@ export default function PathSection({
   const balanceEquation = boardFrame?.equation ?? equation;
   const balanceVerdict = useMemo(() => classify(balanceEquation), [balanceEquation]);
 
-  // « التحقق » : son propre tableau, son propre déroulé.
+  // « Vérifier » : son propre tableau, son propre déroulé.
   const verificationBoard = useMemo(
     () => (verification ? verificationFrames(path.steps[0].equation, verification) : []),
     [verification, path.steps],
@@ -151,7 +151,7 @@ export default function PathSection({
     return true;
   }, [commitPath, t, equation, maxSteps, announce]);
 
-  /** Repartir d'une saisie (« استكشاف » ou un exemple). */
+  /** Repartir d'une saisie (« Explorer » ou un exemple). */
   const startFrom = useCallback((source) => {
     const parsed = parseEquation(source);
     if (!parsed.ok) {
@@ -190,7 +190,7 @@ export default function PathSection({
     if (startFrom(example.source)) setExampleId(id);
   }, [inequalityMode, startFrom]);
 
-  /** « معادلة جديدة » / « متراجحة جديدة » : un exercice du niveau choisi. */
+  /** « Nouvelle équation » / « Nouvelle inéquation » : un exercice du niveau choisi. */
   const generate = useCallback(() => {
     const generated = inequalityMode
       ? generateInequality({ level: Math.min(level, 4) })
@@ -203,7 +203,7 @@ export default function PathSection({
     announce(t('tools.algebra.announceNew', { equation: generated.source }));
   }, [inequalityMode, level, inequality, equation.relation, commitPath, reset, t, announce, player]);
 
-  /** « حلّ خطوة بخطوة » : démarre le déroulé de l'équation affichée — le premier geste, jamais la fin. */
+  /** « Résoudre pas à pas » : démarre le déroulé de l'équation affichée — le premier geste, jamais la fin. */
   const solveSteps = useCallback(() => {
     setVerification(null);
     player.start();
@@ -268,7 +268,7 @@ export default function PathSection({
           </>
         )}
 
-        {/* « نشر وتبسيط كل طرف » : la saisie telle qu'écrite ; son développement se déroule au tableau */}
+        {/* « Développer et réduire chaque membre » : la saisie telle qu'écrite ; son développement se déroule au tableau */}
         {expansion && path.cursor === 0 && !boardActive && (
           <section className="sa-ml-alg__expansion" data-ml-alg-expansion aria-labelledby={`sa-ml-alg-expansion-${prefix}`}>
             <h3 className="sa-ml-alg__card-title" id={`sa-ml-alg-expansion-${prefix}`}>{t('tools.algebra.expansion.title')}</h3>
@@ -352,7 +352,7 @@ export default function PathSection({
           </div>
         )}
 
-        {/* « التحقق » : substitution → calcul → verdict, un geste à la fois */}
+        {/* « Vérifier » : substitution → calcul → verdict, un geste à la fois */}
         {verification && revealed && (
           <div
             className="sa-ml-alg__verification"

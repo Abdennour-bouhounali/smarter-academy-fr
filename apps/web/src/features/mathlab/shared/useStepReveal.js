@@ -33,7 +33,7 @@ function writePreference(mode, speed) {
  *   change, le déroulé revient à l'énoncé — sans image intermédiaire où l'ancien curseur
  *   montrerait la nouvelle réponse.
  *
- * `player.start()` est ce qu'appelle le bouton d'action de l'outil (« حلّ خطوة بخطوة ») :
+ * `player.start()` est ce qu'appelle le bouton d'action de l'outil (« … pas à pas ») :
  * il démarre la question affichée — et, si elle change dans le même geste, la NOUVELLE
  * (le drapeau `autostart` de l'état survit exactement au rendu qui applique le changement).
  *

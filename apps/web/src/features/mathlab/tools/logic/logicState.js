@@ -1,5 +1,5 @@
 /**
- * L'ÉTAT du مختبر المنطق والبرهان — logique pure, sans React.
+ * L'ÉTAT de l'atelier « Logique et raisonnement » — logique pure, sans React.
  *
  *     data = {
  *       area: 'statements' | 'connectors' | 'implication' | 'equivalence' |
@@ -22,7 +22,7 @@
  *
  * ── Dix aires, un seul laboratoire ────────────────────────────────────────
  * Comme numberLab (MATH_LAB.md §5l) : les aires ne sont pas des routes, et
- * chacune garde SES réglages — l'élève qui règle un exemple dans « الشرطية »,
+ * chacune garde SES réglages — l'élève qui règle un exemple dans « Implication »,
  * passe au contre-exemple et revient doit retrouver le sien.
  *
  * ── Ce qui n'est PAS stocké ──────────────────────────────────────────────
@@ -141,8 +141,8 @@ const DEFAULTS = Object.freeze({
  * L'état d'un document NEUF.
  *
  * §54 : le laboratoire n'ouvre PAS sur un menu. Il ouvre sur l'aire
- * « المثال المضاد », c'est-à-dire sur une question posée — « هل تستطيع إثبات
- * أن هذه العبارة خاطئة؟ » — et une droite où chercher.
+ * « Contre-exemple », c'est-à-dire sur une question posée — « Peux-tu
+ * démontrer que cette proposition est fausse ? » — et une droite où chercher.
  */
 export function createLogicData(seed = null) {
   const data = {
@@ -518,7 +518,7 @@ export const recordSolved = (data) => ({ ...data, practice: { ...data.practice, 
 export const recordSeen = (data) => ({ ...data, practice: { ...data.practice, seen: data.practice.seen + 1 } });
 export const recordHint = (data) => ({ ...data, practice: { ...data.practice, hintsUsed: data.practice.hintsUsed + 1 } });
 
-/** « مسح الكل » : tout revient à l'ouverture, les compteurs compris. */
+/** « Tout recommencer » : tout revient à l'ouverture, les compteurs compris. */
 /* ── §28 — la récurrence : son plateau, ses transitions ──────────────── */
 
 export function setInduction(data, id) {

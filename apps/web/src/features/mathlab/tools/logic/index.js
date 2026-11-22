@@ -5,10 +5,10 @@ import { LOGIC_CAPABILITIES, LOGIC_SCOPES } from './scope.js';
 import { summarizeLogic } from './summarize.js';
 
 /**
- * مختبر المنطق والبرهان (Logic & Proof Lab) — le treizième instrument du
- * مختبر الرياضيات.
+ * « Logique et raisonnement » (Logic & Proof Lab) — le treizième instrument
+ * de l'atelier.
  *
- *     أقترح ← أختبر ← أبحث عن مثال مضاد ← ألاحظ ← أبني الحجة ← أتحقق
+ *     je propose → je teste → je cherche un contre-exemple → j'observe → je construis l'argument → je vérifie
  *
  * Ce n'est PAS une leçon statique sur le vocabulaire de la logique.
  * L'élève ne lit jamais « une implication est vraie sauf si P est vrai et Q
@@ -45,7 +45,7 @@ export const logicTool = defineMathLabTool({
   defaultTitleKey: 'tools.logic.defaultTitle',
   icon: GitBranch,
   schemaVersion: LOGIC_SCHEMA_VERSION,
-  // Les deux مخابر — au collège : énoncé, réciproque, contre-exemple, erreurs (scope.js).
+  // Les deux niveaux (collège / lycée) — au collège : énoncé, réciproque, contre-exemple, erreurs (scope.js).
   scopes: LOGIC_SCOPES,
   capabilities: LOGIC_CAPABILITIES,
   createInitialData: createLogicData,

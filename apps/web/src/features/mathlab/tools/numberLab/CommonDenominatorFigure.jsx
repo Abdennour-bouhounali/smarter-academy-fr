@@ -3,7 +3,7 @@ import FractionShape from './FractionShape.jsx';
 import { commonDenominatorStory } from './commonDenominatorStory.js';
 
 /**
- * « توحيد المقامات » — la figure du pas « PPCM des dénominateurs ».
+ * « Mise au même dénominateur » — la figure du pas « PPCM des dénominateurs ».
  *
  * Les deux fractions, dans le modèle choisi par l'élève (barre, disque ou
  * droite), chacune avec SES coupes en trait plein et les coupes du PPCM en
@@ -39,10 +39,10 @@ export default function CommonDenominatorFigure({ left, right, model }) {
               width={model === 'circle' ? 150 : 300}
               showLabel
             />
-            <p className="sa-ml-nb__common-note" dir="rtl">
+            <p className="sa-ml-nb__common-note">
               {t(`${K}.eachPart`, { count: story[key].factor })}
               {story[key].factor > 1 && (
-                // La formule hors de la phrase arabe : isolée LTR, jamais réordonnée.
+                // La formule hors de la phrase : isolée, jamais coupée.
                 <bdi dir="ltr" className="sa-ml-nb__common-formula">{` ${frac.d} × ${story[key].factor} = ${L}`}</bdi>
               )}
             </p>
@@ -53,7 +53,7 @@ export default function CommonDenominatorFigure({ left, right, model }) {
       <div className="sa-ml-nb__common-multiples" dir="ltr">
         {['left', 'right'].map((key) => (
           <p key={key} className="sa-ml-nb__common-row">
-            <span className="sa-ml-nb__common-label" dir="rtl">{t(`${K}.multiplesOf`, { d: story[key].d })}</span>
+            <span className="sa-ml-nb__common-label">{t(`${K}.multiplesOf`, { d: story[key].d })}</span>
             {story[key].multiples.map((m, index) => (
               // eslint-disable-next-line react/no-array-index-key
               <span key={index} className={`sa-ml-nb__common-multiple${m === L ? ' is-common' : ''}`}>{m}</span>

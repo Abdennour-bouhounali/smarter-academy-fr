@@ -3,7 +3,7 @@
  *
  * L'ancien escalier (`inductionLab.js`) ne savait qu'une chose : « l'élève
  * écrit uₙ = 2n+1, on compare à une table de valeurs attendues ». Les vrais
- * exercices du BAC algérien n'ont pas cette forme. Ils ressemblent à :
+ * exercices de terminale n'ont pas cette forme. Ils ressemblent à :
  *
  *     u₀ = −1      uₙ₊₁ = ⅓uₙ + 2      démontrer que  uₙ < 3
  *
@@ -22,7 +22,7 @@
  * `sequenceExpression.js` (donc l'analyseur du grapheur) reste le seul
  * lecteur d'expressions de la plateforme. Ce module ne fait qu'appeler
  * `parseExpression` avec d'AUTRES variables liées — `u`, `v`, `w`, `n` au
- * lieu de `u`, `n` — exactement comme les متتاليات l'appellent avec `n` au
+ * lieu de `u`, `n` — exactement comme l'atelier des suites l'appelle avec `n` au
  * lieu de `x`. Toujours aucun `eval`, aucun `new Function` : la saisie de
  * l'élève devient un arbre, jamais du JavaScript exécuté.
  *
@@ -97,7 +97,8 @@ export function normalizeProposition(source, names = SEQUENCE_NAMES) {
     .replace(/\\frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}/g, '($1)/($2)')
     .replace(/\\cdot|\\times/g, '×')
     .replace(/[−–—]/g, '-')
-    .replace(/[٠-٩]/g, (d) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)));
+    // Chiffres arabes-indiens (U+0660–U+0669) : acceptés, lus comme 0–9.
+    .replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x0660));
 
   for (const name of names) {
     const n = escapeName(name);

@@ -120,7 +120,7 @@ export function matrixFor(step, vertices = []) {
  *     TOURNE, elle ne se déforme pas) ;
  *   - une homothétie de rapport 3 à t = 0,5 est une homothétie de rapport 2
  *     (interpolation du RAPPORT, pas du log) ;
- *   - une translation avance sur son شعاع ;
+ *   - une translation avance sur son vecteur ;
  *   - une réflexion est la seule qui n'a pas d'état intermédiaire honnête :
  *     on la joue comme une rotation d'un demi-tour AUTOUR de son axe, vue en
  *     projection — ce qui donne une figure qui « s'écrase » puis se
@@ -249,8 +249,8 @@ export function cumulativeMatrix(figure, steps) {
  *
  * La tolérance est RELATIVE : comparer des longueurs de 1e−4 et des
  * longueurs de 1e4 avec le même seuil absolu déclarerait l'une conservée et
- * l'autre non, pour le même calcul. C'est la règle déjà tenue par le مختبر
- * الأشعة (analysis.js).
+ * l'autre non, pour le même calcul. C'est la règle déjà tenue par l'atelier
+ * des vecteurs (analysis.js).
  */
 export function analyzeInvariants(before, after) {
   const sourceVertices = Array.isArray(before) ? before : [];
@@ -368,7 +368,7 @@ function parallel(u, v) {
  *
  * On ne rend pas une chaîne traduite — la traduction appartient à l'interface
  * — mais une STRUCTURE : la clé i18n et ses valeurs. Le composant l'habille
- * en arabe, le test la lit en JavaScript, et la formule reste juste dans les
+ * en français, le test la lit en JavaScript, et la formule reste juste dans les
  * deux cas.
  */
 export function coordinateFormula(step, vertices = []) {

@@ -11,7 +11,7 @@ const ICONS = { bars: BarChart3, histogram: BarChartBig, pie: PieChart, box: Can
  */
 export default function ChartTypePicker({ active, availability, fallback, onChange, types = CHART_TYPES }) {
   const { t } = useTranslation('mathlab');
-  // `types` : ceux que le مخبر montre (scope.js) — la boîte n'existe pas au collège.
+  // `types` : ceux que le labo montre (scope.js) — la boîte n'existe pas au collège.
   const refused = types.filter((type) => !availability[type].available && availability[type].reason !== 'empty');
 
   return (

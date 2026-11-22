@@ -8,7 +8,7 @@ import { formatValue } from '../functionGrapher/grapherFormat.js';
  *
  * C'est ici que la relation se voit. Le tableau ne commente rien, ne
  * souligne rien, ne suggère aucune colonne : il aligne des mesures, et
- * demande « ماذا تلاحظ بين هذه الأعداد؟ ». C'est l'élève qui compare.
+ * demande « Que remarques-tu entre ces nombres ? ». C'est l'élève qui compare.
  *
  * ── Ce que le tableau ne fait pas ───────────────────────────────────────
  * Il n'ajoute pas de colonne « L × l » à côté de « A » : ce serait donner la
@@ -16,8 +16,7 @@ import { formatValue } from '../functionGrapher/grapherFormat.js';
  * enquête déclare elle-même (C ÷ d pour le cercle), et elle est le SUJET de
  * l'enquête, pas sa réponse.
  *
- * Les nombres sont en LTR (dir="ltr") même en arabe : ce sont des
- * mathématiques (§30). L'en-tête, lui, suit la direction de la page.
+ * Les nombres sont en LTR (dir="ltr") : ce sont des mathématiques (§30).
  */
 export default function ObservationTable({
   investigation, observations, onRecord, onRemove, onClear, testResults, duplicateWarning,

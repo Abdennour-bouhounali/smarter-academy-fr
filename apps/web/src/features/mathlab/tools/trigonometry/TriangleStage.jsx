@@ -5,14 +5,14 @@ import { solveRightTriangle, ratiosFromTriangle } from './trigMath.js';
 import { formatDegrees, formatLength, formatRatio } from './trigFormat.js';
 
 /**
- * LE TRIANGLE RECTANGLE (§9, §10) — le sujet 4.2 du programme algérien.
+ * LE TRIANGLE RECTANGLE (§9, §10) — la trigonométrie du collège.
  *
- * C'est ici que vit « النسب المثلثية في مثلث قائم : جيب · جيب تمام · ظل
- * زاوية حادة » (ALGERIA_4AM_CURRICULUM §4.2), et c'est pour cela que
- * l'instrument OUVRE sur ce mode : le cercle trigonométrique appartient au
- * lycée, le triangle est le programme de l'élève de 4AM. Le cercle reste à
+ * C'est ici que vivent le cosinus, le sinus et la tangente d'un angle aigu
+ * dans un triangle rectangle, et c'est pour cela que l'instrument OUVRE sur
+ * ce mode : le cercle trigonométrique appartient au lycée, le triangle est
+ * le programme du collège. Le cercle reste à
  * un clic — on ne prive personne — mais le premier écran est celui du
- * manuel (la règle que §5f.10 tient pour le produit scalaire des أشعة).
+ * manuel (la règle que §5f.10 tient pour le produit scalaire des vecteurs).
  *
  * ── Ce qu'on tire ────────────────────────────────────────────────────────
  * Le sommet libre se glisse (§9 : « The student should be able to drag a

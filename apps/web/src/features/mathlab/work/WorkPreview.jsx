@@ -59,8 +59,7 @@ function FallbackPreview({ icon: Icon }) {
  *
  *   `detail.curves`     des EXPRESSIONS `y = f(x)` que la vignette
  *                       rééchantillonne (le grapheur) ;
- *   `detail.polylines`  des POINTS déjà calculés (le مختبر المقاطع
- *                       المخروطية — un cercle n'est pas une fonction de x,
+ *   `detail.polylines`  des POINTS déjà calculés (l’outil Coniques — un cercle n'est pas une fonction de x,
  *                       et l'échantillonner ici demanderait d'embarquer le
  *                       moteur des coniques dans une carte).
  *
@@ -184,7 +183,7 @@ function toFunction(expression) {
   if (/^1\/x$/.test(e)) return (x) => (Math.abs(x) < 1e-6 ? NaN : 1 / x);
   if (/^\|x\|$|^abs\(x\)$/.test(e)) return Math.abs;
 
-  // a·x + b (le cas le plus fréquent en 4AM : الدوال الخطية والتآلفية).
+  // a·x + b (le cas le plus fréquent au collège : fonctions linéaires et affines).
   const affine = /^(-?\d*(?:[.,]\d+)?)?\*?x(?:([+-])(\d+(?:[.,]\d+)?))?$/.exec(e);
   if (affine) {
     const a = affine[1] === '' || affine[1] === undefined ? 1 : affine[1] === '-' ? -1 : Number(affine[1].replace(',', '.'));
@@ -259,7 +258,7 @@ function Box({ w, h, d, ...style }) {
   );
 }
 
-/** La سبّورة : la silhouette des traits, ramenée dans le cadre. */
+/** Le tableau : la silhouette des traits, ramenée dans le cadre. */
 function StrokesPreview({ detail }) {
   const box = detail.box;
   const shapes = Array.isArray(detail.shapes) ? detail.shapes : [];
@@ -278,7 +277,7 @@ function StrokesPreview({ detail }) {
         const h = Math.abs(s.h * scale);
         // La clé reste HORS de l'objet répandu : React veut la recevoir
         // directement, et la répandre lui arrache un avertissement à chaque
-        // trait (repéré par la recette de la سبّورة).
+        // trait (repéré par la recette du tableau).
         const common = { stroke: s.c || '#1e1e1e', strokeWidth: 1.4, fill: 'none' };
 
         if (s.t === 'ellipse') return <ellipse key={i} {...common} cx={x + (s.w * scale) / 2} cy={y + (s.h * scale) / 2} rx={w / 2 || 1} ry={h / 2 || 1} />;
@@ -333,9 +332,9 @@ function ChartPreview({ detail }) {
 }
 
 /**
- * Le مختبر الجبر : l'équation, en TEXTE — une équation se lit, elle ne se
- * dessine pas. Le texte est neutre en direction (`dir="ltr"`) : « 2x + 3 =
- * 11 » ne se renverse pas dans une page RTL.
+ * L’outil Algèbre : l'équation, en TEXTE — une équation se lit, elle ne se
+ * dessine pas. Le texte est posé `dir="ltr"`, comme toute
+ * formule : « 2x + 3 = 11 ».
  */
 function EquationPreview({ detail }) {
   const first = detail.first;
@@ -359,7 +358,7 @@ function EquationPreview({ detail }) {
   );
 }
 
-/** Le مختبر الأشعة : les أشعة du pas courant, dans leur repère. */
+/** L’outil Vecteurs : les vecteurs du pas courant, dans leur repère. */
 function VectorsPreview({ detail }) {
   const vectors = Array.isArray(detail.vectors) ? detail.vectors.slice(0, 6) : [];
   const points = Array.isArray(detail.points) ? detail.points.slice(0, 10) : [];
@@ -395,7 +394,7 @@ function VectorsPreview({ detail }) {
   );
 }
 
-/** Le مختبر المثلثات : le triangle rectangle, ou le cercle. */
+/** L’outil Trigonométrie : le triangle rectangle, ou le cercle. */
 function TrianglePreview({ detail }) {
   const cx = VIEW.w / 2;
   const cy = VIEW.h / 2;
@@ -440,7 +439,7 @@ function TrianglePreview({ detail }) {
   );
 }
 
-/** Le مختبر المتتاليات : les premiers termes, en nuage de points. */
+/** L’outil Suites : les premiers termes, en nuage de points. */
 function SequencePreview({ detail }) {
   const terms = Array.isArray(detail.terms) ? detail.terms.filter(Number.isFinite) : [];
   if (terms.length === 0) return <Axes />;
@@ -464,7 +463,7 @@ function SequencePreview({ detail }) {
 }
 
 /**
- * Le مختبر التحويلات : la figure et son IMAGE, superposées.
+ * L’outil Transformations : la figure et son IMAGE, superposées.
  *
  * C'est ce qui distingue deux documents de cet instrument l'un de l'autre —
  * pas la famille de transformation, mais le DESSIN qu'elle a produit. Le

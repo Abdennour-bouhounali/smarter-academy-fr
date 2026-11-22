@@ -12,7 +12,7 @@ import { generateChallenge, checkAnswer, PREDICTIONS } from './practice.js';
  *
  * 1. **Rien ne bloque.** Une réponse fausse affiche l'explication et laisse
  *    tout ouvert : le graphe reste manipulable derrière, le champ reste
- *    éditable, « أعد المحاولة » est toujours là. Il n'existe aucun état
+ *    éditable, « Réessayer » est toujours là. Il n'existe aucun état
  *    « verrouillé » dans ce fichier — donc il ne peut pas en arriver un (§43).
  * 2. **Aucun indice ne donne la réponse** (§31). Les trois indices viennent
  *    du défi lui-même, du plus général au plus précis, et le troisième

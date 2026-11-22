@@ -1,7 +1,7 @@
 /**
  * LE DÉROULÉ D'UNE SOLUTION — la machine à états, pure, sans React.
  *
- * Exigence de la propriétaire (2026-09-30) : dans le مختبر, une solution ne
+ * Exigence de la propriétaire (2026-09-30) : dans l’atelier, une solution ne
  * s'affiche JAMAIS d'un bloc. L'outil calcule toute la suite des états
  * mathématiques, puis l'élève la DÉCOUVRE pas à pas, comme un professeur qui
  * écrit au tableau :
@@ -10,12 +10,12 @@
  *       (l'énoncé seul)                             (le résultat est le DERNIER pas)
  *
  * Deux façons d'avancer, un seul curseur :
- *   'manual' — « خطوة بخطوة » : un pas par clic (et un pas en arrière) ;
- *   'auto'   — « عرض تلقائي » : un pas toutes les `SPEEDS[speed]` ms, en pause à volonté ;
- *   'practice' — « تدرّب بنفسك » : comme le manuel, mais aux pas qui portent un
+ *   'manual' — « Pas à pas » : un pas par clic (et un pas en arrière) ;
+ *   'auto'   — « Défilement automatique » : un pas toutes les `SPEEDS[speed]` ms, en pause à volonté ;
+ *   'practice' — « Entraîne-toi » : comme le manuel, mais aux pas qui portent un
  *              exercice (frame.task) l'ÉLÈVE désigne les éléments et l'opération
- *              (useBoardPractice) ; le composant bloque « التالي » tant qu'il n'a pas répondu.
- * Changer de mode ou de vitesse GARDE le pas courant ; seul « من البداية » / une
+ *              (useBoardPractice) ; le composant bloque « Suivant » tant qu'il n'a pas répondu.
+ * Changer de mode ou de vitesse GARDE le pas courant ; seul « Du début » / une
  * nouvelle question y remet à zéro.
  *
  *     state = { cursor, total, mode, speed, playing, key, autostart }
@@ -79,7 +79,7 @@ export function stepReducer(state, action) {
     case 'clearAutostart':
       return state.autostart ? { ...state, autostart: false } : state;
     case 'start':
-      // « ابدأ الحل » / « تشغيل » : le PREMIER pas, jamais la fin.
+      // « Commencer la solution » / « Lecture » : le PREMIER pas, jamais la fin.
       if (state.total === 0) return state;
 
       return { ...state, cursor: Math.max(1, clamp(state.cursor, state.total)), playing: state.mode === 'auto' && state.total > 1 && state.cursor < state.total - 1 };
@@ -104,10 +104,10 @@ export function stepReducer(state, action) {
 
       return { ...state, cursor: Math.max(1, state.cursor), playing: true };
     case 'restart':
-      // « إعادة الحل » / « إعادة التشغيل » : depuis le premier pas, dans le mode courant.
+      // « Refaire la solution » / « Rejouer » : depuis le premier pas, dans le mode courant.
       return stepReducer({ ...state, cursor: 0, playing: false }, { type: 'start' });
     case 'begin':
-      // Le bouton d'action de l'outil (« حلّ خطوة بخطوة ») : démarre CETTE question,
+      // Le bouton d'action de l'outil (« … pas à pas ») : démarre CETTE question,
       // et la suivante si elle change dans le même geste.
       return { ...stepReducer({ ...state, cursor: 0, playing: false }, { type: 'start' }), autostart: true };
     case 'rewind':

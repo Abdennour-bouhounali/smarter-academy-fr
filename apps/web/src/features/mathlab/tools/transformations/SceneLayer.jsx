@@ -192,9 +192,9 @@ function FigureShape({ vertices, color, role, toPx, kind }) {
  * Elle n'est pas une droite par défaut : le chemin d'un point dépend de la
  * transformation, et le montrer faux enseignerait faux.
  *
- *   - un انسحاب : une flèche droite ;
- *   - un دوران : un ARC de cercle centré sur le centre de rotation ;
- *   - un تحاكي : un rayon issu du centre ;
+ *   - une translation : une flèche droite ;
+ *   - une rotation : un ARC de cercle centré sur le centre de rotation ;
+ *   - une homothétie : un rayon issu du centre ;
  *   - une réflexion : le segment perpendiculaire à l'axe (§15).
  */
 function Trail({ from, to, step, figureVertices, color, toPx }) {
@@ -268,10 +268,10 @@ function TransformGuide({ step, figures, toPx, view, hideImage = false }) {
   }
 
   if (step.kind === 'translation') {
-    // Avant le verdict d'une question, pas de شعاع : tiré depuis A, son bout
+    // Avant le verdict d'une question, pas de vecteur : tiré depuis A, son bout
     // serait exactement l'image A′ que l'élève doit trouver.
     if (hideImage) return null;
-    // Le شعاع de l'انسحاب, dessiné depuis le premier sommet (§28).
+    // Le vecteur de la translation, dessiné depuis le premier sommet (§28).
     const from = vertices[0];
     if (!M.isPoint(from)) return null;
     const to = { x: from.x + Number(step.vx), y: from.y + Number(step.vy) };

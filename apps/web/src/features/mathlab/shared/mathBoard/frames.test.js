@@ -78,7 +78,7 @@ describe('MathBoard ne montre jamais l\'avenir', () => {
   });
 });
 
-describe('« تدرّب بنفسك » — les exercices posés sur les frames', async () => {
+describe('« Entraîne-toi » — les exercices posés sur les frames', async () => {
   const { makeTask, checkPick, checkOperator, normalizeOperator } = await import('./frames.js');
 
   it('les constructeurs posent l\'exercice du vrai geste', () => {
@@ -116,7 +116,7 @@ describe('« تدرّب بنفسك » — les exercices posés sur les frames', 
   });
 });
 
-describe('« تدرّب بنفسك » — l\'élève calcule lui-même le résultat', async () => {
+describe('« Entraîne-toi » — l\'élève calcule lui-même le résultat', async () => {
   const { parseNumberAnswer, checkAnswer, locateAnswer } = await import('./frames.js');
 
   it('lit les écritures d\'un nombre et juge à l\'égalité exacte', () => {

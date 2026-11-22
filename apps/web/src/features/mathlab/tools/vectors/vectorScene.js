@@ -10,16 +10,16 @@
  *
  * Rien n'est « recalculé quand A bouge » : rien n'a jamais été gardé. Un
  * point translaté n'a pas de coordonnées enregistrées, il a un parent et un
- * شعاع ; ses coordonnées n'existent que dans la scène résolue. Il est donc
+ * vecteur ; ses coordonnées n'existent que dans la scène résolue. Il est donc
  * IMPOSSIBLE qu'un objet dérivé se désynchronise de sa source — le bug
  * classique de ce genre d'outil n'a pas d'endroit où se produire.
  *
  * Les objets (`kind`) :
  *
- *   point      free      {x, y}                    une نقطة libre, glissable
+ *   point      free      {x, y}                    un point libre, glissable
  *              midpoint  {of: [idA, idB]}          le milieu M de [AB] (§18)
- *              image     {of: idA, by: idVector}   l'image de A par un انسحاب (§16)
- *   vector     free      {origin:{x,y}, x, y}      un شعاع libre, posé où l'on veut (§6)
+ *              image     {of: idA, by: idVector}   l'image de A par une translation (§16)
+ *   vector     free      {origin:{x,y}, x, y}      un vecteur libre, posé où l'on veut (§6)
  *              points    {from: idA, to: idB}      ⃗AB, tenu par ses deux points (§5)
  *              sum       {of: [idU, idV]}          u + v (§11)
  *              difference{of: [idU, idV]}          u − v (§13)
@@ -40,14 +40,14 @@ export const VECTOR_KINDS = Object.freeze(['free', 'points', 'sum', 'difference'
 /**
  * Les bornes du document. Elles tiennent la scène sous le plafond d'octets du
  * serveur (MathLabTools.php) ET sous le seuil de lisibilité : un plan avec
- * quarante أشعة n'enseigne plus rien.
+ * quarante vecteurs n'enseigne plus rien.
  */
 export const MAX_POINTS = 26;   // autant que de lettres : A … Z
 export const MAX_VECTORS = 12;
 export const MAX_POLYGONS = 4;
 export const MAX_POLYGON_VERTICES = 8;
 
-/** Les coordonnées vivent dans un carré raisonnable : au-delà, ce n'est plus du 4AM. */
+/** Les coordonnées vivent dans un carré raisonnable : au-delà, ce n'est plus du collège. */
 const COORD_LIMIT = 1e4;
 
 /** Le pas d'aimantation : un glissement s'arrête sur les valeurs du quadrillage. */
@@ -63,7 +63,7 @@ export function newId(prefix) {
 
 /** Les noms de points, dans l'ordre du manuel. */
 export const POINT_NAMES = Object.freeze('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''));
-/** Les noms de أشعة : ceux des manuels algériens (u, v, w…). */
+/** Les noms de vecteurs : les lettres usuelles (u, v, w…). */
 export const VECTOR_NAMES = Object.freeze(['u', 'v', 'w', 'a', 'b', 'c', 'd', 'e', 's', 't', 'p', 'q']);
 
 /**
@@ -99,7 +99,7 @@ export function nextName(used, names) {
   return `x${taken.size}`;
 }
 
-/** La première couleur que ne porte aucun شعاع — deux أشعة voisins ne se confondent pas. */
+/** La première couleur que ne porte aucun vecteur — deux vecteurs voisins ne se confondent pas. */
 export function nextColor(used) {
   const taken = new Set(used.map((c) => String(c).toLowerCase()));
 
@@ -234,7 +234,7 @@ export function resolveScene(scene) {
       }
     }
 
-    // Un شعاع posé nulle part part de l'origine du repère.
+    // Un vecteur posé nulle part part de l'origine du repère.
     if (components && !origin) origin = { x: 0, y: 0 };
 
     visiting.delete(id);

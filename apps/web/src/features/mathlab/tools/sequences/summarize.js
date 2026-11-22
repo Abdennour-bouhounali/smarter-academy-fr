@@ -2,7 +2,7 @@ import { buildDefinition } from './sequenceModel.js';
 import { generate } from './sequenceMath.js';
 
 /**
- * Le RÉSUMÉ d'un document du مختبر المتتاليات : la famille, ses paramètres,
+ * Le RÉSUMÉ d'un document du labo des suites : la famille, ses paramètres,
  * et les PREMIERS TERMES — calculés ici, une douzaine, parce que les termes
  * ne sont jamais stockés (sequenceState.js : on sait les refaire, donc on ne
  * les garde pas). Douze nombres suffisent à dessiner la miniature en points

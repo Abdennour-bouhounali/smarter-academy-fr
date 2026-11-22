@@ -1,13 +1,13 @@
-/* ── Le مختبر الجبر (laboratoire d'algèbre) ───────────────────────────────
+/* ── L'atelier d'algèbre ───────────────────────────────
    La scène (équation, balance, droite graduée) prend la place ; le panneau
-   (saisie, opérations, historique) se tient sur le bord de départ — à droite
-   en arabe, par propriété logique, jamais par `left`/`right`. Sous 768 px la
+   (saisie, opérations, historique) se tient sur le bord de départ, par
+   propriété logique, jamais par `left`/`right`. Sous 768 px la
    scène passe au-dessus et le panneau dessous, comme dans les trois autres
    instruments.
 
    Les DESSINS (balance, droite graduée) et toute notation sont `direction:
-   ltr` : SVG n'hérite pas de `dir`, et un repère mathématique ne se renverse
-   pas sur une page RTL (ARABIC_RTL_CONTRACT.md §4). */
+   ltr` : SVG n'hérite pas de `dir`, et une notation se lit de gauche à
+   droite (FRENCH_LANGUAGE_CONTRACT.md §8). */
 
 .sa-ml-alg {
   position: absolute;
@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 /* V2 : la barre des sections en haut, puis le CORPS de la section — c'est
@@ -113,7 +113,7 @@
 }
 
 .sa-ml-alg__numberline-title {
-  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 0.875rem;
   color: #0f172a;
@@ -266,7 +266,7 @@
 
 .sa-ml-alg__heading {
   margin: 0;
-  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 0.9375rem;
   color: #0f172a;
@@ -288,9 +288,8 @@
   background: #ffffff;
   border: 1px solid #cbd5e1;
   border-radius: 0.5rem;
-  /* Chiffres LATINS, jamais indo-arabes : la police arabe de repli
-     rendrait « 11 » en « ١١ » — convention des manuels algériens de
-     mathématiques (grapherFormat.js). */
+  /* Chiffres alignés (lining) : une saisie se lit comme un calcul
+     (grapherFormat.js). */
   font-variant-numeric: lining-nums;
   -moz-font-feature-settings: 'lnum';
   font-feature-settings: 'lnum';
@@ -453,7 +452,7 @@
   color: #b91c1c;
 }
 
-/* ── تراجع / إعادة ─────────────────────────────────────────────────────── */
+/* ── Annuler / Rétablir ─────────────────────────────────────────────────────── */
 
 .sa-ml-alg__history-actions { display: flex; gap: 0.375rem; flex-wrap: wrap; }
 
@@ -590,8 +589,7 @@
 }
 
 .sa-ml-alg__step-op-sides {
-  direction: rtl;
-  font-family: 'Inter', 'Cairo', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.6875rem;
   font-weight: 500;
   color: #94a3b8;
@@ -710,7 +708,7 @@
   to { opacity: 1; transform: none; }
 }
 
-/* ── نشر وتبسيط كل طرف ─────────────────────────────────────────────── */
+/* ── Développer et réduire chaque membre ───────────────────────────────────────────── */
 
 .sa-ml-alg__expansion {
   width: 100%;
@@ -882,7 +880,7 @@
   grid-column: 1 / -1;
   background: transparent;
   border: 0;
-  font-family: 'Cairo', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   color: var(--sa-kit-slate, #64748b);
 }
@@ -957,7 +955,7 @@
 .sa-ml-alg__body[data-ml-alg-mode='simplify'] .sa-ml-alg__explore:hover,
 .sa-ml-alg__body[data-ml-alg-mode='factor'] .sa-ml-alg__explore:hover { background: #006b37; }
 
-/* ── Le plan (réutilisé de مختبر الأشعة) ───────────────────────────── */
+/* ── Le plan (réutilisé de l'atelier des vecteurs) ───────────────────────────── */
 
 .sa-ml-alg__plane-host {
   position: relative;
@@ -987,7 +985,7 @@
 }
 
 /* mafs livre un thème SOMBRE (node_modules/mafs/core.css) : sans ces
-   variables — celles du grapheur et du مختبر الأشعة — le repère serait noir. */
+   variables — celles du grapheur et de l'atelier des vecteurs — le repère serait noir. */
 .sa-ml-alg .sa-ml-vec__plane .MafsView {
   position: absolute;
   inset: 0;
@@ -1005,7 +1003,7 @@
 .sa-ml-alg .sa-ml-vec__plane .mafs-axis text { fill: #475569; }
 
 .sa-ml-alg .sa-ml-vec__axisnames text {
-  font-family: 'Inter', 'Cairo', serif;
+  font-family: 'Inter', serif;
   font-size: 15px;
   fill: #334155;
 }
@@ -1102,7 +1100,7 @@
 .sa-ml-alg__table-caption {
   caption-side: top;
   padding-bottom: 0.3rem;
-  font-family: 'Cairo', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 0.82rem;
   color: var(--sa-kit-slate, #64748b);
@@ -1142,7 +1140,7 @@
   .sa-ml-alg__flip { animation: none; }
 }
 
-/* ══ « حلّ خطوة بخطوة » — le tableau qui se construit (2026-09-30) ═══════
+/* ══ « Résoudre pas à pas » — le tableau qui se construit (2026-09-30) ═══════
    La barre des pas flotte (StepPlayer, shared/labKit.css) : elle ne prend
    plus de place dans la scène. Le tableau (shared/mathBoard) s'y pose. */
 
@@ -1185,7 +1183,7 @@
 
 /* ── Téléphone : UN seul défilement, celui de l'écran ──────────────────────
    Sous 768 px, la scène et le panneau ne défilent plus chacun dans leur
-   boîte (la barre « الحل خطوة بخطوة » y mangeait la scène et cachait le
+   boîte (la barre « Résoudre pas à pas » y mangeait la scène et cachait le
    tableau) : l'outil entier devient une colonne qui défile, la scène et le
    panneau prennent leur hauteur naturelle, et la barre des pas reste collée
    en haut pendant qu'on lit le tableau. */

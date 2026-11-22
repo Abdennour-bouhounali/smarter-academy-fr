@@ -1,10 +1,10 @@
 /**
- * Les FONCTIONS PRÊTES du مختبر التحليل (§37).
+ * Les FONCTIONS PRÊTES du labo d’analyse (§37).
  *
  * §37 pose une contrainte qui prime sur la générosité : « Only expose
  * functions appropriate to the user's curriculum/context. » On classe donc
  * chaque préréglage par NIVEAU, et l'interface montre d'abord ceux du
- * programme de 4AM — les fonctions linéaire et affine (LP 3.7, 3.8) — puis,
+ * programme du collège — les fonctions linéaire et affine — puis,
  * derrière un repli, celles du lycée.
  *
  * `focus` dit sur QUEL laboratoire la fonction s'ouvre le mieux : une
@@ -17,7 +17,7 @@
 
 /** @type {ReadonlyArray<AnalysisPreset>} */
 export const PRESETS = Object.freeze([
-  // ── Le programme de 4AM : la fonction affine et sa pente ────────────────
+  // ── Le programme du collège : la fonction affine et sa pente ────────────────
   {
     id: 'affine', source: '2x+1', level: 'programme', focus: 'secant',
     view: { xMin: -2, xMax: 6, yMin: -2, yMax: 9 },

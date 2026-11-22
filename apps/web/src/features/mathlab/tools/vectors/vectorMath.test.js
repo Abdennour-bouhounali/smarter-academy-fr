@@ -2,15 +2,15 @@ import { describe, it, expect } from 'vitest';
 import * as V from './vectorMath.js';
 
 /**
- * La mathématique des أشعة. Chaque cas du cahier des charges (§39) est ici,
+ * La mathématique des vecteurs. Chaque cas du cahier des charges (§39) est ici,
  * plus les pièges que le moteur traite exprès : la droite verticale, le
- * شعاع nul, la colinéarité de trois points confondus, et la tolérance
+ * vecteur nul, la colinéarité de trois points confondus, et la tolérance
  * RELATIVE des relations.
  */
 
 const P = (x, y) => ({ x, y });
 
-describe('composantes d’un شعاع (§39)', () => {
+describe('composantes d’un vecteur (§39)', () => {
   it('⃗AB = B − A : A(2,3), B(6,5) → (4,2)', () => {
     expect(V.fromPoints(P(2, 3), P(6, 5))).toEqual({ x: 4, y: 2 });
   });
@@ -19,7 +19,7 @@ describe('composantes d’un شعاع (§39)', () => {
     expect(V.fromPoints(P(6, 5), P(2, 3))).toEqual({ x: -4, y: -2 });
   });
 
-  it('⃗AA est le شعاع nul', () => {
+  it('⃗AA est le vecteur nul', () => {
     expect(V.isZero(V.fromPoints(P(2, 3), P(2, 3)))).toBe(true);
   });
 });
@@ -33,7 +33,7 @@ describe('norme (§39)', () => {
     expect(V.norm(P(-3, -4))).toBe(5);
   });
 
-  it('le شعاع nul a une norme nulle', () => {
+  it('le vecteur nul a une norme nulle', () => {
     expect(V.norm(V.ZERO)).toBe(0);
   });
 });
@@ -65,7 +65,7 @@ describe('multiplication par un nombre (§39)', () => {
     expect(V.scale(P(2, 3), -2)).toEqual({ x: -4, y: -6 });
   });
 
-  it('k = 0 rend le شعاع nul — ce n’est pas une erreur, c’est le sens (§14)', () => {
+  it('k = 0 rend le vecteur nul — ce n’est pas une erreur, c’est le sens (§14)', () => {
     expect(V.scale(P(2, 3), 0)).toEqual({ x: 0, y: 0 });
   });
 
@@ -100,12 +100,12 @@ describe('distance (§39)', () => {
   });
 });
 
-describe('انسحاب / translation (§39)', () => {
+describe('translation (§39)', () => {
   it('A(2,3) par u = (4,−1) → A′(6,2)', () => {
     expect(V.translatePoint(P(2, 3), P(4, -1))).toEqual({ x: 6, y: 2 });
   });
 
-  it('⃗AA′ est exactement le شعاع de l’انسحاب — la définition du manuel', () => {
+  it('⃗AA′ est exactement le vecteur de la translation — la définition du manuel', () => {
     const a = P(2, 3);
     const u = P(4, -1);
     expect(V.fromPoints(a, V.translatePoint(a, u))).toEqual(u);
@@ -137,11 +137,11 @@ describe('perpendicularité (§39, §24)', () => {
     expect(V.arePerpendicular(P(3, 4), P(-4, 3))).toBe(true);
   });
 
-  it('deux أشعة quelconques ne le sont pas', () => {
+  it('deux vecteurs quelconques ne le sont pas', () => {
     expect(V.arePerpendicular(P(2, 3), P(4, 1))).toBe(false);
   });
 
-  it('le شعاع nul n’est perpendiculaire à rien — on ne dessine pas un angle droit sur un point', () => {
+  it('le vecteur nul n’est perpendiculaire à rien — on ne dessine pas un angle droit sur un point', () => {
     expect(V.arePerpendicular(V.ZERO, P(0, 1))).toBe(false);
   });
 });
@@ -183,21 +183,21 @@ describe('parallélisme (§21)', () => {
     expect(V.collinearFactor(P(1, 2), P(-2, -4))).toBe(-2);
   });
 
-  it('refuse deux أشعة non colinéaires', () => {
+  it('refuse deux vecteurs non colinéaires', () => {
     expect(V.areParallel(P(1, 2), P(2, 1))).toBe(false);
     expect(V.collinearFactor(P(1, 2), P(2, 1))).toBeNull();
   });
 
-  it('exclut le شعاع nul par défaut : « parallèle à tout » n’apprend rien', () => {
+  it('exclut le vecteur nul par défaut : « parallèle à tout » n’apprend rien', () => {
     expect(V.areParallel(V.ZERO, P(1, 2))).toBe(false);
     expect(V.areParallel(V.ZERO, P(1, 2), { strict: false })).toBe(true);
   });
 
-  it('la tolérance est RELATIVE : de grands أشعة colinéaires le restent', () => {
+  it('la tolérance est RELATIVE : de grands vecteurs colinéaires le restent', () => {
     expect(V.areParallel(P(1e6, 2e6), P(5e5, 1e6))).toBe(true);
   });
 
-  it('la tolérance est RELATIVE : de petits أشعة non colinéaires ne deviennent pas parallèles', () => {
+  it('la tolérance est RELATIVE : de petits vecteurs non colinéaires ne deviennent pas parallèles', () => {
     expect(V.areParallel(P(1e-6, 0), P(0, 1e-6))).toBe(false);
   });
 
@@ -246,7 +246,7 @@ describe('direction (§10)', () => {
     expect(V.direction(P(-1, 0))).toBe(180);
   });
 
-  it('le شعاع nul n’a PAS de direction — NaN, jamais 0°', () => {
+  it('le vecteur nul n’a PAS de direction — NaN, jamais 0°', () => {
     expect(Number.isNaN(V.direction(V.ZERO))).toBe(true);
   });
 });

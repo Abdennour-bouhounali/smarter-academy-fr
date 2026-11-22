@@ -1,15 +1,15 @@
-/* ── Le مختبر الأعداد والحساب ────────────────────────────────────────────
-   Les conventions sont celles du grapheur, du مختبر الجبر et du مختبر
-   التحويلات (functionGrapher.css, algebra.css, transformations.css) : mêmes
-   teintes, mêmes rayons, mêmes familles — les instruments du مختبر doivent se
+/* ── Le labo des nombres ────────────────────────────────────────────
+   Les conventions sont celles du grapheur, du labo d'algèbre et du labo
+   des transformations (functionGrapher.css, algebra.css, transformations.css) : mêmes
+   teintes, mêmes rayons, mêmes familles — les instruments de l'atelier doivent se
    ressembler.
 
    Deux règles traversent tout le fichier :
 
    1. **La NOTATION est LTR** (§58). Tout ce qui porte un nombre, une
-      fraction, une opération ou une droite graduée est en `direction: ltr` :
-      `3/4` ne devient pas `4/3` sur une page arabe, et les négatifs restent à
-      gauche. Le reste — titres, boutons, explications — suit la page.
+      fraction, une opération ou une droite graduée est en `direction: ltr`
+      (la page l'est aussi ; ces îlots restent par sûreté) : les négatifs
+      restent à gauche. Le reste — titres, boutons, explications — suit la page.
    2. **Le doigt manipule, il ne fait pas défiler** : `touch-action: none` sur
       tout ce qui se glisse (§57).
 
@@ -23,7 +23,7 @@
   flex-direction: column;
   background: #f8fafc;
   overflow: hidden;
-  font-family: 'Cairo', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 
   --nb-primary: #2563eb;
   --nb-secondary: #be123c;
@@ -366,7 +366,7 @@
   text-underline-offset: 3px;
 }
 
-/* ── Le menu « أرسِل إلى » (§46) ───────────────────────────────────────── */
+/* ── Le menu « Envoyer vers » (§46) ───────────────────────────────────────── */
 
 .sa-ml-nb__sendto { position: relative; }
 
@@ -800,7 +800,7 @@
 }
 .sa-ml-nb__steps li.is-final { font-weight: 700; color: var(--nb-result); }
 
-/* ── Les mраتب (§5, §6) ───────────────────────────────────────────────── */
+/* ── Les rangs (§5, §6) ───────────────────────────────────────────────── */
 
 .sa-ml-nb__columns {
   display: flex;
@@ -882,7 +882,7 @@
   overflow: visible;
 }
 
-.sa-ml-nb__total-label { color: var(--nb-muted); margin-inline-end: 8px; font-family: 'Cairo', sans-serif; }
+.sa-ml-nb__total-label { color: var(--nb-muted); margin-inline-end: 8px; font-family: 'Inter', sans-serif; }
 
 .sa-ml-nb__places { display: flex; gap: 6px; flex-wrap: wrap; direction: ltr; }
 
@@ -927,7 +927,7 @@
   color: var(--nb-ink);
 }
 
-.sa-ml-nb__chain-item small { font-family: 'Cairo', sans-serif; font-size: 0.7rem; font-weight: 400; color: var(--nb-muted); }
+.sa-ml-nb__chain-item small { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 400; color: var(--nb-muted); }
 .sa-ml-nb__chain-item.is-result { color: var(--nb-result); }
 .sa-ml-nb__chain-arrow { color: var(--nb-muted); font-size: 1.3rem; }
 
@@ -1106,12 +1106,11 @@
 }
 
 .sa-ml-nb__graph figcaption {
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.8rem;
   color: var(--nb-muted);
   text-align: center;
   margin-top: 6px;
-  direction: rtl;
 }
 
 .sa-ml-nb__graph svg { touch-action: none; }
@@ -1370,7 +1369,7 @@
   padding: 10px 16px;
   min-height: 46px;
   cursor: pointer;
-  font-family: 'JetBrains Mono', 'Cairo', monospace;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .sa-ml-nb__choice.is-picked { border-color: var(--nb-primary); background: #eff6ff; font-weight: 700; }
@@ -1526,7 +1525,7 @@
 
 .sa-ml-nb__step-note {
   margin-inline-start: auto;
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.76rem;
   color: var(--nb-muted);
   white-space: nowrap;
@@ -1566,7 +1565,7 @@
   .sa-ml-nb__euclid-group { transition: none; }
 }
 
-/* ══ 2026-09-30 — barre groupée, فوارق متتالية, القسمة الإقليدية, القوى والجذور, أولويات العمليات ══
+/* ══ 2026-09-30 — barre groupée, soustractions successives, division euclidienne, puissances et racines, priorités opératoires ══
    Palette de la plateforme pour ce qui est neuf : vert #008443 (le geste,
    ce qui reste), orange #F36D21 (ce qui VIENT de se passer : la pièce
    soustraite, le reste d'une division, le nombre qu'on vient de calculer). */
@@ -1576,7 +1575,7 @@
 /* La barre partagée remplace la rangée de puces : elle garde le focus visible. */
 .sa-ml-nb .sa-ml-kit-nav__tab:focus-visible { outline: 2px solid var(--nb-green); outline-offset: 2px; }
 
-/* Une île LTR dans une phrase arabe : une formule ne s'y retourne jamais. */
+/* Une île LTR autour d’une formule, dans une phrase : elle ne se coupe ni ne se retourne. */
 .sa-ml-nb__ltr {
   direction: ltr;
   unicode-bidi: isolate;
@@ -1589,7 +1588,7 @@
 .sa-ml-nb__field--wide { flex: 1 1 100%; }
 .sa-ml-nb__input--expression { flex: 1 1 auto; min-width: 0; width: 100%; font-size: 1rem; }
 
-/* ── PGCD بالفوارق المتتالية ─────────────────────────────────────────── */
+/* ── PGCD par soustractions successives ─────────────────────────────────────────── */
 .sa-ml-nb__diff-now { display: flex; flex-wrap: wrap; gap: 8px; }
 .sa-ml-nb__diff-cell {
   display: flex; flex-direction: column; gap: 2px;
@@ -1631,7 +1630,7 @@
 .sa-ml-nb__ppcm-ways { margin: 6px 0 0; padding-inline-start: 20px; line-height: 1.8; }
 .sa-ml-nb__ppcm-ways .sa-ml-nb__link { margin-inline-start: 8px; }
 
-/* ── القسمة الإقليدية ────────────────────────────────────────────────── */
+/* ── Division euclidienne ────────────────────────────────────────────────── */
 .sa-ml-nb__division-result { display: flex; flex-direction: column; gap: 6px; }
 .sa-ml-nb__division-terms { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
 .sa-ml-nb__division-terms div { padding: 6px 12px; border: 1px solid var(--nb-line); border-radius: 10px; background: #fff; }
@@ -1650,7 +1649,7 @@
 .sa-ml-nb__bar-group.is-tone1 { fill: #5fb487; }
 .sa-ml-nb__bar-group.is-remainder { fill: var(--nb-accent); }
 
-/* ── القوى والجذور ───────────────────────────────────────────────────── */
+/* ── Puissances et racines ───────────────────────────────────────────────────── */
 .sa-ml-nb__tens { list-style: none; margin: 4px 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
 .sa-ml-nb__root-steps { list-style: none; margin: 4px 0; padding: 0; }
 .sa-ml-nb__square-grid {
@@ -1659,7 +1658,7 @@
 .sa-ml-nb__square-grid span { background: var(--nb-green); border-radius: 2px; }
 .sa-ml-nb__approx { margin: 6px 0 0; }
 
-/* ── أولويات العمليات ───────────────────────────────────────────────── */
+/* ── Priorités opératoires ───────────────────────────────────────────────── */
 .sa-ml-nb__order-lines { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .sa-ml-nb__order-line { padding: 8px 12px; border: 1px solid var(--nb-line); border-radius: 10px; background: #fff; min-width: 0; }
 .sa-ml-nb__order-line.is-current { border-color: var(--nb-accent); box-shadow: 0 0 0 1px var(--nb-accent) inset; }
@@ -1697,7 +1696,7 @@
    2026-09-30) : formules, résultats, tableaux, arbres passent à la ligne ou
    s'étendent ; seule la scène — l'écran de l'outil — défile. */
 
-/* ── « توحيد المقامات » : les deux formes redécoupées par le PPCM ─────────── */
+/* ── « Mise au même dénominateur » : les deux formes redécoupées par le PPCM ─────────── */
 
 .sa-ml-nb__grid-cut {
   stroke: #f36d21;
@@ -1756,7 +1755,7 @@
   font-size: 0.85rem;
 }
 
-.sa-ml-nb__common-label { min-width: 7.5rem; font-family: 'Cairo', 'Inter', sans-serif; font-weight: 700; color: #64748b; }
+.sa-ml-nb__common-label { min-width: 7.5rem; font-family: 'Inter', sans-serif; font-weight: 700; color: #64748b; }
 
 .sa-ml-nb__common-multiple {
   min-width: 2rem;
@@ -1841,7 +1840,7 @@
 .sa-ml-nb__fraction-row .sa-ml-nb__facts > div { display: contents; }
 .sa-ml-nb__fraction-row .sa-ml-nb__facts dt { color: var(--nb-muted); }
 .sa-ml-nb__fraction-row .sa-ml-nb__facts dd { margin: 0; font-family: 'JetBrains Mono', 'Inter', monospace; white-space: nowrap; }
-.sa-ml-nb__fraction-row .sa-ml-nb__facts dt { font-family: 'Cairo', 'Inter', sans-serif; white-space: nowrap; }
+.sa-ml-nb__fraction-row .sa-ml-nb__facts dt { font-family: 'Inter', sans-serif; white-space: nowrap; }
 
 .sa-ml-nb__fraction-card--result { background: #f0fdfa; border-color: #a7f3d0; }
 .sa-ml-nb__fraction-card--result .sa-ml-nb__fraction-raw { font-size: 1.2rem; font-weight: 800; color: var(--nb-result); font-family: 'JetBrains Mono', 'Inter', monospace; }
@@ -1884,21 +1883,20 @@
 
 .sa-ml-nb__duo > * { min-width: 0; }
 .sa-ml-nb__duo-figure { position: sticky; top: 52px; display: flex; flex-direction: column; gap: 8px; z-index: 1; }
-.sa-ml-nb__duo-board { direction: rtl; }
 
 @media (max-width: 900px) {
   .sa-ml-nb__duo { grid-template-columns: minmax(0, 1fr); }
   .sa-ml-nb__duo-figure { position: static; }
 }
 
-/* Les en-têtes arabes d'un tableau ne prennent jamais la police à chasse fixe
-   (elle espace les lettres arabes et les rend illisibles). */
-.sa-ml-nb__table thead th { font-family: 'Cairo', 'Inter', sans-serif; }
+/* Les en-têtes d'un tableau (des mots) ne prennent jamais la police à chasse
+   fixe : elle est réservée aux nombres. */
+.sa-ml-nb__table thead th { font-family: 'Inter', sans-serif; }
 
 .sa-ml-nb__line-readout { gap: 6px 16px; flex-wrap: wrap; }
 .sa-ml-nb__line-readout .sa-ml-nb__formula { margin: 0; }
-.sa-ml-nb__line-distance { margin: 0; font-family: 'Cairo', 'Inter', sans-serif; }
-.sa-ml-nb__representations .sa-ml-nb__card--rep { direction: rtl; padding: 10px 12px; }
+.sa-ml-nb__line-distance { margin: 0; font-family: 'Inter', sans-serif; }
+.sa-ml-nb__representations .sa-ml-nb__card--rep { padding: 10px 12px; }
 .sa-ml-nb__representations .sa-ml-nb__card--rep h4 { margin: 0; }
 
 /* Les critères en DEUX colonnes (la liste tient dans le regard) ; la ligne

@@ -5,7 +5,7 @@ import { GRAPHER_CAPABILITIES, GRAPHER_SCOPES } from './scope.js';
 import { summarizeFunctionGrapher } from './summarize.js';
 
 /**
- * Le grapheur (راسم الدوال) — le deuxième instrument du مختبر الرياضيات.
+ * Le grapheur (traceur de courbes) — le deuxième instrument de l'atelier.
  *
  * Écrire une fonction, voir sa courbe tout de suite, la toucher : zoomer,
  * glisser, poser un point et lire f(x). Le plan est dessiné par mafs (MIT,
@@ -23,7 +23,7 @@ export const functionGrapherTool = defineMathLabTool({
   defaultTitleKey: 'tools.functionGrapher.defaultTitle',
   icon: LineChart,
   schemaVersion: FUNCTION_GRAPHER_SCHEMA_VERSION,
-  // Les deux مخابر — sans المماس ni fonctions transcendantes au collège (scope.js).
+  // Les deux labos (collège, lycée) — sans tangente ni fonctions transcendantes au collège (scope.js).
   scopes: GRAPHER_SCOPES,
   capabilities: GRAPHER_CAPABILITIES,
   createInitialData: createFunctionGrapherData,

@@ -19,7 +19,7 @@
  *
  * (déterminant +1 : le repère reste direct). Les axes dessinés portent les
  * noms mathématiques x, y, z ; l'élève voit un repère conventionnel — jamais
- * miroité par la direction RTL de la page, qui ne concerne que l'interface.
+ * miroité, quelle que soit la direction de l'interface.
  *
  * Les solides sont posés comme dans un manuel : le cube et le pavé dans le
  * premier octant (un sommet en O, trois arêtes sur les axes), le cylindre

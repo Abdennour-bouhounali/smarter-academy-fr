@@ -1,5 +1,5 @@
 /**
- * « توحيد المقامات » — pourquoi le PPCM des dénominateurs, en une image.
+ * « Mise au même dénominateur » — pourquoi le PPCM des dénominateurs, en une image.
  *
  * On cherche un nombre de parts qui convienne AUX DEUX découpages : un nombre
  * que les deux dénominateurs divisent — un multiple commun — et on prend le

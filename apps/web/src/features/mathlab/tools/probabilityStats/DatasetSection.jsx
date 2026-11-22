@@ -23,7 +23,7 @@ import StatisticsSummary from './StatisticsSummary.jsx';
 import StatisticsExplanations from './StatisticsExplanations.jsx';
 
 /**
- * الإحصاء الوصفي — la série saisie, et TOUT ce qu'elle dit à la fois : le
+ * La statistique descriptive — la série saisie, et TOUT ce qu'elle dit à la fois : le
  * graphique choisi, la série ordonnée avec ses rangs, les indicateurs, le
  * tableau des effectifs. Les quatre vues sont reliées : survoler (ou
  * focaliser) une ligne, une valeur ou une barre éclaire les autres — une
@@ -43,7 +43,7 @@ export default function DatasetSection({
   const stats = useMemo(() => describeDataset(values), [values]);
   const sortedValues = useMemo(() => sorted(values), [values]);
   const availability = useMemo(() => chartAvailability(values), [values]);
-  // Un graphique que le مخبر ne montre pas (la boîte au collège) n'est
+  // Un graphique que le labo ne montre pas (la boîte au collège) n'est
   // jamais dessiné : on revient au choix automatique, toujours permis.
   const allowedCharts = features?.charts ?? null;
   const resolved = useMemo(

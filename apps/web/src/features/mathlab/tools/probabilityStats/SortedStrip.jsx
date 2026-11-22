@@ -49,7 +49,7 @@ export default function SortedStrip({ sortedValues, rowKeyOf, highlight, onHighl
                 onFocus={() => onHighlight(key)}
                 onBlur={() => onHighlight(null)}
                 aria-label={t('tools.probabilityStats.strip.item', { rank, value: formatValue(value, 4) })
-                  + (tags.length ? ` (${tags.join('، ')})` : '')}
+                  + (tags.length ? ` (${tags.join(', ')})` : '')}
                 data-ml-ps-strip-rank={rank}
                 data-ml-ps-strip-tags={tags.join(',') || undefined}
               >

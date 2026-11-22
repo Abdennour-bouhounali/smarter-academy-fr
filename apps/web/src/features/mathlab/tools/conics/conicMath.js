@@ -1,16 +1,12 @@
 /**
- * LA MATHÉMATIQUE des المقاطع المخروطية — logique PURE : pas de React, pas de
+ * LA MATHÉMATIQUE des coniques — logique PURE : pas de React, pas de
  * DOM, pas de pixels. Tout ce que le laboratoire affiche se calcule ICI et
- * nulle part ailleurs — la règle de tout le مختبر (rational.js pour l'algèbre,
- * vectorMath.js pour les أشعة, transformMath.js pour les تحويلات).
+ * nulle part ailleurs — la règle de tout l'atelier (rational.js pour l'algèbre,
+ * vectorMath.js pour les vecteurs, transformMath.js pour les transformations).
  *
- * Le vocabulaire est celui des manuels algériens :
- *
- *     الدائرة = cercle             القطع المكافئ = parabole
- *     القطع الناقص = ellipse        القطع الزائد = hyperbole
- *     المركز = centre               نصف القطر = rayon
- *     البؤرة = foyer                الدليل = directrice
- *     الرأس = sommet                المقارب = asymptote
+ * Le vocabulaire est celui du lycée français : cercle, parabole, ellipse,
+ * hyperbole ; centre, rayon, foyer, directrice, sommet, asymptote,
+ * excentricité, équation réduite.
  *
  * ── Une conique est une FORME CANONIQUE, pas une équation générale ───────
  * V1 travaille sur les quatre formes du programme, chacune décrite par ses
@@ -47,7 +43,7 @@ export const EPSILON = 1e-9;
  * Elle est relative à la TAILLE de l'objet : à 1e-9 près, aucun point posé au
  * doigt ne serait jamais « sur » un cercle de rayon 5, et l'élève verrait le
  * laboratoire lui mentir. C'est la même décision que `relativeTolerance` du
- * مختبر الأشعة.
+ * labo des vecteurs.
  */
 const GEOMETRIC_TOLERANCE = 1e-6;
 
@@ -101,7 +97,7 @@ export function distance(p, q) {
  * Un cercle de rayon 0 est un point, une ellipse de demi-axe 0 est un
  * segment, une parabole de coefficient 0 est une droite : ce sont des cas
  * DÉGÉNÉRÉS (§52). Ils ne font pas planter le laboratoire — ils sont
- * refusés ici, et l'interface le dit en arabe plutôt que de dessiner un
+ * refusés ici, et l'interface le dit en mots plutôt que de dessiner un
  * objet qui n'existe pas.
  */
 export function isValidConic(conic) {
@@ -124,7 +120,7 @@ export function isValidConic(conic) {
  * POURQUOI une conique est dégénérée — la clé i18n du message, ou `null`.
  *
  * Le laboratoire ne dit jamais « erreur » : il dit ce qui manque, en
- * mathématiques (§51). « نصف القطر يجب أن يكون موجبًا » enseigne ;
+ * mathématiques (§51). « Le rayon doit être strictement positif » enseigne ;
  * « invalid conic » n'enseigne rien.
  */
 export function degeneracyOf(conic) {
@@ -685,7 +681,7 @@ export function parameterNear(conic, point) {
  *
  * Rendre des polylignes — et non un `<path>` de courbes de Bézier — est ce
  * qui permet au même code de servir le tracé ET les intersections
- * numériques ET l'aperçu de « أعمالي ». Une hyperbole rend DEUX polylignes
+ * numériques ET l'aperçu de « Mes travaux ». Une hyperbole rend DEUX polylignes
  * (ses deux branches) : les relier serait dessiner un trait qui n'existe pas.
  *
  * L'échantillonnage suit la RÉSOLUTION demandée, pas une constante : au
@@ -774,7 +770,7 @@ function hyperbolaParameterBound(conic, viewport) {
 /**
  * §22 — TRANSLATER une conique de `(dx, dy)`.
  *
- * C'est la connexion explicite avec le مختبر التحويلات : translater
+ * C'est la connexion explicite avec le labo des transformations : translater
  * `x² + y² = r²` de `(h, k)` DONNE `(x−h)² + (y−k)² = r²`, et ici cela se
  * voit dans le code — la translation n'agit que sur `h` et `k`. Un élève qui
  * a compris ceci a compris pourquoi la forme canonique s'écrit avec des

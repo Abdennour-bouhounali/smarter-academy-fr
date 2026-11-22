@@ -40,7 +40,7 @@ export default function DatasetEditor({ text, invalid, truncated, count, onChang
         <p id="ml-ps-dataset-problem" className="sa-ml-ps__error" role="alert" data-ml-ps-dataset-error>
           {invalid.length > 0 && t('tools.probabilityStats.datasetInvalid', {
             count: invalid.length,
-            values: invalid.slice(0, 3).map((item) => `« ${item.text} »`).join('، '),
+            values: invalid.slice(0, 3).map((item) => `« ${item.text} »`).join(', '),
           })}
           {invalid.length > 0 && truncated ? ' ' : ''}
           {truncated && t('tools.probabilityStats.datasetTruncated', { max: MAX_DATASET_VALUES })}

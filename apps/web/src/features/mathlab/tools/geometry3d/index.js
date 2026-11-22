@@ -4,8 +4,8 @@ import { GEOMETRY3D_SCHEMA_VERSION, createGeometry3DData } from './geometryState
 import { summarizeGeometry3D } from './summarize.js';
 
 /**
- * La géométrie dans l'espace (الهندسة ثلاثية الأبعاد) — le troisième
- * instrument du مختبر الرياضيات.
+ * La géométrie dans l'espace — le troisième
+ * instrument de l'atelier.
  *
  * Choisir un solide (cube, pavé droit, sphère, cylindre, cône), le voir en
  * trois dimensions, le tourner, zoomer, changer ses dimensions et lire
@@ -24,7 +24,7 @@ export const geometry3dTool = defineMathLabTool({
   defaultTitleKey: 'tools.geometry3d.defaultTitle',
   icon: Box,
   schemaVersion: GEOMETRY3D_SCHEMA_VERSION,
-  // مخبر المتوسط seulement (décision du propriétaire, 2026-09-30) : cube,
+  // L'atelier du collège seulement (décision du propriétaire, 2026-09-30) : cube,
   // pavé, sphère, cylindre et cône — la géométrie dans l'espace du collège.
   scopes: ['moyen'],
   createInitialData: createGeometry3DData,

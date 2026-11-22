@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  Play, ArrowLeft, RotateCcw, Eye, EyeOff, Keyboard, Blocks, Delete,
+  Play, RotateCcw, Eye, EyeOff, Keyboard, Blocks, Delete,
 } from 'lucide-react';
+import { ArrowForward } from '../../../../components/common/DirectionalIcons.jsx';
 import { Notation } from './LogicPieces.jsx';
 import InductionStairs from './InductionStairs.jsx';
 import { INDUCTION_SEQUENCES, findPreset } from './presets.js';
@@ -20,7 +21,7 @@ import { formatNumber } from './logicFormat.js';
 /**
  * L'ESCALIER QU'ON MONTE — l'expérience centrale de §3 à §24.
  *
- *     اكتب قاعدتك → اختبر الخطوة → السلم يتلوّن → الخطوة التالية → لاحظ
+ *     écris ta règle → teste la marche → l'escalier se colore → marche suivante → observe
  *
  * ── Ce que l'écran refuse de faire ──────────────────────────────────────
  * §4 : il ne calcule PAS tout d'un coup. L'élève avance marche par marche,
@@ -49,7 +50,7 @@ export default function StairsClimb({ data, onChange, announce }) {
   const [why, setWhy] = useState(false);
   const inputRef = useRef(null);
 
-  // Le document peut changer sous nos pieds (réouverture, « اعرضه في المختبر »).
+  // Le document peut changer sous nos pieds (réouverture, « Le voir dans l'atelier »).
   useEffect(() => { setInput(state.rule); }, [state.rule]);
   useEffect(() => { setShowValues(state.mode === 'climb'); }, [state.mode]);
 
@@ -143,7 +144,7 @@ export default function StairsClimb({ data, onChange, announce }) {
                 <th scope="row" dir="ltr">uₙ</th>
                 {steps.map((step) => (
                   <td key={step.n} dir="ltr" data-ml-lg-expected={step.n}>
-                    {showValues ? formatNumber(step.expected) : '؟'}
+                    {showValues ? formatNumber(step.expected) : '?'}
                   </td>
                 ))}
               </tr>
@@ -374,7 +375,7 @@ export default function StairsClimb({ data, onChange, announce }) {
                 disabled={cursor >= steps.length - 1 && allTested}
                 data-ml-lg-stairs-next
               >
-                <ArrowLeft size={16} aria-hidden="true" />
+                <ArrowForward size={16} aria-hidden="true" />
                 {t('tools.logic.induction.climb.next')}
               </button>
               <button
@@ -398,7 +399,7 @@ export default function StairsClimb({ data, onChange, announce }) {
   );
 }
 
-/** §5, §18 — ce que la marche a donné, et POURQUOI (jamais un simple « خطأ »). */
+/** §5, §18 — ce que la marche a donné, et POURQUOI (jamais un simple « faux »). */
 function ResultPanel({ result, rule, why, onWhy }) {
   const { t } = useTranslation('mathlab');
   const correct = result.status === 'correct';

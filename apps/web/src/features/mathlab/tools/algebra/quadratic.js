@@ -1,8 +1,8 @@
 /**
  * Le SECOND DEGRÉ exact — logique pure, sans React.
  *
- * Partagé par « التحليل إلى عوامل » (la méthode du مميّز, un clic plus loin)
- * et « الدوال » (racines, sommet) : `ax² + bx + c` à coefficients rationnels,
+ * Partagé par « Factoriser » (la méthode du discriminant, un clic plus loin)
+ * et « Fonctions » (racines, sommet) : `ax² + bx + c` à coefficients rationnels,
  * racines EXACTES — rationnelles quand Δ est un carré, sinon écrites avec un
  * radical simplifié (`\frac{-5 - \sqrt{13}}{2}`), jamais `−4,302775637…`
  * présenté comme la valeur. La valeur approchée n'existe que pour DESSINER.

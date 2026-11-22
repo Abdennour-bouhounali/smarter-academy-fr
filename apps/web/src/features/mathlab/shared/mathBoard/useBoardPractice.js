@@ -5,13 +5,13 @@ import { locateAnswer, rowLatex } from './frames.js';
 const CONFIRM_MS = 900;
 
 /**
- * « تدرّب بنفسك » — l'élève fait lui-même les gestes du déroulé.
+ * « Entraîne-toi » — l'élève fait lui-même les gestes du déroulé.
  *
  * En mode `practice`, quand le frame affiché porte un exercice (`frame.task`,
  * posé par les constructeurs de frames.js), le tableau devient interactif :
  * l'élève touche les éléments, choisit l'opération ; juste → la désignation
  * s'affiche (comme l'aurait montrée l'outil) puis le déroulé continue tout seul ;
- * faux → un mot, il réessaie ; « أرني » montre sans pénalité.
+ * faux → un mot, il réessaie ; « Montre-moi » montre sans pénalité.
  *
  * Les exercices réussis sont un état d'INTERFACE : une nouvelle question
  * (`resetKey`) les oublie ; rien n'entre dans le document.

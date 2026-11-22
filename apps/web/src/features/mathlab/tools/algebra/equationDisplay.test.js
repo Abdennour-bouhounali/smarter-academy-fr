@@ -41,7 +41,7 @@ describe('solutionSet — l’ensemble des solutions en intervalle', () => {
   });
 });
 
-describe('equationExpansion — « نشر وتبسيط كل طرف »', () => {
+describe('equationExpansion — « Développer et réduire chaque membre »', () => {
   it('montre le développement quand la saisie en a besoin', () => {
     const exp = equationExpansion('3(x + 2) = 2x - 1');
     expect(exp.left.resultLatex).toBe('3x + 6');

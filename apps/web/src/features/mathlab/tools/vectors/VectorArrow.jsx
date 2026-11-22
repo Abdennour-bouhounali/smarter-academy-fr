@@ -6,21 +6,21 @@ import VectorColumn from './VectorColumnSvg.jsx';
 /** La pointe de la flèche, en PIXELS : elle ne grandit pas quand on zoome. */
 const HEAD_LENGTH = 13;
 const HEAD_WIDTH = 9;
-/** En deçà, un شعاع est trop court pour porter une pointe : on ne dessine qu'un disque. */
+/** En deçà, un vecteur est trop court pour porter une pointe : on ne dessine qu'un disque. */
 const MIN_PIXELS = 6;
 
 /**
- * UN شعاع DESSINÉ : un segment et une POINTE (§5 — « The vector must have a
+ * UN VECTEUR DESSINÉ : un segment et une POINTE (§5 — « The vector must have a
  * visible arrowhead »).
  *
  * La pointe est calculée en pixels et non en unités du plan : sinon elle
- * doublerait de taille à chaque zoom, et un شعاع court n'aurait qu'un
+ * doublerait de taille à chaque zoom, et un vecteur court n'aurait qu'un
  * moignon. C'est la même raison qui fait dessiner à la main plutôt que
  * d'utiliser un `marker` SVG : un marqueur hérite de l'échelle du groupe, et
  * mafs travaille dans un repère transformé.
  *
- * Le شعاع NUL (k = 0, §14) ne disparaît pas : il devient un petit disque à
- * son origine. « Ça ne s'affiche plus » et « le شعاع est nul » sont deux
+ * Le vecteur NUL (k = 0, §14) ne disparaît pas : il devient un petit disque à
+ * son origine. « Ça ne s'affiche plus » et « le vecteur est nul » sont deux
  * choses différentes, et l'élève doit voir la seconde.
  */
 export default function VectorArrow({
@@ -39,7 +39,7 @@ export default function VectorArrow({
 
   if (!Number.isFinite(length)) return null;
 
-  // Le شعاع nul : un disque, pas rien.
+  // Le vecteur nul : un disque, pas rien.
   if (length < MIN_PIXELS) {
     return (
       <g className="sa-ml-vec__arrow" opacity={effectiveOpacity} data-ml-vector-zero>
@@ -65,7 +65,7 @@ export default function VectorArrow({
     [baseX + uy * headWidth, baseY - ux * headWidth],
   ].map(([px, py]) => `${px},${py}`).join(' ');
 
-  // L'étiquette se pose du côté « extérieur » du شعاع, au milieu. Quand elle
+  // L'étiquette se pose du côté « extérieur » du vecteur, au milieu. Quand elle
   // porte aussi les composantes, elle s'écarte davantage : sinon la seconde
   // ligne retombe sur la graduation des axes (vu en QA).
   const away = (showComponents ? 22 : 14) + labelOffset;
@@ -98,8 +98,8 @@ export default function VectorArrow({
       <polygon points={points} fill={color} />
       {name && (
         <g className="sa-ml-vec__arrowlabel-group">
-          {/* La flèche du nom est DESSINÉE : U+20D7 se place mal dans les
-              polices arabes, et l'élève doit lire ⃗u comme dans son manuel. */}
+          {/* La flèche du nom est DESSINÉE : U+20D7 se place mal selon
+              les polices, et l'élève doit lire la flèche au-dessus de u comme il l'écrit. */}
           <line
             x1={midX - 7}
             y1={midY - 13}

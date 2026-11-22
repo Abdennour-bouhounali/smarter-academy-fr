@@ -19,9 +19,9 @@ import {
  * 1. **Rien ne bloque.** Il n'y a pas d'état « verrouillé ». Après une erreur
  *    l'élève peut réessayer, demander un indice, révéler, ou changer de
  *    question — et le laboratoire derrière reste manipulable (§54).
- * 2. **L'erreur MONTRE (§53).** Le verdict faux ne dit pas « خطأ » : il pose
- *    les valeurs sur une droite et POSE UNE QUESTION (« أيّهما يقع إلى
- *    اليمين؟ »). C'est `explainError` qui décide quoi montrer ; l'écran obéit.
+ * 2. **L'erreur MONTRE (§53).** Le verdict faux ne dit pas « faux » : il pose
+ *    les valeurs sur une droite et POSE UNE QUESTION (« Lequel est le plus
+ *    à droite ? »). C'est `explainError` qui décide quoi montrer ; l'écran obéit.
  * 3. **Les indices vont du général au précis (§52).** Le premier dit la
  *    méthode, le dernier approche du résultat — et la réponse elle-même n'est
  *    donnée que si on la demande.
@@ -263,7 +263,7 @@ export default function PracticePanel({ level, stats, onLevelChange, onAttempt, 
           </div>
         )}
 
-        {/* §53 : le dessin qui explique — jamais un simple « خطأ ». */}
+        {/* §53 : le dessin qui explique — jamais un simple « faux ». */}
         {showReveal && (
           <RevealStage
             reveal={revealed?.reveal ?? explanation?.reveal}

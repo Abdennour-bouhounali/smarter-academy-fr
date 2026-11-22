@@ -1,5 +1,5 @@
 /**
- * La MESURE — mathématique pure du مختبر القياس, sans React et sans écran.
+ * La MESURE — mathématique pure de « Grandeurs et mesures », sans React et sans écran.
  *
  * Tout ce que l'élève lit sur son rapporteur, sa règle ou sa grille sort
  * d'ici. C'est la couche qui doit être JUSTE : si `rectangleArea` se trompe,
@@ -28,7 +28,7 @@ const EPSILON = 1e-9;
 /**
  * Efface la poussière des flottants sans toucher à la valeur.
  *
- * 0.1 + 0.2 vaut 0.30000000000000004 ; dans une colonne « العرض » cela
+ * 0.1 + 0.2 vaut 0.30000000000000004 ; dans une colonne « Largeur » cela
  * s'affiche « 0,30000000000000004 » et l'élève cherche un motif dans du
  * bruit. Douze chiffres significatifs gardent tout ce qu'un collégien peut
  * mesurer et jettent le reste.

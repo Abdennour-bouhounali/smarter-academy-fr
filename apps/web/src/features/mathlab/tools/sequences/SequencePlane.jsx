@@ -18,7 +18,7 @@ const REPORT_VIEW_MS = 400;
 const FALLBACK_VIEWPORT = Object.freeze({ xMin: -1, xMax: 11, yMin: -5, yMax: 35 });
 
 /**
- * LE PLAN du مختبر المتتاليات.
+ * LE PLAN du labo des suites.
  *
  * MATH_LAB §3 est catégorique : « Do NOT create a second coordinate-system
  * implementation. » Ce composant n'en crée pas. La CAMÉRA (viewport.js), le
@@ -35,11 +35,11 @@ const FALLBACK_VIEWPORT = Object.freeze({ xMin: -1, xMax: 11, yMin: -5, yMax: 35
  * se voie (« make clear that a sequence is defined only at integer indices »).
  *
  * Le plan est `dir="ltr"` : c'est des mathématiques (§44). L'axe des indices
- * croît vers la DROITE même quand l'interface est en arabe. Seuls les panneaux
+ * croît vers la DROITE, quel que soit le sens de la page. Seuls les panneaux
  * suivent la direction de la page.
  *
  * Les enfants sont rendus dans le SVG de mafs par `children` (une fonction qui
- * reçoit la fenêtre) : le plan ne sait rien des متتاليات, il sait dessiner un
+ * reçoit la fenêtre) : le plan ne sait rien des suites, il sait dessiner un
  * repère et écouter des gestes.
  */
 const SequencePlane = forwardRef(function SequencePlane({

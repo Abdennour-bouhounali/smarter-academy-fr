@@ -1,10 +1,10 @@
 /**
- * LE TABLEAU D'UNE جملة معادلتين — logique pure, sans React.
+ * LE TABLEAU D'UN SYSTÈME DE DEUX ÉQUATIONS — logique pure, sans React.
  *
- * Les méthodes de systems.js (التعويض, الجمع) disent QUOI faire ; ce module
+ * Les méthodes de systems.js (substitution, combinaison) disent QUOI faire ; ce module
  * le met en scène sur le tableau partagé, geste par geste :
  *
- *   الجمع      x [+ y] = 10 / x [− y] = 2   les deux termes en y désignés
+ *   combinaison      x [+ y] = 10 / x [− y] = 2   les deux termes en y désignés
  *              ↓ 0                            y + (−y) = 0
  *              (x + y) + (x − y) = 10 + 2     les deux membres ajoutés
  *              2x = 12                        → ÷2 sous les deux membres → x = 6
@@ -12,10 +12,10 @@
  *              → −6 sous les deux membres → y = 4
  *              (x ; y) = (6 ; 4)              le DERNIER frame
  *
- *   التعويض    isoler (−x sous les deux membres) → remplacer → développer →
- *              résoudre (les mêmes gestes que la section المعادلات) → revenir.
+ *   substitution    isoler (−x sous les deux membres) → remplacer → développer →
+ *              résoudre (les mêmes gestes que la section « Équations ») → revenir.
  *
- *   البياني    droite (1), droite (2), le point commun, la lecture : chaque
+ *   graphique    droite (1), droite (2), le point commun, la lecture : chaque
  *              frame porte `draw` (ce que le plan a le droit de tracer).
  *
  * Les équations à une inconnue sont résolues par walkthrough.js et mises en
@@ -67,7 +67,7 @@ function lhsOf(eq) {
   return equationLatex(eq).split(' = ')[0];
 }
 
-/** Résoudre `k·v + known = c` (une inconnue) avec les gestes de la section المعادلات. */
+/** Résoudre `k·v + known = c` (une inconnue) avec les gestes de la section « Équations ». */
 function solveOneFrames({ a, b, c }, v, stepBase) {
   const walk = buildWalkthrough({ left: { a, b }, right: { a: R.ZERO, b: c }, relation: '=' }, { variable: v });
 
@@ -138,7 +138,7 @@ function replaceFrames(eq, p, u, uValue, step, textParams) {
   ];
 }
 
-// ── الجمع ────────────────────────────────────────────────────────────────
+// ── combinaison ────────────────────────────────────────────────────────────────
 
 /** @param {object} outcome eliminationSteps(e1, e2) */
 export function eliminationFrames(outcome, e1, e2) {
@@ -224,7 +224,7 @@ export function eliminationFrames(outcome, e1, e2) {
   return frames;
 }
 
-// ── التعويض ───────────────────────────────────────────────────────────────
+// ── substitution ───────────────────────────────────────────────────────────────
 
 /** @param {object} outcome substitutionSteps(e1, e2) */
 export function substitutionFrames(outcome, e1) {
@@ -348,7 +348,7 @@ export function substitutionFrames(outcome, e1) {
   return frames;
 }
 
-// ── البياني ───────────────────────────────────────────────────────────────
+// ── graphique ───────────────────────────────────────────────────────────────
 
 /**
  * Le plan se construit : droite (1), droite (2), le point commun, sa lecture.

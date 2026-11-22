@@ -15,16 +15,15 @@ import { quadrantSigns } from './trigMath.js';
  * mots.
  *
  * ── La notation reste LTR (§36) ──────────────────────────────────────────
- * `sin(θ) = √3/2` et `(1/2 ; √3/2)` se lisent de gauche à droite dans une
- * page arabe. Chaque valeur est donc posée dans un conteneur `dir="ltr"` —
- * sans quoi le bidi retournerait la parenthèse et le point-virgule, et
- * l'élève lirait le couple à l'envers. Les LIBELLÉS, eux, suivent la page.
+ * `sin(θ) = √3/2` et `(1/2 ; √3/2)` se lisent de gauche à droite, comme la
+ * page. Les conteneurs `dir="ltr"` autour des valeurs sont hérités de la
+ * version arabe : sans effet dans une page LTR, ils peuvent rester.
  */
 export default function TrigInspector({
   state, valueMode, unit, highlight, identityPanel, tanPanel, onHighlight, children = null,
   readings = null,
 }) {
-  // Le مخبر (scope.js) : au collège, ni radians, ni point du cercle, ni quadrant.
+  // Le labo (scope.js) : au collège, ni radians, ni point du cercle, ni quadrant.
   const show = { radians: true, point: true, quadrant: true, signTable: true, ...(readings ?? {}) };
   const { t } = useTranslation('mathlab');
   const { degrees, normalized, sin, cos, tan, signs, identity, quadrant, axis } = state;

@@ -14,14 +14,14 @@
  * Un frame :
  *
  *     {
- *       step,                  // l'étape LOGIQUE (0, 1, …) : « الخطوة 2 من 3 » compte les étapes
+ *       step,                  // l'étape LOGIQUE (0, 1, …) : « Ligne 2 sur 3 » compte les étapes
  *       textKey?, textParams?, // la phrase de ce micro-état (clé i18n du namespace mathlab) — ou `text`
  *       operationKey?, operationParams?, operationLatex?,   // la pastille « ce qui se fait »
  *       rows: [[token…], …],   // une ou plusieurs lignes d'expression (une jumelle = deux lignes)
  *       marks: [mark…],        // les flèches et les résultats posés sur les jetons
  *       settle?,               // LaTeX de la ligne acquise quand ce frame clôt une étape
  *       tone?,                 // 'result' (le dernier frame) | 'warning' (le sens s'inverse)
- *       task?,                 // l'exercice de ce micro-état en mode « تدرّب بنفسك » (voir makeTask)
+ *       task?,                 // l'exercice de ce micro-état en mode « Entraîne-toi » (voir makeTask)
  *     }
  *
  *     token = { id, latex, tone? }   tone ∈ TOKEN_TONES
@@ -39,7 +39,7 @@
 export const TOKEN_TONES = Object.freeze(['neutral', 'selected', 'operation', 'result', 'completed', 'muted', 'warning']);
 export const MARK_TYPES = Object.freeze(['under', 'link', 'result']);
 
-/** La palette des opérations proposées à l'élève (mode « تدرّب بنفسك »). */
+/** La palette des opérations proposées à l'élève (mode « Entraîne-toi »). */
 export const OPERATOR_PALETTE = Object.freeze(['+', '-', '\\times', '\\div']);
 
 /**
@@ -57,12 +57,12 @@ export function normalizeOperator(latex) {
 }
 
 /**
- * L'EXERCICE d'un micro-état — le mode « تدرّب بنفسك ».
+ * L'EXERCICE d'un micro-état — le mode « Entraîne-toi ».
  *
  * Au lieu de voir l'outil désigner les éléments, l'élève les désigne : il
  * touche les jetons `targets` (dans n'importe quel ordre), puis choisit
  * l'opération (`operator`, dans `OPERATOR_PALETTE`) quand il y en a une.
- * Juste → le déroulé continue ; faux → un mot, et il réessaie ; « أرني » montre.
+ * Juste → le déroulé continue ; faux → un mot, et il réessaie ; « Montre-moi » montre.
  *
  * @param {object} p
  * @param {string[]} p.targets   ids des jetons à choisir
@@ -130,7 +130,7 @@ export function checkAnswer(expected, typed) {
 
 /**
  * Le RÉSULTAT que l'élève doit calculer lui-même après avoir désigné et
- * choisi l'opération (« تدرّب بنفسك » : c'est lui qui fait presque tout).
+ * choisi l'opération (« Entraîne-toi » : c'est lui qui fait presque tout).
  * Lu dans les frames SUIVANTS de la même étape : le premier résultat posé
  * (`result` mark, ↓ 6), sinon le premier jeton `result` numérique de la ligne
  * simplifiée (9 − 3 → 6). Seulement pour un exercice qui porte une opération,
@@ -300,7 +300,7 @@ export function stateFrame({ step, rows, marks = [], settle = null, ...text }) {
 }
 
 /**
- * La progression lisible : « الخطوة 2 من 3 » compte les ÉTAPES logiques,
+ * La progression lisible : « Ligne 2 sur 3 » compte les ÉTAPES logiques,
  * pas les micro-états. `cursor` = frames montrés.
  */
 export function boardProgress(frames, cursor) {

@@ -12,10 +12,10 @@
  *    déjà le sens sur cette ligne (`\frac{-2x}{-2} > \frac{6}{-2}`), sinon la
  *    ligne serait fausse. Le symbole retourné est lui aussi en orange.
  *
- * 2. L'ensemble des solutions d'une متراجحة en notation d'INTERVALLE, à la
+ * 2. L'ensemble des solutions d'une inéquation en notation d'INTERVALLE, à la
  *    convention franco-algérienne des crochets : `]-\infty ; -3[`.
  *
- * 3. Le « نشر وتبسيط » d'une saisie avec parenthèses ou fractions : les pas
+ * 3. Le « développer et réduire » d'une saisie avec parenthèses ou fractions : les pas
  *    du moteur de simplification pour chaque membre, quand il y a quelque
  *    chose à montrer.
  */
@@ -62,7 +62,7 @@ export function sideWith(side, operation) {
  * La ligne « opération posée, pas encore simplifiée ».
  * @param {object} equation   l'équation AVANT l'opération
  * @param {{kind: string, value: object}} operation
- * @param {boolean} [flipped] le sens a-t-il été retourné (× ou ÷ par un négatif, متراجحة) ?
+ * @param {boolean} [flipped] le sens a-t-il été retourné (× ou ÷ par un négatif, inéquation) ?
  */
 export function operationLatex(equation, operation, flipped = false) {
   const left = formToLatex(equation.left);
@@ -90,11 +90,11 @@ export function solutionSet(verdict) {
   }
 }
 
-/** Les règles qui rendent le « نشر وتبسيط » instructif (un simple `x/3` ne l'est pas). */
+/** Les règles qui rendent le « développer et réduire » instructif (un simple `x/3` ne l'est pas). */
 const MEANINGFUL = new Set(['expand', 'compute', 'group']);
 
 /**
- * Les pas « نشر وتبسيط كل طرف » d'une saisie, ou null s'il n'y a rien à montrer.
+ * Les pas « Développer et réduire chaque membre » d'une saisie, ou null s'il n'y a rien à montrer.
  * @returns {null | {left: object|null, right: object|null}}  chaque membre : `{ steps }` du moteur
  */
 export function equationExpansion(source) {

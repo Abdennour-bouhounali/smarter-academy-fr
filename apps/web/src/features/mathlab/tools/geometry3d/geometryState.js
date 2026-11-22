@@ -1,5 +1,5 @@
 /**
- * L'ÉTAT de la géométrie dans l'espace (الهندسة ثلاثية الأبعاد) — logique
+ * L'ÉTAT de la géométrie dans l'espace — logique
  * pure, sans React ni three.js.
  *
  *     data = {

@@ -11,14 +11,14 @@ import { MAX_PRACTICE_LEVEL } from './logicState.js';
  * §37-39 — « prédire → essayer → indice → révéler », sans jamais bloquer.
  *
  * Le panneau tient une conversation, pas un examen :
- *   — une réponse fausse laisse le champ ouvert et « تحقّق » actif ;
- *   — « تلميح » donne UN cran de plus, jamais la réponse ;
- *   — « أظهِر الحلّ » est accessible à tout instant, y compris sans avoir
+ *   — une réponse fausse laisse le champ ouvert et « Vérifier » actif ;
+ *   — « Indice » donne UN cran de plus, jamais la réponse ;
+ *   — « Voir la solution » est accessible à tout instant, y compris sans avoir
  *     répondu — §39 ne l'interdit que par défaut, pas sur demande ;
- *   — « اعرضه في المختبر » renvoie à l'aire qui MONTRE la réponse, parce
+ *   — « Le voir dans l'atelier » renvoie à l'aire qui MONTRE la réponse, parce
  *     qu'une explication se voit mieux qu'elle ne se lit (§37).
  *
- * Trois issues, jamais deux : juste, faux, ILLISIBLE. Dire « خطأ » à qui a
+ * Trois issues, jamais deux : juste, faux, ILLISIBLE. Dire « faux » à qui a
  * mal tapé lui enseignerait une fausseté sur sa propre pensée.
  */
 export default function PracticePanel({

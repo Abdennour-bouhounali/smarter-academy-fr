@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { formatValue } from '../functionGrapher/grapherFormat.js';
+import { LOCALE } from '../../../../locale.js';
 
 /**
  * Le tableau théorique / expérimental — SECOND par rapport au graphique
@@ -8,7 +9,7 @@ import { formatValue } from '../functionGrapher/grapherFormat.js';
  * qu'un lecteur d'écran parcourt (§ 31).
  *
  * La probabilité théorique s'écrit en FRACTION autant qu'en pourcentage :
- * un élève du moyen lit 1/6 avant 16,67 %.
+ * un collégien lit 1/6 avant 16,67 %.
  */
 export default function TheoreticalComparison({ rows, labelFor, fractionFor, total }) {
   const { t } = useTranslation('mathlab');
@@ -34,7 +35,7 @@ export default function TheoreticalComparison({ rows, labelFor, fractionFor, tot
             return (
               <tr key={row.key} data-ml-ps-row={row.key}>
                 <th scope="row" dir="ltr">{labelFor(row)}</th>
-                <td dir="ltr" data-ml-ps-count={row.key}>{row.count.toLocaleString('en-US')}</td>
+                <td dir="ltr" data-ml-ps-count={row.key}>{row.count.toLocaleString(LOCALE)}</td>
                 <td dir="ltr">
                   {fraction && (
                     <span className="sa-ml-ps__fraction">

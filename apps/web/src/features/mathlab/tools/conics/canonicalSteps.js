@@ -2,7 +2,7 @@
  * DE LA FORME DÉVELOPPÉE À LA FORME CANONIQUE — la complétion du carré,
  * mise en scène frame par frame sur le tableau partagé (`shared/mathBoard`).
  *
- * Logique PURE : aucune chaîne arabe, aucun React. Le moteur reste
+ * Logique PURE : aucune phrase, aucun React. Le moteur reste
  * `conicParser.js` : il a déjà lu l'équation en ses six coefficients et en a
  * tiré la conique. Ce module ne CALCULE rien que l'analyseur n'ait établi ; il
  * écrit les états intermédiaires que l'élève ferait au tableau, et son
@@ -101,8 +101,8 @@ export function inputToLatex(text) {
     .replace(/[−–—]/g, '-')
     .replace(/[×·*]/g, ' \\times ')
     .replace(/²/g, '^2')
-    .replace(/[٫]/g, ',')
-    .replace(/[٠-٩]/g, (d) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)))
+    .replace(/[\u066B]/g, ',')
+    .replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x0660))
     .replace(/X/g, 'x')
     .replace(/Y/g, 'y');
   if (!/^[0-9xy+\-=^.,\s\\times]*$/.test(normalized)) return null;

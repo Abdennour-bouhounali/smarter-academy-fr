@@ -1,29 +1,19 @@
 /**
- * LE DICTIONNAIRE des symboles — ce qui reste en caractères latins, et
- * comment on le LIT en arabe.
+ * LE LEXIQUE des symboles — comment on LIT la notation de l'atelier.
  *
  * ── Pourquoi il existe ───────────────────────────────────────────────────
- * Toute l'interface est arabe, mais la NOTATION ne l'est pas et ne doit pas
- * l'être : « ∀x ∈ ℝ, x² ≥ 0 » s'écrit ainsi dans le manuel de 4AM comme
- * partout ailleurs, et la retourner ou l'arabiser en ferait une autre
- * chose (ARABIC_RTL_CONTRACT §4 : « RTL layout, LTR mathematics »).
+ * La notation (« ∀x ∈ ℝ, x² ⩾ 0 ») est celle de toutes les mathématiques,
+ * mais rien ne disait à l'élève COMMENT la lire. Un élève qui rencontre
+ * « ⇒ » pour la première fois n'a aucun moyen de savoir qu'on le lit
+ * « implique ». Ce fichier comble ce trou — chaque symbole a son nom, sa
+ * lecture à voix haute, et un exemple.
  *
- * Restait un trou : rien ne disait à l'élève COMMENT lire ces signes. Un
- * élève qui rencontre « ⇒ » pour la première fois n'a aucun moyen de savoir
- * qu'on le lit « يستلزم ». Ce fichier comble ce trou — chaque symbole a son
- * nom arabe, sa lecture à voix haute, et un exemple.
- *
- * ── Ce qui reste latin, et pourquoi ──────────────────────────────────────
- * - les CONNECTEURS et les QUANTIFICATEURS (¬ ∧ ∨ ⇒ ⇔ ∀ ∃) : notation
- *   internationale, celle du manuel ;
- * - les ENSEMBLES (ℕ ℤ ℚ ℝ) : idem ;
- * - les VARIABLES (P, Q, A, B, x, n, k) : le manuel de 4AM écrit « n = 2k »,
- *   pas « ع = ٢ك ». Arabiser les variables isolerait l'élève de tout autre
- *   livre de mathématiques qu'il ouvrira ensuite.
- *
- * Ce qui, en revanche, N'A PAS à rester latin et a été corrigé : les
- * abréviations de vérité. `V`/`F` (Vrai/Faux, français) sont devenues
- * `ص`/`خ` (صحيحة/خاطئة) — ce sont des MOTS abrégés, pas de la notation.
+ * ── Ce qu'il contient ────────────────────────────────────────────────────
+ * - les CONNECTEURS et les QUANTIFICATEURS (¬ ∧ ∨ ⇒ ⇔ ∀ ∃) ;
+ * - les ENSEMBLES (ℕ ℤ ℚ ℝ) ;
+ * - les VARIABLES (P, Q, x, n, k) : des lettres qui désignent une
+ *   proposition ou un nombre, pas des abréviations de mots ;
+ * - les abréviations de vérité V / F d'une table de vérité.
  *
  * Les entrées sont des identifiants ; les libellés vivent dans
  * `mathlab.json` sous `tools.logic.dictionary.entries.<id>`.
@@ -37,31 +27,31 @@ export const DICTIONARY_GROUPS = Object.freeze(['truth', 'connectors', 'quantifi
  * — l'exemple est de la notation lui aussi, donc rendu en `dir="ltr"`.
  */
 export const DICTIONARY = Object.freeze([
-  // Vérité — les seules « lettres » arabes du tableau, parce que ce sont des mots.
-  { id: 'true', symbol: 'ص', group: 'truth', example: null },
-  { id: 'false', symbol: 'خ', group: 'truth', example: null },
-  { id: 'unknown', symbol: '؟', group: 'truth', example: null },
+  // Vérité — les abréviations d'une table de vérité.
+  { id: 'true', symbol: 'V', group: 'truth', example: null },
+  { id: 'false', symbol: 'F', group: 'truth', example: null },
+  { id: 'unknown', symbol: '?', group: 'truth', example: null },
 
   // Connecteurs
   { id: 'not', symbol: '¬', group: 'connectors', example: '¬P' },
   { id: 'and', symbol: '∧', group: 'connectors', example: 'P ∧ Q' },
   { id: 'or', symbol: '∨', group: 'connectors', example: 'P ∨ Q' },
   { id: 'implies', symbol: '⇒', group: 'connectors', example: 'x > 3 ⇒ x > 1' },
-  { id: 'iff', symbol: '⇔', group: 'connectors', example: 'n زوجي ⇔ 2 | n' },
+  { id: 'iff', symbol: '⇔', group: 'connectors', example: 'n pair ⇔ 2 | n' },
 
   // Quantificateurs
-  { id: 'forall', symbol: '∀', group: 'quantifiers', example: '∀x ∈ ℝ, x² ≥ 0' },
+  { id: 'forall', symbol: '∀', group: 'quantifiers', example: '∀x ∈ ℝ, x² ⩾ 0' },
   { id: 'exists', symbol: '∃', group: 'quantifiers', example: '∃x ∈ ℝ, x² = 4' },
 
   // Ensembles
   { id: 'in', symbol: '∈', group: 'sets', example: 'x ∈ ℝ' },
   { id: 'subset', symbol: '⊂', group: 'sets', example: 'P ⊂ Q' },
-  { id: 'naturals', symbol: 'ℕ', group: 'sets', example: '0, 1, 2, 3, …' },
-  { id: 'integers', symbol: 'ℤ', group: 'sets', example: '…, −2, −1, 0, 1, 2, …' },
+  { id: 'naturals', symbol: 'ℕ', group: 'sets', example: '0 ; 1 ; 2 ; 3 ; …' },
+  { id: 'integers', symbol: 'ℤ', group: 'sets', example: '… ; −2 ; −1 ; 0 ; 1 ; 2 ; …' },
   { id: 'rationals', symbol: 'ℚ', group: 'sets', example: '1/2 ; −3 ; 0,25' },
   { id: 'reals', symbol: 'ℝ', group: 'sets', example: '√2 ; π ; 1/3' },
 
-  // Variables — la partie que le manuel écrit en latin
+  // Variables
   { id: 'P', symbol: 'P', group: 'variables', example: 'P : « x > 3 »' },
   { id: 'Q', symbol: 'Q', group: 'variables', example: 'Q : « x > 1 »' },
   { id: 'x', symbol: 'x', group: 'variables', example: 'x + 2 = 5' },
@@ -71,8 +61,8 @@ export const DICTIONARY = Object.freeze([
   // Relations
   { id: 'divides', symbol: '|', group: 'relations', example: '2 | 6' },
   { id: 'notEqual', symbol: '≠', group: 'relations', example: 'x ≠ 0' },
-  { id: 'geq', symbol: '≥', group: 'relations', example: 'x² ≥ 0' },
-  { id: 'therefore', symbol: '∴', group: 'relations', example: '∴ n² زوجي' },
+  { id: 'geq', symbol: '⩾', group: 'relations', example: 'x² ⩾ 0' },
+  { id: 'therefore', symbol: '∴', group: 'relations', example: '∴ n² pair' },
 ]);
 
 /** Les entrées d'un groupe, dans l'ordre de déclaration. */

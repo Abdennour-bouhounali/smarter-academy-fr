@@ -1,5 +1,5 @@
 /**
- * La FORME LINÉAIRE du مختبر الجبر — logique pure, sans React.
+ * La FORME LINÉAIRE de l'atelier d'algèbre — logique pure, sans React.
  *
  * Tout ce que ce laboratoire sait manipuler s'écrit `a·x + b` avec a et b
  * rationnels. Ce module réduit l'AST de l'analyseur du grapheur

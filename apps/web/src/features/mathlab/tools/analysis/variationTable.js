@@ -1,9 +1,9 @@
 /**
- * LE JADWAL — جدول التغيّرات, construit depuis l'analyse déjà faite.
+ * LE JADWAL — tableau de variations, construit depuis l'analyse déjà faite.
  *
  * Module PUR : il ne calcule aucune mathématique nouvelle. Il PRÉSENTE ce que
  * `analysisMath.js` a trouvé (points critiques, discontinuités, bornes de la
- * fenêtre) dans la disposition du manuel algérien :
+ * fenêtre) dans la disposition du manuel :
  *
  *      x        │ −3      0          2          5
  *      ─────────┼───────────────────────────────────
@@ -312,11 +312,11 @@ function boundaryLimit(fn, x, side, view, source) {
 /* ══════════════════════════════════════════════════════════════════════════
  * LA CONSTRUCTION PAS À PAS du tableau — comme l'élève la fait sur sa copie.
  *
- * Exigence de la propriétaire (2026-09-30) : le جدول التغيّرات n'apparaît plus
+ * Exigence de la propriétaire (2026-09-30) : le tableau de variations n'apparaît plus
  * complet d'un bloc. Il se construit dans l'ordre du manuel, et le tableau
  * complet est le DERNIER pas :
  *
- *   1. domain      مجموعة التعريف (celle qu'on observe dans la fenêtre)
+ *   1. domain      ensemble de définition (celle qu'on observe dans la fenêtre)
  *   2. derivative  f′(x), écrite (règles) ou mesurée
  *   3. zeros       f′(x) = 0 → les colonnes x (+ les pôles, les bornes) ; la ligne x et les « 0 »
  *   4. sign        le signe de f′ sur chaque intervalle

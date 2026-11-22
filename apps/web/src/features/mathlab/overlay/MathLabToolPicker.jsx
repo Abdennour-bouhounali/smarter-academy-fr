@@ -8,32 +8,32 @@ import '../mathlab.css';
 /**
  * LE SÉLECTEUR : choisir l'instrument, sans quitter la leçon.
  *
- * C'est l'ACCUEIL DU مختبر (`home/MathLabHome.jsx`), rendu dans le calque :
+ * C'est l'ACCUEIL DU atelier (`home/MathLabHome.jsx`), rendu dans le calque :
  * même sur-titre (PencilRuler + « eyebrow »), même titre, même sous-titre,
  * même grille `.sa-ml-cards` (1 colonne, 2 dès 640 px, 3 dès 1280 px) et des
  * cartes copiées sur `home/ToolCard.jsx` — pastille d'icône bleue, nom,
- * description, et l'appel à l'action « … جديد » avec sa flèche.
+ * description, et l'appel à l'action « Nouveau … » avec sa flèche.
  *
  * Une seule différence, et elle est nécessaire : ce sont des BOUTONS, pas
  * des `<Link>`. Choisir ici ne navigue pas — cela change ce que le calque
  * affiche. Un lien quitterait la leçon, ce que tout ce dispositif existe
  * pour éviter. Le reste doit être indiscernable de la vraie page : l'élève
- * qui connaît le مختبر doit le reconnaître.
+ * qui connaît l’atelier doit le reconnaître.
  *
  * La COQUILLE est celle de la vraie page, elle aussi : `.sa-page`
  * (20 / 40 / 60 px de marge latérale selon l'écran — index.css) et
  * `py-8 sm:py-10`, comme `home/MathLabHome.jsx`. Le calque n'ajoute AUCUN
  * rembourrage par-dessus : deux systèmes de marges superposés donnaient des
- * cartes plus étroites ici que dans le مختبر, pour le même contenu.
+ * cartes plus étroites ici que dans l’atelier, pour le même contenu.
  *
  * Les instruments viennent du REGISTRE (`MATH_LAB_TOOLS`), la seule liste :
  * un instrument de plus apparaît ici sans que ce fichier change. Les
  * instruments seulement ANNONCÉS n'y sont pas — on ne propose pas dans une
  * leçon une porte qui n'ouvre sur rien.
  *
- * ── Les مخابر (MATH_LAB.md §2.1) ─────────────────────────────────────────
- * Comme l'accueil : la سبّورة d'abord, commune à tous, puis les instruments
- * du مخبر choisi — celui de la leçon à l'ouverture (`scope`), et deux
+ * ── Les ateliers (MATH_LAB.md §2.1) ─────────────────────────────────────────
+ * Comme l'accueil : le tableau d'abord, commun à tous, puis les instruments
+ * de l’atelier choisi — celui de la leçon à l'ouverture (`scope`), et deux
  * onglets pour passer à l'autre sans quitter le calque (`onScope`).
  */
 export default function MathLabToolPicker({ tools, onPick, lockedIds = [], scope = 'moyen', onScope = null }) {

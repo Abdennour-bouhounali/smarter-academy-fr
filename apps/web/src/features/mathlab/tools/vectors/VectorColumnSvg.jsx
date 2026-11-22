@@ -1,7 +1,7 @@
 import { vectorComponents } from './vectorFormat.js';
 
 /**
- * LE شعاع EN COLONNE, DESSINÉ — la version SVG de `vectorColumnLatex`.
+ * LE VECTEUR EN COLONNE, DESSINÉ — la version SVG de `vectorColumnLatex`.
  *
  *     ⎛  3 ⎞
  *     ⎝ −2 ⎠
@@ -16,7 +16,7 @@ import { vectorComponents } from './vectorFormat.js';
  *
  * Le repère : (x, y) est le coin où la colonne commence, `anchor` dit de quel
  * côté elle se développe. Les nombres sont posés en `dir="ltr"` comme partout
- * ailleurs dans le مختبر (vectorFormat.js, l'en-tête).
+ * ailleurs dans l'atelier (vectorFormat.js, l'en-tête).
  */
 export default function VectorColumn({
   vector, x = 0, y = 0, decimals = 2, fontSize = 13, className = undefined, label = null,

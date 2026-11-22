@@ -4,8 +4,8 @@ import { SEQUENCES_SCHEMA_VERSION, createSequencesData } from './sequenceState.j
 import { summarizeSequences } from './summarize.js';
 
 /**
- * Le مختبر المتتاليات (Laboratoire des suites et des récurrences) — le
- * huitième instrument du مختبر الرياضيات.
+ * Le labo des suites (Laboratoire des suites et des récurrences) — le
+ * huitième instrument du atelier.
  *
  * L'élève ne lit pas « la suite converge vers 4 » : il pose u₀ = 10, tire le
  * curseur de `a`, et VOIT les termes se resserrer autour de 4 — puis il passe
@@ -14,16 +14,16 @@ import { summarizeSequences } from './summarize.js';
  * toile d'araignée et comprend d'un coup d'œil POURQUOI ça converge.
  *
  * ── Les différences d'abord, la convergence ensuite ──────────────────────
- * Les متتاليات ne figurent pas au programme de 4AM. Leur seul ancrage
- * authentique y est « الفروق المتتالية » — les différences successives, LP 2.1,
- * la leçon du PGCD — auquel s'ajoutent les الدوال الخطية والتآلفية (LP 3.7,
+ * Les suites ne figurent pas au programme du collège. Leur seul ancrage
+ * authentique y est « différences successives » — les différences successives,
+ * la leçon du PGCD — auquel s'ajoutent les fonctions linéaires et affines (LP 3.7,
  * 3.8) dont la suite arithmétique est la cousine discrète.
  *
  * L'instrument ouvre donc sur une suite ARITHMÉTIQUE (u₀ = 2, r = 3) avec sa
- * colonne de différences déjà affichée : l'élève de 4AM y reconnaît le geste
+ * colonne de différences déjà affichée : l'élève de 3e y reconnaît le geste
  * de son manuel. La toile d'araignée, les points fixes, les sommes partielles
  * et l'étude de convergence — qui sont du lycée — existent, complets, mais
- * éteints. C'est la règle déjà tenue par le produit scalaire du مختبر الأشعة
+ * éteints. C'est la règle déjà tenue par le produit scalaire du labo des vecteurs
  * (MATH_LAB §5f.10) puis par le cercle trigonométrique (§5g.1) : ce qui
  * dépasse le programme existe, mais ne fait jamais la première page.
  *
@@ -41,8 +41,8 @@ export const sequencesTool = defineMathLabTool({
   defaultTitleKey: 'tools.sequences.defaultTitle',
   icon: TrendingUp,
   schemaVersion: SEQUENCES_SCHEMA_VERSION,
-  // مخبر الثانوي seulement : les suites ne sont pas au programme du collège
-  // (§5h.1) — l'ancrage 4AM (les différences successives) vit au مختبر الأعداد.
+  // Lycée (scope « secondaire ») seulement : les suites ne sont pas au programme du collège
+  // (§5h.1) — l'ancrage au collège (les différences successives) vit au labo des nombres.
   scopes: ['secondaire'],
   createInitialData: createSequencesData,
   summarize: summarizeSequences,

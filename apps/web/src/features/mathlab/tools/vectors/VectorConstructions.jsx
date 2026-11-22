@@ -59,7 +59,7 @@ export function Parallelogram({ origin, u, v, color = CONSTRUCTION_COLOR }) {
   );
 }
 
-/** L'opposé −v (§13) : le même شعاع, retourné, pour que la soustraction se lise. */
+/** L'opposé −v (§13) : le même vecteur, retourné, pour que la soustraction se lise. */
 export function OppositeVector({ origin, v, color, name }) {
   if (!V.isVector(origin) || !V.isVector(v)) return null;
 
@@ -142,7 +142,7 @@ export function RightAngleMark({ at, u, v, color = '#059669', size = 15 }) {
 
 /**
  * L'ARC de direction (§10) : l'angle depuis l'axe des abscisses, tracé à
- * l'origine du شعاع. Il rend l'angle visible au lieu de le laisser être un
+ * l'origine du vecteur. Il rend l'angle visible au lieu de le laisser être un
  * nombre dans un panneau.
  */
 export function DirectionArc({ origin, v, color, radius = 30, showValue = true }) {
@@ -185,8 +185,8 @@ export function DirectionArc({ origin, v, color, radius = 30, showValue = true }
 
 /**
  * Les COMPOSANTES lues sur la grille (§8) : les deux cathètes en pointillés
- * sous le شعاع. C'est le dessin qui explique que (4, 2) veut dire « quatre
- * à droite, deux vers le haut » — la lecture attendue en 4AM.
+ * sous le vecteur. C'est le dessin qui explique que (4, 2) veut dire « quatre
+ * à droite, deux vers le haut » — la lecture attendue au collège.
  */
 export function ComponentLegs({ origin, v, color, showValues = true }) {
   const { viewTransform } = useTransformContext();

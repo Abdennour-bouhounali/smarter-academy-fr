@@ -7,13 +7,13 @@ import { makeFunction, functionLatex, evaluateNumber, frameFunction } from './fu
 import * as R from './rational.js';
 
 /**
- * Le RÉSUMÉ d'un document du مختبر الجبر, pour « أعمالي » (MATH_LAB.md §5i.2).
+ * Le RÉSUMÉ d'un document de l'atelier d'algèbre, pour « Mes travaux » (MATH_LAB.md §5i.2).
  *
  * Il suit la SECTION affichée :
- *   المعادلات / المتراجحات   kind « equation » : la relation de départ → celle où l'on en est
- *   الأنظمة                  kind « equation » : les deux équations → le couple solution
- *   تبسيط / تحليل            kind « equation » : l'expression → sa forme simplifiée / factorisée
- *   الدوال                   kind « curve »    : la courbe, échantillonnée (polylines)
+ *   « Équations » / « Inéquations »   kind « equation » : la relation de départ → celle où l'on en est
+ *   « Systèmes »                  kind « equation » : les deux équations → le couple solution
+ *   réduire / factoriser    kind « equation » : l'expression → sa forme simplifiée / factorisée
+ *   « Fonctions »                   kind « curve »    : la courbe, échantillonnée (polylines)
  *
  * Pur, minuscule (< 2 Ko), et ne JETTE jamais : un état illisible donne
  * simplement un résumé plus pauvre, ou null.
@@ -48,7 +48,7 @@ function clip(text, max = 60) {
   return typeof text === 'string' ? text.slice(0, max) : null;
 }
 
-/** Un chemin (équation ou متراجحة) : la relation de départ et celle où l'on en est. */
+/** Un chemin (équation ou inéquation) : la relation de départ et celle où l'on en est. */
 function summarizePath(path) {
   const steps = Array.isArray(path?.steps) ? path.steps : [];
   if (steps.length === 0) return null;

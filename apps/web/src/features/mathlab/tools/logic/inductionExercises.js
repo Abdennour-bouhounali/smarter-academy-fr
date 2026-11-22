@@ -12,7 +12,7 @@
  * d'hérédité numériquement. Un exercice faux ne peut pas atteindre un élève
  * — c'est la même exigence que `presets.test.js` pour les énoncés de logique.
  *
- * Les deux premiers sont les cas de référence du BAC algérien (§38) ; les
+ * Les deux premiers sont les cas de référence des exercices de terminale (§38) ; les
  * suivants gardent les sommes classiques, qui restent au programme et dont
  * l'escalier est plus simple à lire pour un premier contact.
  */
@@ -37,7 +37,7 @@ export const INDUCTION_EXERCISES = Object.freeze([
      * multiplie par ⅓, on ajoute 2, et on reconnaît uₙ₊₁. Chaque maillon
      * part donc de là où le précédent arrive — c'est ce que `checkOrder`
      * vérifie — et la BORNE franchie à chaque fois (3, puis 1, puis 3) est
-     * portée par `bounds` et par le texte arabe de l'étape.
+     * portée par `bounds` et par le texte de l'étape.
      *
      * Écrire ces maillons comme des identités (`from === to`) aurait été
      * plus court, mais la chaîne ne se serait plus tenue : deux étapes
@@ -55,7 +55,7 @@ export const INDUCTION_EXERCISES = Object.freeze([
       { id: 'conclude', from: '1/3*u + 2', to: 'U' },
     ],
     // La borne franchie à chaque étape : uₙ < 3, puis ⅓uₙ < 1, puis
-    // ⅓uₙ + 2 < 3. C'est ce que le texte arabe de l'étape annonce.
+    // ⅓uₙ + 2 < 3. C'est ce que le texte de l'étape annonce.
     bounds: { hypothesis: 3, third: 1, plusTwo: 3 },
   },
 
@@ -145,8 +145,8 @@ export function builderVariablesOf(exercise) {
 }
 
 /**
- * Les propositions ALTERNATIVES qu'un élève peut essayer (§19 « جرّب عبارة
- * أخرى »). Elles sont construites depuis les suites de l'exercice, donc
+ * Les propositions ALTERNATIVES qu'un élève peut essayer (§19 « Essayer une
+ * autre proposition »). Elles sont construites depuis les suites de l'exercice, donc
  * elles parlent toujours de quelque chose qui existe.
  */
 export function alternativesOf(exercise) {

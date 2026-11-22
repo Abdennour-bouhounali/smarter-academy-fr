@@ -12,7 +12,7 @@
  *   x² + 5x + 6 = (x + 2)(x + 3)  le résultat — DERNIER frame
  *
  * Une chaîne d'égalités de factor.js (`A = B = C`) se déroule un membre à la
- * fois. La vérification par développement et la méthode du مميّز restent
+ * fois. La vérification par développement et la méthode du discriminant restent
  * APRÈS le dernier frame (l'outil ne les montre qu'une fois le résultat atteint).
  */
 

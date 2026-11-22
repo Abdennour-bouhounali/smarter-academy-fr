@@ -7,8 +7,8 @@
  * reproductible dans un test.
  *
  * ── Le principe qui gouverne tout ce fichier ─────────────────────────────
- * Une réponse fausse ne BLOQUE jamais — c'est la règle du مختبر, déjà tenue
- * par la trigonométrie, les suites et les تحويلات. L'élève prédit, le
+ * Une réponse fausse ne BLOQUE jamais — c'est la règle de l'atelier, déjà tenue
+ * par la trigonométrie, les suites et les transformations. L'élève prédit, le
  * laboratoire MONTRE la géométrie, et la figure lui dit elle-même où il en
  * était. Rien ici ne rend « faux » sans rendre en même temps la bonne
  * réponse et de quoi la voir.
@@ -312,7 +312,8 @@ function shuffle(random, list) {
 const ANSWER_TOLERANCE = 0.01;
 
 /**
- * LIRE un nombre saisi : `−2`, `1,5`, `٣`, `۴`, `٢٫٥`, `-3/2`. Rend `NaN`
+ * LIRE un nombre saisi : `−2`, `1,5`, `-3/2` (les chiffres arabes-indiens
+ * et persans sont encore lus). Rend `NaN`
  * si la saisie est vide ou illisible.
  *
  * ── Pourquoi une fonction, et plus `Number(texte.replace(',', '.'))` ──────
@@ -328,10 +329,10 @@ export function parseNumberInput(text) {
   if (typeof text !== 'string') return NaN;
 
   const source = text
-    .replace(/[٠-٩]/g, (d) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)))
-    .replace(/[۰-۹]/g, (d) => String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)))
+    .replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x0660))
+    .replace(/[\u06F0-\u06F9]/g, (d) => String(d.charCodeAt(0) - 0x06F0))
     .replace(/[−–]/g, '-')
-    .replace(/[،٫,]/g, '.')
+    .replace(/[\u060C\u066B,]/g, '.')
     .replace(/\s+/g, '');
   if (!source) return NaN;
 

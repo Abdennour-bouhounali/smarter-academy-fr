@@ -6,7 +6,7 @@ import { simplifyFrames } from './simplifyFrames.js';
 import { factorFrames } from './factorFrames.js';
 import { SIMPLIFY_EXAMPLES, FACTOR_EXAMPLES } from './examples.js';
 
-describe('تبسيط — le tableau terme par terme', () => {
+describe('« Développer et réduire » — le tableau terme par terme', () => {
   it('3x + 2(x + 4) − x : [2] ⌒× (x + 4) → 2 × x, 2 × 4 → ↓2x ↓8 → termes semblables → ↓4x → 4x + 8 (dernier)', () => {
     const frames = simplifyFrames(simplifyExpression('3x + 2(x + 4) - x'));
     expect(validateFrames(frames)).toEqual([]);
@@ -47,7 +47,7 @@ describe('تبسيط — le tableau terme par terme', () => {
   });
 });
 
-describe('تحليل — le tableau', () => {
+describe('« Factoriser » — le tableau', () => {
   it('x² + 5x + 6 : chercher → candidats → [2] ⌒× [3] ↓6 → [2] ⌒+ [3] ↓5 → (x + 2) → (x + 2)(x + 3) → résultat', () => {
     const frames = factorFrames(factorExpression('x^2 + 5x + 6'));
     expect(validateFrames(frames)).toEqual([]);

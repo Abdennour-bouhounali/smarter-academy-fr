@@ -1,10 +1,10 @@
 import { scopeDeclarationError } from './labScope.js';
 
 /**
- * Le CONTRAT d'un instrument du مختبر الرياضيات (Math Lab).
+ * Le CONTRAT d'un instrument de l’atelier de mathématiques (Math Lab).
  *
- * Le mختبر est une famille d'instruments indépendants — la سبّورة
- * aujourd'hui, le grapheur, la géométrie, les أشعة demain. Ce fichier dit ce
+ * L’atelier est une famille d'instruments indépendants — le tableau
+ * aujourd'hui, le grapheur, la géométrie, les vecteurs demain. Ce fichier dit ce
  * qu'un instrument doit fournir pour se brancher sur la coquille commune
  * (MathLabShell), le registre (toolRegistry.js) et la persistance
  * (useMathLabDocument) SANS que ceux-ci changent. Voir
@@ -34,25 +34,25 @@ import { scopeDeclarationError } from './labScope.js';
  *   version antérieure qu'il a publiée ; le serveur ne l'interprète pas.
  * @property {(seed?: unknown, context?: {scope: 'moyen'|'secondaire'|null, capabilities: object|null}) => object} createInitialData
  *   L'état d'un document neuf — vide, ou construit depuis l'amorce qu'une
- *   leçon transmet (openMathLab.js). Le second argument dit dans quel مخبر il
+ *   leçon transmet (openMathLab.js). Le second argument dit dans quel atelier il
  *   naît : un instrument partagé peut y choisir un exemple d'ouverture à la
- *   portée de ce مخبر (le جبر n'ouvre pas le collège sur `x² + 5x + 6`).
+ *   portée de cet atelier (l’algèbre n'ouvre pas le collège sur `x² + 5x + 6`).
  * @property {'common' | Array<'moyen'|'secondaire'>} scopes
  *   OBLIGATOIRE. Où l'instrument apparaît : `'common'` pour un outil de tous,
- *   hors مخبر (la سبّورة) ; sinon la liste des مخابر — مخبر المتوسط
- *   (`moyen`), مخبر الثانوي (`secondaire`) — dans l'ordre de préférence.
+ *   hors atelier (le tableau) ; sinon la liste des ateliers — atelier du collège
+ *   (`moyen`), atelier du lycée (`secondaire`) — dans l'ordre de préférence.
  *   Voir labScope.js et MATH_LAB.md §2.1.
  * @property {{moyen?: object|null, secondaire?: object|null}} [capabilities]
- *   Ce que l'instrument EXPOSE dans chaque مخبر — ses sections, ses options.
+ *   Ce que l'instrument EXPOSE dans chaque atelier — ses sections, ses options.
  *   La forme appartient à l'outil (déclarée dans `tools/<nom>/scope.js`) ;
- *   un مخبر absent ou `null` veut dire « tout ». Un seul instrument, un seul
+ *   un atelier absent ou `null` veut dire « tout ». Un seul instrument, un seul
  *   composant, une seule route : c'est ce qu'il montre qui change.
  * @property {() => Promise<{default: import('react').ComponentType<MathLabToolProps>}>} load
- *   L'import PARESSEUX du composant : un instrument lourd (la سبّورة embarque
+ *   L'import PARESSEUX du composant : un instrument lourd (le tableau embarque
  *   Excalidraw) ne pèse sur aucune autre page.
  * @property {(data: object) => MathLabSummary | null} [summarize]
  *   FACULTATIF. Le RÉSUMÉ que l'instrument fait de son propre état : ce que
- *   « أعمالي » dessine sur une carte et ce que la recherche lit, SANS jamais
+ *   « Mes travaux » dessine sur une carte et ce que la recherche lit, SANS jamais
  *   charger l'instrument. Fonction PURE, sans React et sans moteur — elle
  *   tourne dans la coquille à chaque sauvegarde, et dans les tests.
  *
@@ -68,10 +68,10 @@ import { scopeDeclarationError } from './labScope.js';
  * `kind` nomme la FORME de l'aperçu, pas l'outil : c'est lui que
  * `WorkPreview` regarde pour choisir son dessin, de sorte qu'un futur
  * instrument qui produit une courbe réutilise l'aperçu « curve » sans une
- * ligne de plus dans « أعمالي ».
+ * ligne de plus dans « Mes travaux ».
  *
  * `text` est ce que la RECHERCHE lit en plus du titre et du nom de
- * l'instrument : les expressions du grapheur, l'équation du جبر, le nom du
+ * l'instrument : les expressions du grapheur, l’équation de l’algèbre, le nom du
  * solide. Le reste des champs appartient au dessin de l'aperçu.
  *
  * @typedef {object} MathLabSummary
@@ -96,11 +96,11 @@ import { scopeDeclarationError } from './labScope.js';
  *   Les FICHIERS du document (serveur), pour un outil qui déclare la
  *   capacité `attachments` : la liste à jour, et de quoi lire les octets.
  * @property {'moyen'|'secondaire'|null} [scope]
- *   Le مخبر où l'instrument est ouvert (null pour un instrument commun).
+ *   L’atelier où l'instrument est ouvert (null pour un instrument commun).
  * @property {object|null} [capabilities]
  *   `tool.capabilities[scope]` — ce que l'instrument doit montrer ici. `null`
  *   = tout. L'outil FILTRE ses sections avec, et ramène un état enregistré
- *   hors de portée (un ancien document) sur ce que le مخبر montre.
+ *   hors de portée (un ancien document) sur ce que l’atelier montre.
  * @property {(notice: {tone: 'success'|'error', key: string, params?: object} | null) => void} [onNotice]
  *   Un mot pour l'élève, affiché par la coquille sous la barre (clé i18n du
  *   namespace `mathlab`).
@@ -123,11 +123,11 @@ import { scopeDeclarationError } from './labScope.js';
 /**
  * @typedef {object} MathLabToolApi
  * @property {() => void} [clear]                  Vider le document (la coquille demande confirmation).
- * @property {() => Promise<Blob>} [exportPng]     Le rendu en image, pour « تصدير صورة ».
+ * @property {() => Promise<Blob>} [exportPng]     Le rendu en image, pour « Exporter en image ».
  * @property {() => boolean} [isGridEnabled]
  * @property {() => boolean} [toggleGrid]       Bascule la grille et rend le NOUVEL état.
  * @property {MathLabAttachmentsCapability} [attachments]
- *   La capacité « fichiers » : sa présence fait apparaître « الملفات » dans la
+ *   La capacité « fichiers » : sa présence fait apparaître « Fichiers » dans la
  *   barre et le panneau des fichiers (attachments/AttachmentsPanel.jsx).
  */
 

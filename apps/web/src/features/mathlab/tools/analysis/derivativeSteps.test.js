@@ -50,7 +50,7 @@ describe('la dérivation pas à pas', () => {
     expect(kinds(buildDerivativeSteps('x\\sin(x)'))).toEqual(['identify', 'parts', 'substitute', 'result']);
     const product = buildDerivativeSteps('x\\sin(x)');
     expect(product.steps[0]).toMatchObject({ ruleKey: 'product', formula: RULE_FORMULAS.product });
-    expect(product.steps[2].latex).toBe("f'(x) = 1\\cdot \\sin\\left(x\\right) + x\\cdot \\cos\\left(x\\right)");
+    expect(product.steps[2].latex).toBe("f'(x) = 1\\times \\sin\\left(x\\right) + x\\times \\cos\\left(x\\right)");
 
     const quotient = buildDerivativeSteps('\\frac{x^2-1}{x-1}');
     expect(quotient.steps[0].ruleKey).toBe('quotient');
@@ -58,7 +58,7 @@ describe('la dérivation pas à pas', () => {
 
     const chain = buildDerivativeSteps('(2x+1)^3');
     expect(chain.steps[0].ruleKey).toBe('chainPower');
-    expect(chain.steps[2].latex).toBe("f'(x) = 3\\cdot \\left(2x + 1\\right)^{2}\\cdot 2");
+    expect(chain.steps[2].latex).toBe("f'(x) = 3\\times \\left(2x + 1\\right)^{2}\\times 2");
     expect(chain.steps.at(-1).source).toBe('6(2x + 1)^2');
   });
 
@@ -66,7 +66,7 @@ describe('la dérivation pas à pas', () => {
     expect(kinds(buildDerivativeSteps('x^5'))).toEqual(['apply', 'powerDown', 'result']);
     expect(kinds(buildDerivativeSteps('\\ln(x)'))).toEqual(['apply', 'result']);
     expect(kinds(buildDerivativeSteps('7'))).toEqual(['apply', 'result']);
-    expect(buildDerivativeSteps('x^5').steps[1].latex).toBe("f'(x) = 5\\cdot x^{4}");
+    expect(buildDerivativeSteps('x^5').steps[1].latex).toBe("f'(x) = 5\\times x^{4}");
   });
 
   it('un état intermédiaire identique au résultat n’est pas montré deux fois', () => {

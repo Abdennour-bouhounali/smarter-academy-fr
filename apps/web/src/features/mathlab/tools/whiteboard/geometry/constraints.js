@@ -1,8 +1,8 @@
 /**
- * LES CONTRAINTES — un instrument posé sur la سبّورة CONDUIT le crayon.
+ * LES CONTRAINTES — un instrument posé sur le tableau CONDUIT le crayon.
  *
- * L'enseignant garde son crayon ordinaire (le القلم d'Excalidraw, ou le قلم
- * الهندسة) ; c'est l'INSTRUMENT qui décide de la géométrie du trait, comme
+ * L'enseignant garde son crayon ordinaire (le stylo d'Excalidraw, ou le crayon
+ * de géométrie) ; c'est l'INSTRUMENT qui décide de la géométrie du trait, comme
  * une vraie règle guide une vraie mine. Ce module est la seule réponse à
  * « où va la mine ? » pour tous les instruments :
  *
@@ -16,12 +16,12 @@
  *
  * Quatre familles, une seule interface :
  *
- *   straight  le bord d'une règle, d'un كوس, le diamètre de la منقلة :
+ *   straight  le bord d'une règle, d'une équerre, le diamètre du rapporteur :
  *             projection sur l'AXE du bord, abscisse lue sur ses graduations
- *   ray       la منقلة en « إنشاء زاوية » : depuis le sommet, dans la
+ *   ray       le rapporteur en « Construire un angle » : depuis le sommet, dans la
  *             direction de l'aiguille, et nulle part ailleurs
  *   arc       le compas : la mine tourne autour de la pointe, à rayon fixe ;
- *             la منقلة en « رسم قوس » : la mine suit son bord COURBE
+ *             le rapporteur en « Tracer un arc » : la mine suit son bord COURBE
  *             (projection POLAIRE — jamais sur une droite) : le pointeur
  *             donne l'ANGLE, l'instrument donne le RAYON
  *
@@ -34,7 +34,7 @@
  *   }
  *
  * Tout est pur, en coordonnées de scène, dans l'unité du bureau
- * (geoMath.UNITS_PER_CM) — la règle, le compas et la منقلة lisent la même.
+ * (geoMath.UNITS_PER_CM) — la règle, le compas et le rapporteur lisent la même.
  */
 import {
   UNITS_PER_CM, UNITS_PER_MM, add, sub, scale, dot, dist, len, angleOf, normalizeAngle,
@@ -100,7 +100,7 @@ function straightConstraint({ id, instrument, origin, u, from, to, graduated = f
   };
 }
 
-/** La منقلة en construction : une demi-droite depuis son centre, dans la direction de l'aiguille. */
+/** Le rapporteur en construction : une demi-droite depuis son centre, dans la direction de l'aiguille. */
 function rayConstraint({ id, instrument, origin, u, degrees, reach = 0 }) {
   const along = (p) => Math.max(0, dot(sub(p, origin), u));
 
@@ -149,12 +149,12 @@ function arcConstraint({ id, instrument, center, radius, angle }) {
   };
 }
 
-/** Les angles « ronds » d'une منقلة scolaire : l'aimant s'y arrête. */
+/** Les angles « ronds » d'un rapporteur scolaire : l'aimant s'y arrête. */
 const ROUND_DEGREES = Object.freeze([0, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180]);
 
 /**
  * Le degré lu calé : sur un angle rond (0°, 15°, 30°… 180°) quand on en
- * passe à `tolerance` degrés, sinon au degré — la منقلة se lit au degré.
+ * passe à `tolerance` degrés, sinon au degré — le rapporteur se lit au degré.
  */
 function snapDegree(deg, { angles = true, tolerance = 2.5 } = {}) {
   if (angles) {
@@ -165,13 +165,13 @@ function snapDegree(deg, { angles = true, tolerance = 2.5 } = {}) {
 }
 
 /**
- * La منقلة en « رسم قوس » : un bord COURBE de rayon `radius` (le bord
+ * Le rapporteur en « Tracer un arc » : un bord COURBE de rayon `radius` (le bord
  * extérieur, ou le bord de l'évidement intérieur — un petit arc d'angle).
  *
- * Tout se passe dans l'échelle de la منقلة : `deg` ∈ [0, 180] est la
+ * Tout se passe dans l'échelle du rapporteur : `deg` ∈ [0, 180] est la
  * graduation qu'on lit. L'appui fixe l'angle de DÉPART (il ne bouge plus) ;
- * la mine fixe l'angle d'ARRIVÉE. L'arc ne sort jamais du demi-disque : la
- * منقلة n'est pas un compas, elle ne trace pas de cercle entier.
+ * la mine fixe l'angle d'ARRIVÉE. L'arc ne sort jamais du demi-disque : le
+ * rapporteur n'est pas un compas, il ne trace pas de cercle entier.
  *
  * Écran : la graduation d monte du côté du demi-disque, donc l'angle
  * d'écran est `baseAngle − d` (y vers le bas).
@@ -214,9 +214,9 @@ function protractorArcConstraint({ id, instrument, center, radius, baseAngle, re
 }
 
 /**
- * Toutes les contraintes qu'offrent les instruments POSÉS. La منقلة offre
- * son diamètre en mode « قياس », et la demi-droite de l'aiguille en mode
- * « إنشاء زاوية » — jamais les deux : les deux gestes ne se mélangent pas.
+ * Toutes les contraintes qu'offrent les instruments POSÉS. Le rapporteur offre
+ * son diamètre en mode « Mesurer », et la demi-droite de l'aiguille en mode
+ * « Construire un angle » — jamais les deux : les deux gestes ne se mélangent pas.
  */
 export function constraintsFor(instruments) {
   const out = [];
@@ -240,7 +240,7 @@ export function constraintsFor(instruments) {
       if (inst.mode === 'construct') {
         out.push(rayConstraint({ id: 'protractor:ray', instrument: 'protractor', origin: g.center, u: g.directionOf(inst.needleDeg), degrees: inst.needleDeg, reach: g.R * 1.05 }));
       } else if (inst.mode === 'arc') {
-        // Deux bords courbes, comme une vraie منقلة : l'extérieur, et l'évidement (un petit arc d'angle).
+        // Deux bords courbes, comme un vrai rapporteur : l'extérieur, et l'évidement (un petit arc d'angle).
         const reach = 0.3 * UNITS_PER_CM;
         out.push(protractorArcConstraint({ id: 'protractor:rim', instrument: 'protractor', center: g.center, radius: g.R, baseAngle: inst.angle, reach }));
         out.push(protractorArcConstraint({ id: 'protractor:inner', instrument: 'protractor', center: g.center, radius: g.R * PROTRACTOR_INNER, baseAngle: inst.angle, reach }));

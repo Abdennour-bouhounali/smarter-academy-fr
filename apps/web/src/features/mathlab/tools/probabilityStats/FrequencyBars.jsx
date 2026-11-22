@@ -14,9 +14,8 @@ import { formatValue } from '../functionGrapher/grapherFormat.js';
  *     ███████████  fréquence expérimentale
  *     ───────────  probabilité théorique
  *
- * Le graphique est LTR : un axe de valeurs croissantes se lit de gauche à
- * droite en mathématiques, que la page soit en arabe ou non
- * (ARABIC_RTL_CONTRACT). Les étiquettes restent du texte DOM.
+ * Le graphique se lit de gauche à droite : un axe de valeurs croissantes
+ * va vers la droite. Les étiquettes restent du texte DOM.
  */
 
 const VIEW_HEIGHT = 322;

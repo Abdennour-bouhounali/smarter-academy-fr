@@ -158,9 +158,9 @@ export default function DistributionChart({
         </g>
       )}
 
-      {/* Une phrase arabe dans un SVG LTR : son propre sens, ancrée à droite,
-          une ligne AU-DESSUS de l'étiquette « Me = … » qu'elle recouvrait. */}
-      <text x={VIEW_WIDTH - PAD.right} y={10} direction="rtl" textAnchor="start" className="sa-ml-ps__chart-legend">
+      {/* La légende, ancrée au bord droit (elle se termine là), une ligne
+          AU-DESSUS de l'étiquette « Me = … » qu'elle recouvrait. */}
+      <text x={VIEW_WIDTH - PAD.right} y={10} textAnchor="end" className="sa-ml-ps__chart-legend">
         {t(isHistogram ? 'tools.probabilityStats.histogramLegend' : 'tools.probabilityStats.barsLegend')}
       </text>
     </svg>

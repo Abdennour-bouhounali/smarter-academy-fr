@@ -1,10 +1,10 @@
 /**
- * L'ÉCRITURE des nombres et des notations du مختبر المتتاليات.
+ * L'ÉCRITURE des nombres et des notations du labo des suites.
  *
  * Le FORMAT des nombres est celui de toute la plateforme — virgule décimale,
  * vrai signe moins, chiffres latins — et il n'est pas redéfini ici : on
  * importe `formatValue` du grapheur (MATH_LAB §3 : « le format partagé du
- * Lab »). Ce module n'ajoute que ce qui est propre aux متتاليات : les indices
+ * Lab »). Ce module n'ajoute que ce qui est propre aux suites : les indices
  * (u₀, u₁, uₙ₊₁), les grands nombres, et les notations de règles.
  *
  * ── Les indices, et pourquoi ils ne sont pas du HTML ─────────────────────
@@ -14,11 +14,11 @@
  * un attribut `data-` sans balise ; et il ne dépend d'aucun style, donc il
  * survit à une capture PNG du graphe.
  *
- * ── RTL ──────────────────────────────────────────────────────────────────
+ * ── Notation ──────────────────────────────────────────────────────────────────
  * Tout ce que ce module rend est de la NOTATION : elle se pose dans un nœud
- * `dir="ltr"` (ARABIC_RTL_CONTRACT §4), avec `text-align: left` et
+ * `dir="ltr"` (FRENCH_LANGUAGE_CONTRACT §7), avec `text-align: left` et
  * `unicode-bidi: isolate` du côté CSS. Le module ne contient aucune chaîne
- * traduisible — pas un mot d'arabe, pas un mot de français : uniquement des
+ * traduisible — pas un mot : uniquement des
  * symboles mathématiques, qui sont les mêmes dans toutes les langues.
  */
 
@@ -129,7 +129,7 @@ export function formatAddend(value, decimals = 4) {
 }
 
 /**
- * LA RÈGLE d'une متتالية, écrite comme au tableau (§8, §16).
+ * LA RÈGLE d'une suite, écrite comme au tableau (§8, §16).
  *
  *   arithmétique   uₙ₊₁ = uₙ + 3
  *   géométrique    uₙ₊₁ = 1,5 uₙ
@@ -172,10 +172,10 @@ export function prettySource(source, isRecurrence = false) {
   if (!text) return '';
 
   text = text
-    .replace(/\*/g, '·')
+    .replace(/\*/g, '×')
     // TOUT signe moins devient le vrai signe typographique : unaire comme
     // binaire, espacé comme collé. Distinguer les deux ne servirait à rien —
-    // « − » est le bon caractère dans les deux cas (ARABIC_RTL_CONTRACT §4).
+    // « − » est le bon caractère dans les deux cas (FRENCH_LANGUAGE_CONTRACT §7).
     .replace(/-/g, '−')
     // Les exposants : les chiffres (`u^2` → `u²`) ET la variable (`(−1)^n` →
     // `(−1)ⁿ`), parce que `(−1)^n` est LA suite alternée de §20 et §24 : la

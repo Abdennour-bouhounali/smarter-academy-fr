@@ -2,16 +2,16 @@ import * as C from './conicMath.js';
 import { isConicObject } from './conicState.js';
 
 /**
- * Le RÉSUMÉ d'un document du مختبر المقاطع المخروطية : les courbes, en
+ * Le RÉSUMÉ d'un document du labo des coniques : les courbes, en
  * quelques dizaines de points, plus le nom des familles posées.
  *
- * La vignette de « أعمالي » dessine les contours — c'est exactement ce qui
+ * La vignette de « Mes travaux » dessine les contours — c'est exactement ce qui
  * distingue deux documents de cet instrument l'un de l'autre : un cercle et
  * une hyperbole ne se confondent pas d'un coup d'œil — et la recherche
- * trouve « قطع ناقص » en cherchant le nom d'une famille.
+ * trouve « ellipse » en cherchant le nom d'une famille.
  *
  * `kind: 'curve'` est la forme d'aperçu du GRAPHEUR, réutilisée ici sans une
- * ligne de plus dans « أعمالي ». C'est la promesse de `toolContract.js` : le
+ * ligne de plus dans « Mes travaux ». C'est la promesse de `toolContract.js` : le
  * `kind` nomme la FORME de l'aperçu, pas l'instrument. Mais l'aperçu du
  * grapheur dessine des EXPRESSIONS qu'il ré-échantillonne lui-même, et une
  * conique n'est pas une fonction de x — on lui passe donc des POINTS déjà

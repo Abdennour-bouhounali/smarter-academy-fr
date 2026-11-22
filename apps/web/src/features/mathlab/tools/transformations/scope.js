@@ -3,10 +3,11 @@ import { MAX_STEPS } from './transformState.js';
 import { CHALLENGE_KINDS, EXPERIMENTS, PRESETS, PUZZLES } from './practice.js';
 
 /**
- * مختبر التحويلات dans les deux مخابر (labScope.js, MATH_LAB.md §2.1).
+ * L'atelier des transformations dans les deux labos (labScope.js, MATH_LAB.md
+ * §2.1).
  *
- * Au collège (programme 2025 du premier cycle) : les تناظرات axiale et
- * centrale, le انسحاب, le دوران et le تحاكي — UNE transformation à la fois.
+ * Au collège : les symétries axiale et centrale, la translation, la rotation
+ * et l'homothétie — UNE transformation à la fois.
  * La composition (la pile de plusieurs transformations, l'expérience de
  * l'ordre, les figures intermédiaires) et la lecture matricielle sont
  * l'approfondissement du lycée. Au lycée : tout.
@@ -43,7 +44,7 @@ export function transformationsFeatures(capabilities) {
   };
 }
 
-/** Les réglages d'affichage qui n'ont de sens qu'avec ce que le مخبر montre. */
+/** Les réglages d'affichage qui n'ont de sens qu'avec ce que le labo montre. */
 export function displayToggles(features) {
   return [
     'grid', 'snap', 'showOriginal',
@@ -54,7 +55,7 @@ export function displayToggles(features) {
 }
 
 /**
- * Un état ramené à ce que le مخبر montre : la matrice et les figures
+ * Un état ramené à ce que le labo montre : la matrice et les figures
  * intermédiaires éteintes, un puzzle absent fermé. Les pas d'un document
  * plus ancien sont GARDÉS — on ne détruit pas le travail d'un élève.
  */

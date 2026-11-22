@@ -33,8 +33,8 @@ import { generateChallenge as logicChallenge, revealTarget as logicReveal } from
 import { createLogicData } from './tools/logic/logicState.js';
 
 /**
- * « Advanced features never appear in مخبر المتوسط » — et un instrument
- * partagé expose, dans chaque مخبر, EXACTEMENT ce qui lui revient.
+ * « Advanced features never appear in atelier du collège » — et un instrument
+ * partagé expose, dans chaque atelier, EXACTEMENT ce qui lui revient.
  *
  * Chaque bloc prend les capacités DÉCLARÉES par l'instrument (le registre,
  * pas une copie) et vérifie ce que le collège n'a pas, puis que le lycée a
@@ -43,11 +43,11 @@ import { createLogicData } from './tools/logic/logicState.js';
  */
 const features = (id, scope, resolve) => resolve(toolCapabilities(getMathLabTool(id), scope));
 
-describe('راسم الدوال', () => {
+describe('traceur de courbes', () => {
   const moyen = features('functionGrapher', 'moyen', grapherFeatures);
   const secondaire = features('functionGrapher', 'secondaire', grapherFeatures);
 
-  it('au collège : pas d’المماس, des droites, un clavier sans sin ni ln', () => {
+  it('au collège : pas de tangente, des droites, un clavier sans sin ni ln', () => {
     expect(moyen.tangent).toBe(false);
     expect(moyen.keyboard).toBe('moyen');
     expect(moyen.presets).toBe(MOYEN_PRESETS);
@@ -61,14 +61,14 @@ describe('راسم الدوال', () => {
     expect(keys).toContain('7');
   });
 
-  it('au lycée : tout — المماس, les exemples transcendants, le clavier complet', () => {
+  it('au lycée : tout — la tangente, les exemples transcendants, le clavier complet', () => {
     expect(secondaire.tangent).toBe(true);
     expect(secondaire.keyboard).toBe('full');
     expect(secondaire.presets.map((p) => p.expression)).toContain('\\sin(x)');
     expect(GRAPHER_KEYBOARD_LAYOUT.rows.flat().map((key) => key.latex)).toContain('\\ln');
   });
 
-  it('un document enregistré avec المماس allumé s’ouvre ÉTEINT au collège (l’état garde tout le reste)', () => {
+  it('un document enregistré avec la tangente allumée s’ouvre ÉTEINT au collège (l’état garde tout le reste)', () => {
     const data = normalizeGrapherData({ functions: [{ expression: 'x^2' }], tangent: { enabled: true, x: 2 } });
     expect(data.tangent.enabled).toBe(true);
     // Le composant applique cette règle à l'ouverture (FunctionGrapherTool) : on la rejoue ici.
@@ -79,9 +79,9 @@ describe('راسم الدوال', () => {
 });
 
 /**
- * Aucun مخبر ne restreint aujourd'hui الاحتمالات والإحصاء (مخبر الثانوي seulement,
+ * Aucun atelier ne restreint aujourd'hui Probabilités et statistiques (atelier du lycée seulement,
  * toutes sections). La MÉCANIQUE de filtrage reste, et elle est tenue par ce
- * jeu de capacités d'essai — celui qu'un مخبر restreint déclarerait.
+ * jeu de capacités d'essai — celui qu'un atelier restreint déclarerait.
  */
 const RESTRICTED = Object.freeze({
   sections: ['experiment', 'dataset'],
@@ -90,11 +90,11 @@ const RESTRICTED = Object.freeze({
   explanations: ['mean', 'median', 'mode', 'range'],
 });
 
-describe('الاحتمالات والإحصاء', () => {
+describe('Probabilités et statistiques', () => {
   const moyen = probabilityFeatures(RESTRICTED);
   const secondaire = features('probabilityStats', 'secondaire', probabilityFeatures);
 
-  it('instrument du seul ثانوي, sans aucune restriction déclarée', () => {
+  it('instrument du seul lycée, sans aucune restriction déclarée', () => {
     expect(getMathLabTool('probabilityStats').scopes).toEqual(['secondaire']);
     expect(toolCapabilities(getMathLabTool('probabilityStats'), 'secondaire')).toBeNull();
     expect(toolCapabilities(getMathLabTool('probabilityStats'), 'moyen')).toBeNull();
@@ -126,11 +126,11 @@ describe('الاحتمالات والإحصاء', () => {
   });
 });
 
-describe('مختبر الجبر', () => {
+describe('outil Algèbre', () => {
   const moyen = features('algebra', 'moyen', algebraFeatures);
   const secondaire = features('algebra', 'secondaire', algebraFeatures);
 
-  it('au collège : les six sections, mais ni مميّز, ni second degré, ni « مجموع وجداء »', () => {
+  it('au collège : les six sections, mais ni discriminant, ni second degré, ni « somme et produit »', () => {
     expect(moyen.sections).toHaveLength(6);
     expect(moyen.factor.discriminant).toBe(false);
     expect(moyen.factor.methods).toBe('moyen');
@@ -149,7 +149,7 @@ describe('مختبر الجبر', () => {
     }
   });
 
-  it('ce qui exige « مجموع وجداء », la méthode ac ou le مميّز est reconnu', () => {
+  it('ce qui exige « somme et produit », la méthode ac ou le discriminant est reconnu', () => {
     for (const source of ['x^2 + 5x + 6', '6x^2 + 5x + 1', 'x^2 + x - 1', 'x^2 + 1', 'x^2 + x + 1']) {
       expect(isBeyondMoyenFactorization(factorExpression(source)), source).toBe(true);
     }
@@ -165,7 +165,7 @@ describe('مختبر الجبر', () => {
     }
   });
 
-  it('au lycée : le second degré, le مميّز, tous les exemples', () => {
+  it('au lycée : le second degré, le discriminant, tous les exemples', () => {
     expect(secondaire.factor.discriminant).toBe(true);
     expect(secondaire.factor.methods).toBe('all');
     expect(secondaire.functions.families).toContain('quadratic');
@@ -181,7 +181,7 @@ describe('مختبر الجبر', () => {
   });
 });
 
-describe('مختبر الأشعة', () => {
+describe('outil Vecteurs', () => {
   const moyen = features('vectors', 'moyen', vectorsFeatures);
   const secondaire = features('vectors', 'secondaire', vectorsFeatures);
 
@@ -215,7 +215,7 @@ describe('مختبر الأشعة', () => {
   });
 });
 
-describe('مختبر المثلثات', () => {
+describe('outil Trigonométrie', () => {
   const moyen = features('trigonometry', 'moyen', trigonometryFeatures);
   const secondaire = features('trigonometry', 'secondaire', trigonometryFeatures);
 
@@ -263,10 +263,10 @@ describe('مختبر المثلثات', () => {
   });
 });
 
-describe('مختبر التحويلات', () => {
+describe('outil Transformations', () => {
   const moyen = features('transformations', 'moyen', transformationsFeatures);
   const secondaire = features('transformations', 'secondaire', transformationsFeatures);
-  it('au collège : تناظر, انسحاب, دوران, تحاكٍ — une seule à la fois, sans matrice', () => {
+  it('au collège : symétrie, translation, rotation, homothétie — une seule à la fois, sans matrice', () => {
     expect(moyen.kinds).toEqual(['translation', 'rotation', 'reflection', 'dilation']);
     expect(moyen.maxSteps).toBe(1);
     expect(moyen.matrix).toBe(false);
@@ -307,11 +307,11 @@ describe('مختبر التحويلات', () => {
   });
 });
 
-describe('مختبر الأعداد والحساب', () => {
+describe('labo des nombres', () => {
   const moyen = numberLabModes(toolCapabilities(getMathLabTool('numberLab'), 'moyen'));
   const secondaire = numberLabModes(toolCapabilities(getMathLabTool('numberLab'), 'secondaire'));
 
-  it('les seize modes dans les DEUX مخابر : le lycée étend, il ne retire rien', () => {
+  it('les seize modes dans les DEUX ateliers : le lycée étend, il ne retire rien', () => {
     expect(moyen).toEqual(NUMBER_MODES);
     expect(secondaire).toEqual(NUMBER_MODES);
     expect(moyen).toHaveLength(16);
@@ -323,7 +323,7 @@ describe('مختبر الأعداد والحساب', () => {
   });
 });
 
-describe('مختبر المنطق والبرهان', () => {
+describe('outil Logique et raisonnement', () => {
   const moyen = features('logic', 'moyen', logicFeatures);
   const secondaire = features('logic', 'secondaire', logicFeatures);
 

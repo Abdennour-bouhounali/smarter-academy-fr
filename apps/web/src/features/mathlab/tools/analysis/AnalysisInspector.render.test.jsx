@@ -14,9 +14,9 @@ import { layersForLab } from './layers.js';
 const missing = new Set();
 const i18n = i18next.createInstance();
 i18n.use(initReactI18next).init({
-  lng: 'ar-DZ',
-  fallbackLng: 'ar-DZ',
-  resources: { 'ar-DZ': { mathlab } },
+  lng: 'fr-FR',
+  fallbackLng: 'fr-FR',
+  resources: { 'fr-FR': { mathlab } },
   ns: ['mathlab'],
   interpolation: { escapeValue: false },
   react: { useSuspense: false },
@@ -57,7 +57,7 @@ const clean = (html) => {
   expect([...missing]).toEqual([]);
 };
 
-describe('المشتقّة : f′(x) se dérive pas à pas', () => {
+describe('Dérivée : f′(x) se dérive pas à pas', () => {
   const steps = buildDerivativeSteps('x^2-4x+3');
   const derivative = (cursor) => ({ derivative: { player: playerAt(cursor, steps.steps.length), steps } });
 
@@ -91,7 +91,7 @@ describe('المشتقّة : f′(x) se dérive pas à pas', () => {
   });
 });
 
-describe('دراسة الدالة : le جدول التغيّرات se construit', () => {
+describe('Étude de fonction : le tableau de variations se construit', () => {
   const study = (cursor) => ({ study: playerAt(cursor, VARIATION_STAGES.length) });
 
   it('à l’ouverture : aucun tableau, la liste reliée au graphe, la variation en attente', () => {

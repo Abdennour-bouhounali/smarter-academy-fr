@@ -260,7 +260,7 @@ describe('les limites (§11 – §14)', () => {
    * La table s'arrête à δ = 1e−6 de a, et une pente m y décale les deux
    * lectures de ∓m·1e−6. Comparées brutes à 1e−6 près, elles « différaient » :
    * l'état PAR DÉFAUT du laboratoire (f = 2x + 1, a = 0) annonçait
-   * « النهايتان مختلفتان » — 658 droites sur 2 057 aux points entiers ou
+   * « Les limites à gauche et à droite sont différentes » — 658 droites sur 2 057 aux points entiers ou
    * demi-entiers. L'attendu est calculé à part : f(a) = m·a + p.
    */
   it('lit la limite d’une droite en tout point, par défaut 2x + 1 en 0', () => {
@@ -396,7 +396,7 @@ describe('les asymptotes (§16)', () => {
 });
 
 describe('sécante et tangente (§7, §8, §10)', () => {
-  it('calcule le taux d’accroissement moyen — le geste du programme de 4AM', () => {
+  it('calcule le taux d’accroissement moyen — le geste du programme du collège', () => {
     const rate = averageRate(f('x^2'), 1, 3);
     expect(rate.ok).toBe(true);
     expect(rate.slope).toBe(4);            // (9 − 1)/(3 − 1)

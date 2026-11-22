@@ -6,7 +6,7 @@ import { LabDisclosure, StepList } from '../../shared/LabKit.jsx';
 import { buildIntersectionSteps, intersectionKey } from './intersectionSteps.js';
 
 /**
- * « الحلّ الجبري خطوة بخطوة » — pourquoi la droite coupe 0, 1 ou 2 fois.
+ * « La résolution algébrique pas à pas » — pourquoi la droite coupe 0, 1 ou 2 fois.
  *
  * Les points restent VIVANTS sur le plan et le compte suit le doigt (§26,
  * §27) : c'est la manipulation. Ce pli, fermé à l'ouverture, déroule sur

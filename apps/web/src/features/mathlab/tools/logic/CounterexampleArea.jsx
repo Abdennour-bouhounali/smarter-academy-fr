@@ -12,7 +12,7 @@ import { setCounterexampleChallenge, setCandidate, tryCandidate } from './logicS
  * §8-10, §54 — LE LABORATOIRE DU CONTRE-EXEMPLE, et l'écran d'ouverture.
  *
  * C'est ici que le laboratoire s'ouvre : pas un menu, une question —
- * « هل تستطيع إثبات أنّ هذه العبارة خاطئة؟ » — et une droite pour chercher.
+ * « Peux-tu démontrer que cette proposition est fausse ? » — et une droite pour chercher.
  * L'élève essaie des valeurs ; chaque essai laisse une trace (verte si
  * l'énoncé tient, rouge s'il tombe), et à la première valeur qui le fait
  * tomber, le laboratoire explique POURQUOI un seul exemple suffit — jamais

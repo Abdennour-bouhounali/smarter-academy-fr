@@ -4,7 +4,7 @@
  * C'est le seul endroit où l'analyse est lancée, et c'est un module PUR : ni
  * React, ni pixels, ni DOM. `SceneLayer.jsx` ne fait ensuite que mettre en
  * pixels ce qu'il trouve ici — la séparation que MATH_LAB impose depuis le
- * مختبر المثلثات (« les étages dessinent un état résolu »).
+ * labo de trigonométrie (« les étages dessinent un état résolu »).
  *
  * ── Pourquoi tout passe par ici (§47) ────────────────────────────────────
  * Chercher des racines, des extrema et des asymptotes coûte un balayage de
@@ -40,7 +40,7 @@ const AREA_SAMPLES = 220;
  * Compile une expression et sa dérivée.
  *
  * Rend TOUJOURS un objet : `ok: false` porte l'erreur d'analyse pour que
- * l'interface affiche un message arabe (§46) plutôt qu'une exception.
+ * l'interface affiche un message en français (§46) plutôt qu'une exception.
  */
 export function compileFunction(source, scope) {
   const trimmed = String(source ?? '').trim();
@@ -168,12 +168,12 @@ export function buildScene(data, view, options = {}) {
   /**
    * ── §16, §17 : l'étude de la fonction ─────────────────────────────────
    *
-   * Dans le laboratoire « دراسة الدالة », l'analyse est calculée ENTIÈREMENT,
+   * Dans le laboratoire « Étude de fonction », l'analyse est calculée ENTIÈREMENT,
    * que les couches soient allumées ou non.
    *
    * Les bascules de §16 commandent ce qui se DESSINE sur le graphe, pas ce
-   * qu'on SAIT : une ligne du tableau qui affiche « لا تقطع المنحنى محور
-   * الفواصل » simplement parce que l'élève vient d'éteindre la mise en
+   * qu'on SAIT : une ligne du tableau qui affiche « La courbe ne coupe pas l’axe
+   * des abscisses » simplement parce que l'élève vient d'éteindre la mise en
    * évidence est une réponse FAUSSE à une question de mathématiques. La QA
    * visuelle l'a vue sur x² − 4x + 3, dont les racines 1 et 3 traversent
    * visiblement l'écran.
@@ -230,7 +230,7 @@ export function buildScene(data, view, options = {}) {
      * Elle ne REMPLACE pas la lecture numérique — elle la complète. Les deux
      * tables d'approche restent ce que l'élève regarde (§11), et le verdict
      * « les deux côtés diffèrent » reste celui des tables (§12), parce que
-     * c'est la lecture du programme : pour le manuel algérien, la limite de
+     * c'est la lecture du programme : pour le manuel, la limite de
      * 1/x en 0 n'existe pas, là où Nerdamer répond `Infinity` (une autre
      * convention, parfaitement défendable, mais pas celle qu'on enseigne).
      *

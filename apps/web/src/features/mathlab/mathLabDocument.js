@@ -1,5 +1,5 @@
 /**
- * Le DOCUMENT du مختبر الرياضيات, côté client — logique pure, sans React.
+ * Le DOCUMENT de l’atelier de mathématiques, côté client — logique pure, sans React.
  *
  * Un document est l'enveloppe commune à tous les instruments :
  *
@@ -8,18 +8,18 @@
  * `data` appartient à l'instrument (`tool`) : la coquille et la persistance
  * le transportent sans le lire. Un document NEUF n'a pas d'`id` : il naît sur
  * le serveur à son premier changement (useMathLabDocument), pas à l'ouverture
- * — ouvrir la سبّورة et repartir ne laisse aucune ligne vide.
+ * — ouvrir le tableau et repartir ne laisse aucune ligne vide.
  */
 
 import { withLabScope } from './labScope.js';
 
 export const MATH_LAB_BASE_PATH = '/espace/atelier';
 
-/** Le segment du مختبر dans un espace de travail : `/espace/atelier`, `/enseignant/atelier`. */
+/** Le segment de l’atelier dans un espace de travail : `/espace/atelier`, `/enseignant/atelier`. */
 const MATH_LAB_SEGMENT = 'atelier';
 
 /**
- * La racine du مختبر dans l'espace du lecteur — l'élève ET l'enseignant ont
+ * La racine de l’atelier dans l'espace du lecteur — l'élève ET l'enseignant ont
  * le leur, mêmes instruments, mêmes documents (à chacun les siens).
  * @param {string|null|undefined} workspaceBase  `/espace` ou `/enseignant`
  */
@@ -35,8 +35,8 @@ export const MATH_LAB_AUTOSAVE_MS = 2500;
  *
  * @param {{slug: string}} tool
  * @param {number | string | null} [documentId]
- * @param {string} [root]    la racine du مختبر dans l'espace du lecteur
- * @param {string|null} [scope]  le مخبر (`?lab=`), pour un instrument partagé
+ * @param {string} [root]    la racine de l’atelier dans l'espace du lecteur
+ * @param {string|null} [scope]  l’atelier (`?lab=`), pour un instrument partagé
  */
 export function mathLabToolPath(tool, documentId = null, root = MATH_LAB_BASE_PATH, scope = null) {
   const base = `${root}/${tool.slug}`;
@@ -49,7 +49,7 @@ export function mathLabToolPath(tool, documentId = null, root = MATH_LAB_BASE_PA
  *
  * @param {import('./toolContract.js').MathLabTool} tool
  * @param {{title: string, seed?: unknown, scope?: string|null, capabilities?: object|null}} options
- *   `scope` / `capabilities` : le مخبر où il naît (labScope.js) — l'instrument
+ *   `scope` / `capabilities` : l’atelier où il naît (labScope.js) — l'instrument
  *   peut y choisir un état d'ouverture à sa portée.
  */
 export function newMathLabDocument(tool, { title, seed, scope = null, capabilities = null }) {
@@ -73,7 +73,7 @@ export function fromApiDocument(payload) {
     schemaVersion: payload.schemaVersion ?? 1,
     data: payload.data ?? null,
     dataBytes: payload.dataBytes ?? 0,
-    // Le résumé que l'instrument a fait de cet état — ce que « أعمالي »
+    // Le résumé que l'instrument a fait de cet état — ce que « Mes travaux »
     // dessine. Nul pour un document enregistré avant les résumés.
     summary: payload.summary ?? null,
     isFavorite: payload.isFavorite === true,

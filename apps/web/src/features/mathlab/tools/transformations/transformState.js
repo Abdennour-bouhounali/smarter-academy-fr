@@ -1,10 +1,10 @@
 /**
- * L'ÉTAT du مختبر التحويلات — logique pure, sans React.
+ * L'ÉTAT de l'atelier des transformations — logique pure, sans React.
  *
  *     data = {
  *       scene:   { figures: [...], steps: [...] },
- *       history: [scene, scene, …],      // le CHEMIN, comme en algèbre et en أشعة
- *       cursor:  number,                 // d'où viennent تراجع / إعادة
+ *       history: [scene, scene, …],      // le CHEMIN, comme en algèbre et en vecteurs
+ *       cursor:  number,                 // d'où viennent Annuler / Rétablir
  *       viewport:{xMin, xMax, yMin, yMax} | null,
  *       selection:{ figureId, vertexIndex } | null,
  *       settings:{ grid, snap, snapStep, showOriginal, showIntermediate, trails,
@@ -15,7 +15,7 @@
  *     }
  *
  * ── Ce qui est PERSISTÉ et ce qui ne l'est pas ───────────────────────────
- * La même séparation que le مختبر المثلثات (§42 de son cahier) :
+ * La même séparation que l'atelier de trigonométrie (§42 de son cahier) :
  *
  *   | état MATHÉMATIQUE (data)      | état d'INTERFACE (local, jamais sérialisé) |
  *   |-------------------------------|---------------------------------------------|
@@ -38,8 +38,8 @@ export const TRANSFORMATIONS_SCHEMA_VERSION = 1;
  * La profondeur de l'historique.
  *
  * Chaque pas garde une COPIE de la scène entière — c'est le modèle déjà
- * retenu pour le مختبر الجبر et le مختبر الأشعة, et il a le même avantage :
- * « تراجع » recule le curseur, il ne défait rien, donc l'élève peut revenir
+ * retenu pour l'atelier d'algèbre et l'atelier des vecteurs, et il a le même avantage :
+ * « Annuler » recule le curseur, il ne défait rien, donc l'élève peut revenir
  * en avant tant qu'il n'a pas rejoué. Le coût du document est
  * `MAX_HISTORY × taille de la scène`, et c'est lui qui décide du plafond
  * d'octets côté serveur (MathLabTools.php) ; `transformState.test.js` tient
@@ -402,7 +402,7 @@ export function moveVertex(scene, figureId, index, x, y) {
   };
 }
 
-/** Déplacer une figure ENTIÈRE (§5) — tous ses sommets du même شعاع. */
+/** Déplacer une figure ENTIÈRE (§5) — tous ses sommets du même vecteur. */
 export function moveFigure(scene, figureId, dx, dy) {
   if (!finite(dx) || !finite(dy)) return scene;
 
@@ -519,7 +519,7 @@ export function createTransformationsData(seed = undefined) {
  * Tout ce que l'écran a besoin de savoir, calculé UNE fois par rendu.
  *
  * Le composant ne calcule rien : il lit. C'est la règle de séparation du
- * مختبر (aucune mathématique dans le JSX), et c'est aussi ce qui rend §56
+ * l'atelier (aucune mathématique dans le JSX), et c'est aussi ce qui rend §56
  * tenable — un glissement recalcule cette fonction et rien d'autre.
  */
 export function resolveData(data) {

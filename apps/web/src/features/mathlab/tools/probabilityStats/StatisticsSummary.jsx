@@ -7,8 +7,8 @@ import { formatValue } from '../functionGrapher/grapherFormat.js';
  * `aria-live` — c'est la représentation textuelle complète de ce que les
  * graphiques montrent (§ 31). Jamais NaN : une case sans valeur affiche « — ».
  *
- * Les symboles (n, x̄, Me, Q₁…) restent en LTR : une notation mathématique ne
- * se renverse pas parce que la page est en arabe (ARABIC_RTL_CONTRACT, § 25).
+ * Les symboles (n, x̄, Me, Q₁…) sont dans un îlot `dir="ltr"` — inoffensif
+ * dans une page LTR (FRENCH_LANGUAGE_CONTRACT § 8).
  */
 export default function StatisticsSummary({ stats, shown = null }) {
   const { t } = useTranslation('mathlab');
@@ -30,7 +30,7 @@ export default function StatisticsSummary({ stats, shown = null }) {
     { key: 'iqr', symbol: 'Q₃ − Q₁', value: stats.iqr },
     { key: 'variance', symbol: 'V', value: stats.variance, decimals: 4 },
     { key: 'sd', symbol: 'σ', value: stats.sd, decimals: 4 },
-  // `shown` : les indicateurs de ce مخبر (scope.js) — ni quartiles ni
+  // `shown` : les indicateurs de ce labo (scope.js) — ni quartiles ni
   // variance au collège.
   ].filter((entry) => !shown || shown.includes(entry.key));
 

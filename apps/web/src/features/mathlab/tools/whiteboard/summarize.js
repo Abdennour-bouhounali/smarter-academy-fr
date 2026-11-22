@@ -1,14 +1,14 @@
 /**
- * Le RÉSUMÉ d'une سبّورة. Un dessin Excalidraw pèse jusqu'à 2 Mo : il n'est
+ * Le RÉSUMÉ d'un tableau. Un dessin Excalidraw pèse jusqu'à 2 Mo : il n'est
  * pas question d'en faire voyager une image dans une liste, ni de monter
  * Excalidraw pour une vignette. On ne garde donc que la SILHOUETTE — la
  * boîte de chaque trait, sa couleur, son type — plafonnée à quarante
  * éléments. C'est assez pour reconnaître son propre dessin parmi vingt.
  *
  * Le texte des éléments texte part avec : c'est ce qu'on cherche quand on a
- * écrit « المثلث ABC » sur sa سبّورة.
+ * écrit « le triangle ABC » sur son tableau.
  *
- * @param {object} data  l'état sérialisé de la سبّورة
+ * @param {object} data  l'état sérialisé du tableau
  * @returns {import('../../toolContract.js').MathLabSummary | null}
  */
 export function summarizeWhiteboard(data) {

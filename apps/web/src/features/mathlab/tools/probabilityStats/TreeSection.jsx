@@ -27,13 +27,13 @@ function shortFraction(r) {
 }
 
 /**
- * شجرة الاحتمالات — construire l'arbre, le VOIR, et lire ce qu'il dit :
+ * L'arbre de probabilités — construire l'arbre, le VOIR, et lire ce qu'il dit :
  * la probabilité d'un chemin (règle du produit), d'un événement
  * (probabilités totales), une probabilité conditionnelle ou inverse
  * (Bayes), et l'indépendance des étapes — déduite, jamais déclarée.
  *
  * Choix constant : tant que l'arbre n'est pas valide, aucun résultat n'est
- * calculé (« غير محسوبة »), et les nœuds à corriger portent un « ! ».
+ * calculé (« Non calculée »), et les nœuds à corriger portent un « ! ».
  *
  * Le nœud ÉDITÉ est un état passager (non enregistré) ; la REQUÊTE (chemin,
  * événement, conditionnelle) est enregistrée avec l'arbre : on rouvre le
@@ -83,7 +83,7 @@ export default function TreeSection({ title, tree, compact, onChange }) {
   const playable = Boolean(board);
   const boardKey = `${treeSignature}|${JSON.stringify(query ?? null)}`;
   const player = useStepReveal(playable ? board.frames.length : 0, { resetKey: boardKey });
-  // « تدرّب بنفسك » : les gestes du calcul, faits par l'élève (useBoardPractice).
+  // « Entraîne-toi » : les gestes du calcul, faits par l'élève (useBoardPractice).
   const practice = useBoardPractice(board?.frames ?? [], player, boardKey);
   const cursor = playable ? player.cursor : 0;
   const { primary, secondary, leaves } = useMemo(() => treeHighlight(board ?? calculation, cursor), [board, calculation, cursor]);

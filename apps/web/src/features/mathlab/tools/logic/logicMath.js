@@ -1,5 +1,5 @@
 /**
- * La MATHÉMATIQUE du مختبر المنطق والبرهان — logique pure, sans React,
+ * La MATHÉMATIQUE de l'atelier « Logique et raisonnement » — logique pure, sans React,
  * testée à part (logicMath.test.js).
  *
  * §48 du cahier des charges : « This tool is highly sensitive to logical

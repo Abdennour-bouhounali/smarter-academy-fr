@@ -1,7 +1,6 @@
 /**
  * LES FORMULES de l'arbre — du LaTeX pour MathText, jamais du texte brut
- * dans une phrase arabe (l'algorithme bidi en ferait des mathématiques
- * fausses). Logique pure : les pas (`{ kind, latex }`) sont assemblés ici,
+ * dans une phrase (KaTeX les compose comme des mathématiques). Logique pure : les pas (`{ kind, latex }`) sont assemblés ici,
  * le composant ne fait que traduire `kind` et afficher.
  *
  * LES PAS (exigence 2026-09-30) : chaque calcul est une SUITE d'états réels,
@@ -16,8 +15,8 @@
  * Chaque déroulé rend aussi `question` : les branches concernées, éclairées
  * en retrait avant le premier pas (l'élève voit ce qu'il a demandé, pas la réponse).
  *
- * Notation du manuel algérien (et français) : la probabilité de B sachant A
- * s'écrit P_A(B) ; P(B|A) est la même chose (rappelé dans le pli « القاعدة »).
+ * Notation de l'école française : la probabilité de B sachant A
+ * s'écrit P_A(B) ; P(B|A) est la même chose (rappelé dans le pli « Les règles »).
  */
 
 import { formatValue } from '../functionGrapher/grapherFormat.js';
@@ -59,7 +58,7 @@ export function factorTex(text, value) {
   const source = String(text ?? '').replace(/\s+/g, '');
   const fraction = source.match(/^(\d+)\/(\d+)$/);
   if (fraction) return `\\frac{${Number(fraction[1])}}{${Number(fraction[2])}}`;
-  if (/[.,٫%٪]/.test(source)) return latexNumber(toNumber(value), 6);
+  if (/[.,\u066B%\u066A]/.test(source)) return latexNumber(toNumber(value), 6);
 
   return rationalLatex(value);
 }
@@ -127,7 +126,7 @@ function productTex(tree, path, factors, product) {
 
     return `\\frac{${nums.join(' \\times ')}}{${dens.join(' \\times ')}} = ${d === 1 ? n : `\\frac{${n}}{${d}}`}`;
   }
-  if (sources.every((source) => /[.,٫%٪]/.test(source) || /^\d+$/.test(source))) return latexNumber(toNumber(product), 8);
+  if (sources.every((source) => /[.,\u066B%\u066A]/.test(source) || /^\d+$/.test(source))) return latexNumber(toNumber(product), 8);
 
   return rationalLatex(product);
 }

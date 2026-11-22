@@ -2,7 +2,7 @@ import { MAX_FUNCTIONS } from './grapherState.js';
 
 /**
  * Le RÉSUMÉ d'un document du grapheur — quelques centaines d'octets qui
- * suffisent à « أعمالي » pour dessiner une vraie miniature et pour trouver
+ * suffisent à « Mes travaux » pour dessiner une vraie miniature et pour trouver
  * « x^2 » dans une recherche, SANS charger mafs, MathLive ni l'analyseur.
  *
  * On garde les EXPRESSIONS (c'est ce qu'on reconnaît d'un coup d'œil et ce

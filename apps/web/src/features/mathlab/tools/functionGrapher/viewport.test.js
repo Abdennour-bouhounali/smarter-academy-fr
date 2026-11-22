@@ -67,7 +67,7 @@ describe('grille et format', () => {
     expect(gridStepFor(0)).toEqual({ step: 1, subdivisions: 5 });
   });
 
-  it('formate à l’algérienne : virgule, vrai moins', () => {
+  it('formate à la française : virgule, vrai moins', () => {
     expect(formatValue(2.345)).toBe('2,35');
     expect(formatValue(-4)).toBe('−4');
     expect(formatValue(-0.001)).toBe('0');

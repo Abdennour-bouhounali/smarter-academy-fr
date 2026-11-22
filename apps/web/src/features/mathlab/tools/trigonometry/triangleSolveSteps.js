@@ -1,17 +1,17 @@
 /**
- * « حلّ المثلث خطوة بخطوة » — le RAISONNEMENT qui mène des deux données au
- * triangle entier, en pas successifs. Logique PURE : aucune chaîne arabe,
+ * « Résoudre le triangle pas à pas » — le RAISONNEMENT qui mène des deux données au
+ * triangle entier, en pas successifs. Logique PURE : aucune phrase,
  * aucun React — des clés i18n, des paramètres et du LaTeX.
  *
  * Le dessin (TriangleStage) reste VIVANT : il se résout à chaque frappe et à
  * chaque glissement, parce qu'on lit en manipulant. Ce qui se DÉROULE ici,
- * c'est l'écriture du manuel de 4AM :
+ * c'est l'écriture du cahier, au collège :
  *
  *     choisir la nisba qui relie le connu à l'inconnu → écrire l'égalité
  *     → substituer → isoler → calculer        (puis l'autre inconnue)
  *     → l'autre angle aigu (90° − θ) → le triangle résolu (DERNIER pas)
  *
- * Notation : a = الضلع المقابل, b = الضلع المجاور, c = الوتر, θ la zone aiguë.
+ * Notation : a = côté opposé, b = côté adjacent, c = hypoténuse, θ la zone aiguë.
  * Le dernier pas reprend les valeurs de `solveRightTriangle` — le moteur reste
  * la seule source de vérité, arrondies EXACTEMENT comme sur le dessin
  * (`formatLength`, `formatDegrees(…, 1)`).

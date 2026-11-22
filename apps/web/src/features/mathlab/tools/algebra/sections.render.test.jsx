@@ -28,9 +28,9 @@ import {
 const missing = new Set();
 const i18n = i18next.createInstance();
 i18n.use(initReactI18next).init({
-  lng: 'ar-DZ',
-  fallbackLng: 'ar-DZ',
-  resources: { 'ar-DZ': { mathlab } },
+  lng: 'fr-FR',
+  fallbackLng: 'fr-FR',
+  resources: { 'fr-FR': { mathlab } },
   ns: ['mathlab'],
   interpolation: { escapeValue: false },
   react: { useSuspense: false },
@@ -51,15 +51,15 @@ const clean = (html) => {
 
 beforeEach(() => missing.clear());
 
-describe('le مختبر الجبر se rend dans chaque section', () => {
-  it('un document neuf ouvre sur les معادلات, barre des six sections, sans la solution', () => {
+describe('l’atelier d’algèbre se rend dans chaque section', () => {
+  it('un document neuf ouvre sur les équations, barre des six sections, sans la solution', () => {
     const html = render(undefined);
     expect(html).toContain('data-ml-alg-section="equations"');
     expect(html.match(/data-ml-alg-tab=/g)).toHaveLength(6);
     expect(html).toContain('role="tablist"');
     expect(html).toContain('data-ml-current-equation');
     expect(html).not.toContain('data-ml-solution');
-    // « حلّ خطوة بخطوة » est proposé ; aucun tableau n'est encore ouvert.
+    // « Résoudre pas à pas » est proposé ; aucun tableau n'est encore ouvert.
     expect(html).toContain('data-ml-alg-solve');
     expect(html).toContain('data-ml-alg-show-solution');
     expect(html).not.toContain('data-ml-alg-board');
@@ -72,7 +72,7 @@ describe('le مختبر الجبر se rend dans chaque section', () => {
     clean(html);
   });
 
-  it('المعادلات : une saisie à parenthèses montre « نشر وتبسيط », une opération montre sa ligne intermédiaire', () => {
+  it('« Équations » : une saisie à parenthèses montre « développer et réduire », une opération montre sa ligne intermédiaire', () => {
     for (const example of EQUATION_EXAMPLES) {
       const eq = parseEquation(example.source).equation;
       const html = render(resetTo(createAlgebraData(), eq, example.source));
@@ -88,7 +88,7 @@ describe('le مختبر الجبر se rend dans chaque section', () => {
     clean(html);
   });
 
-  it('المعادلات / المتراجحات : avant le déroulé, aucune réponse — ni verdict, ni borne, ni ensemble', () => {
+  it('« Équations » / « Inéquations » : avant le déroulé, aucune réponse — ni verdict, ni borne, ni ensemble', () => {
     for (const source of ['2x + 3 = 2x + 5', '2x + 3 = 2x + 3', '4x - 7 = 2x + 5']) {
       const html = render(resetTo(createAlgebraData(), parseEquation(source).equation, source));
       expect(html).not.toContain('data-ml-solution');
@@ -102,7 +102,7 @@ describe('le مختبر الجبر se rend dans chaque section', () => {
     clean(html);
   });
 
-  it('المتراجحات : le retournement annoncé, l’ensemble en intervalle une fois isolé', () => {
+  it('« Inéquations » : le retournement annoncé, l’ensemble en intervalle une fois isolé', () => {
     let data = { ...createAlgebraData(), section: 'inequalities' };
     const steps = [{ kind: 'subtract', value: R.makeRational(3) }, { kind: 'divide', value: R.makeRational(-2) }];
     for (const operation of steps) {
@@ -123,7 +123,7 @@ describe('le مختبر الجبر se rend dans chaque section', () => {
     }
   });
 
-  it.each(SYSTEM_EXAMPLES.map((e) => e.id))('الأنظمة — %s, chaque méthode', (id) => {
+  it.each(SYSTEM_EXAMPLES.map((e) => e.id))('« Systèmes » — %s, chaque méthode', (id) => {
     const example = SYSTEM_EXAMPLES.find((e) => e.id === id);
     for (const method of ['substitution', 'elimination', 'graphical']) {
       const html = render({ ...createAlgebraData(), section: 'systems', systems: { first: example.first, second: example.second, method } });
@@ -142,7 +142,7 @@ describe('le مختبر الجبر se rend dans chaque section', () => {
     }
   });
 
-  it.each(SIMPLIFY_EXAMPLES.map((e) => e.source))('تبسيط — %s', (source) => {
+  it.each(SIMPLIFY_EXAMPLES.map((e) => e.source))('« Développer et réduire » — %s', (source) => {
     const html = render({ ...createAlgebraData(), section: 'simplify', simplify: { source } });
     expect(html).toContain('data-ml-alg-simplify');
     expect(html).toContain('data-ml-alg-board="ready"');
@@ -150,14 +150,14 @@ describe('le مختبر الجبر se rend dans chaque section', () => {
     clean(html);
   });
 
-  it.each(FACTOR_EXAMPLES.map((e) => e.source))('تحليل — %s', (source) => {
+  it.each(FACTOR_EXAMPLES.map((e) => e.source))('« Factoriser » — %s', (source) => {
     const html = render({ ...createAlgebraData(), section: 'factor', factor: { source } });
     expect(html).toContain('data-ml-alg-factor-status');
     expect(html).toContain('data-ml-alg-board="ready"');
     clean(html);
   });
 
-  it('تحليل : ni candidats, ni vérification, ni مميّز avant le déroulé', () => {
+  it('« Factoriser » : ni candidats, ni vérification, ni discriminant avant le déroulé', () => {
     const html = render({ ...createAlgebraData(), section: 'factor', factor: { source: 'x^2 + 5x + 6' } });
     expect(html).not.toContain('data-mb-token');
     expect(html).not.toContain('data-ml-alg-factor-verify');
@@ -172,7 +172,7 @@ describe('le مختبر الجبر se rend dans chaque section', () => {
     clean(render({ ...createAlgebraData(), section: 'systems', systems: { first: 'xy = 2', second: 'x = 1', method: 'graphical' } }));
   });
 
-  it.each(FUNCTION_EXAMPLES.map((e) => e.id))('الدوال — %s', (id) => {
+  it.each(FUNCTION_EXAMPLES.map((e) => e.id))('« Fonctions » — %s', (id) => {
     const { value } = FUNCTION_EXAMPLES.find((e) => e.id === id);
     const html = render({ ...createAlgebraData(), section: 'functions', functions: { ...value, tableStart: -3, tableStep: 1 } });
     expect(html).toContain('data-ml-alg-facts');
@@ -198,7 +198,7 @@ function checkBoard(frames, finalMarker) {
 }
 
 describe('le tableau : la réponse n’arrive qu’au DERNIER geste, et chaque geste a sa phrase', () => {
-  it('المعادلات et المتراجحات — chaque exemple, avec son التحقق', () => {
+  it('« Équations » et « Inéquations » — chaque exemple, avec sa vérification', () => {
     for (const example of [...EQUATION_EXAMPLES, ...INEQUALITY_EXAMPLES]) {
       const start = parseEquation(example.source).equation;
       const walk = buildWalkthrough(start);
@@ -223,15 +223,15 @@ describe('le tableau : la réponse n’arrive qu’au DERNIER geste, et chaque g
     expect(board(frames, frames.length)).toContain('data-mb-token="fs"');
   });
 
-  it.each(SIMPLIFY_EXAMPLES.map((e) => e.source))('تبسيط — %s', (source) => {
+  it.each(SIMPLIFY_EXAMPLES.map((e) => e.source))('« Développer et réduire » — %s', (source) => {
     checkBoard(simplifyFrames(simplifyExpression(source)), 'sa-ml-board__current is-result');
   });
 
-  it.each(FACTOR_EXAMPLES.map((e) => e.source))('تحليل — %s', (source) => {
+  it.each(FACTOR_EXAMPLES.map((e) => e.source))('« Factoriser » — %s', (source) => {
     checkBoard(factorFrames(factorExpression(source)), 'sa-ml-board__current is-result');
   });
 
-  it.each(SYSTEM_EXAMPLES.map((e) => e.id))('الأنظمة — %s, les trois méthodes', (id) => {
+  it.each(SYSTEM_EXAMPLES.map((e) => e.id))('« Systèmes » — %s, les trois méthodes', (id) => {
     const example = SYSTEM_EXAMPLES.find((e) => e.id === id);
     const e1 = parseLinearEquation(example.first).equation;
     const e2 = parseLinearEquation(example.second).equation;

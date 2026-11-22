@@ -1,5 +1,5 @@
 /**
- * L'ENTRAÎNEMENT du مختبر المنطق والبرهان — pur, testable (§37-39).
+ * L'ENTRAÎNEMENT de l'atelier « Logique et raisonnement » — pur, testable (§37-39).
  *
  * Quatre décisions traversent le fichier, les mêmes que trigonometry et
  * sequences, parce que ce sont celles du cahier des charges :
@@ -8,7 +8,7 @@
  *    verrou : l'élève réessaie, demande un indice, révèle, ou part explorer
  *    — le laboratoire reste manipulable derrière la question.
  * 2. **Trois issues, pas deux.** `{correct, readable}` : une saisie
- *    illisible n'est PAS une réponse fausse. Dire « خطأ » à qui a mal tapé
+ *    illisible n'est PAS une réponse fausse. Dire « faux » à qui a mal tapé
  *    lui enseignerait une fausseté sur sa propre pensée.
  * 3. **Les indices sont progressifs et ne donnent jamais la réponse** (§39) :
  *    `hintKeys` va du plus général au plus précis, un cran à la fois.
@@ -80,7 +80,7 @@ export function generateChallenge(seed, kinds = CHALLENGE_KINDS) {
   }
 }
 
-/** §5 — صحيح / خطأ / يعتمد. */
+/** §5 — vraie / fausse / dépend de la variable. */
 function trueOrFalse(rng) {
   const statement = pick(rng, STATEMENTS);
 
@@ -207,7 +207,7 @@ function equivalence(rng) {
 /** §18-20 — nécessaire / suffisant, dans les DEUX sens, dont un qui échoue. */
 function necessarySufficient(rng) {
   const preset = pick(rng, CONDITIONS);
-  // Quatre questions possibles ; deux ont « نعم » pour réponse, deux « لا ».
+  // Quatre questions possibles ; deux ont « oui » pour réponse, deux « non ».
   const question = pick(rng, ['bNecessaryForA', 'aSufficientForB', 'bSufficientForA', 'aNecessaryForB']);
   const sample = sampleOf(preset.domain);
   const reading = analyzeImplication(preset.a.test, preset.b.test, sample);
@@ -252,7 +252,7 @@ function quantifier(rng) {
 }
 
 /**
- * §25 — écrire la négation d'un énoncé quantifié : « كل » devient « يوجد ».
+ * §25 — écrire la négation d'un énoncé quantifié : « pour tout » devient « il existe ».
  *
  * Les deux leurres sont les deux ERREURS classiques sur CET énoncé — changer
  * le seul quantificateur, ou nier le seul prédicat — et non la négation d'un
@@ -356,10 +356,10 @@ export function parseNumericAnswer(text) {
   if (typeof text === 'number') return Number.isFinite(text) ? text : NaN;
   if (typeof text !== 'string') return NaN;
   const source = text.trim()
-    .replace(/[٠-٩]/g, (d) => String(d.charCodeAt(0) - 0x0660))
-    .replace(/[۰-۹]/g, (d) => String(d.charCodeAt(0) - 0x06f0))
+    .replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x0660))
+    .replace(/[\u06f0-\u06f9]/g, (d) => String(d.charCodeAt(0) - 0x06f0))
     .replace(/[−–—]/g, '-')
-    .replace(/،/g, ',')
+    .replace(/\u060c/g, ',') // la virgule arabe
     .replace(/,/g, '.')
     .replace(/\s+/g, '');
   if (!source) return NaN;
@@ -393,7 +393,7 @@ export function checkAnswer(challenge, answer) {
     case 'number': {
       const value = parseNumericAnswer(answer);
       if (!Number.isFinite(value)) return { correct: false, readable: false };
-      // Trop grande pour être calculée exactement : on ne juge pas, on ne dit pas « خطأ ».
+      // Trop grande pour être calculée exactement : on ne juge pas, on ne dit pas « faux ».
       if (domainStatus(value, numericDomain(challenge)) === 'tooLarge') {
         return { correct: false, readable: false, detail: { value, tooLarge: true } };
       }

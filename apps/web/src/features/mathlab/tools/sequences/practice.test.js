@@ -139,7 +139,7 @@ describe('la lecture d’une réponse (§27)', () => {
     expect(parseAnswer('0.5')).toBe(0.5);
     expect(parseAnswer('1/2')).toBe(0.5);
     expect(parseAnswer('−2,5')).toBe(-2.5);
-    expect(parseAnswer('٣')).toBe(3);
+    expect(parseAnswer('\u0663')).toBe(3);
     expect(parseAnswer(' 7 ')).toBe(7);
     expect(parseAnswer(17)).toBe(17);
   });
@@ -306,8 +306,8 @@ describe('les familles pertinentes pour la suite affichée', () => {
 /**
  * RÉGRESSION — les étiquettes de comportement ne s'excluent pas.
  *
- * Une arithmétique de raison 4 est متزايدة ET تتباعد ; une géométrique de
- * raison 0,5 est متناقصة ET تقترب من قيمة. Le défi n'acceptait qu'une
+ * Une arithmétique de raison 4 est croissante ET divergente ; une géométrique de
+ * raison 0,5 est décroissante ET convergente. Le défi n'acceptait qu'une
  * étiquette et refusait l'autre, pourtant vraie.
  *
  * La vérité est recalculée ICI, sur 400 termes itérés un par un — pas sur la
@@ -386,7 +386,7 @@ describe('le comportement : toute étiquette VRAIE est acceptée, toute fausse r
     const geoTwo = behaviour({ kind: 'geometric', first: 3, ratio: 2 }, 'diverging');
     expect(checkAnswer(geoTwo, 'increasing').correct).toBe(true);
     expect(checkAnswer(geoTwo, 'decreasing').correct).toBe(false);
-    // (−1)ⁿ oscille sans limite : متباعدة au sens du programme.
+    // (−1)ⁿ oscille sans limite : divergente au sens du programme.
     const flip = behaviour({ kind: 'geometric', first: 4, ratio: -1 }, 'alternating');
     expect(checkAnswer(flip, 'diverging').correct).toBe(true);
     expect(checkAnswer(flip, 'approaching').correct).toBe(false);

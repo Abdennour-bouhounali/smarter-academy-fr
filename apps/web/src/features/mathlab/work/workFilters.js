@@ -1,5 +1,5 @@
 /**
- * « أعمالي » — chercher, filtrer, trier. Logique PURE, sans React : c'est
+ * « Mes travaux » — chercher, filtrer, trier. Logique PURE, sans React : c'est
  * elle qu'on teste, et c'est elle qui décide de ce qui s'affiche.
  *
  * ── Pourquoi tout se passe ici, et non sur le serveur ────────────────────
@@ -14,50 +14,38 @@
  * prendrait des paramètres ; l'interface ne changerait pas.
  */
 
+import { LOCALE } from '../../../locale.js';
+
 /** Les tris offerts. `updated` est le défaut : on revient à ce qu'on vient de quitter. */
 export const WORK_SORTS = Object.freeze(['updated', 'created', 'oldest', 'titleAsc', 'titleDesc']);
 
 /** Les fenêtres de temps. `all` ne filtre rien. */
 export const WORK_PERIODS = Object.freeze(['all', 'today', 'week', 'month']);
 
-/** Les مخابر (labScope.js). `all` ne filtre rien. */
+/** Les ateliers (labScope.js). `all` ne filtre rien. */
 export const WORK_LABS = Object.freeze(['all', 'moyen', 'secondaire']);
 
 export const DEFAULT_WORK_FILTERS = Object.freeze({ lab: 'all', tool: 'all', period: 'all', favorite: false });
 
 /**
- * Normalise un texte arabe ou français pour une recherche INDULGENTE.
+ * Normalise un texte pour une recherche INDULGENTE.
  *
  * Ce qu'on corrige, et rien de plus (§7 : ne pas bâtir un moteur de
- * recherche arabe) :
- *   - la casse et les accents latins (« Étude » trouvé en tapant « etude ») ;
- *   - les diacritiques arabes (تشكيل) et la tatweel (ـ), qu'on ne tape pas ;
- *   - les variantes d'alif (أ إ آ ا), de ya (ى ي) et de ta marbouta (ة ه),
- *     que personne ne distingue en cherchant ;
- *   - les chiffres arabo-hindis (٣) ramenés aux chiffres latins (3), parce
- *     qu'un même nombre s'écrit des deux façons sur la plateforme.
+ * recherche) : la casse et les accents (« Étude » trouvé en tapant
+ * « etude »), et les espaces en trop.
  */
 export function normalizeSearchText(value) {
   let text = String(value ?? '').toLowerCase();
 
-  // Les accents latins : « é » → « e ».
-  text = text.normalize('NFD').replace(/[̀-ͯ]/g, '');
-  // Le تشكيل arabe et la tatweel : ils ne se tapent pas.
-  text = text.replace(/[ً-ٰٟـ]/g, '');
-  // Les variantes qu'on ne distingue pas en cherchant.
-  text = text.replace(/[آأإٱ]/g, 'ا'); // آ أ إ ٱ → ا
-  text = text.replace(/ى/g, 'ي'); // ى → ي
-  text = text.replace(/ة/g, 'ه'); // ة → ه
-  // Les chiffres arabo-hindis (٠..٩) et persans (۰..۹) → 0..9.
-  text = text.replace(/[٠-٩]/g, (d) => String(d.charCodeAt(0) - 0x0660));
-  text = text.replace(/[۰-۹]/g, (d) => String(d.charCodeAt(0) - 0x06F0));
+  // Les accents : « é » → « e ».
+  text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
   return text.replace(/\s+/g, ' ').trim();
 }
 
 /**
  * Tout ce sur quoi un travail se cherche : son titre, le nom de son
- * instrument (en arabe, tel que l'élève le voit) et le texte que
+ * instrument (tel que l'élève le voit) et le texte que
  * l'instrument a mis dans son résumé (les expressions, l'équation, les
  * dimensions…).
  *
@@ -72,7 +60,7 @@ export function searchableText(work, toolLabel) {
   return normalizeSearchText(parts.join(' '));
 }
 
-/** Le début de la fenêtre de temps, en millisecondes — ou null pour « كل الأوقات ». */
+/** Le début de la fenêtre de temps, en millisecondes — ou null pour « Depuis toujours ». */
 export function periodStart(period, now = Date.now()) {
   const date = new Date(now);
   switch (period) {
@@ -106,7 +94,7 @@ function timeOf(work) {
  * changer le tri ne touche pas aux filtres, et chercher ne les efface pas.
  *
  * @param {object[]} works
- * `labOf(work)` rend le مخبر d'un travail (labScope.workLabScope) ; sans
+ * `labOf(work)` rend l’atelier d'un travail (labScope.workLabScope) ; sans
  * lui, seul le résumé est lu.
  *
  * @param {{q?: string, filters?: object, sort?: string, toolLabel?: Function, labOf?: Function, now?: number}} options
@@ -134,7 +122,7 @@ export function selectWorks(works, { q = '', filters = DEFAULT_WORK_FILTERS, sor
 /** Le tri, sur une COPIE : la liste d'origine garde son ordre. */
 export function sortWorks(works, sort = 'updated') {
   const list = [...(Array.isArray(works) ? works : [])];
-  const byTitle = (a, b) => String(a?.title ?? '').localeCompare(String(b?.title ?? ''), 'ar-DZ', { numeric: true, sensitivity: 'base' });
+  const byTitle = (a, b) => String(a?.title ?? '').localeCompare(String(b?.title ?? ''), LOCALE, { numeric: true, sensitivity: 'base' });
 
   switch (sort) {
     case 'created':
@@ -158,7 +146,7 @@ function createdOf(work) {
   return Number.isNaN(ms) ? 0 : ms;
 }
 
-/** Combien de filtres sont actifs — la pastille du bouton « الفلاتر ». */
+/** Combien de filtres sont actifs — la pastille du bouton « Filtres ». */
 export function activeWorkFilterCount(filters) {
   let count = 0;
   if (filters?.lab && filters.lab !== 'all') count += 1;
@@ -170,11 +158,11 @@ export function activeWorkFilterCount(filters) {
 }
 
 /**
- * Le titre d'une copie : « نسخة من X ». Jamais « نسخة من نسخة من X » —
- * copier une copie donne « نسخة من X (2) », puis (3), et ainsi de suite.
+ * Le titre d'une copie : « Copie de X ». Jamais « Copie de Copie de X » —
+ * copier une copie donne « Copie de X (2) », puis (3), et ainsi de suite.
  *
  * @param {string} title       le titre de l'original
- * @param {string} copyPrefix  le mot « نسخة من » traduit (i18n)
+ * @param {string} copyPrefix  le mot « Copie de » traduit (i18n)
  * @param {string[]} existing  les titres déjà pris
  */
 export function duplicateTitle(title, copyPrefix, existing = []) {

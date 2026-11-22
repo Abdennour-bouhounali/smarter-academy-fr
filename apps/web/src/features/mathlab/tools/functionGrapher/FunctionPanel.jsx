@@ -7,8 +7,8 @@ import PointInspector from './PointInspector.jsx';
 import TangentPanel from './TangentPanel.jsx';
 
 /**
- * Le panneau des fonctions : compact, sur le bord de départ (à droite en
- * arabe). La liste, « أضف دالة », quelques exemples pour démarrer, et la
+ * Le panneau des fonctions : compact, sur le bord de départ (à gauche).
+ * La liste, « Ajouter une fonction », quelques exemples pour démarrer, et la
  * lecture du point posé. Rien d'autre — le plan est le héros.
  *
  * Sous 768 px il passe sous le plan et peut se REPLIER sur son en-tête pour
@@ -127,7 +127,7 @@ const PRESET_LABELS = {
   '\\left|x\\right|': '|x|',
   '\\sqrt{x}': '√x',
   '\\sin(x)': 'sin(x)',
-  // Ceux de مخبر المتوسط (scope.js).
+  // Ceux du labo du collège (scope.js).
   '2x': '2x',
   '-x+3': '−x + 3',
   '\\frac{1}{2}x-1': '½x − 1',

@@ -62,9 +62,9 @@ export const GRAPHER_KEYBOARD_LAYOUT = Object.freeze({
 });
 
 /**
- * Le clavier de مخبر المتوسط : le même, sans sin, cos, tan, ln, log ni e —
+ * Le clavier du labo du collège : le même, sans sin, cos, tan, ln, log ni e —
  * le collège ne trace que des droites (scope.js). Les rangées gardent leur
- * forme : un élève qui passe d'un مخبر à l'autre retrouve ses touches.
+ * forme : un élève qui passe d'un labo à l'autre retrouve ses touches.
  */
 const BEYOND_MOYEN = new Set(['\\sin', '\\cos', '\\tan', '\\ln', '\\log', 'e^{x}', 'e']);
 export const MOYEN_KEYBOARD_LAYOUT = Object.freeze({
@@ -79,13 +79,13 @@ export function ensureMathLive() {
   MathfieldElement.soundsDirectory = null;
   MathfieldElement.plonkSound = null;
   MathfieldElement.keypressSound = null;
-  // Le clavier virtuel se ferme d'un bouton « إغلاق » (2026-10-08), pour tous les champs MathLive.
+  // Le clavier virtuel se ferme d'un bouton « Fermer » (2026-10-08), pour tous les champs MathLive.
   installKeyboardCloseButton();
 }
 
 /**
  * Le clavier virtuel est GLOBAL : on le remplace à l'ouverture du grapheur, on rend l'ancien à la fermeture.
- * @param {'full'|'moyen'} [variant]  celui du مخبر (scope.js)
+ * @param {'full'|'moyen'} [variant]  celui du labo (scope.js) — `moyen` est l’id du collège
  */
 export function installGrapherKeyboard(variant = 'full') {
   const keyboard = typeof window !== 'undefined' ? window.mathVirtualKeyboard : null;

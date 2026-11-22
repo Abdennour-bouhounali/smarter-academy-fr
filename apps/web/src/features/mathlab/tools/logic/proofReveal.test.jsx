@@ -14,7 +14,7 @@ import { createLogicData, setProofMode, placeStep } from './logicState.js';
 // Une instance i18n LOCALE, le namespace chargé d'avance : sinon useTranslation suspend.
 const i18n = i18next.createInstance();
 i18n.use(initReactI18next).init({
-  lng: 'ar-DZ', fallbackLng: 'ar-DZ', resources: { 'ar-DZ': { mathlab } }, ns: ['mathlab'],
+  lng: 'fr', fallbackLng: 'fr', resources: { fr: { mathlab } }, ns: ['mathlab'],
   interpolation: { escapeValue: false }, react: { useSuspense: false },
 });
 const render = (Component, data) => renderToStaticMarkup(createElement(
@@ -44,7 +44,7 @@ describe('l’arbre de preuve se découvre rang par rang (exigence 2026-09-30)',
     expect(visibleTreeRanks(layers, { revealed: layers.length }).flatMap((rank) => rank.steps)).toHaveLength(layers.flat().length);
   });
 
-  it('à l’ouverture, en mode « الناقصة » ou « رتّب », l’arbre ne donne aucune étape', () => {
+  it('à l’ouverture, en mode « L’étape manquante » ou « Ordonner », l’arbre ne donne aucune étape', () => {
     for (const mode of ['gap', 'order']) {
       const html = render(ProofArea, setProofMode(createLogicData(), mode));
       expect(html).toContain('data-ml-lg-tree-step-player="ready"');
@@ -68,7 +68,7 @@ describe('l’arbre de preuve se découvre rang par rang (exigence 2026-09-30)',
   });
 });
 
-describe('un exemple de récurrence : الحالة الأولى → الانتقال → الخلاصة', () => {
+describe('un exemple de récurrence : initialisation → hérédité → conclusion', () => {
   it('trois pas, la conclusion en dernier, fidèles à l’exemple', () => {
     for (const item of INDUCTION_CASES) {
       const steps = inductionCaseSteps(item);

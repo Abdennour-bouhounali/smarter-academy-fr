@@ -26,14 +26,14 @@ function lazyToolComponent(tool) {
 }
 
 /**
- * LE CALQUE : le مختبر posé sur la leçon, sans la quitter.
+ * LE CALQUE : l’atelier posé sur la leçon, sans la quitter.
  *
  * Il rend soit le SÉLECTEUR (choisir un instrument), soit un instrument. La
  * leçon reste montée dessous — c'est tout l'intérêt (voir le fournisseur).
  *
  * ── Plein écran (§3 du brief) ────────────────────────────────────────────
  * Le bouton demande le VRAI plein écran du navigateur sur la racine du
- * calque, via `useFullscreen` — le même hook que وضع القسم, parce qu'il n'y
+ * calque, via `useFullscreen` — le même hook que mode classe, parce qu'il n'y
  * a qu'une implémentation de l'API Fullscreen dans la plateforme, et qu'un
  * hook ne porte aucune permission. Si le navigateur refuse ou n'a pas d'API
  * (Safari iOS), on retombe sur un plein écran APPLICATIF : le calque est
@@ -44,20 +44,20 @@ function lazyToolComponent(tool) {
  * écran et en sort, donc l'état de l'instrument (§10) traverse la bascule.
  *
  * Ce plein écran est ouvert à TOUS — élève comme enseignant. Il n'est pas
- * « وضع القسم », qui garde ses permissions (canPresentClassroom) et n'est
+ * « mode classe », qui garde ses permissions (canPresentClassroom) et n'est
  * pas touché par ce fichier.
  *
  * ── Un document ÉPHÉMÈRE ─────────────────────────────────────────────────
- * Ouvrir le مختبر depuis une leçon ne crée RIEN en base (même règle que le
- * cahier). L'instrument travaille sur un état neuf en mémoire ; « أعمالي »
- * ne se peuple que depuis le مختبر lui-même (/espace/atelier), où le
+ * Ouvrir l’atelier depuis une leçon ne crée RIEN en base (même règle que le
+ * cahier). L'instrument travaille sur un état neuf en mémoire ; « Mes travaux »
+ * ne se peuple que depuis l’atelier lui-même (/espace/atelier), où le
  * document a une identité. Un brouillon d'exploration n'est pas un travail.
  */
 export default function MathLabOverlay() {
   const { t } = useTranslation('mathlab');
   const { tool: toolId, close, pick, backToPicker, scope: requestedScope, setScope } = useMathLabOverlay();
-  // Le مخبر du calque : celui de la leçon, sinon le dernier choisi, sinon
-  // le collège — la plateforme est d'abord celle de 4AM.
+  // L’atelier du calque : celui de la leçon, sinon le dernier choisi, sinon
+  // le collège — la plateforme est d'abord celle du collège (6e–3e).
   const labScope = isLabScope(requestedScope) ? requestedScope : (readRememberedLabScope() ?? 'moyen');
   const chooseLab = useCallback((next) => {
     rememberLabScope(next);
@@ -125,7 +125,7 @@ export default function MathLabOverlay() {
   // ouvert : la leçon est dessous, elle ne doit pas défiler sous le doigt.
   // On restaure exactement la valeur inline précédente (même règle que
   // useScrollLock, qu'on ne réutilise pas ici pour ne pas poser la classe
-  // `sa-classroom-session`, qui appartient à وضع القسم).
+  // `sa-classroom-session`, qui appartient à mode classe).
   useEffect(() => {
     if (typeof document === 'undefined') return undefined;
     const html = document.documentElement;
@@ -247,7 +247,7 @@ export default function MathLabOverlay() {
  * que la bascule plein écran — un simple re-rendu — ne reparte pas de zéro.
  */
 /**
- * Le sélecteur, filtré par « الوصول والحدود » comme l'accueil : un instrument
+ * Le sélecteur, filtré par « Accès et limites » comme l'accueil : un instrument
  * coupé n'est pas proposé, un instrument fermé au palier porte son cadenas.
  */
 function OverlayPicker({ onPick, scope, onScope }) {
@@ -268,8 +268,8 @@ function ToolHost({ tool, scope }) {
     return <div className="sa-page py-8"><FeatureLockedPanel reason={access.reason} /></div>;
   }
 
-  // Le مخبر où l'instrument s'ouvre : celui du sélecteur, s'il y existe
-  // (راسم الدوال au collège), le sien sinon (التحليل : le ثانوي).
+  // L’atelier où l'instrument s'ouvre : celui du sélecteur, s'il y existe
+  // (traceur de courbes au collège), le sien sinon (Analyse : le lycée).
   const toolScope = resolveToolScope(tool, { requested: scope });
 
   return <ToolHostOpen key={`${tool.id}:${toolScope ?? 'common'}`} tool={tool} scope={toolScope} />;

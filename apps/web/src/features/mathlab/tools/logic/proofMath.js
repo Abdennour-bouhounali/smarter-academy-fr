@@ -12,8 +12,8 @@
  *
  *   §27 — **un refus qui EXPLIQUE.** `validateStep` ne rend pas `false` mais
  *   une raison (`missingPrerequisite` + quelles étapes manquent, `notInProof`,
- *   `alreadyPlaced`) : l'interface écrit « هذه النتيجة لا تتبع من المعطيات
- *   الحالية » et nomme ce qui manque, sans jamais donner la suite.
+ *   `alreadyPlaced`) : l'interface écrit « Ce résultat ne découle pas directement
+ *   de ce qui est déjà posé » et nomme ce qui manque, sans jamais donner la suite.
  *
  * §32 — le même graphe donne l'ARBRE : `proofLayers` répartit les étapes en
  * rangs (un rang = tout ce qui devient posable en même temps), et une étape
@@ -83,7 +83,7 @@ export function firstOrderError(proof, placed) {
 }
 
 /**
- * §34 — « ما الخطوة الناقصة ؟ » : on retire une étape qui n'est ni la
+ * §34 — « Quelle est l'étape manquante ? » : on retire une étape qui n'est ni la
  * première ni la dernière, et on propose des candidats — l'étape retirée,
  * plus les distracteurs de la preuve. Reproductible à graine égale.
  */
@@ -156,7 +156,7 @@ export function anyValidOrder(proof) {
 
 /**
  * §33 — un sophisme est réfuté par TOUT contre-exemple valide, pas par un
- * seul — mais seulement PRIS DANS L'ENSEMBLE DÉCLARÉ : « n زوجي » sur ℕ
+ * seul — mais seulement PRIS DANS L'ENSEMBLE DÉCLARÉ : « n pair » sur ℕ
  * n'est pas réfuté par −2, qui n'est pas un n de l'argument.
  */
 export function refutesFallacy(fallacy, value) {

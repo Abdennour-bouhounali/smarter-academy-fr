@@ -1,15 +1,12 @@
 /**
- * LA MATHÉMATIQUE des تحويلات — logique PURE : pas de React, pas de DOM, pas
- * de pixels. Tout ce que le laboratoire affiche se calcule ICI et nulle part
- * ailleurs — la règle de tout le مختبر (rational.js pour l'algèbre,
- * vectorMath.js pour les أشعة, trigMath.js pour les مثلثات).
+ * LA MATHÉMATIQUE des transformations — logique PURE : pas de React, pas de
+ * DOM, pas de pixels. Tout ce que le laboratoire affiche se calcule ICI et
+ * nulle part ailleurs — la règle de tout l'atelier (rational.js pour
+ * l'algèbre, vectorMath.js pour les vecteurs, trigMath.js pour la
+ * trigonométrie).
  *
- * Le vocabulaire est celui du programme algérien de 4AM :
- *
- *     الانسحاب = translation        الدوران = rotation
- *     التناظر المحوري = symétrie axiale (réflexion)
- *     التناظر المركزي = symétrie centrale
- *     التحاكي = homothétie          الشعاع = vecteur
+ * Le vocabulaire est celui du programme français : translation (de vecteur),
+ * rotation, symétrie axiale (réflexion), symétrie centrale, homothétie.
  *
  * ── Une transformation est une FONCTION du plan, pas un dessin ───────────
  * Chaque transformation est ici décrite par une MATRICE AFFINE 2×3
@@ -49,7 +46,7 @@ function isMatrix(m) {
 // ── Les quatre transformations, chacune comme une matrice ────────────────
 
 /**
- * الانسحاب — translation de شعاع (a, b) : `(x, y) ↦ (x + a, y + b)`.
+ * La translation de vecteur (a, b) : `(x, y) ↦ (x + a, y + b)`.
  *
  * C'est la seule des quatre dont la partie linéaire est l'identité : elle ne
  * fait QUE déplacer. C'est pourquoi elle conserve tout sauf les coordonnées.
@@ -61,7 +58,7 @@ export function translation(vx, vy) {
 }
 
 /**
- * الدوران — rotation d'angle θ (DEGRÉS, sens direct = trigonométrique)
+ * La rotation d'angle θ (DEGRÉS, sens direct = trigonométrique)
  * autour d'un centre.
  *
  *     (x, y) ↦ centre + R(θ)·(point − centre)
@@ -121,7 +118,7 @@ export function normalizeAngle(angleDeg) {
 }
 
 /**
- * التناظر المحوري — réflexion à travers une droite.
+ * La symétrie axiale — réflexion à travers une droite.
  *
  * La droite est donnée par un POINT et une DIRECTION (dx, dy), jamais par
  * `y = ax + b` : cette forme-là ne sait pas dire « la droite verticale
@@ -152,11 +149,11 @@ export function reflection(line) {
 }
 
 /**
- * التحاكي — homothétie de centre C et de rapport k.
+ * L'homothétie de centre C et de rapport k.
  *
  *     (x, y) ↦ C + k·(point − C)
  *
- * `k = −1` est exactement la symétrie centrale de centre C (التناظر المركزي),
+ * `k = −1` est exactement la symétrie centrale de centre C ,
  * et c'est volontairement le MÊME code : l'élève de §36 qui tire le rapport
  * de 2 vers −1 voit la figure se retourner à travers le centre, et découvre
  * que la symétrie centrale n'est pas une cinquième transformation.

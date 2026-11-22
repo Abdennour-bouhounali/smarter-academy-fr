@@ -16,10 +16,10 @@ import { formatTerm, termName } from './sequenceFormat.js';
  * `sequenceModel.buildModel` (§46). Il ne fait que les disposer et les rendre
  * lisibles.
  *
- * ── RTL ──────────────────────────────────────────────────────────────────
- * Les en-têtes sont de l'arabe et suivent la page ; les NOMBRES et la notation
- * (`uₙ₊₁ − uₙ`) sont de la notation et vivent en `dir="ltr"` (§44). Le tableau
- * lui-même est un tableau arabe : sa première colonne est à droite.
+ * ── Sens de lecture ──────────────────────────────────────────────────────
+ * Le tableau se lit de gauche à droite : la colonne n est la première, à
+ * gauche. Les NOMBRES et la notation (`uₙ₊₁ − uₙ`) vivent en `dir="ltr"`
+ * (§44), des îlots sans effet dans une page en français.
  */
 export default function TableExplorer({ terms, deltas, quotients, sums, secondDeltas, layers, cursor, onPickIndex }) {
   const { t } = useTranslation('mathlab');

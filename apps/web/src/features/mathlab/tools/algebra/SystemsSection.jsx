@@ -21,7 +21,7 @@ import AlgebraPlane, { PlaneLine, PlanePoint, PlaneLabel } from './AlgebraPlane.
 const LINE_COLORS = ['#008443', '#F36D21'];
 
 /**
- * حل الأنظمة — une جملة معادلتين, trois méthodes. Le raisonnement se
+ * « Systèmes » — un système de deux équations, trois méthodes. Le raisonnement se
  * construit au tableau (systemsFrames.js), geste par geste : les termes en y
  * désignés, leur somme ↓0, l'addition des deux équations, ÷2 sous les deux
  * membres, la valeur qui remplace x (en vert)… Le couple est le DERNIER
@@ -29,7 +29,7 @@ const LINE_COLORS = ['#008443', '#F36D21'];
  * graphique se construit aussi : droite (1), droite (2), le point, sa
  * lecture — le plan ne trace que ce que le frame courant permet.
  *
- * « حلّ خطوة بخطوة » charge la جملة ET démarre ; un exemple ou un changement
+ * « Résoudre pas à pas » charge le système ET démarre ; un exemple ou un changement
  * de méthode ramène à l'énoncé.
  */
 export default function SystemsSection({ value, onChange, announce }) {
@@ -63,7 +63,7 @@ export default function SystemsSection({ value, onChange, announce }) {
     return graphicalFrames(parsed.e1, parsed.e2, parsed.verdict);
   }, [parsed, outcome, value.method]);
   const player = useStepReveal(frames.length, { resetKey: `${value.first}|${value.second}|${value.method}` });
-  // « تدرّب بنفسك » : désigner les termes à éliminer, l'inconnue à remplacer… (البياني : pas d'exercice, le plan se regarde).
+  // « Entraîne-toi » : désigner les termes à éliminer, l'inconnue à remplacer… (graphique : pas d'exercice, le plan se regarde).
   const practice = useBoardPractice(frames, player, `${value.first}|${value.second}|${value.method}`);
   const done = player.phase === 'completed';
 
@@ -246,7 +246,7 @@ function Verdict({ outcome, e1, e2 }) {
 }
 
 /**
- * البياني : le plan suit le tableau — `draw` (du frame courant) dit ce qu'il a le droit
+ * graphique : le plan suit le tableau — `draw` (du frame courant) dit ce qu'il a le droit
  * de tracer : 1 = la droite (1), 2 = les deux, 3 = + le point commun, 4 = + ses coordonnées.
  */
 function Graphical({ parsed, frameKey, draw }) {

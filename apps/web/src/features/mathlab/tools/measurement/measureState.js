@@ -1,5 +1,5 @@
 /**
- * L'ÉTAT du مختبر القياس — logique pure, sans React.
+ * L'ÉTAT de « Grandeurs et mesures » — logique pure, sans React.
  *
  *     data = {
  *       investigation: 'rectangle-area',
@@ -25,7 +25,7 @@
  *
  * L'animation n'a AUCUN champ dans `data` : elle ne peut donc pas y arriver
  * par accident, et rouvrir un document ne rejoue pas un découpage à moitié
- * fait (la règle du مختبر, MATH_LAB §5l.10).
+ * fait (la règle de l'atelier, MATH_LAB §5l.10).
  */
 
 import {
@@ -507,8 +507,8 @@ function countDistinctConfigurations(investigation, observations) {
 /**
  * Tout ce que l'écran a besoin de savoir, calculé UNE fois par rendu.
  *
- * Le composant ne calcule rien : il lit. C'est la règle de séparation du
- * مختبر — aucune mathématique dans le JSX.
+ * Le composant ne calcule rien : il lit. C'est la règle de séparation de
+ * l'atelier — aucune mathématique dans le JSX.
  */
 export function resolveMeasurement(data) {
   const investigation = currentInvestigation(data);

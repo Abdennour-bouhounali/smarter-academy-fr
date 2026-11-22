@@ -12,7 +12,7 @@ import { setCondition } from './logicState.js';
  * §18 le dit explicitement : « Do not immediately reveal the terminology.
  * Let students discover the relationship first. » L'écran pose donc d'abord
  * les deux QUESTIONS — « A suffit-il à garantir B ? », « B suffit-il à
- * garantir A ? » — et ne nomme « شرط كافٍ » / « شرط ضروري » qu'après la
+ * garantir A ? » — et ne nomme « condition suffisante » / « condition nécessaire » qu'après la
  * réponse. Le vocabulaire arrive sur une relation déjà vue.
  *
  * La carte de relation (§20) se met à jour toute seule : c'est la même

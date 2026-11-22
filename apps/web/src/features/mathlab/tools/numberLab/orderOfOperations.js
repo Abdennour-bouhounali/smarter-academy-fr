@@ -1,12 +1,12 @@
 /**
- * أولويات العمليات — un analyseur et un évaluateur PAS À PAS, exacts.
+ * Priorités opératoires — un analyseur et un évaluateur PAS À PAS, exacts.
  * Logique pure, sans React (§60, §61).
  *
  *     2 × (3 + 4)^2 − 10
- *   = 2 × 7^2 − 10        نبدأ بما بين القوسين
- *   = 2 × 49 − 10         القوى أوّلًا
- *   = 98 − 10             الضرب والقسمة من اليسار إلى اليمين
- *   = 88                  الجمع والطرح من اليسار إلى اليمين
+ *   = 2 × 7^2 − 10        on commence par les parenthèses
+ *   = 2 × 49 − 10         d'abord les puissances
+ *   = 98 − 10             multiplications et divisions, de gauche à droite
+ *   = 88                  additions et soustractions, de gauche à droite
  *
  * ── Pourquoi un analyseur dédié ─────────────────────────────────────────
  * Un remplacement de chaînes (`replace(/\(([^()]*)\)/)…`) sait calculer, pas
@@ -27,7 +27,7 @@
  *   entiers, décimaux (`0,5` ou `0.5`), fractions `3/4` (deux entiers collés
  *   autour de `/`, sans puissance autour), `+ − × ÷ * / : ·`, `^`, `²`, `³`,
  *   `( )` et `[ ]`, le moins unaire, la multiplication implicite `2(3 + 4)`,
- *   les chiffres arabes-indiens ٠-٩.
+ *   les chiffres arabes orientaux (U+0660 à U+0669).
  *   `−3^2` vaut −9 (la puissance porte sur 3), comme au collège.
  *
  * Tout est EXACT (bigRational.js). Division par zéro, exposant non entier,
@@ -52,9 +52,9 @@ const OPERATOR_ALIASES = Object.freeze({
 const OPEN = Object.freeze({ '(': ')', '[': ']' });
 const CLOSE = Object.freeze({ ')': '(', ']': '[' });
 
-/** Normaliser les chiffres arabes-indiens et la virgule arabe, SANS déplacer les positions. */
+/** Normaliser les chiffres arabes orientaux et leur séparateur décimal (U+066B), SANS déplacer les positions. */
 function normalizeChars(source) {
-  return source.replace(/[٠-٩]/g, (d) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(d))).replace(/٫/g, ',');
+  return source.replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x660)).replace(/\u066B/g, ',');
 }
 
 /**

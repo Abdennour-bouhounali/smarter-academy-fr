@@ -10,7 +10,7 @@ import { DiceScene } from './diceScene.js';
  * seconde scène remplace proprement la première).
  *
  * `parts` est la pose de REPOS — ce que les objets montrent quand rien ne
- * bouge (le dernier tirage, ou la face 1 / « وجه » d'un document neuf).
+ * bouge (le dernier tirage, ou la face 1 / « Face » d'un document neuf).
  * Sans WebGL, rien ne se crée et `ref.isReady()` répond faux : l'outil fait
  * alors l'expérience sans animation, le tableau reste la vérité.
  *

@@ -378,7 +378,7 @@ class Parser {
    * `\frac{1}{2}` et `\frac12` sont la MÊME chose en LaTeX, et MathLive
    * produit la seconde forme : un élève qui tape ½ au clavier virtuel envoie
    * `\frac12`. La QA navigateur l'a trouvé en tapant une demie dans le champ
-   * de réponse du مختبر التحليل — la bonne réponse était rejetée comme
+   * de réponse du labo d'analyse — la bonne réponse était rejetée comme
    * incompréhensible.
    *
    * Strictement ADDITIF : les accolades continuent d'être lues comme avant,

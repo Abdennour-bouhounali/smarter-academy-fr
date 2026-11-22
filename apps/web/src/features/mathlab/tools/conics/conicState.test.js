@@ -12,7 +12,7 @@ import * as C from './conicMath.js';
  */
 
 describe('le document neuf', () => {
-  it('ouvre sur un CERCLE — le programme de 4AM d\'abord', () => {
+  it('ouvre sur un CERCLE — le programme du collège d\'abord', () => {
     const data = S.createConicsData();
     expect(data.scene.objects).toHaveLength(1);
     expect(data.scene.objects[0].kind).toBe('circle');
@@ -126,7 +126,7 @@ describe('l\'historique (§45)', () => {
     expect(data.history).toHaveLength(2);
   });
 
-  it('تراجع recule le curseur sans rien détruire ; إعادة revient', () => {
+  it('Annuler recule le curseur sans rien détruire ; Rétablir revient', () => {
     let data = S.createConicsData();
     data = S.pushScene(data, circleScene(4));
     data = S.pushScene(data, circleScene(5));
@@ -140,7 +140,7 @@ describe('l\'historique (§45)', () => {
     expect(data.scene.objects[0].r).toBe(5);
   });
 
-  it('rejouer après un تراجع coupe la branche abandonnée', () => {
+  it('rejouer après une annulation coupe la branche abandonnée', () => {
     let data = S.createConicsData();
     data = S.pushScene(data, circleScene(4));
     data = S.pushScene(data, circleScene(5));

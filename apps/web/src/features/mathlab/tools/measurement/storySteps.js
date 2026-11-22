@@ -1,5 +1,5 @@
 /**
- * « كيف ظهرت هذه القاعدة؟ » (§22) — LE CHEMIN DE LA DÉCOUVERTE, PAS À PAS (logique pure).
+ * « Comment cette règle est-elle apparue ? » (§22) — LE CHEMIN DE LA DÉCOUVERTE, PAS À PAS (logique pure).
  *
  * Exigence de la propriétaire (2026-09-30) : un raisonnement ne s'affiche
  * jamais d'un bloc. Le récit était une liste de sept étapes posée d'un

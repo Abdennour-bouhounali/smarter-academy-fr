@@ -5,17 +5,17 @@
  * regroupés, résultat) ; ce module les met en scène, terme par terme :
  *
  *     3x + [2](x + 4) − x          le produit à développer désigné
- *     3x + [2] ⌒× [(x + 4)] − x    l'arc « × » du facteur vers la parenthèse (التوزيع)
+ *     3x + [2] ⌒× [(x + 4)] − x    l'arc « × » du facteur vers la parenthèse (distributivité)
  *     3x + 2 × x + 2 × 4 − x       les produits posés (en orange)
  *        ↓ 2x    ↓ 8               chaque produit calculé sous lui-même
  *     3x + 2x + 8 − x
  *     [3x] [+ 2x] + 8 [− x]        les termes semblables désignés
- *     (3x + 2x − x) + 8            regroupés (تجميع الحدود المتشابهة)
- *        ↓ 4x                      la somme de la famille (التبسيط)
+ *     (3x + 2x − x) + 8            regroupés (regroupement des termes semblables)
+ *        ↓ 4x                      la somme de la famille (réduction)
  *     4x + 8                       le résultat — DERNIER frame
  *
  * Une fraction algébrique : ses lignes, puis le résultat avec la condition
- * d'existence (le « بشرط ») dans le même dernier frame.
+ * d'existence (le « valable pour ») dans le même dernier frame.
  */
 
 import { tok, stateFrame, rowLatex, makeTask } from '../../shared/mathBoard/frames.js';
@@ -43,7 +43,7 @@ function expandFrames(prev, next, line, step) {
   const frames = [];
   const text = ruleText(line);
   // Les produits à développer, coupés en facteurs visibles quand c'est possible
-  // (le facteur, la parenthèse) : ce sont eux que l'élève désigne en « تدرّب بنفسك ».
+  // (le facteur, la parenthèse) : ce sont eux que l'élève désigne en « Entraîne-toi ».
   const split = [];
   const marks = [];
   const factors = [];
@@ -60,7 +60,7 @@ function expandFrames(prev, next, line, step) {
     }
   });
   const selectedRow = split.map((token) => (token.tone === 'operation' ? { ...token, tone: 'selected' } : token));
-  // L'exercice : désigner le facteur et la parenthèse, puis « × » (التوزيع) ;
+  // L'exercice : désigner le facteur et la parenthèse, puis « × » (distributivité) ;
   // sans produit lisible (« −( … ) », un carré), désigner ce qu'on développe.
   const task = marks.length
     ? makeTask({ targets: factors, operator: '\\times', kind: 'operation', promptKey: `${P}.distribute` })

@@ -16,22 +16,22 @@ import { isBeyondMoyenFactorization } from './scope.js';
 const math = (value) => `$${value}$`;
 
 /**
- * التحليل إلى عوامل — le raisonnement, pas seulement le résultat : le
+ * « Factoriser » — le raisonnement, pas seulement le résultat : le
  * facteur commun, l'identité reconnue, les couples candidats (somme et
  * produit) avec celui qui convient mis en avant, puis la VÉRIFICATION par
- * développement. La méthode du مميّز reste dans un pli : au-delà du
+ * développement. La méthode du discriminant reste dans un pli : au-delà du
  * programme de quatrième, jamais l'écran d'ouverture.
  *
  * Le raisonnement se construit au tableau (factorFrames.js) : chercher deux
  * nombres, les candidats, [2] ⌒× [3] ↓ 6, [2] ⌒+ [3] ↓ 5, les facteurs qui
  * s'écrivent — la factorisation au DERNIER frame. La vérification par
- * développement et le مميّز n'apparaissent qu'ensuite. « حلّل خطوة بخطوة »
+ * développement et le discriminant n'apparaissent qu'ensuite. « Factoriser pas à pas »
  * charge la saisie ET démarre ; un exemple ne fait que poser l'énoncé.
  *
- * `features` (scope.js) : dans مخبر المتوسط, seuls le facteur commun et les
- * identités remarquables sont déroulés. Une expression qui exige « مجموع
- * وجداء », la méthode « ac » ou le مميّز n'est pas déroulée : une phrase dit
- * que ces méthodes sont celles du ثانوي. Le pli du مميّز n'existe pas.
+ * `features` (scope.js) : au collège, seuls le facteur commun et les
+ * identités remarquables sont déroulés. Une expression qui exige « somme et
+ * produit », la méthode « ac » ou le discriminant n'est pas déroulée : une phrase dit
+ * que ces méthodes sont celles du lycée. Le pli du discriminant n'existe pas.
  */
 export default function FactorSection({ value, onChange, announce, features = null }) {
   const { t } = useTranslation('mathlab');
@@ -47,9 +47,9 @@ export default function FactorSection({ value, onChange, announce, features = nu
   const beyondLab = moyenOnly && isBeyondMoyenFactorization(result);
   const frames = useMemo(() => (result.ok && !beyondLab ? factorFrames(result) : []), [result, beyondLab]);
   // Le raisonnement se DÉROULE geste par geste ; la vérification et la
-  // méthode du مميّز n'arrivent qu'après le dernier frame.
+  // méthode du discriminant n'arrivent qu'après le dernier frame.
   const player = useStepReveal(frames.length, { resetKey: value.source });
-  // « تدرّب بنفسك » : l'élève désigne lui-même les éléments et choisit l'opération.
+  // « Entraîne-toi » : l'élève désigne lui-même les éléments et choisit l'opération.
   const practice = useBoardPractice(frames, player, value.source);
   const finished = player.phase === 'completed';
 

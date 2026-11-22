@@ -8,7 +8,7 @@ import { formatNumber } from './numberValue.js';
 import { fracToText } from './fraction.js';
 
 /**
- * LE MISTÉCIM MDARRAJ — la droite graduée du مختبر (§7, §43, §44).
+ * LA DROITE GRADUÉE — la droite graduée de l'atelier (§7, §43, §44).
  *
  * C'est le dessin le plus réutilisé du laboratoire : la comparaison (§45),
  * l'arrondi (§32), l'erreur (§34), les opérations (§36, §37) et les négatifs
@@ -23,7 +23,7 @@ import { fracToText } from './fraction.js';
  *
  * ── LTR par nature ──────────────────────────────────────────────────────
  * Le SVG est en `direction: ltr` : les négatifs sont à GAUCHE, comme dans
- * tous les manuels, même sur une page arabe (§58, ARABIC_RTL_CONTRACT §4).
+ * tous les manuels (§58, FRENCH_LANGUAGE_CONTRACT §8).
  * SVG n'hérite pas de `dir`, donc c'est une règle qu'on tient explicitement.
  */
 

@@ -36,7 +36,7 @@ import { NumberLabModesContext, clampToModes, numberLabModes } from './scope.js'
 const SERIALIZE_MS = 300;
 
 /**
- * Le مختبر الأعداد والحساب dans la coquille du مختبر (MathLabToolProps).
+ * Le labo des nombres dans la coquille de l'atelier (MathLabToolProps).
  *
  *     on tape un nombre → il se décompose, se factorise, se place, se compare
  *     → on l'ENVOIE à un autre mode → il continue d'y vivre
@@ -47,7 +47,7 @@ const SERIALIZE_MS = 300;
  * facteurs, puis au PGCD, travaille sur UN objet. La barre de modes ne change
  * que ce qui est affiché ; chaque mode garde ses propres nombres
  * (`numberState.js`), et le pont entre eux est toujours un geste explicite
- * (« أرسِل إلى », §46).
+ * (« Envoyer vers », §46).
  *
  * ── Ce qui n'est PAS persisté (§43) ─────────────────────────────────────
  * L'animation du crible, la question d'entraînement courante, le panneau
@@ -60,7 +60,7 @@ const SERIALIZE_MS = 300;
  */
 export default function NumberLabTool({ initialData, onChange, onReady, capabilities = null }) {
   const { t } = useTranslation('mathlab');
-  // Le مخبر (scope.js) : les modes qu'il montre — aujourd'hui les seize partout.
+  // Le labo (scope.js) : les modes qu'il montre — aujourd'hui les seize partout.
   const modes = useMemo(() => numberLabModes(capabilities), [capabilities]);
   const [data, setData] = useState(() => clampToModes(initialData && Object.keys(initialData).length
     ? normalizeNumberLabData(initialData)
@@ -117,7 +117,7 @@ export default function NumberLabTool({ initialData, onChange, onReady, capabili
     }
   }, []);
 
-  /** La coquille peut vider le document (« مسح الكل »). */
+  /** La coquille peut vider le document (« Tout effacer »). */
   useEffect(() => {
     onReady?.({
       clear: () => {
@@ -152,7 +152,7 @@ export default function NumberLabTool({ initialData, onChange, onReady, capabili
     }));
   }, [commit, t, modes]);
 
-  /** §55 — garder une découverte, ici puis dans le vrai كرّاس. */
+  /** §55 — garder une découverte, ici puis dans le vrai cahier. */
   const saveNote = useCallback((text) => {
     if (!text?.trim()) return;
     commit((current) => addNote(current, text));
@@ -165,7 +165,7 @@ export default function NumberLabTool({ initialData, onChange, onReady, capabili
    * §55 — LE CAHIER, celui de la plateforme.
    *
    * On ne crée pas un second système de notes : on ouvre `NotebookWindow`
-   * avec un contenu de départ, exactement comme « أضف إلى كرّاسي » le fait
+   * avec un contenu de départ, exactement comme « Ajouter à mon cahier » le fait
    * depuis la carte des connaissances. Le Lab n'a pas de contexte de leçon,
    * donc la note naît sans leçon — ce que le cahier accepte.
    */
@@ -317,7 +317,7 @@ export default function NumberLabTool({ initialData, onChange, onReady, capabili
         )}
       </div>
 
-      {/* §55 : les notes, et le pont vers le vrai كرّاس. */}
+      {/* §55 : les notes, et le pont vers le vrai cahier. */}
       {notesOpen && (
         <section className="sa-ml-nb__notes">
           <header className="sa-ml-nb__panel-head">
@@ -409,7 +409,7 @@ export default function NumberLabTool({ initialData, onChange, onReady, capabili
  *
  * `useNotebook` jette hors de son fournisseur. Le Lab est toujours monté sous
  * `NotebookProvider` dans l'application (App.jsx), mais un test ou un rendu
- * isolé peut ne pas l'avoir — et un instrument du مختبر ne doit pas tomber
+ * isolé peut ne pas l'avoir — et un instrument de l'atelier ne doit pas tomber
  * parce qu'un carnet manque.
  */
 function useSafeNotebook() {

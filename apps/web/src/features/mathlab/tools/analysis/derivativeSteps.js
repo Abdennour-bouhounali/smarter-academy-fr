@@ -33,7 +33,7 @@
  *   un pas : { kind, textKey, params, latex, ruleKey?, formula?, tone?, source? }
  *
  * `textKey` et `ruleKey` sont des clés `tools.analysis.derivativeSteps.*` ;
- * le texte arabe ne contient JAMAIS de formule — la formule est dans `latex`
+ * le texte français ne contient JAMAIS de formule — la formule est dans `latex`
  * ou `formula`, que l'interface enferme dans un îlot LTR (KaTeX).
  */
 
@@ -52,23 +52,23 @@ export const RULE_FORMULAS = Object.freeze({
   constant: "(k)' = 0",
   identity: "(x)' = 1",
   sum: "(u + v)' = u' + v'",
-  constantFactor: "(ku)' = k\\cdot u'",
-  power: "(x^{n})' = n\\cdot x^{n-1}",
+  constantFactor: "(ku)' = k\\times u'",
+  power: "(x^{n})' = n\\times x^{n-1}",
   product: "(uv)' = u'v + uv'",
   quotient: "\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^{2}}",
   opposite: "(-u)' = -u'",
-  chainPower: "(u^{n})' = n\\cdot u^{n-1}\\cdot u'",
-  exponential: "(a^{u})' = a^{u}\\ln a\\cdot u'",
-  exponentialE: "(e^{u})' = e^{u}\\cdot u'",
+  chainPower: "(u^{n})' = n\\times u^{n-1}\\times u'",
+  exponential: "(a^{u})' = a^{u}\\ln a\\times u'",
+  exponentialE: "(e^{u})' = e^{u}\\times u'",
   sin: "(\\sin u)' = u'\\cos u",
   cos: "(\\cos u)' = -u'\\sin u",
   tan: "(\\tan u)' = \\frac{u'}{\\cos^{2} u}",
   sqrt: "(\\sqrt{u})' = \\frac{u'}{2\\sqrt{u}}",
-  exp: "(e^{u})' = e^{u}\\cdot u'",
+  exp: "(e^{u})' = e^{u}\\times u'",
   ln: "(\\ln u)' = \\frac{u'}{u}",
   log: "(\\log u)' = \\frac{u'}{u\\ln 10}",
-  abs: "(|u|)' = u'\\cdot\\frac{u}{|u|}",
-  root: "(\\sqrt[n]{u})' = \\frac{1}{n}u^{\\frac{1}{n}-1}\\cdot u'",
+  abs: "(|u|)' = u'\\times\\frac{u}{|u|}",
+  root: "(\\sqrt[n]{u})' = \\frac{1}{n}u^{\\frac{1}{n}-1}\\times u'",
 });
 
 const X = { type: 'var', name: 'x' };
@@ -229,8 +229,8 @@ function structuredSteps(ast, rule) {
     identify = `u = ${L(u)},\\quad v = ${L(v)}`;
     parts = `u' = ${L(du)},\\quad v' = ${L(dv)}`;
     substituted = rule === 'product'
-      ? `${P(du)}\\cdot ${P(v)} + ${P(u)}\\cdot ${P(dv)}`
-      : `\\frac{${P(du)}\\cdot ${P(v)} - ${P(u)}\\cdot ${P(dv)}}{${B(v)}^{2}}`;
+      ? `${P(du)}\\times ${P(v)} + ${P(u)}\\times ${P(dv)}`
+      : `\\frac{${P(du)}\\times ${P(v)} - ${P(u)}\\times ${P(dv)}}{${B(v)}^{2}}`;
   } else if (rule === 'constantFactor') {
     const constantOnLeft = !dependsOn(ast.left);
     const k = constantOnLeft ? ast.left : ast.right;
@@ -238,7 +238,7 @@ function structuredSteps(ast, rule) {
     const du = differentiate(u);
     identify = `k = ${L(k)},\\quad u = ${L(u)}`;
     parts = `u' = ${L(du)}`;
-    substituted = `${P(k)}\\cdot ${P(du)}`;
+    substituted = `${P(k)}\\times ${P(du)}`;
   } else if (rule === 'opposite') {
     const u = ast.arg;
     const du = differentiate(u);
@@ -251,15 +251,15 @@ function structuredSteps(ast, rule) {
     const du = differentiate(u);
     identify = `u = ${L(u)},\\quad n = ${L(n)}`;
     parts = `u' = ${L(du)}`;
-    substituted = `${P(n)}\\cdot ${B(u)}^{${exponentMinusOne(n)}}\\cdot ${P(du)}`;
+    substituted = `${P(n)}\\times ${B(u)}^{${exponentMinusOne(n)}}\\times ${P(du)}`;
   } else if (rule === 'exponential' || rule === 'exponentialE') {
     const u = ast.right;
     const du = differentiate(u);
     identify = rule === 'exponentialE' ? `u = ${L(u)}` : `a = ${L(ast.left)},\\quad u = ${L(u)}`;
     parts = `u' = ${L(du)}`;
     substituted = rule === 'exponentialE'
-      ? `e^{${L(u)}}\\cdot ${P(du)}`
-      : `${B(ast.left)}^{${L(u)}}\\cdot \\ln ${B(ast.left)}\\cdot ${P(du)}`;
+      ? `e^{${L(u)}}\\times ${P(du)}`
+      : `${B(ast.left)}^{${L(u)}}\\times \\ln ${B(ast.left)}\\times ${P(du)}`;
   } else {
     // Une fonction de référence composée : g(u)′ = g′(u)·u′.
     const u = innerOf(ast, rule);
@@ -270,7 +270,7 @@ function structuredSteps(ast, rule) {
     if (!outer) return null;
     identify = `u = ${L(u)}`;
     parts = `u' = ${L(du)}`;
-    substituted = `${P(substituteX(outer, u))}\\cdot ${P(du)}`;
+    substituted = `${P(substituteX(outer, u))}\\times ${P(du)}`;
   }
 
   return [
@@ -297,7 +297,7 @@ function elementarySteps(ast, rule) {
   if (rule === 'power') {
     steps.push({
       kind: 'powerDown', textKey: 'powerDown', params: {},
-      latex: `f'(x) = ${P(ast.right)}\\cdot x^{${exponentMinusOne(ast.right)}}`,
+      latex: `f'(x) = ${P(ast.right)}\\times x^{${exponentMinusOne(ast.right)}}`,
     });
   }
 

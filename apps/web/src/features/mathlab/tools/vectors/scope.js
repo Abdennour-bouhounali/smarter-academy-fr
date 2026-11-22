@@ -2,13 +2,13 @@ import { ANALYSIS_KINDS } from './vectorState.js';
 import { EXPERIMENTS } from './experiments.js';
 
 /**
- * مختبر الأشعة dans les deux مخابر (labScope.js, MATH_LAB.md §2.1).
+ * Le labo des vecteurs dans les deux labos — `moyen` (collège) et `secondaire` (lycée) (labScope.js, MATH_LAB.md §2.1).
  *
- * Au collège (4AM 4.4–4.5) : le repère, les coordonnées d'un point et d'un
- * شعاع, la distance entre deux points, la somme de deux أشعة (bout à bout,
- * parallélogramme), le شعاع opposé et le انسحاب. Le produit d'un شعاع par un
+ * Au collège : le repère, les coordonnées d'un point et d'un
+ * vecteur, la distance entre deux points, la somme de deux vecteurs (bout à bout,
+ * parallélogramme), le vecteur opposé et la translation. Le produit d'un vecteur par un
  * réel (k·u), la colinéarité qui s'écrit v = k·u, l'alignement de trois
- * points par les أشعة et le produit scalaire sont du lycée. Au lycée : tout.
+ * points par les vecteurs et le produit scalaire sont du lycée. Au lycée : tout.
  */
 export const VECTORS_SCOPES = Object.freeze(['moyen', 'secondaire']);
 
@@ -35,7 +35,7 @@ export function vectorsFeatures(capabilities) {
   };
 }
 
-/** Une analyse que le مخبر ne propose pas revient à « بدون » ; le reste est gardé. */
+/** Une analyse que le labo ne propose pas revient à « Aucune » ; le reste est gardé. */
 export function clampToFeatures(data, features) {
   if (features.analysis.includes(data.settings?.analysis)) return data;
 

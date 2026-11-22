@@ -5,7 +5,7 @@ import useBoardPractice from '../../shared/mathBoard/useBoardPractice.js';
 import { boardProgress } from '../../shared/mathBoard/frames.js';
 
 /**
- * « من الصيغة المنشورة إلى الصيغة النموذجية » — la complétion du carré, au
+ * « De la forme développée à l’équation réduite » — la complétion du carré, au
  * tableau, frame par frame (`canonicalSteps.js` → `shared/mathBoard`).
  *
  * Ce qui reste VIVANT : la courbe et le champ d'équation. L'équation tapée
@@ -20,7 +20,7 @@ import { boardProgress } from '../../shared/mathBoard/frames.js';
 export default function ConicDerivation({ derivation, t }) {
   const { frames, problem, source } = derivation;
   const player = useStepReveal(frames.length, { resetKey: source });
-  // « تدرّب بنفسك » : l'élève désigne lui-même les termes à regrouper / compléter.
+  // « Entraîne-toi seul » : l'élève désigne lui-même les termes à regrouper / compléter.
   const practice = useBoardPractice(frames, player, source);
 
   return (

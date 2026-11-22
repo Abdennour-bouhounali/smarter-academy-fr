@@ -1,7 +1,7 @@
 /**
- * L'ÉTAT de la سبّورة — logique pure, sans Excalidraw ni DOM.
+ * L'ÉTAT du tableau — logique pure, sans Excalidraw ni DOM.
  *
- * Ce que la سبّورة enregistre est le format « database » d'Excalidraw
+ * Ce que le tableau enregistre est le format « database » d'Excalidraw
  * (`serializeAsJSON(…, 'database')`) : les éléments non supprimés, le
  * sous-ensemble persistant de l'état (fond, grille…), les fichiers. On n'en
  * garde que ces trois clés — ni `type`, ni `source`, ni version d'Excalidraw,
@@ -10,7 +10,7 @@
  *     data = { elements: [...], appState: { viewBackgroundColor, gridSize, gridModeEnabled … }, files: {} }
  *
  * S'y ajoute, FACULTATIVE, la clé `geometry` : l'état du bureau de
- * géométrie (où sont la règle, le compas, la منقلة, le كوس, et les réglages —
+ * géométrie (où sont la règle, le compas, le rapporteur, l'équerre, et les réglages —
  * geometry/instruments.js `sanitizeDesk`). Elle n'existe que si l'élève ou
  * l'enseignant a touché au bureau ; un document plus ancien s'ouvre donc tel
  * quel, et un lecteur qui l'ignore ne perd que la place des instruments —
@@ -25,7 +25,7 @@ import { sanitizeDesk } from './geometry/instruments.js';
 
 export const WHITEBOARD_SCHEMA_VERSION = 1;
 
-/** Le fond de la سبّورة : blanc, calme — le contenu mathématique est ce qu'on regarde. */
+/** Le fond du tableau : blanc, calme — le contenu mathématique est ce qu'on regarde. */
 export const WHITEBOARD_BACKGROUND = '#ffffff';
 
 /** L'état neuf. `seed.elements` : des éléments-squelettes fournis par une leçon (openMathLab.js). */
@@ -34,7 +34,7 @@ export function createWhiteboardData(seed = undefined) {
     elements: Array.isArray(seed?.elements) ? seed.elements : [],
     appState: { viewBackgroundColor: WHITEBOARD_BACKGROUND, gridModeEnabled: false },
     files: {},
-    // Une amorce n'est pas encore un dessin Excalidraw : la سبّورة la convertit
+    // Une amorce n'est pas encore un dessin Excalidraw : le tableau la convertit
     // à l'ouverture (convertToExcalidrawElements), puis la marque convertie.
     seeded: Array.isArray(seed?.elements) && seed.elements.length > 0,
   };
@@ -55,7 +55,7 @@ export function toWhiteboardData(serialized) {
       viewBackgroundColor: typeof appState.viewBackgroundColor === 'string' ? appState.viewBackgroundColor : WHITEBOARD_BACKGROUND,
     },
     // Les octets d'une image ne vivent JAMAIS dans le document : ils sont
-    // des fichiers du serveur (attachments), sous quota, et la سبّورة les
+    // des fichiers du serveur (attachments), sous quota, et le tableau les
     // recharge à l'ouverture. Un dessin qui en porterait (collage, ancien
     // document) les perd ici — c'est voulu, et le canevas le dit.
     files: {},
@@ -79,7 +79,7 @@ export function toExcalidrawInitialData(data) {
   };
 }
 
-/** Une سبّورة sans un seul trait. */
+/** Un tableau sans un seul trait. */
 export function isWhiteboardEmpty(data) {
   return !Array.isArray(data?.elements) || data.elements.filter((el) => !el?.isDeleted).length === 0;
 }
