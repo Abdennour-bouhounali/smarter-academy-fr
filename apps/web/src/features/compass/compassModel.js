@@ -5,7 +5,7 @@
  * Elle relie ce que le serveur a décidé (état, réponses corrigées, bandes) au
  * calendrier et au réseau : position de la classe, portée, rejeu du moteur,
  * rapport, semaine v0. Importée PAR CHEMIN et seulement sous la frontière
- * paresseuse de /espace/bawsala (le réseau est lourd — BUNDLE_BOUNDARIES.md).
+ * paresseuse de /espace/boussole (le réseau est lourd — BUNDLE_BOUNDARIES.md).
  */
 import {
   SCHOOL_YEARS, schoolYearOf, defaultPointer, nextMilestone, upcomingLessons, eventsFor, addDays, daysBetween,

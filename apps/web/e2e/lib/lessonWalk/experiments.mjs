@@ -1,8 +1,16 @@
-// The EXPERIMENT KINDS a walk can play — a workshop's bench or a forge's own experiment (GAME_WORLD.md « استكشف »), keyed
+// The EXPERIMENT KINDS a walk can play — a workshop's bench or a forge's own experiment (GAME_WORLD.md « Explore »), keyed
 // `kind` or `kind:mode` as the lesson's spec names them (`world/inquiries.js`). Each plays its screen through its UI with
 // answers computed HERE from the spec's numbers, checks what lessons 5–6 checked on it, and ends by its « next » button.
 // A kind the library does not know stops the walk with the sentence to write its handler (README « An experiment kind »).
 import { inquiryFits, ownTools, tellsNothing } from './checks.mjs';
+
+/**
+ * His prediction SAID BACK by the fact of an experiment when it was right — a sentence of the LESSON's inquiry (its
+ * `world/inquiries.js`), so matched by its meaning: « comme tu l’as écrit », « comme tu l’as dit », « comme tu l’avais
+ * prédit » (the worlds' own form, rootCourts/strings.js › guessRight). A lesson that words it otherwise passes its own
+ * `saidBack` regexp in the experiment's descriptor. (A `data-iq-hit` on the fact would be a better handle: not in the engine.)
+ */
+const SAID_BACK = /comme tu l[’']a(?:s|vais) (?:écrit|dit|prédit|annoncé)/i;
 import { calcExperiment, chaseExperiment, roundtripExperiment } from './worlds/rootCourtsExperiments.mjs';
 
 // ───────────────────────────── the walk's own arithmetic (never the lesson's answers) ─────────────────────────────
@@ -104,8 +112,8 @@ async function oneRound(ctx, spec, ri) {
     await write(0);
     const f = await fact(page);
     w.check(
-      f.includes('كما كتبتَ'),
-      `${name}: row 1 written right, the fact says « as you wrote » (« ${f.trim().slice(0, 80)} »)`,
+      (spec.saidBack ?? SAID_BACK).test(f),
+      `${name}: row 1 written right, the fact says « comme tu l’as écrit » (« ${f.trim().slice(0, 80)} »)`,
     );
     await inquiryFits(w, page, `${name}-row1`, exit);
   }
@@ -177,7 +185,7 @@ async function bothMode(ctx, spec) {
     steps.subtract === S && steps.divide === D,
     `${name}: ${S} subtractions against ${D} divisions — computed here (${JSON.stringify(steps)})`,
   );
-  w.check((await fact(page)).includes('كما قلتَ'), `${name}: his prediction is said back « كما قلتَ »`);
+  w.check((spec.saidBack ?? SAID_BACK).test(await fact(page)), `${name}: his prediction is said back « comme tu l’as dit »`);
   await tellsNothing(w, page, `${name}, the end`, ctx.forbid());
   await inquiryFits(w, page, `${name}-seen`);
 }
@@ -352,7 +360,7 @@ export const EXPERIMENTS = {
   'ladder:divide': oneMode,
   'ladder:both': bothMode,
   'ladder:fold': foldMode,
-  // « قصر الساحات » (worlds/rootCourtsExperiments.mjs)
+  // « Le palais des dalles » (worlds/rootCourtsExperiments.mjs)
   calc: calcExperiment,
   roundtrip: roundtripExperiment,
   chase: chaseExperiment,

@@ -21,10 +21,10 @@ describe('the pages a phone may open — while phones are paused', () => {
   it('opens no teacher tool of a lesson either', () => {
     const paths = [
       '/enseignant/cours/qasim-adad-tabii/memoire',
-      '/enseignant/milaff/qasim-adad-tabii',
-      '/enseignant/hissa/qasim-adad-tabii',
-      '/enseignant/mutabaa/qasim-adad-tabii',
-      '/enseignant/bitaqa/qasim-adad-tabii',
+      '/enseignant/dossier/qasim-adad-tabii',
+      '/enseignant/seance/qasim-adad-tabii',
+      '/enseignant/suivi/qasim-adad-tabii',
+      '/enseignant/carte/qasim-adad-tabii',
     ];
     for (const path of paths) expect(isPhoneLessonPath(path), path).toBe(false);
   });

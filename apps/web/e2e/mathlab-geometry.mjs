@@ -1,29 +1,29 @@
 /**
- * QA navigateur — le BUREAU DE GÉOMÉTRIE de la سبّورة (MATH_LAB.md §5.8).
+ * QA navigateur — le BUREAU DE GÉOMÉTRIE du tableau (MATH_LAB.md §5.8).
  *
  * Lancement (dev server sur 5173, API sur 8000, élève QA existant) :
  *   node apps/web/e2e/mathlab-geometry.mjs [dossier-captures]
  *
- * Le principe vérifié : l'instrument CONDUIT le crayon ORDINAIRE (le القلم
+ * Le principe vérifié : l'instrument CONDUIT le crayon ORDINAIRE (celui
  * d'Excalidraw) — pas un crayon spécial. On trace « à la main qui tremble »
  * et on lit, dans le document enregistré, la géométrie exacte qui en sort :
  *
- *   1. sans instrument, le القلم reste libre (un trait à main levée) ;
+ *   1. sans instrument, le crayon reste libre (un trait à main levée) ;
  *   2. règle posée : 0 → 5 cm donne un segment de 5,0 cm, droit, sur le bord ;
  *   3. règle tournée de 45° : 3 cm à 45° ;
  *   4. la règle déplacée après coup ne déplace pas le segment ;
- *   5. المدوّر : pointe sur A (même sous la règle), r = 4, la mine suit → arc de
+ *   5. Le compas : pointe sur A (même sous la règle), r = 4, la mine suit → arc de
  *      rayon 4 centré sur A, rattaché à A ;
- *   6. المنقلة « إنشاء زاوية » 60° : une demi-droite à 60° exactement ;
- *   7. المنقلة « رسم قوس » : 0° → 90° sur le bord extérieur = quart de cercle de
+ *   6. Le rapporteur « Construire un angle » 60° : une demi-droite à 60° exactement ;
+ *   7. Le rapporteur « Tracer un arc » : 0° → 90° sur le bord extérieur = quart de cercle de
  *      rayon R centré sur A ; 30° → 120° sur le bord intérieur = 90° ;
- *   8. الكوس plaqué contre la règle, glissé : deux perpendiculaires parallèles ;
- *   9. « تحرير القلم » : le long de la règle, le trait redevient libre ;
+ *   8. L’équerre plaquée contre la règle, glissée : deux perpendiculaires parallèles ;
+ *   9. « Libérer le crayon » : le long de la règle, le trait redevient libre ;
  *  10. une annulation retire toute une construction ;
  *  11. tactile (390 × 844) : le doigt le long de la règle donne un segment
  *      exact, la page ne défile pas, la règle se déplace d'un doigt ;
  *  12. rechargement : les instruments sont là où on les a laissés ;
- *      « إعادة البناء » rejoue et s'arrête ; export avec / sans instruments.
+ *      « Rejouer la construction » rejoue et s'arrête ; export avec / sans instruments.
  *
  * Les documents créés sont supprimés à la fin.
  */
@@ -32,7 +32,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const OUT = process.argv[2] || '/tmp/mathlab-geometry-shots';
 mkdirSync(OUT, { recursive: true });
@@ -170,12 +170,12 @@ async function geometryOf(id) {
   return out;
 }
 
-// ═══ Bureau 1440 × 900 : règle, compas, منقلة, كوس ═══════════════════════
+// ═══ Bureau 1440 × 900 : règle, compas, rapporteur, équerre ═══════
 {
   const { ctx, page } = await openBoard({ width: 1440, height: 900 });
   await click(page, '[data-geo-button="pen"]');
   const box = await page.locator('[data-ml-whiteboard] canvas.interactive').first().boundingBox();
-  // 1. Sans instrument : le القلم est libre.
+  // 1. Sans instrument : le crayon est libre.
   await page.mouse.move(box.x + 180, box.y + 120);
   await page.mouse.down();
   for (let i = 1; i <= 20; i += 1) await page.mouse.move(box.x + 180 + i * 10, box.y + 120 + Math.sin(i) * 12);
@@ -184,7 +184,7 @@ async function geometryOf(id) {
 
   // 2. La règle : 0 → 5 cm.
   await click(page, '[data-geo-button="ruler"]');
-  record('la règle ne change pas d’outil : le القلم reste en main', (await attr(page, 'data-geo-tool')) === '');
+  record('la règle ne change pas d’outil : le crayon reste en main', (await attr(page, 'data-geo-tool')) === '');
   let r = await pose(page, 'ruler');
   const A = { x: r.x, y: r.y };
   const s0 = await toScreen(page, { x: r.x + 1, y: r.y + 6 });
@@ -226,18 +226,18 @@ async function geometryOf(id) {
   await frame(page);
   await click(page, '[data-geo-button="compass"]');
 
-  // 6. La منقلة en « إنشاء زاوية » : 60°, depuis A.
+  // 6. Le rapporteur en « Construire un angle » : 60°, depuis A.
   await click(page, '[data-geo-button="protractor"]');
   let p = await pose(page, 'protractor');
   await dragScene(page, { x: p.x, y: p.y - 170 }, { x: A.x + 3, y: A.y - 170 + 2 });
   p = await pose(page, 'protractor');
-  record('le centre de la منقلة se pose exactement sur A', near(p.x, A.x, 1e-6) && near(p.y, A.y, 1e-6));
+  record('le centre du rapporteur se pose exactement sur A', near(p.x, A.x, 1e-6) && near(p.y, A.y, 1e-6));
   await click(page, '[data-geo-chip="protractor-construct"]');
   await page.fill('[data-geo-needle]', '60');
   await click(page, '[data-geo-button="pen"]');
   await stroke(page, line({ x: p.x + 2, y: p.y + 2 }, { x: p.x + 140, y: p.y - 230 }));
 
-  // 7. « رسم قوس » : 0° → 90° (bord extérieur), 30° → 120° (bord intérieur).
+  // 7. « Tracer un arc » : 0° → 90° (bord extérieur), 30° → 120° (bord intérieur).
   await click(page, '[data-geo-chip="protractor-arc"]');
   const R = 6 * CM;
   const rim = (deg, rr) => ({ x: p.x + rr * Math.cos((p.deg - deg) * Math.PI / 180), y: p.y + rr * Math.sin((p.deg - deg) * Math.PI / 180) });
@@ -258,21 +258,21 @@ async function geometryOf(id) {
   const g = await geometryOf(id);
   const seg5 = g.linears.find((l) => l.via === 'ruler' && near(l.len, 5));
   const seg3 = g.linears.find((l) => l.via === 'ruler' && near(l.len, 3));
-  record('1. sans instrument, le القلم reste libre', g.freedraw.length === 1 && g.freedraw[0].points.length > 5);
+  record('1. sans instrument, le crayon reste libre', g.freedraw.length === 1 && g.freedraw[0].points.length > 5);
   record('2. règle : 0 → 5 cm = segment de 5,0 cm, horizontal, depuis le zéro', !!seg5 && near(seg5.deg, 0, 1e-6) && near(seg5.a.x, A.x, 1e-6) && near(seg5.a.y, A.y, 1e-6));
   record('3. règle à 45° : 3 cm à 45°', !!seg3 && near(seg3.deg, 45, 1e-6));
   record('4. la règle déplacée ne déplace pas les segments', !!seg5 && near(g.desk.instruments.ruler.x, A.x, 1) === false);
   const arc4 = g.arcs.find((a) => a.via === 'compass');
   record('5. compas : arc de rayon 4 exact, centré et rattaché sur A', !!arc4 && near(arc4.r, 4, 1e-9) && near(arc4.c.x, A.x, 1e-6) && !!arc4.center);
   const ray = g.linears.find((l) => l.kind === 'ray');
-  record('6. منقلة « إنشاء زاوية » : demi-droite à 60° exactement, depuis A', !!ray && near(ray.deg, 60, 1e-6) && near(ray.a.x, A.x, 1e-6));
+  record('6. rapporteur « Construire un angle » : demi-droite à 60° exactement, depuis A', !!ray && near(ray.deg, 60, 1e-6) && near(ray.a.x, A.x, 1e-6));
   const protArcs = g.arcs.filter((a) => a.via === 'protractor');
-  record('7. منقلة « رسم قوس » : 0° → 90° = quart de cercle de rayon 6, centré sur A', protArcs.length === 1 && near(protArcs[0].sweep, 90, 1e-6) && near(protArcs[0].r, 6, 1e-9) && !!protArcs[0].center);
+  record('7. rapporteur « Tracer un arc » : 0° → 90° = quart de cercle de rayon 6, centré sur A', protArcs.length === 1 && near(protArcs[0].sweep, 90, 1e-6) && near(protArcs[0].r, 6, 1e-9) && !!protArcs[0].center);
   record('10. une annulation a retiré l’arc intérieur entier', protArcs.length === 1);
   await ctx.close();
 }
 
-// ═══ الكوس contre la règle : le parallélisme, et « تحرير القلم » ═════════
+// ═══ L’équerre contre la règle : le parallélisme, et « Libérer le crayon » ═══
 {
   const { ctx, page } = await openBoard({ width: 1440, height: 900 });
   await click(page, '[data-geo-button="pen"]');
@@ -286,15 +286,15 @@ async function geometryOf(id) {
   const inside = (s) => ({ x: s.x - 60, y: s.y + 60 });
   await dragScene(page, inside(q), { x: inside(q).x + (r.x + 11 * CM - q.x), y: inside(q).y + (r.y + 6 - q.y) });
   q = await pose(page, 'setSquare');
-  record('8. le كوس se plaque contre la règle', near(q.y, r.y, 1e-6) && near(Math.abs(q.deg), 180, 1e-6));
+  record('8. l’équerre se plaque contre la règle', near(q.y, r.y, 1e-6) && near(Math.abs(q.deg), 180, 1e-6));
   await stroke(page, line({ x: q.x + 3, y: q.y + 4 }, { x: q.x - 2, y: q.y + 150 }));
   await dragScene(page, inside(q), { x: inside(q).x - 4 * CM, y: inside(q).y + 25 }, 30);
   const q2 = await pose(page, 'setSquare');
   record('8. glissé le long de la règle, il reste plaqué (la main peut dériver)', near(q2.y, r.y, 1e-6) && near(q2.x, q.x - 4 * CM, 1));
   await stroke(page, line({ x: q2.x + 3, y: q2.y + 4 }, { x: q2.x - 2, y: q2.y + 150 }));
-  // 9. « تحرير القلم » : le long de la règle, le trait est libre.
+  // 9. « Libérer le crayon » : le long de la règle, le trait est libre.
   await click(page, '[data-geo-chip="attach"]');
-  // Au-delà du كوس (qui couvre [x − 10 cm, x] sous la règle) : le bord de la règle seul.
+  // Au-delà de l’équerre (qui couvre [x − 10 cm, x] sous la règle) : le bord de la règle seul.
   await stroke(page, line({ x: q2.x + 40, y: r.y + 3 }, { x: q2.x + 240, y: r.y + 3 }), 6);
   await click(page, '[data-geo-chip="attach"]');
   await page.screenshot({ path: `${OUT}/03-set-square.png` });
@@ -302,19 +302,19 @@ async function geometryOf(id) {
   const g = await geometryOf(id);
   const perps = g.linears.filter((l) => l.via === 'setSquare');
   record('8. deux perpendiculaires exactes à la règle, donc parallèles', perps.length === 2 && perps.every((l) => near(Math.abs(l.deg), 90, 1e-6)));
-  record('9. « تحرير القلم » : le trait le long de la règle redevient libre', g.freedraw.length === 1 && g.freedraw[0].points.length > 5);
+  record('9. « Libérer le crayon » : le trait le long de la règle redevient libre', g.freedraw.length === 1 && g.freedraw[0].points.length > 5);
 
-  // 12. Rechargement, « إعادة البناء », export.
+  // 12. Rechargement, « Rejouer la construction », export.
   await page.reload({ waitUntil: 'networkidle' });
   await page.waitForSelector('[data-geo-layer]');
   await frame(page);
   const visible = await page.evaluate(() => [...document.querySelectorAll('[data-geo-instrument]')].map((n) => n.getAttribute('data-geo-instrument')).sort());
-  record('12. rechargement : la règle et le كوس sont restés posés', JSON.stringify(visible) === JSON.stringify(['ruler', 'setSquare']));
+  record('12. rechargement : la règle et l’équerre sont restés posés', JSON.stringify(visible) === JSON.stringify(['ruler', 'setSquare']));
   await click(page, '[data-geo-button="replay"]');
   await page.waitForTimeout(800);
   const playing = await page.locator('[data-geo-replay]').count();
   await click(page, '[data-geo-button="replay"]');
-  record('12. « إعادة البناء » rejoue, puis s’arrête', playing === 1 && (await page.locator('[data-geo-replay]').count()) === 0);
+  record('12. « Rejouer la construction » rejoue, puis s’arrête', playing === 1 && (await page.locator('[data-geo-replay]').count()) === 0);
   const download = async () => {
     const [d] = await Promise.all([page.waitForEvent('download'), page.click('[data-ml-export]')]);
 
@@ -339,7 +339,7 @@ async function geometryOf(id) {
     await page.waitForTimeout(300);
   };
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
-  record('11. mobile : la barre « أدوات الهندسة » ne déborde pas', overflow === 0, `${overflow}px`);
+  record('11. mobile : la barre « Instruments de géométrie » ne déborde pas', overflow === 0, `${overflow}px`);
   for (const b of ['pen', 'ruler']) {
     await page.locator(`[data-geo-button="${b}"]`).scrollIntoViewIfNeeded();
     await page.tap(`[data-geo-button="${b}"]`);

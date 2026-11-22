@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 
 /**
  * UNE MÉDAILLE dessinée en SVG (aucune image) — or, argent ou bronze.
- * Le ruban reprend le vert, le blanc et le rouge du drapeau algérien ; le disque
+ * Le ruban est aux deux bleus de la marque, un filet blanc au milieu (aucun drapeau) ; le disque
  * porte une étoile ; un reflet le traverse (`shine`), sauf en mouvement réduit.
  */
 const METAL = {
@@ -28,9 +28,9 @@ export default function Medal({ medal, size = 48, shine = false, title }) {
         </radialGradient>
         <clipPath id={`c${id}`}><circle cx="50" cy="86" r="37" /></clipPath>
       </defs>
-      {/* Le ruban : vert / blanc / rouge. */}
-      <polygon points="22,0 46,0 58,52 40,58" fill="#006233" />
-      <polygon points="54,0 78,0 60,58 42,52" fill="#d21034" />
+      {/* Le ruban : aux couleurs de la marque (aucun drapeau). */}
+      <polygon points="22,0 46,0 58,52 40,58" fill="#4338ca" />
+      <polygon points="54,0 78,0 60,58 42,52" fill="#6366f1" />
       <polygon points="45,0 55,0 53,40 47,40" fill="#ffffff" opacity="0.92" />
       {/* Le disque. */}
       <circle cx="50" cy="86" r="40" fill={edge} />

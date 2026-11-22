@@ -1,8 +1,8 @@
-// « فضاء التدريب » of a lesson, as a STUDENT (lessons 5–6's hub walks, made data): a new student sees every node locked and
-// « ؟ ؟ ؟ » for each key (no rule named before it is forged); a student who finished the story opens every door of the
-// title (« خريطة المعارف », « تقدّمي », « مختبري », « عُدّتي ») and comes back; the hub is the lesson's OWN mind map (its
+// « L’espace d’entraînement » of a lesson, as a STUDENT (lessons 5–6's hub walks, made data): a new student sees every
+// node locked and « ? ? ? » for each key (no rule named before it is forged); a student who finished the story opens every
+// door of the title (« Fiche de connaissances », « Ma progression », « Mon labo », « L’échauffement ») and comes back; the hub is the lesson's OWN mind map (its
 // root, its links, a node per key and the exam, each node's levels and rule tablet); the exam space is the bank's five
-// levels; a run of the gate dash: its rule, a wrong gate and its guidance card, « خروج », then two wrong gates (the rule
+// levels; a run of the gate dash: its rule, a wrong gate and its guidance card, « Quitter », then two wrong gates (the rule
 // comes by itself). Every gate is judged by `descriptor.gate[wave.type](wave, n)` — the walk's own arithmetic.
 import { createWalk, PHONE } from '../walk.mjs';
 import { readLadder, rungShows, ladderFromDisk, bankOnDisk } from '../bankSheet.mjs';
@@ -86,8 +86,9 @@ export async function hubWalk(L, D, opts) {
         .locator('[data-di-node]')
         .evaluateAll((els) => els.map((e) => [e.dataset.diNode, e.querySelector('strong').textContent.trim()]));
       expect(
-        names.every(([id, t]) => id === 'exam' || t === '؟ ؟ ؟'),
-        `no rule is named before it is forged: each locked key reads « ؟ ؟ ؟ » (${names.map((x) => x[1]).join(' · ')})`,
+        // kit/text.js › KT.hidden; white space normalised (a no-break space would read the same)
+        names.every(([id, t]) => id === 'exam' || t.replace(/\s+/g, ' ') === '? ? ?'),
+        `no rule is named before it is forged: each locked key reads « ? ? ? » (${names.map((x) => x[1]).join(' · ')})`,
       );
       await mapApart(w, page, 'hub-locked');
       await shot(page, 'hub-locked', { exit: ['[data-di-map-close]'], numbers: true });
@@ -145,12 +146,12 @@ export async function hubWalk(L, D, opts) {
       const k = await page.textContent('[data-di-know]');
       expect(
         !knowFirst || k.includes(knowFirst) || (L.config?.title && k.includes(L.config.title)),
-        `« خريطة المعارف » opens on the lesson's own first card (« ${knowFirst} »)`,
+        `« Fiche de connaissances » opens on the lesson's own first card (« ${knowFirst} »)`,
       );
     }
     await shot(page, 'door-know', { exit: ['[data-di-know-close]'], sound: true, numbers: true });
     await page.click('[data-di-know-close]');
-    await backToTitle('« خريطة المعارف »');
+    await backToTitle('« Fiche de connaissances »');
     await page.click('[data-di-progress-open]');
     await page.waitForSelector('[data-di-progress]');
     await page.waitForTimeout(500);
@@ -160,12 +161,12 @@ export async function hubWalk(L, D, opts) {
         .evaluateAll((els) => els.map((e) => [e.dataset.diProw, e.querySelector('strong').textContent.trim()]));
       expect(
         JSON.stringify(rows) === JSON.stringify(KEYS.map((k) => [k, titles[k]])),
-        `« تقدّمي » opens on the الكفاءات of THIS lesson (${rows.map((r) => r[1]).join(' · ')})`,
+        `« Ma progression » opens on the savoir-faire of THIS lesson (${rows.map((r) => r[1]).join(' · ')})`,
       );
     }
     await shot(page, 'door-progress', { exit: ['[data-di-progress-close]'], sound: true, numbers: true });
     await page.click('[data-di-progress-close]');
-    await backToTitle('« تقدّمي »');
+    await backToTitle('« Ma progression »');
     await page.click('[data-di-lab-open]');
     await page.waitForSelector('[data-ll-close]', { timeout: 15000 });
     await page.waitForTimeout(800);
@@ -175,7 +176,7 @@ export async function hubWalk(L, D, opts) {
       numbers: true,
     });
     await page.click('[data-ll-close]');
-    await backToTitle('« مختبري »');
+    await backToTitle('« Mon labo »');
     await page.click('[data-di-launch-open]');
     await page.waitForSelector('[data-lk-close]', { timeout: 15000 });
     await page.waitForTimeout(800);
@@ -185,13 +186,13 @@ export async function hubWalk(L, D, opts) {
       await page.waitForTimeout(200);
       await page.click('[data-lk-quit-yes]');
     }
-    await backToTitle('« عُدّتي »');
+    await backToTitle('« L’échauffement »');
 
     // ── 3. the practice hub: the lesson's own mind map ──
     await page.click('[data-di-map]');
     await page.waitForSelector('[data-di-mapcard]');
     await page.waitForTimeout(600);
-    expect((await page.locator('[data-di-space="game"].is-on').count()) === 1, 'the hub opens on « فضاء اللعب »');
+    expect((await page.locator('[data-di-space="game"].is-on').count()) === 1, 'the hub opens on « Espace jeu »');
     expect(
       (await page.locator('[data-di-node]').count()) === KEYS.length + 1 &&
         (await page.locator('[data-di-node][data-open="true"]').count()) === KEYS.length + 1,
@@ -210,7 +211,7 @@ export async function hubWalk(L, D, opts) {
       const map = await page.textContent('.di-map');
       expect(
         map.includes(root) && edges.every((e) => map.includes(e)),
-        `the map is the lesson's mind map: « ${root} » and its links (${edges.join('، ')})`,
+        `the map is the lesson's mind map: « ${root} » and its links (${edges.join(', ')})`,
       );
     }
     await mapApart(w, page, 'hub');
@@ -232,7 +233,7 @@ export async function hubWalk(L, D, opts) {
         await page.waitForTimeout(300);
         expect(
           (await page.textContent('.di-veil')).includes(titles[id]),
-          `node ${id}: « ذكّرني بالقاعدة » opens THIS rule's tablet`,
+          `node ${id}: « Rappelle-moi la règle » opens THIS rule's tablet`,
         );
         await shot(page, `hub-rule-${id}`, { exit: ['[data-di-tablet]', '[data-di-exit]'], numbers: true });
         await page.click('[data-di-tablet]');
@@ -248,7 +249,7 @@ export async function hubWalk(L, D, opts) {
       const rungs = await readLadder(page);
       expect(
         rungs.length === 5 && rungs.every((r, i) => rungShows(r, DISK_LADDER[i], i)),
-        `« فضاء الامتحان »: the bank's five levels, their minutes and points (${rungs.map((r) => `${r.title}: ${r.small.trim()}`).join(' · ')})`,
+        `« Espace brevet »: the bank's five levels, their minutes and points (${rungs.map((r) => `${r.title}: ${r.small.trim()}`).join(' · ')})`,
       );
       expect(
         !rungs[0].disabled &&
@@ -264,13 +265,13 @@ export async function hubWalk(L, D, opts) {
     await page.waitForSelector('[data-di-know]');
     expect(
       (await st(page)).overlay === 'know' && (await page.locator('[data-di-mapcard]').count()) === 0,
-      "the hub's « خريطة المعارف » opens the knowledge page in place of the hub",
+      "the hub's « Fiche de connaissances » opens the knowledge page in place of the hub",
     );
     await page.click('[data-di-know-hub]');
     await page.waitForSelector('[data-di-mapcard]');
     expect(
       (await st(page)).overlay === 'map' && (await page.locator('[data-di-know]').count()) === 0,
-      '…and its « فضاء التدريب » comes back to the hub',
+      '…and its « Espace d’entraînement » comes back to the hub',
     );
 
     // ── 4. (another world) a practice level on ITS rail (worlds/<world>.mjs › practice) ──
@@ -279,13 +280,13 @@ export async function hubWalk(L, D, opts) {
       return;
     }
 
-    // ── 4. a run of the gate dash: « واصل التدريب » ──
+    // ── 4. a run of the gate dash: « Continuer l’entraînement » ──
     const nextName = (await page.textContent('[data-di-next]')).trim();
     expect(
       Object.values(TEXT.levels)
         .flat()
         .some((x) => nextName.includes(x)),
-      `« واصل التدريب » proposes one of the lesson's levels (« ${nextName} »)`,
+      `« Continuer l’entraînement » proposes one of the lesson's levels (« ${nextName} »)`,
     );
     await page.click('[data-di-next]');
     await ff(page, 0.6);
@@ -316,7 +317,7 @@ export async function hubWalk(L, D, opts) {
       const k = (await wave(page)).key;
       expect(
         (await st(page)).overlay === 'rule' && (await page.textContent('.di-veil')).includes(titles[k]),
-        '« القاعدة » during the run pauses it on the tablet of the rule the gate uses',
+        '« La règle » during the run pauses it on the tablet of the rule the gate uses',
       );
     }
     await shot(page, 'run-rule', { exit: ['[data-di-tablet]', '[data-di-exit]'] });
@@ -344,7 +345,7 @@ export async function hubWalk(L, D, opts) {
       await page.waitForSelector('[data-di-tablet]');
       expect(
         (await page.textContent('.di-veil')).includes(titles[x.key]),
-        "« ذكّرني بالقاعدة » on the card: the tablet of THIS lesson's rule",
+        "« Rappelle-moi la règle » on the card: the tablet of THIS lesson's rule",
       );
       await page.click('[data-di-tablet]');
       await ff(page, 0.3);
@@ -354,7 +355,7 @@ export async function hubWalk(L, D, opts) {
     await page.waitForSelector('[data-di-mapcard]');
     expect(
       !(await st(page)).dash && (await st(page)).overlay === 'map',
-      '« خروج » ends the run and comes back to the hub, nothing recorded',
+      '« Quitter » ends the run and comes back to the hub, nothing recorded',
     );
     await page.click('[data-di-next]');
     await ff(page, 2.8);
@@ -386,7 +387,7 @@ export async function hubWalk(L, D, opts) {
     await ff(page, 0.3);
     expect(
       (await st(page)).phase === 'dash' && !(await st(page)).overlay,
-      '« واصل » after the second mistake resumes the run',
+      '« J’ai compris, je continue » after the second mistake resumes the run',
     );
     await page.click('[data-di-quit]');
     await page.waitForSelector('[data-di-mapcard]');

@@ -1,17 +1,17 @@
-// « فضاء الامتحان » of a v2 lesson, walked from the lesson's EXERCISE BANK AS IT IS ON DISK (content/practice/<grade>/<id>/).
+// « Espace brevet » of a v2 lesson, walked from the lesson's EXERCISE BANK AS IT IS ON DISK (content/practice/<grade>/<id>/).
 // What every lesson's sitting walk shares (gameworld-<lesson>-sitting.mjs, and the pilot's gameworld-sitting.mjs):
 //
-//   levelFive   « تقدّمي » before; ONE sitting of level 5 answered right from its first step to its copy handed back; what the
-//               hand-in posts; the model copy, the notebook, the champion's promotion; « تقدّمي » after (readiness computed
+//   levelFive   « Ma progression » before; ONE sitting of level 5 answered right from its first step to its copy handed back; what the
+//               hand-in posts; the model copy, the notebook, the champion's promotion; « Ma progression » after (readiness computed
 //               HERE from the copy), and a reload keeps it.
 //   copies      four copies, each asserted by what the screen says: a BLANK copy handed in (level 1), a WRONG copy (level 2:
-//               every step wrong — « أرشدني » never gives the answer, « اشرح لي » shows the bank's real correction, the
+//               every step wrong — « Guide-moi » never gives the answer, « Explique-moi » shows the bank's real correction, the
 //               notebook names the rules, the retry screen), a copy QUIT half-way (the similar sheet: nothing counted, nothing
-//               sent), a RIGHT copy (level 3: full marks, three stars); then « تقدّمي »'s readiness from these copies.
+//               sent), a RIGHT copy (level 3: full marks, three stars); then « Ma progression »'s readiness from these copies.
 //   everySheet  EVERY sheet of EVERY level of the bank: opened through the ladder (the DEV hook `localStorage['di.dev.sheet']`
 //               makes the sitting draw that sheet), its statement and every step checked against the disk (words, formulas
-//               drawn, the table, « دج »), its answer boxes in their shape, each screen through `shot` (nothing scrolls or is
-//               cut, 12 px, no raw formula), then « خروج » — or, for an answer sheet shown in LEAVES (too long for its
+//               drawn, the table, its money in euros), its answer boxes in their shape, each screen through `shot` (nothing scrolls or is
+//               cut, 12 px, no raw formula), then « Quitter » — or, for an answer sheet shown in LEAVES (too long for its
 //               box), every leaf looked at, every answer typed on its leaf, and the copy handed in (`everyLeaf`).
 //               No story is played: the save opens the five levels at once.
 //               About 3 s a sheet: ~2.5–3 min for the 50 sheets of a lesson at one size.
@@ -35,12 +35,9 @@ export const words = (t) =>
     .filter((x) => x.length > 2);
 /**
  * A string of the bank as the screen must show it (GAME_WORLD.md, kit/bankSitting.js — the rules, written again here):
- *   money is « دج »: « DA » of the bank, glued to a number or not, is read « دج »; after an amount it is written apart from
- *   it, and the amount loses its thousands spaces (« 45DA » → « 45 دج », « 211 500DA » → « 211500 دج »);
+ *   money is the bank's own, in euros, shown as the bank writes it (the Algerian rewrite of « DA » left with the dinar);
  *   a « PGCD(a ; b) » (« = n » with it) written in the words is drawn as a formula (it reads left to right, upright).
  */
-const SP = '[ \\u00a0\\u202f]';
-const AMOUNT_DA = new RegExp(`(?<![\\d])(\\d{1,3}(?:${SP}\\d{3})+|\\d+)${SP}*DA(?![A-Za-z])`, 'g');
 const PGCD_IN_WORDS = /(?<![A-Za-z\\])(PGCD|PPCM)\s*\(([^()$]*)\)((?:\s*=\s*\d+)?)/g;
 const pgcdDrawn = (t) =>
   t
@@ -51,14 +48,11 @@ const pgcdDrawn = (t) =>
         : part.replace(PGCD_IN_WORDS, (_, f, args, eq) => `$\\mathrm{${f}}(${args.trim()})${eq.replace(/\s+/g, ' ')}$`),
     )
     .join('');
-const dj = (t) =>
-  pgcdDrawn(
-    String(t ?? '')
-      .replace(AMOUNT_DA, (_, a) => `${a.replace(new RegExp(SP, 'g'), '')} دج`)
-      .replace(/(?<![A-Za-z])DA(?![A-Za-z])/g, 'دج'),
-  );
+const asShown = (t) => pgcdDrawn(String(t ?? ''));
 const formulasIn = (t) => (String(t ?? '').match(/\$[^$]+\$/g) ?? []).length;
-const ARABIC = /[؀-ۿ]/;
+/** A result of the bank that is WORDS (« oui », « Le pont tient »), not a formula: three letters or more, no LaTeX command. */
+const RESULT_WORDS = /(?<![\\A-Za-zÀ-ÿ])[A-Za-zÀ-ÿ]{3,}/;
+/** Money is in euros: « DA » (a dinar), glued to a number or not, is never on screen. */
 const DA_ON_SCREEN = /(?<![A-Za-z])DA(?![A-Za-z])/;
 
 // ───────────────────────────── the rules of a sitting, as GAME_WORLD.md documents them ─────────────────────────────
@@ -68,15 +62,17 @@ export const starsFor = (m, total) => (m >= total ? 3 : m >= total * 0.9 ? 2 : m
 /** The appreciation written on the copy. */
 export const appreciationFor = (m, total) =>
   m >= total * 0.9
-    ? 'ممتاز'
+    ? 'Excellent'
     : m >= total * 0.7
-      ? 'جيّد'
+      ? 'Bien'
       : m >= total * 0.5
-        ? 'متوسّط: راجع أخطاءك'
-        : 'يحتاج إلى عمل: لا تيأس';
-/** « جاهزيّتي للامتحان »: half the ladder (levels passed of five), half the first tries on paper once there are four. */
+        ? 'Assez bien\u00a0: revois tes erreurs'
+        : 'À retravailler\u00a0: ne lâche rien';
+/** « Pas encore d’essai » on a row of « Ma progression » (kit/text.js › TX.progress.noTry), either apostrophe. */
+const NO_TRY = /Pas encore d[’']essai/;
+/** « Prêt pour le brevet »: half the ladder (levels passed of five), half the first tries on paper once there are four. */
 export const readinessFor = (passed, ok, n) => Math.round(100 * (0.5 * (passed / 5) + 0.5 * (n >= 4 ? ok / n : 0)));
-/** « بيّن أن » steps are written on paper: no points. A sheet's points are shared between its typed steps in quarters. */
+/** « Montrer que » steps are written on paper: no points. A sheet's points are shared between its typed steps in quarters. */
 export function diskPoints(sheet) {
   const typed = sheet.questions.filter((q) => q.answerType !== 'selfCheck');
   const total = typed.length ? Number(String(sheet.metadata?.exam?.points ?? '').replace(',', '.')) || 0 : 0;
@@ -122,7 +118,7 @@ function onPaper(sheet) {
   ];
   const cells = st.table ? [...st.table.head, ...st.table.rows.flat()].map(String) : [];
   return {
-    words: texts.map(dj).flatMap(words),
+    words: texts.map(asShown).flatMap(words),
     formulas:
       texts.reduce((t, x) => t + formulasIn(x), 0) +
       (st.formulas?.length ?? 0) +
@@ -147,7 +143,7 @@ const readBox = (page, sel) =>
       if (!p.closest('.katex')) plain += `${t.nodeValue} `;
     }
     const tb = box.querySelector('[data-problem-table] table');
-    // the bidi isolates MathText puts around an equality written in the words (utils/bidi.js › isolateMathRuns: « العرض ×
+    // the bidi isolates MathText puts around an equality written in the words (utils/bidi.js › isolateMathRuns: « largeur ×
     // 14 = 56 ») are invisible: they are not part of what the student reads, and a bank sentence is compared without them
     const bare = (x) => x.replace(/[\u2066-\u2069\u200e\u200f]/g, '').replace(/\s+/g, ' ');
     return {
@@ -160,7 +156,7 @@ const readBox = (page, sel) =>
     };
   }, sel);
 
-/** The sheet `sheet` on the paper inside `scope`: every word of the disk, its formulas drawn, its table, « دج », its steps. */
+/** The sheet `sheet` on the paper inside `scope`: every word of the disk, its formulas drawn, its table, no « DA », its steps. */
 export async function checkPaper(w, page, scope, sheet, where) {
   const want = onPaper(sheet);
   const got = await readBox(page, `${scope} .xs-ex[data-xs-bank="${sheet.id}"]`);
@@ -175,7 +171,7 @@ export async function checkPaper(w, page, scope, sheet, where) {
     `${where}: its ${want.formulas} formula(s) drawn (${got.katex} on screen, ${got.errors} error)`,
   );
   w.check(!/\$|\\[a-zA-Z]{2,}/.test(got.plain), `${where}: no raw formula on the paper`);
-  w.check(!DA_ON_SCREEN.test(got.plain), `${where}: money reads « دج », never « DA » (glued to a number included)`);
+  w.check(!DA_ON_SCREEN.test(got.plain), `${where}: money in euros as the bank writes it, never « DA » (glued to a number included)`);
   w.check(
     JSON.stringify(got.table) === JSON.stringify(want.table),
     `${where}: ${want.table ? `its table (${want.table.head} columns, ${want.table.rows} rows)` : 'no table'} — on screen ${JSON.stringify(got.table)}`,
@@ -189,7 +185,7 @@ export async function checkFields(w, page, steps, where) {
     if (q.paper) {
       w.check(
         (await page.locator(`${ON} [data-xs-paper-only="${q.id}"]`).count()) === 1,
-        `${where} ${q.qid}: a « بيّن أن » step is written on the paper only — no box`,
+        `${where} ${q.qid}: a « Montrer que » step is written on the paper only — no box`,
       );
       continue;
     }
@@ -219,17 +215,17 @@ export async function checkFields(w, page, steps, where) {
       `${where} ${q.qid} (${q.answerType}): answered in its own shape (${JSON.stringify(f && { ...f, text: undefined })})`,
     );
     if (f && q.answerType === 'choice') {
-      const missing = q.bank.choices.flatMap((c) => words(dj(c.content))).filter((t) => !f.text.includes(t));
+      const missing = q.bank.choices.flatMap((c) => words(asShown(c.content))).filter((t) => !f.text.includes(t));
       w.check(
         missing.length === 0 && !DA_ON_SCREEN.test(f.text),
-        `${where} ${q.qid}: its choices read as the bank writes them, money in « دج »${missing.length ? ' — missing: ' + missing.join(' | ') : ''}`,
+        `${where} ${q.qid}: its choices read as the bank writes them, never « DA »${missing.length ? ' — missing: ' + missing.join(' | ') : ''}`,
       );
     }
   }
 }
 
 // ───────────────────────────── moving through the world ─────────────────────────────
-/** From the title screen to « فضاء الامتحان ». */
+/** From the title screen to « Espace brevet ». */
 export async function toLadder(page) {
   await page.click('[data-di-map]');
   await page.waitForSelector('[data-di-space="exam"]');
@@ -252,7 +248,7 @@ export async function openSitting(page, level, id = null) {
   await page.waitForTimeout(250);
   return page.evaluate(() => window.__sitting.subject);
 }
-/** « خروج » → « نعم، أخرج »: back on the ladder. */
+/** « Quitter » → « Oui, je quitte »: back on the ladder. */
 export async function quitSitting(page) {
   await page.click('[data-xs-quit]');
   await page.waitForSelector('[data-xs-quit-box]');
@@ -277,7 +273,7 @@ export const leavesOnScreen = (page) =>
       at,
     };
   }, ON);
-/** Turns the answer sheet on screen to leaf `l`, with its « التالي » / « السابق » — as the student does. */
+/** Turns the answer sheet on screen to leaf `l`, with its « Suivante » / « Précédente » — as the student does. */
 export async function turnTo(page, l) {
   for (let k = 0; k < 12; k += 1) {
     const s = await leavesOnScreen(page);
@@ -350,7 +346,7 @@ async function handIn(page) {
   await page.waitForTimeout(500);
 }
 
-// ───────────────────────────── « أرشدني » and « اشرح لي » ─────────────────────────────
+// ───────────────────────────── « Guide-moi » and « Explique-moi » ─────────────────────────────
 /** The numbers written anywhere in the sheet (its statement, its table, every step): a hint may repeat them. */
 const numbersOfSheet = (sheet) => {
   const st = sheet.statement ?? {};
@@ -362,7 +358,7 @@ const numbersOfSheet = (sheet) => {
   ].join(' ');
   return new Set(all.match(/\d+(?:[.,]\d+)?/g) ?? []);
 };
-/** What of the answer a « أرشدني » text would give away: a number of the answer the sheet itself never writes, the right choice's words. */
+/** What of the answer a « Guide-moi » text would give away: a number of the answer the sheet itself never writes, the right choice's words. */
 export function leaksOf(guideText, q) {
   const seen = numbersOfSheet(q.sheet);
   const inGuide = new Set(guideText.match(/\d+(?:[.,]\d+)?/g) ?? []);
@@ -372,7 +368,7 @@ export function leaksOf(guideText, q) {
       String(Array.isArray(q.bank.expectedAnswer) ? q.bank.expectedAnswer.join(' ') : q.bank.expectedAnswer).match(
         /\d+(?:[.,]\d+)?/g,
       ) ?? [];
-    // 0 and 1 are said in any hint about divisors (« 1 يقسم كلّ عدد »): they give nothing away
+    // 0 and 1 are said in any hint about divisors (« 1 divise tout nombre »): they give nothing away
     const own = nums.filter((n) => !seen.has(n) && n !== '0' && n !== '1');
     // a set is given away when every one of its numbers the sheet does not write is in the hint
     if (
@@ -383,7 +379,7 @@ export function leaksOf(guideText, q) {
       out.push(own.join(', '));
   }
   if (q.answerType === 'choice') {
-    const right = dj(q.bank.choices.find((c) => c.isCorrect).content);
+    const right = asShown(q.bank.choices.find((c) => c.isCorrect).content);
     const nums = (right.match(/\d+(?:[.,]\d+)?/g) ?? []).filter((n) => !seen.has(n) && n !== '0' && n !== '1');
     if (nums.some((n) => inGuide.has(n))) out.push(right);
     const plain = right
@@ -394,19 +390,19 @@ export function leaksOf(guideText, q) {
   }
   // the model copy's conclusion is the answer written out
   const last = (q.bank.solution?.lines ?? []).at(-1);
-  for (const t of words(dj(last))) if (t.length >= 25 && guideText.includes(t)) out.push(`« ${t} »`);
+  for (const t of words(asShown(last))) if (t.length >= 25 && guideText.includes(t)) out.push(`« ${t} »`);
   return out;
 }
-/** « اشرح لي » is the bank's real correction: every line of its solution, word for word, its formulas drawn, its result. */
+/** « Explique-moi » is the bank's real correction: every line of its solution, word for word, its formulas drawn, its result. */
 export async function checkExplain(w, page, q, where) {
-  const lines = (q.bank.solution?.lines ?? []).map(dj);
+  const lines = (q.bank.solution?.lines ?? []).map(asShown);
   const result = q.bank.solution?.result ?? null;
   const got = await readBox(page, '[data-xs-help="explain"]');
-  if (!w.check(Boolean(got), `${where}: « اشرح لي » opens the model copy`)) return;
+  if (!w.check(Boolean(got), `${where}: « Explique-moi » opens the model copy`)) return;
   const missing = lines.flatMap(words).filter((t) => !got.text.includes(t));
-  const resultFormula = result && !(ARABIC.test(result) && !/\\text\{/.test(result)) ? 1 : 0;
+  const resultFormula = result && !(RESULT_WORDS.test(result) && !/\\text\{/.test(result)) ? 1 : 0;
   const want = lines.reduce((t, x) => t + formulasIn(x), 0) + resultFormula;
-  const resultText = result && !resultFormula ? dj(result).trim() : null;
+  const resultText = result && !resultFormula ? asShown(result).trim() : null;
   w.check(
     lines.length > 0 &&
       missing.length === 0 &&
@@ -414,28 +410,29 @@ export async function checkExplain(w, page, q, where) {
       got.errors === 0 &&
       (!resultText || got.text.includes(resultText)) &&
       !DA_ON_SCREEN.test(got.plain),
-    `${where}: « اشرح لي » shows the bank's model solution — its ${lines.length} line(s) word for word, ${want} formula(s) drawn (${got.katex}), its result${resultText ? ` « ${resultText} »` : ''}${missing.length ? ' — missing: ' + missing.slice(0, 3).join(' | ') : ''}`,
+    `${where}: « Explique-moi » shows the bank's model solution — its ${lines.length} line(s) word for word, ${want} formula(s) drawn (${got.katex}), its result${resultText ? ` « ${resultText} »` : ''}${missing.length ? ' — missing: ' + missing.slice(0, 3).join(' | ') : ''}`,
   );
 }
-/** « أرشدني »: the bank's hints (or, with none, the rule) and « أعد حلّ » — never the answer. */
+/** « Guide-moi »: the bank's hints (or, with none, the rule) and « Refais cette question sur ta copie » — never the answer. */
 export async function checkGuide(w, page, q, where) {
   const got = await readBox(page, '[data-xs-help="guide"]');
-  if (!w.check(Boolean(got), `${where}: « أرشدني » opens`)) return;
-  const hints = (q.bank.hints ?? []).map((h) => dj(h.content));
+  if (!w.check(Boolean(got), `${where}: « Guide-moi » opens`)) return;
+  const hints = (q.bank.hints ?? []).map((h) => asShown(h.content));
   const missing = hints.flatMap(words).filter((t) => !got.text.includes(t));
   const leaks = leaksOf(got.text, q);
   w.check(
-    got.text.includes('أعد حلّ') && missing.length === 0,
-    `${where}: « أرشدني » gives the bank's ${hints.length} hint(s) and sends back to the paper${missing.length ? ' — missing: ' + missing.join(' | ') : ''}`,
+    // kit/text.js › EXAM.redo
+    got.text.includes('Refais cette question') && missing.length === 0,
+    `${where}: « Guide-moi » gives the bank's ${hints.length} hint(s) and sends back to the paper${missing.length ? ' — missing: ' + missing.join(' | ') : ''}`,
   );
   w.check(
     leaks.length === 0,
-    `${where}: « أرشدني » does not give the answer${leaks.length ? ' — it shows ' + leaks.join(' | ') : ''}`,
+    `${where}: « Guide-moi » does not give the answer${leaks.length ? ' — it shows ' + leaks.join(' | ') : ''}`,
   );
 }
 
 // ───────────────────────────── the parts ─────────────────────────────
-/** « تقدّمي » read: the road's exam station, the readiness, the next thing, the rows per الكفاءة. */
+/** « Ma progression » read: the road's exam station, the readiness, the next thing, the rows per savoir-faire. */
 const progress = (page) =>
   page.evaluate(() => ({
     exam: document.querySelector('[data-di-road-step="exam"] b')?.textContent ?? '',
@@ -451,7 +448,7 @@ export const firstSheet = (bank, level, pick = () => true) =>
   sittableOnDisk(bank, level)
     .sort((a, b) => (a.id < b.id ? -1 : 1))
     .find(pick) ?? sittableOnDisk(bank, level)[0];
-/** A sheet whose typed number step has hints and an answer the sheet never writes: « أرشدني » can be tested on it. */
+/** A sheet whose typed number step has hints and an answer the sheet never writes: « Guide-moi » can be tested on it. */
 export const guideTestable = (s) =>
   s.questions.some(
     (q) =>
@@ -460,7 +457,7 @@ export const guideTestable = (s) =>
       (String(q.expectedAnswer).match(/\d+/g) ?? []).some((n) => !numbersOfSheet(s).has(n)),
   );
 
-/** The level-5 sitting answered right, with « تقدّمي » before and after (four levels passed in the save). */
+/** The level-5 sitting answered right, with « Ma progression » before and after (four levels passed in the save). */
 export async function levelFive(w, { uid, id, grade, url, keys, bank, allow, stage }) {
   const { expect, shot } = w;
   const one = (m) => ({ stars: 3, mark: m, total: m });
@@ -477,7 +474,7 @@ export async function levelFive(w, { uid, id, grade, url, keys, bank, allow, sta
   });
   await page.waitForSelector('[data-di-start]', { timeout: 30000 });
 
-  // « تقدّمي » BEFORE: four levels of five, no first try yet → readiness = ½ × 4/5
+  // « Ma progression » BEFORE: four levels of five, no first try yet → readiness = ½ × 4/5
   await page.click('[data-di-progress-open]');
   await page.waitForSelector('[data-di-progress]');
   await page.waitForTimeout(400);
@@ -486,15 +483,16 @@ export async function levelFive(w, { uid, id, grade, url, keys, bank, allow, sta
     before.exam === `4${NB}5` &&
       before.next === 'exam' &&
       (await page.textContent('[data-di-next-step]')).includes('5'),
-    `« تقدّمي » before: four exam levels of five passed, the next thing « اجتز الدرجة 5 » (exam=${JSON.stringify(before.exam)} next=${before.next})`,
+    `« Ma progression » before: four exam levels of five passed, the next thing « passe le palier 5 du brevet » (exam=${JSON.stringify(before.exam)} next=${before.next})`,
   );
   expect(
     before.ready === readinessFor(4, 0, 0),
     `the readiness before is ½ × 4/5 = ${readinessFor(4, 0, 0)}% (shown ${before.ready}%)`,
   );
   expect(
-    Object.keys(before.rows).join() === keys.join() && keys.every((k) => before.rows[k].includes('لا محاولة بعد')),
-    'no answer given as in an exam yet: each الكفاءة says « لا محاولة بعد »',
+    // kit/text.js › TX.progress.noTry
+    Object.keys(before.rows).join() === keys.join() && keys.every((k) => NO_TRY.test(before.rows[k])),
+    'no answer given as in an exam yet: each savoir-faire says « Pas encore d’essai »',
   );
   await shot(page, 'progress-before', { exit: ['[data-di-progress-close]'], sound: true, numbers: true });
   await page.click('[data-di-progress-close]');
@@ -504,7 +502,7 @@ export async function levelFive(w, { uid, id, grade, url, keys, bank, allow, sta
   expect(
     (await page.locator('.di-rungs li.is-passed').count()) === 4 &&
       (await page.locator('.di-rungs li.is-next [data-di-exam-level="5"]').count()) === 1,
-    '« فضاء الامتحان »: four levels passed, level 5 lit',
+    '« Espace brevet »: four levels passed, level 5 lit',
   );
   await shot(page, 'ladder', { exit: ['[data-di-map-close]'], numbers: true });
   const S = firstSheet(bank, 5);
@@ -513,8 +511,9 @@ export async function levelFive(w, { uid, id, grade, url, keys, bank, allow, sta
     subject.level === 5 &&
       subject.exercises.length === 1 &&
       subject.exercises[0].bankId === S.id &&
-      subject.exercises[0].title === 'الوضعيّة الإدماجيّة',
-    `level 5: ONE sheet, the integrative situation the walk asked for (${S.id}; drawn ${subject.exercises.map((e) => e.bankId).join(', ')})`,
+      // kit/bankSitting.js: a sheet whose exam heading names a « problème » is titled « Problème » (kit/text.js › BANK.problem)
+      subject.exercises[0].title === 'Problème',
+    `level 5: ONE sheet, the « Problème » the walk asked for (${S.id}; drawn ${subject.exercises.map((e) => e.bankId).join(', ')})`,
   );
   const steps = stepsOf(subject, bank);
   expect(
@@ -534,7 +533,7 @@ export async function levelFive(w, { uid, id, grade, url, keys, bank, allow, sta
     await page.evaluate(() => window.__world.getState().paper === true),
     'the sitting is silent: paper mode, no music',
   );
-  await shot(page, 'read', { ...SHEET_OUT, allow }); // silent by design (« بلا موسيقى »): no sound button is asked of it
+  await shot(page, 'read', { ...SHEET_OUT, allow }); // silent by design (« Sans musique »): no sound button is asked of it
   await page.click('[data-xs-start]');
   await page.waitForSelector('[data-xs="sit"]');
 
@@ -625,7 +624,7 @@ export async function levelFive(w, { uid, id, grade, url, keys, bank, allow, sta
   await page.waitForSelector(`[data-xs-detail="${typed[0].id}"]`);
   expect(
     (await page.locator('[data-xs-guide]').count()) === 0,
-    'a full-mark question opens its model copy directly (no « أرشدني »)',
+    'a full-mark question opens its model copy directly (no « Guide-moi »)',
   );
   await checkExplain(w, page, typed[0], 'back');
   await shot(page, 'back-model', { exit: ['[data-xs-close]'], allow });
@@ -633,7 +632,8 @@ export async function levelFive(w, { uid, id, grade, url, keys, bank, allow, sta
   await page.waitForSelector('[data-xs-notebook]');
   expect(
     (await page.locator('[data-xs-notebook] li').count()) === 0 &&
-      (await page.textContent('[data-xs-notebook]')).includes('ورقة كاملة'),
+      // kit/text.js › EXAM.perfect
+      (await page.textContent('[data-xs-notebook]')).includes('Copie parfaite'),
     'the notebook: a full paper, nothing to write in it',
   );
   await shot(page, 'notebook', { exit: ['[data-xs-close]', '[data-xs-finish]'], allow });
@@ -668,7 +668,7 @@ export async function levelFive(w, { uid, id, grade, url, keys, bank, allow, sta
   await page.click('[data-di-map-close]');
   await page.waitForSelector('[data-di-start]');
 
-  // « تقدّمي » AFTER: what the copy earned, per الكفاءة — counted HERE from the steps the sheet maps to a key
+  // « Ma progression » AFTER: what the copy earned, per savoir-faire — counted HERE from the steps the sheet maps to a key
   const counted = typed.filter((q) => q.key && q.counted);
   const per = Object.fromEntries(keys.map((k) => [k, counted.filter((q) => q.key === k).length]));
   await page.click('[data-di-progress-open]');
@@ -683,10 +683,11 @@ export async function levelFive(w, { uid, id, grade, url, keys, bank, allow, sta
   expect(
     keys.every((k) =>
       per[k]
-        ? new RegExp(`${per[k]}\\D*صحيحة\\D*${per[k]}`).test(after.rows[k])
-        : after.rows[k].includes('لا محاولة بعد'),
+        ? // « 2 réussites sur 2 » (kit/text.js › TX.progress.tries; the space before the noun may be a no-break one)
+          new RegExp(`(^|[^0-9])${per[k]}\\s+réussites?\\s+sur\\s+${per[k]}([^0-9]|$)`).test(after.rows[k])
+        : NO_TRY.test(after.rows[k]),
     ),
-    `per الكفاءة, the steps answered as in an exam, all right: ${keys.map((k) => `${k} ${per[k]} of ${per[k]}`).join(', ')}`,
+    `per savoir-faire, the steps answered as in an exam, all right: ${keys.map((k) => `${k} ${per[k]} of ${per[k]}`).join(', ')}`,
   );
   const ready = readinessFor(5, counted.length, counted.length);
   expect(
@@ -699,7 +700,7 @@ export async function levelFive(w, { uid, id, grade, url, keys, bank, allow, sta
   await page.waitForSelector('[data-di-start]');
   expect(
     (await page.evaluate(() => window.__world.getState().phase)) === 'title',
-    '« تقدّمي » closes back to the title screen',
+    '« Ma progression » closes back to the title screen',
   );
   await page.reload({ waitUntil: 'networkidle' });
   await page.waitForSelector('[data-di-start]');
@@ -755,8 +756,8 @@ export async function copies(w, { uid, id, grade, url, keys, bank, allow, stage 
       .evaluateAll((els) => els.map((e) => ({ m: e.dataset.xsMark, t: e.textContent })));
     expect(
       rows.length === steps.length &&
-        steps.every((q, k) => (q.paper ? rows[k].m === 'paper' : rows[k].m === 'ko' && rows[k].t.includes('لم تُجب'))),
-      'blank copy: every typed step is crossed and says « لم تُجب »',
+        steps.every((q, k) => (q.paper ? rows[k].m === 'paper' : rows[k].m === 'ko' && rows[k].t.includes('Pas de réponse'))),
+      'blank copy: every typed step is crossed and says « Pas de réponse »',
     );
     expect(
       (await practicePosts(page)).length === 0,
@@ -775,7 +776,7 @@ export async function copies(w, { uid, id, grade, url, keys, bank, allow, stage 
     expect(
       (await page.textContent('.di-promo__mark b')).trim() === `0${NB}${fmt(want)}` &&
         (await page.locator('.di-confetti').count()) === 0,
-      `blank copy: « لم تنجح بعد », the mark 0 / ${fmt(want)}, no celebration`,
+      `blank copy: « Pas encore… », the mark 0 / ${fmt(want)}, no celebration`,
     );
     await shot(page, 'blank-retry', { exit: ['[data-di-promo-ladder]'] });
     await page.click('[data-di-promo-ladder]');
@@ -866,12 +867,12 @@ export async function copies(w, { uid, id, grade, url, keys, bank, allow, stage 
         (await page.locator('[data-di-promo-next]').count()) === 0 &&
         (await page.locator('.di-confetti').count()) === 0 &&
         (await page.textContent('.di-promo__mark b')).trim() === `0${NB}${fmt(want)}`,
-      `wrong copy: no celebration, « ورقة مشابهة », the mark 0 / ${fmt(want)}`,
+      `wrong copy: no celebration, « Un sujet du même genre », the mark 0 / ${fmt(want)}`,
     );
     await shot(page, 'wrong-retry', { exit: ['[data-di-promo-ladder]'] });
     tally = { ok: 0, n: typed.filter((x) => x.key && x.counted).length };
 
-    // ── a copy QUIT half-way: the similar sheet, one step answered, then « خروج » ──
+    // ── a copy QUIT half-way: the similar sheet, one step answered, then « Quitter » ──
     await page.evaluate(() => {
       window.__sitting = null;
       localStorage.removeItem('di.dev.sheet');
@@ -895,9 +896,10 @@ export async function copies(w, { uid, id, grade, url, keys, bank, allow, stage 
     await page.click('[data-xs-quit]');
     await page.waitForSelector('[data-xs-quit-box]');
     expect(
-      (await page.textContent('[data-xs-quit-box]')).includes('تخرج من الامتحان؟') &&
+      // kit/text.js › EXAM.quitTitle
+      (await page.textContent('[data-xs-quit-box]')).includes('Quitter le brevet blanc') &&
         (await page.locator('[data-xs="sit"]').count()) === 1,
-      'quit half-way: « خروج » asks first, the sitting still behind the question',
+      'quit half-way: « Quitter » asks first, the sitting still behind the question',
     );
     await shot(page, 'quit-ask', { exit: ['[data-xs-quit-no]', '[data-xs-quit-yes]'], allow });
     await page.click('[data-xs-quit-yes]');
@@ -931,7 +933,10 @@ export async function copies(w, { uid, id, grade, url, keys, bank, allow, stage 
       Number(await page.getAttribute('[data-xs-total]', 'data-xs-total')) === want && markOf(steps, plan) === want,
       `right copy: ${want} / ${want} (the points of its sheets on disk)`,
     );
-    expect((await page.textContent('[data-xs-appreciation]')).trim() === 'ممتاز', 'right copy: « ممتاز »');
+    expect(
+      (await page.textContent('[data-xs-appreciation]')).trim() === appreciationFor(1, 1),
+      `right copy: « ${appreciationFor(1, 1)} »`,
+    );
     await shot(page, 'right-back', { exit: ['[data-xs-close]'], allow });
     await page.click('[data-xs-close]');
     await page.waitForSelector('[data-di-promotion]');
@@ -953,7 +958,7 @@ export async function copies(w, { uid, id, grade, url, keys, bank, allow, stage 
     await page.waitForSelector('[data-di-start]');
   }
 
-  // « تقدّمي »: the readiness from these copies (the blank and the quit count nothing)
+  // « Ma progression »: the readiness from these copies (the blank and the quit count nothing)
   await page.click('[data-di-progress-open]');
   await page.waitForSelector('[data-di-progress]');
   await page.waitForTimeout(400);
@@ -978,7 +983,7 @@ export async function copies(w, { uid, id, grade, url, keys, bank, allow, stage 
 /**
  * An answer sheet that does not fit at the 12 px floor is shown in LEAVES (GAME_WORLD.md §2quater): never cut, never
  * scrolled. For such a sheet: the count « 1 / n » is shown, every step is on exactly one leaf, each leaf is a screen of its
- * own (`shot`: not cut, 12 px), every answer is TYPED on its leaf with « التالي », and back on the first leaf what he typed
+ * own (`shot`: not cut, 12 px), every answer is TYPED on its leaf with « Suivante », and back on the first leaf what he typed
  * there is still in its box and the sheet's progress counts every leaf; then the copy is handed in and comes back whole,
  * each answer marked right (true: the sitting is over, the ladder is back). A sheet that fits has ONE leaf and no control.
  */
@@ -1060,7 +1065,7 @@ async function everyLeaf(w, page, steps, tag, allow) {
   return true;
 }
 
-/** EVERY sheet of EVERY level: opened, checked against the disk, each screen through `shot`, then « خروج ». */
+/** EVERY sheet of EVERY level: opened, checked against the disk, each screen through `shot`, then « Quitter ». */
 export async function everySheet(w, { uid, id, grade, url, keys, bank, allow, stage }) {
   const { expect, check, shot } = w;
   const { page, ctx } = await w.student({
@@ -1125,7 +1130,7 @@ export async function everySheet(w, { uid, id, grade, url, keys, bank, allow, st
         `${tag} sit`,
       );
       await shot(page, `${tag}-sit`, { ...SHEET_OUT, allow });
-      // a sheet in leaves is handed in (its copy comes back, then the ladder); any other leaves by « خروج »
+      // a sheet in leaves is handed in (its copy comes back, then the ladder); any other leaves by « Quitter »
       if (
         !(await everyLeaf(
           w,

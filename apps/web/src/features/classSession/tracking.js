@@ -7,8 +7,8 @@ export const STATES = ['gap', 'reinforce', 'unassessed', 'mastered'];
 export const STATE_LABEL = {
   mastered: 'Maîtrisé',
   reinforce: 'À consolider',
-  gap: 'Lacune',
-  unassessed: 'Pas encore évalué',
+  gap: 'En difficulté',
+  unassessed: 'Non évalué',
 };
 
 /** « ex-4am-…-l3-002 » → { level: 3, number: 2 }: what the teacher reads instead of an identifier. */
@@ -18,7 +18,7 @@ export function exerciseRef(id) {
 }
 export const exerciseLabel = (id) => {
   const r = exerciseRef(id);
-  return r.level ? `Niveau ${r.level} · exercice ${r.number}` : id;
+  return r.level ? `Palier ${r.level} · exercice ${r.number}` : id;
 };
 
 /** One student in numbers: his savoir-faire by state, his exercises, his questions (answered, right, right at the first try). */

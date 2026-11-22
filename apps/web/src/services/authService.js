@@ -271,14 +271,23 @@ export async function registrationStatus() {
   }
 }
 
-/** The waiting list while registrations are closed: a phone number, a name if given, who he is. */
-export async function joinWaitlist({ phone, name, role }) {
+/**
+ * The waiting list while registrations are closed (`POST /waitlist`, apps/api › WaitlistController, the authority):
+ * `email` required; `name` (≤ 100), `role` (student / teacher / parent) and a French `phone` sent only when given.
+ * The validation sentences are written in French for the person by the server; anything else follows apiMessage.
+ */
+export async function joinWaitlist({ email, name, role, phone }) {
+  const body = {
+    email: String(email ?? '').trim(),
+    ...(name?.trim() ? { name: name.trim() } : {}),
+    ...(role ? { role } : {}),
+    ...(phone?.trim() ? { phone: phone.trim() } : {}),
+  };
   const { ok, status, data } = await apiRequest('/waitlist', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ phone, ...(name ? { name } : {}), role }),
+    body: JSON.stringify(body),
   });
-  // The phone's validation sentence is written for the person (WaitlistController); anything else follows apiMessage.
-  if (!ok) throw new Error(data?.errors?.phone?.[0] ?? apiMessage('waitlist', data, status));
+  if (!ok) throw new Error(data?.errors?.email?.[0] ?? data?.errors?.phone?.[0] ?? apiMessage('waitlist', data, status));
   return data;
 }

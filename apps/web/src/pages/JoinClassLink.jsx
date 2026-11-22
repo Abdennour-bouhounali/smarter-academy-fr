@@ -104,7 +104,7 @@ export default function JoinClassLink() {
       refreshStudyContext().catch(() => {}),
       refreshAvailability().catch(() => {}),
     ]);
-    navigate('/espace/qism', { replace: true, state: { joinedClassroom: preview?.classroomName ?? '', alreadyMember: Boolean(alreadyMember) } });
+    navigate('/espace/classe', { replace: true, state: { joinedClassroom: preview?.classroomName ?? '', alreadyMember: Boolean(alreadyMember) } });
   }, [navigate, preview, refreshUser, refreshStudyContext, refreshAvailability]);
 
   const join = useCallback(async (request) => {
@@ -206,7 +206,7 @@ export default function JoinClassLink() {
               return (
                 <div data-join-link-other-class>
                   <Notice icon={AlertCircle} tone="amber" title={t('qism.joinLink.otherClassTitle')}>{t('qism.joinLink.otherClassBody', { name: preview.currentClassroomName })}</Notice>
-                  <Link to="/espace/qism" className="mt-4 flex h-12 items-center justify-center rounded-xl border border-slate-300 bg-white px-5 text-sm font-semibold text-slate-700 hover:bg-slate-50">{t('qism.joinLink.openClass')}</Link>
+                  <Link to="/espace/classe" className="mt-4 flex h-12 items-center justify-center rounded-xl border border-slate-300 bg-white px-5 text-sm font-semibold text-slate-700 hover:bg-slate-50">{t('qism.joinLink.openClass')}</Link>
                 </div>
               );
             }

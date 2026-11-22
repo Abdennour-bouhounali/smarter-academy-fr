@@ -68,7 +68,7 @@ const EPS = 1e-9;
 const ROD_FRAC = { q: { y: 249, drop: 26 }, wall: { y: 255, drop: 34 } };
 
 /** The width a text takes, in units — an estimate for the layout (a digit ≈ 0.6 em, a letter ≈ 0.55 em). */
-export const widthOf = (text, f) =>
+const widthOf = (text, f) =>
   [...String(text)].reduce(
     (t, ch) => t + f * (/[0-9]/.test(ch) ? 0.6 : /[,.]/.test(ch) ? 0.3 : /[/\-−]/.test(ch) ? 0.42 : 0.55),
     0,

@@ -30,8 +30,8 @@ function Section({ icon: Icon, title, children }) {
 
 /**
  * Le RAPPORT DE LA SEMAINE (docs/architecture/PARENT_SPACE.md §4) — un seul
- * composant pour le parent (/wali/abnaa/:id) et pour l'élève (« Ce que voit ton parent »,
- * /espace/profil/wali) : ce que l'élève voit est exactement ce que voit son parent.
+ * composant pour le parent (/parent/enfants/:id) et pour l'élève (« Ce que voit ton parent »,
+ * /espace/profil/parent) : ce que l'élève voit est exactement ce que voit son parent.
  *
  * `report` est la forme de ParentReportService::week(). `audience` ne change
  * que la phrase d'encouragement d'une semaine vide, adressée au parent.

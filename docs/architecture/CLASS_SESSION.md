@@ -6,8 +6,9 @@
 > on 2026-11-22. True here: the code (`apps/web/src/features/classSession/`, `pages/teacher/ClassSessionPage.jsx`,
 > `LessonMemoPage.jsx`, `LessonFilePage.jsx`, `LessonToolPages.jsx`, `pages/teacher/practice/`,
 > `apps/api/app/Domain/ClassSession/`), its API and its tables. Not true here: no lesson has a board, a memo or a class
-> test (`content/class-tests/` does not exist), so none of these screens has anything to show; every sentence is Arabic
-> and the board reads right to left (plan §4, steps 1C–1D); no class-session walk exists. No real class has used it.
+> test (`content/class-tests/` does not exist), so none of these screens has anything to show; no class-session walk
+> exists. Since 2026-11-22 these screens are French and read left to right (the sentences of `session.js`,
+> `lessonScripts.js` and the teacher's namespaces of `apps/web/src/i18n/locales/fr/`). No real class has used it.
 
 ## 1. The goal
 
@@ -40,10 +41,10 @@ the teacher's ONE place on the page, in the order of his work:
 **The header common to the lesson's tools** (`LessonToolsBar.jsx`): the lesson's title, then one tab per tool — the
 lesson · the class session · the memo · the lesson file · the exercise bank · the tracking · the knowledge card. It is
 the top of the lesson page and of the five tool pages — the memo, the lesson file, the exercise bank, the tracking
-(`/enseignant/mutabaa/:lessonId`) and the knowledge card (`/enseignant/bitaqa/:lessonId`, both in
-`pages/teacher/LessonToolPages.jsx`). All live INSIDE the teacher's space; only the class session opens full screen. The
-Algerian rule put the tabs on the right and the name on the left (right-to-left); the French direction:
-`FRENCH_LANGUAGE_CONTRACT.md`, not yet applied in the code.
+(`/enseignant/suivi/:lessonId`) and the knowledge card (`/enseignant/carte/:lessonId`, both in
+`pages/teacher/LessonToolPages.jsx`). All live INSIDE the teacher's space; only the class session
+(`/enseignant/seance/:lessonId`) opens full screen. Left to right: the lesson's name first, on the left, then its tabs
+(`.ltb__title`, then `.ltb__tabs`).
 
 **One frame, `LessonToolPage`**: every tool page is `<LessonToolPage lessonId active>` — the header across the whole
 width, then the tool. Rules: a tool NEVER adds a button to the header (the memo's print button is in its rail); a tool
@@ -82,7 +83,7 @@ answered, right (last try) and right at the first try.
 - **The order is « who needs me first »** (a gap, then « needs support », then not started, then the others; by name
   inside a group) — never a ranking by score (`tracking.js › orderStudents`, tested).
 - Read-only: the endpoint writes nothing (`LessonTrackingTest`).
-- **Its own screen** (`/enseignant/mutabaa/:lessonId`, the class chosen there, the first active one by default). It is
+- **Its own screen** (`/enseignant/suivi/:lessonId`, the class chosen there, the first active one by default). It is
   NOT a tab of the set-up screen.
 - **The window of one exercise of one student** (`StudentWork`): the exact exercise — its statement, each question, what
   the student wrote at each try, the questions he did not answer, and the expected answer. Data:
@@ -95,7 +96,7 @@ ONE file per (teacher, lesson).
 
 - **The instrument is the Math Lab's whiteboard, used as it is** (`features/mathlab/tools/whiteboard`: pens, geometry
   tools, text, shapes, attachments under the lab's quota, autosave).
-- **The page is not in the lab**: `/enseignant/milaff/:lessonId`, inside the teacher's space under the common header; the
+- **The page is not in the lab**: `/enseignant/dossier/:lessonId`, inside the teacher's space under the common header; the
   whiteboard's own full-screen button covers them. The way out (`MathLabShell labHome`) is the lesson page. The lab's
   accents are replaced by the teacher's calm palette there only (`pages/teacher/lessonFile.css`).
 - **The link lesson → document** is the table `teacher_lesson_files` (`math_lab_document_id`, null on delete);
@@ -137,11 +138,12 @@ The classroom drawn from above, the board on top. Set once at the start of the y
   (`seatEveryone`); one who left loses his desk.
 - **The turn follows the seats**: row by row from the board (`turnOrder`).
 - **Teams.** By default one team per VERTICAL line of desks from the board to the back of the room, under the names of
-  scholars (`session.js › SCHOLARS` — today Arabic-world scholars; the French list is not decided `[NOT CHECKED
-  2026-11-22]`), renamable. The teacher may make **his own teams, any number from 2 to 12** (`customTeams`, `nextTeam`).
-- **Boy / girl** is set by the teacher on each desk — **never guessed from a name**. Today it chooses the grammatical form
-  of the Arabic sentences and the character on the podium; unset, the sentence fits everyone and the podium shows a
-  medal with the initial. Whether French needs it: `FRENCH_LANGUAGE_CONTRACT.md`, not yet applied in the code.
+  mathematicians (`session.js › SCHOLARS`: Thalès, Hypatie, Euclide, Sophie Germain, Al-Khwârizmî, Emmy Noether,
+  Pythagore, Ada Lovelace, Descartes, Maryam Mirzakhani, Fermat, Émilie du Châtelet — six women, six men; not yet
+  validated by the owner), renamable. The teacher may make **his own teams, any number from 2 to 12** (`customTeams`, `nextTeam`).
+- **Boy / girl** is set by the teacher on each desk — **never guessed from a name**. It chooses the agreement of the French
+  sentences (« Ne sois pas déçu » / « déçue ») and the character on the podium; unset, the sentence fits everyone
+  (« Pas grave, Léa : … ») and the podium shows a medal with the initial.
 - Saved by itself (`PUT /teacher/classrooms/{id}/seating`); the server keeps only ACTIVE students of the class.
 
 ## 4. The test of a lesson (`SessionSetup.jsx › TestEditor`)
@@ -173,8 +175,8 @@ and **the end test** (the lesson, with those two asked again under other numbers
   he taps a desk), `fair` (among those who have spoken LEAST, counting the sessions of the last 60 days). **A tap on a
   desk of the small map always gives the turn to that student**, whatever the mode.
 - **An absent student** is marked with one tap and is skipped.
-- **The sentence that meets an answer** (`praise`) always carries the name. Never « wrong » as a verdict. Its French
-  wording: `FRENCH_LANGUAGE_CONTRACT.md`, not yet applied in the code.
+- **The sentence that meets an answer** (`praise`) always carries the name. Never « faux » as a verdict (`session.js ›
+  praise`: « Bien vu, Léa. », and on a miss « Pas grave, Léa : on apprend de ses erreurs. »).
 - **The right answer is not shown after a miss until the teacher asks for it**: he decides whether the class looks for it
   first.
 - Enter or ← goes to the next question. Leaving in the middle asks once and saves nothing.
@@ -237,7 +239,7 @@ Rules of this screen:
   (`sessionStorage`, key `smarter_class_lesson_board`, per class and lesson). Never sent.
 - **The board tools are the same on every board screen** (`board.jsx`): the class window, the pen (three pens, undo,
   clear), the red pointer, the curtain (the board goes dark), the timer (1, 2 or 5 minutes; a soft bell).
-- **Numbers in sentences are agreed** (`cellsOf`, `leftCells` — Arabic agreement today; French plurals: plan §4 step 1D)
+- **Numbers in sentences are agreed** (`lessonScripts.js › cellsOf`, `leftCells`: « 1 case », « il reste 3 cases »)
   and every equality and proof is computed, never typed.
 - Nothing scrolls; nothing leaves its card; the oral question is never cut; a formula never breaks.
 
@@ -268,7 +270,7 @@ board). While a tool holds the screen the keys of the board wait (`tools.busy`).
 
 ## 5quinquies. The knowledge card on the board (`KnowledgeBoard.jsx`, `knowledgeCards.js`)
 
-The teacher's knowledge card (`/enseignant/bitaqa/:lessonId`; `?carte=1` is the same board as a view of the class
+The teacher's knowledge card (`/enseignant/carte/:lessonId`; `?carte=1` is the same board as a view of the class
 session): one piece of knowledge per screen — the rule (large), the sentence that makes it stick; then, each only when
 the teacher asks, an example, the trap, what to do in the exam. **It is a display**: no class to choose, nobody to name;
 the dock without the class window. The cards are the lesson's OWN knowledge (`LESSON_KNOWLEDGE › memo`), imported, never

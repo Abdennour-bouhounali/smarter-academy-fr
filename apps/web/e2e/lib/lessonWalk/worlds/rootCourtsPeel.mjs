@@ -1,10 +1,10 @@
-// The EXPERIMENT KIND `peel` of « قصر الساحات » (`rootCourts/InquiryPeel.jsx`), to register in ../experiments.mjs ›
+// The EXPERIMENT KIND `peel` of « Le palais des dalles » (`rootCourts/InquiryPeel.jsx`), to register in ../experiments.mjs ›
 // EXPERIMENTS as `peel` (the kind `peel` of the islands has no walk player: no clash). It plays the screen through its
 // `data-iq-*` hooks; every answer is computed HERE, with the walk's own arithmetic (./exact.mjs, never the world's
 // logic.js: defects.md C1), from what the screen SHOWS — the plaque's three numbers (the courts drawn, the pile beside
 // them, the plate), written on the scene as `data-iq-courts`, `data-iq-pile`, `data-iq-value`. It ends before the last
-// « انتهيت » (`playExperiment` clicks it).
-import { inquiryFits, tellsNothing } from '../checks.mjs';
+// « J’ai fini » (the lesson's `text.done`; `playExperiment` clicks it).
+import { inquiryFits, tellsNothing, WRONG_WORD } from '../checks.mjs';
 import { q, write, rootOf, cmp, eq } from './exact.mjs';
 
 /** The frame of this kind, for checks.mjs › inquiryFits (its drawings hold no SVG text). */
@@ -14,8 +14,14 @@ export const PEEL_FRAME = {
     'button, input, .rq-iq__lead, .rq-iq__goal, .rq-ask, .rq-fact, .rq-table, .rq-pl__scene, .rq-pl__say, .rq-pl__op, .rq-pl__rodblock, .rq-pl__names',
   scene: 'svg',
 };
-const MISS = 'توقّعك لم يصب';
-const WRONG = /خطأ|خاطئ|غلط/;
+/**
+ * The opening of the fact when his prediction missed — a sentence of the LESSON's inquiry (`spec.text`), so its French
+ * wording is the kit's (kit/text.js › FORGE.miss « Ta prédiction n’a pas vu juste cette fois. »): a lesson that words it
+ * otherwise must start its miss with these words, or this constant follows it.
+ */
+const MISS = 'Ta prédiction n’a pas vu juste';
+/** A sentence that calls an answer wrong (../checks.mjs › WRONG_WORD). */
+const WRONG = WRONG_WORD;
 /** A fraction is never written « p/q » as text (it is drawn over a real bar); no letter x before a round is solved. */
 const SLASH = /\d\s*\/\s*\d/;
 const stage = (page) => page.getAttribute('.rq-iq', 'data-iq-stage');
@@ -81,7 +87,7 @@ export async function peelExperiment(ctx, spec = {}) {
   // the kind name `peel` is also one of the islands' (divisorIsles, lesson khawass-qawasim): this player is the courts'
   w.expect(
     (await page.locator('.rq-iq[data-iq="peel"]').count()) === 1,
-    `${ctx.name}: the experiment on screen is the \`peel\` of « قصر الساحات » (the islands' \`peel\` has no player here)`,
+    `${ctx.name}: the experiment on screen is the \`peel\` of « Le palais des dalles » (the islands' \`peel\` has no player here)`,
   );
   await tellsNothing(w, page, `${ctx.name}, the opening`, ctx.forbid(), '.rq-iq');
   await fits(ctx, `${ctx.name}-open`);
@@ -201,7 +207,7 @@ export async function peelExperiment(ctx, spec = {}) {
     );
     await tellsNothing(w, page, `${ctx.name}, after round ${r + 1}`, ctx.forbid(), '.rq-iq');
     await fits(ctx, `${ctx.name}-r${r + 1}-seen`);
-    if (r + 1 >= rounds) break; // « انتهيت »: left for playExperiment
+    if (r + 1 >= rounds) break; // « J’ai fini »: left for playExperiment
     await page.click('.rq-iq [data-iq-next]');
     await page.waitForTimeout(250);
   }

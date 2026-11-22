@@ -7,13 +7,13 @@ import { AuthContext } from '../../context/AuthContext';
 import { getDisplayName } from '../../utils/userDisplay';
 
 const LINKS = [
-  { to: '/idara', end: true, icon: LayoutDashboard, key: 'nav.home' },
-  { to: '/idara/aqsam', end: false, icon: School, key: 'nav.classes' },
-  { to: '/idara/asatidha', end: false, icon: GraduationCap, key: 'nav.teachers' },
-  { to: '/idara/talamidh', end: false, icon: Users, key: 'nav.students' },
-  { to: '/idara/kafaat', end: false, icon: BarChart3, key: 'nav.learning' },
-  { to: '/idara/taqarir', end: false, icon: FileText, key: 'nav.reports' },
-  { to: '/idara/iidadat', end: false, icon: Settings, key: 'nav.settings' },
+  { to: '/etablissement', end: true, icon: LayoutDashboard, key: 'nav.home' },
+  { to: '/etablissement/classes', end: false, icon: School, key: 'nav.classes' },
+  { to: '/etablissement/professeurs', end: false, icon: GraduationCap, key: 'nav.teachers' },
+  { to: '/etablissement/eleves', end: false, icon: Users, key: 'nav.students' },
+  { to: '/etablissement/savoir-faire', end: false, icon: BarChart3, key: 'nav.learning' },
+  { to: '/etablissement/rapports', end: false, icon: FileText, key: 'nav.reports' },
+  { to: '/etablissement/reglages', end: false, icon: Settings, key: 'nav.settings' },
 ];
 
 /**
@@ -43,7 +43,7 @@ export default function SchoolLayout() {
             dessous (tablette 1024 px) avec le libellé en infobulle et en nom
             accessible ; le nom du directeur et « Se déconnecter » écrits à partir de 2xl. */}
         <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-6">
-          <Link to="/idara" className="flex flex-shrink-0 items-center gap-3">
+          <Link to="/etablissement" className="flex flex-shrink-0 items-center gap-3">
             <img src="/brand/mark-color.svg" width="200" height="200" decoding="async" alt="Smarter Academy" className="h-9 w-9" />
             <span className="font-space text-sm font-bold text-nav-accent">{t('nav.spaceName')}</span>
           </Link>

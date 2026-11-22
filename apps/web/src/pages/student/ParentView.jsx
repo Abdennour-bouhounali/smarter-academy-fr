@@ -11,7 +11,7 @@ import ProgressDetail from '../../features/family/ProgressDetail';
 import ReportTabs, { tabFrom } from '../../features/family/ReportTabs';
 
 /**
- * « Ce que voit ton parent » (/espace/profil/wali) — l'élève lit EXACTEMENT ce que lit
+ * « Ce que voit ton parent » (/espace/profil/parent) — l'élève lit EXACTEMENT ce que lit
  * son parent : la semaine et « La progression en détail » (mêmes services serveur, mêmes
  * composants). La transparence n'est pas une phrase : c'est cette page
  * (PARENT_SPACE.md §4).

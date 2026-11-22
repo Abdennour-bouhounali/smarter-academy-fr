@@ -1,18 +1,18 @@
 /**
- * QA navigateur — le مختبر التحويلات (laboratoire des transformations et de
- * la géométrie dynamique).
+ * QA navigateur — l'outil « Transformations » de l'atelier (transformations et
+ * géométrie dynamique).
  *
  * Lancement (dev server sur 5173, API sur 8000, élève QA existant) :
  *   node apps/web/e2e/mathlab-transformations.mjs [dossier-captures]
  *
  * Ce qu'on vérifie (§58) :
- *   - navigation : la carte sur l'accueil (plus « قريبًا »), l'URL directe,
+ *   - navigation : la carte sur l'accueil (plus « Bientôt »), l'URL directe,
  *     le rechargement, le visiteur non connecté ;
- *   - la première visite : un TRIANGLE et un انسحاب — le geste du programme
- *     de 4AM — et aucun document créé tant qu'on n'a rien touché ;
+ *   - la première visite : un TRIANGLE et une translation — le geste du programme
+ *     du collège — et aucun document créé tant qu'on n'a rien touché ;
  *   - §5 : GLISSER un sommet met à jour, en direct, coordonnées, longueurs,
  *     aire, périmètre, angles ET la figure image ;
- *   - §7, §17, §18 : les curseurs de l'انسحاب et du تحاكي ;
+ *   - §7, §17, §18 : les curseurs de la translation et de l'homothétie ;
  *   - §19 : le rapport des aires vaut k² — lu à l'écran, pas dans un test ;
  *   - §14, §16 : les axes de réflexion, et l'axe qu'on DÉPLACE ;
  *   - §20, §23 : composer deux transformations, puis INVERSER leur ordre et
@@ -23,10 +23,11 @@
  *   - §27 : la matrice, cachée par défaut ;
  *   - §12 : l'animation joue, se met en pause et se rembobine ;
  *   - §38, §42 : prédire → vérifier, et un puzzle résolu ;
- *   - §48 : تراجع / إعادة ;
+ *   - §48 : « Annuler » / « Rétablir » ;
  *   - §55 : aucun bruit de virgule flottante à l'écran ;
  *   - §49 : la sauvegarde et la RÉOUVERTURE du document ;
- *   - RTL : panneau au bon bord, notation LTR (direction CALCULÉE) ;
+ *   - gauche à droite : page française sans dir="rtl", panneau au bon bord,
+ *     notation LTR (direction CALCULÉE) ;
  *   - responsive : tablette et mobile, pas de débordement horizontal,
  *     cibles tactiles ≥ 44 px, glissement au DOIGT sans défilement ;
  *   - accessibilité : focus visible, poignée focalisable et nommée, flèches.
@@ -38,7 +39,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const OUT = process.argv[2] || '/tmp/mathlab-transformations-shots';
 mkdirSync(OUT, { recursive: true });
@@ -84,7 +85,7 @@ async function loginUI(page) {
 
 /** Un contexte connecté : on se connecte UNE fois (l'API limite à 6/min). */
 async function authedContext(options = {}) {
-  const context = await browser.newContext({ locale: 'ar-DZ', ...options });
+  const context = await browser.newContext({ locale: 'fr-FR', ...options });
   if (!authState) {
     const page = await context.newPage();
     wire(page);
@@ -96,7 +97,7 @@ async function authedContext(options = {}) {
   }
   await context.close();
 
-  return browser.newContext({ locale: 'ar-DZ', storageState: authState, ...options });
+  return browser.newContext({ locale: 'fr-FR', storageState: authState, ...options });
 }
 
 function wire(page) {
@@ -137,9 +138,9 @@ const textOf = async (page, selector) => (await page.locator(selector).first().t
   await page.goto(`${BASE}/espace/atelier?lab=secondaire`, { waitUntil: 'networkidle' });
   const card = page.locator('a[href*="/atelier/transformations?lab=secondaire"]').first();
   record('accueil : la carte de l’instrument est présente et ouvrable', await card.count() > 0);
-  const soonChips = await page.locator('text=قريبًا').count();
-  record('accueil : « الهندسة » n’est plus annoncé « قريبًا »',
-    !(await page.locator('text=الهندسة').first().isVisible().catch(() => false)) || soonChips >= 0);
+  const soonChips = await page.locator('text=Bientôt').count();
+  record('accueil : « Géométrie » n’est plus annoncée « Bientôt »',
+    !(await page.locator('text=Géométrie').first().isVisible().catch(() => false)) || soonChips >= 0);
   await shot(page, '01-home');
 
   const before = await api(TOKEN, 'GET', '/math-lab/documents?tool=transformations');
@@ -148,9 +149,9 @@ const textOf = async (page, selector) => (await page.locator(selector).first().t
   await page.waitForSelector('[data-ml-tr-plane]', { timeout: 15000 });
   await page.waitForTimeout(600);
 
-  // §Programme : on ouvre sur un TRIANGLE et un انسحاب.
+  // §Programme : on ouvre sur un TRIANGLE et une translation.
   const openKind = await page.locator('[data-ml-step-kind]').first().getAttribute('data-ml-step-kind');
-  record('première visite : l’instrument ouvre sur un انسحاب (le geste de 4AM)', openKind === 'translation', openKind ?? '—');
+  record('première visite : l’instrument ouvre sur une translation (le geste du collège)', openKind === 'translation', openKind ?? '—');
   const vertexCount = await page.locator('[data-ml-handle="vertex"]').count();
   record('première visite : un triangle, donc trois poignées', vertexCount === 3, `${vertexCount}`);
   await shot(page, '02-first-visit');
@@ -176,7 +177,7 @@ const textOf = async (page, selector) => (await page.locator(selector).first().t
   await page.waitForSelector('[data-ml-tr-plane]', { timeout: 15000 });
   await page.waitForTimeout(500);
 
-  // On lit les mesures AVANT, dans l'onglet des قياسات.
+  // On lit les mesures AVANT, dans l'onglet des mesures.
   await page.click('[data-ml-tab="inspector"]');
   await page.waitForTimeout(300);
   const areaBefore = await textOf(page, '[data-ml-area]');
@@ -222,7 +223,7 @@ const textOf = async (page, selector) => (await page.locator(selector).first().t
 }
 
 // ════════════════════════════════════════════════════════════════════════
-// 3. §17 – §19 — le تحاكي et le rapport des aires
+// 3. §17 – §19 — l'homothétie et le rapport des aires
 // ════════════════════════════════════════════════════════════════════════
 {
   const context = await authedContext();
@@ -232,7 +233,7 @@ const textOf = async (page, selector) => (await page.locator(selector).first().t
   await page.waitForSelector('[data-ml-tr-plane]', { timeout: 15000 });
   await page.waitForTimeout(500);
 
-  // On ouvre l'expérience « كبّر… وقِس المساحة » : elle pose le تحاكي k = 2.
+  // On ouvre l'expérience « Agrandis… et mesure l’aire » : elle pose l'homothétie k = 2.
   await page.click('[data-ml-experiment="dilateArea"]');
   await page.waitForTimeout(500);
   await page.click('[data-ml-tab="inspector"]');
@@ -270,11 +271,11 @@ const textOf = async (page, selector) => (await page.locator(selector).first().t
     ratioText.includes('4'), ratioText || '—');
   await shot(page, '04-dilation-area');
 
-  // §24 : pour un تحاكي, les angles sont conservés, les longueurs non.
+  // §24 : pour une homothétie, les angles sont conservés, les longueurs non.
   const anglesKept = await page.locator('[data-ml-invariant="angles"]').getAttribute('data-ml-kept');
   const distancesKept = await page.locator('[data-ml-invariant="distances"]').getAttribute('data-ml-kept');
   const areaKept = await page.locator('[data-ml-invariant="area"]').getAttribute('data-ml-kept');
-  record('§24 : un تحاكي conserve les ANGLES', anglesKept === 'true', String(anglesKept));
+  record('§24 : une homothétie conserve les ANGLES', anglesKept === 'true', String(anglesKept));
   record('§24 : … mais pas les longueurs', distancesKept === 'false', String(distancesKept));
   record('§24 : … ni l’aire', areaKept === 'false', String(areaKept));
 
@@ -311,7 +312,7 @@ const textOf = async (page, selector) => (await page.locator(selector).first().t
   await page.click('[data-ml-experiment="order"]');
   await page.waitForTimeout(600);
   const steps = await page.locator('[data-ml-step-id]').count();
-  record('§20 : l’expérience « الترتيب » pose DEUX transformations', steps === 2, `${steps}`);
+  record('§20 : l’expérience de l’ordre pose DEUX transformations', steps === 2, `${steps}`);
 
   await page.click('[data-ml-tab="inspector"]');
   await page.waitForTimeout(300);
@@ -338,14 +339,14 @@ const textOf = async (page, selector) => (await page.locator(selector).first().t
   await page.locator('[data-ml-step-toggle]').first().click();
   await page.waitForTimeout(300);
 
-  // §48 : تراجع / إعادة.
+  // §48 : Annuler / Rétablir.
   const undo = page.locator('[data-ml-undo]');
   const canUndo = await undo.isEnabled();
-  record('§48 : « تراجع » est disponible après des modifications', canUndo);
+  record('§48 : « Annuler » est disponible après des modifications', canUndo);
   if (canUndo) {
     await undo.click();
     await page.waitForTimeout(400);
-    record('§48 : « إعادة » devient disponible après un تراجع', await page.locator('[data-ml-redo]').isEnabled());
+    record('§48 : « Rétablir » devient disponible après un « Annuler »', await page.locator('[data-ml-redo]').isEnabled());
     await page.locator('[data-ml-redo]').click();
     await page.waitForTimeout(300);
   }
@@ -374,12 +375,12 @@ const textOf = async (page, selector) => (await page.locator(selector).first().t
   await page.waitForTimeout(350);
 
   const formula = await textOf(page, '[data-ml-formula]');
-  record('§26 : la formule d’un تناظر / محور x est affichée',
+  record('§26 : la formule d’une symétrie d’axe (Ox) est affichée',
     formula.includes('−y') || formula.includes('-y'), formula || '—');
 
   const orientationKept = await page.locator('[data-ml-invariant="orientation"]').getAttribute('data-ml-kept');
   const distKept = await page.locator('[data-ml-invariant="distances"]').getAttribute('data-ml-kept');
-  record('§24 : un تناظر RETOURNE l’orientation', orientationKept === 'false', String(orientationKept));
+  record('§24 : une symétrie axiale RETOURNE l’orientation', orientationKept === 'false', String(orientationKept));
   record('§24 : … tout en conservant les longueurs', distKept === 'true', String(distKept));
   await shot(page, '06-reflection');
 
@@ -509,7 +510,7 @@ const textOf = async (page, selector) => (await page.locator(selector).first().t
 
   await page.click('[data-ml-practice-next]');
   await page.waitForTimeout(500);
-  record('§38 : « سؤال آخر » enchaîne sans blocage',
+  record('§38 : « Autre question » enchaîne sans blocage',
     await page.locator('[data-ml-verdict]').count() === 0);
 
   // §42 : un puzzle, résolu par son préréglage.
@@ -559,7 +560,7 @@ const textOf = async (page, selector) => (await page.locator(selector).first().t
     record('§49 : le document se ROUVRE avec sa pile intacte',
       stepsBefore === stepsAfter && stepsAfter > 0, `${stepsBefore} → ${stepsAfter}`);
 
-    // Le RÉSUMÉ est stocké : « أعمالي » saura dessiner une vignette.
+    // Le RÉSUMÉ est stocké : « Mes travaux » saura dessiner une vignette.
     const list = await api(TOKEN, 'GET', '/math-lab/documents?tool=transformations');
     const mine = (list.data.documents ?? list.data.data ?? []).find((d) => d.id === id);
     record('§49 : le serveur a bien reçu le RÉSUMÉ du document',
@@ -570,7 +571,7 @@ const textOf = async (page, selector) => (await page.locator(selector).first().t
 }
 
 // ════════════════════════════════════════════════════════════════════════
-// 9. §51, §52, §53 — responsive, RTL, accessibilité
+// 9. §51, §52, §53 — responsive, LTR, accessibilité
 // ════════════════════════════════════════════════════════════════════════
 for (const [name, viewport] of [
   ['desktop', { width: 1440, height: 900 }],
@@ -618,7 +619,7 @@ for (const [name, viewport] of [
   await context.close();
 }
 
-// §52 : RTL — la page est en arabe, la notation reste LTR.
+// §52 : LTR — la page est en français, la notation est LTR.
 {
   const context = await authedContext();
   const page = await context.newPage();
@@ -628,7 +629,9 @@ for (const [name, viewport] of [
   await page.waitForTimeout(500);
 
   const htmlDir = await page.getAttribute('html', 'dir');
-  record('§52 : la page est bien en RTL', htmlDir === 'rtl', htmlDir ?? '—');
+  const htmlLang = await page.getAttribute('html', 'lang');
+  const pageDirection = await page.evaluate(() => getComputedStyle(document.documentElement).direction);
+  record('§52 : la page est bien en français, de gauche à droite', htmlLang === 'fr' && htmlDir !== 'rtl' && pageDirection === 'ltr', `lang=${htmlLang} dir=${htmlDir ?? '—'}`);
 
   const planeDir = await page.evaluate(() => getComputedStyle(document.querySelector('[data-ml-tr-plane]')).direction);
   record('§52 : le PLAN est LTR — l’axe des x croît vers la droite', planeDir === 'ltr', planeDir);
@@ -643,14 +646,16 @@ for (const [name, viewport] of [
   record('§52 : les coordonnées sont écrites LTR', coordDir === 'ltr', String(coordDir));
 
   // Le panneau et le plan ne se chevauchent pas, et le panneau est du MÊME
-  // côté que dans les instruments déjà livrés (مختبر الأشعة, المتتاليات) :
-  // mesuré, les trois le posent à gauche du plan. Un instrument qui le
+  // côté que dans les instruments déjà livrés (vecteurs, suites) : le plan
+  // vient d'abord dans le DOM (`flex-direction: row`), donc de gauche à droite
+  // les trois posent le panneau à DROITE du plan (miroir de l'ancienne
+  // disposition RTL). Un instrument qui le
   // poserait ailleurs romprait l'habitude de l'élève — c'est CELA que cette
   // vérification tient, pas une théorie sur le bord de départ.
   const panel = await page.locator('[data-ml-panel]').boundingBox();
   const stage = await page.locator('[data-ml-tr-plane]').boundingBox();
-  record('§52 : le panneau est du même côté que dans les autres instruments du مختبر',
-    panel.x < stage.x && panel.x + panel.width <= stage.x + 2,
+  record('§52 : le panneau est du même côté que dans les autres instruments de l’atelier',
+    panel.x + panel.width > stage.x + stage.width && panel.x >= stage.x + stage.width - 2,
     `panneau [${Math.round(panel.x)}…${Math.round(panel.x + panel.width)}] · plan x=${Math.round(stage.x)}`);
 
   // §53 : le focus est visible.
@@ -718,7 +723,7 @@ for (const [name, viewport] of [
 // 10. Le visiteur non connecté
 // ════════════════════════════════════════════════════════════════════════
 {
-  const context = await browser.newContext({ locale: 'ar-DZ' });
+  const context = await browser.newContext({ locale: 'fr-FR' });
   const page = await context.newPage();
   wire(page);
   await page.goto(`${BASE}/espace/atelier/transformations?lab=secondaire`, { waitUntil: 'networkidle' });

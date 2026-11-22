@@ -168,7 +168,7 @@ describe('la cible tactile de l’icône', () => {
     // Une icône seule au milieu du bandeau se lit comme un ornement. La
     // bordure et le fond la rangent avec les autres repères du module.
     expect(iconVariant).toContain('border');
-    // Le mot est rendu par i18n (locales/ar/common.json → report.triggerShort),
+    // Le mot est rendu par i18n (locales/fr/common.json → report.triggerShort),
     // pas écrit en dur : c'est sa PRÉSENCE qu'on vérifie, pas sa langue.
     expect(iconVariant).toContain("t('report.triggerShort')");
   });

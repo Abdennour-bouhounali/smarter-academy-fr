@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
-import adminCatalogue from '../../i18n/locales/ar/admin.json';
+import adminCatalogue from '../../i18n/locales/fr/admin.json';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const webRoot = resolve(here, '../../..');

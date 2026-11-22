@@ -2,27 +2,26 @@
 //
 // ONE language: French. There is no language switch and no second locale. The i18next language is `fr`, so i18next
 // applies the French plural rules (`_one` for 0 and 1, `_other` from 2) — `Intl` formats still take `LOCALE`
-// (fr-FR, ../locale.js). The JSON files still live under `locales/ar/` during the translation campaign; the folder is
-// renamed `locales/fr/` at its end (docs/FRANCE_REBUILD_PLAN.md §4quater).
+// (fr-FR, ../locale.js). The JSON files live under `locales/fr/`.
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 /** The i18next language of the product: French, with the French plural rules. */
 export const LANGUAGE = 'fr';
-import common from './locales/ar/common.json';
-import nav from './locales/ar/nav.json';
-import auth from './locales/ar/auth.json';
-import access from './locales/ar/access.json';
+import common from './locales/fr/common.json';
+import nav from './locales/fr/nav.json';
+import auth from './locales/fr/auth.json';
+import access from './locales/fr/access.json';
 // Le CHROME du moteur de leçon (navigation entre modules, libellés des
 // questions du kit, test final, diagnostic). Pas le CONTENU pédagogique :
 // celui-ci est écrit directement dans chaque leçon. Voir apps/web/src/lessons/common/.
-import lesson from './locales/ar/lesson.json';
+import lesson from './locales/fr/lesson.json';
 // L'espace élève : tableau de bord, catalogue, exploration, profil,
 // progression. Le CHROME de l'espace, pas le contenu des leçons.
-import student from './locales/ar/student.json';
+import student from './locales/fr/student.json';
 // Les pages VISITEUR (accueil, méthode, mission, FAQ, pied de page, palette
 // de commandes). Le discours produit, pas le contenu pédagogique.
-import marketing from './locales/ar/marketing.json';
+import marketing from './locales/fr/marketing.json';
 
 // ── Le namespace CHARGÉ À LA DEMANDE : `mathlab` ─────────────────────────
 // Le chrome de « L'atelier » (Math Lab) — instruments et accueil,
@@ -43,38 +42,38 @@ const ON_DEMAND_NAMESPACES = {
   // components/admin, sous AdminLayout (lot paresseux) ; App.jsx le demande EN MÊME TEMPS que le lot du cadre
   // (`preloadNamespace`). Ses primitives partagées avec l'espace enseignant et « Ma classe » (Modal, FilterBar,
   // DataTable, states) lisent `common › ui.*`, livré avec l'application : un dialogue ne suspend jamais.
-  admin: () => import('./locales/ar/admin.json'),
+  admin: () => import('./locales/fr/admin.json'),
   // « Espace professeur » : ses classes, ses élèves, sa formule (≈ 11 Ko gzip). Lu seulement sous TeacherLayout (lot
   // paresseux, demandé avec lui) et par trois composants rendus POUR un enseignant ailleurs : la carte de la banque d'exercices
   // (TeacherPracticeEntry), PracticeHub et TeacherLessonActions. Un élève ne le télécharge jamais.
-  teacher: () => import('./locales/ar/teacher.json'),
-  mathlab: () => import('./locales/ar/mathlab.json'),
+  teacher: () => import('./locales/fr/teacher.json'),
+  mathlab: () => import('./locales/fr/mathlab.json'),
   // « Défi du jour » : les écrans du défi (élève, onglet enseignant, mode
   // d'affichage). Chacun est un lot paresseux sous <Suspense> ; la carte de
   // l'accueil et l'onglet de la classe lisent `student` / `teacher`.
-  challenge: () => import('./locales/ar/challenge.json'),
+  challenge: () => import('./locales/fr/challenge.json'),
   // « Madar » (l'Espace jeux) : le jeu (page élève plein écran, onglet de la classe, écran du
   // tableau). Lus seulement par ces lots paresseux ; le libellé de navigation
   // vit dans `nav`, celui de l'onglet dans `teacher`.
-  madar: () => import('./locales/ar/madar.json'),
+  madar: () => import('./locales/fr/madar.json'),
   // « La fiche du professeur » : la page de préparation de l'enseignant
   // (pages/teacher/LessonMemoPage.jsx, lot paresseux, sa propre <Suspense>).
   // Les deux libellés des boutons qui y mènent vivent dans `teacher`.
-  memo: () => import('./locales/ar/memo.json'),
+  memo: () => import('./locales/fr/memo.json'),
   // « Visite guidée » : les textes des visites guidées, lus seulement par
   // features/tours/TourOverlay (lot paresseux, sous sa propre <Suspense>).
   // Le libellé du bouton « Visite de la page » vit dans `nav`.
-  tour: () => import('./locales/ar/tour.json'),
+  tour: () => import('./locales/fr/tour.json'),
   // « Espace parent », le parent du profil élève, le guide de protection de l'appareil (PARENT_SPACE.md).
-  family: () => import('./locales/ar/family.json'),
+  family: () => import('./locales/fr/family.json'),
   // « Espace établissement », l'espace du directeur d'un établissement (SCHOOL_ADMIN_SPACE.md).
-  idara: () => import('./locales/ar/idara.json'),
+  idara: () => import('./locales/fr/idara.json'),
   // « Le labo des énigmes » : l'échelle des défis, l'espace de travail, la relecture (THINKING_LAB.md).
-  // Lu seulement sous la frontière paresseuse de /espace/tafkir ; le libellé de navigation vit dans `nav`.
-  thinking: () => import('./locales/ar/thinking.json'),
+  // Lu seulement sous la frontière paresseuse de /espace/enigmes ; le libellé de navigation vit dans `nav`.
+  thinking: () => import('./locales/fr/thinking.json'),
   // « Ma boussole » : la jauge de départ, le rapport et la semaine (YEAR_COMPASS.md). Lu seulement sous la
-  // frontière paresseuse de /espace/bawsala ; la carte de l'accueil lit `student.compassCard`.
-  compass: () => import('./locales/ar/compass.json'),
+  // frontière paresseuse de /espace/boussole ; la carte de l'accueil lit `student.compassCard`.
+  compass: () => import('./locales/fr/compass.json'),
 };
 
 const onDemandBackend = {

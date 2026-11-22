@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { X } from 'lucide-react';
 import { ChevronBack, ChevronForward } from '../../components/common/DirectionalIcons';
-import { IS_RTL } from '../../locale';
 import { nextPlayableIndex, placeCard, playableSteps } from './tourModel';
 
 /**
@@ -181,7 +180,7 @@ export default function TourOverlay({ tour, onFinish, onSkip, onAbandon }) {
         event.preventDefault();
         skip();
       } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-        const forward = (event.key === 'ArrowLeft') === IS_RTL;
+        const forward = event.key === 'ArrowRight'; // left to right: → goes forward
         event.preventDefault();
         go(forward ? 1 : -1);
       }

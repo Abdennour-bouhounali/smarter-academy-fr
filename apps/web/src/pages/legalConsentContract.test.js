@@ -6,12 +6,11 @@ import { fileURLToPath } from 'node:url';
 const SRC = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (p) => readFileSync(join(SRC, p), 'utf8');
 
-// Le catalogue arabe : le reste de l'interface élève/visiteur est encore
-// arabe, donc les libellés que ces contrats exigent y vivent. Les pages
-// légales et la case de consentement, elles, sont en FRANÇAIS depuis le
-// 2026-11-22 (textes de l'ancien site rétablis) : leurs mots sont dans le JSX.
+// Le catalogue de l'interface : les libellés que ces contrats exigent y
+// vivent. Les pages légales et la case de consentement sont les textes de
+// l'ancien site, rétablis le 2026-11-22 : leurs mots sont dans le JSX.
 const readJson = (p) => JSON.parse(read(p));
-const authAr = readJson('i18n/locales/ar/auth.json');
+const authFr = readJson('i18n/locales/fr/auth.json');
 
 /** Le fichier du serveur qui fait autorité sur les versions ET sur l'identité de l'éditeur. */
 const legalPhp = readFileSync(join(SRC, '../../api/config/legal.php'), 'utf8');
@@ -111,7 +110,7 @@ describe('La page d’inscription', () => {
     const call = source.match(/registerRequest\(\{[\s\S]*?\}\)/)?.[0] ?? '';
     expect(call).toMatch(/\bacceptLegal\b/);
     expect(call).toMatch(/\baccountType\b/);
-    // « الاسم و اللقب » naissent avec le compte (PersonName côté serveur).
+    // Le prénom et le nom naissent avec le compte (PersonName côté serveur).
     expect(call).toMatch(/firstName:/);
     expect(call).toMatch(/lastName:/);
   });
@@ -123,7 +122,7 @@ describe('La page d’inscription', () => {
 
   it('dit quand le premier envoi du courriel a échoué', () => {
     // Le compte est créé même si le SMTP refuse (verificationEmailSent:
-    // false) : l'écran ne doit pas affirmer « أرسلنا ».
+    // false) : l'écran ne doit pas affirmer « nous avons envoyé ».
     expect(source).toContain('verificationEmailSent === false');
     expect(source).toContain('/verification-email?statut=envoi-echoue');
   });
@@ -275,7 +274,7 @@ describe('Les pages légales elles-mêmes', () => {
     expect(pages['Confidentialité']).toMatch(/RGPD/);
     expect(pages['Confidentialité']).toMatch(/CNIL/);
     for (const [nom, source] of Object.entries(pages)) {
-      expect(source, nom).not.toMatch(/الجزائر|الجزائرية|algérien/i);
+      expect(source, nom).not.toMatch(/[\u0600-\u06FF]|algérien/i);
     }
   });
 
@@ -324,8 +323,8 @@ describe('L’écran de vérification', () => {
     // Mêmes deux gestes, libellés en arabe via le catalogue.
     expect(source).toContain("t('resendEmail')");
     expect(source).toContain("t('logout')");
-    expect(authAr.resendEmail.trim()).not.toBe('');
-    expect(authAr.logout.trim()).not.toBe('');
+    expect(authFr.resendEmail.trim()).not.toBe('');
+    expect(authFr.logout.trim()).not.toBe('');
   });
 
   it('ne propose PAS un changement d’adresse que le serveur ne sait pas faire', () => {
@@ -369,8 +368,8 @@ describe('Le retour de Google', () => {
     // (`errors.${erreur}`), donc on interroge le catalogue, pas le JSX.
     expect(source).toContain('errors.${erreur}');
     for (const raison of ['already_linked', 'email_not_verified', 'provider_failure', 'annule']) {
-      expect(authAr.errors[raison]).toBeTruthy();
-      expect(authAr.errors[raison].trim()).not.toBe('');
+      expect(authFr.errors[raison]).toBeTruthy();
+      expect(authFr.errors[raison].trim()).not.toBe('');
     }
   });
 });

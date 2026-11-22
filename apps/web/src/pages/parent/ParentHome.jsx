@@ -14,7 +14,7 @@ function ChildCard({ child, t }) {
   const name = [child.firstName, child.lastName].filter(Boolean).join(' ');
   return (
     <Link
-      to={`/wali/abnaa/${child.id}`}
+      to={`/parent/enfants/${child.id}`}
       className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-4 transition hover:border-indigo-300 hover:shadow-sm sm:p-5"
       data-child-card
     >
@@ -151,7 +151,7 @@ export default function ParentHome() {
         </div>
       </section>
 
-      <Link to="/wali/himaya" className="flex items-center gap-3 rounded-2xl border border-indigo-200 bg-nav-accent-soft p-4 hover:bg-indigo-100 sm:gap-4 sm:p-5">
+      <Link to="/parent/protection" className="flex items-center gap-3 rounded-2xl border border-indigo-200 bg-nav-accent-soft p-4 hover:bg-indigo-100 sm:gap-4 sm:p-5">
         <ShieldCheck size={28} className="flex-shrink-0 text-nav-accent" aria-hidden="true" />
         <div className="flex-1">
           <p className="font-space font-bold text-indigo-950">{t('guide.title')}</p>

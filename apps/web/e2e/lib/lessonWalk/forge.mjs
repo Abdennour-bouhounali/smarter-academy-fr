@@ -5,7 +5,7 @@
 // The tiles of the rule that holds are DERIVED: every rule the tiles can write is enumerated and the forge's `isTheRule`
 // names the one (exactly one must, or the walk stops). The false rule is the right one with its last slot changed, unless
 // the descriptor names one (`falseTiles[key]`).
-import { noName, ownTools, pairChecks, tilesFit, lastStepLayout } from './checks.mjs';
+import { noName, ownTools, pairChecks, tilesFit, lastStepLayout, WRONG_WORD } from './checks.mjs';
 import { playExperiment } from './experiments.mjs';
 
 /** Every rule the tiles of `forge` can write: [{ rule, tiles }]. */
@@ -52,7 +52,7 @@ export async function playForge(ctx, key) {
 
   // ── its experiment, when it has one; else it opens on its tiles ──
   if (forge.inquiry) {
-    // the islands' investigation frame `.iq`; « قصر الساحات »'s `.rq-iq` (worlds/rootCourtsExperiments.mjs)
+    // the islands' investigation frame `.iq`; « Le palais des dalles »'s `.rq-iq` (worlds/rootCourtsExperiments.mjs)
     await page.waitForSelector('.rf-root .iq, .rf-root .rq-iq', { timeout: 15000 });
     await playExperiment(
       { w, page, name: `${name}-${forge.inquiry.mode ?? forge.inquiry.kind}`, where: 'forge', forbid: ctx.forbid },
@@ -71,7 +71,8 @@ export async function playForge(ctx, key) {
       `${name} « ${key} » opens on its TILES — no experiment screen, no prediction`,
     );
     check(
-      !steps.some((t) => t.includes('تنبّأ')),
+      // the step « Prédis » (kit/text.js › FORGE.steps.predict) is not shown
+      !steps.some((t) => /Prédis/.test(t)),
       `${name}: the steps shown are the steps played (${steps.map((t) => t.trim()).join(' → ')})`,
     );
     check(
@@ -89,8 +90,8 @@ export async function playForge(ctx, key) {
       [...document.querySelectorAll('.rf-root [data-rf-row]')].map((r) => r.textContent.trim()),
     );
     check(
-      !log.some((l) => /لوح/.test(l)),
-      `${name} is not about a bridge: no line of its log says « لوح » (A10) — ${log.join(' | ')}`,
+      !log.some((l) => /\bplanches?\b/i.test(l)),
+      `${name} is not about a bridge: no line of its log says « planche » (A10) — ${log.join(' | ')}`,
     );
   }
   await w.shot(page, `${name}-tiles`, ctx.OUT);
@@ -145,7 +146,7 @@ export async function playForge(ctx, key) {
     const id = await page.getAttribute('[data-rf-refuted]', 'data-rf-refuted');
     const fb = (await page.textContent('[data-rf-refuted]')) ?? '';
     check(
-      (await page.locator(`[data-rf-row="${id}"][data-rf-mark="refute"]`).count()) === 1 && !/خطأ|خاطئ/.test(fb),
+      (await page.locator(`[data-rf-row="${id}"][data-rf-mark="refute"]`).count()) === 1 && !WRONG_WORD.test(fb),
       `${name}: « ${wrong.join(' + ')} » REFUTED on his own line ${id}, marked; said as a fact (« ${fb.trim().slice(0, 90)} »)`,
     );
     if (pairs) await pairChecks(w, page, `${name}, refuted`);
@@ -162,8 +163,8 @@ export async function playForge(ctx, key) {
     });
     const fb = (await page.textContent('[data-rf-broken]')) ?? '';
     check(
-      !/خطأ|خاطئ/.test(fb) && (await page.locator('[data-rf-attack-next], [data-rf-seal]').count()) === 0,
-      `${name}: « ${wrong.join(' + ')} » agrees with his lines, BROKEN by the mirror's attack ${caseOf(c)} — only « أصلح قاعدتي » (« ${fb.trim().slice(0, 90)} »)`,
+      !WRONG_WORD.test(fb) && (await page.locator('[data-rf-attack-next], [data-rf-seal]').count()) === 0,
+      `${name}: « ${wrong.join(' + ')} » agrees with his lines, BROKEN by the mirror's attack ${caseOf(c)} — only « Je corrige ma règle » (« ${fb.trim().slice(0, 90)} »)`,
     );
     check(
       heard.includes(yes ? 'success' : 'crumble'),
@@ -257,7 +258,7 @@ export async function playForge(ctx, key) {
   const title = L.lesson.rules[key].title;
   check(((await page.textContent('.di-card')) ?? '').includes(title), `the tablet: « ${title} »`);
   await page.click('[data-di-tablet]');
-  // a tablet just received FLIES to « قواعدي » before it closes (kit/Tablet.jsx › flyToRules, about 0.75 s of REAL time —
+  // a tablet just received FLIES to « Mes règles » before it closes (kit/Tablet.jsx › flyToRules, about 0.75 s of REAL time —
   // the world's clock does not hurry a CSS transition): wait until it is gone, then let the world settle
   await page.waitForSelector('[data-di-tablet]', { state: 'detached', timeout: 4000 }).catch(() => {});
   await W.ff(0.4);

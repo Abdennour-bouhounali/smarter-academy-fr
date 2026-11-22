@@ -1,10 +1,10 @@
-// « قصر الساحات » — the STORY of a lesson whose terraces hold SEVERAL courts (`natiqa-ghayr-natiqa`, the first; GAME_WORLD.md
+// « Le palais des dalles » — the STORY of a lesson whose terraces hold SEVERAL courts (`natiqa-ghayr-natiqa`, the first; GAME_WORLD.md
 // §2ter-3 « A terrace of several courts »), played terrace by terrace from the lesson's own `story.terraces`, as a student
 // who reads only the screen: at each moment he goes where the world SHOWS a light (a court whose corner post is lit, a
 // feature under its column of light, the pavilion), takes what it offers, and stops ON each mark of the rod's dial.
 // A lesson with a building yard or a course of gates (lesson 1) is played by ./rootCourts.mjs › rcStoryWalk instead.
 //
-// What is done BY HAND (keys and buttons of the screen): « ابدأ », E at a post / a mirror / the pavilion, the yes/no card of
+// What is done BY HAND (keys and buttons of the screen): « Commencer l’aventure », E at a post / a mirror / the pavilion, the yes/no card of
 // a court that asks it (`[data-rc-guess]`), ← → held along the wall until the dial SHOWS the mark (released there), the
 // dial's buttons (`[data-rc-set-step]`), X, the key taken with E, the forges and their experiment through their buttons,
 // the mission's boxes. BY THE DEV HANDLE (`window.__world`): the robot PLACED at a post or a feature, the clock
@@ -12,13 +12,16 @@
 // its label) — never for an answer: every mark, every verdict, every guess is computed here (./exact.mjs) from the
 // court's area, which the gate shows.
 import { createWalk } from '../../walk.mjs';
-import { worldShot, wordsRe } from '../checks.mjs';
+import { worldShot, wordsRe, WRONG_WORD } from '../checks.mjs';
 import { playForge } from '../forge.mjs';
 import { rcWorld } from './rootCourts.mjs';
 import { cmp, eq, isqrt, mul, q, rootOf, sq, write } from './exact.mjs';
 
-const WRONG_WORDS = /خطأ|خاطئ|غلط/;
-const SEALED = 'لا علامة تركبها';
+const WRONG_WORDS = WRONG_WORD;
+/** The label over a court the world closed (rootCourts/strings.js › hud.sealed). */
+const SEALED = 'Aucune graduation ne monte';
+/** His answer on the yes/no card, as the card words it (rootCourts/strings.js › guess). */
+const SAID = (yes) => (yes ? 'Elle monte' : 'Elle ne monte pas');
 
 /** The two neighbouring marks of a dial of step `s` that the wall of a court of area `a` ends between (exact). */
 export function marksAround(a, s) {
@@ -130,17 +133,17 @@ export async function rcTerracesWalk(L, D, opts) {
       await page.waitForTimeout(300);
       lap(`forge ${key}`);
       if (earned.length === 1) {
-        // the tablet closed: it flew to « قواعدي » in the top bar, which opens the rules sheet (D33)
+        // the tablet closed: it flew to « Mes règles » in the top bar, which opens the rules sheet (D33)
         expect(
           (await page.locator('[data-di-rules]').count()) === 1,
-          'the tablet closed: « قواعدي » stands in the top bar',
+          'the tablet closed: « Mes règles » stands in the top bar',
         );
         await page.click('[data-di-rules]');
         await page.waitForTimeout(400);
         check(
           (await s()).overlay === 'rules' &&
             ((await page.textContent('.di-veil').catch(() => '')) ?? '').includes(L.lesson.rules[key].title),
-          `« قواعدي » opens the rules sheet on « ${L.lesson.rules[key].title} »`,
+          `« Mes règles » opens the rules sheet on « ${L.lesson.rules[key].title} »`,
         );
         await w.shot(page, 'rules-sheet', { exit: ['[data-di-rules-close]'] });
         await page.click('[data-di-rules-close]');
@@ -164,7 +167,12 @@ export async function rcTerracesWalk(L, D, opts) {
     // ══ what the world says when a court asked « will it ride? » is done ══
     const guessSaid = async (c, rides) => {
       if (guessed[c.id] == null) return;
-      const T = { right: 'كما توقّعتَ', rode: 'قلتَ إنّها لا تُركب', sealed: 'قلتَ إنّها تُركب' };
+      // rootCourts/strings.js › say.guessRight / guessRode / guessSealed
+      const T = {
+        right: 'Comme tu l’avais prédit',
+        rode: 'Tu avais dit qu’elle ne monterait pas',
+        sealed: 'Tu avais dit qu’elle monterait,',
+      };
       const want = guessed[c.id] === rides ? T.right : rides ? T.rode : T.sealed;
       // the key flies to him first (about half a second): the sentence comes when it is his
       let said = (await s()).say;
@@ -174,7 +182,7 @@ export async function rcTerracesWalk(L, D, opts) {
       }
       check(
         said.includes(want),
-        `court ${c.a}: he had said « ${guessed[c.id] ? 'تُركب' : 'لا تُركب'} », it ${rides ? 'rode' : 'was closed'} — the robot says so (« ${said.slice(0, 70)} »)`,
+        `court ${c.a}: he had said « ${SAID(guessed[c.id])} », it ${rides ? 'rode' : 'was closed'} — the robot says so (« ${said.slice(0, 70)} »)`,
       );
     };
 
@@ -188,7 +196,7 @@ export async function rcTerracesWalk(L, D, opts) {
       await guessSaid(c, false);
       if (guessed[c.id] == null)
         check(
-          /بين/.test(x.say) && !WRONG_WORDS.test(x.say),
+          /\bentre\b/i.test(x.say) && !WRONG_WORDS.test(x.say),
           `court ${c.a}: the robot says what closed it (« ${x.say.slice(0, 80)} »)`,
         );
       await shotWorld(`closed-${c.a}`);
@@ -201,8 +209,8 @@ export async function rcTerracesWalk(L, D, opts) {
       const label = `court-${c.a}`;
       const said = await W.placeAt({ court: c.id }, true);
       expect(
-        said?.includes('أمسك المقياس'),
-        `${label}: at its corner post the screen offers « أمسك المقياس » (« ${said} »)`,
+        said?.includes('Prends la toise'),
+        `${label}: at its corner post the screen offers « Prends la toise » (« ${said} »)`,
       );
       await act();
       await ff(0.2);
@@ -221,13 +229,13 @@ export async function rcTerracesWalk(L, D, opts) {
         await ff(0.2);
         guessed[c.id] = say === 'yes';
         console.log(
-          `NOTE  ${label}: he says « ${say === 'yes' ? 'تُركب' : 'لا تُركب'} » (a mark of ${steps0.at(-1)} ${truth ? 'rides it' : 'does not'} — computed here)`,
+          `NOTE  ${label}: he says « ${SAID(say === 'yes')} » (a mark of ${steps0.at(-1)} ${truth ? 'rides it' : 'does not'} — computed here)`,
         );
       } else if (c.ask === 'rides' && guessed[c.id] == null)
         check(false, `${label}: a court with « ask: 'rides' » asks before its first try`);
       expect((await s()).rod != null, `${label}: E — the rod is in his hand`);
       if (!putDownTried) {
-        // D26: whatever he takes he can put down at any moment — X half-way, and the button « ضع المقياس »
+        // D26: whatever he takes he can put down at any moment — X half-way, and the button « Pose la toise »
         putDownTried = true;
         const half = write(mul(q(c.steps?.[0] ?? '1'), '3'));
         await W.walkTo(half);
@@ -241,7 +249,7 @@ export async function rcTerracesWalk(L, D, opts) {
         await worldShot(w, page, 'rod-in-hand-drop-button', forbid(), OUT);
         await page.click('[data-rc-drop]');
         await ff(0.2);
-        check(!(await s()).holding, '« ضع المقياس »: the button puts the rod down too');
+        check(!(await s()).holding, '« Pose la toise »: the button puts the rod down too');
         await W.placeAt({ court: c.id }, true);
         await act();
         await ff(0.2);
@@ -251,17 +259,17 @@ export async function rcTerracesWalk(L, D, opts) {
       const steps = rod0.steps;
       const finest = steps.at(-1);
       // the clamp: the instruction sends him to the far corner (a court whose wall the story lets him take)
-      if (/الركن/.test((await s()).objective)) {
+      if (/\bcoins?\b/i.test((await s()).objective)) {
         const { lo } = marksAround(c.a, steps[0]);
         const far = write(mul(steps[0], '3')); // three marks from the post: far from the far corner
         await W.walkTo(far);
         const p0 = await W.prompt();
-        check(!/ثبّت/.test(p0 ?? ''), `${label}: far from the corner, no clamp offered (« ${p0} »)`);
+        check(!/Fixe la toise/.test(p0 ?? ''), `${label}: far from the corner, no clamp offered (« ${p0} »)`);
         await W.walkTo(lo);
         const p1 = await W.prompt();
         check(
-          /ثبّت/.test(p1 ?? ''),
-          `${label}: stopped ON the mark ${lo}, at the far corner — « ثبّت المقياس على الركن » (« ${p1} »)`,
+          /Fixe la toise/.test(p1 ?? ''),
+          `${label}: stopped ON the mark ${lo}, at the far corner — « Fixe la toise dans le coin » (« ${p1} »)`,
         );
         await worldShot(w, page, `clamp-${c.a}`, forbid(), OUT);
         await act();
@@ -319,7 +327,7 @@ export async function rcTerracesWalk(L, D, opts) {
     const rode = async (t, c, done, label) => {
       const others = t.courts.filter((x) => x.id !== c.id && !done.has(x.id));
       const leaves = Boolean(c.to) && others.length === 0;
-      // what he had said before trying is answered as soon as he takes the key — on a way out too, before « انطلقنا »
+      // what he had said before trying is answered as soon as he takes the key — on a way out too, before « C’est parti ! »
       await W.keyed(label, {
         id: c.id,
         to: leaves ? c.to : null,
@@ -431,7 +439,7 @@ export async function rcTerracesWalk(L, D, opts) {
         expect(out, `« ${t.name} » finished: a way out`);
         const p = await W.placeAt({ court: out.id }, true);
         expect(
-          /اركب المنصّة/.test(p ?? ''),
+          /Monte sur la plateforme/.test(p ?? ''),
           `« ${t.name} » finished: the platform of ${out.a} offers the flight (« ${p} »)`,
         );
         await act();
@@ -445,7 +453,7 @@ export async function rcTerracesWalk(L, D, opts) {
     await w.shot(page, 'end', OUT);
     check(reloaded, 'the journey was reloaded once in the middle');
     for (const [id, said] of Object.entries(guessed))
-      console.log(`NOTE  ${id}: he said « ${said ? 'تُركب' : 'لا تُركب'} »`);
+      console.log(`NOTE  ${id}: he said « ${SAID(said)} »`);
     lap('the end');
   });
   return w;

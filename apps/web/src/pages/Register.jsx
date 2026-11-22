@@ -74,7 +74,7 @@ export default function Register() {
     } else if (user.role === 'teacher') {
       navigate(user.emailVerified === false ? '/verification-email' : '/enseignant');
     } else if (user.role === 'parent') {
-      navigate(user.emailVerified === false ? '/verification-email' : '/wali');
+      navigate(user.emailVerified === false ? '/verification-email' : '/parent');
     } else {
       navigate('/');
     }

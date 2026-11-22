@@ -2,7 +2,7 @@
 
 > **Status (2026-11-22).** Covers lint, format and the unused-code checks. Imported from the Algerian platform (DZ `dev`
 > `7f4cef1c`) on 2026-11-22. True here: every check and rule below (the scripts are the same files). Not true here: the
-> i18n files are still `locales/ar/` (French ones come with plan step 1D); the baseline and the `KEPT` lists were
+> i18n files are still `locales/fr/` (French ones come with plan step 1D); the baseline and the `KEPT` lists were
 > rewritten in step 1B (§3).
 
 Since 2026-11-17 on the Algerian platform. This document owns the rules that keep the code clean and says which command
@@ -62,7 +62,7 @@ never ask to delete something alive.** Its own test (`scripts/check-unused.test.
 - Files the tools load by a path they BUILD count as used entirely (`READ_BY_PATH`: a lesson's `lesson.config.js` and
   `content/*.js`).
 
-**i18n keys** (`apps/web/src/i18n/locales/ar/*.json` today). A key is used when its path is written in the code — whole
+**i18n keys** (`apps/web/src/i18n/locales/fr/*.json` today). A key is used when its path is written in the code — whole
 (`t('home.title')`), in parts (`const NS = 'status'` then `${NS}.${id}`), or open
 (`t(`status.${kind}`)` uses everything under `status.`). Strings written in `apps/api/app` count too (the server may
 send a key). Plural forms follow their base key.

@@ -1,11 +1,16 @@
-# « مختبر التفكير » — The thinking space contract
+# « Le labo des énigmes » — The thinking space contract
 
 > **Status (2026-11-22).** Covers the thinking space: content model, answer checks, server gate, student screens.
 > Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the ENGINE (schema, validator,
 > `packages/core/thinkingLab/`, `Domain/ThinkingLab`, the screens, the figure components). Not true here: no challenge
 > exists — the 46 Algerian challenges, their oracle batches `scripts/thinking-lab-oracle/` and the bank list were deleted
-> (the generated index has `count: 0`); the screens and the validator's forbidden-word list are Arabic; plan §7 row 3
-> keeps the space hidden until French content exists. French content rules: `FRENCH_LANGUAGE_CONTRACT.md`.
+> (the generated index has `count: 0`). The screens are French and left to right since 2026-11-22 (namespace `thinking`,
+> « Le labo des énigmes »); the routes are `/espace/enigmes` and `/enseignant/enigmes`. The feature is **OFF**
+> (`config/features.js › thinkingLab`, `FeatureOutlet`): the routes and the nav entries are closed until French content
+> exists (plan §7 row 3). Still Arabic in the code: the validator's forbidden-word list (`scripts/validate-thinking-lab.mjs
+> › FORBIDDEN_AR`, Arabic phrases) — it has no French list yet —, the schema's field descriptions (« Arabic text »), and the
+> input normaliser still accepts Arabic-Indic digits and signs. French content rules: `FRENCH_LANGUAGE_CONTRACT.md`. No
+> walk has checked these screens in French.
 >
 > **Status in DZ.**
 >
@@ -30,12 +35,12 @@
 
 A student space that trains problem solving and critical thinking. The student tries first, then watches a
 replay of a mathematician's thinking. The method is SMART (Scan, Math translate, Aim, Relate, Test) plus
-« 👁 الملاحظة », observation used as a lens in every phase.
+« 👁 J’observe » (phase `O`), observation used as a lens in every phase.
 
 | Path | Content | Status |
 |---|---|---|
-| 1 · « سُلَّم التحدّيات » | numbered puzzles outside the curriculum, primary → university, band hidden | **implemented** (phase 1) for independent students; the teacher request flow is *Planned* (phase 2) |
-| 2 · « مسار المنهاج » | problems tied to each grade's lessons, the « مسرح العقل » | *Planned* (phase 6) |
+| 1 · « L’échelle des énigmes » | numbered puzzles outside the curriculum, primary → university, band hidden | **implemented** (phase 1) for independent students; the teacher request flow is *Planned* (phase 2) |
+| 2 · the curriculum path | problems tied to each grade's lessons | *Planned* (phase 6) |
 
 ## 2. Where the code lives
 
@@ -65,13 +70,13 @@ apps/web/src/
   services/thinkingLabService.js
   pages/student/thinking/{ThinkingLadderPage,ThinkingChallengePage,ThinkingNumberPage}.jsx   lazy routes
   features/thinkingLab/
-    thinkingModel.js                   pure helpers: state in words, phases, LTR math islands, Algiers time (Europe/Paris in step 1E — not yet applied in the code)
+    thinkingModel.js                   pure helpers: state in words, phases, LTR math islands, the school's time (`locale.js › TIME_ZONE` = Europe/Paris)
     ThinkingParts.jsx                  MathRun, ChallengeFigure, AnswerInput, PhaseChip, SoundToggle, prettyMath
     ladder/LadderHome.jsx              screen 1
     workspace/Workspace.jsx            screen 2
     replay/ReplayPlayer.jsx  replay/AfterSolve.jsx   screen 3
     figures/                           one SVG component per figure + index.js (lazy glob) + palette.js (§7.2)
-  i18n/locales/ar/thinking.json        on-demand namespace
+  i18n/locales/fr/thinking.json        on-demand namespace
 scripts/
   build-thinking-lab-index.mjs  validate-thinking-lab.mjs  thinking-lab-oracle.test.mjs
   thinking-lab-oracle/<batch>.mjs      one oracle batch per band (deleted with the challenges; recreated with the first one)
@@ -98,28 +103,28 @@ which may be left out. The schema is `content/thinking-lab/_schema/challenge.sch
 |---|---|
 | `id` | stable slug. It never changes; links and progress use it. |
 | `number` | position in the current edition. The file name is `String(number).padStart(4,'0')-<id>.json`. |
-| `title` | Arabic title for authors and teachers. The student sees the number only (the presenter never sends it). |
+| `title` | title for authors and teachers (written in French; the schema's description still says Arabic). The student sees the number only (the presenter never sends it). |
 | `status` | `draft` or `published`. In `--strict` mode nothing stays `draft` (owner rule). |
 | `family` | `logic`, `numbers`, `patterns`, `algebra`, `geometry`, `counting`, `probability`, `functions`, `analysis`, `invariants` or `critical`. |
 | `band` | **hidden**; it must match the number (§3.2). |
 | `summit` | `true` exactly for multiples of 25. |
 | `licence`, `source` | `PD`, `FOLK` or `TYPE`, plus what inspired it (challenge bank §1). Never a copied statement. |
-| `examTag` | `bem`, `bac` or `null`; shown as « فكرة تتكرّر في امتحان … ». |
+| `examTag` | `bem`, `bac` or `null` (the enum keeps the Algerian code `bem`); shown as « Une idée qui revient souvent au brevet » / « … au bac » (`thinking.json › examTag.*`). |
 | `rating` | the author's initial estimate (Elo scale, 400–3000). |
-| `statement` | Arabic text with maths in plain Unicode (no LaTeX). `{name}` placeholders are filled from `params`. Line breaks are kept on screen. |
+| `statement` | text (French) with maths in plain Unicode (no LaTeX). `{name}` placeholders are filled from `params`. Line breaks are kept on screen. |
 | `figure` | `{kind: "svg", component, props}` or `null` (§7.2). |
 | `whiteboard` | optional `{seed, observe[]}`: the observation targets. Unused until phase 3. |
 | `params` | `{vars: {name: [values…]}}` or `null` (§3.3). |
 | `answer` | §4. |
 | `parts` | summits: 1 or more follow-ups `[{prompt, answer}]`, shown once the main answer is solved or the gate is open. The statement asks only the main question, and only `answer` drives the gate. |
-| `mistakes` | frequent wrong answers and their « ليس بعد » reply (§4.3). |
+| `mistakes` | frequent wrong answers and their « Pas encore » reply (§4.3). |
 | `keys` | 1–3 entries; a published challenge has exactly **3** (S → 👁 → R). Each key is a question and never gives the answer. |
 | `example` | the primary band's worked example `{statement, steps[], answer}`, shown BEFORE trying. It is required for that band and `null` for the others. |
 | `replay` | steps `{phase, think, layers?, math?, ask?}`. The phases are `S M A R T O B` (O = 👁 observation, B = ↩ dead end). |
 | `keyMoves` | 1–3 sentences: the short replay for a student who solved alone. |
 | `move` | `{id, title}`: the thinking move. Two challenges may share a move id; the card levels up in phase 4. |
 | `twin` | the id of the twin challenge, or `null`. |
-| `ceiling` | « ارفع السقف » `{statement, answer}`, or `null`. |
+| `ceiling` | « Plus haut » `{statement, answer}`, or `null`. |
 
 ### 3.2 Hidden bands
 
@@ -153,7 +158,7 @@ which may be left out. The schema is `content/thinking-lab/_schema/challenge.sch
 |---|---|
 | `integer`, `rational` | the expected value is read exactly (§3.3), then the check is delegated to the practice evaluator (`answerEvaluator.js` / `AnswerEvaluator.php`) as `answerType: "rational"`. `tolerance` is a rational. The student types a number, fraction, decimal or %. |
 | `choice` | delegated as `answerType: "choice"`. `value` is the id of the correct choice, and `choices` is `[{id, text}]`. |
-| `number` | the answer is read as a rational, falling back to an expression with no variable (`π/4`, `e-2`), and compared with `relTol` (default 1e-6) and `absTol` (default 1e-9). With **`percent: true`**, « −4 % » or « −4 ٪ » is read as −4. |
+| `number` | the answer is read as a rational, falling back to an expression with no variable (`π/4`, `e-2`), and compared with `relTol` (default 1e-6) and `absTol` (default 1e-9). With **`percent: true`**, « −4 % » (or −4 followed by the Arabic percent sign U+066A, still accepted) is read as −4. |
 | `expression` | equivalence by evaluation (§4.2). |
 
 The outcomes are the practice outcomes: `correct`, `equivalent_correct`, `incorrect` and `syntax_error`.
@@ -181,13 +186,13 @@ primary := number | pi | e | variable | '(' expr ')' | '|' expr '|'
 
 - An implicit product has the precedence of a written product and reads left to right. `1/2x` is `(1/2)·x`.
 - A function written without parentheses takes the next unary operand. `√3x` is `√3·x`, and `sin x^2` is `sin(x²)`.
-- `e` is always the constant. Variables are single letters declared in `answer.vars`; any other letter, including an
-  Arabic letter, is `unknown_symbol`.
+- `e` is always the constant. Variables are single letters declared in `answer.vars`; any other letter, including a
+  non-Latin letter, is `unknown_symbol`.
 - `|…|` cannot nest; use `abs()` for nested absolute values.
 
 **Input normalisation**, identical on both sides:
 
-- Arabic-Indic and Persian digits become Latin, and `٫` becomes `.`.
+- Arabic-Indic and Persian digits (U+0660–0669, U+06F0–06F9) become Latin, and the Arabic decimal separator (U+066B) becomes `.` — kept from the import.
 - Whitespace is removed.
 - **`-:` becomes `/`** (MathLive writes `÷` as `-:` in ascii-math). This happens before the dashes are normalised.
 - `− – —` become `-`, `× · ⋅` become `*`, `÷ ∕` become `/`, and `**` becomes `^`.
@@ -232,7 +237,7 @@ The client-side `compareMathExpressions` (compute-engine) and the nerdamer facad
 - **`{value, outside: [lo, hi], at?, reply}`** matches any answer whose value at `at` is ≤ lo or ≥ hi. Here `value` is an
   example the validator refuses.
 
-The reply is shown under « ليس بعد ». An undeclared wrong answer gets an order-of-magnitude sentence when the value is more
+The reply is shown under « Pas encore ». An undeclared wrong answer gets an order-of-magnitude sentence when the value is more
 than ×10 away (`reply.kind = magnitude`, with no direction given). Otherwise it gets a generic sanity sentence
 (`generic`). Both sentences live in `thinking.json`.
 
@@ -258,10 +263,10 @@ than ×10 away (`reply.kind = magnitude`, with no direction given). Otherwise it
   - `parts` and `ceiling` answers are readable;
   - **nothing before the gate leaks the answer**. That covers the keys, the mistake replies and the example, whether
     the answer appears as text or as an equivalent value.
-- **Forbidden words** (rule « Cultural and religious respect »):
-  - Arabic whole words, with only the article allowed as a prefix (« برهان », « كبيرة » pass);
-  - Arabic phrases, English words and emoji;
-  - « عيد الميلاد » alone is allowed, because it also means a birthday.
+- **Forbidden words** (rule « Cultural and religious respect »): the list is still the imported one — Arabic whole
+  words (only the Arabic article allowed as a prefix) and Arabic phrases (`FORBIDDEN_AR`, `FORBIDDEN_PHRASES_AR`), plus
+  English words (`FORBIDDEN_EN`) and emoji. **No French word list exists yet**: a French statement is checked only by
+  the English words and the emoji. The French rules are `FRENCH_LANGUAGE_CONTRACT.md` §9.
 - **Warning only:** a `twin` that does not exist yet.
 
 **`--strict`** (the mode `check:lessons` runs) also requires: no `draft`, a fresh index, and at least one challenge in five
@@ -324,7 +329,7 @@ with a dead end (`B`).
 - The **twin** of a challenge the student has passed is reachable at once.
 - At most **`max_open` = 3** challenges are open (in progress and not postponed). A new or resumed attempt beyond
   that is refused with `too_many_open` (409, carrying `maxOpen`).
-- **« أرجئه »** (`postpone`) frees a place and keeps the state. Attempting the challenge again resumes it, if a place
+- **« Mettre de côté »** (`postpone`) frees a place and keeps the state. Attempting the challenge again resumes it, if a place
   is free.
 - A student's status per number is `solved`, `learned`, `trying`, `postponed`, `open` or `locked`.
 
@@ -340,7 +345,7 @@ The check runs inside a transaction locked on the `users` row.
   | `syntax` | the answer is unreadable |
   | `repeat` | it equals a previously counted answer: the same canonical writing, or for an expression, an equivalent one |
   | `too_soon` | less than `honest.min_seconds_between` = 120 s since the last counted attempt |
-  | `no_draft` | from the 2nd attempt, the draft « ماذا غيّرت هذه المرّة؟ » is shorter than `honest.min_draft_chars` = 12 |
+  | `no_draft` | from the 2nd attempt, the draft « Qu’as-tu changé cette fois ? » is shorter than `honest.min_draft_chars` = 12 |
 
 - An answer that is not counted is still stored, with its reason.
 
@@ -354,13 +359,13 @@ stake belongs to phase 4.
 
 - **When it opens:** `unlockAt = first_attempt_at + think_hours` once `attempts_counted ≥ attempts_to_unlock`.
   - The defaults are 3 attempts and 24 h; the primary band waits 0 h.
-  - Time is the server's clock and stored in UTC; the screen shows it in Africa/Algiers (Europe/Paris in step 1E — not yet applied in the code).
+  - Time is the server's clock and stored in UTC; the screen shows it in the school's time zone (`locale.js › TIME_ZONE` = Europe/Paris, `thinkingModel.js`). `config/thinking_lab.php` says the thinking days follow `config('app.school_timezone')`, but `Domain/ThinkingLab` reads no time zone: the gate is `first_attempt_at + think_hours` [NOT CHECKED 2026-11-22: whether any day boundary is computed server-side].
 - **Before it opens:** `GET …/replay` answers `gate_closed` (403).
 - **Opening it:** the first read after it opens turns `trying` into `learned` (outcome `learned`).
 - **Twin credit:** solving the twin **alone** afterwards turns the original's outcome into `twin` (plan §6).
 - **Afterwards:**
   - attempts and keys answer `closed` (409);
-  - the summit `parts` and « ارفع السقف » become checkable through `POST …/extra`, with no attempt limit and nothing
+  - the summit `parts` and « Plus haut » become checkable through `POST …/extra`, with no attempt limit and nothing
     revealed.
 - **Who follows this rule (phase 1):** every student, independent or in a class. The teacher request is phase 2, and the
   plan's 48 h fallback already returns a request to this rule.
@@ -401,42 +406,42 @@ The refusal reasons are `not_found` (404), `locked`, `gate_closed` and `key_lock
 **Access:**
 
 - **Feature key:** `thinking_lab.ladder` (group `thinking_lab`, no quota). It is open to both tiers until the admin closes
-  it in « الوصول والحدود » (§17 n° 4, proposed). `ACCESS_AND_LIMITS.md` §3 lists it.
+  it in « Accès et limites » (§17 n° 4, proposed). `ACCESS_AND_LIMITS.md` §3 lists it.
 - **Not open to teachers for PLAYING:** the routes are student-only (`learner`); a teacher gets a 403. A teacher uses the read-only preview (§8bis).
 
 ## 7. Screens (implemented, phase 1)
 
 ### 7.1 Routes, layout and rules
 
-- **Routes:** `/espace/tafkir` (screen 1), `/espace/tafkir/:challengeId` (screens 2 and 3) and `/espace/tafkir/n/:number`
-  (redirect). They sit inside `StudentLayout`, behind `RequireLargeScreen` (≥ 768 px), as `lazy()` pages.
+- **Routes:** `/espace/enigmes` (screen 1), `/espace/enigmes/:challengeId` (screens 2 and 3) and `/espace/enigmes/n/:number`
+  (redirect). They sit inside `StudentLayout`, behind `RequireLargeScreen` (≥ 768 px) and `FeatureOutlet feature="thinkingLab"` (closed today), as `lazy()` pages.
 - **Navigation:** `data/studentNavigation.js` (lucide `Brain`, `nav.thinkingLab` / `nav.thinkingLabShort`).
 - **Screen 1, the ladder (`LadderHome`):**
   - the next number, in a large card, with its start button. When 3 challenges are open it says why it cannot start.
-  - the open challenges (at most 3), each with its **state in words** (`stateLines`: « محاولة 2 من 3 · الحلّ يُفتح غدًا 09:40 »);
+  - the open challenges (at most 3), each with its **state in words** (`stateLines`: « Essai 2 sur 3 · La solution s’ouvre demain à 9 h 40 »);
   - while a challenge waits for its day, light activities: a maths game, or another challenge;
-  - the trail of numbered stones in RTL, coloured by status, summits larger, locked stones with a padlock.
+  - the trail of numbered stones (« Le chemin »), coloured by status, summits larger, locked stones with a padlock.
 - **Screen 2, the workspace (`Workspace`):**
   - the example card (primary band), the statement and the figure;
   - the draft, which is highlighted until it is long enough;
   - the answer, in `AnswerInput`: MathLive with the **thinking keyboard** `thinkingKeyboard(vars)` (π, √, x², xⁿ, a/b, |x|,
     and the challenge's variables), or choice cards;
-  - **one primary action « تحقّق »**, plus « أرجئه »;
-  - the verdict in a live region: « ليس بعد » in **amber, never red**, followed by the mistake reply or the generic or
+  - **one primary action « Vérifier »**, plus « Mettre de côté »;
+  - the verdict in a live region: « Pas encore » in **amber, never red**, followed by the mistake reply or the generic or
     magnitude sentence, and the reason when the attempt was not counted;
   - the keys (locked, available or open), each with its phase chip;
   - the student's attempts;
-  - « شاهد كيف فكّر الرياضي » once `canReplay`.
+  - « Regarde comment un mathématicien a raisonné » once `canReplay`.
 - **Screen 3, after the gate (`AfterSolve`):**
   - the statement and the answer;
-  - **solved alone:** the key moves first, with « شاهد العرض الكامل » for the full replay. **Otherwise:** the replay;
-  - then « ماذا تأخذ معك؟ » (the move card), the summit parts, the twin and « ارفع السقف ».
+  - **solved alone:** the key moves first, with « Voir tout le raisonnement » for the full replay. **Otherwise:** the replay;
+  - then « Ce que tu emportes » (the move card « L’outil du mathématicien »), the summit parts, the twin and « Plus haut ».
 - **Mathematics:**
-  - `MathRun` renders Arabic text with its math islands (`mathRuns`) in `<bdi dir="ltr">` **inline-block**, so a formula
-    that wraps stays LTR. `( |` start an island only when maths follows.
+  - `MathRun` renders the text with its math islands (`mathRuns`) in `<bdi dir="ltr">` **inline-block**, so a formula
+    that wraps stays in one block. `( |` start an island only when maths follows.
   - Plain Unicode is the content format: `½`, `…`, `°`, `²`.
   - `prettyMath` prints an ascii answer for the eye (`x²×(1+π/3−√3)`).
-- **Sound and motion:** sound is off by default, through the platform's single « الصوت » switch (`EffectsToggle` +
+- **Sound and motion:** sound is off by default, through the platform's single sound switch (« Son activé » / « Son coupé ») (`EffectsToggle` +
   `useEffectsPreference`), and reduced motion is respected (`MotionConfig reducedMotion="user"`).
 
 ### 7.2 Figures (`features/thinkingLab/figures/`)
@@ -467,11 +472,11 @@ The river (#33) and the balance (#47) are static in phase 1. Playing them is not
 
 - **Cursor:** it runs on the Math Lab step player (`useStepReveal` / `stepPlayerModel`): manual or auto, back, restart.
   The cursor is interface state and is never serialised.
-- **Layout:** the current step leads, and earlier steps sit in a collapsed « الخطوات السابقة ». Below `lg`, the step column
+- **Layout:** the current step leads, and earlier steps sit in a collapsed « Les pas précédents (n) ». Below `lg`, the step column
   comes first.
-- **The `math` lines** accumulate in a dark notebook « دفتر الحساب ».
-- **An `ask` step (« اشرح لنفسك »)** pauses auto-play and blocks « التالي » until the student chooses. The choice is shown
-  as right or « ليس بعد », followed by `why`.
+- **The `math` lines** accumulate in a dark notebook « Les calculs ».
+- **An `ask` step (« Explique-toi »)** pauses auto-play and blocks « Suivant » until the student chooses. The choice is shown
+  as right or « Pas encore », followed by `why`.
 
 ### 7.4 Sounds
 
@@ -485,7 +490,7 @@ These names are added to `playSfx`:
 | `notyet` | two soft falling notes, never a buzzer |
 | `stepTick` | each replay step |
 
-A solved challenge plays `playMedal('gold')`. All of them are silent unless « الصوت » is on (the sound contract was `MANIPULATION_CONTRACT.md` « Sound effects »,
+A solved challenge plays `playMedal('gold')`. All of them are silent unless the sound switch is on (the sound contract was `MANIPULATION_CONTRACT.md` « Sound effects »,
 deleted on 2026-11-22 with the legacy lab system; `git show 049380e:docs/architecture/MANIPULATION_CONTRACT.md`).
 
 ## 8. Open decisions in effect (plan §17)
@@ -504,7 +509,7 @@ Phase 1 met these decisions and applies the **proposed** values, all in config:
 
 ## 8bis. The teacher's read-only preview (implemented, 2026-10-31)
 
-Owner decision, 2026-10-31: a teacher sees « مختبر التفكير » as a **read-only preview**, the same rule as lessons and
+Owner decision, 2026-10-31: a teacher sees « Le labo des énigmes » as a **read-only preview**, the same rule as lessons and
 practice (everything open, nothing written). Plan §17 n° 3 ("who can use the ladder") is therefore answered for teachers:
 they preview, they do not play.
 
@@ -520,12 +525,12 @@ they preview, they do not play.
 - **The student's routes stay student-only** (`learner`): a teacher still gets a 403 on `/thinking-lab`, and a student gets
   a 403 on `/teacher/thinking-lab/*`. This preview is the **only** place where an answer leaves the server before a gate.
 - **Closing the ladder** (`thinking_lab.ladder`) hides it from students. It does **not** hide the preview.
-- **Web:** `/enseignant/tafkir` (list, filter by band) and `/enseignant/tafkir/:challengeId`, inside `TeacherLayout` and
-  `RequireLargeScreen`. The nav entry « مختبر التفكير » sits after « المختبر » (`data/teacherNavigation.js`).
+- **Web:** `/enseignant/enigmes` (list, filter by band) and `/enseignant/enigmes/:challengeId`, inside `TeacherLayout`,
+  `RequireLargeScreen` and `FeatureOutlet feature="thinkingLab"` (closed today). The nav entry « Le labo des énigmes » sits after « L’atelier » (`data/teacherNavigation.js`).
   The view reuses the student's pieces: `MathRun`, `ChallengeFigure`, `AnswerInput` with the thinking keyboard, `PhaseChip`,
-  `ReplayPlayer` and `answerText`. A banner says « معاينة الأستاذ — للقراءة فقط ».
+  `ReplayPlayer` and `answerText`. A banner says « Aperçu professeur — lecture seule ».
 - **Not in the preview:** the student's own flow (attempts, keys, gate). The teacher's *class* tools (requests, queue,
-  « اشرحه في القسم ») are phase 2 and will sit beside the preview.
+  explaining it in class) are phase 2 and will sit beside the preview.
 
 ## 9. Planned (phases 2–7, plan §8–§15)
 
@@ -534,7 +539,7 @@ they preview, they do not play.
   - accept, key or in-class, and the 48 h job;
   - notifications, `ClassroomAccess`, the Classroom Mode replay and the teacher settings.
 - **Phase 3 · Writing:**
-  - the whiteboard seed and observation detection (« لاحظت! »);
+  - the whiteboard seed and observation detection;
   - frozen board snapshots with a red layer;
   - photos through a shared `ImageEncoder`, with a quota.
 - **Phase 4 · Motivation:**
@@ -556,7 +561,7 @@ they preview, they do not play.
 | PHPUnit (feature) | `tests/Feature/ThinkingLabFlowTest.php` | the plan's phase-1 acceptance (1 → 2 → 3 attempts → +24 h, time travelled), honest-attempt refusals, keys, reach, open places, postpone, the primary band, twin credit, extras, access |
 | PHPUnit (feature) | `tests/Feature/ThinkingLabLeakTest.php` | no answer, closed key or replay in any pre-gate response |
 | Vitest (scripts) | `scripts/validate-thinking-lab.test.mjs`, `scripts/thinking-lab-oracle.test.mjs` | each validator rule; the oracle for every published challenge (none today) |
-| Vitest (web) | `features/thinkingLab/{thinkingModel,serverOnly}.test.js`, `figures/figures.test.jsx` | state in words, math islands, Algiers time; the server-only content; every figure and every replay layer |
+| Vitest (web) | `features/thinkingLab/{thinkingModel,serverOnly}.test.js`, `figures/figures.test.jsx` | state in words, math islands, the school's time (Europe/Paris); the server-only content; every figure and every replay layer |
 | PHPUnit (feature) | `tests/Feature/TeacherThinkingLabTest.php` | the teacher preview: everything open, a tested answer judged like the student's, nothing written, a student refused (§8bis) |
 | Gate | `npm run validate:thinking-lab -- --strict` (in `check:lessons`) | §5.1 |
 

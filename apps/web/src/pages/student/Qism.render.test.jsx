@@ -9,7 +9,7 @@ import Qism from './Qism';
 
 const noop = async () => {};
 
-function render(studyContext, url = '/espace/qism') {
+function render(studyContext, url = '/espace/classe') {
   return renderToStaticMarkup(
     <MemoryRouter initialEntries={[url]}>
       <AuthContext.Provider value={{ token: 'tk', user: { role: 'student' } }}>
@@ -52,19 +52,19 @@ describe('Qism — rejoindre, c’est consentir', () => {
   });
 
   it('l’ancien ?token= d’invitation n’a plus d’effet : aucune carte, aucune adhésion', () => {
-    const html = render(INDEPENDENT, '/espace/qism?token=abc');
+    const html = render(INDEPENDENT, '/espace/classe?token=abc');
     expect(html).not.toContain('data-qism-invitation');
     expect(html).not.toContain('data-qism-joined');
   });
 
   it('arrivé depuis le lien de classe : la confirmation nomme la classe rejointe', () => {
-    const html = render(INDEPENDENT, { pathname: '/espace/qism', state: { joinedClassroom: 'Maths 3e B', alreadyMember: false } });
+    const html = render(INDEPENDENT, { pathname: '/espace/classe', state: { joinedClassroom: 'Maths 3e B', alreadyMember: false } });
     expect(html).toContain('data-qism-joined');
     expect(html).toContain('Maths 3e B');
   });
 
   it('déjà membre : « Tu es déjà dans cette classe » plutôt qu’une nouvelle adhésion', () => {
-    const html = render(INDEPENDENT, { pathname: '/espace/qism', state: { joinedClassroom: 'Maths 3e B', alreadyMember: true } });
+    const html = render(INDEPENDENT, { pathname: '/espace/classe', state: { joinedClassroom: 'Maths 3e B', alreadyMember: true } });
     expect(html).toContain('Tu es déjà dans cette classe');
   });
 

@@ -1,9 +1,9 @@
-// The EXPERIMENT KINDS of « قصر الساحات » (`rootCourts/InquiryCalc.jsx`, `rootCourts/InquiryRoundtrip.jsx`,
+// The EXPERIMENT KINDS of « Le palais des dalles » (`rootCourts/InquiryCalc.jsx`, `rootCourts/InquiryRoundtrip.jsx`,
 // `rootCourts/InquiryChase.jsx`), registered in ../experiments.mjs › EXPERIMENTS under `calc`, `roundtrip` and `chase`. Each plays its screen through its
 // `data-iq-*` hooks; every answer is computed HERE from what the screen shows (the court's area, the rod's number, what
 // goes into a station — `window.__inquiry` gives the question, never what comes out: defects.md C1), and each ends
 // before its last « next » (`playExperiment` clicks it).
-import { inquiryFits, tellsNothing } from '../checks.mjs';
+import { inquiryFits, tellsNothing, WRONG_WORD } from '../checks.mjs';
 import { platform, q, rootOf, sq, write, eq, mul, cmp, absq, sub } from './exact.mjs';
 
 /** The frame of this world's investigations, for checks.mjs › inquiryFits. */
@@ -11,13 +11,19 @@ export const RC_FRAME = {
   frame: '.rq-iq',
   parts: 'button, input, .rq-iq__lead, .rq-iq__goal, .rq-ask, .rq-fact, .rq-table, .rq-strips, .rq-ch__card, svg',
   scene: 'svg',
-  // stacked lines of one label (« 30 » over « بلاطة » on the gate, « √30 = » over the calculator's ten digits): their
+  // stacked lines of one label (« 30 » over « dalles » on the gate, « √30 = » over the calculator's ten digits): their
   // boxes are the font's whole em and meet by up to ~40 % of a line while the glyphs stand apart (crop enlarged ×4 on
   // 2026-11-21: nothing touches) — an overlap counts beyond half a line
   lines: 0.5,
 };
-const MISS = 'توقّعك لم يصب';
-const WRONG = /خطأ|خاطئ|غلط/;
+/**
+ * The opening of the fact when his prediction missed — a sentence of the LESSON's inquiry (`spec.text`), so its French
+ * wording is the kit's (kit/text.js › FORGE.miss « Ta prédiction n’a pas vu juste cette fois. »): a lesson that words it
+ * otherwise must start its miss with these words, or this constant follows it.
+ */
+const MISS = 'Ta prédiction n’a pas vu juste';
+/** A sentence that calls an answer wrong (../checks.mjs › WRONG_WORD). */
+const WRONG = WRONG_WORD;
 const stage = (page) => page.getAttribute('.rq-iq', 'data-iq-stage');
 const waitStage = (page, want, ms = 20000) =>
   page.waitForFunction((w) => w.includes(document.querySelector('.rq-iq')?.dataset.iqStage), want, { timeout: ms });
@@ -27,7 +33,7 @@ const fits = (ctx, label) => inquiryFits(ctx.w, ctx.page, label, ['.rf-root [dat
 /**
  * `calc` — the court of `spec.a` and the rods lying ready: for each rod he says BEFORE whether its platform rides (the
  * walk computes it; on the calculator's rod he says « it rides », the belief this key fights, and meets the fact); the
- * platform comes down; when the band is too thin to see he presses « كبّر » until it is seen; the row stays in the table
+ * platform comes down; when the band is too thin to see he presses « Agrandis » until it is seen; the row stays in the table
  * with what the walk computed. Last, the rod clamped on the wall rides and its cell has no number.
  */
 export async function calcExperiment(ctx) {
@@ -110,8 +116,8 @@ export async function calcExperiment(ctx) {
     };
   });
   w.check(
-    wall.kind === 'ride' && wall.cell === '؟' && wall.note.includes(area),
-    `${ctx.name}: the rod clamped on the wall of ${area} RIDES; its cell is « ؟ » — a length with no number (« ${wall.note.trim().slice(0, 70)} »)`,
+    wall.kind === 'ride' && wall.cell === (ctx.unknownCell ?? '?') && wall.note.includes(area),
+    `${ctx.name}: the rod clamped on the wall of ${area} RIDES; its cell is « ${ctx.unknownCell ?? '?'} » — a length with no number (« ${wall.note.trim().slice(0, 70)} »)`,
   );
   await tellsNothing(w, page, `${ctx.name}, the end`, ctx.forbid(), '.rq-iq');
   await fits(ctx, `${ctx.name}-wall`);
@@ -199,8 +205,8 @@ export async function roundtripExperiment(ctx) {
       const s = window.__inquiry;
       return s.stage === 'seen' && document.querySelectorAll('.rq-iq [data-iq-strips] > li').length >= 1 && s.ri >= 0;
     });
-    // the last station of the last journey ends on « انتهيت »: left for playExperiment
-    if (ending && last === (ctx.doneWord ?? 'انتهيت')) break;
+    // the last station of the last journey ends on « J’ai fini » (the lesson's `text.done`): left for playExperiment
+    if (ending && last === (ctx.doneWord ?? 'J’ai fini')) break;
     await page.click('.rq-iq [data-iq-next]');
     await page.waitForTimeout(250);
   }
@@ -216,7 +222,7 @@ const SLASH = /\d\s*\/\s*\d/;
  * platform will do (band / jam / ride) before it comes down; the walk computes the fact HERE from what the screen shows
  * (the area, p and q of the rod drawn over its bar): p × p small tiles against a × q × q. On the LAST fraction he says
  * « it rides » — the belief this key fights (« a fine enough fraction will close the gap ») — and meets the fact. Then
- * the closing question: in how many did it ride? — tapped from the walk's own count. Ends before « انتهيت ».
+ * the closing question: in how many did it ride? — tapped from the walk's own count. Ends before « J’ai fini ».
  */
 export async function chaseExperiment(ctx) {
   const { w, page } = ctx;

@@ -1,5 +1,5 @@
 /**
- * QA navigateur — le مختبر المنطق والبرهان (laboratoire de logique et de
+ * QA navigateur — l'outil « Logique et raisonnement » de l'atelier (logique et
  * démonstration).
  *
  * Lancement (dev server sur 5173, API sur 8000, élève QA existant) :
@@ -23,10 +23,11 @@
  *     ordonner, trouver l'étape manquante, lire l'arbre ;
  *   - §33 : nommer un sophisme ET le réfuter ;
  *   - §37-39 : l'entraînement — indices progressifs, révélation, jamais de
- *     blocage, « اعرضه في المختبر » ;
+ *     blocage, « Le voir dans l’atelier » ;
  *   - §41 : le cahier de la plateforme s'ouvre (pas un second système) ;
  *   - persistance : autosave et RÉOUVERTURE du document ;
- *   - §2 : RTL — la page est RTL, la notation reste LTR (direction CALCULÉE) ;
+ *   - §2 : gauche à droite — la page est française, sans dir="rtl", la notation
+ *     est LTR (direction CALCULÉE) ;
  *   - §44 : responsive — tablette et mobile, pas de débordement horizontal,
  *     cibles tactiles ≥ 44 px ;
  *   - §45 : accessibilité — focus visible, aria-pressed, aria-current,
@@ -40,7 +41,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const OUT = process.argv[2] || '/tmp/mathlab-logic-shots';
 mkdirSync(OUT, { recursive: true });
@@ -96,7 +97,7 @@ async function loginUI(page) {
 
 /** Un contexte connecté : on se connecte UNE fois (l'API limite à 6/min). */
 async function authedContext(options = {}) {
-  const context = await browser.newContext({ locale: 'ar-DZ', ...options });
+  const context = await browser.newContext({ locale: 'fr-FR', ...options });
   if (!authState) {
     const page = await context.newPage();
     wire(page);
@@ -108,7 +109,7 @@ async function authedContext(options = {}) {
   }
   await context.close();
 
-  return browser.newContext({ locale: 'ar-DZ', storageState: authState, ...options });
+  return browser.newContext({ locale: 'fr-FR', storageState: authState, ...options });
 }
 
 const shot = (page, name) => page.screenshot({ path: `${OUT}/${name}.png`, fullPage: false });
@@ -148,7 +149,7 @@ async function goArea(page, area) {
     area === 'counterexample', `aire = ${area}`);
 
   const opening = await stageText(page);
-  record('§54 : une QUESTION est posée d’emblée', opening.includes('هل تستطيع'), opening.slice(0, 60));
+  record('§54 : une QUESTION est posée d’emblée', opening.includes('Peux-tu démontrer'), opening.slice(0, 60));
   record('§54 : l’énoncé à réfuter est affiché', (await page.locator('[data-ml-lg-claim]').count()) > 0);
   record('§54 : de quoi chercher tout de suite (curseur + champ)',
     (await page.locator('[data-ml-lg-ce-slider]').count()) > 0
@@ -164,7 +165,7 @@ async function goArea(page, area) {
   await page.waitForTimeout(350);
   let text = await stageText(page);
   record('§9 : une valeur qui ne réfute PAS est refusée avec sa raison',
-    text.includes('لا يخالف'), text.match(/[^.]*لا يخالف[^.]*/)?.[0]?.slice(0, 70) ?? '');
+    text.includes('ne contredit pas la proposition'), text.match(/[^.]*ne contredit pas la proposition[^.]*/)?.[0]?.slice(0, 70) ?? '');
 
   await page.fill('[data-ml-lg-ce-input]', '3');
   await page.press('[data-ml-lg-ce-input]', 'Enter');
@@ -172,7 +173,7 @@ async function goArea(page, area) {
   record('§8 : le contre-exemple 3 est ACCEPTÉ', (await page.locator('[data-ml-lg-ce-found]').count()) > 0);
   text = await stageText(page);
   record('§9 : on explique POURQUOI un seul suffit, pas juste « bravo »',
-    text.includes('يكفي'), text.match(/[^.]*يكفي[^.]*/)?.[0]?.slice(0, 80) ?? '');
+    text.includes('Un seul exemple suffit'), text.match(/[^.]*Un seul exemple suffit[^.]*/)?.[0]?.slice(0, 80) ?? '');
   record('§10 : les essais gardent leur trace', (await page.locator('[data-ml-lg-ce-tried] li').count()) >= 2);
   await shot(page, '03-counterexample-found');
 
@@ -190,7 +191,7 @@ async function goArea(page, area) {
   await page.waitForSelector('[data-ml-lg-root]', { timeout: 15000 });
 
   await goArea(page, 'statements');
-  record('§5 : les trois réponses sont offertes, dont « يعتمد »',
+  record('§5 : les trois réponses sont offertes, dont « Dépend de la variable »',
     (await page.locator('[data-ml-lg-guess="depends"]').count()) > 0);
 
   // §7 : déplacer x fait basculer l'énoncé (x² > x est faux sur [0;1]).
@@ -216,7 +217,7 @@ async function goArea(page, area) {
   await page.click('[data-ml-lg-reveal]');
   await page.waitForTimeout(300);
   const revealed = await page.locator('[data-ml-lg-statement-verdict]').getAttribute('data-ml-lg-statement-verdict');
-  record('§5 : le verdict de x² > x est « يعتمد »', revealed === 'depends', `verdict = ${revealed}`);
+  record('§5 : le verdict de x² > x est « Dépend de la variable »', revealed === 'depends', `verdict = ${revealed}`);
 
   // §6 : le domaine exclu est MONTRÉ.
   await page.selectOption('[data-ml-lg-statement-select]', 'oneOverXPositive');
@@ -226,7 +227,7 @@ async function goArea(page, area) {
   await slider.fill('0');
   await page.waitForTimeout(300);
   record('§6 : en x = 0 le laboratoire dit « hors domaine », pas « faux »',
-    (await stageText(page)).includes('خارج مجال'));
+    (await stageText(page)).includes('est hors du domaine'));
   await shot(page, '05-domain-excluded');
 
   // ── §11-12 : les connecteurs ─────────────────────────────────────────
@@ -275,7 +276,7 @@ async function goArea(page, area) {
   await page.waitForTimeout(300);
 
   // Le défaut trouvé en QA visuelle : la réciproque était évaluée comme la
-  // forme directe, et l'écran répondait « صحيحة » à x = 2 — l'inverse de ce
+  // forme directe, et l'écran répondait « Vraie » à x = 2 — l'inverse de ce
   // que §15 fait découvrir. On regarde le point, pas seulement le verdict
   // global.
   v = await page.locator('[data-ml-lg-impl-verdict]').getAttribute('data-ml-lg-impl-verdict');
@@ -315,12 +316,12 @@ async function goArea(page, area) {
   await goArea(page, 'conditions');
   const condText = await stageText(page);
   record('§18 : les QUESTIONS viennent avant le vocabulaire',
-    condText.includes('هل يكفي'), condText.match(/[^.]*هل يكفي[^.]*/)?.[0]?.slice(0, 60) ?? '');
+    condText.includes('Suffit-il'), condText.match(/[^.]*Suffit-il[^?]*/)?.[0]?.slice(0, 60) ?? '');
   await page.locator('[data-ml-lg-cond-question="backward"] [data-ml-lg-answer="no"]').click();
   await page.waitForTimeout(300);
   record('§19 : le contre-exemple de « B suffit » est montré',
     (await page.locator('[data-ml-lg-cond-not-sufficient]').count()) > 0);
-  record('§20 : la carte de relation nomme ضروري et كافٍ',
+  record('§20 : la carte de relation nomme « nécessaire » et « suffisante »',
     (await page.locator('[data-ml-lg-cond-necessary]').count()) > 0
     && (await page.locator('[data-ml-lg-cond-sufficient]').count()) > 0);
   await shot(page, '09-conditions');
@@ -348,13 +349,13 @@ async function goArea(page, area) {
     await page.press('[data-ml-lg-quant-input]', 'Enter');
     await page.waitForTimeout(220);
   }
-  record('§22 : la RECHERCHE est comptée', (await stageText(page)).includes('فُحصت'));
+  record('§22 : la RECHERCHE est comptée', (await stageText(page)).includes('Valeurs examinées'));
   record('§22 : « pas de contre-exemple » n’est PAS « prouvé »',
     (await page.locator('[data-ml-lg-quant-not-a-proof]').count()) > 0);
   const quantText = await stageText(page);
-  record('§22 : le mot « ليست برهانًا » est écrit noir sur blanc',
-    /ليست? برهان/.test(quantText), quantText.match(/[^.]*ليست? برهان[^.]*/)?.[0]?.slice(0, 70) ?? '');
-  record('§22 : et l’élève est renvoyé vers la construction d’un BRHAN',
+  record('§22 : les mots « pas une démonstration » sont écrits noir sur blanc',
+    /pas une démonstration/.test(quantText), quantText.match(/[^.]*pas une démonstration[^.]*/)?.[0]?.slice(0, 70) ?? '');
+  record('§22 : et l’élève est renvoyé vers la construction d’une DÉMONSTRATION',
     (await page.locator('[data-ml-lg-goto-proof]').count()) > 0);
   await shot(page, '10-quantifier-not-a-proof');
 
@@ -405,9 +406,9 @@ async function goArea(page, area) {
   const proofTitleDir = await page.locator('[data-ml-lg-proof-title]').evaluate(
     (node) => getComputedStyle(node).direction,
   );
-  record('RTL : le titre de la preuve n’est pas retourné (défaut signalé en revue)',
-    proofTitleDir === 'rtl', `direction = ${proofTitleDir}`);
-  record('§26 : les cartes portent leur RÔLE (معطى, قاعدة, النتيجة…)',
+  record('LTR : le titre de la preuve, phrase française, se lit de gauche à droite (dir="auto")',
+    proofTitleDir === 'ltr', `direction = ${proofTitleDir}`);
+  record('§26 : les cartes portent leur RÔLE (Donnée, Propriété…)',
     (await page.locator('[data-ml-lg-proof-pool] .sa-ml-lg__stepRole').count()) > 0);
 
   // §27 : une carte hors tour est refusée AVEC sa raison.
@@ -418,7 +419,7 @@ async function goArea(page, area) {
   await page.waitForTimeout(300);
   record('§26 : la première étape se pose', (await page.locator('[data-ml-lg-placed="given"]').count()) > 0);
 
-  // On force une carte hors tour via l'aire « رتّب », où toutes sont offertes.
+  // On force une carte hors tour via l'aire « Ordonner », où toutes sont offertes.
   await page.click('[data-ml-lg-proof-mode="order"]');
   await page.waitForTimeout(350);
   await page.click('[data-ml-lg-step="conclude"]');
@@ -426,9 +427,9 @@ async function goArea(page, area) {
   const refused = await page.locator('[data-ml-lg-refused]').count();
   const refusedText = await textOf(page, '[data-ml-lg-refused]');
   record('§27 : une étape hors tour est REFUSÉE', refused > 0);
-  record('§27 : et la raison est expliquée, pas « خطأ »',
-    refusedText.includes('لا تتبع'), refusedText.slice(0, 80));
-  record('§27 : ce qui MANQUE est nommé', refusedText.includes('ينقصها') || refusedText.length > 30);
+  record('§27 : et la raison est expliquée, pas « erreur »',
+    refusedText.includes('ne découle pas'), refusedText.slice(0, 80));
+  record('§27 : ce qui MANQUE est nommé', refusedText.includes('Il manque') || refusedText.length > 30);
   await shot(page, '12-proof-refused');
 
   // §35 : construire la preuve entière dans l'ordre.
@@ -472,7 +473,7 @@ async function goArea(page, area) {
   await page.click('[data-ml-lg-fallacy-kind="affirmingConsequent"]');
   await page.waitForTimeout(250);
   let fallacyText = await stageText(page);
-  record('§33 : un mauvais nom est corrigé', fallacyText.includes('ليس هذا نوع') || fallacyText.length > 0);
+  record('§33 : un mauvais nom est corrigé', fallacyText.includes('Ce n’est pas cette erreur') || fallacyText.length > 0);
 
   await page.click('[data-ml-lg-fallacy-kind="invalidConverse"]');
   await page.waitForTimeout(250);
@@ -487,7 +488,7 @@ async function goArea(page, area) {
 }
 
 // ════════════════════════════════════════════════════════════════════════
-// 5bis. §28 — البرهان بالتراجع : son aire, son escalier, ses exemples
+// 5bis. §28 — la récurrence : son aire, son escalier, ses exemples
 // ════════════════════════════════════════════════════════════════════════
 {
   const context = await authedContext();
@@ -497,11 +498,11 @@ async function goArea(page, area) {
   await page.waitForSelector('[data-ml-lg-root]', { timeout: 15000 });
 
   await goArea(page, 'induction');
-  record('§28 : « البرهان بالتراجع » est une AIRE, pas une option cachée',
+  record('§28 : « Récurrence » est une AIRE, pas une option cachée',
     (await page.locator('[data-ml-lg-area="induction"]').count()) > 0);
 
   // ══ L'ESCALIER DES PROPOSITIONS ════════════════════════════════════════
-  // La récurrence telle qu'elle s'écrit au BAC : une proposition
+  // La récurrence telle qu'elle s'écrit au lycée : une proposition
   // (uₙ < 3, wₙ = −2), des suites définies par récurrence, parfois
   // auxiliaires, et l'hérédité construite après l'expérimentation.
   record('l’escalier des propositions ouvre l’aire',
@@ -535,10 +536,10 @@ async function goArea(page, area) {
     if (await page.locator('[data-ml-lg-rec-test]').isEnabled()) await page.click('[data-ml-lg-rec-test]');
     await page.waitForTimeout(220);
   }
-  record('§25 : toutes vertes → « هذا وحده لا يثبت »',
+  record('§25 : toutes vertes → « cela seul ne démontre pas »',
     (await page.locator('[data-ml-lg-rec-notproof]').count()) > 0);
   record('§25 : l’écran ne prétend JAMAIS avoir prouvé',
-    !(await page.locator('[data-ml-lg-rec-notproof]').innerText()).includes('هذا برهان'));
+    !(await page.locator('[data-ml-lg-rec-notproof]').innerText()).includes('démonstration par récurrence est complète'));
 
   // §26 — l'hérédité, et le verdict qui exige les DEUX pieds.
   await page.click('[data-ml-lg-rec-toprove]');
@@ -551,7 +552,7 @@ async function goArea(page, area) {
       await page.locator('[data-ml-lg-rec-place]').first().click();
       await page.waitForTimeout(140);
     }
-    record('§25 : base + hérédité → « برهان بالتراجع مكتمل »',
+    record('§25 : base + hérédité → « la démonstration par récurrence est complète »',
       (await page.getAttribute('[data-ml-lg-rec-proofverdict]', 'data-ml-lg-rec-proofverdict')) === 'complete');
   }
   await shot(page, '22a-recurrence-heredity');
@@ -579,7 +580,7 @@ async function goArea(page, area) {
     const body = await page.locator('[data-ml-lg-rec-statement]').innerText();
     record('§17 : ni SyntaxError, ni NaN, ni Infinity à l’écran',
       !/SyntaxError|ParserError|undefined variable|AST|NaN|Infinity/.test(body));
-    record('§17 : le refus est une phrase arabe avec un exemple qui marche',
+    record('§17 : le refus est une phrase française avec un exemple qui marche',
       (await page.locator('[data-ml-lg-rec-error]').count()) > 0);
     // Une proposition illisible ne doit pas s'écrire sur les marches.
     record('§17 : une proposition illisible ne s’affiche pas sur l’escalier',
@@ -643,8 +644,8 @@ async function goArea(page, area) {
   record('§20 : et l’écran le DIT explicitement',
     (await page.locator('[data-ml-lg-not-a-proof]').count()) > 0);
   const notAProof = await textOf(page, '[data-ml-lg-not-a-proof]');
-  record('§20 : le mot « برهان » est nié, pas affirmé',
-    notAProof.includes('لا برهان') || notAProof.includes('تجريبي'), notAProof.slice(0, 70));
+  record('§20 : le mot « démonstration » est nié, pas affirmé',
+    notAProof.includes('pas une démonstration') || notAProof.includes('expérimentale'), notAProof.slice(0, 70));
   await shot(page, '26-stairs-all-green');
 
   // §15 — changer la règle EFFACE les verdicts (et ne les garde pas en douce).
@@ -671,13 +672,13 @@ async function goArea(page, area) {
   record('§17 : le verdict devient « réfuté »', trapVerdict === 'broken', trapVerdict);
   const brokenText = await textOf(page, '[data-ml-lg-climb-verdict]');
   record('§17 : et la leçon est écrite — réussir quelques fois ne prouve rien',
-    brokenText.includes('لا يعني'), brokenText.replace(/\s+/g, ' ').slice(0, 80));
+    brokenText.includes('ne veut pas dire'), brokenText.replace(/\s+/g, ' ').slice(0, 80));
 
-  // §18 — « لماذا ؟ » explique le calcul, pas « خطأ ».
+  // §18 — « Pourquoi ? » explique le calcul, pas « erreur ».
   await page.click('[data-ml-lg-why]');
   await page.waitForTimeout(300);
   const whyDetail = await textOf(page, '[data-ml-lg-why-detail]');
-  record('§18 : « لماذا ؟ » montre le calcul et l’écart', whyDetail.includes('14') || whyDetail.includes('16'),
+  record('§18 : « Pourquoi ? » montre le calcul et l’écart', whyDetail.includes('14') || whyDetail.includes('16'),
     whyDetail.replace(/\s+/g, ' ').slice(0, 80));
   await shot(page, '27-stairs-trap-broken');
 
@@ -693,7 +694,7 @@ async function goArea(page, area) {
   await page.click('[data-ml-lg-stairs-discover]');
   await page.waitForTimeout(300);
   const hidden = await textOf(page, '[data-ml-lg-stairs-table]');
-  record('§16 : « اكتشف القاعدة » cache les valeurs', hidden.includes('؟'), hidden.replace(/\s+/g, ' ').slice(0, 50));
+  record('§16 : le mode découverte cache les valeurs', hidden.includes('?'), hidden.replace(/\s+/g, ' ').slice(0, 50));
   await page.click('[data-ml-lg-stairs-discover]');
   await page.waitForTimeout(200);
 
@@ -752,7 +753,7 @@ async function goArea(page, area) {
   await playToEnd(page, 'data-ml-lg-case-step');
   const noBaseWhy = await textOf(page, '[data-ml-lg-case-detail="noBase"]');
   record('§28 : « n = n+1 » dit que le pas SEUL ne prouve rien',
-    noBaseWhy.includes('نقطة انطلاق') || noBaseWhy.includes('1 ≠ 2'), noBaseWhy.slice(0, 70));
+    noBaseWhy.includes('pas de première marche') || noBaseWhy.includes('1 ≠ 2'), noBaseWhy.slice(0, 70));
 
   // La construction : deux chemins depuis le but.
   await page.click('[data-ml-lg-induction-step="goal"]');
@@ -760,12 +761,12 @@ async function goArea(page, area) {
   const twoWays = await page.locator('[data-ml-lg-induction-step]').count();
   record('§28 : après le but, DEUX chemins s’ouvrent (base et hypothèse)', twoWays === 2, `${twoWays} cartes`);
 
-  // Le titre est une PHRASE arabe : elle ne doit pas être retournée.
+  // Le titre est une PHRASE française : elle se lit de gauche à droite.
   const titleDir = await page.locator('[data-ml-lg-induction-title]').evaluate(
     (node) => getComputedStyle(node).direction,
   );
-  record('RTL : le titre de la preuve reste une phrase ARABE (pas forcée en LTR)',
-    titleDir === 'rtl', `direction = ${titleDir}`);
+  record('LTR : le titre de la preuve est une phrase française, de gauche à droite',
+    titleDir === 'ltr', `direction = ${titleDir}`);
   await shot(page, '24-induction-build');
 
   await context.close();
@@ -784,7 +785,7 @@ async function goArea(page, area) {
   await page.click('[data-ml-lg-practice-toggle]');
   await page.waitForSelector('[data-ml-lg-practice]', { timeout: 8000 });
   record('§38 : l’entraînement s’ouvre avec une question', (await page.locator('[data-ml-lg-practice-question]').count()) > 0);
-  record('§38 : les quatre niveaux sont offerts',
+  record('§38 : les quatre paliers sont offerts',
     (await page.locator('[data-ml-lg-practice-level] option').count()) === 4);
 
   // §39 : un indice à la fois, et jamais la réponse d'emblée.
@@ -800,27 +801,27 @@ async function goArea(page, area) {
     (await page.locator('[data-ml-lg-practice-explain]').count()) === 0);
   await shot(page, '16-practice-hints');
 
-  // §39 : « كشف » sur demande, et rien ne se ferme.
+  // §39 : « Afficher » sur demande, et rien ne se ferme.
   await page.click('[data-ml-lg-practice-reveal]');
   await page.waitForTimeout(300);
   record('§39 : la révélation est offerte SUR DEMANDE',
     (await page.locator('[data-ml-lg-practice-explain]').count()) > 0);
-  record('§39 : « تحقّق » reste actif après la révélation — rien ne bloque',
+  record('§39 : « Vérifier » reste actif après la révélation — rien ne bloque',
     await page.locator('[data-ml-lg-practice-check]').isEnabled());
 
-  // §37 : « اعرضه في المختبر » ouvre l'aire qui MONTRE.
+  // §37 : « Le voir dans l’atelier » ouvre l'aire qui MONTRE.
   if (await page.locator('[data-ml-lg-practice-show]').count() > 0) {
     await page.click('[data-ml-lg-practice-show]');
     await page.waitForTimeout(400);
     const area = await page.locator('[data-ml-lg-root]').getAttribute('data-ml-lg-current-area');
-    record('§37 : « اعرضه في المختبر » ouvre l’aire correspondante', Boolean(area), `aire = ${area}`);
+    record('§37 : « Le voir dans l’atelier » ouvre l’aire correspondante', Boolean(area), `aire = ${area}`);
   }
 
   // Une mauvaise réponse ne ferme rien (§39).
   await page.click('[data-ml-lg-practice-next]');
   await page.waitForTimeout(350);
   if (await page.locator('[data-ml-lg-practice-input]').count() > 0) {
-    await page.fill('[data-ml-lg-practice-input]', 'كلام');
+    await page.fill('[data-ml-lg-practice-input]', 'blabla');
     await page.click('[data-ml-lg-practice-check]');
     await page.waitForTimeout(300);
     const verdict = await page.locator('[data-ml-lg-practice-verdict]').getAttribute('data-ml-lg-practice-verdict');
@@ -840,26 +841,26 @@ async function goArea(page, area) {
   await shot(page, '17-practice-reveal');
 
   // ── Le dictionnaire des symboles ────────────────────────────────────
-  record('قاموس : le dictionnaire est présent', (await page.locator('[data-ml-lg-dictionary]').count()) > 0);
-  record('قاموس : il est REPLIÉ au départ — on n’ouvre pas un labo par un lexique',
+  record('lexique : le dictionnaire est présent', (await page.locator('[data-ml-lg-dictionary]').count()) > 0);
+  record('lexique : il est REPLIÉ au départ — on n’ouvre pas un labo par un lexique',
     (await page.locator('[data-ml-lg-dict-entry]').count()) === 0);
   await page.click('[data-ml-lg-dictionary-toggle]');
   await page.waitForTimeout(350);
   const entries = await page.locator('[data-ml-lg-dict-entry]').count();
-  record('قاموس : il explique tous les symboles', entries >= 20, `${entries} entrées`);
-  record('قاموس : ⇒ y est, avec sa lecture arabe',
-    (await textOf(page, '[data-ml-lg-dict-entry="implies"]')).includes('يستلزم'));
-  record('قاموس : les variables latines (P, n) y sont expliquées aussi',
+  record('lexique : il explique tous les symboles', entries >= 20, `${entries} entrées`);
+  record('lexique : ⇒ y est, avec sa lecture en français',
+    (await textOf(page, '[data-ml-lg-dict-entry="implies"]')).includes('P implique Q'));
+  record('lexique : les variables latines (P, n) y sont expliquées aussi',
     (await page.locator('[data-ml-lg-dict-entry="P"]').count()) > 0
     && (await page.locator('[data-ml-lg-dict-entry="n"]').count()) > 0);
   const symbolDir = await page.locator('[data-ml-lg-dict-entry="forall"] .sa-ml-lg__math').first()
     .evaluate((node) => getComputedStyle(node).direction);
-  record('قاموس : le symbole reste en LTR, son explication en arabe', symbolDir === 'ltr', symbolDir);
+  record('lexique : le symbole est en LTR, comme son explication en français', symbolDir === 'ltr', symbolDir);
   await shot(page, '20-dictionary');
 
   // ── Persistance : l'URL prend un id, le document se rouvre ──────────
   // Un changement qui existe TOUJOURS, quel que soit l'état où les blocs
-  // précédents ont laissé le document : on va dans « بناء البرهان » et on
+  // précédents ont laissé le document : on va dans « Démonstration » et on
   // pose la première carte disponible, quelle qu'elle soit.
   await goArea(page, 'proof');
   const firstCard = page.locator('[data-ml-lg-step]').first();
@@ -885,7 +886,7 @@ async function goArea(page, area) {
 }
 
 // ════════════════════════════════════════════════════════════════════════
-// 7. §2 RTL/LTR · §44 responsive · §45 accessibilité
+// 7. §2 LTR · §44 responsive · §45 accessibilité
 // ════════════════════════════════════════════════════════════════════════
 {
   const context = await authedContext();
@@ -894,9 +895,11 @@ async function goArea(page, area) {
   await page.goto(`${BASE}/espace/atelier/logique?lab=secondaire`, { waitUntil: 'networkidle' });
   await page.waitForSelector('[data-ml-lg-root]', { timeout: 15000 });
 
-  // §2 : la page est RTL, la notation est LTR — direction CALCULÉE, pas l'attribut.
+  // §2 : la page est française et LTR, la notation est LTR — direction CALCULÉE, pas l'attribut.
   const htmlDir = await page.evaluate(() => document.documentElement.dir);
-  record('§2 : la page est RTL', htmlDir === 'rtl', `dir = ${htmlDir}`);
+  const htmlLang = await page.evaluate(() => document.documentElement.lang);
+  const pageDirection = await page.evaluate(() => getComputedStyle(document.documentElement).direction);
+  record('§2 : la page est française, de gauche à droite', htmlLang === 'fr' && htmlDir !== 'rtl' && pageDirection === 'ltr', `lang = ${htmlLang}, dir = ${htmlDir}, direction = ${pageDirection}`);
 
   await goArea(page, 'implication');
   const mathDir = await page.locator('[data-ml-lg-impl-formula]').evaluate(
@@ -906,7 +909,7 @@ async function goArea(page, area) {
   const bidi = await page.locator('[data-ml-lg-impl-formula]').evaluate(
     (node) => getComputedStyle(node).unicodeBidi,
   );
-  record('§2 : et elle est ISOLÉE du flux arabe', /isolate/.test(bidi), `unicode-bidi = ${bidi}`);
+  record('§2 : et elle est ISOLÉE du flux du texte', /isolate/.test(bidi), `unicode-bidi = ${bidi}`);
 
   const tableDir = await page.locator('[data-ml-lg-table]').first().evaluate(
     (node) => getComputedStyle(node).direction,
@@ -915,10 +918,10 @@ async function goArea(page, area) {
 
   // §45 : la couleur n'est jamais seule — V/F accompagne chaque case.
   const cellTexts = await page.locator('[data-ml-lg-cell="direct"]').allTextContents();
-  record('§45 : chaque case porte sa LETTRE ARABE (ص/خ), pas seulement sa couleur',
-    cellTexts.every((text) => /ص|خ/.test(text)), cellTexts.join(''));
-  record('اللغة : plus aucune abréviation française (V/F) dans la table',
-    cellTexts.every((text) => !/[VF]/.test(text)), cellTexts.join(''));
+  record('§45 : chaque case porte sa LETTRE (V/F), pas seulement sa couleur',
+    cellTexts.length > 0 && cellTexts.every((text) => /^\s*[VF]\s*$/.test(text)), cellTexts.join(''));
+  record('langue : plus aucune lettre arabe dans la table',
+    cellTexts.every((text) => !/[\u0600-\u06FF]/.test(text)), cellTexts.join(''));
 
   // §45 : aria-pressed sur les bascules, aria-current sur la ligne active.
   record('§45 : les bascules portent aria-pressed',

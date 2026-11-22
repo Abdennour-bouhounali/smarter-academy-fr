@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout';
 import HomeRedirect from './components/auth/HomeRedirect';
 import StudentLayout from './components/layout/StudentLayout';
@@ -174,7 +174,7 @@ const MadarPage = lazy(() => import('./pages/student/madar/MadarPage'));
 const ThinkingLadderPage = lazy(() => import('./pages/student/thinking/ThinkingLadderPage'));
 const ThinkingChallengePage = lazy(() => import('./pages/student/thinking/ThinkingChallengePage'));
 const ThinkingNumberPage = lazy(() => import('./pages/student/thinking/ThinkingNumberPage'));
-// … et son « Aperçu du professeur » (lecture seule, /enseignant/tafkir).
+// … et son « Aperçu du professeur » (lecture seule, /enseignant/enigmes).
 const TeacherThinkingListPage = lazy(() => import('./pages/teacher/thinking/TeacherThinkingListPage'));
 const TeacherThinkingChallengePage = lazy(() => import('./pages/teacher/thinking/TeacherThinkingChallengePage'));
 const GamesHub = lazy(() => import('./pages/student/madar/GamesHub'));
@@ -360,11 +360,7 @@ function AppRoutes() {
         </Route>
       </Route>
 
-      {/* La gestion de l'abonnement (phase 7). AUTHENTIFIÉE : elle parle
-          d'argent et d'un compte précis, contrairement à /tarifs et à la
-          page de retour. Hors de /espace parce que le serveur y renvoie
-          l'élève depuis le portail du fournisseur, et qu'une URL de retour
-          se doit d'être courte et stable. */}
+      {/* L'ESPACE ÉLÈVE. Rôle vérifié ici ; la vraie porte reste le serveur. */}
       <Route path="/espace" element={<ProtectedRoute allowedRoles={['student']} />}>
         <Route path="bienvenue/nom" element={<CompleteName />} />
         <Route path="bienvenue" element={<ChooseGrade />} />
@@ -376,11 +372,9 @@ function AppRoutes() {
         {/* « Madar » : PLEIN ÉCRAN, hors de StudentLayout — un jeu se joue sans
             barre latérale ni barre d'onglets, au téléphone comme au portable
             (MADAR_GAME.md). Le serveur tient cœurs, parties et classement. */}
-        {/* « Espace jeux » : la salle (trois jeux) puis la page de chaque jeu.
-            L'ancienne adresse /espace/madar mène à la salle. */}
+        {/* « Espace jeux » : la salle (trois jeux) puis la page de chaque jeu. */}
         <Route path="jeux" element={<GamesHub />} />
         <Route path="jeux/:game" element={<MadarPage />} />
-        <Route path="madar" element={<Navigate to="/espace/jeux" replace />} />
         <Route element={<StudentLayout />}>
           <Route index element={<StudentHome />} />
           <Route path="cours" element={<MesCours />} />
@@ -394,7 +388,7 @@ function AppRoutes() {
           <Route path="cahier/:noteId" element={<NotebookNotePage />} />
           <Route path="profil" element={<Profil />} />
           {/* « Ce que voit ton parent » : le rapport que lit le parent, lu par l'élève lui-même. */}
-          <Route path="profil/wali" element={<StudentParentView />} />
+          <Route path="profil/parent" element={<StudentParentView />} />
           {/* The activation code: pointless while payments are closed (everyone has full access) — the server still
               accepts a code. */}
           <Route element={<PaidOutlet home="/espace" />}>
@@ -411,17 +405,17 @@ function AppRoutes() {
             <Route path="pratique/:lessonCode/session/:sessionId" element={<PracticeSession />} />
             <Route path="pratique/:lessonCode/bilan/:sessionId" element={<PracticeSummary />} />
             {/* La correction de l'enseignant, ouverte depuis la cloche — en lecture seule. */}
-            <Route path="tashih/:reviewId" element={<AnswerReviewPage />} />
+            <Route path="corrections/:reviewId" element={<AnswerReviewPage />} />
             {/* « Le labo des énigmes » : l'échelle, un défi (par son id stable), un numéro (« Défi 318 »).
               Le serveur juge, compte et ouvre la porte ; ces pages ne font qu'afficher. */}
             <Route element={<FeatureOutlet feature="thinkingLab" home="/espace" />}>
-              <Route path="tafkir" element={<ThinkingLadderPage />} />
-              <Route path="tafkir/n/:number" element={<ThinkingNumberPage />} />
-              <Route path="tafkir/:challengeId" element={<ThinkingChallengePage />} />
+              <Route path="enigmes" element={<ThinkingLadderPage />} />
+              <Route path="enigmes/n/:number" element={<ThinkingNumberPage />} />
+              <Route path="enigmes/:challengeId" element={<ThinkingChallengePage />} />
             </Route>
             {/* « Ma boussole » : la jauge de départ et son plan (YEAR_COMPASS.md). Le serveur sert et corrige. */}
             <Route element={<FeatureOutlet feature="compass" home="/espace" />}>
-              <Route path="bawsala" element={<CompassPage />} />
+              <Route path="boussole" element={<CompassPage />} />
             </Route>
           </Route>
           {/* « Défi du jour » : le serveur tient la tentative ; ces
@@ -441,7 +435,7 @@ function AppRoutes() {
           {/* « Ma classe » : la classe de l'enseignant que l'élève a rejointe, ou
               peut rejoindre par code / lien de classe. Un contexte, pas un
               contenu : le serveur reste l'autorité sur ce qui est visible. */}
-          <Route path="qism" element={<Qism />} />
+          <Route path="classe" element={<Qism />} />
         </Route>
       </Route>
 
@@ -455,11 +449,11 @@ function AppRoutes() {
         <Route element={<FeatureOutlet feature="dailyChallenge" home="/enseignant" />}>
           <Route path="classes/:id/defi/affichage" element={<TeacherChallengeDisplay />} />
         </Route>
-        <Route path="classes/:id/madar/affichage" element={<TeacherMadarDisplay />} />
+        <Route path="classes/:id/jeux/affichage" element={<TeacherMadarDisplay />} />
         {/* « séance en classe » : la séance en classe d'une leçon (plan de la classe, test, podium) — plein écran, au tableau (CLASS_SESSION.md). */}
         {/* tablette et ordinateur seulement : la séance de classe se projette */}
         <Route element={<RequireLargeScreen />}>
-          <Route path="hissa/:lessonId" element={<TeacherClassSession />} />
+          <Route path="seance/:lessonId" element={<TeacherClassSession />} />
         </Route>
         {/* « Défie ton professeur » : l'enseignant joue dans UNE de ses classes — la même
             salle et les mêmes jeux que l'élève, plein écran, hors coquille. */}
@@ -479,13 +473,12 @@ function AppRoutes() {
           <Route path="classes/:id/eleves/:studentId/cahier" element={<TeacherStudentNotebook />} />
           {/* « Réponses à corriger » : photos de copie et démonstrations des élèves en
               « Correction du professeur » (AnswerReviewService, 2026-10-06). */}
-          <Route path="tashih" element={<TeacherReviews />} />
+          <Route path="corrections" element={<TeacherReviews />} />
           <Route element={<PaidOutlet home="/enseignant" />}>
             <Route path="offre" element={<TeacherSubscription />} />
           </Route>
           <Route path="profil" element={<TeacherProfile />} />
-          <Route path="muassasa" element={<TeacherSchoolPage />} />
-          <Route path="muassasa/rejoindre/:token" element={<TeacherSchoolJoin />} />
+          <Route path="etablissement" element={<TeacherSchoolPage />} />
           {/* L'ENSEIGNANT APPREND COMME UN ÉLÈVE — mêmes pages, même
               moteur, dans SON espace : le catalogue (Explorer), le
               atelier et son cahier (à lui : le serveur ne sert que les
@@ -513,10 +506,10 @@ function AppRoutes() {
               un exercice sur le tableau de la classe ; les autres gardent le Hub et le lecteur d'avant. */}
             {/* « Dossier de la leçon » : le fichier de travail de l'enseignant sur UNE leçon — DANS son espace (la navigation reste),
               hors de l'atelier ; seul le plein écran du tableau blanc la recouvre. */}
-            <Route path="milaff/:lessonId" element={<TeacherLessonFile />} />
+            <Route path="dossier/:lessonId" element={<TeacherLessonFile />} />
             {/* « Suivi de la classe » et « fiche de connaissances » d'une leçon : dans l'espace enseignant, sous l'en-tête commun des outils */}
-            <Route path="mutabaa/:lessonId" element={<TeacherLessonTracking />} />
-            <Route path="bitaqa/:lessonId" element={<TeacherLessonCard />} />
+            <Route path="suivi/:lessonId" element={<TeacherLessonTracking />} />
+            <Route path="carte/:lessonId" element={<TeacherLessonCard />} />
             <Route path="pratique/:lessonCode" element={<TeacherBankGate />} />
             <Route path="pratique/:lessonCode/:level/:exerciseId" element={<TeacherBankGate player />} />
           </Route>
@@ -527,8 +520,8 @@ function AppRoutes() {
               rien d'écrit ; la porte du serveur est `can:teacher`. */}
           <Route element={<RequireLargeScreen />}>
             <Route element={<FeatureOutlet feature="thinkingLab" home="/enseignant" />}>
-              <Route path="tafkir" element={<TeacherThinkingListPage />} />
-              <Route path="tafkir/:challengeId" element={<TeacherThinkingChallengePage />} />
+              <Route path="enigmes" element={<TeacherThinkingListPage />} />
+              <Route path="enigmes/:challengeId" element={<TeacherThinkingChallengePage />} />
             </Route>
           </Route>
           <Route path="cahier" element={<Notebook />} />
@@ -540,37 +533,45 @@ function AppRoutes() {
       {/* « lien parent » — le lien privé du parent, SANS compte : hors de toute
           coquille, téléphone d'abord. Le jeton est la porte ; le serveur la
           garde (ParentAccessLinkService). PARENT_SPACE.md §2. */}
-      <Route path="/w/:token" element={<ParentLinkPage />} />
+      <Route path="/p/:token" element={<ParentLinkPage />} />
+
+      {/* Le lien d'un établissement pour ses professeurs : un professeur connecté le suit et rejoint
+          l'établissement (le jeton est la porte, SchoolStructureController). */}
+      <Route path="/rejoindre/etablissement" element={<ProtectedRoute allowedRoles={['teacher']} />}>
+        <Route element={<TeacherLayout />}>
+          <Route path=":token" element={<TeacherSchoolJoin />} />
+        </Route>
+      </Route>
 
       {/* « Espace parent » (compte parent — gardé pour plus tard, plus d'inscription
           publique depuis 2026-10-23). Rôle vérifié ici ; la vraie porte est le serveur :
           chaque /api/v1/parent/* est derrière can:parent, et chaque lecture
           d'un enfant derrière un LIEN ACTIF (ParentLinkService::activeLink). */}
-      <Route path="/wali" element={<ProtectedRoute allowedRoles={['parent']} />}>
+      <Route path="/parent" element={<ProtectedRoute allowedRoles={['parent']} />}>
         <Route path="bienvenue" element={<CompleteName />} />
         <Route element={<ParentLayout />}>
           <Route index element={<ParentHome />} />
-          <Route path="abnaa/:studentId" element={<ParentChildReport />} />
-          <Route path="himaya" element={<DeviceGuidePage />} />
+          <Route path="enfants/:studentId" element={<ParentChildReport />} />
+          <Route path="protection" element={<DeviceGuidePage />} />
         </Route>
       </Route>
 
       {/* « Espace établissement » — le directeur d'un établissement. Rôle vérifié ici ;
           la vraie porte est le serveur : /api/v1/school/* derrière can:school
           et une nomination active (SchoolAccess::schoolOf). */}
-      <Route path="/idara" element={<ProtectedRoute allowedRoles={['school_admin']} />}>
+      <Route path="/etablissement" element={<ProtectedRoute allowedRoles={['school_admin']} />}>
         {/* « Mode réunion » : plein écran, hors de la coquille (projecteur). */}
-        <Route path="ijtimaa/:reportId" element={<SchoolMeeting />} />
+        <Route path="reunion/:reportId" element={<SchoolMeeting />} />
         <Route element={<SchoolLayout />}>
           <Route index element={<SchoolHome />} />
-          <Route path="aqsam" element={<SchoolClassrooms />} />
-          <Route path="asatidha" element={<SchoolTeachers />} />
-          <Route path="talamidh" element={<SchoolStudents />} />
-          <Route path="talamidh/:studentId" element={<SchoolStudentFile />} />
-          <Route path="kafaat" element={<SchoolLearningMap />} />
-          <Route path="taqarir" element={<SchoolReports />} />
-          <Route path="taqarir/:reportId" element={<SchoolReport />} />
-          <Route path="iidadat" element={<SchoolSettings />} />
+          <Route path="classes" element={<SchoolClassrooms />} />
+          <Route path="professeurs" element={<SchoolTeachers />} />
+          <Route path="eleves" element={<SchoolStudents />} />
+          <Route path="eleves/:studentId" element={<SchoolStudentFile />} />
+          <Route path="savoir-faire" element={<SchoolLearningMap />} />
+          <Route path="rapports" element={<SchoolReports />} />
+          <Route path="rapports/:reportId" element={<SchoolReport />} />
+          <Route path="reglages" element={<SchoolSettings />} />
         </Route>
       </Route>
 
@@ -617,7 +618,7 @@ function AppRoutes() {
         <Route path="/confidentialite" element={<Confidentialite />} />
         <Route path="/cgu" element={<CGU />} />
         {/* « Un appareil pour étudier » : le guide des parents, PUBLIC (PARENT_SPACE.md §6). */}
-        <Route path="/himaya" element={<DeviceGuidePage />} />
+        <Route path="/protection" element={<DeviceGuidePage />} />
 
         <Route element={<FeatureOutlet feature="books" home="/" />}>
           <Route path="/books" element={<BooksPage />} />

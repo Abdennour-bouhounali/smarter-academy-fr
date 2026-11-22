@@ -15,8 +15,8 @@ import { AuthContext } from '../../context/AuthContext';
  *
  *   élève      → /espace      son tableau de bord (reprendre sa leçon)
  *   professeur → /enseignant  ses classes
- *   parent     → /wali        l'espace parent (ses enfants liés)
- *   directeur  → /idara       l'espace établissement
+ *   parent     → /parent        l'espace parent (ses enfants liés)
+ *   directeur  → /etablissement       l'espace établissement
  *   admin      → /admin       le panneau d'administration
  *   visiteur → la page d'accueil, inchangée
  *
@@ -52,11 +52,11 @@ export default function HomeRedirect() {
   }
 
   if (!loading && user?.role === 'parent') {
-    return <Navigate to="/wali" replace />;
+    return <Navigate to="/parent" replace />;
   }
 
   if (!loading && user?.role === 'school_admin') {
-    return <Navigate to="/idara" replace />;
+    return <Navigate to="/etablissement" replace />;
   }
 
   return <Home />;

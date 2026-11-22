@@ -68,12 +68,12 @@ export default function TeacherThinkingListPage() {
                 {shown.map((c) => (
                   <tr key={c.id} className="border-t border-slate-100 hover:bg-slate-50" data-teacher-challenge={c.number}>
                     <td className="px-4 py-2.5">
-                      <Link to={`/enseignant/tafkir/${c.id}`} className="inline-flex items-center gap-1.5 font-space text-base font-black text-nav-accent hover:underline" dir="ltr">
+                      <Link to={`/enseignant/enigmes/${c.id}`} className="inline-flex items-center gap-1.5 font-space text-base font-black text-nav-accent hover:underline" dir="ltr">
                         {c.summit && <Mountain size={14} aria-label={t('summit')} />}{c.number}
                       </Link>
                     </td>
                     <td className="px-4 py-2.5 text-slate-800">
-                      <Link to={`/enseignant/tafkir/${c.id}`} className="hover:underline">{c.title}</Link>
+                      <Link to={`/enseignant/enigmes/${c.id}`} className="hover:underline">{c.title}</Link>
                       {c.examTag && <span className="ms-2 rounded-full bg-sky-50 px-2 py-0.5 text-[11px] font-bold text-sky-700 ring-1 ring-sky-200">{c.examTag === 'bac' ? 'BAC' : 'BEM'}</span>}
                     </td>
                     <td className="px-4 py-2.5"><span className={`rounded-full px-2.5 py-1 text-xs font-bold ring-1 ${BAND_TONE[c.band]}`}>{t(`teacher.band.${c.band}`)}</span></td>

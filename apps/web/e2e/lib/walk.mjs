@@ -12,12 +12,13 @@
 //   cut         no text of the game is cut by the edge of the window (except inside a box that slides on a phone);
 //   rawLatex    no `$` and no backslash command readable on screen outside a drawn formula (`.katex`);
 //   formulas    every drawn formula reads left to right (KaTeX's atoms in order) and keeps ONE line — a formula laid in
-//               rows by its author (`\begin{array}`) is checked row by row, and an Arabic `\text{…}` in it reads right to left;
+//               rows by its author (`\begin{array}`) is checked row by row;
 //   fontFloor   no visible text under 12 px (computed size × every CSS zoom above it), at EVERY size, for every walk — a
 //               drawn formula is measured at its own size (the `.katex` box: its exponents and indices are KaTeX's), nothing
 //               else is exempt (the knowledge map included, since 2026-11-19);
 //   wayOut      a way out (the selectors given) is on screen and nothing covers it; `sound: true` asks the sound button too;
-//   foreign     no word of ANOTHER lesson (`FOREIGN`), no « نقطة التعلّم », money only in « دج ».
+//   foreign     no word of ANOTHER lesson (`FOREIGN`), no « point d’apprentissage » (the word is « savoir-faire »), money
+//               only in euros (no « DA », no dinar, no « USD »), and no Arabic letter: the interface is French.
 //
 // createWalk(name, { foreign, foreignNumbers, fontFloor }) — per walk: more words and numbers of other lessons than the
 // pilot's (a later lesson adds the lessons before it). The 12 px floor is ON by default (GAME_WORLD.md « 12 px floor »);
@@ -60,7 +61,7 @@ export const tinyText = (page) =>
   page.evaluate((FLOOR) => {
     const tiny = [];
     // a text UNDER a layer that fills the window (a lab or a world opened over a page: fixed, the whole window) is not seen:
-    // the point at its middle belongs to that layer. Measured there, the page below was reported (« أدواتي » of a lesson's
+    // the point at its middle belongs to that layer. Measured there, the page below was reported (« Mes outils » of a lesson's
     // home, under the lab opened from it). A layer that lets the pointer through is not hit, so the text stays checked.
     const coverOf = (el) => {
       for (let x = el; x && x !== document.body; x = x.parentElement) {
@@ -145,7 +146,7 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
   /**
    * A student session on a lesson page. `seed` = localStorage entries (already prefixed) written before the app starts;
    * every `/api/` call is answered by a mock (`auth/me` → the student) and RECORDED in `window.__api`; the bodies posted to
-   * `/game-evidence` are kept in `window.__posts`. « عُدّة الانطلاق » of `lessonId` is seeded as played.
+   * `/game-evidence` are kept in `window.__posts`. « L’échauffement » (the launch kit) of `lessonId` is seeded as played.
    * `grade`: the student's year (3e by default; a walk of a lesson of another grade passes its own).
    */
   async function student({ uid, lessonId, url, seed = {}, grade = '3e' }) {
@@ -167,7 +168,7 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
         } catch {
           /* noop */
         }
-        const user = { id, name: 'تلميذ', firstName: 'ياسين', lastName: 'بلقاسم', role: 'student', roles: ['student'], email: 'eleve@example.test', email_verified_at: '2026-09-01T00:00:00Z', emailVerified: true, nameComplete: true, level: year, grade: year };
+        const user = { id, name: 'Lucas Martin', firstName: 'Lucas', lastName: 'Martin', role: 'student', roles: ['student'], email: 'eleve@example.test', email_verified_at: '2026-09-01T00:00:00Z', emailVerified: true, nameComplete: true, level: year, grade: year };
         const real = window.fetch.bind(window);
         window.fetch = async (input, init) => {
           const url = typeof input === 'string' ? input : input.url;
@@ -310,7 +311,7 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
           // as one line of its own. Anything else is ONE group: the whole formula on one line.
           const rowOf = (a) => { for (let x = a; x && x !== k; x = x.parentElement) if (x.parentElement?.classList.contains('vlist') && x.parentElement.closest('.mtable') && k.contains(x.parentElement.closest('.mtable'))) return x; return k; };
           const groups = new Map();
-          for (const a of leaves) { const r = a.getBoundingClientRect(); if (r.width <= 0) continue; const g = rowOf(a); if (!groups.has(g)) groups.set(g, []); groups.get(g).push({ r, arabic: /[\u0600-\u06FF]/.test(a.textContent), sup: Boolean(a.closest('.msupsub')) }); }
+          for (const a of leaves) { const r = a.getBoundingClientRect(); if (r.width <= 0) continue; const g = rowOf(a); if (!groups.has(g)) groups.set(g, []); groups.get(g).push({ r, word: Boolean(a.closest('.text')), sup: Boolean(a.closest('.msupsub')) }); }
           const label = (k.parentElement.querySelector('annotation')?.textContent ?? k.textContent).slice(0, 40);
           for (const group of groups.values()) {
             const atoms = group.map((x) => x.r);
@@ -319,9 +320,9 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
             // (an exponent raised over a tall bracket ends above the atom after it by design — « \sqrt{\left(\dfrac{4}{7}\right)^2} = »,
             // measured 2026-11-21: the « 2 » ends 3 px above the « = »: what follows an exponent is not a new line)
             if (atoms.some((r, i) => i > 0 && r.top >= atoms[i - 1].bottom - 1 && !group[i - 1].sup)) mirrored.push(`broken across two lines: ${label}`);
-            // its atoms in order stand left to right — an Arabic \text{…} inside it reads right to left by design: the order
-            // is checked on the mathematical atoms only (the lesson's own walk checks its Arabic rows read right to left)
-            const math = group.filter((x) => !x.arabic).map((x) => x.r);
+            // its atoms in order stand left to right — checked on the mathematical atoms only (a word written by `\text{…}`
+            // is a sentence inside the formula, not one of its atoms)
+            const math = group.filter((x) => !x.word).map((x) => x.r);
             if (math.length < 3) continue;
             // the atoms of one line (a wrapped formula is a different defect)
             const line = math.filter((r) => Math.abs(r.top - math[0].top) < r.height);
@@ -332,11 +333,14 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
         }
         for (const f of foreign) if (text.includes(f)) words.push(f);
         if (checkNumbers) for (const k of foreignNumbers) if (new RegExp(`(^|[^0-9])${k}([^0-9]|$)`).test(text)) words.push(String(k));
-        const learningPoint = text.includes('نقطة التعلّم') || text.includes('نقطة التعلم');
-        // « DA » glued to a number (« 900DA ») is money too: no Latin letter on either side (a segment DA in a formula is drawn
-        // letter by letter, one text node each)
-        const money = /(?<![A-Za-z])DA(?![A-Za-z])|€|\bUSD\b|د\.ج/.test(text);
-        return { raw: [...new Set(raw)], tiny: [...new Set(tiny)], words, learningPoint, money, mirrored: [...new Set(mirrored)], cut: [...new Set(cut)], text };
+        // the word of the vocabulary is « savoir-faire » (FRENCH_LANGUAGE_CONTRACT.md §3), never « point d’apprentissage »
+        const learningPoint = /points? d[’']apprentissage/i.test(text);
+        // money is in euros: « DA » glued to a number (« 900DA ») is a dinar too — no Latin letter on either side (a segment DA
+        // in a formula is drawn letter by letter, one text node each); the Arabic sign of the dinar is matched by its code points
+        const money = /(?<![A-Za-z])DA(?![A-Za-z])|\bUSD\b|\u062F\.?\u062C/.test(text) || /\bdinars?\b/i.test(text);
+        // the interface is French: no Arabic letter anywhere on screen (the code points, never the letters themselves)
+        const arabic = (text.match(/[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFC]+/) ?? [null])[0];
+        return { raw: [...new Set(raw)], tiny: [...new Set(tiny)], words, learningPoint, money, arabic, mirrored: [...new Set(mirrored)], cut: [...new Set(cut)], text };
       },
       [[...baseWords, ...foreign], [...baseNumbers, ...foreignNumbers], numbers, FLOOR_PX],
     );
@@ -376,7 +380,8 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
     const allowed = new Set([...(allow?.words ?? []), ...(allow?.numbers ?? []).map(String)]);
     const words = t.words.filter((x) => !allowed.has(x));
     check(words.length === 0, `${where}: nothing of another lesson on screen${words.length ? ' — ' + words.join(', ') : ''}${allowed.size && t.words.length > words.length ? ` (the bank's own text here: ${t.words.filter((x) => allowed.has(x)).join(', ')})` : ''}`);
-    check(!t.learningPoint && !t.money, `${where}: « الكفاءة », never « نقطة التعلّم »; money in « دج » only`);
+    check(!t.learningPoint && !t.money, `${where}: « savoir-faire », never « point d’apprentissage »; money in euros only`);
+    check(!t.arabic, `${where}: the screen is French, no Arabic letter${t.arabic ? ` — « ${t.arabic.slice(0, 30)} »` : ''}`);
     // the words a WORLD forbids on every one of its screens (`textRules`: [{ re, what }], given by a world's walk — e.g. the
     // nouns of another world; none for the islands' walks)
     // (a rule may read the page itself: `on(page)` → what breaks it, or null — e.g. a text node « p/q »)

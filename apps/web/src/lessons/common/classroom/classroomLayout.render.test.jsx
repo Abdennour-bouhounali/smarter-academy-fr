@@ -43,4 +43,16 @@ describe('class mode — left to right', () => {
     expect(css).not.toMatch(/direction:\s*rtl|row-reverse|\[dir=["']?rtl/);
     expect(css).not.toMatch(/[\u0600-\u06FF]/);
   });
+
+  it('« Mon cahier » holds the same END edge, one floor above « Projeter »: the two never overlap', () => {
+    const notebook = readFileSync(new URL('../../../features/practice/notebook/notebook.css', import.meta.url), 'utf8');
+    const at = notebook.indexOf('.sa-nb-lesson-trigger {');
+    const trigger = notebook.slice(at, notebook.indexOf('}', at));
+    expect(trigger).toMatch(/right:\s*1\.5rem/);
+    expect(trigger).not.toMatch(/\bleft:/);
+    const fab = rule('.sa-classroom-fab');
+    const rem = (block, prop) => Number(block.match(new RegExp(`${prop}:\\s*(?:calc\\()?([\\d.]+)rem`))?.[1]);
+    // the fab's top edge (its bottom + its 3rem height) stays under the notebook's bottom
+    expect(rem(fab, 'bottom') + 3).toBeLessThanOrEqual(rem(trigger, 'bottom'));
+  });
 });

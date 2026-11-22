@@ -1,4 +1,4 @@
-# Page tours — « جولة تعريفية »
+# Page tours — « Visite de la page »
 
 > **Authoritative** for: the first-visit guided tour of each student and
 > teacher page — when it opens, how its completion is stored, the registry,
@@ -8,7 +8,10 @@
 > **Status (2026-11-22).** Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: storage, the
 > provider, the overlay, the replay button and the workspace tours of §4. Not true here: the lesson and lesson-overview
 > tours were deleted with the module lessons (the registry has no `page` tour today); the walk `e2e/page-tours.mjs` is
-> deleted; the text is Arabic (`i18n/locales/ar/tour.json`) until step 1D.
+> deleted. The interface is French and left to right since 2026-11-22: every tour text is French
+> (`i18n/locales/fr/tour.json`). The daily challenge is OFF (`config/features.js`): its home card and its page are not
+> rendered, so the `student.home` challenge step is skipped and `student.challenge` never plays. No walk has checked the
+> tours in the French interface.
 
 ## 1. Behaviour
 
@@ -16,11 +19,10 @@
   opens **by itself the first time the account visits that page**: a short
   sequence of steps, each highlighting one key element with a title and one
   sentence of explanation.
-- Controls: **التالي** (Next), **السابق** (Previous, hidden on the first step),
-  **تخطّي** (Skip) and the ✕ button, **إنهاء** (Finish, on the last step).
-  Keyboard: `Esc` skips; the arrow keys move between steps in reading
-  direction (in RTL, `←` is Next). Keys are ignored while the user types in a
-  field.
+- Controls: **Suivant**, **Précédent** (hidden on the first step),
+  **Passer** (Skip) and the ✕ button (« Fermer la visite »), **Terminer** (on the last step).
+  Keyboard: `Esc` skips; `→` goes to the next step and `←` to the previous one
+  (left to right). Keys are ignored while the user types in a field.
 - **Finish** stores the tour as `completed`, and **Skip** (or ✕ or `Esc`)
   stores it as `skipped`. Both **close** the tour: it never opens by itself
   again for that account, on any device.
@@ -30,7 +32,7 @@
   `pointer-events: none`, so the page stays clickable, scrollable and
   navigable during the tour. Only the card takes clicks. Changing route
   closes the card.
-- **Replay:** the « جولة في الصفحة » button (signpost icon) in the workspace
+- **Replay:** the « Visite de la page » button (signpost icon) in the workspace
   navigation plays the current page's tour again. It is the only way to see a
   closed tour again. Finishing or skipping a replay updates the stored
   outcome. The button is hidden on pages that have no tour.
@@ -78,10 +80,10 @@ features/tours/
                         nextPlayableIndex, placeCard                          [entry bundle]
   PageTourProvider.jsx  fetches /me/tours once, opens the page's tour,
                         stores closures, exposes usePageTour()                [entry bundle]
-  TourReplayButton.jsx  « جولة في الصفحة » (label in `nav`)                    [entry bundle]
+  TourReplayButton.jsx  « Visite de la page » (label `nav.tourReplay`)         [entry bundle]
   TourOverlay.jsx       card + spotlight + keyboard — React.lazy              [own chunk]
 services/tourService.js fetchPageTours / closePageTour
-i18n/locales/ar/tour.json   all tour text — ON-DEMAND namespace `tour`        [own chunk]
+i18n/locales/fr/tour.json   all tour text — ON-DEMAND namespace `tour`        [own chunk]
 ```
 
 - `PageTourProvider` wraps the shell in **`StudentLayout`** and
@@ -111,11 +113,11 @@ i18n/locales/ar/tour.json   all tour text — ON-DEMAND namespace `tour`        
     intro phase).
   - A tour with **no targeted step left** does not play and is **not closed**,
     so it tries again on the next visit.
-  - A step without a target is a centred card, such as « مرحبًا بك ».
+  - A step without a target is a centred card, such as « Bienvenue dans ton espace ».
 - **Placement** (`placeCard`): the card goes below the target, else above
   it, else at the bottom of the screen overlapping the target. It is kept
   12 px inside the viewport. Rectangles are physical
-  (`getBoundingClientRect`), so RTL needs no special case. The spotlight
+  (`getBoundingClientRect`). The spotlight
   follows its target every frame (scroll, resize, animations) and slides
   between steps in 200 ms; with `prefers-reduced-motion` there is no slide
   and no smooth scroll.
@@ -125,39 +127,38 @@ i18n/locales/ar/tour.json   all tour text — ON-DEMAND namespace `tour`        
 - **Layers:** the overlay uses `z-[95]` and `z-[96]`, above the workspace
   bars (`z-40`) and modals (`z-50`).
 
-### RTL and Arabic
+### Text
 
-- The progress counter is « الخطوة N من M » written as `{{current}} من {{total}}`
-  — never `N / M`, which flips in RTL. The contract test enforces this.
-- The Next and Previous chevrons flip with `document.dir`. The progress dots
-  follow the flex direction.
-- All text is in `tour.json`. Terminology follows `ARABIC_RTL_CONTRACT.md`,
-  for example « الكفاءات » and never « نقاط التعلّم ».
+- The progress counter is `{{current}} sur {{total}}` (« 2 sur 5 ») — a word,
+  never `N / M`. The contract test enforces this.
+- All text is in `tour.json`. Language, register and vocabulary follow
+  `FRENCH_LANGUAGE_CONTRACT.md` (for example « savoir-faire », never
+  « compétence » for a learning point).
 
 ## 4. Current tours
 
 | Key | Page | Steps (targets) |
 |---|---|---|
 | `student.home` | `/espace` | welcome · `[data-home-hero]` · `[data-daily-challenge-card]` · `[data-home-stats]` · `[data-home-where]` · nav · replay button |
-| `student.courses` | `/espace/cours` | search · ميادين filter · view toolbar · lesson list (`catalogue.*`) |
-| `student.challenge` | `/espace/defi` | mission · start button · score · history (intro phase only) |
-| `student.explorer` | `/espace/explorer` | search · my grade · other grades · ميادين · list |
-| `student.mathlab` | `/espace/atelier` | shared tools · lab choice · lab switch · tools · أعمالي (landing and `?lab=` views each keep the steps they show) |
-| `student.progression` | `/espace/progression` | stats · « للعمل الآن » · curriculum |
+| `student.courses` | `/espace/cours` | search · themes (« Les thèmes ») filter · view toolbar · lesson list (`catalogue.*`) |
+| `student.challenge` | `/espace/defi` | mission · start button · score · history (intro phase only) — the route is closed while the daily challenge is off |
+| `student.explorer` | `/espace/explorer` | search · my grade · other grades · themes · list |
+| `student.mathlab` | `/espace/atelier` | shared tools · lab choice · lab switch · tools · « Mes travaux » (landing and `?lab=` views each keep the steps they show) |
+| `student.progression` | `/espace/progression` | stats · « À travailler maintenant » · curriculum |
 | `student.notebook` | `/espace/cahier` | new note · search · views · filters (sidebar on desktop, button on phone) |
-| `student.class` | `/espace/qism` | current classes · teacher recommendations · join by code |
+| `student.class` | `/espace/classe` | current classes · teacher recommendations · join by code |
 | `student.profile` | `/espace/profil` | identity · access · settings |
 | `student.unit` | `/courses/:levelId/:gradeId/:chapterId/units/:unitId` | objectives · challenge · progress · first lesson card — each target also matches the student view of a converted unit (`UnitMissionView`) |
 | `teacher.home` | `/enseignant` | welcome · usage · new class · classes · nav · replay button |
-| `teacher.courses` | `/enseignant/cours` | search · grades · ميادين · list |
+| `teacher.courses` | `/enseignant/cours` | search · grades · themes · list |
 | `teacher.mathlab` | `/enseignant/atelier` | same targets as the student, teacher text |
 | `teacher.notebook` | `/enseignant/cahier` | new note · search · views |
 | `teacher.classes` | `/enseignant/classes` | new class · class card |
-| `teacher.class` | `/enseignant/classes/:id` | join access · tab bar · التلاميذ · الكفاءات · الدروس tabs |
-| `teacher.reviews` | `/enseignant/tashih` | queue · class filter · an answer · send |
+| `teacher.class` | `/enseignant/classes/:id` | join access · tab bar · « Les élèves » · « Les savoir-faire » · « Les leçons » tabs |
+| `teacher.reviews` | `/enseignant/corrections` | queue · class filter · an answer · send |
 | `teacher.plan` | `/enseignant/offre` | current plan · how-to · seats · activation code |
 | `teacher.profile` | `/enseignant/profil` | name |
-| `teacher.unit` | same path as `student.unit` | objectives · lesson card · محاور chips (`[data-lesson-modules]`) · مذكرة الدرس / وضع القسم (`[data-teacher-lesson-actions]`) |
+| `teacher.unit` | same path as `student.unit` | objectives · lesson card · « Les étapes » chips (`[data-lesson-modules]`) · « La fiche du professeur et le mode classe » (`[data-teacher-lesson-actions]`) |
 
 The unit tour plays **once per account across all units**, not once per unit.
 
@@ -174,11 +175,11 @@ Each role has its own key and its own text.
 2. **Register** in `tourRegistry.js`: `{ key: '<role>.<page>', role, path, steps: [{ id, target? }] }`.
    Use one key per (role, page). `path` is a react-router pattern matched
    exactly; the query string is ignored.
-3. **Write the text** in `i18n/locales/ar/tour.json` under
+3. **Write the text** in `i18n/locales/fr/tour.json` under
    `<role>.<page>.<stepId>.title|body`: a short title and one simple sentence.
 4. **Run** `npx vitest run src/features/tours` (registry contract).
 
-`tourRegistry.test.js` fails if a step has no Arabic title or body, if a
+`tourRegistry.test.js` fails if a step has no French title or body (or carries an Arabic letter), if a
 `data-*` hook it targets is set nowhere in the code (the scan covers `src/`),
 or if the shared controls or the replay label are missing.
 `tourModel.test.js` covers matching, auto-start, step skipping and placement.

@@ -7,9 +7,9 @@ import { vi } from 'vitest';
 
 vi.mock('../i18n/index.js', async (importOriginal) => {
   const mod = await importOriginal();
-  const { default: admin } = await import('../i18n/locales/ar/admin.json');
+  const { default: admin } = await import('../i18n/locales/fr/admin.json');
   mod.default.addResourceBundle(mod.LANGUAGE, 'admin', admin, true, true);
-  const { default: teacher } = await import('../i18n/locales/ar/teacher.json');
+  const { default: teacher } = await import('../i18n/locales/fr/teacher.json');
   mod.default.addResourceBundle(mod.LANGUAGE, 'teacher', teacher, true, true);
   return mod;
 });

@@ -21,6 +21,7 @@
 import { divide } from './logic';
 import { divisionTip, productTip } from '../kit/tips';
 import { counted } from '../kit/authoring/numbers';
+import { formatEur } from '../../../../utils/money';
 
 const int = (rand, lo, hi) => lo + Math.floor(rand() * (hi - lo + 1));
 const pick = (rand, list) => list[Math.floor(rand() * list.length)];
@@ -35,9 +36,9 @@ const shuffle = (rand, list) => {
 
 /** French agreement of a counted noun: forms = [singular, plural] — « 1 caisse », « 12 caisses » (`counted` of the kit). */
 export const count = (forms, n) => counted(n, forms);
-/** A sum of money, written the French way: « 320 € », « 4 500 € » (narrow no-break space for thousands). */
 const groups = (n, sep) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, sep);
-const eur = (n) => `${groups(n, ' ')} €`;
+/** A sum of money in whole euros, through the one helper of the web: « 320 € », « 4 500 € ». */
+const eur = (n) => formatEur(n, { unit: 'euros' });
 /** A sum inside LaTeX: thousands with a thin space « 4\,500 ». */
 const texNum = (n) => groups(n, '\\,');
 const BOX = ['caisse', 'caisses'];

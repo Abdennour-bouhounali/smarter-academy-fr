@@ -50,7 +50,7 @@ describe('JoinClassLink — ouvrir un lien ne vaut pas consentement', () => {
   });
 
   it('après l’adhésion, le compte, la classe et l’accès sont relus AVANT d’aller à « Ma classe » (pas de rechargement)', () => {
-    const goToClass = src.slice(src.indexOf('const goToClass'), src.indexOf("navigate('/espace/qism'"));
+    const goToClass = src.slice(src.indexOf('const goToClass'), src.indexOf("navigate('/espace/classe'"));
     expect(goToClass).toMatch(/refreshUser/);
     expect(goToClass).toMatch(/refreshStudyContext\(\)/);
     expect(goToClass).toMatch(/refreshAvailability\(\)/);

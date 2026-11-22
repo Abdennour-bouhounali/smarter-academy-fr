@@ -1,4 +1,4 @@
-# « فضاء الوليّ » — the parent link, real study time, closed garden
+# « Espace parent » — the parent link, real study time, closed garden
 
 > Authoritative contract since 2026-10-22 (phase 1 of the « safe device » plan).
 > The problem it answers: parents and teachers are afraid to hand a child an
@@ -6,11 +6,16 @@
 > and nobody can tell real work from an open tab.
 >
 > **Status (2026-11-22).** Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the parent
-> link, its code and QR, study time, the week report, the device guide, the closed-garden test — all in the code. Not true
-> here: the interface and the e-mails are Arabic; the day, the week (Sunday → Saturday) and the weekly e-mail run on
-> Africa/Algiers (`config/family.php`, `routes/console.php`); the domain written in the code is `smarter-academy.com` —
-> French time, week and domain are step 1E of the plan, not yet applied in the code. Whether minors' parent links go live
-> in France waits for the owner and a lawyer (plan §7, 4).
+> link, its code and QR, study time, the week report, the device guide, the closed-garden test — all in the code. The
+> interface is French and left to right since 2026-11-22, and the e-mails are French. The day and the week of the report
+> (Monday → Sunday, `FamilyClock`) are counted in the school time zone `config('app.school_timezone')`, `Europe/Paris` by
+> default (`SCHOOL_TIMEZONE`); the weekly e-mail leaves on Mondays at 08:00 in that zone (`routes/console.php`); the
+> domain written in the code is `smarter-academy.fr` (`DeviceGuide.jsx`). Routes are French (`/p/:token`, `/parent`,
+> `/protection`). **Old addresses**: the API mails checked on 2026-11-22 (`ParentLinkRevokedNotification`,
+> `ParentWeeklyReportNotification`, `ParentAccessLinkService::url`) write the French paths (`/parent`,
+> `/parent/enfants/{id}`, `/p/{token}`, API commit `a72f5528`); the old transliterated paths (`/wali…`, `/w/…`) are not routed
+> any more (no real user ever received one). No walk has checked these pages in French. Whether minors' parent links
+> go live in France waits for the owner and a lawyer (plan §7, 4).
 
 A web page cannot lock a device: it cannot see or block another tab. The
 platform therefore answers in three layers, and claims nothing more:
@@ -18,7 +23,7 @@ platform therefore answers in three layers, and claims nothing more:
 | Layer | What it does | Where |
 |---|---|---|
 | **Prove the work** | measures REAL study time on the platform's own pages and shows a parent what was done, through a private link with no account | §2 link, §3 time, §4 report |
-| **Lock the device** | explains how to restrict the device itself with the OS's own free tools | §6 guide `/himaya` |
+| **Lock the device** | explains how to restrict the device itself with the OS's own free tools | §6 guide `/protection` |
 | **Closed garden** | nothing inside the student space leads off the platform | §7 |
 
 Phase 2 (study sessions with a goal, a teacher's live « on task » view, a
@@ -27,29 +32,29 @@ kiosk shortcut) and phase 3 (Android lock-task app, offline mode) are
 
 ## 1. How a parent sees the work — no account (owner, 2026-10-23)
 
-Many Algerian parents are not at ease with accounts. Two accounts (the child's
+Many parents are not at ease with accounts. Two accounts (the child's
 and the parent's) plus a code to type was too much at the start. So **the
-parent has no account**. They read through « رابط الوليّ », a private link,
+parent has no account**. They read through the « lien parent », a private link,
 which reaches them in one of two ways:
 
 | Way | Who makes it | How the parent opens it |
 |---|---|---|
-| The child's link | the student, in « حسابي » ← « وليّ الأمر » (§2) | the child sends it (system share sheet, copy), or the parent scans the QR on the child's screen |
-| « بطاقة الوليّ » | the teacher, « التلاميذ » ← « بطاقات الأولياء (QR) » (§2bis) | the parent scans the printed QR, for example at the parents' meeting |
+| The child's link | the student, in « Profil » › « Parent » (§2) | the child sends it (system share sheet, copy), or the parent scans the QR on the child's screen |
+| The « carte parent » | the teacher, « Élèves » › « Cartes pour les parents (QR) » (§2bis) | the parent scans the printed QR, for example at the parents' meeting |
 
-Both lead to the same link of that child, and to the same page `/w/:token`.
+Both lead to the same link of that child, and to the same page `/p/:token`.
 
 The parent account (§2ter) still exists in the code, but nobody can sign up
 for one any more.
 
-## 2. « رابط الوليّ » — the private link
+## 2. The « lien parent » — the private link
 
 ```text
-student  /espace/profil › « وليّ الأمر »
-         reads « ما سيراه وليّك » / « ما لن يراه أبدًا »
-         taps « أوافق وأنشئ رابط وليّي »  → POST /student/parent-link {consent:true}
-         gets https://smarter-academy.com/w/<32 chars> + its QR (shown on screen)
-parent   opens /w/<token> from WhatsApp or the camera → the report, no login
+student  /espace/profil › « Parent »
+         reads « Ce que ton parent verra » / « Ce qu’il ne verra jamais »
+         taps « J’accepte et je crée mon lien parent »  → POST /student/parent-link {consent:true}
+         gets <FRONTEND_URL>/p/<32 chars> + its QR (shown on screen)
+parent   opens /p/<token> from a message or the camera → the report, no login
 ```
 
 **Storage.** `parent_access_links`:
@@ -57,7 +62,7 @@ parent   opens /w/<token> from WhatsApp or the camera → the report, no login
 - The token is found by `token_hash` (sha256) and kept encrypted
   (`token_encrypted`, Laravel `encrypted` cast). The student and the teacher can
   show the SAME link or QR again without replacing it.
-- One live link per student. `POST` again (« رابط جديد ») revokes the previous
+- One live link per student. `POST` again (« Nouveau lien ») revokes the previous
   one (`revoked_by = system`).
 - `DELETE /student/parent-link` revokes it (`revoked_by = student`).
 - Nothing is deleted.
@@ -73,7 +78,7 @@ anonymous `throttle:n,1` would share one key.
 |---|---|
 | `GET /parent-link/{token}` | `{child: {firstName, lastName, grade}, pinSet, unlocked}`, and counts an opening (at most once per 10 min) |
 | `GET /parent-link/{token}/report?week=n` | the week report (§4) |
-| `GET /parent-link/{token}/progress` | « التقدّم بالتفصيل » (§4bis) |
+| `GET /parent-link/{token}/progress` | « La progression en détail » (§4bis) |
 | `POST /parent-link/{token}/pin {pin}` | sets the parent's 4-digit code, once (409 `pin_already_set`), and returns a pass |
 | `POST /parent-link/{token}/unlock {pin}` | returns a pass. A wrong code gives 422 `pin_wrong`; 5 wrong codes lock it for 15 min (429 `pin_locked`) |
 
@@ -85,10 +90,9 @@ How each response behaves:
 - Every response is `Cache-Control: no-store` and `X-Robots-Tag: noindex, nofollow`.
 - No response carries an email.
 
-**The optional code.** On the first opening, the parent can « احمِ هذا الرابط
-برمز »:
+**The optional code.** On the first opening, the parent can « Protégez ce lien par un code »:
 
-- From then on, a browser without a valid pass sees « أدخل رمزك ». A request
+- From then on, a browser without a valid pass sees « Saisissez votre code ». A request
   without the pass gets **401 `pin_required`**.
 - The pass is an encrypted `{link, pin fingerprint, expiry 30 days}`. The browser
   keeps it in `localStorage` (`sa.parent-pass.<token prefix>`), wrapped in
@@ -103,12 +107,12 @@ profile:
 - after:
   - the QR (to scan from the laptop screen with the parent's phone);
   - the URL;
-  - « مشاركة الرابط » (`navigator.share`, falling back to copy);
-  - « نسخ الرابط »;
-  - « فُتح N مرّة — آخر مرّة … »;
+  - « Partager le lien » (`navigator.share`, falling back to copy);
+  - « Copier le lien »;
+  - « Ouvert N fois » — « Dernière fois : … »;
   - whether a code is set;
-  - « أنشأه أستاذك » when the link came from the teacher;
-  - « رابط جديد » and « إلغاء الرابط ».
+  - « Créé par ton professeur pour la carte parent. » when the link came from the teacher;
+  - « Nouveau lien » and « Supprimer le lien ».
 
 There is **no WhatsApp link in the student space** (closed garden, §7). Sharing
 goes through the phone's own share sheet.
@@ -118,9 +122,9 @@ progress for parent and student, replacement and revocation (410), unknown
 token (404), PIN set / unlock / pass / lock / unlock after 15 min, no email,
 and the headers.
 
-## 2bis. « بطاقات الأولياء » — the teacher's QR cards
+## 2bis. « Cartes parent » — the teacher's QR cards
 
-In a class's « التلاميذ » tab, the teacher selects students and calls
+In a class's « Élèves » tab (button « Cartes pour les parents (QR) »), the teacher selects students and calls
 `POST /teacher/classrooms/{id}/students/parent-cards {studentIds}` (`manage`,
 throttle 10/min, `no-store`). The dialog is
 `features/teacher/members/ParentCardsDialog.jsx`, lazy.
@@ -135,7 +139,7 @@ The server (`Domain/Classroom/ParentCards`):
 - answers `{id, firstName, lastName, url}` and never an email;
 - logs `teacher.parent_cards_issued`.
 
-Each card shows the class, the child's name, « تابِع عمل ابنك », three steps
+Each card shows the class, the child's name, « Suivez le travail de votre enfant », three steps
 (open the camera, tap the link, keep it, optionally protect it) and the QR,
 printed from a `[data-parent-cards-print]` portal (`parentCards.css`).
 
@@ -148,25 +152,25 @@ during development.
 
 **Consent.** A student who joined the class already accepted that their
 teacher reads their work; the card passes that reading on to the child's
-guardian. The student sees the link in their profile (« أنشأه أستاذك ») and
+guardian. The student sees the link in their profile (« Créé par ton professeur pour la carte parent. ») and
 can renew or revoke it, as with their own.
 
 ## 2ter. The parent account (kept, not offered)
 
 `users.role = 'parent'`, the `/api/v1/parent/*` routes (`can:parent`), the
-`/wali` space and the code link (`parent_links`, `parent_link_codes`) remain
+`/parent` space and the code link (`parent_links`, `parent_link_codes`) remain
 for later and for accounts that already exist. **Since 2026-10-23 `parent`
 is no longer in `User::SELF_REGISTERABLE_ROLES`**, so `/register` and Google
-refuse it (422). The register page and the Google step no longer show
-« أنا وليّ أمر », and the student profile no longer issues codes
+refuse it (422). The register page and the Google step no longer offer
+a parent choice, and the student profile no longer issues codes
 (`ParentsCard.jsx` was removed).
 
 What still works for an existing parent account:
 
-- `/wali` lists the linked children and opens the same report and progress
+- `/parent` lists the linked children (« Mes enfants »); `/parent/enfants/:studentId` opens the same report and progress
   (`/parent/children/{id}/report|progress`, through
   `ParentLinkService::activeLink`, 404 otherwise);
-- the Sunday email (§5);
+- the Monday email (§5);
 - the code-linking API (6 children / 4 parents; reasons `invalid_code`,
   `expired_code`, `already_linked`…; a student unlinking emails the parent).
 
@@ -196,8 +200,8 @@ The **surface** comes from the URL (`surfaceFor`):
 | surface | URLs |
 |---|---|
 | `lesson` | `/courses/<level>/<grade>/<chapter>/<lesson>…` |
-| `practice` | `/espace/pratique`, `/espace/tashih` |
-| `challenge` | `/espace/defi`, `/espace/diagnostic` |
+| `practice` | `/espace/pratique`, `/espace/corrections` |
+| `challenge` | `/espace/defi`, `/espace/diagnostic` (both closed while the daily challenge and the diagnostic are off) |
 | `lab` | `/espace/atelier`, `/espace/cahier` |
 | `game` | `/espace/jeux` |
 | `other` | the rest of `/espace` and `/courses` |
@@ -220,7 +224,7 @@ token, so the last beat never leaves with a dead token. Throttle 30/min,
 - It does not trust a beat. A beat covers at most the time elapsed since the
   previous one, plus 15 s (cache key `study-time:last:{id}`), and never more
   than 180 s. An over-claim is scaled down.
-- Rows go into `study_time_days (user_id, day, surface)`: local day (`family.timezone`, Algiers today),
+- Rows go into `study_time_days (user_id, day, surface)`: local day (`FamilyClock`, the school time zone, `Europe/Paris` by default),
   counters capped at 16 h. `day` is a plain `Y-m-d` string (no date cast).
 
 **What it never is.** The platform does not see, log or infer other sites.
@@ -231,7 +235,7 @@ token, so the last beat never leaves with a dead token. Throttle 30/min,
 
 `ParentReportService::week($student, $weeksBack)`:
 
-- The week runs Sunday → Saturday in `family.timezone` (`FamilyClock`; Algiers today), up to 8 weeks back.
+- The week runs Monday → Sunday in the school time zone (`FamilyClock`, `config('app.school_timezone')`, `Europe/Paris` by default), up to 8 weeks back (`family.report_weeks_back`).
 - It returns:
   - `time`: 7 `days` with study / game / other / idle / away / leaves, plus
     `bySurface`, the totals and `activeDays` (≥ 1 study minute);
@@ -240,37 +244,37 @@ token, so the last beat never leaves with a dead token. Throttle 30/min,
   - `lessons`: `student_lesson_progress` touched in the week — worked, completed
     this week, 12 titles;
   - `mastered`: Mastery V2 transitions into `mastered` in the week, distinct
-    الكفاءات, 20 titles;
+    savoir-faire, 20 titles;
   - `lastSeenAt`.
 - It never includes an email, a notebook note or an answer photo.
 
 Who reads it:
 
-- the parent through « رابط الوليّ »: `GET /parent-link/{token}/report?week=n`,
-  page `/w/:token`;
+- the parent through the « lien parent »: `GET /parent-link/{token}/report?week=n`,
+  page `/p/:token`;
 - an existing parent account: `GET /parent/children/{id}/report?week=n`;
 - **the student: `GET /student/parents/report?week=n`, page
-  `/espace/profil/wali` « ما يراه وليّك »**.
+  `/espace/profil/parent` « Ce que voit ton parent »**.
 
 All of them use the same service and the same component
 (`features/family/WeekReport.jsx`). `ParentAccessLinkTest` and `ParentSpaceTest`
 assert that the responses are identical. Transparency is that page, not a
 promise.
 
-`/wali` lists the children with `glance()`: today's and this week's study
+`/parent` lists the children with `glance()`: today's and this week's study
 time, and the last time seen.
 
-The week report names a Learning Point state with the platform's single label
-set (`ARABIC_RTL_CONTRACT.md`): « كفاءات صارت « متحكَّم فيها » هذا الأسبوع »,
-never « المتقنة ».
+The week report names a learning-point state with the platform's single label
+set (`FRENCH_LANGUAGE_CONTRACT.md`): « Savoir-faire devenus « maîtrisés » cette
+semaine » (`family.report.masteredTitle`).
 
-## 4bis. Detailed progress « التقدّم بالتفصيل » (2026-10-23)
+## 4bis. Detailed progress « La progression en détail » (2026-10-23)
 
-The link page `/w/:token`, the parent account's child page and « ما يراه وليّك »
+The link page `/p/:token`, the parent account's child page and « Ce que voit ton parent »
 have two tabs (`features/family/ReportTabs.jsx`):
 
-- « الأسبوع »: the week report (§4);
-- « التقدّم بالتفصيل »: the whole year (`?tab=progress`, so a link can open it).
+- « La semaine »: the week report (§4);
+- « La progression en détail »: the whole year (`?tab=progress`, so a link can open it).
 
 **Server.** `ParentProgressService::forStudent($student)` serves both readers:
 `GET /parent-link/{token}/progress` (the link), `GET /parent/children/{id}/progress`
@@ -283,7 +287,7 @@ school. It recomputes nothing:
 
 - totals and the timeline come from `StudentDossier` (the dossier the teacher
   reads, without a class scope);
-- الكفاءات states come from Mastery V2 (`student_learning_point_progress`).
+- savoir-faire states come from Mastery V2 (`student_learning_point_progress`).
 
 It returns:
 
@@ -293,7 +297,7 @@ It returns:
   - lessons started;
   - answers and success rate (`OutcomeStats`, already 0–100);
   - `masteryCounts`.
-- `needsSupport`: up to 12 الكفاءات in `gap`, then `reinforce`, lowest
+- `needsSupport`: up to 12 savoir-faire in `gap` (« En difficulté »), then `reinforce` (« À consolider »), lowest
   confidence first. This is the parent's first question: « where does my child
   need help? ».
 - `lessons`: every lesson the child touched (progress, practice or mastery),
@@ -302,50 +306,51 @@ It returns:
   - modules done out of the active published ones;
   - practice: sessions, correct out of answered, best completed level;
   - the best final test;
-  - every non-retired الكفاءة of the lesson with its state (`unassessed` when
+  - every non-retired savoir-faire of the lesson with its state (`unassessed` when
     no row).
 - `timeline`: the 20 latest events of `StudentDossier::timeline`, with
-  timestamps in ISO and **without** the French `detail` field. The client
-  composes the Arabic from `family.progress.event.*`.
+  timestamps in ISO and **without** the server's `detail` field. The client
+  composes the sentence from `family.progress.event.*`.
 
 **Client.** `features/family/ProgressDetail.jsx`, one column first: the year
-bar, three figures, the state distribution, « ما يحتاج دعمًا », one
+bar, three figures, the state distribution, « Ce qui demande de l’aide », one
 collapsible card per lesson, and the timeline.
 
 - State labels come from `stateLabel()` (`student:mastery.*`, the single set).
 - Titles go through `MathLabel`: a title such as `a = b × q` is isolated.
 
 `ParentSpaceTest` asserts that the parent and the student get identical
-payloads, the lesson's الكفاءات in order, and no `detail` and no email in the
+payloads, the lesson's savoir-faire in order, and no `detail` and no email in the
 timeline.
 
-## 5. The Sunday email (parent accounts only)
+## 5. The Monday email (parent accounts only)
 
-A link has no email address, so a parent who reads through « رابط الوليّ » gets
+A link has no email address, so a parent who reads through the « lien parent » gets
 no email: the link always shows the current week. A weekly WhatsApp message to
 a phone number the parent gives is **Planned**; it needs a WhatsApp Business
 provider.
 
-`smarter:family:weekly-reports` (`routes/console.php`) runs Sundays at 08:00
-Africa/Algiers. It sends one `ParentWeeklyReportNotification` (mail) per active
+`smarter:family:weekly-reports` (`routes/console.php`) runs Mondays at 08:00 in
+the school time zone (`config('app.school_timezone')`, `Europe/Paris` by default). It sends one `ParentWeeklyReportNotification` (mail) per active
 link that meets all of these conditions:
 
 - `weekly_email` is on (the parent's checkbox on the child page);
 - the parent is active and verified.
 
-The email covers the week that just ended. It is idempotent through
+The email (French) covers the week that just ended (Monday → Sunday); its
+button opens `/parent/enfants/{id}`. It is idempotent through
 `parent_links.last_weekly_report_week`.
 
 WhatsApp delivery is **Not yet implemented**: it needs a WhatsApp Business API
 provider, which is an owner decision.
 
-## 6. The device guide « اجعل الجهاز للدراسة فقط »
+## 6. The device guide « Réserver l’appareil aux devoirs »
 
-- Public at `/himaya` (footer link `marketing.footer.deviceGuide`). It ends on
-  how to get « رابط الوليّ » (from the child's profile or the teacher's card);
+- Public at `/protection` (footer link `marketing.footer.deviceGuide`). It ends on
+  how to get the « lien parent » (from the child's profile or the teacher's card);
   there is no account to create.
-- Linked from the bottom of `/w/:token`.
-- Inside the parent space at `/wali/himaya`.
+- Linked from the bottom of `/p/:token`.
+- Inside the parent space at `/parent/protection`.
 - Component: `features/family/DeviceGuide.jsx`. Text: `family.json › guide.*`.
 
 It covers:
@@ -358,7 +363,7 @@ It covers:
 
 `ALLOWED_HOSTS` lists what a restricted browser must allow:
 
-- `smarter-academy.com` (site + API) — the Algerian domain, still in `DeviceGuide.jsx` (plan 1E);
+- `smarter-academy.fr` (site + API);
 - `fonts.googleapis.com` and `fonts.gstatic.com` (fonts);
 - `accounts.google.com` (Google sign-in only).
 
@@ -375,8 +380,7 @@ social network, no ad, no `window.open`.
   - the student `features/*`;
   - `StudentLayout` and `CourseLayout`.
 - It fails on any external URL or `window.open`. The allowed exceptions are
-  resources, never links: SVG/XML namespaces, the exam sheet's Amiri font, and
-  the `VITE_API_URL` fallback.
+  resources, never links: SVG/XML namespaces and the `VITE_API_URL` fallback.
 - The whiteboard (Excalidraw) was the one open door:
   - `validateEmbeddable={() => false}` (no YouTube / Vimeo / Figma embeds);
   - `onLinkOpen` cancels any link on a shape that leaves the platform;
@@ -386,7 +390,7 @@ social network, no ad, no `window.open`.
 
 | Side | Files |
 |---|---|
-| Link | migration `2026_10_23_000001_create_parent_access_links`, model `ParentAccessLink`, `Domain/Family/ParentAccessLinkService`, `Domain/Classroom/ParentCards`, `Http/Controllers/Family/ParentLinkController`, rate limiters `parent-link` / `parent-link-pin`; web `pages/parent/ParentLinkPage.jsx` (route `/w/:token`), `features/family/ParentLinkCard.jsx`, `features/family/QrCode.jsx`, `features/teacher/members/ParentCardsDialog.jsx` + `parentCards.css`; dependency `qrcode-generator@1.4.4` |
+| Link | migration `2026_10_23_000001_create_parent_access_links`, model `ParentAccessLink`, `Domain/Family/ParentAccessLinkService`, `Domain/Classroom/ParentCards`, `Http/Controllers/Family/ParentLinkController`, rate limiters `parent-link` / `parent-link-pin`; web `pages/parent/ParentLinkPage.jsx` (route `/p/:token`; the old `/p/:token` redirects to it), `features/family/ParentLinkCard.jsx`, `features/family/QrCode.jsx`, `features/teacher/members/ParentCardsDialog.jsx` + `parentCards.css`; dependency `qrcode-generator@1.4.4` |
 | API | `config/family.php`, migration `2026_10_22_000005_create_family_tables`, models `ParentLink`, `ParentLinkCode`, `StudyTimeDay`, `Domain/Family/*` (`FamilyClock`, `FamilyException`, `ParentLinkService`, `ParentReportService`, `StudyTimeService`), `Http/Controllers/Family/*`, notifications `ParentLinkRevokedNotification`, `ParentWeeklyReportNotification`, command `SendParentWeeklyReports` |
 | Web | `features/studyTime/*`, `features/family/*`, `services/familyService.js`, `services/studyTimeService.js`, `components/layout/ParentLayout.jsx`, `pages/parent/*`, `pages/student/ParentView.jsx`, i18n namespace `family` (on demand) |
 | Progress | `Domain/Family/ParentProgressService.php`, `features/family/ProgressDetail.jsx`, `features/family/ReportTabs.jsx` |
@@ -398,18 +402,18 @@ tracker, the lazy route stubs, the eager keys `common.apiErrors.family`,
 Everything else is lazy, including the QR library (`BUNDLE_BOUNDARIES.md`).
 
 **Screens — phone-first (owner, 2026-10-23).** Parents arrive from WhatsApp, a
-QR or the Sunday email, on a phone. So these pages are designed for the phone
+QR or the Monday email, on a phone. So these pages are designed for the phone
 first and tested at 390×844 AND 1366×768, an exception to the tablet/laptop
 rule like `/books` and the game space:
 
-- the link page `/w/:token`;
-- `/wali/*`;
-- the public guide `/himaya`.
+- the link page `/p/:token`;
+- `/parent/*`;
+- the public guide `/protection`.
 
 Tip: a browser window rarely shrinks to 390 px, but a same-origin `<iframe>`
 390 px wide gives the page a true phone viewport.
 
-« احفظ هذا الرابط » tells the parent to keep the WhatsApp message or **bookmark**
+« Gardez ce lien » tells the parent to keep the WhatsApp message or **bookmark**
 the page, never to add it to the home screen. The PWA manifest's
 `start_url: "/"` would install the homepage and lose the token.
 

@@ -5,20 +5,22 @@
 > 2026-11-22. True here: the shell, the « previous lessons only » rule, the shared numbers, the quests, the sounds, the
 > fifteen instruments' code. Not true here: every instrument has `lesson: null` (the Algerian tags are in
 > `git show 049380e:apps/web/src/lessons/common/lessonlab/registry.js`), `lessonOrder.generated.json` lists no lesson,
-> so the lab lists nothing; the instruments' labels are Arabic and some drawings are laid out right to left (plan §4,
-> step 1C); no lab walk exists. It was never used by a real student.
+> so the lab lists nothing; no lab walk exists. Since 2026-11-22 the lab is French and left to right: its screen
+> (« Mon labo », « Les outils de cette leçon », « Mon armoire », « Mes nombres », « Essaie »), the instruments' names,
+> hints and labels are French, and the drawings that the Arabic lab laid « from the right » now read from the left
+> (`layout.render.test.jsx`). It was never used by a real student.
 
 ## 1. What it is
 
 One lab for every lesson. From a lesson the student opens the lab and finds:
 
-- **this lesson's tools** — the instruments introduced by this very lesson;
-- **the cabinet** — the instruments of EVERY lesson before it, of every grade, grouped by grade then by lesson. An
+- **this lesson's tools** (« Les outils de cette leçon ») — the instruments introduced by this very lesson;
+- **the cabinet** (« Mon armoire ») — the instruments of EVERY lesson before it, of every grade, grouped by grade then by lesson. An
   instrument of a later lesson is **not listed at all** (not even locked): a student never meets a tool of something he
   has not studied;
-- **my numbers** — two numbers, SHARED by all instruments: the student carries his numbers from one instrument to the
+- **my numbers** (« Mes nombres ») — two numbers, SHARED by all instruments: the student carries his numbers from one instrument to the
   next and sees the same fact in another form;
-- **try** — two or three things to MAKE per instrument, ticked when made, counted in one ⭐ total for the student.
+- **try** (« Essaie ») — two or three things to MAKE per instrument, ticked when made, counted in one ⭐ total for the student.
 
 The lab opens on the first instrument of the lesson (or of the cabinet when the lesson introduces none).
 
@@ -65,9 +67,9 @@ a one-line reading of FIXED height — the drawing never moves when the reading 
    corner of a rectangle, a padlock of digits, a lens that tests each number it passes over. A handle that was never
    moved pulses.
 2. The drawing READS: counters, landings, squares and their numbers are computed (`logic.js`, pure, tested) — never typed.
-3. Numbers and equalities are written left to right (`.ll-draw > svg { direction: ltr }`); today an Arabic label sets
-   `direction="rtl"` on itself — the French direction rules: `FRENCH_LANGUAGE_CONTRACT.md`, not yet applied in the code.
-   A label must stay inside the stage.
+3. Everything is laid out left to right (`.ll-draw > svg { direction: ltr }`; `FRENCH_LANGUAGE_CONTRACT.md` §8): the
+   first counter, tab, column or list item is on the LEFT (`layout.render.test.jsx`, which also refuses a right-to-left
+   direction and an Arabic string in any drawing). A label must stay inside the stage.
 4. `report({ key: `${a}:${b}`, … })` tells the shell what was made. The `key` stamps the numbers it was made WITH: a
    report about other numbers is ignored.
 5. No person is drawn.
@@ -126,8 +128,9 @@ returns the quests the state has just proved. Nothing is ticked before the stude
 
 Files: `tools/Rows.jsx`, `Jumps.jsx`, `Sentences.jsx`, `Divisors.jsx`, `Planks.jsx`, `Common.jsx`, `Lists.jsx`,
 `Euclid.jsx`, `Duo.jsx`, `Strip.jsx`, `NumberCourt.jsx`, `FractionPlatform.jsx`, `PaperDivision.jsx`, `Rules.jsx`,
-`Bracket.jsx`. The decimal comma, the division layout of `paper` and the labels were written for Algeria; the French
-writing: `FRENCH_LANGUAGE_CONTRACT.md` (division posée, formats), not yet applied in the code.
+`Bracket.jsx`. The labels are French and the numbers take the decimal comma (`logic.js`: « 29,9209 », « 5,47 »).
+Whether the layout of `paper` (« La division posée », `gameworld/kit/longDivision.js`) is the French division posée
+of the official texts: `[NOT CHECKED 2026-11-22]`.
 
 **To add an instrument**: write `tools/<Name>.jsx`, add its `TOOLS` entry (lesson code), its maths in `logic.js` with
 tests, its `QUESTS` and its `observe` branch, and a row in the table above. When a NEW lesson has a manipulation worth
@@ -162,7 +165,7 @@ the entry bundle (`BUNDLE_BOUNDARIES.md`).
 ## 8. Check
 
 - Unit: `npx vitest run src/lessons/common/lessonlab` in `apps/web` — `lab.test.js`, `order.test.js` and the render
-  tests of `bracket`, `court`, `duo`, `lists`, `piece`, `planks`, `strip`: the order is the catalogue's, no future
+  tests of `bracket`, `court`, `duo`, `lists`, `piece`, `planks`, `strip` and `layout.render.test.jsx` (left to right): the order is the catalogue's, no future
   instrument for any lesson, every equality the instruments draw (each `logic.js` function checked on a grid against an
   independent computation), quests ticked only by what was made, the sounds. Which of their lesson-bound assertions still
   run on an empty catalogue: `[NOT CHECKED 2026-11-22]`.
@@ -171,7 +174,7 @@ the entry bundle (`BUNDLE_BOUNDARIES.md`).
 ## 9. Known limits
 
 - No instrument is tagged with a lesson; the fifteen were made for Algerian lessons on division, divisors, fractions and
-  square roots.
+  square roots, and were turned French on 2026-11-22.
 - Not validated by the owner; no real student has used it. The lab's state is not synced between devices.
 - The sounds were checked by a walk that read what was played, not by a human ear.
 - Phones are paused; the phone rules are in `GAME_WORLD.md` « On a phone ».

@@ -48,7 +48,7 @@ const dounia = {
 describe('suivi de la classe — the class on one lesson', () => {
   it('reads an exercise as a teacher names it', () => {
     expect(exerciseRef('ex-4am-qasim-adad-tabii-l3-002')).toEqual({ level: 3, number: 2 });
-    expect(exerciseLabel('ex-4am-qasim-adad-tabii-l3-002')).toBe('Niveau 3 · exercice 2');
+    expect(exerciseLabel('ex-4am-qasim-adad-tabii-l3-002')).toBe('Palier 3 · exercice 2');
     expect(exerciseRef('weird')).toEqual({ level: null, number: null });
     expect(exerciseLabel('weird')).toBe('weird');
     expect(STATES.every((s) => STATE_LABEL[s])).toBe(true);

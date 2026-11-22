@@ -3,8 +3,14 @@
 > **Status (2026-11-22).** Covers the admin panel (`/admin/*`, `pages/admin/`, API `Domain/Admin`) and, in its
 > Annexe, publication, entitlement, tiers, ambassadors, account deletion and the registration switch. Imported from the
 > Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the panel and its API, on an EMPTY catalogue (no lesson
-> to list). Not true here: the panel still speaks Arabic, right to left, `ar-DZ` dates (steps 1C–1E); the commercial
-> rule of Annexe A7 is Algeria's (no online payment) — France sells with Stripe (plan §4 step 1F), not wired yet.
+> to list — `lessons/lessonIndex.generated.json` is empty). Since 2026-11-22 the panel speaks French, left to right,
+> dates in `fr-FR` (`locale.js › LOCALE`, `adminUi.jsx › formatDate`); the language rules are
+> `FRENCH_LANGUAGE_CONTRACT.md`. The only Arabic left in the panel is the books store (off, `config/features.js ›
+> books`; its pages and the five `nav.books*` labels of `admin.json`, the one exemption of `noArabic.test.js`). Online
+> payment: a Stripe path exists in the API (`Domain/Billing/CheckoutService`, webhooks) behind `PaymentGate`, CLOSED by
+> default (`config/billing.php › payments.open`, overridden by the admin's `PATCH /admin/payments/switch`,
+> `components/admin/PaymentsSwitchCard.jsx`); Annexe A7's « no online payment » table is the Algerian rule, kept as
+> the rule that applies while payments are closed (see the note there).
 
 **Document:** `ADMIN_PANEL_ARCHITECTURE.md`  
 **Status:** Approved product/technical specification  
@@ -337,7 +343,7 @@ Visibility changes must be backend-enforced.
 > table, in `ContentAccess::visibleStatuses()`, for lessons, modules and
 > exercises alike:
 >
-> | State | Admin | Ambassador teacher (« سفير ») | Other teacher | Student / visitor |
+> | State | Admin | Ambassador teacher (« Ambassadeur ») | Other teacher | Student / visitor |
 > |---|---|---|---|---|
 > | `published` | ✓ | ✓ | ✓ | ✓ |
 > | `hidden` | ✓ | ✓ | — | — |
@@ -361,10 +367,10 @@ Visibility changes must be backend-enforced.
 > (`unit`, `unitTitle`), falling back to the domain (thème).
 >
 > **Terminology.** The level between the thème and the lesson is the unit; a lesson's part is a module. The French
-> words of the panel are `FRENCH_LANGUAGE_CONTRACT.md` — not yet applied in the code (the labels are Arabic).
+> words of the panel are `FRENCH_LANGUAGE_CONTRACT.md` (the panel shows « Leçons », « Étapes », « Exercices »).
 
 > **« Open lesson » — implemented 2026-10-05.** The lesson detail page
-> (`/admin/contenu/lecons/{code}`) has a « فتح الدرس » link to the lesson
+> (`/admin/contenu/lecons/{code}`) has a « Ouvrir la leçon » link to the lesson
 > itself. The administrator sees every state: a draft / hidden / archived lesson
 > opens for them, with its state badge (Annexe A8). An ambassador sees only
 > published and hidden content (§8).
@@ -455,7 +461,7 @@ Do not create a second exercise engine specifically for the Admin Panel.
 
 > **Superseded (2026-10-05) — see Annexe A8.** Reporting is no longer a
 > student feature. Only **reviewers** — the administrator and teachers flagged
-> as **ambassadors** (« سفراء ») — see the button and may call the API
+> as **ambassadors** (« Ambassadeurs ») — see the button and may call the API
 > (middleware `reviewer`, 403 `not_a_reviewer` otherwise). Clicking the button
 > only opens the form; ONE multipart `POST /api/v1/reports` sends context +
 > category + optional note + optional **screenshot** (the reviewer captures
@@ -1115,8 +1121,8 @@ This is a contract, not a preference, and `apps/web/src/pages/adminContract.test
 enforces it on the source. Four commitments:
 
 **1 · One language, from i18n.** Every user-facing string in the panel is read from the
-`admin` i18n namespace — today `apps/web/src/i18n/locales/ar/admin.json`, still Arabic (the language rule is
-`FRENCH_LANGUAGE_CONTRACT.md`; not yet applied in the code). This
+`admin` i18n namespace — `apps/web/src/i18n/locales/fr/admin.json`, in French (the language rule is
+`FRENCH_LANGUAGE_CONTRACT.md`). This
 covers page titles, `useDocumentMeta` titles, table column headers, filter and
 search labels, buttons, dialog titles and messages, empty/loading/error states,
 status badges, pagination and every `aria-label`. There is no "internal tool"
@@ -1138,9 +1144,9 @@ none of its own.
 |---|---|
 | Page gutter | `.sa-page` (20 / 40 / 60 px) — `index.css`; `.sa-page--flush` keeps 20 px at every size for a full-width workspace (practice player) |
 | Workspace shell | `.sa-workspace-main`, `.sa-workspace-sidebar` |
-| Type scale, fonts | `tailwind.config.js` (+25 % body scale; Cairo behind every stack) |
+| Type scale, fonts | `tailwind.config.js` (+25 % body scale; Inter for text, Space Grotesk for display, JetBrains Mono for labels and code) |
 | Background | `#FAFAFA` — identical to `StudentLayout` / `TeacherLayout` |
-| Cards | white surface, `border-slate-200`, `rounded-xl`; KPI tiles reuse `components/common/StatTile` — the same component as « تقدّمي » |
+| Cards | white surface, `border-slate-200`, `rounded-xl`; KPI tiles reuse `components/common/StatTile` — the same component as « Ma progression » |
 | Semantic colour | emerald = success, rose = error, amber = warning, violet = premium/accent, slate = muted |
 
 The **only** role-level difference is the accent gradient, which names the
@@ -1156,16 +1162,15 @@ The sidebar used to be `bg-slate-900`. It is now the student sidebar: white,
 `border-e border-slate-200`, gradient active pill, identity block in the
 footer. A dark admin theme is a regression the contract test rejects.
 
-**3 · Direction by construction.** Today `<html lang="ar" dir="rtl">` is global (step 1E makes it French, left to
-right — `FRENCH_LANGUAGE_CONTRACT.md`). Admin code
-uses **logical** properties only — `ms-`/`me-`, `ps-`/`pe-`, `start-`/`end-`,
+**3 · Direction by construction.** The page is `<html lang="fr">`, left to right (`FRENCH_LANGUAGE_CONTRACT.md`).
+Admin code still uses **logical** properties only — `ms-`/`me-`, `ps-`/`pe-`, `start-`/`end-`,
 `text-start`/`text-end`, `border-e` — never `ml-`/`mr-`/`left-`/`right-`/
 `text-left`/`text-right`. Directional icons ("previous", "next", the sidebar
 rail) come from `components/common/DirectionalIcons`; semantic icons (search,
 trash, user, warning, vertical sort chevrons) are imported straight from lucide
 and are **never** mirrored.
 
-Numbers, ratios, emails, codes, IDs and URLs are wrapped in `<Num>` or `dir="ltr"` while the shell is RTL.
+`<Num>` (a `dir="ltr"` island) is kept around numbers, codes and IDs; it changes nothing in a left-to-right page.
 
 **4 · Shared chrome, not per-page invention.** `apps/web/src/pages/admin/adminUi.jsx`
 is the panel's only chrome module — the twin of `pages/teacher/teacherUi.jsx`:
@@ -1175,12 +1180,12 @@ is the panel's only chrome module — the twin of `pages/teacher/teacherUi.jsx`:
 - `useAdminLabels()` — the labels handed to `DataTable`, `Pagination`,
   `ConfirmDialog` and `FilterBar`
 - `btnPrimary` / `btnSecondary` / `btnDanger` / `btnGhost`, `input`, `label`
-- `formatDate` (`ar-DZ` today; `fr-FR` at step 1E), `Num`, `ADMIN_GRADIENT`
+- `formatDate` (`fr-FR`, « 22 nov. 2026 »), `Num`, `ADMIN_GRADIENT`
 
 A new admin screen composes these. It does not restyle a button, redeclare a
 font, or write a date formatter.
 
-The shared kit (`components/admin/ui/*`) defaults to the panel's language (Arabic today) and keeps every
+The shared kit (`components/admin/ui/*`) defaults to the panel's language (French) and keeps every
 label overridable, so the teacher space can keep passing its own.
 
 **5 · The API sends codes, the panel writes the sentence.** A server response
@@ -1327,7 +1332,7 @@ TOUS ses modules en registre, dans la même transaction, avec une ligne
 `module.status_changed` par module changé (`after.cascadeFromLesson`). Aucune
 route n'accepte plus le type `module` pour l'état (`PATCH …/module/{id}/status`
 et `POST …/module/bulk-status` → 404). Il n'y a plus de page admin
-« المحاور » (`/admin/contenu/modules` et `GET /admin/content/modules` supprimés) ;
+« Étapes » (`/admin/contenu/modules` et `GET /admin/content/modules` supprimés) ;
 la fiche leçon liste ses modules sans colonne d'état.
 
 **« Je publie la leçon, tout est publié » (2026-11-11, décision propriétaire)** :
@@ -1335,11 +1340,11 @@ le même geste donne aussi l'état de la leçon à tous ses **exercices** en
 registre, avec une ligne `exercise.status_changed` par exercice
 (`after.cascadeFromLesson`). La réponse de `PATCH …/lesson/{id}/status` porte
 `modules: {applied, skipped}` (`skipped` est vide) et `exercises: {applied}`.
-Un exercice peut ensuite être masqué SEUL (liste « التمارين » ou fiche leçon).
+Un exercice peut ensuite être masqué SEUL (liste « Exercices » ou fiche leçon).
 Publier une leçon reste refusé (422) si elle a des modules en registre et
 qu'AUCUN ne passe les contrôles structurels.
 
-**La page « التمارين » est organisée PAR LEÇON (2026-11-11, décision
+**La page « Exercices » est organisée PAR LEÇON (2026-11-11, décision
 propriétaire)** : on ne publie pas un exercice à la fois. Chaque ligne est une
 leçon qui a des exercices (`GET /admin/content/lessons?withExercises=1`), avec
 sa banque résumée par état (`exerciseStatusCounts`) et UN geste qui change
@@ -1354,7 +1359,7 @@ cet état à tous les exercices en registre (non retirés) de la leçon. C'est
 une ligne `exercise.status_changed` par exercice, réponse `applied /
 unchanged / failed`. Chaque exercice reste ensuite modifiable seul (publier
 la banque, puis masquer UN exercice). Panneau : `ExerciseBankControl` dans
-l'en-tête de la section تمارين de la fiche leçon (résumé par état + choix +
+l'en-tête de la section « Exercices » de la fiche leçon (résumé par état + choix +
 confirmation). Ni la leçon ni ses modules ne bougent.
 
 **Défaut publié à l'import (2026-11-11, décision propriétaire — « pousser en
@@ -1527,7 +1532,7 @@ membre actif d'une classe active d'un établissement dont la licence court est p
 `teacher_subscription`) ; contrat : `SCHOOL_ADMIN_SPACE.md` §5bis.
 
 **Une quatrième raison d'accès, sans ligne (2026-09-22) :** `teacher_subscription`.
-Un élève membre actif d'une classe (قسم) dont l'enseignant a un abonnement en
+Un élève membre actif d'une classe dont l'enseignant a un abonnement en
 cours portant le droit `students.covered` est premium *par son enseignant*.
 C'est évalué à chaque requête (`Domain\Plans\TeacherCoverage`, mémo vidé avec
 les autres), après `activation_code` dans l'ordre des raisons, et rien n'est
@@ -1564,8 +1569,8 @@ ne portent aucune information — leur absence dit déjà la même chose — et
 créerait un risque d'élève enfermé dehors parce qu'une migration a oublié de
 lui fabriquer son droit.
 
-> **Les fonctionnalités (instruments du مختبر, cahier, travaux) ont leur
-> propre réglage par palier** — écran « الوصول والحدود »
+> **Les fonctionnalités (outils de l'atelier, Mon cahier, travaux) ont leur
+> propre réglage par palier** — écran « Accès et limites »
 > (`/admin/offres/acces`), table `feature_access_policies`, journal
 > `access_policy.updated`. Le palier de l'UTILISATEUR y est celui
 > d'`EntitlementService` décrit ici. Contrat : [`ACCESS_AND_LIMITS.md`](./ACCESS_AND_LIMITS.md).
@@ -1697,7 +1702,7 @@ décision du serveur (`/content/availability`, et `/content/availability/public`
 pour un visiteur) et chaque surface la lit par `isLessonPremium(code)` (badge)
 et `isLessonLocked(code)` (verrou). `isLessonUnlocked(lesson, …)`, qui lisait un
 `lesson.tier` embarqué, a été supprimé. Surfaces concernées : `LessonCard` et
-sa ligne `LessonRow` (catalogue, « دروسي », exploration — état lu une fois par
+sa ligne `LessonRow` (catalogue, « Mes leçons », exploration — état lu une fois par
 `useLessonTileState`) [NOT CHECKED 2026-11-22], `StudentHome` (compte des leçons premium),
 `LessonIndex` (sommaire) et **`LessonAccessGate`**, que `lessons/common/lessonRuntime.jsx` pose autour de CHAQUE page
 d'une leçon (la fabrique de routes est `lessons/common/lessonRoutes.jsx`) : une URL tapée directement tombe sur le
@@ -1730,7 +1735,7 @@ traduit un état d'abonnement faisant autorité en lignes `entitlements` de type
 ```text
 activation MANUELLE           SubscriptionActivationService : activation directe par un
                               administrateur, ou code d'activation lié à une offre
-                              (jamais un fournisseur de paiement — produit DZ, Annexe A7)
+                              (paiement en ligne Stripe : voir Annexe A7, fermé par défaut)
       ↓
 subscriptions                 l'état qui FAIT AUTORITÉ
       ↓
@@ -1874,11 +1879,16 @@ classes sont l'Annexe A7.
 [`TEACHER_CLASSROOM_ARCHITECTURE.md`](./TEACHER_CLASSROOM_ARCHITECTURE.md),
 qui fait autorité ; cette annexe ne dit que ce que le panneau en montre.
 
-### La règle commerciale du produit algérien
+### La règle commerciale (héritée du produit algérien)
 
-> **Algérienne par nature.** C'est ce que le code fait aujourd'hui (le `PlanSeeder` sème des prix en `DZD`, aucune
-> page ne lit `/billing/*`). La France vend par Stripe (`Domain/Billing`, présent et inutilisé) : plan §4 étape 1F et
-> §7 n° 5 — pas encore appliqué dans le code.
+> **Ce que le code fait au 2026-11-22.** Le `PlanSeeder` sème des prix en `EUR`. Un paiement en ligne Stripe existe
+> (`Domain/Billing` : `CheckoutService`, `WebhookProcessor`, routes `/billing/checkout`, `/billing/subscription`,
+> `/billing/portal`) derrière `PaymentGate`, FERMÉ par défaut (`config/billing.php › payments.open`, `PAYMENTS_OPEN`
+> faux ; l'administrateur le surcharge par `PATCH /admin/payments/switch`, carte `PaymentsSwitchCard`). Fermé, aucun chemin
+> ne commence un paiement (403 `payments_closed`) et les autorités d'accès répondent « accès complet » (motif
+> `payments_closed`). Le tableau ci-dessous est la règle de l'activation manuelle et des codes, qui reste vraie ; sa
+> première ligne (« aucun paiement en ligne ») ne l'est plus quand le paiement est ouvert. Le parcours Stripe n'a été
+> parcouru par aucune marche navigateur [NOT CHECKED 2026-11-22].
 
 ```text
 aucun paiement en ligne, pour personne     ni tunnel, ni carte, ni fournisseur, ni webhook, ni « payer »
@@ -1900,21 +1910,21 @@ grille se modifie sur une version en BROUILLON et se publie ; un abonné garde
 sa version, ses sièges achetés et son prix figé (`student_seat_limit`,
 `seat_unit_price_cents`, `seat_total_cents`). `PlanCatalog` (dormant,
 `config/billing.php`) reste « config d'abord, base ensuite » : les offres
-commerciales enseignant/élève ne vivent qu'en base et aucun écran ne lit
-`/billing/*`.
+commerciales enseignant/élève ne vivent qu'en base. Le web lit `/billing/status`
+(`context/PaymentsContext.jsx`) ; les autres écrans `/billing/*` ne sont pas décrits ici [NOT CHECKED 2026-11-22].
 
 ### Ce que le panneau ajoute
 
 | Navigation | Page | Sert à |
 |---|---|---|
 | Enseignants | `/admin/enseignants`, `/admin/enseignants/{id}` | compte, **capacité élèves** (encadrés / capacité, restants, classes illimitées, sièges achetés, palier et prix à l'activation), offre courante, **Activer une offre** (avec le nombre d'élèves), **Envoyer un code d'activation** (avec sa capacité), demande (sièges, palier, total calculé), abonnement + historique, droits (valeur · utilisation · source, dérogations), classes, activité |
-| Élèves | `/admin/eleves`, `/admin/eleves/{id}` | **la liste** (depuis 2026-10-24) : colonne « تفعيل عرض » — un menu des offres élève activables (actives ou masquées, jamais l'offre par défaut), confirmé, sans date ni note (l'offre garde sa durée ; `PlanActivateControl`) — et le même geste **en lot** : cases à cocher (seulement s'il existe une offre activable) + `BulkActionBar`, une action « تفعيل «<offre>» » par offre (`bulkPlanActions.jsx`). Pas de route groupée : le lot rappelle `POST /admin/students/{id}/subscriptions` élève par élève, séquentiellement, et nomme chaque refus avec le motif du serveur ; chaque ligne prend le statut réellement renvoyé. **La fiche** : le même bloc commercial (`CommercialPanel`, rôle-agnostique) sous la fiche apprentissage — le chemin complet (date de fin, note, code) |
+| Élèves | `/admin/eleves`, `/admin/eleves/{id}` | **la liste** (depuis 2026-10-24) : colonne « Activer une formule » — un menu des offres élève activables (actives ou masquées, jamais l'offre par défaut), confirmé, sans date ni note (l'offre garde sa durée ; `PlanActivateControl`) — et le même geste **en lot** : cases à cocher (seulement s'il existe une offre activable) + `BulkActionBar`, une action « Activer « <formule> » » par offre (`bulkPlanActions.jsx`). Pas de route groupée : le lot rappelle `POST /admin/students/{id}/subscriptions` élève par élève, séquentiellement, et nomme chaque refus avec le motif du serveur ; chaque ligne prend le statut réellement renvoyé. **La fiche** : le même bloc commercial (`CommercialPanel`, rôle-agnostique) sous la fiche apprentissage — le chemin complet (date de fin, note, code) |
 | Classes | `/admin/classes`, `/admin/classes/{id}` | lecture seule : enseignant, effectif, leçons masquées, dernière activité |
 | Offres | `/admin/offres`, `/admin/offres/{id}` | éditeur : informations · demandes autorisées · versions (nouvelle, publier, gel) · capacité élèves · **grille de prix par élève** (paliers min/max/prix/devise/actif/ordre, erreurs listées avant l'enregistrement, aperçu « pour N élèves » local + vérification serveur) · durée activée · fonctionnalités · contenu · limites techniques · abonnés (sièges) |
 | Offres › Demandes | `/admin/offres/demandes` | la file `subscription_requests` avec sièges demandés et total calculé par le serveur ; « Activer » ouvre la fiche du compte, « Refuser » exige un motif |
 | Offres › Abonnements | `/admin/offres/abonnements` | offre, version, source (`acquisition_source`), accordé par ; Suspendre / Reprendre / Annuler / Prolonger / Changer d'offre |
-| Offres › التحدّي اليومي | `/admin/offres/defi-quotidien` | the daily challenge's scale and defaults (closed key list, validated server-side, journaled `daily_challenge.config_updated`; every challenge freezes its configuration). Contract: `DAILY_CHALLENGE.md` §12 |
-| Offres › الوصول والحدود | `/admin/offres/acces` | par palier (مجاني / وصول كامل) : chaque instrument du مختبر (activé, gratuit, premium), le cahier et les travaux (accès, limite ou « غير محدود », période mois / à vie), confirmation de tout geste restrictif, consommation du mois par palier et par instrument ; la fiche élève / enseignant montre utilisé / limite / restant (`FeatureUsagePanel`). Contrat : `ACCESS_AND_LIMITS.md` |
+| Offres › Défi du jour | `/admin/offres/defi-quotidien` | (link hidden while `features.dailyChallenge` is off) the daily challenge's scale and defaults (closed key list, validated server-side, journaled `daily_challenge.config_updated`; every challenge freezes its configuration). Contract: `DAILY_CHALLENGE.md` §12 |
+| Offres › Accès et limites | `/admin/offres/acces` | par niveau d'accès (« Gratuit » / « Accès complet ») : chaque outil de l'atelier (activé, gratuit, premium), le cahier et les travaux (accès, limite ou « Illimité », période mois / à vie), confirmation de tout geste restrictif, consommation du mois par palier et par instrument ; la fiche élève / enseignant montre utilisé / limite / restant (`FeatureUsagePanel`). Contrat : `ACCESS_AND_LIMITS.md` |
 | Accès › Codes | `/admin/codes-activation` | le formulaire de lot gagne « Offre » (obligatoire pour une offre enseignant, facultatif pour un lot élève) et « Élèves par code » pour une offre par sièges ; les listes montrent l'offre et la capacité |
 
 Le tableau de bord compte enseignants, classes et demandes en attente ; une
@@ -1935,7 +1945,7 @@ journalisé dans la même transaction (`plan.*`, `plan_version.*`,
 ## A8. Les relecteurs : ambassadeurs, état de publication, signalement (2026-10-05, révisé 2026-10-07)
 
 Un **relecteur** est l'administrateur ou un enseignant **ambassadeur**
-(« سفير ») — `User::canReviewAllContent()`, qui ne décide plus que du
+(« Ambassadeur ») — `User::canReviewAllContent()`, qui ne décide plus que du
 SIGNALEMENT. Ce que chacun VOIT est décidé par
 `ContentAccess::visibleStatuses()` (§8) : l'administrateur voit tous les
 états ; l'ambassadeur voit `published` et `hidden`, **pas** `draft` ni
@@ -1952,7 +1962,7 @@ changent pas.
   (`can:admin`) → `AmbassadorService::set` : enseignants seulement (422
   sinon), transaction, journal `teacher.ambassador_changed` ; redemander
   l'état courant ne journalise rien.
-- Panneau : interrupteur « سفير » (`components/admin/ui/AmbassadorSwitch.jsx`)
+- Panneau : interrupteur « Ambassadeur » (`components/admin/ui/AmbassadorSwitch.jsx`)
   dans la liste `/admin/enseignants` (colonne, compteur `counts.ambassadors`,
   filtre `?ambassador=1`) et dans la fiche enseignant.
 - `/auth/me` (UserPresenter) porte `isAmbassador` et `canReviewContent`
@@ -1982,7 +1992,7 @@ changent pas.
   posée sur `LessonCard` / `LessonRow`, la page d'unité, le sommaire (en-tête + cartes de
   module) et l'en-tête de module. Elle ne rend rien pour un contenu publié.
 - Pour tous les autres, le sommaire d'une leçon non publiée ouverte par URL
-  directe affiche désormais « هذا الدرس غير متاح حالياً » (le trou connu de
+  directe affiche désormais « Cette leçon n’est pas encore disponible » (le trou connu de
   `LessonIndex`, qui ne lisait pas `isLessonClosed`, est fermé).
 - **Aucune écriture ne s'ouvre** : progression, preuves, test final et
   pratique restent derrière `learner`.
@@ -2004,10 +2014,10 @@ changent pas.
 - **Où est le bouton** : variante `prominent` (ambre, libellé visible) EN
   HAUT — dans la rangée de repères du module (`ModuleLayout`) et du sommaire
   (`LessonIndex`) ; le pied de page du module n'en porte plus.
-- **La capture, comme l'outil d'un système d'exploitation** : « التقاط منطقة من
-  الصفحة » retire la fenêtre (le défilement est libéré) et ouvre
+- **La capture, comme l'outil d'un système d'exploitation** : « Capturer une zone de
+  la page » retire la fenêtre (le défilement est libéré) et ouvre
   `ScreenSnipper` : le relecteur fait défiler la page (molette ; au doigt, mode
-  « تمرير ») puis glisse pour tracer la région, ou prend « الشاشة كاملة » ; la
+  « Défiler ») puis glisse pour tracer la région, ou prend « Plein écran » ; la
   fenêtre revient avec l'image, la catégorie et la note conservées. Il peut
   encore y encadrer des détails (`ScreenshotAnnotator`) et les cadres sont
   brûlés dans l'image (WebP, ≤ 1600 px de large) à l'envoi. `captureRegion`
@@ -2021,8 +2031,8 @@ changent pas.
   (`vite.config.js`) — découvert en cours de session, sa ré-optimisation
   rendait des 504 « Outdated Optimize Dep » aux onglets ouverts (liens qui
   changent l'URL sans changer la page).
-- Liste admin : colonne et filtre « لقطة الشاشة » (`?screenshot=1`,
-  `counts.withScreenshot`) ; la colonne « اكتمال البلاغ » et le filtre
+- Liste admin : colonne « Capture » et filtre « Avec capture uniquement » (`?screenshot=1`,
+  `counts.withScreenshot`) ; l'ancienne colonne de complétude du signalement et le filtre
   `completion` ont disparu. La fiche montre la capture et le rôle de
   l'auteur (`student.role`, `student.isAmbassador`).
 - Les signalements antérieurs étaient des tests : la migration
@@ -2056,8 +2066,8 @@ ferme le compte en gardant tout. La suppression ne laisse **rien**.
   leurs comptes et leur progression restent.
 - **Journal** : `user.deleted`, entité `user` + id, `before = {role}` —
   aucune donnée personnelle ne survit dans l'audit.
-- **Panneau** : « منطقة الخطر » en bas des fiches élève et enseignant
-  (`components/admin/DeleteUserSection.jsx`) : avertissement « لا رجعة فيه »,
+- **Panneau** : « Zone de danger » en bas des fiches élève et enseignant
+  (`components/admin/DeleteUserSection.jsx`) : avertissement « Attention : cette action est irréversible. … »,
   ce qui sera perdu (l'aperçu), e-mail à retaper — le bouton reste inactif
   tant qu'il ne correspond pas —, puis retour à la liste.
 - Tests : `AdminUserDeletionTest` (API), `DeleteUserSection.render.test.jsx`.
@@ -2066,7 +2076,7 @@ ferme le compte en gardant tout. La suppression ne laisse **rien**.
 
 # Annexe A10 — La librairie (2026-10-17)
 
-Section « الكتب » de la barre latérale (`/admin/livres/*`) : commandes de
+Section « Livres » de la barre latérale (fermée : `features.books` ; ses libellés `nav.books*` sont encore en arabe, l'exemption de `noArabic.test.js`) (`/admin/livres/*`) : commandes de
 livres papier (états contrôlés, frais de livraison fixé après coup, paiements
 en lignes, historique), fiches livres (prix, publication, contenu de la page
 publique) et messages reçus. Même chrome que les autres écrans (`AdminPage`,
@@ -2075,13 +2085,13 @@ publique) et messages reçus. Même chrome que les autres écrans (`AdminPage`,
 
 # Annexe A11 — Les établissements (2026-10-26)
 
-« المؤسسات » (`/admin/etablissements`, groupe « الأساتذة » de la barre latérale) :
+« Établissements » (`/admin/etablissements`, groupe « Professeurs » de la barre latérale) :
 l'administration crée un établissement, le suspend ou l'archive, et en nomme le
 DIRECTEUR — un nouveau compte `school_admin` dont le mot de passe n'est montré
 qu'une fois. Le directeur n'est pas un administrateur : il ne passe jamais
 `can:admin`, et l'administrateur ne passe jamais `can:school`. Routes `can:admin`,
 gestes dans le journal (`school.*`, jamais le mot de passe). La fiche porte aussi
-« رخصة المؤسسة » : activer une licence de sièges (une nouvelle annule l'actuelle),
+« Licence de l’établissement » : activer une licence de sièges (une nouvelle annule l'actuelle),
 la suspendre, la reprendre, l'annuler (§5bis). Contrat complet :
 [`SCHOOL_ADMIN_SPACE.md`](./SCHOOL_ADMIN_SPACE.md) §5.
 
@@ -2090,12 +2100,12 @@ la suspendre, la reprendre, l'annuler (§5bis). Contrat complet :
 Demande du propriétaire : « make it configurable open or close registration from the dashboard of the admin, and also
 the possibility to create the account for a student as an admin ».
 
-### L'interrupteur « التسجيل »
+### L'interrupteur « Inscriptions »
 
-- **Où** : la carte « التسجيل » en tête du tableau de bord (`components/admin/RegistrationCard.jsx`, montée par
+- **Où** : la carte « Inscriptions » en tête du tableau de bord (`components/admin/RegistrationCard.jsx`, montée par
   `pages/admin/Dashboard.jsx` hors des données du tableau, pour rester utilisable quand elles ne chargent pas). Deux
   interrupteurs : l'inscription publique (formulaire + Google) ; et, visible seulement quand elle est fermée,
-  « التسجيل برابط القسم » (l'élève invité par le lien de la classe de son enseignant). OUVRIR demande une confirmation.
+  « Inscription par le lien de la classe » (l'élève invité par le lien de la classe de son enseignant). OUVRIR demande une confirmation.
 - **Où c'est gardé** : table `platform_settings`, ligne `registration` (`values.open`, `values.class_links`,
   `updated_by`). `App\Domain\Registration\RegistrationGate` est le SEUL lecteur : la ligne l'emporte sur
   `config/registration.php` (`REGISTRATION_OPEN`, `REGISTRATION_CLASS_LINKS`), qui n'est plus que le DÉFAUT tant que
@@ -2108,15 +2118,15 @@ the possibility to create the account for a student as an admin ».
 
 ### Créer un compte élève
 
-- **Où** : « إنشاء حساب تلميذ » sur la liste des élèves (`pages/admin/students/CreateStudent.jsx`) : prénom et nom
-  ARABES (`PersonName`, la règle de l'inscription), courriel FACULTATIF, classe scolaire facultative.
+- **Où** : « Créer un compte élève » sur la liste des élèves (`pages/admin/students/CreateStudent.jsx`) : prénom et nom
+  en lettres de l'alphabet français (`PersonName`, la règle de l'inscription), courriel FACULTATIF, classe scolaire facultative.
 - **Route** : `POST /admin/students` (`StudentService::create`) → 201 `{ student, login, password }`,
   `Cache-Control: no-store`. Le mot de passe (`StudentCredentials::generate`) n'existe en clair que dans cette
   réponse : la page le montre UNE fois (`components/admin/OneTimeCredentials.jsx`, la même carte que
-  « مسيّرو المكتبة »), l'administrateur le remet lui-même.
+  les gestionnaires de la librairie), l'administrateur le remet lui-même.
 - **Sans courriel** : un identifiant généré `a.<6 caractères>@<school.student_login_domain>`
   (`StudentCredentials::uniqueLogin`, partagé avec l'import d'un établissement, préfixe `s<id>`). Il n'a pas de boîte
-  aux lettres : aucun courriel ne lui part, donc PAS de « نسيت كلمة المرور » — `Not yet implemented` : la
+  aux lettres : aucun courriel ne lui part, donc PAS de « Mot de passe oublié ? » — `Not yet implemented` : la
   réinitialisation du mot de passe d'un élève par l'administrateur.
 - **Ce que le compte est** : élève, adresse vérifiée, aucun consentement légal écrit à sa place (comme un élève importé
   par un établissement), aucune classe, aucune notification « new_student ». Sans classe scolaire, sa première

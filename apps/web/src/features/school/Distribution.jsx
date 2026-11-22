@@ -9,7 +9,7 @@ export const STATES = [
 ];
 
 /**
- * UNE distribution d'élèves (maîtrisé · à consolider · lacune · non évalué) : une barre
+ * UNE distribution d'élèves (maîtrisé · à consolider · en difficulté · non évalué) : une barre
  * et les quatre nombres dessous — jamais un pourcentage moyen. Partagée par
  * la carte « Savoir-faire » et les rapports (écran, impression, projection).
  */

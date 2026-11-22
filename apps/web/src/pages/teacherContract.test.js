@@ -10,9 +10,9 @@ import { dirname, join, resolve } from 'node:path';
  *   - AUCUN paiement en ligne : ni le service de facturation dormant, ni un
  *     mot de « checkout » / « Stripe » n'entre dans l'espace enseignant,
  *     l'espace élève ou les écrans commerciaux de l'administration ;
- *   - l'espace est FRANÇAIS : aucune lettre arabe dans ses arbres (la liste
- *     STILL_TO_TRANSLATE dit lesquels attendent encore leur agent) ; le kit
- *     d'administration laisse toujours surcharger ses libellés.
+ *   - l'espace est FRANÇAIS : aucune lettre arabe dans ses arbres ni dans les
+ *     surfaces qu'il partage avec l'élève ; le kit d'administration laisse
+ *     toujours surcharger ses libellés.
  */
 const here = dirname(fileURLToPath(import.meta.url));
 const src = resolve(here, '..');
@@ -52,19 +52,10 @@ describe('l’espace enseignant est français, sans aucune lettre arabe', () => 
     'pages/teacher', 'features/teacher', 'components/teacher', 'features/classSession',
     'pages/school', 'features/school', 'pages/parent', 'features/family',
     'features/classJoin', 'features/studyTime', 'features/notifications', 'features/tours',
-  ];
-  // Les surfaces PARTAGÉES par l'élève et le professeur (le même moteur de leçon, le même cahier, le même atelier —
-  // §8b du contrat) appartiennent à d'autres agents. Elles restent SCANNÉES ici. Tant que leur ligne est dans
-  // cette liste, le test vérifie seulement que l'arbre existe et qu'il est lu ; l'agent propriétaire, quand son
-  // arbre ne contient plus aucune lettre arabe, DÉPLACE sa ligne de STILL_TO_TRANSLATE vers FRENCH_TREES (rien
-  // d'autre à changer) : à partir de là, l'arbre refuse l'arabe comme les nôtres. La liste ne fait que rétrécir ;
-  // à la fin de l'étape 1D elle est vide et la main session la supprime.
-  const STILL_TO_TRANSLATE = [
-    'features/learning', // agent « Student and public »
-    'pages/student/Qism.jsx', // agent « Student and public »
-    'pages/JoinClassLink.jsx', // agent « Student and public »
-    'features/practice/notebook', // agent « Student and public »
-    'features/mathlab', // agent « Math lab »
+    // Les surfaces PARTAGÉES par l'élève et le professeur (le même moteur de leçon, le même cahier, le même
+    // atelier — §8b du contrat), qui appartiennent à d'autres espaces : elles refusent l'arabe elles aussi.
+    'features/learning', 'pages/student/Qism.jsx', 'pages/JoinClassLink.jsx', 'features/practice/notebook',
+    'features/mathlab',
   ];
 
   function filesOf(rel, { withTests = false } = {}) {
@@ -94,20 +85,13 @@ describe('l’espace enseignant est français, sans aucune lettre arabe', () => 
     });
   }
 
-  for (const rel of STILL_TO_TRANSLATE) {
-    it(`${rel} est scanné (en attente de son agent, voir STILL_TO_TRANSLATE)`, () => {
-      expect(filesOf(rel).length, `${rel} est lu`).toBeGreaterThan(0);
-      expect(FRENCH_TREES, `${rel} est dans les deux listes`).not.toContain(rel);
-    });
-  }
-
   it('les textes des espaces professeur, établissement et famille sont français', () => {
     for (const ns of ['teacher', 'memo', 'idara', 'family', 'tour']) {
-      const raw = readFileSync(resolve(src, `i18n/locales/ar/${ns}.json`), 'utf8');
+      const raw = readFileSync(resolve(src, `i18n/locales/fr/${ns}.json`), 'utf8');
       expect(raw, `${ns}.json contient une lettre arabe`).not.toMatch(ARABIC);
     }
     // Les libellés communs que l'ancien test interdisait sont maintenant ceux de l'espace.
-    const common = JSON.parse(readFileSync(resolve(src, 'i18n/locales/ar/teacher.json'), 'utf8')).common;
+    const common = JSON.parse(readFileSync(resolve(src, 'i18n/locales/fr/teacher.json'), 'utf8')).common;
     expect(common).toMatchObject({ retry: 'Réessayer', cancel: 'Annuler', previous: 'Précédent', next: 'Suivant', confirm: 'Confirmer' });
   });
 

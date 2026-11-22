@@ -13,7 +13,7 @@ describe('dossier de la leçon — the lesson file is a whiteboard document of t
   it('creates ONE whiteboard document at the first opening and attaches it to the lesson', async () => {
     const api = apiWith();
     expect(await lessonFileDocumentId('tok', 'qasim-adad-tabii', 'Diviseurs', api)).toBe(41);
-    expect(lessonFilePagePath('qasim-adad-tabii')).toBe('/enseignant/milaff/qasim-adad-tabii'); // its own page, not the lab's
+    expect(lessonFilePagePath('qasim-adad-tabii')).toBe('/enseignant/dossier/qasim-adad-tabii'); // its own page, not the lab's
     expect(api.createMathLabDocument.mock.calls[0][1]).toMatchObject({
       tool: 'whiteboard',
       title: 'Dossier de la leçon — Diviseurs',

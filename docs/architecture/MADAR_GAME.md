@@ -1,20 +1,22 @@
-# « فضاء الألعاب » — the game space (« مدار »)
+# « Espace jeux » — the game space (Madar)
 
-> **Authoritative** for the student game « مدار » (Madar, "orbit"): the play loop, hearts and the refuel station (« محطة التزوّد »), how a score is bounded by the server, the ships, the weekly class leaderboard, the teacher's settings, tab and board display, the API, data model, frontend files and tests.
+> **Authoritative** for the student game space (code name Madar, "orbit"): the play loop, hearts (« vies ») and the refuel station (« Station de ravitaillement »), how a score is bounded by the server, the ships, the weekly class leaderboard, the teacher's settings, tab and board display, the API, data model, frontend files and tests.
 > Implemented 2026-10-22. The code is the source of truth: `apps/api/app/Domain/Madar/` and `apps/web/src/features/madar/`.
 >
 > **Status (2026-11-22).** Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the four
 > games, hearts, runs, ships, turrets, leaderboards, the teacher's tab, the API and the grade entries keyed `6e`–`3e`.
-> Not true here: the refuel station draws from `content/practice`, which is EMPTY, so it has nothing to serve; the
-> interface is Arabic; the week and the day are Algiers time (`config/madar.php › timezone`) — French time zone and week
-> are step 1E of the plan, not yet applied in the code; the level families were cut for the Algerian years, not the French
-> programme.
+> The interface is French and left to right since 2026-11-22 (namespace `madar`; a game level is a « palier »). The day
+> and the week (Monday → Sunday) are counted in the school time zone (`MadarConfig::timezone()` =
+> `config('app.school_timezone')`, `Europe/Paris` by default). Not true here: the refuel station draws from
+> `content/practice`, which is EMPTY, so it has nothing to serve; the maths-game level families were cut for the Algerian
+> middle-school years, not the French programme. `/espace/madar` no longer exists (the space is `/espace/jeux`). No walk
+> has checked the games in French.
 
 ## 1. What it is, and what it is not
 
 Madar is a **game space** of four games in two families (since 2026-10-23):
-- **« ألعاب ترفيهية »** (fun): the one-tap orbit runner « قفزة المدار », the tower defense « دفاع الكوكب » (§14) and the multi-level platformer « المستكشف » (§15). They are joined to learning by one rule: **hearts are earned by answering the student's own skills (الكفاءات) correctly.**
-- **« ألعاب رياضيات »** (maths): « قنّاص القيم » (§16), « الدخيل » (§16ter) and « الحساب الذهني » (§16quater), where the maths IS the gameplay. A maths game is **free**: it costs no heart and has no revive. It adapts to the student over 50 levels.
+- **« Jeux d’adresse »** (fun): the one-tap orbit runner « Saut d’orbite », the tower defense « Défense de la planète » (§14) and the multi-level platformer « L’explorateur » (§15). They are joined to learning by one rule: **hearts are earned by answering the student's own skills (savoir-faire) correctly.**
+- **« Jeux de maths »** (maths): « Chasseur de valeurs » (§16), « L’intrus » (§16ter) and « Calcul mental » (§16quater), where the maths IS the gameplay. A maths game is **free**: it costs no heart and has no revive. It adapts to the student over 50 levels.
 
 The teacher can close any game for the whole class or for **one student** (§16bis).
 
@@ -46,7 +48,7 @@ No heart or score ever touches mastery, and no mastery value is read as a score.
 
 Madar is **not** a second exercise engine. Questions are references into `content/practice`, selected by the daily challenge's `ChallengeQuestionSelector`, presented by its `ChallengeQuestionPresenter`, evaluated by `AnswerEvaluator` and rendered by `features/practice/QuestionRenderer`.
 
-## 2. The game: « مدار »
+## 2. The game: « Saut d’orbite »
 
 - **World.** The ship circles a planet on one of two lanes, inner and outer. There is **one gesture**: switch lanes. On a phone it is a tap anywhere; on a laptop it is a click, `Space`, `↑`, `↓`, `W` or `S`.
 - **Speed.** Angular speed grows with game time, `ω = min(ωmax, ω0 + a·t)`, so one lap takes about 5 s at the start and about 1.75 s at the cap.
@@ -59,9 +61,9 @@ Madar is **not** a second exercise engine. Questions are references into `conten
 - **Pickups:**
   - **Stars** add points × a multiplier, which rises every 5 stars in a row up to ×4. A missed star resets the multiplier.
   - A rare **shield** absorbs one hit.
-- **Near miss** (« مرور خاطف »): +10 points for leaving an obstacle's lane less than 0.28 s before reaching it.
-- **Sectors.** Every five laps the planet changes: عطارد → الزهرة → الأرض → المرّيخ → المشتري → زحل → أورانوس → نبتون → الفضاء العميق. A banner announces it and the background hue shifts.
-- **Camera.** The ship stays at the **bottom** of the orbit, within thumb reach, and the world turns. What is coming arrives from the left and moves down to the ship, in the Arabic reading direction.
+- **Near miss** (« Frôlements » on the results screen): +10 points for leaving an obstacle's lane less than 0.28 s before reaching it.
+- **Sectors.** Every five laps the planet changes: Mercure → Vénus → Terre → Mars → Jupiter → Saturne → Uranus → Neptune → Espace lointain. A banner announces it and the background hue shifts.
+- **Camera.** The ship stays at the **bottom** of the orbit, within thumb reach, and the world turns. The world is mirrored (`mirrorX`): what is coming arrives from the right and moves down to the ship, whose nose points right — the page's reading direction (locked by `render.test.js`).
 
 ### Code layers
 
@@ -77,7 +79,7 @@ The engine is **pure**: `engine/world.js` has no DOM and no clock. `step(world, 
 
 Rendering rules:
 - **No `shadowBlur`.** Glows are pre-rendered sprites drawn additively.
-- The canvas sets `ctx.direction = 'ltr'`, because the page is RTL and "+3" would otherwise draw as "3+".
+- The canvas sets `ctx.direction = 'ltr'` explicitly, so canvas text always reads left to right whatever the page.
 - Reduced motion (`useReducedMotion`) removes shake and flash and thins the particles.
 - A hidden tab pauses the run, so a student never dies while away.
 
@@ -86,7 +88,7 @@ Rendering rules:
 | Rule | Default | Where |
 |---|---|---|
 | Max hearts | 5 | `config/madar.php › hearts.max` |
-| Daily free hearts: on the first visit of the day (`madar.timezone`, Algiers today — plan 1E), hearts rise **to** this number, never above it and never accumulated | 3 (teacher: 0–5) | `hearts.daily_free`, `madar_class_settings.daily_free_hearts` |
+| Daily free hearts: on the first visit of the day (the school time zone, `Europe/Paris` by default), hearts rise **to** this number, never above it and never accumulated | 3 (teacher: 0–5) | `hearts.daily_free`, `madar_class_settings.daily_free_hearts` |
 | A run costs | 1 ❤️ | `MadarService::startRun` |
 | A revive after a crash costs | 1 ❤️, at most 2 per run | `runs.max_revives` |
 | Runs per day: the screen-time limit; a refused start costs nothing | 30 (teacher: 5–100) | `runs.daily_cap`, `daily_run_cap` |
@@ -94,9 +96,9 @@ Rendering rules:
 | Starting a new run abandons the open one | | |
 
 Crash screen choices:
-- « أكمل الرحلة » if the student has a heart;
-- « حلّ تمرينًا وأكمل الرحلة » if they have none, which opens the refuel station in `revive` context — a correct answer, then « واصل الرحلة »;
-- « أنهِ الرحلة ».
+- « Continuer la partie » if the student has a heart;
+- « Résoudre un exercice pour continuer » if they have none, which opens the refuel station in `revive` context — a correct answer, then « Reprendre la partie »;
+- « Terminer la partie ».
 
 The game state goes **lobby → countdown → playing ⇄ paused → crashed → results**. The refuel station is reachable from the lobby, the results screen and the crash screen. The coach is shown once per device (`localStorage madar.coached`): a pulsing ring and one sentence, placed above the orbit on phones and beside it on laptops, and gone after the first lane switch.
 
@@ -119,7 +121,7 @@ The server's real duration is always at least the game time (pauses, revives, la
 
 Stars sent by the client are capped by `score / star_points`. A second `finish` returns the first result unchanged (`duplicate: true`).
 
-## 5. The refuel station (« محطة التزوّد »)
+## 5. The refuel station (« Station de ravitaillement »)
 
 **Selection order** (since 2026-10-22):
 1. skills already worked, without the items served in the last few days;
@@ -151,12 +153,12 @@ On screen the question sits on a **white card** in the middle of the dark game. 
 
 | `reason` | Line shown |
 |---|---|
-| `reinforce`, `recent_mistake` | « اخترنا لك هذا التمرين لأنه يتناول كفاءة تحتاج إلى تدعيم » |
-| `retrieval` | « … لتتذكّر كفاءة أتقنتها قبل مدّة » |
-| `recently_learned` | « … لأنه يتناول كفاءة تعلّمتها مؤخرًا » |
-| `review`, `warmup` | « … لتراجع كفاءة من برنامجك » |
+| `reinforce`, `recent_mistake` | « On t’a choisi cet exercice parce qu’il porte sur un savoir-faire à consolider » |
+| `retrieval` | « … pour te rappeler un savoir-faire que tu maîtrises depuis un moment » |
+| `recently_learned` | « … parce qu’il porte sur un savoir-faire appris récemment » |
+| `review`, `warmup` | « … pour revoir un savoir-faire de ton programme » |
 
-A review question is never called « تحتاج إلى تدعيم ». The strings are in `madar.json › refuel.reason.*`.
+A review question is never called « à consolider ». The strings are in `madar.json › refuel.reason.*`.
 
 ## 5bis. Integrity — did the student do it themselves? (2026-10-22)
 
@@ -193,7 +195,7 @@ Only an answer with **no flag** becomes learning evidence (`evidence_recorded`).
 
 « fast » means correct, difficulty ≥ 3, and answered in less than `max(5 s, 12 % of the limit)` (`refuel.fast`). It still earns the heart, but not the evidence. The flag is shown to the teacher only, never to the student.
 
-### Option 3 — « تستحق نظرة » — signals, never accusations
+### Option 3 — « À regarder » — signals, never accusations
 
 `ClassMadarService::results` → `students[].alerts`:
 
@@ -203,7 +205,7 @@ Only an answer with **no flag** becomes learning evidence (`evidence_recorded`).
 | `timeouts` / `leaves` / `fast` | ≥ 3 such answers |
 | `score` | a run score clamped to the bound (§4) |
 
-In the class tab these appear as amber chips with a tooltip, and a banner « n تلاميذ يستحقّون نظرة » says "signals, not accusations: check with the student in class".
+In the class tab these appear as amber chips with a tooltip, and a banner « Élèves à regarder : n » says « Des signaux, pas des accusations : vérifiez avec l’élève en classe. »
 
 ### Option 5 — The teacher gives or takes hearts
 
@@ -226,27 +228,27 @@ The rules live in `MadarShips::CATALOGUE`. The look lives in `engine/ships.js`: 
 
 | id | Name | Unlocks at |
 |---|---|---|
-| `sahm` | سهم | always |
-| `saqr` | صقر | record 800 |
-| `mudhannab` | مذنّب | 5 correct refuel answers |
-| `nayzak` | نيزك | record 2,500 |
-| `falak` | فلك | 20 correct refuel answers |
-| `majarra` | مجرّة | record 6,000 (rainbow trail) |
+| `sahm` | Flèche | always |
+| `saqr` | Faucon | record 800 |
+| `mudhannab` | Comète | 5 correct refuel answers |
+| `nayzak` | Météore | record 2,500 |
+| `falak` | Astre | 20 correct refuel answers |
+| `majarra` | Galaxie | record 6,000 (rainbow trail) |
 
 The lobby shows the **next goal**: the locked ship closest to its threshold, with a progress bar. Newly unlocked ships come back in the `unlocked` field of `finish` and `answer`, and the results screen celebrates them. `PATCH /madar/ship` refuses a locked ship.
 
 ## 7. Weekly class leaderboard
 
-Season = **one week, Sunday to Saturday (`madar.timezone`, Algiers today — plan 1E)**: `madar_runs.week_start`. Everyone starts from zero each Sunday.
+Season = **one week, Monday to Sunday (the school time zone, `Europe/Paris` by default; `MadarConfig` uses `startOfWeek(MONDAY)`)**: `madar_runs.week_start`. Everyone starts from zero each Monday (« repart de zéro chaque lundi »).
 - Players' class = their **primary class** (`StudyContextService`).
 - Ranking = each **active** member's best finished score of the week (`MadarLeaderboard`). Ties go to who reached the score first, then to the lower id. One query.
-- Students see the top 10 (first name + initial, ship, score), their own row and the participant count, **only if** the teacher left « ترتيب الأسبوع ظاهر للتلاميذ » on.
+- Students see the top 10 (first name + initial, ship, score), their own row and the participant count, **only if** the teacher left « Classement de la semaine visible par les élèves » on.
 - An independent student sees an invitation to join a class instead.
-- `finish` returns `rank.before / rank.after`. The screen shows « تقدّمت إلى المرتبة n » only when the rank really improved, and never a "you dropped" message.
+- `finish` returns `rank.before / rank.after`. The screen shows « Tu montes à la place n de ta classe » only when the rank really improved, and never a "you dropped" message.
 
 ## 8. Teacher surfaces
 
-Class tab **« لعبة مدار »** (`features/teacher/madar/MadarTab.jsx`, lazy, own `<Suspense>`):
+Class tab **« Espace jeux »** (`features/teacher/madar/MadarTab.jsx`, lazy, own `<Suspense>`):
 - a week picker;
 - tiles: players / members, runs, refuel answers, accuracy;
 - a per-student table: rank, week best, runs, refuel correct / answered, all-time record, ship, flagged runs;
@@ -259,10 +261,10 @@ Class tab **« لعبة مدار »** (`features/teacher/madar/MadarTab.jsx`, la
 
 Closing the game answers `disabled_by_teacher` to the class's students: lobby, runs and refuel are all closed.
 
-Board display at `/enseignant/classes/:id/madar/affichage`:
+Board display at `/enseignant/classes/:id/jeux/affichage`:
 - outside the teacher shell, full screen;
 - a podium for the top 3 and ranks 4–10, readable from five metres;
-- participation « n من m »;
+- participation « Ont joué cette semaine : n élèves sur m »;
 - refreshes every 15 s; `Escape` returns to the tab.
 
 ## 9. API
@@ -290,7 +292,7 @@ GET    /teacher/classrooms/{id}/madar/results?week=YYYY-MM-DD
 GET    /teacher/classrooms/{id}/madar/display?week=
 ```
 
-Refusals carry a closed `reason` (`MadarException`): 404 `not_found`; 409 `run_closed`, `already_answered`; 422 for the rest. The client renders Arabic from `madar.json › reasons.*`.
+Refusals carry a closed `reason` (`MadarException`): 404 `not_found`; 409 `run_closed`, `already_answered`; 422 for the rest. The client renders the sentence from `madar.json › reasons.*`.
 
 ## 10. Data model
 
@@ -306,7 +308,7 @@ Refusals carry a closed `reason` (`MadarException`): 404 `not_found`; 409 `run_c
 
 ## 11. Screens and responsiveness
 
-The page `/espace/madar` is full screen and **outside `StudentLayout`**: no sidebar, no tab bar.
+The game pages (`/espace/jeux`, `/espace/jeux/:game`) are full screen and **outside `StudentLayout`**: no sidebar, no tab bar.
 - **Phone, portrait (390×844):** title, then the visible orbit, then one column (launch panel, leaderboard, hangar). Buttons are at least 52–68 px. Sheets stick to the bottom on phones and are centred from `sm`. The refuel buttons are sticky at the bottom.
 - **Laptop (1366×768):** the launch column on the start side, the leaderboard and hangar on the end side, the orbit in the middle.
 - **Orbit radius:** `min(0.36·w, 0.34·h)`, so both lanes and the ship fit at both sizes.
@@ -321,10 +323,10 @@ features/madar/engine/   constants.js (PHYSICS mirror, lanes, sectors) · rng.js
 features/madar/madarModel.js                 pure UI helpers (score format, crash options, rank movement, next ship, play blocker)
 features/madar/components/                   GameCanvas, Hud, Lobby, Leaderboard, ShipBay, ShipIcon, HeartsRow, CostBadge, Panel,
                                              Sheet, CrashSheet, PauseSheet, Results, RefuelStation, Countdown (+ Coach)
-pages/student/madar/MadarPage.jsx            the state machine (lazy route /espace/madar)
+pages/student/madar/MadarPage.jsx            the state machine (lazy route /espace/jeux/:game)
 features/teacher/madar/MadarTab.jsx          class tab (reuses Toggle from dailyChallenge/ClassChallengeSettings)
 pages/teacher/MadarDisplayPage.jsx           board display (own <Suspense>)
-i18n/locales/ar/madar.json                   ON-DEMAND namespace (BUNDLE_BOUNDARIES.md); nav labels in `nav`, tab label in `teacher`
+i18n/locales/fr/madar.json                   ON-DEMAND namespace (BUNDLE_BOUNDARIES.md); nav labels in `nav`, tab label in `teacher`
 ```
 
 Entry cost: two nav strings, one tab label and one error key. Everything else is in lazy chunks (`MadarPage` ≈ 70 KB raw).
@@ -346,9 +348,9 @@ Entry cost: two nav strings, one tab label and one error key. Everything else is
 | `features/madar/sniper/cards.test.js` | exact values; **each displayed card re-read by an independent evaluator** (11,520 cards); 8 distinct cards, 3–4 equal, never the target as written; levels in order then mixed; seed determinism |
 | `features/madar/sniper/sim.test.js` | fixed round instants; hit, trap, landed equal card; no revive; multiplier and perfect round; **a perfect player stays within the server bound and the reachable round**; attract mode; seed determinism |
 
-## 14. « دفاع الكوكب » — Planet Defense (2026-10-22)
+## 14. « Défense de la planète » — Planet Defense (2026-10-22)
 
-The second game in the « مدار » arcade, a tower defense that trains **planning and strategy**. In the lobby a picker switches between « قفزة المدار » (the orbit runner, game id `orbit`) and « دفاع الكوكب » (`defense`), with `?game=defense` in the URL.
+The second game of the space, a tower defense that trains **planning and strategy** (game id `defense`; the orbit runner is `orbit`). Each game has its own page, `/espace/jeux/:game` (§15).
 
 **Shared with the orbit game:** hearts (a game costs one; an **emergency shield** = a revive), the refuel station, the integrity rules (§5bis), the daily run cap (all games combined), and the teacher's controls. **Per game:** runs, record, weekly ranking, and unlocks.
 
@@ -415,8 +417,8 @@ A rule of `null` means "always open". It is checked with `array_key_exists`, not
   - `madar_profiles.defense_best`, `defense_best_at`, `defense_best_wave`, `defense_runs`;
   - `madar_class_settings.disabled_games` (migration `2026_10_22_000003`).
 - **Teacher:**
-  - the class tab has a game picker (`?game=`), and in Defense mode a « أبعد موجة » (furthest wave) column;
-  - a setting « الألعاب المفتوحة » closes one game without closing the other;
+  - the class tab has a game picker (`?game=`), and in Defense mode a « Vague la plus lointaine » column;
+  - a setting « Jeux ouverts » closes one game without closing the other;
   - the board display takes `?game=` and shows each player's wave.
 
 ### Frontend
@@ -426,7 +428,7 @@ A rule of `null` means "always open". It is checked with `array_key_exists`, not
 - `MadarPage` runs both games through the same state machine.
 - **Balance**, measured with the bot and no emergency shields: it survives 5 to 11 waves, 1.5–3.5 minutes. A student who places turrets toward the entries does better.
 
-## 15. The game space and « المستكشف » (2026-10-22)
+## 15. The game space and « L’explorateur » (2026-10-22)
 
 ### The student space: `/espace/jeux`
 
@@ -436,31 +438,31 @@ A rule of `null` means "always open". It is checked with `array_key_exists`, not
 - the teacher's heart messages (`AdjustmentNotice`).
 
 The cards are grouped in **two sections**, from `GET /madar › games[].category` (`MadarRun::CATEGORIES`), **maths first** (owner, 2026-10-23):
-- « ألعاب رياضيات » (`math`), on top: free, with a « مجانية » badge (`games[].free`), adapted to the student's level (§16);
-- « ألعاب ترفيهية » (`fun`), below: each run costs a heart.
+- « Jeux de maths » (`math`), on top: free, with a « Gratuit » badge (`games[].free`), adapted to the student's level (§16);
+- « Jeux d’adresse » (`fun`), below: each run costs a heart.
 
-Each game is a card with a code-drawn illustration, the skill it trains, a short description, the record (orbit score, defense wave, explorer stars, sniper score) and the week's rank. Clicking a card opens `/espace/jeux/:game` (`orbit | defense | explorer | sniper`). That page is `MadarPage`: the same state machine, with the game taken from the URL, and « فضاء الألعاب » as the back link.
+Each game is a card with a code-drawn illustration, the skill it trains, a short description, the record (orbit score, defense wave, explorer stars, sniper score) and the week's rank. Clicking a card opens `/espace/jeux/:game` (`orbit | defense | explorer | sniper | odd | mental`). That page is `MadarPage`: the same state machine, with the game taken from the URL, and « Espace jeux » as the back link.
 
-- A game the teacher closed stays visible but **locked**: « أغلق أستاذك هذه اللعبة » for the class, « أغلق أستاذك هذه اللعبة لك » for this student only (`games[].closedBy`: `class | student`).
-- `/espace/madar` redirects to the space.
-- The student navigation entry is « فضاء الألعاب » (`/espace/jeux`).
+- A game the teacher closed stays visible but **locked**: « Ton professeur a fermé ce jeu » for the class, « Ton professeur a fermé ce jeu pour toi » for this student only (`games[].closedBy`: `class | student`).
+- The old `/espace/madar` has no route any more.
+- The student navigation entry is « Espace jeux » (`/espace/jeux`).
 
 ### The teacher space: `/enseignant/jeux`
 
-`TeacherGamesPage`, with the « فضاء الألعاب » entry in the teacher navigation (not on the mobile bar). The teacher picks a class (`?classe=`) and gets the full panel (`MadarTab`):
+`TeacherGamesPage`, with the « Espace jeux » entry in the teacher navigation (not on the mobile bar). The teacher picks a class (`?classe=`) and gets the full panel (`MadarTab`):
 - a picker for **the four games**;
-- per student, a « الألعاب » button that opens a dialog to close games for **this student only** (§16bis);
-- the week's tiles, with « تستحق نظرة » alerts;
+- per student, a « Jeux » button that opens a dialog to close games for **this student only** (§16bis);
+- the week's tiles, with « À regarder » alerts;
 - the heart dialog and its history;
 - the refuel questions with their time limits;
 - settings: the class's games open or closed (`disabledGames`), daily hearts, run cap, lessons, times per difficulty;
 - the board display.
 
-The same panel is the « فضاء الألعاب » tab on each class page.
+The same panel is the « Espace jeux » tab on each class page.
 
-### « المستكشف » — the platformer
+### « L’explorateur » — the platformer
 
-This is **an original game in the platformer genre**. No character, name or graphic is taken from an existing game. The hero is an astronaut, and the level runs **right to left**, the Arabic reading direction: ← moves forward. A run is one level. There are **12 levels in 3 worlds** (the Moon 1–4, Mars 5–8 with lava, the Nebula 9–12).
+This is **an original game in the platformer genre**. No character, name or graphic is taken from an existing game. The hero is an astronaut, and the level runs **left to right**, the page's reading direction: → moves forward (`explorer/render.js`, `INPUT_KEYS` in `explorer/sim.js`). A run is one level. There are **12 levels in 3 worlds** (the Moon 1–4, Mars 5–8 with lava, the Nebula 9–12).
 
 **In a level:**
 - run, and a variable-height jump (with grace time and jump buffering);
@@ -494,7 +496,7 @@ The **next level unlocks** when the previous one is completed (`madar_level_prog
 **Playability is proven:** `solver.js` runs a depth-first search over copies of the world with the real physics (run, wait, jumps of several heights, hops). It **completes all 12 levels** in about 0.1 s each, and `sim.test.js` fails if a level becomes impossible or if a winning run exceeds the server's cap.
 
 **Controls:**
-- **Keyboard:** ← / A forward, → / D back, Space / ↑ / W jump.
+- **Keyboard:** → / D forward, ← / A back, Space / ↑ / W jump.
 - **Touch** (`TouchControls`, shown when `pointer: coarse`): two arrows and a large jump button, multi-touch.
 - On a phone held upright, a tile is `min(available height / 14, width / 11)`, so the level fits above the controls.
 
@@ -508,7 +510,7 @@ The **next level unlocks** when the previous one is completed (`madar_level_prog
 **Teacher:** in Explorer mode the table shows total stars and levels completed out of 12.
 
 **Frontend:**
-- `features/madar/explorer/`: `sim.js` (pure physics), `render.js` (mirrored canvas, 3 world themes, astronaut, enemies, blocks, rocket, parallax), `bot.js` (the bot behind the lobby), `solver.js` (the proof);
+- `features/madar/explorer/`: `sim.js` (pure physics), `render.js` (canvas, x growing to the right, 3 world themes, astronaut, enemies, blocks, rocket, parallax), `bot.js` (the bot behind the lobby), `solver.js` (the proof);
 - `components/ExplorerCanvas.jsx`, `ExplorerHud.jsx`, `TouchControls.jsx`, `LevelMap.jsx`, `ExplorerResults.jsx`;
 - `pages/student/madar/GamesHub.jsx`, `pages/teacher/TeacherGamesPage.jsx`.
 
@@ -516,7 +518,7 @@ The **next level unlocks** when the previous one is completed (`madar_level_prog
 - `apps/api/tests/Feature/MadarExplorerTest.php`: level 1 open; unlock and 3 stars; stars need all crystals and no revive; a failed level unlocks nothing; too fast = not completed; score cap; own ranking and teacher view; the shared file is valid;
 - `features/madar/explorer/sim.test.js`: levels load; landing and running; variable jump; death and revive; **all 12 levels can be completed**; winning runs stay within the server cap.
 
-## 16. « قنّاص القيم » — the value sniper, the first maths game (2026-10-23)
+## 16. « Chasseur de valeurs » — the value sniper, the first maths game (2026-10-23)
 
 **Goal: observation.** The student sees an expression and recognises its value.
 
@@ -540,29 +542,29 @@ The **next level unlocks** when the previous one is completed (`madar_level_prog
 
 ### 50 levels × 3 sub-levels, adapted to the student (2026-10-23, owner)
 
-The maths games cover **the four years of the Algerian cycle moyen** (the levels were not re-cut for France): 50 levels in 11 families, each in three sub-levels أ / ب / ج (bigger numbers, subtler traps). A **position** is a sub-level, from 0 to 149, with `position = (level − 1) × 3 + (sub − 1)`. The catalogue is `features/madar/sniper/levels.js`, mirrored in `config/madar.php › sniper`.
+The maths games cover **the four years of the Algerian middle school they were built for** (the levels were not re-cut for the French programme): 50 levels (« paliers » on screen) in 11 families, each in three sub-levels A / B / C (`SUB_LETTERS`; bigger numbers, subtler traps). A **position** is a sub-level, from 0 to 149, with `position = (level − 1) × 3 + (sub − 1)`. The catalogue is `features/madar/sniper/levels.js`, mirrored in `config/madar.php › sniper`.
 
 | Family | Levels |
 |---|---|
-| الأعداد الطبيعية والعمليات | 1 sums · 2 differences · 3 times tables · 4 division |
-| أولويات العمليات والأقواس | 5 + and − together · 6 × before + · 7 parentheses · 8 compound priorities |
-| القواسم والمضاعفات | 9 prime factorisation · 10 PGCD · 11 PPCM |
-| الكسور | 12 equivalent · 13 simplifying · 14 same denominator · 15 different denominators · 16 product · 17 quotient · 18 fraction of a number |
-| الأعداد العشرية والنسب المئوية | 19 fraction ↔ decimal · 20 decimal operations · 21 percentage · 22 percentage of a quantity |
-| الأعداد النسبية | 23 sum · 24 difference · 25 product and quotient · 26 compound |
-| القوى | 27 powers of an integer · 28 same-base rules · 29 powers of 10 · 30 scientific notation · 31 power of a product |
-| الجذور التربيعية | 32 perfect squares · 33 simplifying · 34 product and quotient · 35 sums · 36 rationalising the denominator |
-| الحساب الحرفي | 37 reducing · 38 simple expansion · 39 double expansion · 40 (a + b)² · 41 (a − b)² · 42 (a − b)(a + b) · 43 factorising |
-| المعادلات | 44 x + a = b · 45 ax + b = c · 46 parentheses / unknown on both sides · 47 value of an expression |
-| حساب المثلثات | 48 sin and cos of 30°, 45°, 60° · 49 tan · 50 relations (sin² + cos² = 1, tan = sin ÷ cos) |
+| Nombres entiers et opérations | 1 sums · 2 differences · 3 times tables · 4 division |
+| Priorités opératoires et parenthèses | 5 + and − together · 6 × before + · 7 parentheses · 8 compound priorities |
+| Diviseurs et multiples | 9 prime factorisation · 10 PGCD · 11 PPCM |
+| Fractions | 12 equivalent · 13 simplifying · 14 same denominator · 15 different denominators · 16 product · 17 quotient · 18 fraction of a number |
+| Nombres décimaux et pourcentages | 19 fraction ↔ decimal · 20 decimal operations · 21 percentage · 22 percentage of a quantity |
+| Nombres relatifs | 23 sum · 24 difference · 25 product and quotient · 26 compound |
+| Puissances | 27 powers of an integer · 28 same-base rules · 29 powers of 10 · 30 scientific notation · 31 power of a product |
+| Racines carrées | 32 perfect squares · 33 simplifying · 34 product and quotient · 35 sums · 36 rationalising the denominator |
+| Calcul littéral | 37 reducing · 38 simple expansion · 39 double expansion · 40 (a + b)² · 41 (a − b)² · 42 (a − b)(a + b) · 43 factorising |
+| Équations | 44 x + a = b · 45 ax + b = c · 46 parentheses / unknown on both sides · 47 value of an expression |
+| Trigonométrie | 48 sin and cos of 30°, 45°, 60° · 49 tan · 50 relations (sin² + cos² = 1, tan = sin ÷ cos) |
 
 **Three ways to read a card** (the level's `mode`):
 
 | Mode | The card is equal when… | HUD prompt |
 |---|---|---|
-| `value` | its value equals the target | « أصِب ما يساوي » |
-| `solution` | it is an equation whose solution is the target | « أصِب المعادلات التي حلّها » |
-| `at` | its value at x = a is the target | « أصِب ما قيمته عندما x = a » |
+| `value` | its value equals the target | « Touche ce qui vaut » |
+| `solution` | it is an equation whose solution is the target | « Touche les équations dont la solution est » |
+| `at` | its value at x = a is the target | « Touche ce qui vaut, pour x = a » |
 
 **The traps are the real mistakes** of 11–13-year-olds:
 - left-to-right reading and parentheses ignored;
@@ -590,7 +592,7 @@ Everything before the entry is **open** (the earlier years), and so is everythin
 
 **Never start hard: the warm-up** (owner, 2026-10-23, every maths game).
 - Every game opens **two levels below** the student's position, `home` (`WARMUP_DROP` = 6 positions, mirrored by `sniper.warmup_drop`).
-- Its **first round costs no shield** (`isWarmingUp`; the HUD shows « 🔥 جولة إحماء — أخطاؤها لا تكلّف دروعًا »).
+- Its **first round costs no shield** (`isWarmingUp`; the HUD shows « Manche de chauffe — tes erreurs ne coûtent pas de bouclier »).
 - Below `home`, a round with at most one fault climbs **a whole level**, never above `home`.
 - The student wins first, then the level rises progressively.
 
@@ -604,7 +606,7 @@ Everything before the entry is **open** (the earlier years), and so is everythin
 | two such bad rounds in a row | a whole level down |
 | otherwise | unchanged |
 
-- A rise is announced in the HUD (« أحسنت! ارتقيت إلى المستوى n ب »). A step down is worded as practice, never as failure (« نتمرّن قليلًا… »).
+- A rise is announced in the HUD (« Bravo ! Tu passes au palier n B »). A step down is worded as practice, never as failure (« On s’entraîne un peu au palier n … »).
 - The results screen shows the change from → to.
 - The server keeps the position per student and per game (`madar_math_progress`: position, best position, rounds). The next game resumes there.
 
@@ -646,7 +648,7 @@ The score bound is multiplied by 1.1, plus 100. Anything above is clamped and fl
 - The **daily run cap still counts** this game: it is a screen-time limit.
 - The record is read from `madar_runs`, the level from `madar_math_progress`.
 - `GET /madar › sniper {best, bestRound, runsCount, weekBest, competition, position, level, sub, bestPosition, bestLevel, entryLevel, unlockedUpTo, levels, subLevels}`.
-- The leaderboard and board display show « ج n » (the round).
+- The leaderboard and board display show « Mn » (« Manche », the round).
 - The teacher's table shows each student's maths level and the highest reached (`students[].mathLevel`).
 
 ### Code
@@ -658,15 +660,15 @@ The score bound is multiplied by 1.1, plus 100. Anything above is clamped and fl
   - `constants.js`: the schedule and points mirror;
   - `sim.js`: the pure simulation, `step` / `tap`, the position changing round after round, plus the attract-mode autopilot;
   - `bound.js`;
-  - `mathDraw.js`: maths on the canvas — stacked fractions, a drawn radical, exponents, written piece by piece from left to right because the page is RTL;
+  - `mathDraw.js`: maths on the canvas — stacked fractions, a drawn radical, exponents, written piece by piece from left to right (`ctx.direction = 'ltr'`);
   - `render.js`: asteroids, plates, the cannon, the ground;
   - tests `cards.test.js` and `sim.test.js`.
 - Components:
   - `SniperCanvas.jsx`: `dir="ltr"` canvas, loop, tap, feedback, level change;
-  - `SniperHud.jsx`: target card with its prompt, score, 3 shields, multiplier, level n أ/ب/ج, the level-change banner;
+  - `SniperHud.jsx`: target card with its prompt, score, 3 shields, multiplier, « Palier n A/B/C », the level-change banner;
   - `MathTokens.jsx`: the same expression in DOM, `dir="ltr"`, `role="math"`;
   - `MathLevelMap.jsx`: the student's position, a bar over 150 sub-levels, the map of the 11 families with open and closed levels.
-- The lobby shows « مجانية » instead of the cost. The coach sits under the field so it does not cover the target.
+- The lobby shows « Gratuit » instead of the cost. The coach sits under the field so it does not cover the target.
 - API: `SniperScoring.php` (positions, entry, bound, settle), `MadarMathProgress`, `MadarRun::GAME_SNIPER / CATEGORIES / FREE_GAMES`, `MadarService::sniperView / mathProgress / levelChange`. Migration `2026_10_23_000003`.
 
 **Future maths games reuse this framework**: the same 50 levels, positions, adaptation and progress table, with `game` as the key.
@@ -687,8 +689,8 @@ The class-wide switch (`madar_class_settings.disabled_games`) is unchanged. On t
   - `GET /madar › games[].closedBy` is `class | student | null`.
 - **Teacher:**
   - `results.students[].disabledGames`;
-  - the « الألعاب » column: « كلها مفتوحة » or « n لعبة مغلقة »;
-  - `StudentGamesDialog`: checkboxes grouped fun / maths, with a game closed for the class shown greyed out as « مغلقة للقسم ».
+  - the « Jeux » column: « Tous ouverts » or « n jeu(x) fermé(s) »;
+  - `StudentGamesDialog`: checkboxes grouped fun / maths, with a game closed for the class shown greyed out as « Fermé pour la classe ».
 
 **Tests:** `MadarSniperTest` covers:
 - free start, even at 0 hearts;
@@ -700,22 +702,22 @@ The class-wide switch (`madar_class_settings.disabled_games`) is unchanged. On t
 - a game closed for one student only (other students unaffected, the class closure wins, reopening);
 - the refusals: outsider, unknown game, another teacher.
 
-## 16ter. « الدخيل » — the odd one out, the second maths game (2026-10-23)
+## 16ter. « L’intrus » — the odd one out, the second maths game (2026-10-23)
 
 **Goal: observation one step further.** No target is written. The student must SEE what the cards share.
 
 **How it plays:**
-- **The puzzle.** 4 or 5 white cards are all equal except ONE, « الدخيل ». The student taps the odd one out before the time bar runs out: 15 s, then less and less, never under 7 s.
+- **The puzzle.** 4 or 5 white cards are all equal except ONE, « l’intrus ». The student taps the odd one out before the time bar runs out: 15 s, then less and less, never under 7 s.
 - **The reveal.** After each pick the answer stays on screen for 1.2 s (`reveal_ms`):
-  - « كلّها تساوي 3 » (or « حلّها جميعًا … » / « قيمتها جميعًا عندما x = … », depending on the level's mode);
-  - the odd card marked « الدخيل = 9 »;
+  - « Toutes valent 3 » (or « Toutes ont pour solution … » / « Toutes valent, pour x = …, … », depending on the level's mode);
+  - the odd card marked « L’intrus » with its value (9);
   - a wrongly picked card shows its own value.
 - **Shields.** A wrong pick or a timeout costs one of 3 shields. There is no revive; the game is free.
 - **Controls.** Tap or click a card; on a laptop, the keys 1–5.
 - **The board** is DOM, not a canvas: real text, big tap targets, `MathTokens` for the maths.
 
 **The same 50 levels.**
-- Each puzzle is built from the « قنّاص القيم » deck (`odd/puzzle.js` → `makeRound`): the cards equal to the round's target, plus ONE trap, the typical mistake that looks like the others.
+- Each puzzle is built from the « Chasseur de valeurs » deck (`odd/puzzle.js` → `makeRound`): the cards equal to the round's target, plus ONE trap, the typical mistake that looks like the others.
 - Its truth is therefore the deck's, re-read by `cards.test.js`. `odd/sim.test.js` checks every level × sub-level: exactly one odd card, and all the others share the round's value.
 - The student has their **own position in this game** (`madar_math_progress`, `game = 'odd'`), with the same entry by year and the same map.
 - Adaptation runs **every 5 puzzles** (`puzzles_per_round`), with the same rules (`sniper/adapt.js`).
@@ -741,7 +743,7 @@ The positions, the entry by year and the points come from `SniperScoring`: the m
 
 The generalisation for any maths game: `MadarRun::isMath`, `mathView(game)` in `GET /madar › {sniper, odd}`, and the teacher's `mathLevel` for both games.
 
-## 16quater. « الحساب الذهني » — mental arithmetic, the third maths game (2026-10-23)
+## 16quater. « Calcul mental » — mental arithmetic, the third maths game (2026-10-23)
 
 **Goal: fast, exact mental arithmetic, all four operations.** The owner's range: from « 2 + 1 » to « 2569 + 176 », from « 2 × 3 » to « 11 × 25 ».
 
@@ -751,8 +753,8 @@ The generalisation for any maths game: `MadarRun::isMath`, `mathView(game)` in `
 - **The slots.** Boxes show how many characters the answer has. The answer is **sent by itself** when they are full, so the game is fast.
 
 **What makes it fun, without ever stating a rule:**
-- a **rocket** climbs one step per correct answer toward the next planet, with a new planet every 10 correct answers (« وصلت إلى المريخ! »);
-- the stars scroll faster as the streak grows; « 🔥 n · ×m »; « سرعة الضوء! » every 5 in a row;
+- a **rocket** climbs one step per correct answer toward the next planet, with a new planet every 10 correct answers (« Destination atteinte : Mars ! »);
+- the stars scroll faster as the streak grows; « 🔥 n · ×m »; « n d’affilée — vitesse lumière ! » every 5 in a row;
 - a **speed bonus** « ⚡ » from the time left;
 - a wrong answer shakes the card and shows the right answer for 1.4 s, long enough to read it.
 
@@ -766,17 +768,17 @@ The game has its own ladder, 3 sub-levels each, in 9 families:
 
 | Family | Levels |
 |---|---|
-| الجمع والطرح | to 10 and to 20; two-digit numbers, with and without carrying or borrowing; three numbers |
-| الضرب | the tables (2–5–10, 3–4, 6–7, 8–9, 11–12); a two-digit number × a digit; two two-digit numbers, then large ones |
-| القسمة | the tables backwards; ÷ 10 / 100 / 1000; a two- or three-digit number ÷ a digit; ÷ a two-digit number |
-| الأعداد الكبيرة | 3 digits + 2; subtracting from hundreds and thousands; 3 + 3 digits; 4 + 3 digits (2569 + 176); big mixes |
-| حيل الحساب | × 10 / 100 / 1000; × 5 / 25 / 50; × 11; × 9 / 99 / 999 |
-| العمليات المركّبة | parentheses; × before +; chains (48 ÷ 6 × 7 − 9); level 50 « تحدّي البطل » |
-| الأعداد العشرية والكسور والنسب | adding decimals; × 10 and × 0,1; a fraction of a number; a percentage of a number |
-| الأعداد النسبية | sum; product and quotient; compound |
-| المربعات والقوى والجذور | squares to 15, then to 25, and cubes; perfect square roots; powers of 2 and a × 10ᵏ |
+| Addition et soustraction | to 10 and to 20; two-digit numbers, with and without carrying or borrowing; three numbers |
+| Multiplication et tables | the tables (2–5–10, 3–4, 6–7, 8–9, 11–12); a two-digit number × a digit; two two-digit numbers, then large ones |
+| Division | the tables backwards; ÷ 10 / 100 / 1000; a two- or three-digit number ÷ a digit; ÷ a two-digit number |
+| Les grands nombres | 3 digits + 2; subtracting from hundreds and thousands; 3 + 3 digits; 4 + 3 digits (2569 + 176); big mixes |
+| Astuces de calcul rapide | × 10 / 100 / 1000; × 5 / 25 / 50; × 11; × 9 / 99 / 999 |
+| Calculs enchaînés | parentheses; × before +; chains (48 ÷ 6 × 7 − 9); level 50 « Le défi du champion » |
+| Décimaux, fractions et pourcentages | adding decimals; × 10 and × 0,1; a fraction of a number; a percentage of a number |
+| Nombres relatifs | sum; product and quotient; compound |
+| Carrés, puissances et racines | squares to 15, then to 25, and cubes; perfect square roots; powers of 2 and a × 10ᵏ |
 
-- Level 1 starts at « 2 + 1 ». Level 50 draws from the hardest levels at sub-level ج.
+- Level 1 starts at « 2 + 1 ». Level 50 draws from the hardest levels at sub-level C.
 - **Entry by year** (`config/madar.php › mental.entry`; the web mirror `MENTAL_ENTRY` is gone from the tree — [NOT CHECKED 2026-11-22] where the web reads it now): `6e` → 3, `5e` → 7, `4e` → 11, `3e` → 15 (the Algerian years' entries, renamed). Every easier level is open, so « 2 + 1 » can always be replayed.
 - **Warm-up.** Like every maths game, it opens two levels lower with a free first round (§16).
 - **Answers** are always an integer or a finite decimal, written with the comma (« 1,2 », « −4 »).
@@ -784,7 +786,7 @@ The game has its own ladder, 3 sub-levels each, in 9 families:
 
 ### Server bound
 
-It is the « الدخيل » bound (`OddScoring`) with `config/madar.php › mental`:
+It is the « L’intrus » bound (`OddScoring`) with `config/madar.php › mental`:
 - a problem ≥ 700 ms (`min_puzzle_ms`): the client shows the result 0.7 s, 1.4 s after a fault;
 - 5 problems per round;
 - plus a speed bonus of at most 1 × the level's points per problem (`speed_factor`).
@@ -811,34 +813,34 @@ The positions (0…149) and points come from `SniperScoring`.
 
 ## 17. Not built (Planned)
 
-- More games (the live class race « سباق المجرّة » is next on the list); they would share the hearts and refuel station.
+- More games (a live class race is next on the list); they would share the hearts and refuel station.
 - More maths games, proposed 2026-10-23 and not built:
-  - « سهم على المستقيم »: placing √10, 7/3, π on a number line;
-  - « الروبوت والمتجهات »: vector commands;
-  - « تضاريس الدالة »: shaping y = ax + b.
+  - an arrow on the number line: placing √10, 7/3, π;
+  - a robot driven by vectors;
+  - a function landscape: shaping y = ax + b.
 
   They would reuse the free rule, `cards.js`'s exact values and the week seed.
-- A teacher-chosen map for « دفاع الكوكب » (today the week's map comes from the seed).
+- A teacher-chosen map for « Défense de la planète » (today the week's map comes from the seed).
 - A student home card.
 - An admin screen for `config/madar.php`.
 - Server-side replay of runs, which the bound makes unnecessary for now.
 - Inter-class or school-wide seasons.
 - Push reminders. Notifications pressuring students are deliberately avoided.
 
-## 18. « نافس أستاذك » — the teacher plays with each class (2026-10-23, owner)
+## 18. The teacher plays with each class (2026-10-23, owner)
 
 The teacher can play every game **inside one of their classes**, and has **one score per class**. Example: 21,542 in class A and 25,684 in class B.
 
 **In the ranking.**
 - The teacher's runs count in that class's weekly ranking (`MadarLeaderboard::standings` adds the class's `teacher_id` to its active members).
-- Their name shows like a student's (first name + initial), with a **« الأستاذ » badge** (`isTeacher`). It shows even when the teacher is first: that is the challenge.
+- Their name shows like a student's (first name + initial), with a **« Professeur » badge** (`isTeacher`). It shows even when the teacher is first: that is the challenge.
 - They play the **same weekly map / targets** as the class (the class seed), so the comparison is fair.
 
 **How the teacher plays** (`MadarService::asTeacherIn($classroom)`, a copy of the service bound to that class):
 - **No hearts.** Every game is free for them (`games[].free = true`; revives cost nothing, within the revive limit). There is **no refuel station**: it draws on a student's own skills.
 - **Never learning evidence.** Their runs are never evidence, and mastery is untouched.
 - **Any game.** They can play a game closed to the class, and every maths level is open (`unlockedUpTo = 50`). Their maths position is their own, as for a student.
-- **Records per class.** « رقمك القياسي » and « هذا الأسبوع » are computed from the runs of THIS class only (`classBest`, `weekBest` with `classroom_id`). They always see the class ranking, even when it is hidden from students.
+- **Records per class.** « Ton record » and « Cette semaine » are computed from the runs of THIS class only (`classBest`, `weekBest` with `classroom_id`). They always see the class ranking, even when it is hidden from students.
 - **Their own class only.** A run finishes only in the class where it started (404 otherwise). Another teacher's class answers 403.
 
 **API** (`TeacherMadarPlayController`, behind `can:teacher` + `ClassroomPolicy`). It mirrors the student routes:
@@ -853,13 +855,13 @@ PATCH  /teacher/classrooms/{id}/madar/play/ship               {ship}
 
 **Teacher view.**
 - `results.teacher {rank, best, wave}` gives the teacher's place this week. `summary.players` and `summary.runs` count students only.
-- The class tab shows « ترتيبك في القسم هذا الأسبوع: n · score » and the button « العب مع قسمك ونافس تلاميذك ».
+- The class tab shows « Votre place dans la classe cette semaine : n · score » and the button « Jouer avec ma classe et défier mes élèves ».
 
 **Frontend.**
 - The SAME pages (`GamesHub`, `MadarPage`) serve `/enseignant/classes/:classId/jeux` and `/enseignant/classes/:classId/jeux/:game`, full screen.
 - `features/madar/madarScope.js › useMadarScope()` picks the API (`services/madarService.js › madarApi(classId)`), the hub address and the exit.
-- The hub shows the class and the teacher's rule (« تلعب بلا قلوب… »).
-- `Leaderboard` and the board display show the « الأستاذ » badge.
+- The hub shows the class and the teacher's rule (« Professeur : vous jouez sans vies… »).
+- `Leaderboard` and the board display show the « Professeur » badge.
 
 **Test:** `MadarTeacherPlayTest`:
 - one score per class, and first in the students' ranking with its name and `isTeacher`;

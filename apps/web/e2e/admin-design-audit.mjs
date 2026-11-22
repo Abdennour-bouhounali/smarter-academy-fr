@@ -1,5 +1,5 @@
 /**
- * L'AUDIT VISUEL DU PANNEAU D'ADMINISTRATION — arabe, RTL, responsive.
+ * L'AUDIT VISUEL DU PANNEAU D'ADMINISTRATION — français, de gauche à droite, responsive.
  *
  * Il vérifie ce qu'un test de source ne peut pas voir : la page RENDUE.
  * `adminContract.test.js` tient la langue, les jetons et les propriétés
@@ -14,7 +14,7 @@
  *   node apps/web/e2e/admin-design-audit.mjs
  *
  *   # avec l'API et un compte d'administration, l'audit complet :
- *   QA_ADMIN_EMAIL=qa-admin@smarter.dz QA_PASSWORD=… \
+ *   QA_ADMIN_EMAIL=qa-admin@exemple.fr QA_PASSWORD=… \
  *     node apps/web/e2e/admin-design-audit.mjs
  *
  * Les largeurs sont celles du contrat (§19) : 1920 → 360.
@@ -43,13 +43,13 @@ const record = (name, ok, detail = '') => {
 };
 
 const browser = await chromium.launch();
-const context = await browser.newContext({ locale: 'ar-DZ' });
+const context = await browser.newContext({ locale: 'fr-FR' });
 const page = await context.newPage();
 
 const pageErrors = [];
 page.on('pageerror', (e) => pageErrors.push(e.message));
 
-/** Le document est-il RTL, en arabe, et en Cairo pour ses glyphes arabes ? */
+/** Le document est-il en français, de gauche à droite, et en Inter ? */
 const readShell = () => page.evaluate(() => {
   const html = document.documentElement;
   const body = getComputedStyle(document.body);
@@ -83,9 +83,9 @@ try {
   await page.goto(`${BASE}/login`, { waitUntil: 'networkidle' });
 
   const shell = await readShell();
-  record('document RTL', shell.dir === 'rtl', `dir="${shell.dir}"`);
-  record('document en arabe', shell.lang === 'ar', `lang="${shell.lang}"`);
-  record('Cairo dans la pile de polices', /Cairo/.test(shell.bodyFont), shell.bodyFont.slice(0, 60));
+  record('document de gauche à droite (aucun dir="rtl")', shell.dir !== 'rtl', `dir="${shell.dir}"`);
+  record('document en français', shell.lang === 'fr', `lang="${shell.lang}"`);
+  record('Inter dans la pile de polices', /Inter/.test(shell.bodyFont), shell.bodyFont.slice(0, 60));
 
   // ══ 2. Le fond du produit est le MÊME partout ═════════════════════════
   // `#FAFAFA` : la coquille élève, la coquille enseignant et le panneau. Il
@@ -123,23 +123,26 @@ try {
     record('barre latérale claire (plus de thème sombre)',
       sidebarBg === 'rgb(255, 255, 255)', sidebarBg);
 
-    // Elle est ancrée sur le bord de DÉBUT, donc à DROITE en RTL.
+    // Elle est ancrée sur le bord de DÉBUT, donc à GAUCHE (de gauche à droite).
     const anchored = await page.evaluate(() => {
       const aside = document.querySelector('aside');
       if (!aside) return null;
       const r = aside.getBoundingClientRect();
-      return { right: Math.round(r.right), vw: document.documentElement.clientWidth };
+      return { left: Math.round(r.left) };
     });
-    record('barre latérale ancrée à droite (RTL)',
-      anchored && Math.abs(anchored.right - anchored.vw) <= 2,
-      anchored ? `right=${anchored.right} vw=${anchored.vw}` : 'absente');
+    record('barre latérale ancrée à gauche',
+      anchored && Math.abs(anchored.left) <= 2,
+      anchored ? `left=${anchored.left}` : 'absente');
 
-    // Aucun libellé de navigation en écriture latine.
+    // Chaque libellé de navigation est en français : des lettres latines, et
+    // aucun caractère arabe (U+0600–U+06FF, U+0750–U+077F, U+08A0–U+08FF,
+    // U+FB50–U+FDFF, U+FE70–U+FEFC).
     const navLabels = await page.evaluate(() =>
       [...document.querySelectorAll('aside nav a')].map((a) => a.textContent.trim()).filter(Boolean));
-    const latin = navLabels.filter((l) => /[A-Za-zÀ-ÿ]/.test(l) && !/[؀-ۿ]/.test(l));
-    record('navigation entièrement arabe', latin.length === 0,
-      latin.length ? latin.join(' | ') : `${navLabels.length} entrées`);
+    const ARABIC = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFC]/;
+    const notFrench = navLabels.filter((l) => ARABIC.test(l) || !/[A-Za-zÀ-ÿ]/.test(l));
+    record('navigation entièrement en français', navLabels.length > 0 && notFrench.length === 0,
+      notFrench.length ? notFrench.join(' | ') : `${navLabels.length} entrées`);
 
     // Le panneau et l'espace élève partagent la gouttière `.sa-page`.
     const gutter = await page.evaluate(() => {

@@ -314,7 +314,7 @@ describe('inDomain — l’ensemble déclaré', () => {
  * Le test lit l'argument français lui-même et le classe par sa forme.
  */
 describe('#2 — le nom attendu d’un sophisme suit la forme de son argument', () => {
-  const catalog = JSON.parse(readFileSync(new URL('../../../../i18n/locales/ar/mathlab.json', import.meta.url), 'utf8'));
+  const catalog = JSON.parse(readFileSync(new URL('../../../../i18n/locales/fr/mathlab.json', import.meta.url), 'utf8'));
   const args = catalog.tools.logic.fallacy.arguments;
   const clean = (text) => text.replace(/[\u200e\u200f.]/g, '').trim();
 

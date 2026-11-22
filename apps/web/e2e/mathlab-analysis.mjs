@@ -1,5 +1,5 @@
 /**
- * QA navigateur — le مختبر التحليل والدوال (laboratoire d'analyse et des
+ * QA navigateur — l'outil « Analyse » de l'atelier (analyse et
  * fonctions).
  *
  * Lancement (dev server sur 5173, API sur 8000, élève QA existant) :
@@ -8,19 +8,20 @@
  * Ce qu'on vérifie (§55) :
  *   - navigation : la carte sur l'accueil, l'URL directe, le rechargement ;
  *   - §53 : la première visite ouvre sur la SÉCANTE et une fonction affine —
- *     le seul ancrage 4AM — et rien n'est créé tant qu'on n'a rien touché ;
- *   - §7 : GLISSER B met à jour le ميل EN DIRECT ;
- *   - §8 : quand B s'approche de A, le ميل CONVERGE vers f′(a) ;
+ *     le seul ancrage du collège — et rien n'est créé tant qu'on n'a rien touché ;
+ *   - §7 : GLISSER B met à jour le coefficient directeur EN DIRECT ;
+ *   - §8 : quand B s'approche de A, le coefficient directeur CONVERGE vers f′(a) ;
  *   - §9, §17 : f′ est écrite, et un point stationnaire n'est pas un extremum ;
  *   - §11, §12 : les deux tables d'approche, et le verdict quand elles diffèrent ;
  *   - §19, §20 : l'aire, et le mot « n » qui resserre les rectangles ;
  *   - §21 : intégrale signée ≠ aire géométrique sur sin ;
- *   - §16 : cliquer « الجذور » les ALLUME sur le graphe ;
+ *   - §16 : cliquer « Racines » les ALLUME sur le graphe ;
  *   - §24, §25 : les curseurs et les transformations ;
  *   - §30, §31 : le défi, les indices gradués, et qu'une erreur NE BLOQUE PAS ;
- *   - §46 : une expression fausse donne un message arabe, jamais une erreur JS ;
+ *   - §46 : une expression fausse donne un message français, jamais une erreur JS ;
  *   - §41 : la sauvegarde et la RÉOUVERTURE du document ;
- *   - RTL : panneau au bon bord, notation LTR (direction CALCULÉE) ;
+ *   - gauche à droite : page française sans dir="rtl", notation LTR
+ *     (direction CALCULÉE) ;
  *   - responsive : tablette et mobile, pas de débordement horizontal,
  *     cibles tactiles ≥ 44 px ;
  *   - accessibilité : focus visible, poignée focalisable et nommée, flèches.
@@ -33,7 +34,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const OUT = process.argv[2] || '/tmp/mathlab-analysis-shots';
 mkdirSync(OUT, { recursive: true });
@@ -78,7 +79,7 @@ async function loginUI(page) {
 
 /** Un contexte connecté : on se connecte UNE fois (l'API limite à 6/min). */
 async function authedContext(options = {}) {
-  const context = await browser.newContext({ locale: 'ar-DZ', ...options });
+  const context = await browser.newContext({ locale: 'fr-FR', ...options });
   if (!authState) {
     const page = await context.newPage();
     wire(page);
@@ -90,7 +91,7 @@ async function authedContext(options = {}) {
   }
   await context.close();
 
-  return browser.newContext({ locale: 'ar-DZ', storageState: authState, ...options });
+  return browser.newContext({ locale: 'fr-FR', storageState: authState, ...options });
 }
 
 function wire(page) {
@@ -198,22 +199,22 @@ async function typeMath(page, id, text) {
   await openTool(page);
   await shot(page, '02-first-visit');
 
-  // §53 : on ouvre sur la SÉCANTE, la seule porte 4AM du calcul différentiel.
+  // §53 : on ouvre sur la SÉCANTE, la seule porte du collège du calcul différentiel.
   const lab = await page.locator('[data-ml-analysis]').getAttribute('data-ml-lab');
   record('§53 : la première visite ouvre sur le laboratoire de la sécante', lab === 'secant', `lab=${lab}`);
 
   const source = await mathValue(page, 'f');
-  record('§53 : la fonction d’ouverture est AFFINE (programme 4AM)', source === '2x+1', source);
+  record('§53 : la fonction d’ouverture est AFFINE (programme du collège)', source === '2x+1', source);
 
   // §36 : la saisie est un vrai champ MATHÉMATIQUE, pas une ligne de texte.
   record('§36 : le champ de f est un champ mathématique (MathLive)',
     await page.evaluate(() => Boolean(customElements.get('math-field')))
     && await page.locator('[data-ml-an-mathfield="f"]').count() > 0);
 
-  // Le ميل est lisible tout de suite, sans rien régler (§53).
+  // Le coefficient directeur est lisible tout de suite, sans rien régler (§53).
   await openTab(page, 'inspector');
   const slopeText = await textOf(page, '[data-ml-an-inspector] .sa-ml-an__math--strong');
-  record('§53 : le ميل est affiché dès l’ouverture', slopeText.length > 0, slopeText);
+  record('§53 : le coefficient directeur est affiché dès l’ouverture', slopeText.length > 0, slopeText);
 
   await page.waitForTimeout(1200);
   const countAfter = listLength(await api(TOKEN, 'GET', '/math-lab/documents?tool=analysis'));
@@ -223,7 +224,7 @@ async function typeMath(page, id, text) {
 }
 
 // ════════════════════════════════════════════════════════════════════════
-// 2. §7, §8 — la sécante, son ميل, et sa convergence vers la tangente
+// 2. §7, §8 — la sécante, son coefficient directeur, et sa convergence vers la tangente
 // ════════════════════════════════════════════════════════════════════════
 {
   const context = await authedContext();
@@ -232,24 +233,24 @@ async function typeMath(page, id, text) {
   await openTool(page);
 
   /**
-   * LA lecture vive : le ميل doit changer SOUS LES YEUX de l'élève pendant
+   * LA lecture vive : le coefficient directeur doit changer SOUS LES YEUX de l'élève pendant
    * qu'il règle, sans changer d'onglet. C'est la boucle de §3 —
-   * « أغيّر شيئًا → أرى النتيجة مباشرة » — et elle était cassée tant que les
-   * nombres ne vivaient que dans l'onglet القراءة.
+   * « je change quelque chose → je vois le résultat tout de suite » — et elle
+   * était cassée tant que les nombres ne vivaient que dans l'onglet « Lecture ».
    */
   const liveSlope = () => textOf(page, '[data-ml-an-live-cell="slope"] .sa-ml-an__livevalue');
 
   await openTab(page, 'controls');
-  record('la lecture vive est visible dans l’onglet الضبط',
+  record('la lecture vive est visible dans l’onglet « Réglages »',
     await page.locator('[data-ml-an-live]').count() > 0);
 
   // Sur une AFFINE, le taux d'accroissement ne dépend pas des points : c'est
-  // exactement ce que le programme de 4AM enseigne, et ça doit se vérifier.
+  // exactement ce que le programme du collège enseigne, et ça doit se vérifier.
   const slope1 = await liveSlope();
   await page.locator('[data-ml-an-number="pointB"]').fill('7');
   await page.waitForTimeout(500);
   const slope2 = await liveSlope();
-  record('§7 : sur une affine, le ميل ne dépend pas des points choisis', slope1 === slope2 && slope1 !== '', `${slope1} = ${slope2}`);
+  record('§7 : sur une affine, le coefficient directeur ne dépend pas des points choisis', slope1 === slope2 && slope1 !== '', `${slope1} = ${slope2}`);
 
   // Et il CHANGE quand la fonction cesse d'être affine, toujours sans onglet.
   await setFunction(page, 'x^2');
@@ -259,11 +260,11 @@ async function typeMath(page, id, text) {
   await page.locator('[data-ml-an-number="pointB"]').fill('2');
   await page.waitForTimeout(500);
   const afterMove = await liveSlope();
-  record('§3 : régler dans الضبط met à jour la lecture SANS changer d’onglet',
+  record('§3 : régler dans « Réglages » met à jour la lecture SANS changer d’onglet',
     before !== afterMove && afterMove !== '', `${before} → ${afterMove}`);
   await shot(page, '03-secant-affine');
 
-  // Sur x², le ميل de la sécante doit CONVERGER vers f′(a) = 2a quand B → A.
+  // Sur x², le coefficient directeur de la sécante doit CONVERGER vers f′(a) = 2a quand B → A.
   await setFunction(page, 'x^2');
   await page.locator('[data-ml-an-number="pointA"]').fill('1');
   await page.waitForTimeout(300);
@@ -281,10 +282,10 @@ async function typeMath(page, id, text) {
   }
   // f′(1) = 2 : la suite des pentes doit descendre vers 2.
   const converges = slopes.every((value, index) => index === 0 || value < slopes[index - 1]);
-  record('§8 : le ميل de la sécante converge vers f′(a) = 2', converges && Math.abs(slopes[slopes.length - 1] - 2) < 0.2, slopes.join(' → '));
+  record('§8 : le coefficient directeur de la sécante converge vers f′(a) = 2', converges && Math.abs(slopes[slopes.length - 1] - 2) < 0.2, slopes.join(' → '));
   await shot(page, '04-secant-approaching');
 
-  // Le bouton « قرّب B من A » (§8, §32) : il doit BOUGER le point.
+  // Le bouton « Rapprocher B de A » (§8, §32) : il doit BOUGER le point.
   const beforeApproach = await page.locator('[data-ml-an-number="pointB"]').inputValue();
   await page.click('[data-ml-an-approach]');
   await page.waitForTimeout(3200);
@@ -314,7 +315,7 @@ async function typeMath(page, id, text) {
   const body = await textOf(page, '[data-ml-an-inspector]');
   record('§9 : f′(x) est ÉCRITE, pas seulement tracée', body.includes('2x - 4'), body.slice(0, 80));
   record('§35 : la dérivée symbolique est annoncée comme exacte',
-    await page.locator('[data-ml-an-inspector]').locator('text=/قواعد الاشتقاق/').count() > 0);
+    await page.locator('[data-ml-an-inspector]').locator('text=/formules de dérivation/').count() > 0);
   await shot(page, '06-derivative-parabola');
 
   // §17 : x³ a une tangente horizontale en 0 et AUCUN extremum.
@@ -394,7 +395,7 @@ async function typeMath(page, id, text) {
     await openTab(page, 'inspector');
     const rows = await page.locator('[data-ml-an-inspector] .sa-ml-an__row').allTextContents();
     await openTab(page, 'controls');
-    const errorRow = rows.find((row) => /الفرق/.test(row)) ?? '';
+    const errorRow = rows.find((row) => /Écart avec la valeur/.test(row)) ?? '';
 
     return Number(errorRow.replace(/[^\d,.-]/g, '').replace(',', '.'));
   };
@@ -441,7 +442,7 @@ async function typeMath(page, id, text) {
   await page.click('[data-ml-an-study="roots"]');
   await page.waitForTimeout(500);
   const rootsAfter = await page.locator('[data-ml-point="root"]').count();
-  record('§16 : cliquer « الجذور » change la mise en évidence SUR le graphe',
+  record('§16 : cliquer « Racines » change la mise en évidence SUR le graphe',
     rootsBefore !== rootsAfter, `${rootsBefore} → ${rootsAfter}`);
 
   /**
@@ -453,7 +454,7 @@ async function typeMath(page, id, text) {
   record('§16 : éteindre la mise en évidence ne FAIT PAS disparaître la réponse',
     /1/.test(rootsRowAfter) && /3/.test(rootsRowAfter), rootsRowAfter.slice(0, 60));
 
-  // ── جدول التغيّرات : la synthèse sous la forme du manuel ────────────────
+  // ── tableau de variations : la synthèse sous la forme du cours ────────────────
   {
     // Le tableau se CONSTRUIT ligne par ligne (MATH_LAB §3.4.2).
     const buildTable = async () => {
@@ -462,11 +463,11 @@ async function typeMath(page, id, text) {
       await playToEnd(page, 'data-ml-an-vstep');
       await page.waitForTimeout(200);
     };
-    record('جدول التغيّرات : rien avant la construction',
+    record('tableau de variations : rien avant la construction',
       (await page.locator('[data-ml-an-vararrow]').count()) === 0);
     await buildTable();
     const state = await page.locator('[data-ml-an-vartable]').getAttribute('data-ml-an-vartable').catch(() => null);
-    record('جدول التغيّرات : le tableau de variations est construit', state === 'ok', `state=${state}`);
+    record('tableau de variations : le tableau de variations est construit', state === 'ok', `state=${state}`);
 
     const readTable = async () => ({
       arrows: await page.locator('[data-ml-an-vararrow]').evaluateAll((nodes) => nodes.map((node) => node.getAttribute('data-ml-an-vararrow'))),
@@ -476,11 +477,11 @@ async function typeMath(page, id, text) {
     });
 
     const parabola = await readTable();
-    record('جدول التغيّرات : ↘ puis ↗ pour x² − 4x + 3',
+    record('tableau de variations : ↘ puis ↗ pour x² − 4x + 3',
       JSON.stringify(parabola.arrows) === JSON.stringify(['decreasing', 'increasing']), JSON.stringify(parabola.arrows));
-    record('جدول التغيّرات : le minimum est posé EN BAS, les bornes en haut',
+    record('tableau de variations : le minimum est posé EN BAS, les bornes en haut',
       JSON.stringify(parabola.positions) === JSON.stringify(['high', 'low', 'high']), JSON.stringify(parabola.positions));
-    record('جدول التغيّرات : la ligne f′ porte les signes − puis +',
+    record('tableau de variations : la ligne f′ porte les signes − puis +',
       JSON.stringify(parabola.signs) === JSON.stringify(['−', '+']), JSON.stringify(parabola.signs));
 
     // §17 dans le tableau : f′ = 0 sans extremum, la valeur à MI-HAUTEUR.
@@ -490,7 +491,7 @@ async function typeMath(page, id, text) {
     await page.waitForTimeout(400);
     await buildTable();
     const cubic = await readTable();
-    record('جدول التغيّرات : x³ monte des deux côtés de f′ = 0 (§17)',
+    record('tableau de variations : x³ monte des deux côtés de f′ = 0 (§17)',
       JSON.stringify(cubic.arrows) === JSON.stringify(['increasing', 'increasing'])
       && cubic.positions[1] === 'middle', `${JSON.stringify(cubic.arrows)} ${JSON.stringify(cubic.positions)}`);
 
@@ -501,9 +502,9 @@ async function typeMath(page, id, text) {
     await page.waitForTimeout(400);
     await buildTable();
     const inverse = await readTable();
-    record('جدول التغيّرات : le pôle de 1/x coupe le tableau UNE fois',
+    record('tableau de variations : le pôle de 1/x coupe le tableau UNE fois',
       inverse.bars === 1, `${inverse.bars} barre(s)`);
-    record('جدول التغيّرات : 1/x décroît de part et d’autre',
+    record('tableau de variations : 1/x décroît de part et d’autre',
       JSON.stringify(inverse.arrows) === JSON.stringify(['decreasing', 'decreasing']), JSON.stringify(inverse.arrows));
 
     await shot(page, '12b-variation-table');
@@ -594,7 +595,7 @@ async function typeMath(page, id, text) {
     await page.click('[data-ml-an-check]');
     await page.waitForTimeout(300);
     const emptyText = await textOf(page, '[data-ml-an-verdict]');
-    record('§46 : un champ vide demande une réponse, il n’accuse pas', /اكتب/.test(emptyText), emptyText.slice(0, 40));
+    record('§46 : un champ vide demande une réponse, il n’accuse pas', /Écris d’abord une réponse/.test(emptyText), emptyText.slice(0, 40));
   }
   await shot(page, '15-practice-hints');
 
@@ -633,8 +634,8 @@ async function typeMath(page, id, text) {
     await setFunction(page, bad);
     const errorBox = await page.locator('[data-ml-an-error]').count();
     const text = await textOf(page, '[data-ml-an-error]');
-    record(`§46 : « ${bad} » donne un message arabe, pas une exception`,
-      errorBox > 0 && /[؀-ۿ]/.test(text), text.slice(0, 50));
+    record(`§46 : « ${bad} » donne un message français, pas une exception`,
+      errorBox > 0 && /[A-Za-zÀ-ÿ]{3}/.test(text) && !/[\u0600-\u06FF]/.test(text), text.slice(0, 50));
   }
   await shot(page, '17-invalid-expression');
 
@@ -678,7 +679,7 @@ async function typeMath(page, id, text) {
 }
 
 // ════════════════════════════════════════════════════════════════════════
-// 11. RTL et notation LTR (§39)
+// 11. Gauche à droite et notation LTR (§39)
 // ════════════════════════════════════════════════════════════════════════
 {
   const context = await authedContext();
@@ -690,18 +691,19 @@ async function typeMath(page, id, text) {
   record('§39 : le plan est LTR — l’axe des x croît vers la droite', planeDir === 'ltr', planeDir);
 
   const pageDir = await page.evaluate(() => getComputedStyle(document.documentElement).direction);
-  record('l’interface est RTL', pageDir === 'rtl', pageDir);
+  const htmlLang = await page.evaluate(() => document.documentElement.getAttribute('lang'));
+  record('l’interface est française, de gauche à droite', pageDir === 'ltr' && htmlLang === 'fr' && await page.locator('[dir="rtl"]').count() === 0, `${pageDir} lang=${htmlLang}`);
 
   await openTab(page, 'inspector');
   const mathDir = await page.locator('[data-ml-an-inspector] .sa-ml-an__math').first()
     .evaluate((node) => getComputedStyle(node).direction);
-  record('§39 : la notation mathématique reste LTR dans un panneau RTL', mathDir === 'ltr', mathDir);
+  record('§39 : la notation mathématique est LTR dans le panneau', mathDir === 'ltr', mathDir);
 
   // L'axe des x doit croître vers la DROITE : on le lit sur la fenêtre.
   const view = await page.locator('[data-ml-an-plane]').getAttribute('data-ml-view');
   const [xMin, xMax] = view.split(',').map(Number);
   record('§39 : le repère n’est pas miroité (xMin < xMax)', xMin < xMax, `${xMin} … ${xMax}`);
-  await shot(page, '19-rtl');
+  await shot(page, '19-ltr');
 
   await context.close();
 }

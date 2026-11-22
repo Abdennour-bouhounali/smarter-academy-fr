@@ -17,7 +17,7 @@ export const studentDoors = [
     icon: Sun,
     path: '/espace',
     end: true,
-    match: ['/espace/bawsala'],
+    match: ['/espace/boussole'],
     pages: [],
   },
   {
@@ -40,7 +40,7 @@ export const studentDoors = [
     pages: [
       { labelKey: 'dailyChallenge', path: '/espace/defi', feature: 'dailyChallenge' },
       { labelKey: 'madar', path: '/espace/jeux' },
-      { labelKey: 'thinkingLab', path: '/espace/tafkir', feature: 'thinkingLab' },
+      { labelKey: 'thinkingLab', path: '/espace/enigmes', feature: 'thinkingLab' },
       { labelKey: 'mathLab', path: '/espace/atelier' },
     ],
   },
@@ -53,7 +53,7 @@ export const studentDoors = [
     pages: [
       { labelKey: 'progression', path: '/espace/progression' },
       { labelKey: 'notebook', path: '/espace/cahier' },
-      { labelKey: 'myClass', path: '/espace/qism' },
+      { labelKey: 'myClass', path: '/espace/classe' },
       { labelKey: 'doors.account', path: '/espace/profil' },
     ],
   },

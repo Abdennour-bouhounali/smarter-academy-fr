@@ -25,7 +25,7 @@
   permet au test final de mélanger l'affichage (`optionOrder`,
   `kit/testPresentation.js`) sans toucher à la preuve ni à la clé de réponse.
 - **`InfoSorter`** est en arabe : ses libellés viennent de l'espace i18n
-  `lesson` (clés `infoSorter.*`, `locales/ar/lesson.json`).
+  `lesson` (clés `infoSorter.*`, `locales/fr/lesson.json`).
 
 **Supprimés le 2026-09-29** — code mort de l'ère française, **aucun
 importateur** : `AffineExplorer`, `AnswerBuilder`, `BarModel`, `CalcChain`,
@@ -67,9 +67,9 @@ Il n'est **pas** responsable du gras (`**`), de l'italique (`*`) ni de la mise
 en page : utilisez `<strong>`, `<em>`, `<p>`. Un enfant non-chaîne est refusé
 (rend `null` et avertit en développement).
 
-> **Les couples numériques aussi.** `{score} / {max}` s'inverse en RTL :
-> 10/11 se lit « 11 / 10 ». Tout score, compteur ou rapport a besoin du même
-> `dir="ltr"`. Voir `docs/architecture/ARABIC_RTL_CONTRACT.md` §4.
+> **Les compteurs.** Un « {score} / {max} » ne se coupe jamais : des espaces
+> insécables autour de la barre (`lessons/common/unbreakableCounters.test.js`,
+> `docs/architecture/FRENCH_LANGUAGE_CONTRACT.md` §4).
 
 ## 2. Saisie
 

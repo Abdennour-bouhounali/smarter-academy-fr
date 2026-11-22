@@ -46,7 +46,7 @@ describe('le carnet est atteignable à tout moment', () => {
     // Le champ d'écriture vit désormais dans le cahier (NotebookWindow) ;
     // c'est lui qui porte le texte d'invite.
     const windowSrc = read('features/practice/notebook/NotebookWindow.jsx');
-    const notebookFr = JSON.parse(read('i18n/locales/ar/student.json')).notebook;
+    const notebookFr = JSON.parse(read('i18n/locales/fr/student.json')).notebook;
     // « Ce que je DOIS retenir » cadrait la note comme un constat d'échec ;
     // « ce que je VEUX retenir » en fait un choix de l'élève. La nuance doit
     // survivre à la réécriture : « veux », et surtout PAS « dois ».
@@ -70,7 +70,7 @@ describe('le carnet est atteignable à tout moment', () => {
 describe('le cahier s’ouvre en fenêtre, pré-rempli du contexte réel', () => {
   const session = read('pages/student/practice/PracticeSession.jsx');
   const windowSrc = read('features/practice/notebook/NotebookWindow.jsx');
-  const studentAr = JSON.parse(read('i18n/locales/ar/student.json'));
+  const studentAr = JSON.parse(read('i18n/locales/fr/student.json'));
 
   it('la séance transmet énoncé, question, réponse et verdict au cahier', () => {
     expect(session).toMatch(/notebookContext = \{/);
@@ -112,8 +112,8 @@ describe('le cahier s’ouvre en fenêtre, pré-rempli du contexte réel', () =>
 describe('« Mon cahier » est l’espace des notes ; la progression ne parle que de progression', () => {
   const progression = read('pages/student/Progression.jsx');
   const space = read('features/practice/notebook/space/NotebookSpace.jsx');
-  const studentAr = JSON.parse(read('i18n/locales/ar/student.json'));
-  const navAr = JSON.parse(read('i18n/locales/ar/nav.json'));
+  const studentAr = JSON.parse(read('i18n/locales/fr/student.json'));
+  const navAr = JSON.parse(read('i18n/locales/fr/nav.json'));
 
   it('Ma progression ne contient plus rien du cahier — ni liste, ni raccourci', () => {
     // Progression = « où en suis-je ? » ; cahier = « qu'ai-je écrit ? ». Les

@@ -78,7 +78,7 @@ export default function TeacherHome() {
         <div className="space-y-5" data-tour="teacher-home.classes">
           {reviews > 0 && (
             <Link
-              to="/enseignant/tashih"
+              to="/enseignant/corrections"
               className="flex min-h-[52px] items-center gap-3 rounded-2xl bg-nav-alert-soft px-4 font-inter text-sm font-bold text-[#9b2238]"
               data-home-reviews
             >

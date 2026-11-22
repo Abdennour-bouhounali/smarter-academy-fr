@@ -2,7 +2,7 @@
  * Le VOCABULAIRE des signalements, en CLÉS et non en chaînes.
  *
  * Ce module n'a plus le droit de porter du texte : la traduction vit dans le
- * catalogue (`i18n/locales/ar/admin.json`, section `reports`), et les pages
+ * catalogue (`i18n/locales/fr/admin.json`, section `reports`), et les pages
  * résolvent ces clés avec `t()`. Un module de chaînes en dur aurait rouvert
  * une seconde source de vérité — exactement ce que le contrat arabe interdit.
  */

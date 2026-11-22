@@ -22,7 +22,7 @@ describe('banque d’exercices — the bank as a teacher uses it', () => {
     expect(parseRef('x:1')).toBe(null);
     expect(parseRef(null)).toBe(null);
     expect(parseRef('3:../../etc')).toBe(null);
-    expect(exerciseBoardPath(LESSON, 3, 'ex-1')).toBe('/enseignant/hissa/lecon-a?exercice=3%3Aex-1');
+    expect(exerciseBoardPath(LESSON, 3, 'ex-1')).toBe('/enseignant/seance/lecon-a?exercice=3%3Aex-1');
   });
 
   it('sums up an exercise of the bank and letters its choices (a neutral exercise written here)', () => {

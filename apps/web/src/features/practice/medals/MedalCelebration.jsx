@@ -13,7 +13,7 @@ import { MEDAL_POINTS } from '../exam/medals';
  *
  * `award` = { id, medal, reason } — `id` change à chaque médaille.
  */
-const CONFETTI = ['#f5c518', '#006233', '#d21034', '#1f5c4c', '#fde68a', '#ffffff'];
+const CONFETTI = ['#f5c518', '#4338ca', '#6366f1', '#38bdf8', '#fde68a', '#ffffff'];
 
 export default function MedalCelebration({ award, onDone }) {
   const { t } = useTranslation('student');

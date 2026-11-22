@@ -8,7 +8,7 @@ import PersonNameFields from '../components/auth/PersonNameFields';
  * The public copy and the registration in French (FRANCE_REBUILD_PLAN.md §4quater): what a French family reads must be
  * true of this product today — no lesson yet, nothing sold — and carry no trace of the Algerian product.
  */
-const json = (ns) => JSON.parse(readFileSync(new URL(`../i18n/locales/ar/${ns}.json`, import.meta.url), 'utf8'));
+const json = (ns) => JSON.parse(readFileSync(new URL(`../i18n/locales/fr/${ns}.json`, import.meta.url), 'utf8'));
 const marketing = json('marketing');
 const auth = json('auth');
 const access = json('access');

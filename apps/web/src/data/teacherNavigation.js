@@ -27,7 +27,7 @@ export const teacherDoors = [
     badge: 'reviews',
     pages: [
       { labelKey: 'myClasses', path: '/enseignant/classes' },
-      { labelKey: 'answerReviews', path: '/enseignant/tashih', badge: 'reviews' },
+      { labelKey: 'answerReviews', path: '/enseignant/corrections', badge: 'reviews' },
       { labelKey: 'teacherGames', path: '/enseignant/jeux' },
     ],
   },
@@ -38,7 +38,7 @@ export const teacherDoors = [
     path: '/enseignant/atelier',
     pages: [
       { labelKey: 'mathLab', path: '/enseignant/atelier' },
-      { labelKey: 'thinkingLab', path: '/enseignant/tafkir', feature: 'thinkingLab' },
+      { labelKey: 'thinkingLab', path: '/enseignant/enigmes', feature: 'thinkingLab' },
       { labelKey: 'notebook', path: '/enseignant/cahier' },
     ],
   },
@@ -48,5 +48,5 @@ export const teacherDoors = [
 export const teacherAccountLinks = [
   { labelKey: 'doors.account', path: '/enseignant/profil' },
   { labelKey: 'myPlan', path: '/enseignant/offre', paid: true },
-  { labelKey: 'mySchool', path: '/enseignant/muassasa' },
+  { labelKey: 'mySchool', path: '/enseignant/etablissement' },
 ];

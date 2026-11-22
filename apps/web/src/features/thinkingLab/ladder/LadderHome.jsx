@@ -64,7 +64,7 @@ export default function LadderHome({ home }) {
               {full ? (
                 <p className="mt-4 rounded-2xl bg-white/15 px-4 py-3 font-inter text-sm">{t('ladder.full', { max: home.maxOpen })}</p>
               ) : (
-                <Link to={`/espace/tafkir/${home.next.id}`} data-start-next
+                <Link to={`/espace/enigmes/${home.next.id}`} data-start-next
                   className="mt-5 inline-flex min-h-[52px] items-center gap-2 rounded-2xl bg-white px-6 font-space text-base font-black text-nav-accent transition hover:bg-nav-accent-soft focus:outline-none focus-visible:ring-4 focus-visible:ring-amber-300">
                   {t('ladder.start', { number: home.next.number })} <ArrowForward size={18} aria-hidden="true" />
                 </Link>
@@ -86,7 +86,7 @@ export default function LadderHome({ home }) {
             <ul className="mt-3 space-y-2">
               {home.open.map((o) => (
                 <li key={o.id}>
-                  <Link to={`/espace/tafkir/${o.id}`} data-open-challenge={o.number}
+                  <Link to={`/espace/enigmes/${o.id}`} data-open-challenge={o.number}
                     className="flex items-center justify-between gap-3 rounded-2xl bg-slate-50 px-4 py-3 ring-1 ring-slate-200 transition hover:bg-amber-50 hover:ring-amber-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-amber-300">
                     <div className="min-w-0">
                       <p className="font-space text-xl font-black text-slate-900" dir="ltr">{o.summit ? '▲ ' : ''}{o.number}</p>
@@ -107,7 +107,7 @@ export default function LadderHome({ home }) {
                   <Gamepad2 size={14} aria-hidden="true" /> {t('ladder.waitingGames')}
                 </Link>
                 {home.next && !full && (
-                  <Link to={`/espace/tafkir/${home.next.id}`} className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 font-inter text-xs font-bold text-amber-800 ring-1 ring-amber-300">
+                  <Link to={`/espace/enigmes/${home.next.id}`} className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 font-inter text-xs font-bold text-amber-800 ring-1 ring-amber-300">
                     {t('ladder.waitingEasier')}
                   </Link>
                 )}
@@ -131,7 +131,7 @@ export default function LadderHome({ home }) {
             return (
               <li key={s.id} title={`${s.number} · ${t(`ladder.status.${s.status}`)}`} data-stone={s.status}>
                 {clickable ? (
-                  <Link to={`/espace/tafkir/${s.id}`} aria-label={`${t('challengeNumber', { number: s.number })} · ${t(`ladder.status.${s.status}`)}`}
+                  <Link to={`/espace/enigmes/${s.id}`} aria-label={`${t('challengeNumber', { number: s.number })} · ${t(`ladder.status.${s.status}`)}`}
                     className="block rounded-full focus:outline-none focus-visible:ring-4 focus-visible:ring-amber-300">{stone}</Link>
                 ) : (
                   <span aria-label={t('ladder.status.locked')}>{stone}</span>

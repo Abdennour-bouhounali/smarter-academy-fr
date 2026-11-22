@@ -1,21 +1,24 @@
-# « فضاء الإدارة » — the school administration space
+# « Espace établissement » — the school administration space
 
 > Status (2026-10-26): **Phases 0–7 implemented** — contract, data model, the
 > `school_admin` role and its gate, the privacy gate `SchoolAccess`, the
-> platform admin's « المؤسسات », the school's STRUCTURE (terms, teachers,
-> classes, students, roster import, login cards), its TRACKING (the الكفاءات
+> platform admin's « Établissements », the school's STRUCTURE (terms, teachers,
+> classes, students, roster import, login cards), its TRACKING (the savoir-faire
 > map per class, the student file), its REPORTS (frozen snapshots, A4 print,
 > CSV), the MEETING VIEW and the school LICENCE (model C). The code is the
 > source of truth.
 >
 > **Status (2026-11-22).** Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: everything
-> above, in the API and the web code. Not true here: the interface is Arabic; a school is still described the Algerian
-> way (a « متوسطة », `wilaya` / `commune` columns, the login domain `@eleve.smarter-academy.com`); three terms happen to
-> match the French trimestres, but no French school year is written yet (plan 2D). The French wording is
-> `FRENCH_LANGUAGE_CONTRACT.md`; minors' data in a school space waits for the owner (plan §7, 4).
+> above, in the API and the web code. The interface is French and left to right since 2026-11-22 (namespace `idara`;
+> the routes are French: `/etablissement/…`, `/enseignant/etablissement`, `/rejoindre/etablissement/:token`). The
+> generated login domain is `eleve.smarter-academy.fr` (`config/school.php`); a roster name is checked against the
+> API's Latin pattern (`Domain/Identity/PersonName::PATTERN`). Still Algerian in the data model: the `schools` table
+> keeps its `wilaya` / `commune` columns (searched by the admin, returned by `GET /teacher/school-links/{token}`). The
+> three terms are the French « trimestres » in the interface, but no French school year is written yet (plan 2D).
+> Minors' data in a school space waits for the owner (plan §7, 4). No walk has checked these pages in French.
 
-A **school** (« المؤسسة », a متوسطة) is a first-class object: its classes, its
-teachers, its students, and one **director** (« المدير ») who manages them,
+A **school** (« établissement », a collège) is a first-class object: its classes, its
+teachers, its students, and one **director** (« chef d’établissement ») who manages them,
 follows their learning, prints reports and projects them in meetings. This is
 « Model C » of `TEACHER_CLASSROOM_ARCHITECTURE.md` §6.
 
@@ -24,32 +27,32 @@ follows their learning, prints reports and projects them in meetings. This is
 | # | Decision |
 |---|---|
 | D1 | **The school buys a licence** of student seats; its students get full access through it; a teacher's own seats are not consumed by a covered school class. Built (phase 7, §5bis). Without a running licence a school class uses its TEACHER's seats. |
-| D2 | **The director may enrol a student directly** (imported roster → class). The school's consent is recorded at enrolment (`school_consent_by = school`); the student confirms the teacher's sharing text once in « قسمي » (non-blocking). Built (phase 3). |
+| D2 | **The director may enrol a student directly** (imported roster → class). The school's consent is recorded at enrolment (`school_consent_by = school`); the student confirms the teacher's sharing text once in « Ma classe » (non-blocking). Built (phase 3). |
 | D3 | **One school role: the director.** `school_staff.school_role` exists so a second role is a value, not a migration. |
 | D4 | **Teacher activity is shown as FACTS** — never a score, never a ranking — and **the teacher sees exactly what the school sees** about them. Built (phase 3): ONE function `TeacherActivityFacts::for()` and ONE component `TeacherFacts.jsx` serve both readers. |
-| D5 | **A student without an e-mail gets a generated « معرّف الدخول »** (`s{schoolId}.{6 chars}@eleve.smarter-academy.com`, domain `config('school.student_login_domain')`), verified at creation, printed on a login card with a password shown once. No mail is ever sent to it (`User::routeNotificationForMail()` returns `null`); a lost password is re-issued on a card. (Owner, 2026-10-26.) |
+| D5 | **A student without an e-mail gets a generated « identifiant »** (`s{schoolId}.{6 chars}@eleve.smarter-academy.fr`, domain `config('school.student_login_domain')`), verified at creation, printed on a login card with a password shown once. No mail is ever sent to it (`User::routeNotificationForMail()` returns `null`); a lost password is re-issued on a card. (Owner, 2026-10-26.) |
 
 ## 1. Vocabulary
 
-| Arabic (UI) | Means | Code / DB |
+| French (UI) | Means | Code / DB |
 |---|---|---|
-| **المؤسسة** | the school | `schools`, `School` |
-| **المدير** | the school's director, an account with `role = school_admin` | `User::ROLE_SCHOOL_ADMIN`, `school_staff` |
-| **فضاء الإدارة** | the director's space | route `/idara`, API `/api/v1/school/*`, i18n namespace `idara` |
-| **مؤسستي** | the school as the TEACHER sees it | `/enseignant/muassasa`, API `/api/v1/teacher/school*` |
-| **الفصل** (term) | one of the three terms of the school year | `school_terms` |
-| **معرّف الدخول** | a login generated by the school for a student (D5) | `users.email` on the school login domain, `User::hasSchoolLogin()` |
-| **القسم** | unchanged: a teacher's class (`TEACHER_CLASSROOM_ARCHITECTURE.md` §0); a class of a school carries `classrooms.school_id` | `classrooms` |
+| **établissement** | the school | `schools`, `School` |
+| **chef d’établissement** | the school's director, an account with `role = school_admin` | `User::ROLE_SCHOOL_ADMIN`, `school_staff` |
+| **Espace établissement** | the director's space | route `/etablissement`, API `/api/v1/school/*`, i18n namespace `idara` |
+| **Mon établissement** | the school as the TEACHER sees it | `/enseignant/etablissement`, API `/api/v1/teacher/school*` |
+| **trimestre** (term) | one of the three terms of the school year | `school_terms` |
+| **identifiant** | a login generated by the school for a student (D5) | `users.email` on the school login domain, `User::hasSchoolLogin()` |
+| **classe** | unchanged: a teacher's class (`TEACHER_CLASSROOM_ARCHITECTURE.md` §0); a class of a school carries `classrooms.school_id` | `classrooms` |
 
-The platform admin's section is « المؤسسات » at `/admin/etablissements`: the admin
-panel is Arabic like the rest of the product, only its URL paths are French
-(`/admin/enseignants`, `/admin/classes` — `ADMIN_PANEL_ARCHITECTURE.md` §33.0).
+The platform admin's section is « Établissements » at `/admin/etablissements`: the admin
+panel is French like the rest of the product (`/admin/enseignants`, `/admin/classes` —
+`ADMIN_PANEL_ARCHITECTURE.md` §33.0).
 
 ## 2. Who exists — one more role
 
 ```text
 role          registers via                          lands on   gate
-school_admin  created by the platform admin only     /idara     can:school
+school_admin  created by the platform admin only     /etablissement     can:school
 ```
 
 - `school_admin` is **not** self-registerable and is **not** `admin`: a director
@@ -101,19 +104,19 @@ one write of a membership):
 
 | Way in | School consent |
 |---|---|
-| the class **link** of a school class (`/rejoindre/classe/{token}`) | `student` — the link page shows the same sharing text PLUS « هذا القسم تابع لمؤسسة … » (`SharingDisclosure schoolName`, preview field `schoolName`); the same gesture accepts both. A visitor's pending join, completed after e-mail verification, goes through the link too |
-| the class **code** (« قسمي ») | `student` when accepted on the text of 2026-10-28 or later (it announces the school, below); on an older text **none** — « قسمي » asks afterwards |
-| **enrolment by the director** (`enrolBySchool`, D2) | `school`; the teacher's sharing text stays unconsented (`consented_at` null) and « قسمي » asks it, without blocking |
-| a class **attached** later by its teacher — by hand (« ربط بالمؤسسة ») or because the teacher **joined the school by its link** (§6) | `student` for every active member whose consent was given on the text of 2026-10-28 or later (`ClassroomMembership::coversFutureSchool`); the others are asked again in « قسمي » (their text is outdated) and re-accepting brings them in (`confirmConsent`) |
+| the class **link** of a school class (`/rejoindre/classe/{token}`) | `student` — the link page shows the same sharing text PLUS « Cette classe appartient à l’établissement « … » … » (`qism.sharing.school`, `SharingDisclosure schoolName`, preview field `schoolName`); the same gesture accepts both. A visitor's pending join, completed after e-mail verification, goes through the link too |
+| the class **code** (« Ma classe ») | `student` when accepted on the text of 2026-10-28 or later (it announces the school, below); on an older text **none** — « Ma classe » asks afterwards |
+| **enrolment by the director** (`enrolBySchool`, D2) | `school`; the teacher's sharing text stays unconsented (`consented_at` null) and « Ma classe » asks it, without blocking |
+| a class **attached** later by its teacher — by hand (« Rattacher à l’établissement ») or because the teacher **joined the school by its link** (§6) | `student` for every active member whose consent was given on the text of 2026-10-28 or later (`ClassroomMembership::coversFutureSchool`); the others are asked again in « Ma classe » (their text is outdated) and re-accepting brings them in (`confirmConsent`) |
 
 - **Automatic school consent (owner, 2026-10-28).** Since `classroom.consent_version` `2026-10-28` the
-  sharing text (`SharingDisclosure`, `qism.sharing.schoolFuture`) says, for a class with no school: « if this
-  class is attached to a school later, you join it automatically and its director sees your progress ». A
+  sharing text (`SharingDisclosure`, `qism.sharing.schoolFuture`) says, for a class with no school: « Si cette
+  classe est rattachée plus tard à un établissement, tu y entres automatiquement et sa direction voit … ». A
   student who accepted that text (or a later one — `config('classroom.school_auto_consent_since')`, versions
   compared as ISO dates) gets `school_consent_by = student` the moment the class is attached. Older consents
-  were NOT given on that text: bumping the version makes « قسمي » ask them once.
-- « قسمي » shows one card per class with `studyContext.classrooms[].schoolConsentRequired`
-  (a school class whose membership was not consented BY THE STUDENT); « أوافق »
+  were NOT given on that text: bumping the version makes « Ma classe » ask them once.
+- « Ma classe » shows one card per class with `studyContext.classrooms[].schoolConsentRequired`
+  (a school class whose membership was not consented BY THE STUDENT); « J’accepte »
   calls `POST /student/classrooms/{id}/school-consent` (`school_consent_by = student`,
   log `classroom_member.school_consented`).
 - **Detaching** a class (teacher) or a teacher leaving / being detached clears
@@ -133,13 +136,13 @@ admin, a teacher, a student and a parent, and to a revoked director or a
 suspended school; a non-consented member is neither counted nor listed.
 **Every new `/school` read is added to `schoolReads()` in that test.**
 
-## 5. The platform admin — « المؤسسات »
+## 5. The platform admin — « Établissements »
 
-`/admin/etablissements` (list, « مؤسسة جديدة ») and `/admin/etablissements/:id`
-(status; **« تعيين المدير »**: a new `school_admin` account, e-mail verified,
+`/admin/etablissements` (list, « Nouvel établissement ») and `/admin/etablissements/:id`
+(status; **« Nommer le chef d’établissement »**: a new `school_admin` account, e-mail verified,
 17-character password shown once (`kmar4827-tbqe5513`, `no-store`); an e-mail
 that already has an account is refused (`email_taken`); one director per school
-(`director_exists`); **« سحب التعيين »** revokes and deletes the tokens).
+(`director_exists`); **« Retirer la nomination »** revokes and deletes the tokens).
 Admin errors carry `reason` (`services/admin/adminClient.js`) and render from
 `admin:schools.errors.*`.
 
@@ -153,7 +156,7 @@ DELETE /admin/schools/{id}/director
 
 ## 5bis. The school licence (model C, phase 7)
 
-The platform admin activates it by hand on the school's page (« رخصة المؤسسة »:
+The platform admin activates it by hand on the school's page (« Licence de l’établissement »:
 seats, optional end date, note — the money is paid outside the platform, like
 every plan of the product), and suspends, resumes or cancels it. Granting a new
 licence cancels the active one (renewal, change of seats); fewer seats than the
@@ -180,7 +183,7 @@ removes a student.
   destroys data »).
 - The roster preview says which seats count (`seatsFrom: school|teacher`);
   reassigning a covered class needs no teacher seat.
-- The director sees the licence on « لوحة المؤسسة » (`overview.licence`: seats,
+- The director sees the licence on the « Tableau de bord » (`overview.licence`: seats,
   current, remaining, end — null without a running licence).
 - Logged: `school.licence_granted` (seats, end), `school.licence_status_changed`.
 
@@ -192,23 +195,23 @@ GET   /admin/schools/{id}   → … licence {id, status, running, seats, current
 
 Locked by `SchoolLicenceTest`.
 
-## 6. The director's space `/idara` (Arabic, RTL)
+## 6. The director's space `/etablissement`
 
 Tablet and laptop (root `CLAUDE.md`), plus the projector for the meeting view.
 Lazy routes, `SchoolLayout`, namespace `idara` on demand. Shared look and helpers:
 `features/school/ui.js`.
 
 ```text
-/idara             لوحة المؤسسة   counts (classes, teachers, consented students)                      built
-/idara/aqsam       الأقسام        classes: members vs « يطّلع عليهم المدير », create for a teacher, reassign  built
-/idara/asatidha    الأساتذة       join link (copy, renew), each teacher with TeacherFacts, detach       built
-/idara/talamidh    التلاميذ       consented students per class, roster import, transfer, login cards   built
-/idara/iidadat     الإعدادات      the three terms                                                       built
-/idara/talamidh/:id ملف التلميذ   the parent's « التقدّم بالتفصيل » (ProgressDetail audience="school")   built (phase 4)
-/idara/kafaat      الكفاءات       each الكفاءة of a grade, class by class, as counts                    built (phase 4)
-/idara/taqarir     التقارير       catalogue (type, scope, term) → frozen snapshot; saved list           built (phase 5)
-/idara/taqarir/:id تقرير          the frozen report: A4 print, CSV, « وضع الاجتماع »                     built (phase 5)
-/idara/ijtimaa/:id وضع الاجتماع   full-screen projection, one slide per screen, « إخفاء الأسماء »       built (phase 6)
+/etablissement                Tableau de bord   counts (classes, teachers, consented students)                    built
+/etablissement/classes        Classes           members vs « Suivis par l’établissement », create for a teacher, reassign  built
+/etablissement/professeurs    Professeurs       join link (copy, renew), each teacher with TeacherFacts, detach     built
+/etablissement/eleves         Élèves            consented students per class, roster import, transfer, login cards built
+/etablissement/reglages       Réglages          the three trimestres                                                built
+/etablissement/eleves/:id     Fiche de l’élève  the parent's « La progression en détail » (ProgressDetail audience="school")  built (phase 4)
+/etablissement/savoir-faire   Savoir-faire      each savoir-faire of a grade, class by class, as counts             built (phase 4)
+/etablissement/rapports       Rapports          catalogue (type, scope, term) → frozen snapshot; saved list         built (phase 5)
+/etablissement/rapports/:id   Rapport           the frozen report: A4 print, CSV, « Mode réunion »                  built (phase 5)
+/etablissement/reunion/:id    Mode réunion      full-screen projection, one slide per screen, « Masquer les noms »  built (phase 6)
 ```
 
 **Classes** (`SchoolClassroomService`). The director creates a class FOR a
@@ -219,8 +222,9 @@ school checks that teacher's free seats for the class's not-yet-seated students
 (`seats_exhausted`, until the licence of phase 7).
 
 **Teachers** (`SchoolTeacherService`). The director sends the link
-`/enseignant/muassasa/rejoindre/{teacher_join_token}` (the server returns the
-token only); renewing it kills the old one (`invalid_link`). **Joining by the link
+`/rejoindre/etablissement/{teacher_join_token}` (the server returns the
+token only, the client composes the address — `pages/school/SchoolTeachers.jsx`; the route is
+`App.jsx › /rejoindre/etablissement/:token`, teachers only); renewing it kills the old one (`invalid_link`). **Joining by the link
 brings the teacher's classes** (owner, 2026-10-28): in the same transaction every
 ACTIVE class of the teacher without a school is attached
 (`SchoolClassroomService::attachAllOf`), with its students who consented on the
@@ -234,16 +238,16 @@ teacher ends the row and gives the classes back (§4).
 
 - **Import in two steps on the same rows** (max `config('school.roster_max_rows')` = 60):
   the client parses a pasted list or a CSV (`features/school/rosterCsv.js`, pure,
-  tested: comma / semicolon / tab, Arabic or French header skipped, `14/03/2012` →
+  tested: comma / semicolon / tab, a French or English header skipped, `14/03/2012` →
   `2012-03-14`); `POST /school/roster/preview` creates nothing and returns each row's
   status — `new`, `exists` (same first name + last name + birth date among the
   students the school already reads), `duplicate_in_file`, `invalid` with its
-  `problem` (`firstName_not_arabic`, `birthDate_invalid`, `birthDate_out_of_range`
+  `problem` (`firstName_missing`, `firstName_invalid` — not the Latin pattern of `PersonName` —, `birthDate_invalid`, `birthDate_out_of_range`
   (8–20 years)…) — plus the class teacher's `seatsRemaining`.
   `POST /school/roster` creates **all or nothing**: an invalid row refuses the whole
   import (`invalid_roster`), missing seats roll everything back (`seats_exhausted`).
   Each new student: role `student`, the class's grade, `birth_date`, a generated
-  « معرّف الدخول » (D5), verified, enrolled by `enrolBySchool`. The response
+  « identifiant » (D5), verified, enrolled by `enrolBySchool`. The response
   (`no-store`) carries the cards — the only time the passwords exist in clear.
   Log `school.roster_imported`: ids and counts, never a password or a birth date.
 - **Transfer** between two classes of the school: the old membership is closed
@@ -252,7 +256,7 @@ teacher ends the row and gives the classes back (§4).
 - **Login cards** (`POST /school/students/credentials`): new passwords, shown
   once, **only for school-created accounts** — a personal account's password
   belongs to its student (`not_school_login`). Printed with the teacher's
-  « بطاقات الدخول » sheet (`features/teacher/members/credentials.css`,
+  login-card sheet (« Cartes de connexion ») (`features/teacher/members/credentials.css`,
   `features/school/SchoolCredentialCards.jsx`).
 
 API (`auth:sanctum` + `account.active` + `email.verified` + `can:school`):
@@ -280,7 +284,7 @@ GET  /school/reports/{id}            DELETE /school/reports/{id}   (404 for anot
 the canonical Mastery V2 state (`student_learning_point_progress`) on the
 students the school may read (`consentedMemberships`).
 
-- **The الكفاءات map** of a grade: the learning points of the lessons at least one
+- **The savoir-faire map** of a grade: the learning points of the lessons at least one
   class of that grade sees (`ClassroomProgressService::effectiveLessonIds`, so a
   lesson hidden by every teacher is absent), and for each point and each class
   the **counts** `{mastered, reinforce, gap, unassessed}` (unassessed = readable
@@ -293,7 +297,7 @@ students the school may read (`consentedMemberships`).
   and the SAME component (`ProgressDetail`, `audience="school"`, sentence
   `family:progress.supportIntroSchool`) the student and the guardian read
   (`PARENT_SPACE.md` §4bis). **Study time is NOT shown to the school**: the text
-  the student accepts names progress and الكفاءات, not hours.
+  the student accepts names progress and savoir-faire, not hours.
 - Locked by `SchoolProgressTest` (the map equals the engine's rows; a
   non-consented student is absent; no `average`/`mean` key) and the two reads in
   `SchoolPrivacyContractTest`.
@@ -306,64 +310,64 @@ student or a new answer never changes an existing snapshot — the director
 generates a new one. One builder per type, all on the tracking and teacher
 services (nothing recomputes mastery, nothing averages):
 
-| `type` | « » | `scope` | payload |
+| `type` | label (`idara:reports.types.*`) | `scope` | payload |
 |---|---|---|---|
-| `class` | تقرير القسم | classroom id | `classroom {name, gradeName, teacher}`, `students`, `lessons[].learningPoints[].counts`, `studentsToWatch[{id, firstName, lastName, gap, reinforce, mastered}]` (most gaps first) |
-| `grade` | تقرير المستوى | grade code | `map` (the learning map of §6), `hardest` (≤ 10 points whose `difficultyScope` is `class_wide` or `small_group`, most gaps first) |
-| `student` | بطاقة متابعة التلميذ | student id | `{student, progress}` = the student file (no study time) |
-| `school_term` | الحصيلة الفصلية | — | `counts`, and per grade `{classes, students, states (student × الكفاءة counts), hardest ≤ 5}` |
-| `teachers` | نشاط الأساتذة | — | `teachers[{…, facts}]` = `TeacherActivityFacts` (D4) |
+| `class` | Rapport de la classe | classroom id | `classroom {name, gradeName, teacher}`, `students`, `lessons[].learningPoints[].counts`, `studentsToWatch[{id, firstName, lastName, gap, reinforce, mastered}]` (most gaps first) |
+| `grade` | Rapport du niveau | grade code | `map` (the learning map of §6), `hardest` (≤ 10 points whose `difficultyScope` is `class_wide` or `small_group`, most gaps first) |
+| `student` | Fiche de suivi de l’élève | student id | `{student, progress}` = the student file (no study time) |
+| `school_term` | Bilan trimestriel de l’établissement | — | `counts`, and per grade `{classes, students, states (student × savoir-faire counts), hardest ≤ 5}` |
+| `teachers` | Activité des professeurs | — | `teachers[{…, facts}]` = `TeacherActivityFacts` (D4) |
 
 - The optional `termId` (a `school_terms` row of the school) LABELS the
-  snapshot (« الفصل 1 — 2026-2027 »); mastery is the state at generation.
+  snapshot (« Trimestre 1 — 2026-2027 »); mastery is the state at generation.
 - The server returns codes, numbers and names; the `title` column is the
   subject's name (class, grade, student, school). Every label is the client's
   (`idara:reports.*`) — « the API speaks codes ».
 - A snapshot of another school answers 404 (`report_not_found`). Generating and
   deleting are logged (`school_report.generated|deleted`, type and scope only).
 - **Print**: `pages/school/SchoolReport.jsx` — `[data-school-print]` article,
-  header (school, report, term, « حالة يوم … »), `features/school/reports/reportPrint.css`
-  (A4, margins, « صفحة n / N » in the `@bottom-center` page box, table headers
+  header (school, report, term, « État au … »), `features/school/reports/reportPrint.css`
+  (A4, margins, « Page n / N » in the `@bottom-center` page box, table headers
   repeated, rows not split); the space's header and the toolbar carry `print:hidden`.
 - **CSV**: built in the browser from the same payload (`reportCsv.js`, pure,
-  tested): one table per type, Arabic headers from the same labels, UTF-8 with a
-  BOM so Excel reads Arabic. No server export endpoint. (Gating behind
+  tested): one table per type, French headers from the same labels, UTF-8 with a
+  BOM so Excel reads the accents. No server export endpoint. (Gating behind
   `reports.export` belongs to the licence, phase 7.)
 - The body is ONE component, `features/school/reports/ReportView.jsx`, for the
   screen and the paper; the distribution bar is the shared
   `features/school/Distribution.jsx` (also the learning map).
 
-**Meeting view (phase 6, `pages/school/SchoolMeeting.jsx`).** `/idara/ijtimaa/:id`
+**Meeting view (phase 6, `pages/school/SchoolMeeting.jsx`).** `/etablissement/reunion/:id`
 projects a frozen report OUTSIDE the space's shell (like `ChallengeDisplayPage`).
 `features/school/reports/meetingSlides.js` (pure, tested) cuts it into slides —
 a title, then per type: one slide per lesson WITH evidence (a lesson where no
 student has a state is left out of the projection, the printed report stays
-complete), the students to watch, the hardest الكفاءات, one slide per grade,
-the teachers. Keyboard and clicker (`stepForKey`: ←, ↓, PageDown, Space,
-Enter forward — RTL; →, ↑, PageUp back; Escape returns to the report), a
-fullscreen button, and **« إخفاء الأسماء »** — student names become « تلميذ n »
-(teachers « أستاذ n »), ON by default for `grade`, `school_term`, `teachers`
+complete), the students to watch, the hardest savoir-faire, one slide per grade,
+the teachers. Keyboard and clicker (`stepForKey`: →, ↓, PageDown, Space,
+Enter forward; ←, ↑, PageUp, Backspace back; Escape returns to the report), a
+fullscreen button, and **« Masquer les noms »** — student names become « Élève n »
+(teachers « Professeur n »), ON by default for `grade`, `school_term`, `teachers`
 (wide councils), OFF for a class council. Distributions are drawn large
 (`Distribution size="lg"`).
 
 The director's header shows icon-only links below 1280 px (labels as tooltip
-and accessible name) and the name and « تسجيل الخروج » text from 1536 px.
+and accessible name) and the name and « Se déconnecter » text from 1536 px.
 
-## 7. The teacher's side — « مؤسستي » (D4)
+## 7. The teacher's side — « Mon établissement » (D4)
 
-`/enseignant/muassasa` (sidebar « مؤسستي ») and the join page
-`/enseignant/muassasa/rejoindre/:token`, strings in `idara › teacher.*`.
+`/enseignant/etablissement` (sidebar « Mon établissement ») and the join page
+`/rejoindre/etablissement/:token`, strings in `idara › teacher.*`.
 
 - **Opening the link joins nothing**: the page first says that joining attaches
   all the teacher's classes with their consenting students (`teacher.join.allClasses`,
   2026-10-28), then lists what the school will see
   (`teacher.join.items.*`: classes, consented students, interventions opened and
-  closed over 30 days, last sign-in) and « أوافق وأنضمّ » is the gesture
+  closed over 30 days, last sign-in) and « J’accepte et je rejoins » is the gesture
   (`consent_required` without it).
-- « مؤسستي » shows the SAME `TeacherFacts` component the director sees, the
-  teacher's classes with « ربط بالمؤسسة / فكّ الربط », and « مغادرة المؤسسة ».
+- « Mon établissement » shows the SAME `TeacherFacts` component the director sees, the
+  teacher's classes with « Rattacher à l’établissement / Détacher », and « Quitter l’établissement ».
 - `lastSignInAt` is `users.last_activity_at`, written at login only — the fact is
-  named « آخر دخول » for that reason.
+  named « Dernière connexion » for that reason.
 
 ```text
 GET  /teacher/school                 → {school|null, facts|null}
@@ -397,7 +401,7 @@ The teacher's class shape gains `schoolId`.
 - Web: `components/layout/SchoolLayout.jsx`; `pages/school/{SchoolHome,SchoolClassrooms,SchoolTeachers,SchoolStudents,SchoolSettings,SchoolLearningMap,SchoolStudentFile,SchoolReports,SchoolReport,SchoolMeeting}.jsx`;
   `features/school/{Distribution.jsx,reports/{ReportView.jsx,reportCsv.js,meetingSlides.js,reportPrint.css}}`;
   `pages/teacher/{TeacherSchoolPage,TeacherSchoolJoin}.jsx`; `features/school/{ui.js,rosterCsv.js,RosterImportDialog.jsx,SchoolCredentialCards.jsx,TeacherFacts.jsx}`;
-  `services/schoolService.js`; `i18n/locales/ar/idara.json` (on demand) + `common.apiErrors.idara`,
+  `services/schoolService.js`; `i18n/locales/fr/idara.json` (on demand) + `common.apiErrors.idara`,
   `nav.mySchool`, `student.json › qism.sharing.school, qism.schoolConsent.*` (entry);
   `pages/admin/schools/{SchoolList,SchoolDetail}.jsx`, `services/admin/schoolService.js`,
   `admin.json › schools`, `nav.schools`; role landing in `HomeRedirect`, `Login`, `AuthGoogle`, `CompleteName`.

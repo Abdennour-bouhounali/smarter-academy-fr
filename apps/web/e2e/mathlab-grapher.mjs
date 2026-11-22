@@ -1,5 +1,5 @@
 /**
- * QA navigateur — le grapheur (راسم الدوال) du مختبر الرياضيات.
+ * QA navigateur — le grapheur (« Traceur de courbes ») de « L’atelier de mathématiques ».
  *
  * Lancement (dev server sur 5173, API sur 8000, élève QA existant) :
  *   node apps/web/e2e/mathlab-grapher.mjs [dossier-captures]
@@ -16,9 +16,9 @@
  *     lecture du curseur, grille ;
  *   - le point : posé d'un clic sur la courbe, déplacé, x tapé, retiré ;
  *   - persistance : naissance au premier changement, sauvegarde, relecture
- *     (fonctions, visibilité, fenêtre, point), « أعمالي » ;
- *   - export PNG, « مسح الكل » ;
- *   - RTL : panneau à droite, expressions LTR ;
+ *     (fonctions, visibilité, fenêtre, point), « Mes travaux » ;
+ *   - export PNG, « Tout effacer » ;
+ *   - gauche à droite : page française sans dir="rtl", panneau à gauche, expressions LTR ;
  *   - responsive : tablette et mobile, panneau repliable, pas de débordement.
  *
  * Les documents créés sont supprimés à la fin.
@@ -28,7 +28,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const OUT = process.argv[2] || '/tmp/mathlab-grapher-shots';
 mkdirSync(OUT, { recursive: true });
@@ -91,7 +91,7 @@ function attach(page) {
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const docIdOf = (url) => Number((url.match(/\/atelier\/grapheur\/(\d+)/) || [])[1]) || null;
 // Un changement met 300 ms (outil) + 400 ms (fenêtre) à devenir « dirty » : on
-// attend d'abord ce passage, sinon un « محفوظ » PRÉCÉDENT ferait croire que
+// attend d'abord ce passage, sinon un « Enregistré » PRÉCÉDENT ferait croire que
 // le nouveau changement est déjà parti.
 const waitSaved = async (page, timeout = 9000) => {
   await page.waitForSelector('[data-ml-status="dirty"], [data-ml-status="saving"]', { timeout: 2500 }).catch(() => {});
@@ -138,7 +138,7 @@ async function openGrapher(page, path = '/espace/atelier/grapheur?lab=secondaire
   await page.waitForSelector('[data-ml-grapher] [data-ml-plane] svg', { timeout: 30000 });
 }
 
-const ctx = await authedContext({ viewport: { width: 1440, height: 900 }, locale: 'ar-DZ', acceptDownloads: true });
+const ctx = await authedContext({ viewport: { width: 1440, height: 900 }, locale: 'fr-FR', acceptDownloads: true });
 const page = await ctx.newPage();
 attach(page);
 
@@ -146,11 +146,11 @@ try {
   record('connexion élève', !!authState);
 
   // ── 1. L'accueil ─────────────────────────────────────────────────────
-  // Le راسم vit dans les deux مخابر ; ce scénario (المماس compris) est celui
-  // du ثانوي — au collège, المماس n'existe pas (mathlab-labs-scope.mjs).
+  // Le traceur vit dans les deux ateliers ; ce scénario (la tangente comprise)
+  // est celui du lycée — au collège, la tangente n'existe pas (mathlab-labs-scope.mjs).
   await page.goto(`${BASE}/espace/atelier?lab=secondaire`, { waitUntil: 'networkidle' });
   await page.waitForSelector('[data-ml-home]', { timeout: 20000 });
-  record('مخبر الثانوي : la carte « راسم الدوال »', await page.locator('[data-ml-tool-card="functionGrapher"]').count() === 1 && (await page.locator('[data-ml-tool-card="functionGrapher"]').innerText()).includes('راسم الدوال'));
+  record('atelier du lycée : la carte « Traceur de courbes »', await page.locator('[data-ml-tool-card="functionGrapher"]').count() === 1 && (await page.locator('[data-ml-tool-card="functionGrapher"]').innerText()).includes('Traceur de courbes'));
   await page.click('[data-ml-tool-card="functionGrapher"]');
   await page.waitForURL(/\/espace\/atelier\/grapheur\?lab=secondaire$/, { timeout: 15000 });
   await page.waitForSelector('[data-ml-grapher] [data-ml-plane] svg', { timeout: 30000 });
@@ -220,7 +220,7 @@ try {
   await page.waitForSelector('[data-ml-palette]', { timeout: 3000 });
   const paletteBox = await page.locator('[data-ml-palette]').boundingBox();
   const vp = page.viewportSize();
-  record('couleur : la palette s’ouvre dans l’écran, avec ses neuf choix nommés', paletteBox.x >= 0 && paletteBox.y >= 0 && paletteBox.x + paletteBox.width <= vp.width && paletteBox.y + paletteBox.height <= vp.height && (await page.locator('[data-ml-palette-color]').count()) === 9 && (await page.locator('[data-ml-palette-color]').evaluateAll((els) => els.every((e) => /[؀-ۿ]/.test(e.getAttribute('aria-label') || '')))));
+  record('couleur : la palette s’ouvre dans l’écran, avec ses neuf choix nommés', paletteBox.x >= 0 && paletteBox.y >= 0 && paletteBox.x + paletteBox.width <= vp.width && paletteBox.y + paletteBox.height <= vp.height && (await page.locator('[data-ml-palette-color]').count()) === 9 && (await page.locator('[data-ml-palette-color]').evaluateAll((els) => els.every((e) => /[a-zà-ÿ]{3}/i.test(e.getAttribute('aria-label') || '') && !/[\u0600-\u06FF]/.test(e.getAttribute('aria-label') || '')))));
   record('couleur : la couleur courante est marquée autrement que par la couleur', (await page.locator('[data-ml-palette-color][aria-pressed="true"] svg').count()) === 1);
   await page.keyboard.press('Escape');
   await sleep(200);
@@ -249,7 +249,7 @@ try {
   record('liste : montrer g la remet', (await curve(page, 'g').count()) === 1);
   await page.click('[data-ml-fn-add]');
   await sleep(500);
-  record('liste : « أضف دالة » crée h, champ focalisé', (await page.locator('[data-ml-fn-name="h"]').count()) === 1 && (await page.evaluate(() => document.activeElement?.tagName?.toLowerCase())) === 'math-field');
+  record('liste : « Ajouter une fonction » crée h, champ focalisé', (await page.locator('[data-ml-fn-name="h"]').count()) === 1 && (await page.evaluate(() => document.activeElement?.tagName?.toLowerCase())) === 'math-field');
   await page.keyboard.type('sin(x)');
   await sleep(500);
   record('liste : sin(x) tapé avec le raccourci MathLive', /\\sin/.test(await fieldValue(page, 'h')) && (await curve(page, 'h').count()) === 1);
@@ -299,14 +299,14 @@ try {
   await waitSaved(page);
   await page.screenshot({ path: `${OUT}/05-point.png` });
 
-  // ── 6b. Le mode « المماس » ─────────────────────────────────────────────
+  // ── 6b. Le mode « Tangente » ────────────────────────────────────────────
   const slopeOf = async () => Number((await page.locator('[data-ml-tangent-slope] .sa-ml-grapher__point-number').innerText()).replace(/−/g, '-').replace(',', '.'));
   const tangentX = async () => Number((await page.inputValue('[data-ml-tangent-x]')).replace(/−/g, '-').replace(',', '.'));
   record('tangente : éteinte par défaut, aucune construction', !(await page.isChecked('[data-ml-tangent-toggle]')) && (await page.locator('[data-ml-tangent-values]').count()) === 0 && (await page.locator('[data-ml-plane] polyline').count()) === 0 && (await page.locator('[data-ml-drag-hint]').count()) === 0);
   await page.click('[data-ml-tangent-toggle]');
   await sleep(400);
   record('tangente : allumée → A sur f, tangente, valeurs, invitation, choix de la fonction', (await page.isChecked('[data-ml-tangent-toggle]')) && (await page.locator('[data-ml-plane] polyline').count()) >= 1 && (await tangentX()) === 1 && Math.abs((await slopeOf()) - 2) < 1e-6 && (await page.locator('[data-ml-drag-hint]').count()) === 1 && (await page.locator('[data-ml-tangent-pick]').count()) === 3 && (await page.locator('[data-ml-point]').count()) === 0);
-  record('tangente : pas de bouton « استكشف »', (await page.locator('[data-ml-play]').count()) === 0);
+  record('tangente : pas de bouton « Explorer »', (await page.locator('[data-ml-play]').count()) === 0);
   await page.fill('[data-ml-tangent-x]', '2');
   await page.keyboard.press('Enter');
   await sleep(300);
@@ -340,7 +340,7 @@ try {
   await page.click('[data-ml-tangent-pick="f"]');
   await page.click('[data-ml-tangent-derivative]');
   await sleep(400);
-  record('tangente : « إظهار المشتقّة » trace f′ (rose, distincte de f) et B(a ; f′(a))', (await curve(page, "f′").count()) === 1 && (await curve(page, "f′").getAttribute('stroke')) !== (await curve(page, 'f').getAttribute('stroke')) && (await page.locator('[data-ml-plane] text', { hasText: /^B$/ }).count()) === 1 && /B\(2,5 ; 5\)/.test(await page.locator('[data-ml-tangent-pair]').innerText()), await page.locator('[data-ml-tangent-pair]').innerText());
+  record('tangente : « Afficher la courbe de la dérivée » trace f′ (rose, distincte de f) et B(a ; f′(a))', (await curve(page, "f′").count()) === 1 && (await curve(page, "f′").getAttribute('stroke')) !== (await curve(page, 'f').getAttribute('stroke')) && (await page.locator('[data-ml-plane] text', { hasText: /^B$/ }).count()) === 1 && /B\(2,5 ; 5\)/.test(await page.locator('[data-ml-tangent-pair]').innerText()), await page.locator('[data-ml-tangent-pair]').innerText());
   await page.locator('[data-ml-tangent-slider]').evaluate((el) => {
     Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(el, '-1');
     el.dispatchEvent(new Event('input', { bubbles: true }));
@@ -422,9 +422,9 @@ try {
   ]);
   record('coquille : export PNG', download.suggestedFilename().endsWith('.png'), download.suggestedFilename());
   await download.saveAs(`${OUT}/export.png`);
-  await page.fill('[data-ml-title]', 'الدالة التربيعية');
+  await page.fill('[data-ml-title]', 'La fonction carré');
   await waitSaved(page);
-  record('persistance : le titre est enregistré', (await api(TOKEN, 'GET', `/math-lab/documents/${docId}`)).data.document?.title === 'الدالة التربيعية');
+  record('persistance : le titre est enregistré', (await api(TOKEN, 'GET', `/math-lab/documents/${docId}`)).data.document?.title === 'La fonction carré');
 
   // ── 9. Rechargement : tout est relu ──────────────────────────────────
   await page.click('[data-ml-fn-name="g"] [data-ml-fn-toggle]');
@@ -440,33 +440,35 @@ try {
   // À un pixel de boîte près (l'ajustement au format peut décaler de 0,02 unité).
   record('rechargement : la fenêtre est la même', Math.abs(viewAfterReload[0] - viewBeforeReload[0]) < 0.05 && Math.abs(span(viewAfterReload) - span(viewBeforeReload)) < 0.05, `${viewBeforeReload.slice(0, 2)} → ${viewAfterReload.slice(0, 2)}`);
   record('rechargement : le point A est là', (await page.locator('[data-ml-point]').count()) === 1 && (await page.locator('[data-ml-plane] .mafs-movable-point').count()) === 1);
-  record('rechargement : titre relu', (await page.inputValue('[data-ml-title]')) === 'الدالة التربيعية');
+  record('rechargement : titre relu', (await page.inputValue('[data-ml-title]')) === 'La fonction carré');
   await page.click('[data-ml-back]');
   await page.waitForSelector(`[data-ml-doc="${docId}"]`, { timeout: 15000 });
-  record('أعمالي : listé avec son titre', (await page.locator(`[data-ml-doc="${docId}"]`).innerText()).includes('الدالة التربيعية'));
+  record('Mes travaux : listé avec son titre', (await page.locator(`[data-ml-doc="${docId}"]`).innerText()).includes('La fonction carré'));
   await page.click(`[data-ml-doc="${docId}"] [data-ml-doc-open]`);
   await page.waitForSelector('[data-ml-grapher] [data-ml-plane] svg', { timeout: 30000 });
-  record('أعمالي : rouvrir', docIdOf(page.url()) === docId);
+  record('Mes travaux : rouvrir', docIdOf(page.url()) === docId);
 
-  // ── 10. RTL ──────────────────────────────────────────────────────────
+  // ── 10. LTR ──────────────────────────────────────────────────────────
   const panelBox = await page.locator('[data-ml-panel]').boundingBox();
   const plane2 = await planeBox(page);
-  record('RTL : le panneau est à droite du plan', panelBox.x > plane2.x + plane2.width - 1);
-  record('RTL : l’expression se lit de gauche à droite', (await page.locator('[data-ml-fn-name="f"] math-field').evaluate((el) => getComputedStyle(el).direction)) === 'ltr' && (await page.locator('[data-ml-fn-name="f"] .sa-ml-grapher__row-main').evaluate((el) => getComputedStyle(el).direction)) === 'ltr');
-  record('RTL : le panneau lui-même est en arabe, RTL', (await page.locator('[data-ml-panel]').evaluate((el) => getComputedStyle(el).direction)) === 'rtl' && /[؀-ۿ]/.test(await page.locator('[data-ml-panel]').innerText()));
-  record('RTL : les étiquettes d’axes sont des chiffres, avec le vrai moins', (await page.locator('[data-ml-plane] .mafs-axis text').evaluateAll((els) => els.map((e) => e.textContent))).some((t) => t.startsWith('−')));
+  // Miroir de l'ancienne disposition RTL : le panneau, au bord de départ, est à gauche.
+  record('LTR : le panneau est à gauche du plan', panelBox.x + panelBox.width < plane2.x + 1);
+  record('LTR : l’expression se lit de gauche à droite', (await page.locator('[data-ml-fn-name="f"] math-field').evaluate((el) => getComputedStyle(el).direction)) === 'ltr' && (await page.locator('[data-ml-fn-name="f"] .sa-ml-grapher__row-main').evaluate((el) => getComputedStyle(el).direction)) === 'ltr');
+  const panelText = await page.locator('[data-ml-panel]').innerText();
+  record('LTR : le panneau lui-même est en français, LTR', (await page.locator('[data-ml-panel]').evaluate((el) => getComputedStyle(el).direction)) === 'ltr' && panelText.includes('Fonctions') && !/[\u0600-\u06FF]/.test(panelText) && (await page.getAttribute('html', 'lang')) === 'fr');
+  record('LTR : les étiquettes d’axes sont des chiffres, avec le vrai moins', (await page.locator('[data-ml-plane] .mafs-axis text').evaluateAll((els) => els.map((e) => e.textContent))).some((t) => t.startsWith('−')));
 
-  // ── 11. Mسح الكل ─────────────────────────────────────────────────────
+  // ── 11. Tout effacer ─────────────────────────────────────────────────
   await page.click('[data-ml-clear]');
   await page.waitForSelector('[role="alertdialog"]', { timeout: 5000 });
-  record('coquille : le texte de confirmation est celui du grapheur', (await page.locator('[role="alertdialog"]').innerText()).includes('الدوال'));
+  record('coquille : le texte de confirmation est celui du grapheur', (await page.locator('[role="alertdialog"]').innerText()).includes('Supprimer toutes les fonctions\u202f?'));
   await page.click('[role="alertdialog"] button:not([data-nb-confirm])');
-  record('coquille : « مسح الكل » se refuse sans confirmation', (await page.locator('[data-ml-fn]').count()) === 3);
+  record('coquille : « Tout effacer » se refuse sans confirmation', (await page.locator('[data-ml-fn]').count()) === 3);
   await page.click('[data-ml-clear]');
   await page.waitForSelector('[role="alertdialog"]', { timeout: 5000 });
   await page.click('[data-nb-confirm]');
   await sleep(300);
-  record('coquille : « مسح الكل » vide, l’état vide explique quoi faire', (await page.locator('[data-ml-fn]').count()) === 0 && (await page.locator('[data-ml-empty]').count()) === 1 && (await page.locator('[data-ml-plane] .mafs-axis text').count()) > 4);
+  record('coquille : « Tout effacer » vide, l’état vide explique quoi faire', (await page.locator('[data-ml-fn]').count()) === 0 && (await page.locator('[data-ml-empty]').count()) === 1 && (await page.locator('[data-ml-plane] .mafs-axis text').count()) > 4);
   await page.screenshot({ path: `${OUT}/07-empty-state.png` });
   await waitSaved(page);
   record('persistance : le vide est enregistré', (await api(TOKEN, 'GET', `/math-lab/documents/${docId}`)).data.document?.data?.functions?.length === 0);
@@ -477,7 +479,7 @@ try {
   // ── 12. Segment/document inconnus ────────────────────────────────────
   await page.goto(`${BASE}/espace/atelier/grapheur/999999999`, { waitUntil: 'networkidle' });
   await page.waitForSelector('[data-ml-error]', { timeout: 15000 });
-  record('sécurité : document inexistant ou d’autrui → « غير موجود »', (await page.locator('[data-ml-error]').innerText()).includes('غير موجود'));
+  record('sécurité : document inexistant ou d’autrui → « n’existe pas »', (await page.locator('[data-ml-error]').innerText()).includes('Ce travail n’existe pas ou n’est pas à toi.'));
 } catch (e) {
   record('scénario bureau interrompu', false, String(e).slice(0, 300));
   await page.screenshot({ path: `${OUT}/error-desktop.png` }).catch(() => {});
@@ -487,7 +489,7 @@ try {
 
 // ── 13. Visiteur ──────────────────────────────────────────────────────────
 try {
-  const anon = await browser.newContext({ viewport: { width: 1280, height: 800 }, locale: 'ar-DZ' });
+  const anon = await browser.newContext({ viewport: { width: 1280, height: 800 }, locale: 'fr-FR' });
   const p = await anon.newPage();
   await p.goto(`${BASE}/espace/atelier/grapheur?lab=secondaire`, { waitUntil: 'networkidle' });
   record('sécurité : visiteur → connexion', /\/login/.test(p.url()));
@@ -498,7 +500,7 @@ try {
 
 // ── 14. Tablette et mobile ────────────────────────────────────────────────
 for (const [label, width, height, touch] of [['tablette', 1024, 768, true], ['mobile', 390, 844, true]]) {
-  const c = await authedContext({ viewport: { width, height }, locale: 'ar-DZ', hasTouch: touch, isMobile: width < 700, deviceScaleFactor: 1 });
+  const c = await authedContext({ viewport: { width, height }, locale: 'fr-FR', hasTouch: touch, isMobile: width < 700, deviceScaleFactor: 1 });
   const p = await c.newPage();
   attach(p);
   try {

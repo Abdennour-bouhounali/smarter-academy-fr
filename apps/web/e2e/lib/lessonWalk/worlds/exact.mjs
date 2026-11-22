@@ -1,4 +1,4 @@
-// The walk's OWN exact arithmetic for « قصر الساحات » (defects.md C1: never the lesson's nor the world's `logic.js`): a
+// The walk's OWN exact arithmetic for « Le palais des dalles » (defects.md C1: never the lesson's nor the world's `logic.js`): a
 // number is a fraction of BigInt, read from what the screen writes (« 30 », « 5,47 », « −9 », « 49/64 », « 0{,}25 »).
 const big = (x) => BigInt(x);
 const abs = (x) => (x < 0n ? -x : x);

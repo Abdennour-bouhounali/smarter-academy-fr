@@ -1,7 +1,7 @@
 /**
  * Le REGISTRE des « Visite de la page » — une visite par page et par rôle.
  * Des DONNÉES seulement (ce fichier est dans le lot d'entrée) : les textes
- * vivent dans `i18n/locales/ar/tour.json` (namespace à la demande), sous
+ * vivent dans `i18n/locales/fr/tour.json` (namespace à la demande), sous
  * `<key>.<step.id>.title|body`, plus `ui.*` pour les boutons.
  *
  *   key      `<role>.<page>` — le rôle en préfixe ; c'est la clé que le
@@ -152,7 +152,7 @@ export const PAGE_TOURS = [
   {
     key: 'student.class',
     role: 'student',
-    path: '/espace/qism',
+    path: '/espace/classe',
     steps: [
       { id: 'current', target: '[data-qism-current]' },
       { id: 'recommendations', target: '[data-qism-recommendations]' },
@@ -242,7 +242,7 @@ export const PAGE_TOURS = [
   {
     key: 'teacher.reviews',
     role: 'teacher',
-    path: '/enseignant/tashih',
+    path: '/enseignant/corrections',
     steps: [
       { id: 'queue', target: '[data-review-queue]' },
       { id: 'filter', target: '[data-review-class-filter]' },

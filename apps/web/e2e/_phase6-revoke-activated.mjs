@@ -14,38 +14,45 @@ const results = [];
 const record = (n, ok, d = '') => { results.push({ ok }); console.log(`${ok ? '✅' : '❌'} ${n}${d ? ` — ${d}` : ''}`); };
 
 const browser = await chromium.launch();
-const ctx = await browser.newContext({ viewport: { width: 1400, height: 950 }, locale: 'ar-DZ' });
+const ctx = await browser.newContext({ viewport: { width: 1400, height: 950 }, locale: 'fr-FR' });
 const page = await ctx.newPage();
 
 try {
   await page.goto(`${BASE}/login`, { waitUntil: 'networkidle' });
-  await page.fill('input[type="email"]', 'qa-admin@smarter.dz');
+  await page.fill('input[type="email"]', process.env.QA_ADMIN_EMAIL || 'qa-admin@exemple.fr');
   await page.fill('input[type="password"]', PASSWORD);
   await page.click('button[type="submit"]');
   await page.waitForURL(/\/admin/, { timeout: 15000 });
 
   await page.goto(`${BASE}/admin/codes-activation/${codeId}`, { waitUntil: 'networkidle' });
-  await page.waitForSelector('h2:has-text("Le droit")', { timeout: 10000 });
+  // admin:activation.theEntitlement — titre d'une AdminCard (<h3>).
+  await page.waitForSelector('h3:has-text("Le droit")', { timeout: 10000 });
 
   let body = await page.locator('body').innerText();
-  record('le code est activé', body.includes('Activé'), 'état initial');
-  record('le droit ouvre l’accès', body.includes('ouvre l’accès'));
+  // La ligne « État » du détail porte le badge « Activé » (StatusBadge).
+  record('le code est activé', /État\s+Activé\s/.test(body), 'état initial');
+  // admin:activation.entitlementOpens « Ouvre l’accès ».
+  record('le droit ouvre l’accès', body.includes('Ouvre l’accès'));
 
   await page.click('button:has-text("Révoquer")');
-  await page.waitForSelector('input[placeholder*="revendue"]', { timeout: 10000 });
+  // admin:activation.reasonCodePlaceholder « Carte vendue deux fois ».
+  await page.waitForSelector('input[placeholder*="vendue"]', { timeout: 10000 });
   const dialog = await page.locator('body').innerText();
-  record('avertissement « FERMERA l’accès »', dialog.includes('FERMERA'),
+  // admin:activation.revokeActivatedWarning(Prefix) « … Le révoquer fermera l’accès de … ».
+  record('avertissement « fermera l’accès »', dialog.includes('fermera l’accès'),
     dialog.includes('qa-eleve') ? 'l’élève est nommé' : 'élève non nommé');
 
-  await page.fill('input[placeholder*="revendue"]', 'QA — carte revendue deux fois');
+  await page.fill('input[placeholder*="vendue"]', 'QA — carte revendue deux fois');
   await page.locator('button:has-text("Révoquer")').last().click();
   await page.waitForTimeout(2500);
 
   body = await page.locator('body').innerText();
   record('code révoqué', body.includes('Révoqué'));
-  record('le droit ne l’ouvre plus', body.includes('n’ouvre plus l’accès'));
+  // admin:activation.entitlementClosed « N’ouvre plus l’accès ».
+  record('le droit ne l’ouvre plus', body.includes('N’ouvre plus l’accès'));
   record('motif conservé', body.includes('carte revendue deux fois'));
-  record('journal enrichi', body.includes('Code révoqué'));
+  // admin:activation.actionCodeRevoked, dans « Historique ».
+  record('historique enrichi', body.includes('Code révoqué'));
 
   await page.screenshot({ path: '/tmp/qa-revoke-activated.png', fullPage: true });
 } catch (e) {

@@ -1,4 +1,4 @@
-// THE STORY of a lesson on the world « أرخبيل القواسم », played from its title to its end screen from the lesson's own
+// THE STORY of a lesson on the world « L’archipel des diviseurs », played from its title to its end screen from the lesson's own
 // `story.segments` (lessons 5–6's story walks, made data). Island by island:
 //   a CONVOY (segments sharing `convoy`): the plank is taken on its head island's pedestals or MADE in its workshop; the
 //     right plank is COMPUTED (it fills every gap of the convoy within its purse; several: the longest); a wrong try first
@@ -268,7 +268,7 @@ export async function storyWalk(L, D, opts) {
         `island « ${islands[h].name} » offers ${pedestals.join(', ')}: none builds ${gaps.join(' and ')} — computed here`,
       );
       check(
-        (await page.evaluate(() => !window.__world.flags.anvil)) && /الورشة/.test((await W.road()).objective),
+        (await page.evaluate(() => !window.__world.flags.anvil)) && /\batelier\b/i.test((await W.road()).objective),
         `« ${islands[h].name} »: its workshop is LOCKED and the instruction says so`,
       );
       await W.toAnvil(h);
@@ -300,7 +300,7 @@ export async function storyWalk(L, D, opts) {
       );
       await W.ff(3);
       check(
-        /الورشة/.test((await W.road()).objective),
+        /\batelier\b/i.test((await W.road()).objective),
         `the workshop open, the instruction says it at once (« ${(await W.road()).objective.slice(0, 90)} »)`,
       );
       await shotWorld(`island-${islands[h].id}-open`);
@@ -381,10 +381,10 @@ export async function storyWalk(L, D, opts) {
         );
         check(
           (await page.locator('[data-di-workshop="typed"] [data-di-in]').count()) === 1 &&
-            ((await page.textContent('[data-di-workshop="typed"] .di-template').catch(() => '')) ?? '').includes(
-              'خانة',
+            /\bcases?\b/.test(
+              (await page.textContent('[data-di-workshop="typed"] .di-template').catch(() => '')) ?? '',
             ),
-          "ONE box to type the plank's length, its unit « خانة » printed",
+          "ONE box to type the plank's length, its unit « cases » printed (divisorIsles/strings.js › unit)",
         );
         await w.shot(page, `workshop-${islands[h].id}`, { exit: ['.di-veil [data-di-exit]'], numbers: true });
         if (firstWorkshop) {
@@ -522,7 +522,7 @@ export async function storyWalk(L, D, opts) {
           );
           await W.toAltar(i);
           await W.ff(0.3);
-          check(!(await W.promptShown()), `at the altar of the gap of ${s.a}: no « اضغط E » prompt — nothing to build`);
+          check(!(await W.promptShown()), `at the altar of the gap of ${s.a}: no « Appuie sur E » prompt — nothing to build`);
           await shotWorld(`gap-${s.a}`);
           await W.cross(i);
           await page.waitForTimeout(300);
@@ -749,10 +749,13 @@ export async function storyWalk(L, D, opts) {
     /** The bridge holds: its price typed wrong then right, paid; he crosses; the end screen. */
     const storePay = async (k, Q) => {
       if (await page.locator('[data-di-pgate-go]').count()) await page.click('[data-di-pgate-go]');
-      const price = Number(((await page.textContent('[data-di-boss-price]')) ?? '').trim());
+      // a price written the French way (« 1 850 »: a narrow no-break space between the thousands) is read without its spaces
+      const price = Number(((await page.textContent('[data-di-boss-price]')) ?? '').replace(/\s/g, ''));
+      // the unit the lesson's story prints after the amount (`story.text.boss.unit`: « € » for money)
+      const unit = L.lesson.story.text?.boss?.unit ?? null;
       check(
-        ((await page.textContent('.di-template').catch(() => '')) ?? '').includes('دج'),
-        'the amount is typed in its own shape: « دج » printed',
+        Boolean(unit) && ((await page.textContent('.di-template').catch(() => '')) ?? '').includes(unit),
+        `the amount is typed in its own shape: « ${unit ?? '(the story names no unit)'} » printed`,
       );
       await w.shot(page, 'boss-cost', OUT);
       await page.fill('[data-di-cost]', String(Q * price + 1));
@@ -765,7 +768,7 @@ export async function storyWalk(L, D, opts) {
       await page.fill('[data-di-cost]', String(Q * price));
       await page.click('[data-di-check]');
       await W.ff(0.5);
-      expect((await W.st()).overlay == null, `paid ${Q * price} دج (${Q} × ${price})`);
+      expect((await W.st()).overlay == null, `paid ${Q * price} ${unit ?? ''} (${Q} × ${price})`);
       await W.cross(k);
       await W.ff(3);
       await page.waitForTimeout(500);
@@ -820,7 +823,8 @@ export async function storyWalk(L, D, opts) {
             tried?.purse === true &&
               tried.laid === why.laid &&
               tried.need === why.need &&
-              card.includes(`${why.laid} من ${why.need}`),
+              // « Plus de pièces : 5 sur 8 » (divisorIsles/strings.js › boss.triedPurse)
+              new RegExp(`(^|[^0-9])${why.laid}\\s+sur\\s+${why.need}([^0-9]|$)`).test(card),
             `${A} = ${b} × ${A / b}: the purse pays ${purse} planks of ${A / b} — the card says so (« ${card} »)`,
           );
         else if (why.mark != null)

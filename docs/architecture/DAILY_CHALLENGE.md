@@ -1,4 +1,4 @@
-# « التحدّي اليومي » — the Daily Math Challenge
+# « Défi du jour » — the Daily Math Challenge
 
 > **Authoritative** for the daily challenge: what it is, how its questions are
 > chosen, how it is timed and scored, the streak, the cumulative score and
@@ -8,9 +8,14 @@
 >
 > **Status (2026-11-22).** Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. True here: the engine,
 > the API, the pages and the tests below. Not true here: its questions come from `content/practice`, which is EMPTY, so
-> no challenge can be built today; the interface is Arabic; the date is Algiers time and Friday is the rest day
-> (`config/daily_challenge.php`) — French time and school week are step 1E, not yet applied in the code. Plan §7, 3: the
-> feature is to be HIDDEN until French content exists (step 1F) — not yet applied either.
+> no challenge can be built today. The interface is French and left to right since 2026-11-22 (namespace `challenge`,
+> « Défi du jour »). The date is counted in the school time zone (`DailyChallengeConfig::timezone()` =
+> `config('app.school_timezone')`, `Europe/Paris` by default) and the challenge days are Monday to Friday
+> (`config/daily_challenge.php › challenge.challenge_weekdays = [1, 2, 3, 4, 5]`; Saturday and Sunday are rest days).
+> The feature is **OFF** in the web (`config/features.js › dailyChallenge: false`): its routes, its nav entries, its home
+> card and the teacher's display are behind `FeatureOutlet` until French content exists (plan §7, 3). The API keeps
+> `challenge.enabled = true`. The browser walk `apps/web/e2e/daily-challenge.mjs` was **deleted** on 2026-11-22 (the
+> feature is off); no walk checks it.
 
 ## 1. What it is — and what it is not
 
@@ -46,12 +51,12 @@ a second mastery system, **not** a second class system (it reads
 
 | Student | Scope | Questions |
 |---|---|---|
-| In a قسم (primary = most recently joined active class) whose teacher left the challenge **enabled** | `classroom` | **the same for the whole class** (fair competition, per-question analysis) |
+| In a class (primary = most recently joined active class) whose teacher left the challenge **enabled** | `classroom` | **the same for the whole class** (fair competition, per-question analysis) |
 | Independent — or whose class has the challenge **disabled** | `student` | personal |
 
 One `daily_challenges` row per (scope, date), unique: refreshing, a second
 tab or a retry can never regenerate an easier challenge. The date is the
-local date of `challenge.timezone` (Algiers today — plan 1E), not UTC.
+local date of the school time zone (`config('app.school_timezone')`, `Europe/Paris` by default), not UTC.
 
 Only `role = student` plays (`learner` middleware): a teacher or admin gets
 403, like every other evidence route.
@@ -86,7 +91,7 @@ member must be able to open it); a personal one uses premium content only if
 the student is entitled. Every candidate is checked against the shipped
 content file, and only questions that **count for mastery**
 (`AnswerEvaluator::countsForMastery`) are served: never a self-assessed
-« بيّن أن » step (`selfCheck`) nor a `counted: false` step of an exam sheet —
+« Montrer que » step (`selfCheck`) nor a `counted: false` step of an exam sheet —
 they would be scored on the student's word (since 2026-10-07). Deterministic: ties broken by `crc32(scope|date|key)`.
 
 ## 4. Serving and timing — the server owns the clock
@@ -167,7 +172,7 @@ scale changes future challenges, never a past score.
 
 ## 7. Streak and missed days
 
-- Challenge days: `challenge.challenge_weekdays` (ISO, default all but Friday — the Algerian week; plan 1E).
+- Challenge days: `challenge.challenge_weekdays` (ISO, default Monday to Friday `[1, 2, 3, 4, 5]`; `ChallengeCalendar`).
   A non-challenge day neither breaks a streak nor costs anything.
 - A day counts as played when a finished attempt has **at least one answer**.
 - The streak is the **student's** (their habit, across scopes):
@@ -177,11 +182,11 @@ scale changes future challenges, never a past score.
   `pendingPenalty`) and **settled** on the next participation
   (`daily_challenge_attempts.penalty_applied`). No scheduled job.
 - The calendar is read with the **current** `challenge_weekdays`, including
-  for past gaps: turning Friday into a challenge day makes past Fridays count
+  for past gaps: turning Saturday into a challenge day makes past Saturdays count
   as missed for streaks and pending penalties. The admin screen warns about
   it; change the days at the start of a week. (Snapshots freeze the scale,
-  not the calendar — found by the browser QA, which opens a rest day
-  temporarily and restores it.)
+  not the calendar — found by the browser QA of the time, since deleted, which opened a rest day
+  temporarily and restored it.)
 - The 14-day strip shows each day as completed ✓ / missed ✕ / today ● /
   rest – / none ○ — a symbol and a spoken label, never colour alone.
 
@@ -202,7 +207,7 @@ disappears; their rows stay).
 5. user id ↑
 
 `rank_before` / `rank_after` are stored on the attempt at finalization; the
-screen shows « ↑ تقدّمت n مراتب » **only** when both exist and the rank
+screen shows « Tu gagnes n places » **only** when both exist and the rank
 improved — never fabricated, never a « you dropped » message.
 
 Seasons are **not implemented**; the standings key `(scope_type, scope_id)`
@@ -221,34 +226,34 @@ is where a season id would be added.
 | Emails, mistakes of others, mastery of others | never | never | never (identity = `ClassroomAccess::identity`) | never |
 
 Display name = first name + initial of the last name (« Amine K. »,
-`DailyChallengeLeaderboard::displayName`). « منافسة القسم » and « إظهار
-الثلاثة الأوائل » are **independent**: competition ON + Top 3 OFF = the teacher
+`DailyChallengeLeaderboard::displayName`). « Compétition de la classe » and « Montrer le podium
+aux élèves » are **independent**: competition ON + Top 3 OFF = the teacher
 sees the ranking, the students see only their own rank.
 
 ## 10. Teacher surfaces
 
-- Class page tab **« التحدّي اليومي »** (`features/teacher/dailyChallenge/`,
+- Class page tab **« Défi du jour »** (`features/teacher/dailyChallenge/`,
   lazy, own `<Suspense>`): the day's tiles (participation, accuracy-only
   average score — speed excluded —, average time, class accuracy, streak
   continuation = share of today's participants whose streak is ≥ 2), a date
   picker over the class's challenge days, **question analysis** (⚠ under 60 %),
   **struggling Learning Points** with the students who failed them and two
-  gestures — « افتح الكفاءة » (the existing learning-map tab, `focusCode`)
-  and « اقترح تمرينًا موجَّهًا » (the existing `InterventionForm`, prefilled
+  gestures — « Ouvrir le savoir-faire » (the existing learning-map tab, `focusCode`)
+  and « Proposer un entraînement ciblé » (the existing `InterventionForm`, prefilled
   `recommend_practice`, `sourceSignal: daily_challenge`) —, the full ranking,
   the per-student table, and the settings panel (switches with ON/OFF text,
   question count, difficulty, lesson scope, window). Settings apply to the
   challenge generated next; today's challenge, once generated, is frozen.
-- **Display mode** `/enseignant/classes/:id/defi/affichage` — outside the
-  teacher shell, full-screen button, views « النتائج · الترتيب · أداء الأسئلة ·
-  المشاركة », keys 1–4, Escape returns to the class, refreshes every 20 s.
+- **Display mode** `/enseignant/classes/:id/defi/affichage` (behind `FeatureOutlet`, closed today) — outside the
+  teacher shell, full-screen button, views « Résultats · Classement · Réussite par question ·
+  Participation », keys 1–4, Escape returns to the class, refreshes every 20 s.
 
 ## 11. Student surfaces
 
 `/espace/defi` (intro → session → completion, one page, state held by the
 server), `/espace/defi/historique`, `/espace/defi/:attemptId` (review,
 read-only, never replayable), a home card (`DailyChallengeCard`) and a nav
-entry « التحدّي اليومي ». Visual language (owner decision 2026-09-25: **no dark surfaces, full
+entry « Défi du jour » — all closed while the feature is off. Visual language (owner decision 2026-09-25: **no dark surfaces, full
 width**): every page uses the practice player's frame
 (`sa-surface-plain sa-page sa-page--flush`: 60 px gutter from 640 px, 20 px on phones, `py-6 sm:py-8`, no max-width); the
 « arena » (`ArenaPanel`) is a WHITE card with a soft brand halo
@@ -261,10 +266,9 @@ black on white). Motion is intentional and short
 and `MotionConfig reducedMotion="user"` + `useReducedMotion` remove it. The
 primary button is sticky on phones and tablets **just above** the student
 space's mobile tab bar (`bottom: calc(4rem + safe-area)`, static from `lg`,
-≥ 56 px). The mobile tab bar shows « التحدّي » (`shortLabelKey`, a new
-optional field of `data/studentNavigation.js` entries). Timelines (streak
-strip, progress dots) flow right-to-left like the page; every `N / M` is in
-`dir="ltr"`, every display name in `<bdi>`. The completion
+≥ 56 px). The `shortLabelKey` field this section used to describe no longer exists: the entry is
+`{ labelKey: 'dailyChallenge', path: '/espace/defi', feature: 'dailyChallenge' }` in `data/studentNavigation.js`.
+Timelines (streak strip, progress dots) flow left to right like the page; every display name is in `<bdi>`. The completion
 screen proposes a targeted practice on the day's weakest point (`insights`):
 a data hook for the future Next Best Action, not a second recommender.
 
@@ -273,7 +277,7 @@ a data hook for the future Next Best Action, not a second recommender.
 ```text
 config/daily_challenge.php        defaults (repository)
   ↓ overridden by
-daily_challenge_policies 'global' admin screen « التحدّي اليومي » (/admin/offres/defi-quotidien)
+daily_challenge_policies 'global' admin screen « Défi du jour » (/admin/offres/defi-quotidien)
   ↓ refined per class by
 daily_challenge_class_settings    the teacher (enabled, competition, top 3, results, count, difficulty, scope, window)
 ```
@@ -310,7 +314,7 @@ GET|PUT /admin/daily-challenge/config                 {values: {"scoring.base_po
 Refusals carry a closed `reason` (`ChallengeException`): `disabled`,
 `rest_day`, `window_closed`, `nothing_to_review`, `not_found` (404),
 `expired` / `already_answered` / `finished` (409), `not_opened`. The client
-renders Arabic from the reason (`challenge.json` → `reasons.*`).
+renders the sentence from the reason (`challenge.json` → `reasons.*`).
 
 ## 14. Data model
 
@@ -351,7 +355,7 @@ features/home/components/DailyChallengeCard.jsx    (strings in `student`)
 features/teacher/dailyChallenge/                    DailyChallengeTab, ClassChallengeResults, ClassChallengeSettings
 pages/teacher/ChallengeDisplayPage.jsx              (own <Suspense>, outside TeacherLayout)
 pages/admin/dailyChallenge/DailyChallengeConfig.jsx (strings in `admin`)
-i18n/locales/ar/challenge.json                      ON-DEMAND namespace (BUNDLE_BOUNDARIES.md)
+i18n/locales/fr/challenge.json                      ON-DEMAND namespace (BUNDLE_BOUNDARIES.md)
 ```
 
 ## 16. Tests that own this document
@@ -359,13 +363,13 @@ i18n/locales/ar/challenge.json                      ON-DEMAND namespace (BUNDLE_
 | Test | Locks |
 |---|---|
 | `tests/Unit/DailyChallenge/DailyChallengeScoringTest.php` | zero for wrong, tiers monotonic and capped, 30 s < 10 s but both strong, implausible speed, **one more correct answer beats any speed** (n = 3, 5, 7, 10), partial, streak bonus, bounded penalty, floor at 0, daily cap, calendar/rest days, tie-breaking order |
-| `tests/Feature/DailyChallengeFlowTest.php` | stable generation, coverage, retrieval reasons, second tab / refresh (same attempt, same `started_at`), no answer key served, server timing + evidence provenance, client claims ignored, idempotent duplicate / 409 on change, order, expiry, completion (score, streak, standing, no replay, review, history), no mastery from one answer, missed day + penalty + Friday, rest day / window, warm-up, other student's attempt 404, teacher 403 |
+| `tests/Feature/DailyChallengeFlowTest.php` | stable generation, coverage, retrieval reasons, second tab / refresh (same attempt, same `started_at`), no answer key served, server timing + evidence provenance, client claims ignored, idempotent duplicate / 409 on change, order, expiry, completion (score, streak, standing, no replay, review, history), no mastery from one answer, missed day + penalty + the weekend skipped, rest day / window, warm-up, other student's attempt 404, teacher 403 |
 | `tests/Feature/DailyChallengeClassTest.php` | same questions for the class, competition × Top 3 matrix, rank movement only when real, disabled class → personal, left student disappears, dashboard analysis without email, display mode without last names or times, deterministic ties, settings validation and scope, owner-only access, admin config validation + snapshot, constant query count |
 | `tests/Feature/TeacherPrivacyContractTest.php` | the three teacher routes carry no email |
 | `features/dailyChallenge/challengeModel.test.js` | the pure formatting |
-| `apps/web/e2e/daily-challenge.mjs` | browser QA on the demo dataset — needs a published 3e lesson, so it cannot run today (student A/B/C, mobile/tablet/desktop, reduced motion, teacher tab + display, admin) |
+| ~~`apps/web/e2e/daily-challenge.mjs`~~ | **deleted 2026-11-22** (the feature is off): it was the browser QA on the demo dataset (student A/B/C, mobile/tablet/desktop, reduced motion, teacher tab + display, admin) |
 
-## 16bis. Shared with « مدار » (2026-10-22)
+## 16bis. Shared with the game space (Madar, 2026-10-22)
 
 The game's refuel station (`MADAR_GAME.md` §5) reuses this feature's selector and presenter instead of a second engine:
 - `ChallengeQuestionSelector::select()` takes an optional `$options`:
@@ -374,9 +378,9 @@ The game's refuel station (`MADAR_GAME.md` §5) reuses this feature's selector a
   - `warmup` keeps never-worked skills **after** the learned ones instead of dropping them. Madar uses it when the learned pool is exhausted; the daily challenge never sets it.
 - In the `student` scope, `snapshot.lessonCodes` now restricts the lessons, as it already did in the classroom scope. The personal daily challenge never sets it, so its behaviour is unchanged.
 - `ChallengeQuestionPresenter` accepts a `DailyChallengeQuestion` or a `MadarRefuel`. There is still one boundary between the answer key and the client.
-- Since 2026-11-09 it also serves by reference (`publicRef(lesson, exercise, question)`, used by « بوصلتي », `YEAR_COMPASS.md` §9), and the public
+- Since 2026-11-09 it also serves by reference (`publicRef(lesson, exercise, question)`, used by « Ma boussole », `YEAR_COMPASS.md` §9), and the public
   question carries the WHOLE setup: `statement.{content, formulas, table, figure}` and the question's `lead`. Before that fix the
-  `formulas` (« A = … ») and `table` were dropped, so « إليك العدد A حيث: » arrived alone and was unanswerable (counted on the Algerian
+  `formulas` (« A = … ») and `table` were dropped, so a lead such as « Voici le nombre A tel que : » arrived alone and was unanswerable (counted on the Algerian
   banks, deleted here). The web side renders them through `ExerciseStatement` (`EXERCISE_CONTRACT.md`).
 
 ## 17. Not built (Planned)

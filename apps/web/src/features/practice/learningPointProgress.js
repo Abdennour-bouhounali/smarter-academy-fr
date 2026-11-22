@@ -3,15 +3,15 @@ import { resolveMasteryState } from '../../lessons/common/components/LearningPoi
 /**
  * Ce que le module « Savoir-faire » du lecteur affiche — pur, testé.
  *
- * Deux mesures DISTINCTES, jamais confondues (ARABIC_RTL_CONTRACT « Mastery
- * and completion never share words ») :
+ * Deux mesures DISTINCTES, jamais confondues (« la maîtrise et l'avancement
+ * ne partagent aucun mot ») :
  *
  *  1. Les ÉTOILES = l'état de maîtrise Mastery V2 du point, tel que le
  *     serveur le calcule (`student_learning_point_progress`, renvoyé par
  *     l'aperçu de pratique). Quatre états, trois étoiles — un chemin :
- *        Pas encore évalué  ☆ ☆ ☆   (0)   pas encore de preuve
- *        À consolider       ★ ☆ ☆   (1)   évalué, difficulté réelle
- *        En progrès         ★ ★ ☆   (2)   la base est là
+ *        Non évalué         ☆ ☆ ☆   (0)   pas encore de preuve
+ *        En difficulté      ★ ☆ ☆   (1)   évalué, difficulté réelle
+ *        À consolider       ★ ★ ☆   (2)   la base est là
  *        Maîtrisé           ★ ★ ★   (3)
  *     Aucune étoile n'est inventée côté client : pas de pourcentage, pas de
  *     règle de jeu. Le libellé affiché est celui de `student:mastery.*`.

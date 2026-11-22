@@ -1,25 +1,31 @@
-// « قصر الساحات » (`gameworld/rootCourts/`, GAME_WORLD.md §2ter-3) in the lesson walk: its gestures, its STORY played
+// « Le palais des dalles » (`gameworld/rootCourts/`, GAME_WORLD.md §2ter-3) in the lesson walk: its gestures, its STORY played
 // from the lesson's own `story.terraces`, its course of gates and its practice levels on the kit's rail (`kit/GateRun.js`,
 // `data-gr-*`), the board's `court` station. The islands' code (../story.mjs, ../world.mjs) never reaches this file.
 //
-// What is done BY HAND (keys and buttons of the screen, as a student does): « ابدأ », E at a post / a feature / the
+// What is done BY HAND (keys and buttons of the screen, as a student does): « Commencer l’aventure », E at a post / a feature / the
 // pavilion, ← → held along the wall until the rod's dial shows the mark (and released THERE: a hand stops on a mark),
-// the dial's buttons, X and « ضع المقياس », the yes/no card of a court that asks it, the key taken with E, the forges and experiments through their buttons, the
+// the dial's buttons, X and « Pose la toise », the yes/no card of a court that asks it, the key taken with E, the forges and experiments through their buttons, the
 // lanes of the rail with ← →, the mission's boxes. What is done BY THE WORLD'S DEV HANDLE (`window.__world`), as the
 // islands' walks do: the robot PLACED at a post, a pad, a feature, the pavilion (`hero.pos`); the clock fast-forwarded
 // (`step`); the state READ for the question (where he stands, the rod's mark, the run's stage) — never for an answer:
 // every verdict is computed by ./exact.mjs from what the screen shows.
 import { createWalk } from '../../walk.mjs';
 import { namesOf, WORLD_LESSONS } from '../../lessonWords.mjs';
-import { worldShot, wordsRe } from '../checks.mjs';
+import { worldShot, wordsRe, WRONG_WORD } from '../checks.mjs';
 import { playForge } from '../forge.mjs';
 import { worldOf } from '../world.mjs';
 import { cmp, eq, isqrt, platform, q, sub, write } from './exact.mjs';
 import { rcTerracesWalk } from './rootCourtsTerraces.mjs';
 
-const WRONG_WORDS = /خطأ|خاطئ|غلط/;
-/** The nouns of the islands (a plank « لوح », never the plaque « لوحة »), and the tool's refused name (defects.md D25). */
-const ISLAND_NOUNS = /(?<![؀-ۿ])[وفبل]?(?:ال)?(?:لوح(?![ةت])|ألواح|أخشاب|جسر|جسور|هوّة|هوة|جزير|قضيب)/;
+/** A sentence that calls an answer wrong (../checks.mjs › WRONG_WORD). */
+const WRONG_WORDS = WRONG_WORD;
+/**
+ * The nouns of the islands (« planche », « pont », « fossé », « île », « archipel », « moule »), whole words only, and the
+ * names the tool must not take (rootCourts/strings.js: the tool is « la toise » — not a « baguette », a « tige » nor a
+ * « règle graduée »; the word « règle » alone is the forge's rule, so it is not refused). Defects.md D25.
+ */
+const ISLAND_NOUNS =
+  /(?<!\p{L})(?:planches?|ponts?|fossés?|îles?|îlots?|archipels?|moules?|baguettes?|tiges?|règles? graduées?)(?!\p{L})/iu;
 
 /** Every string inside a value (functions left out). */
 function stringsOf(v, out = [], seen = new Set()) {
@@ -35,7 +41,7 @@ export const ROOT_COURTS = {
   id: 'root-courts',
   /** The story's player (../story.mjs hands it a lesson of this world). */
   story: (L, D, opts) => rcStoryWalk(L, D, opts),
-  /** The hub's « واصل التدريب » (../hub.mjs, part 4): a practice level on the kit's rail. */
+  /** The hub's « Continuer l’entraînement » (../hub.mjs, part 4): a practice level on the kit's rail. */
   practice: (args) => rcPractice(args),
   /** The names of every lesson of the islands that this lesson's own text never writes (lib/lessonWords.mjs › namesOf). */
   foreignWords(L, extra = []) {
@@ -46,7 +52,7 @@ export const ROOT_COURTS = {
     return [...out];
   },
   /** What no screen of this world's lessons shows (every part's `shot`, lib/walk.mjs › textRules). */
-  textRules: [{ re: ISLAND_NOUNS, what: 'no noun of the islands and never « قضيب » (the tool is « المقياس »)' }],
+  textRules: [{ re: ISLAND_NOUNS, what: 'no noun of the islands and no other name for the tool (it is « la toise »)' }],
 };
 
 // ───────────────────────────── the gestures ─────────────────────────────
@@ -54,7 +60,7 @@ export function rcWorld(w, page, L) {
   const base = worldOf(w, page, L); // the world-generic ones: tp, act, start, leaveAndReturn, reload
   const { tp, act } = base;
   /**
-   * The world's clock forward — after the kit's flight of a closed tablet to « قواعدي » (`kit/Tablet.jsx › flyToRules`,
+   * The world's clock forward — after the kit's flight of a closed tablet to « Mes règles » (`kit/Tablet.jsx › flyToRules`,
    * 0.75 s of REAL time before the tablet is closed and the key earned): the walk lets the flight end first.
    */
   const ff = async (sec) => {
@@ -190,8 +196,8 @@ export function rcWorld(w, page, L) {
   const grab = async (where, label) => {
     const said = await placeAt(where, true);
     expect(
-      said?.includes('أمسك المقياس'),
-      `${label}: at its corner post the screen offers « أمسك المقياس » (« ${said} »)`,
+      said?.includes('Prends la toise'),
+      `${label}: at its corner post the screen offers « Prends la toise » (« ${said} »)`,
     );
     await act();
     await ff(0.2);
@@ -220,7 +226,7 @@ export function rcWorld(w, page, L) {
     });
   const numRe = (a) => new RegExp(`(?<![\\d,.])${String(a).replace(',', '[,.]')}(?![\\d]|[,.]\\d)`);
   /**
-   * A court nobody wrote (`hide: true`): while he pulls the rod its gate and the HUD say « ؟ » and no screen shows its
+   * A court nobody wrote (`hide: true`): while he pulls the rod its gate and the HUD say « ? » and no screen shows its
    * area (the page's text read whole, the counter left out).
    */
   const hiddenNow = async (label, area) => {
@@ -230,7 +236,7 @@ export function rcWorld(w, page, L) {
     );
     const t = await pageText();
     check(
-      c && !c.shown && c.plaque === '؟' && chip === '؟' && !numRe(area).test(t),
+      c && !c.shown && c.plaque === '?' && chip === '?' && !numRe(area).test(t),
       `${label}: a court nobody wrote — its gate « ${c?.plaque} », the HUD « ${chip} », and no screen shows ${area} while he pulls the rod`,
     );
   };
@@ -335,7 +341,7 @@ export function rcWorld(w, page, L) {
     return want;
   };
   /**
-   * After a platform rides: THE KEY OF THE COURT floats beside him, « خذ مفتاح الساحة » stands, nothing flies before E;
+   * After a platform rides: THE KEY OF THE COURT floats beside him, « Prends la clé de la salle » stands, nothing flies before E;
    * E takes it — the platform carries him to `to`, or (a court that stays, a way out that waits) leaves him where he is.
    * `hidden`: the area that the gate writes now. `reload`: the page is reloaded with the key floating instead — the key
    * is not shown again, the platform waits and E at its post boards it.
@@ -363,8 +369,8 @@ export function rcWorld(w, page, L) {
       said = await prompt();
     }
     check(
-      k.court === id && k.visible && k.near < 3 && said?.includes('خذ مفتاح الساحة'),
-      `${label}: a golden key floats beside him (${k.near.toFixed(1)} m) and the screen says « خذ مفتاح الساحة » (« ${said} »)`,
+      k.court === id && k.visible && k.near < 3 && said?.includes('Prends la clé de la salle'),
+      `${label}: a golden key floats beside him (${k.near.toFixed(1)} m) and the screen says « Prends la clé de la salle » (« ${said} »)`,
     );
     if (area != null)
       check(k.plaque?.includes(area), `${label}: the count has ended — the gate writes the area now (« ${k.plaque} »)`);
@@ -374,7 +380,7 @@ export function rcWorld(w, page, L) {
       check(
         x.at === k.at &&
           x.phase === 'play' &&
-          /مفتاح/.test(x.objective) &&
+          /(?<!\p{L})clés?(?!\p{L})/iu.test(x.objective) &&
           (await page.evaluate(() => window.__world.keyCourt != null)),
         `${label}: nothing flies before he takes the key (${x.at}, ${x.phase}); the instruction names the key: « ${x.objective} »`,
       );
@@ -393,7 +399,7 @@ export function rcWorld(w, page, L) {
       );
       if (to) {
         const p = await placeAt({ court: id }, true);
-        check(/اركب المنصّة/.test(p ?? ''), `${label}, after the reload: E at its post boards the platform (« ${p} »)`);
+        check(/Monte sur la plateforme/.test(p ?? ''), `${label}, after the reload: E at its post boards the platform (« ${p} »)`);
         await act();
         await settle(to);
       }
@@ -550,10 +556,10 @@ export async function rcStoryWalk(L, D, opts) {
         ...(earned.length < keys.length ? (D.benchForbidden ?? []) : []),
       ]);
     const placesForbid = () => wordsRe(keys.filter((k) => !earned.includes(k)).flatMap(wordsOf));
-    // every screen of the story: never « wrong »; before key 🔑's tablet, never the sign √ nor « جذر » (D.beforeFirst)
+    // every screen of the story: never « wrong »; before key 🔑's tablet, never the sign √ nor « racine » (D.beforeFirst)
     const shot0 = w.shot;
     w.shot = async (pg, label, o) => {
-      // the lesson's own name on its title screen (the platform's, « الجذر التربيعي لعدد موجب ») is not the world telling
+      // the lesson's own name on its title screen (the platform's, « Racine carrée d’un nombre positif ») is not the world telling
       const t = await pg.evaluate(() => {
         const c = document.body.cloneNode(true);
         c.querySelectorAll('.di-title__eyebrow').forEach((e) => e.remove());
@@ -564,7 +570,7 @@ export async function rcStoryWalk(L, D, opts) {
       // the tablet of 🔑 is where the word and the sign are said first
       if (!earned.includes(K1) && D.beforeFirst && label !== 'tablet-1') {
         const b = t.match(D.beforeFirst);
-        check(!b, `${label}: before the first tablet, no « √ » and no « جذر »${b ? ` — « ${b[0]} »` : ''}`);
+        check(!b, `${label}: before the first tablet, no « √ » and no « racine »${b ? ` — « ${b[0]} »` : ''}`);
       }
       return shot0(pg, label, o);
     };
@@ -596,7 +602,7 @@ export async function rcStoryWalk(L, D, opts) {
       const c = court(id);
       await W.grab({ court: id }, label);
       if (bandFirst) {
-        // a band on a court nobody wrote: said without a number, the court stays « ؟ »
+        // a band on a court nobody wrote: said without a number, the court stays « ? »
         const short = String(Number(side) - 1);
         await W.walkTo(short);
         await W.lower(`${label} with ${short}`, { shotName: `${label}-hidden-band`, forbid: placesForbid(), OUT });
@@ -691,7 +697,7 @@ export async function rcStoryWalk(L, D, opts) {
     const below = Number(isqrt(Number(first.a)));
     await objIs('the yard done', new RegExp(first.a));
     await W.grab({ court: first.id }, `the court of ${first.a}`);
-    // D26: whatever he takes he can put down at any moment — the key X, then the button « ضع المقياس »
+    // D26: whatever he takes he can put down at any moment — the key X, then the button « Pose la toise »
     await W.walkTo('3');
     await page.keyboard.press('KeyX');
     await ff(0.2);
@@ -701,7 +707,7 @@ export async function rcStoryWalk(L, D, opts) {
     await worldShot(w, page, 'rod-in-hand-drop-button', placesForbid(), OUT);
     await page.click('[data-rc-drop]');
     await ff(0.2);
-    check(!(await s()).holding, '« ضع المقياس »: the button puts the rod down too (at 2)');
+    check(!(await s()).holding, '« Pose la toise »: the button puts the rod down too (at 2)');
     await W.grab({ court: first.id }, `the court of ${first.a}, a third time`);
     await W.walkTo(String(below));
     await W.lower(`${first.a} with ${below}`, {
@@ -731,7 +737,7 @@ export async function rcStoryWalk(L, D, opts) {
       check(!x.holding && x.rod == null, `a band AND a jam seen: the rod returns to its post BY ITSELF (D24)`);
       check(
         small.hide
-          ? !W.numRe(small.a).test(x.objective) && /الساحة/.test(x.objective)
+          ? !W.numRe(small.a).test(x.objective) && /\bsalle\b/i.test(x.objective)
           : W.numRe(small.a).test(x.objective),
         `…and the instruction sends him to the next court${small.hide ? ` without writing its area ${small.a}` : ` of ${small.a}`} (« ${x.objective} »)`,
       );
@@ -797,11 +803,11 @@ export async function rcStoryWalk(L, D, opts) {
       await ff(0.3);
       await forge(K1, 'the mirror');
     }
-    // the tablet closed: it flew to « قواعدي » in the top bar, which opens the rules sheet (D33)
+    // the tablet closed: it flew to « Mes règles » in the top bar, which opens the rules sheet (D33)
     {
       expect(
         (await page.locator('[data-di-rules]').count()) === 1,
-        'the tablet closed: « قواعدي » stands in the top bar',
+        'the tablet closed: « Mes règles » stands in the top bar',
       );
       await page.click('[data-di-rules]');
       await page.waitForTimeout(400);
@@ -809,7 +815,7 @@ export async function rcStoryWalk(L, D, opts) {
       check(
         o.overlay === 'rules' &&
           ((await page.textContent('.di-veil').catch(() => '')) ?? '').includes(L.lesson.rules[K1].title),
-        `« قواعدي » opens the rules sheet on « ${L.lesson.rules[K1].title} » (${o.overlay})`,
+        `« Mes règles » opens the rules sheet on « ${L.lesson.rules[K1].title} » (${o.overlay})`,
       );
       await w.shot(page, 'rules-sheet', { exit: ['[data-di-rules-close]'] });
       await page.click('[data-di-rules-close]');
@@ -857,7 +863,13 @@ export async function rcStoryWalk(L, D, opts) {
     await W.settle();
     {
       const x = await s();
-      check(x.say.includes(near) && /أحسنت/.test(x.say), `${near}: the success is SAID (« ${x.say.slice(0, 80)} »)`);
+      // the lesson's own sentence (`story.text.say.near`) when it writes one; else a word of praise
+      const nearSay = L.lesson.story.text?.say?.near;
+      check(
+        x.say.includes(near) &&
+          (typeof nearSay === 'string' ? x.say.trim() === nearSay.trim() : /Bravo|Bien joué|C’est ça/i.test(x.say)),
+        `${near}: the success is SAID (« ${x.say.slice(0, 80)} »)`,
+      );
       check(!x.holding && x.rod == null, `${near}: the rod has left his hand by itself`);
       const beam = await page.evaluate(() => {
         const g = window.__world;
@@ -878,18 +890,18 @@ export async function rcStoryWalk(L, D, opts) {
     }
     // ══ the rod clamped corner to corner, on a WHOLE mark ══
     await W.grab({ court: first.id }, `the court of ${first.a}, the wall`);
-    await objIs('the wall', /الركن/);
+    await objIs('the wall', /\bcoins?\b/i);
     await W.walkTo(String(below - 1));
     {
       const said = await W.prompt();
-      check(!/ثبّت/.test(said ?? ''), `at ${below - 1}, far from the corner: no clamp offered (« ${said} »)`);
+      check(!/Fixe la toise/.test(said ?? ''), `at ${below - 1}, far from the corner: no clamp offered (« ${said} »)`);
     }
     await W.walkTo(String(below));
     {
       const said = await W.prompt();
       check(
-        /ثبّت/.test(said ?? ''),
-        `stopped ON the whole mark ${below}, at the far corner: « ثبّت المقياس على الركن » (« ${said} ») — D29`,
+        /Fixe la toise/.test(said ?? ''),
+        `stopped ON the whole mark ${below}, at the far corner: « Fixe la toise dans le coin » (« ${said} ») — D29`,
       );
       await worldShot(w, page, 'clamp-prompt', placesForbid(), OUT);
     }
@@ -953,7 +965,7 @@ export async function rcStoryWalk(L, D, opts) {
 
 // ───────────────────────────── the hub: a practice level on the rail ─────────────────────────────
 /**
- * « واصل التدريب » on the practice hub: the level it proposes is run on the kit's rail (`Game.startPractice`): every gate
+ * « Continuer l’entraînement » on the practice hub: the level it proposes is run on the kit's rail (`Game.startPractice`): every gate
  * judged by `descriptor.run`, the second taken wrong on purpose (its fact, a heart), then the kit's result card — its
  * stars are the hearts left — and back to the hub, then to the title screen.
  */
@@ -970,7 +982,7 @@ async function rcPractice({ w, page, D, TEXT }) {
     Object.values(TEXT.levels)
       .flat()
       .some((x) => nextName.includes(x)),
-    `« واصل التدريب » proposes one of the lesson's levels (« ${nextName} »)`,
+    `« Continuer l’entraînement » proposes one of the lesson's levels (« ${nextName} »)`,
   );
   await page.click('[data-di-next]');
   await ff(page, 0.4);
@@ -1002,7 +1014,7 @@ async function rcPractice({ w, page, D, TEXT }) {
   await shot(page, 'practice-result', { exit: ['[data-di-result-map]', '[data-di-exit]'], numbers: false });
   await page.click('[data-di-result-map]');
   await page.waitForSelector('[data-di-mapcard]');
-  check((await st()).overlay?.type === 'map', '« الخريطة » on the result card comes back to the hub');
+  check((await st()).overlay?.type === 'map', '« La carte » on the result card comes back to the hub');
   await page.click('[data-di-map-close]');
   await page.waitForSelector('[data-di-start]');
   expect((await st()).phase === 'title', 'the hub closed: back on the title screen');
@@ -1010,7 +1022,7 @@ async function rcPractice({ w, page, D, TEXT }) {
 
 // ───────────────────────────── the board: a `court` station ─────────────────────────────
 /**
- * A `court` station of « حصّة القسم » (`features/classSession/LessonBoard.jsx › CourtStation`): every card that does NOT
+ * A `court` station of « Séance en classe » (`features/classSession/LessonBoard.jsx › CourtStation`): every card that does NOT
  * ride is lowered first — the world answers each with its fact —, then every card that rides; each card's
  * verdict is computed HERE (./exact.mjs) and read on its card; the proof (`after`) waits until the riding cards were
  * lowered (every card, when none rides).

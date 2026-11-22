@@ -5,7 +5,7 @@ import { dirname, resolve } from 'node:path';
 import { query } from './adminClient';
 import { REPORT_CATEGORIES } from '../reportService';
 import { adminNavSections, adminNavLinks, adminNavSectionsFor } from '../../data/adminNavigation';
-import adminCatalogue from '../../i18n/locales/ar/admin.json';
+import adminCatalogue from '../../i18n/locales/fr/admin.json';
 
 // The whole panel, every feature on — what an off feature hides is tested in config/features.test.jsx.
 vi.mock('../../config/features', async (importOriginal) => ({ ...(await importOriginal()), isFeatureOn: () => true }));

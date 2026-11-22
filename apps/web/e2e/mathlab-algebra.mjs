@@ -1,11 +1,11 @@
 /**
- * QA navigateur — le مختبر الجبر (laboratoire d'algèbre) du مختبر الرياضيات.
+ * QA navigateur — l'outil « Algèbre » de « L’atelier de mathématiques ».
  *
  * Lancement (dev server sur 5173, API sur 8000, élève QA existant) :
  *   node apps/web/e2e/mathlab-algebra.mjs [dossier-captures]
  *
  * Ce qu'on vérifie :
- *   - navigation : la carte sur l'accueil (plus « قريبًا »), l'URL directe,
+ *   - navigation : la carte sur l'accueil (plus « Bientôt »), l'URL directe,
  *     le rechargement, le visiteur non connecté ;
  *   - la première visite : `2x + 3 = 11` affichée, la balance dessinée,
  *     AUCUNE solution montrée, aucun document créé ;
@@ -13,18 +13,19 @@
  *     aux DEUX membres ; `2x + 3 = 11` → `−3` → `÷2` → `x = 4` ;
  *   - la simplification : pas de `2x + 3 − 3` qui traîne à l'écran ;
  *   - l'historique : un pas par opération, retour en arrière au clic ;
- *   - تراجع / إعادة, y compris la branche coupée ;
- *   - la solution : « إظهار الحل », puis « التحقق » qui substitue ;
+ *   - « Annuler » / « Rétablir », y compris la branche coupée ;
+ *   - la solution : « Afficher la solution », puis « Vérifier » qui substitue ;
  *   - les cas particuliers : aucune solution, une infinité ;
  *   - les inégalités : le sens qui se retourne (−2x > 6 → x < −3), la
  *     droite graduée, cercle vide/plein ;
- *   - le générateur : les quatre niveaux, équation soluble à chaque fois ;
+ *   - le générateur : les quatre paliers, équation soluble à chaque fois ;
  *   - la saisie libre : fractions, coefficients négatifs, refus motivé de
  *     `x^2 = 4` ;
  *   - les paramètres `ax + b = c` et le suivi de la solution ;
  *   - persistance : naissance au premier changement, sauvegarde, relecture
- *     (équation, historique, curseur), « أعمالي » ;
- *   - RTL : panneau à droite, notation LTR, SVG LTR (direction CALCULÉE) ;
+ *     (équation, historique, curseur), « Mes travaux » ;
+ *   - gauche à droite : page française sans dir="rtl", panneau au bord de départ
+ *     (à gauche), notation et SVG LTR (direction CALCULÉE) ;
  *   - responsive : tablette et mobile, pas de débordement horizontal,
  *     cibles tactiles ≥ 40 px ;
  *   - accessibilité : focus visible, clavier, état textuel pour lecteur d'écran.
@@ -37,7 +38,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const OUT = process.argv[2] || '/tmp/mathlab-algebra-shots';
 mkdirSync(OUT, { recursive: true });
@@ -142,15 +143,15 @@ async function setEquation(page, text) {
   attach(page);
 
   await page.goto(`${BASE}/espace/atelier?lab=secondaire`, { waitUntil: 'networkidle' });
-  const card = page.locator('a, button').filter({ hasText: 'مختبر الجبر' }).first();
+  const card = page.locator('[data-ml-tool-card="algebra"]').first();
   const cardVisible = await card.count() > 0;
-  record('accueil — la carte « مختبر الجبر » est présente', cardVisible);
+  record('accueil — la carte « Algèbre » est présente', cardVisible);
 
-  // L'outil ne doit plus être annoncé comme « قريبًا ».
+  // L'outil ne doit plus être annoncé comme « Bientôt ».
   const plannedText = await page.locator('.sa-ml-home__planned, [class*="planned"]').allInnerTexts().catch(() => []);
-  record('accueil — l’algèbre n’est plus « قريبًا »',
-    !plannedText.join(' ').includes('الجبر'),
-    plannedText.join(' ').includes('الجبر') ? 'encore annoncée' : '');
+  record('accueil — l’algèbre n’est plus « Bientôt »',
+    !plannedText.join(' ').includes('Algèbre'),
+    plannedText.join(' ').includes('Algèbre') ? 'encore annoncée' : '');
 
   await page.goto(`${BASE}/espace/atelier/algebre?lab=secondaire`, { waitUntil: 'networkidle' });
   await sleep(600);
@@ -196,20 +197,20 @@ let createdDocId = null;
   record('simplification — « 2x + 3 − 3 » ne traîne pas à l’écran',
     !equation.includes('+ 3 −') && equation.includes('2x') && equation.includes('8'), equation);
 
-  await applyTyped(page, 'القسمة', '2');
+  await applyTyped(page, 'Diviser', '2');
   equation = await currentEquation(page);
   record('deux étapes — 2x + 3 = 11 donne x = 4', /x\s*=\s*4/.test(equation), equation);
 
   const history = await historyLines(page);
   record('historique — trois pas enregistrés', history.length === 3, history.join(' | '));
 
-  // تراجع / إعادة
+  // Annuler / Rétablir
   await page.locator('[data-ml-undo]').click();
   await sleep(150);
-  record('تراجع — revient au pas précédent', (await currentEquation(page)).includes('8'), await currentEquation(page));
+  record('Annuler — revient au pas précédent', (await currentEquation(page)).includes('8'), await currentEquation(page));
   await page.locator('[data-ml-redo]').click();
   await sleep(150);
-  record('إعادة — repart en avant', /x\s*=\s*4/.test(await currentEquation(page)));
+  record('Rétablir — repart en avant', /x\s*=\s*4/.test(await currentEquation(page)));
 
   // Revenir à un pas par un clic dans l'historique : le pas redevient
   // courant, et les suivants sont marqués « à venir ».
@@ -226,12 +227,12 @@ let createdDocId = null;
   // Repartir en avant puis brancher : la branche abandonnée disparaît.
   await page.locator('[data-ml-redo]').click();
   await sleep(120);
-  await applyTyped(page, 'الضرب', '3');
+  await applyTyped(page, 'Multiplier', '3');
   const branched = await historyLines(page);
   record('historique — une opération après un retour coupe la branche', branched.length === 3, branched.join(' | '));
 
   // La solution : secondaire, puis la vérification.
-  // « حلّ خطوة بخطوة » déroule la solution (MATH_LAB §5e.10), puis « التحقق » se déroule aussi.
+  // « Résoudre pas à pas » déroule la solution (MATH_LAB §5e.10), puis « Vérifier » se déroule aussi.
   await page.locator('[data-ml-alg-solve]').first().click();
   await sleep(150);
   await playToEnd(page, 'data-ml-alg-step');
@@ -241,9 +242,9 @@ let createdDocId = null;
     await sleep(200);
     await playToEnd(page, 'data-ml-alg-verify-step');
     const verification = await page.locator('[data-ml-verification]').innerText().catch(() => '');
-    record('التحقق — la substitution est montrée', verification.length > 0, verification.replace(/\s+/g, ' ').slice(0, 80));
+    record('Vérifier — la substitution est montrée', verification.length > 0, verification.replace(/\s+/g, ' ').slice(0, 80));
   } else {
-    record('التحقق — le bouton est proposé', false, 'bouton absent');
+    record('Vérifier — le bouton est proposé', false, 'bouton absent');
   }
 
   await page.screenshot({ path: `${OUT}/02-operations.png` });
@@ -285,20 +286,20 @@ if (createdDocId) {
   await page.locator('[data-ml-alg-solve]').first().click();
   await playToEnd(page, 'data-ml-alg-step');
   let verdict = await page.locator('[data-ml-solution]').innerText().catch(() => '');
-  record('cas particulier — « لا يوجد حل »', verdict.includes('لا يوجد حل'), verdict.replace(/\s+/g, ' '));
+  record('cas particulier — « Pas de solution »', verdict.includes('Pas de solution'), verdict.replace(/\s+/g, ' '));
 
   await setEquation(page, '2x + 3 = 2x + 3');
   await page.locator('[data-ml-alg-solve]').first().click();
   await playToEnd(page, 'data-ml-alg-step');
   verdict = await page.locator('[data-ml-solution]').innerText().catch(() => '');
-  record('cas particulier — « عدد لا نهائي من الحلول »', verdict.includes('لا نهائي'), verdict.replace(/\s+/g, ' '));
+  record('cas particulier — « Une infinité de solutions »', verdict.includes('Une infinité de solutions'), verdict.replace(/\s+/g, ' '));
 
   // L'inégalité et LE point du chapitre : le sens qui se retourne.
   await setEquation(page, '-2x > 6');
   const numberLine = await page.locator('.sa-ml-alg__numberline-svg').count();
   record('inégalité — la droite graduée apparaît', numberLine === 1);
 
-  await applyTyped(page, 'القسمة', '-2');
+  await applyTyped(page, 'Diviser', '-2');
   const flipped = await currentEquation(page);
   record('inégalité — −2x > 6 ÷(−2) donne x < −3 (le sens se retourne)',
     flipped.includes('<') && flipped.includes('3'), flipped);
@@ -316,7 +317,7 @@ if (createdDocId) {
   const hiddenBound = await page.locator('.sa-ml-alg__numberline-solution').count();
   record('droite graduée — la borne reste cachée avant la résolution (§8)', hiddenBound === 0, `${hiddenBound} borne(s)`);
 
-  await applyTyped(page, 'القسمة', '2');
+  await applyTyped(page, 'Diviser', '2');
   const closedCircle = await page.locator('.sa-ml-alg__numberline-solution circle').getAttribute('fill').catch(() => null);
   record('droite graduée — borne incluse dessinée en cercle plein', closedCircle === '#7c3aed', String(closedCircle));
 
@@ -333,12 +334,12 @@ if (createdDocId) {
   await sleep(600);
 
   await setEquation(page, 'x/3 = 5');
-  await applyTyped(page, 'الضرب', '3');
+  await applyTyped(page, 'Multiplier', '3');
   record('fraction — x/3 = 5 donne x = 15', /x\s*=\s*15/.test(await currentEquation(page)), await currentEquation(page));
 
   await setEquation(page, '-2x + 4 = 10');
-  await applyTyped(page, 'الطرح', '4');
-  await applyTyped(page, 'القسمة', '-2');
+  await applyTyped(page, 'Soustraire', '4');
+  await applyTyped(page, 'Diviser', '-2');
   record('coefficient négatif — −2x + 4 = 10 donne x = −3',
     /x\s*=\s*[−-]3/.test(await currentEquation(page)), await currentEquation(page));
 
@@ -351,7 +352,7 @@ if (createdDocId) {
   record('saisie invalide — l’équation précédente reste affichée',
     (await currentEquation(page)).includes('3'), await currentEquation(page));
 
-  // Le générateur, aux quatre niveaux.
+  // Le générateur, aux quatre paliers.
   let generated = 0;
   for (const level of ['1', '2', '3', '4']) {
     await page.selectOption('#sa-ml-alg-level-eq', level);
@@ -360,10 +361,10 @@ if (createdDocId) {
     const text = await currentEquation(page);
     if (text.includes('x') && text.includes('=')) generated += 1;
   }
-  record('générateur — les quatre niveaux produisent une équation', generated === 4, `${generated}/4`);
+  record('générateur — les quatre paliers produisent une équation', generated === 4, `${generated}/4`);
 
   // Les paramètres ax + b = c.
-  const paramsButton = page.locator('.sa-ml-alg__mini-action', { hasText: 'الوسائط' }).first();
+  const paramsButton = page.locator('.sa-ml-alg__mini-action', { hasText: 'Paramètres' }).first();
   if (await paramsButton.count() > 0) {
     await paramsButton.click();
     await sleep(200);
@@ -380,7 +381,7 @@ if (createdDocId) {
   await context.close();
 }
 
-// ── 6. RTL et notation LTR ────────────────────────────────────────────────
+// ── 6. Gauche à droite et notation LTR────────────────────────────────────────────
 {
   const context = await authedContext({ viewport: { width: 1440, height: 900 } });
   const page = await context.newPage();
@@ -389,9 +390,11 @@ if (createdDocId) {
   await sleep(700);
 
   const htmlDir = await page.evaluate(() => document.documentElement.getAttribute('dir'));
-  record('RTL — la page est en arabe, direction rtl', htmlDir === 'rtl', String(htmlDir));
+  const htmlLang = await page.evaluate(() => document.documentElement.getAttribute('lang'));
+  const pageDirection = await page.evaluate(() => getComputedStyle(document.documentElement).direction);
+  record('LTR — la page est en français, sans dir="rtl"', htmlLang === 'fr' && htmlDir !== 'rtl' && pageDirection === 'ltr' && await page.locator('[dir="rtl"]').count() === 0, `lang=${htmlLang} dir=${htmlDir} direction=${pageDirection}`);
 
-  // Le panneau est sur le bord de DÉPART (à droite en arabe).
+  // Le panneau est sur le bord de DÉPART (à gauche en français).
   const geometry = await page.evaluate(() => {
     const panel = document.querySelector('.sa-ml-alg__panel');
     const stage = document.querySelector('.sa-ml-alg__stage');
@@ -400,8 +403,8 @@ if (createdDocId) {
     const s = stage.getBoundingClientRect();
     return { panelLeft: p.left, stageLeft: s.left };
   });
-  record('RTL — le panneau est sur le bord de départ (à droite)',
-    geometry !== null && geometry.panelLeft > geometry.stageLeft,
+  record('LTR — le panneau est sur le bord de départ (à gauche)',
+    geometry !== null && geometry.panelLeft < geometry.stageLeft,
     geometry ? `panneau ${Math.round(geometry.panelLeft)} / scène ${Math.round(geometry.stageLeft)}` : 'introuvable');
 
   // La direction CALCULÉE, pas l'attribut : SVG n'hérite pas de `dir`.
@@ -409,26 +412,26 @@ if (createdDocId) {
     const svg = document.querySelector('.sa-ml-alg__balance');
     return svg ? getComputedStyle(svg).direction : null;
   });
-  record('RTL — la balance est en LTR (direction calculée)', svgDirection === 'ltr', String(svgDirection));
+  record('LTR — la balance est en LTR (direction calculée)', svgDirection === 'ltr', String(svgDirection));
 
   const mathDirection = await page.evaluate(() => {
     const math = document.querySelector('.sa-ml-alg__current');
     return math ? getComputedStyle(math).direction : null;
   });
-  record('RTL — la notation reste LTR', mathDirection === 'ltr', String(mathDirection));
+  record('LTR — la notation est LTR', mathDirection === 'ltr', String(mathDirection));
 
-  // Cairo doit bien être servi pour l'arabe.
+  // Le titre de l'interface française est en Space Grotesk (plus de Cairo).
   const font = await page.evaluate(() => {
     const heading = document.querySelector('.sa-ml-alg__heading');
     return heading ? getComputedStyle(heading).fontFamily : null;
   });
-  record('RTL — la pile de polices contient Cairo', /Cairo/i.test(String(font)), String(font));
+  record('LTR — la pile de polices est Space Grotesk, sans Cairo', /Space Grotesk/i.test(String(font)) && !/Cairo/i.test(String(font)), String(font));
 
   // L'état mathématique doit exister en TEXTE (§34).
   const srText = await page.locator('[data-ml-alg-state="eq"]').innerText().catch(() => '');
-  record('accessibilité — l’état est lisible en texte', srText.includes('المعادلة'), srText.replace(/\s+/g, ' ').slice(0, 70));
+  record('accessibilité — l’état est lisible en texte', srText.includes('Équation actuelle'), srText.replace(/\s+/g, ' ').slice(0, 70));
 
-  await page.screenshot({ path: `${OUT}/05-rtl.png` });
+  await page.screenshot({ path: `${OUT}/05-ltr.png` });
   await context.close();
 }
 

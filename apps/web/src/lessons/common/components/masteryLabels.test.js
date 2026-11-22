@@ -5,7 +5,7 @@ import {
 } from './masteryLabels';
 
 const student = JSON.parse(
-  readFileSync(new URL('../../../i18n/locales/ar/student.json', import.meta.url), 'utf8'),
+  readFileSync(new URL('../../../i18n/locales/fr/student.json', import.meta.url), 'utf8'),
 );
 
 /**

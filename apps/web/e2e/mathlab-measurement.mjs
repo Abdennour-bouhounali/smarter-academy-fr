@@ -1,5 +1,5 @@
 /**
- * QA navigateur — le مختبر القياس (laboratoire de la mesure).
+ * QA navigateur — l'outil « Grandeurs et mesures » de l'atelier.
  *
  * Lancement (dev server sur 5173, API sur 8000, élève QA existant) :
  *   node apps/web/e2e/mathlab-measurement.mjs [dossier-captures]
@@ -8,15 +8,15 @@
  *   - navigation : la carte sur l'accueil, l'URL directe, le rechargement ;
  *   - §23 : à l'OUVERTURE, la formule cherchée n'est NULLE PART dans le DOM —
  *     ni titre, ni question, ni infobulle. C'est le test le plus important ;
- *   - §5, §18 : tirer la poignée change les lectures, « سجّل » remplit le tableau ;
+ *   - §5, §18 : tirer la poignée change les lectures, « Noter cette mesure » remplit le tableau ;
  *   - §25 : trois observations et la bonne règle ne suffisent PAS — il faut
  *     l'épreuve sur un objet non choisi avant que l'instrument ne conclue ;
  *   - §7 : une règle FAUSSE produit un contre-exemple chiffré, jamais « faux » ;
- *   - §21 : « تصمد » et jamais « برهان » tant que rien n'est démontré ;
+ *   - §21 : « tient » et jamais « démontré » tant que rien n'est démontré ;
  *   - §24 : les indices se révèlent un par un, et le premier ne donne pas la règle ;
- *   - §22 : « كيف ظهرت هذه القاعدة؟ » raconte des ÉTAPES ;
+ *   - §22 : « Comment cette règle est-elle apparue ? » raconte des ÉTAPES ;
  *   - §41 : la sauvegarde et la RÉOUVERTURE du document ;
- *   - RTL : panneau au bon bord, notation LTR (direction CALCULÉE) ;
+ *   - gauche à droite : page française sans dir="rtl", notation LTR (direction CALCULÉE) ;
  *   - responsive : tablette et mobile, pas de débordement horizontal,
  *     cibles tactiles ≥ 44 px ;
  *   - accessibilité : focus visible, poignée focalisable et nommée, flèches.
@@ -29,7 +29,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const OUT = process.argv[2] || '/tmp/mathlab-measurement-shots';
 mkdirSync(OUT, { recursive: true });
@@ -62,7 +62,7 @@ const TOKEN = login.token ?? login.data?.token;
 if (!TOKEN) { console.error('Connexion API impossible :', login); process.exit(1); }
 
 const browser = await chromium.launch();
-const context = await browser.newContext({ viewport: { width: 1280, height: 900 }, locale: 'ar' });
+const context = await browser.newContext({ viewport: { width: 1280, height: 900 }, locale: 'fr-FR' });
 const page = await context.newPage();
 
 /**
@@ -99,8 +99,8 @@ record('l’instrument s’ouvre sur une question, pas sur une formule', Boolean
 const bodyText = await page.locator('body').innerText();
 // Les écritures que l'élève doit DÉCOUVRIR, sous les formes où elles
 // pourraient fuir. Aucune ne doit apparaître avant qu'il ne la construise.
-const leaks = ['L × l', 'الطول × العرض', 'A = L', '= L × l', 'π × d', 'πr', 'r²',
-  'القاعدة × الارتفاع', 'b × h', '2 × (L + l)', 'a² + b²'];
+const leaks = ['L × l', 'Longueur × Largeur', 'A = L', '= L × l', 'π × d', 'πr', 'r²',
+  'Base × Hauteur', 'b × h', '2 × (L + l)', 'a² + b²'];
 const found = leaks.filter((needle) => bodyText.includes(needle));
 record('§23 — la formule n’est NULLE PART à l’ouverture', found.length === 0, found.join(' | ') || 'aucune fuite');
 
@@ -202,8 +202,8 @@ record('§20 — la bonne règle « tient » sur les observations', holdsCount >
 record('§21 — et l’instrument dit que tenir n’est pas démontrer', notProof > 0);
 
 const panelText = await page.locator('.sa-ml-ms__panelBody').innerText();
-record('§21 — le mot « برهان » n’est pas employé pour une conjecture',
-  !/برهان|مبرهن|أثبتنا/.test(panelText.replace('التفسير', '')), '');
+record('§21 — le mot « démontré » n’est pas employé pour une conjecture',
+  !/démontré|prouvé/i.test(panelText), '');
 
 const evidenceItems = await page.locator('.sa-ml-ms__evidenceList li').count();
 const evidenceDone = await page.locator('.sa-ml-ms__evidenceList li.is-done').count();
@@ -221,8 +221,8 @@ if (unseenCount > 1) {
 const stageBadge = await page.locator('.sa-ml-ms__phase').first().textContent();
 const unseenRows = await page.locator('.sa-ml-ms__unseenList li').count();
 record('§25 — l’épreuve sur un objet NON choisi a eu lieu', unseenRows > 0, `${unseenRows} épreuve(s)`);
-record('§21 — l’étape devient « وجدتُ » seulement après l’épreuve',
-  /وجد/.test(stageBadge ?? ''), stageBadge?.trim());
+record('§21 — l’étape devient « J’ai trouvé » seulement après l’épreuve',
+  /J’ai trouvé/.test(stageBadge ?? ''), stageBadge?.trim());
 await shot('06-trouve');
 
 // L'explication géométrique n'apparaît qu'ICI (§21).
@@ -236,7 +236,7 @@ await page.waitForTimeout(600);
 await page.locator('.sa-ml-ms__tab').nth(2).click();
 await page.waitForTimeout(300);
 
-const hintBtn = page.locator('.sa-ml-ms__ghostBtn').filter({ hasText: /أرشدني/ }).first();
+const hintBtn = page.locator('.sa-ml-ms__ghostBtn').filter({ hasText: /Mets-moi sur la piste/ }).first();
 await hintBtn.click();
 await page.waitForTimeout(400);
 const firstHint = await page.locator('.sa-ml-ms__hintList li').first().textContent().catch(() => '');
@@ -245,9 +245,9 @@ record('§24 — le premier indice apparaît seul', hintCount === 1, firstHint?.
 record('§24 — et il ne donne PAS la règle',
   !/[×÷]\s*\S+\s*[×÷=]/.test(firstHint ?? '') && !/= /.test(firstHint ?? ''), '');
 
-/* ── 7. §22 — « كيف ظهرت هذه القاعدة؟ » ──────────────────────────────── */
+/* ── 7. §22 — « Comment cette règle est-elle apparue ? » ──────────────── */
 
-const storyBtn = page.locator('.sa-ml-ms__ghostBtn').filter({ hasText: /كيف ظهرت/ }).first();
+const storyBtn = page.locator('.sa-ml-ms__ghostBtn').filter({ hasText: /Comment cette règle est-elle apparue/ }).first();
 await storyBtn.click();
 await page.waitForTimeout(300);
 await playToEnd(page, 'data-ml-ms-story-step');
@@ -256,14 +256,14 @@ const steps = await page.locator('.sa-ml-ms__storySteps li').count();
 record('§22 — le récit montre des ÉTAPES, pas une formule', steps >= 5, `${steps} étapes`);
 await shot('07-recit');
 
-/* ── 8. RTL et notation LTR ──────────────────────────────────────────── */
+/* ── 8. LTR et notation LTR ──────────────────────────────────────────── */
 
 const dir = await page.evaluate(() => document.documentElement.dir);
 const equationDir = await page.locator('.sa-ml-ms__equation').first()
   .evaluate((node) => getComputedStyle(node).direction).catch(() => 'n/a');
 // Il faut une LIGNE pour mesurer la direction d'une cellule. On revient
 // donc sur l'enquête du rectangle, dont le tableau a été rempli plus haut :
-// sonder l'onglet « القاعدة » d'une enquête neuve rend « aucune ligne » sans
+// sonder l'onglet « Règle » d'une enquête neuve rend « aucune ligne » sans
 // que rien ne soit cassé.
 await page.locator('.sa-ml-ms__invBtn').first().click();
 await page.waitForTimeout(500);
@@ -273,13 +273,15 @@ const tableCells = await page.locator('.sa-ml-ms__table td').count();
 const tableDir = tableCells > 0
   ? await page.locator('.sa-ml-ms__table td').first().evaluate((node) => getComputedStyle(node).direction)
   : 'aucune ligne';
-record('RTL — la page est en arabe RTL', dir === 'rtl', dir);
+const lang = await page.evaluate(() => document.documentElement.lang);
+const pageDirection = await page.evaluate(() => getComputedStyle(document.documentElement).direction);
+record('LTR — la page est en français, de gauche à droite', lang === 'fr' && dir !== 'rtl' && pageDirection === 'ltr', `lang=${lang} dir=${dir} direction=${pageDirection}`);
 record('§30 — l’équation reste LTR (direction calculée)', equationDir === 'ltr', equationDir);
 record('§30 — les nombres du tableau restent LTR', tableDir === 'ltr', `${tableCells} cellules · ${tableDir}`);
 
 const font = await page.locator('.sa-ml-ms__question').first()
   .evaluate((node) => getComputedStyle(node).fontFamily).catch(() => '');
-record('Cairo est la police de l’arabe', /Cairo/i.test(font), font.slice(0, 40));
+record('plus de police arabe (Cairo) dans l’instrument', font !== '' && !/Cairo/i.test(font), font.slice(0, 40));
 
 /* ── 9. Accessibilité ────────────────────────────────────────────────── */
 
@@ -340,7 +342,7 @@ for (const [name, width, height] of [['tablette', 820, 1180], ['mobile', 390, 84
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   record(`${name} — aucun débordement horizontal de la PAGE`, overflow <= 1, `${overflow}px`);
 
-  // Les cibles tactiles DE L'INSTRUMENT. La coquille du مختبر et la barre
+  // Les cibles tactiles DE L'INSTRUMENT. La coquille de l'atelier et la barre
   // de navigation de l'espace ont les leurs, et elles ne sont pas de ce
   // ressort : on ne juge que ce que cet instrument dessine.
   const small = await page.evaluate(() => {

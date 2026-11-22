@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { applicableTier, quoteSeats, maxCoveredSeats, firstRequestableSeats, formatDzd, tierLabel } from './seatPricing';
+import { applicableTier, quoteSeats, maxCoveredSeats, firstRequestableSeats, tierLabel } from './seatPricing';
 
 const tiers = [
   { minStudents: 1, maxStudents: 5, pricePerStudentCents: 0, currency: 'EUR', isActive: true },
@@ -42,8 +42,7 @@ describe('seatPricing (aperçu client, jamais l’autorité)', () => {
     expect(firstRequestableSeats(tiers.slice(2), 5)).toBe(21);
   });
 
-  it('formate en dinars entiers et nomme les paliers', () => {
-    expect(formatDzd(2000000).replace(/ | /g, ' ')).toBe('20 000');
+  it('nomme les paliers', () => {
     expect(tierLabel(tiers[1])).toBe('6–20');
     expect(tierLabel(tiers[3])).toBe('31+');
     expect(tierLabel({ label: '6–20' })).toBe('6–20');

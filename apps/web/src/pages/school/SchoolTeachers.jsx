@@ -28,7 +28,7 @@ export default function SchoolTeachers() {
   useEffect(() => { load(); }, [load]);
 
   // Le serveur ne rend que le jeton ; l'adresse se compose sur l'origine du client.
-  const link = data ? `${window.location.origin}/enseignant/muassasa/rejoindre/${data.joinLinkToken}` : '';
+  const link = data ? `${window.location.origin}/rejoindre/etablissement/${data.joinLinkToken}` : '';
 
   const run = async (action) => {
     setBusy(true);

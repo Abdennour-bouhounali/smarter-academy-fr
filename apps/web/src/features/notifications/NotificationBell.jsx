@@ -34,7 +34,7 @@ function loadNotifications(token, { force = false } = {}) {
 /** Où mène une notification (null : rien à ouvrir). */
 function notificationTarget(notification) {
   if (notification?.type === 'answer_reviewed' && notification.data?.reviewId) {
-    return `/espace/tashih/${encodeURIComponent(notification.data.reviewId)}`;
+    return `/espace/corrections/${encodeURIComponent(notification.data.reviewId)}`;
   }
   return null;
 }
@@ -43,7 +43,7 @@ function notificationTarget(notification) {
  * LA CLOCHE de l'élève (2026-10-06) — notifications DANS L'APPLICATION
  * seulement (aucun courriel, décision du propriétaire). Premier usage :
  * « ton professeur a corrigé ta réponse » ; un appui ouvre EXACTEMENT l'exercice et l'étape
- * corrigés, en lecture seule (/espace/tashih/:reviewId).
+ * corrigés, en lecture seule (/espace/corrections/:reviewId).
  *
  * Relue à l'ouverture de la coquille, toutes les 2 minutes et au retour sur
  * l'onglet ; une panne garde l'état précédent (jamais un blocage).

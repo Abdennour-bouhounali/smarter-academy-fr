@@ -90,7 +90,7 @@ function NewHero({ resume }) {
             <span className="rounded-full bg-slate-100 px-3 py-1">{t('compassHome.new.minutes')}</span>
             <span className="rounded-full bg-slate-100 px-3 py-1">{t('compassHome.new.saved')}</span>
           </div>
-          <Link to="/espace/bawsala" className={BIG_BTN} data-compass-start>
+          <Link to="/espace/boussole" className={BIG_BTN} data-compass-start>
             {t('compassHome.new.start')} <ArrowForward size={20} aria-hidden="true" />
           </Link>
         </div>
@@ -126,7 +126,7 @@ function ActiveHero({ active }) {
           })}
         </div>
       </div>
-      <Link to="/espace/bawsala" className={BIG_BTN} data-compass-resume>
+      <Link to="/espace/boussole" className={BIG_BTN} data-compass-resume>
         {t('compassHome.active.resume')} <ArrowForward size={20} aria-hidden="true" />
       </Link>
     </section>
@@ -151,7 +151,7 @@ function DoneSections({ compass, year, visits }) {
         <section className="flex min-w-0 flex-col gap-3 rounded-3xl bg-white p-5 ring-1 ring-slate-200" aria-labelledby="compass-week-h" data-compass-week>
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h2 id="compass-week-h" className="text-lg font-black text-slate-900">{t('compassHome.week.title')}</h2>
-            <Link to="/espace/bawsala" className="text-sm font-black text-nav-accent">{t('compassHome.week.full')}</Link>
+            <Link to="/espace/boussole" className="text-sm font-black text-nav-accent">{t('compassHome.week.full')}</Link>
           </div>
           <div className="flex items-center gap-3 text-sm font-black text-slate-900">
             <span className="h-2.5 flex-1 overflow-hidden rounded-full bg-slate-100">
@@ -187,7 +187,7 @@ function DoneSections({ compass, year, visits }) {
               <p className="text-xs">{t(`compassHome.grades.${report.priority.grade}`)}</p>
             </div>
           ) : <p className="rounded-2xl bg-emerald-50 px-4 py-2.5 font-bold text-emerald-900">{t('compassHome.map.none')}</p>}
-          <Link to="/espace/bawsala" className="text-sm font-black text-nav-accent">{t('compassHome.map.open')}</Link>
+          <Link to="/espace/boussole" className="text-sm font-black text-nav-accent">{t('compassHome.map.open')}</Link>
         </section>
       </div>
     </>
@@ -339,7 +339,7 @@ function RetakeNotice({ nextRetakeAt }) {
   return (
     <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-nav-accent-soft px-4 py-3 font-bold text-indigo-950" data-compass-retake="now">
       <span>{t('compassHome.retake.now')}</span>
-      <Link to="/espace/bawsala" className="font-black text-nav-accent">{t('compassHome.retake.cta')}</Link>
+      <Link to="/espace/boussole" className="font-black text-nav-accent">{t('compassHome.retake.cta')}</Link>
     </div>
   );
 }

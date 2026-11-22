@@ -18,7 +18,7 @@ import { ArrowForward } from '../../components/common/DirectionalIcons';
  * PARCOURS, une rangée par niveau, reliées par un rail — pas une grille de
  * cartes de même poids. Chaque rangée dit, d'un coup d'œil :
  *
- *   (1)  Niveau 1 · Je reprends les bases     [Conseillé]   Commencer →
+ *   (1)  Palier 1 · Je reprends les bases     [Conseillé]   Commencer →
  *        ▰▰▱▱  1 / 3 exercices terminés
  *
  * Le compteur est isolé LTR (« 1 / 3 ») : l'ancien « {{done}} sur {{total}} » arabe,

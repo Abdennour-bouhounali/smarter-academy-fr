@@ -3,8 +3,8 @@ import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { PAGE_TOURS } from './tourRegistry';
-import tourText from '../../i18n/locales/ar/tour.json';
-import nav from '../../i18n/locales/ar/nav.json';
+import tourText from '../../i18n/locales/fr/tour.json';
+import nav from '../../i18n/locales/fr/nav.json';
 import { features } from '../../config/features';
 
 /**
@@ -89,7 +89,7 @@ describe('tour registry contract', () => {
     }
     // « N sur M » : un mot, pas une barre oblique.
     expect(tourText.ui.progress).not.toContain('/');
-    expect(nav.tourReplay).toBeTruthy();
+    expect(nav.tourReplay).toBe('Visite de la page');
     expect(nav.tourReplay).not.toMatch(/[\u0600-\u06FF]/);
   });
 });

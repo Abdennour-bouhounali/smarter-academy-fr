@@ -30,6 +30,6 @@ describe('RequireLargeScreen — pas de leçon ni d’exercice sur un téléphon
   it('entoure les routes des leçons et toutes les routes de pratique', () => {
     expect(app).toMatch(/<Route element={<RequireLargeScreen \/>}>\s*{lessonRoutes}\s*<\/Route>/);
     const gated = app.split('<Route element={<RequireLargeScreen />}>').slice(1).map((c) => c.split('</Route>\n')[0]).join('\n');
-    for (const path of app.match(/path="(?:pratique\/|tashih\/)[^"]*"/g)) expect(gated).toContain(path);
+    for (const path of app.match(/path="(?:pratique\/|corrections\/)[^"]*"/g)) expect(gated).toContain(path);
   });
 });

@@ -62,7 +62,7 @@ function eventText(t, e) {
  * cartes repliables par leçon, puis deux colonnes à partir de `md`.
  *
  * Les états des savoir-faire portent les libellés UNIQUES `student:mastery.*`
- * (ARABIC_RTL_CONTRACT.md « Mastery and completion never share words »).
+ * (« la maîtrise et l'avancement ne partagent aucun mot »).
  */
 export default function ProgressDetail({ progress, audience = 'parent' }) {
   const { t } = useTranslation('family');

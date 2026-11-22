@@ -30,10 +30,10 @@ export function surfaceFor(pathname) {
   if (LESSON_PATH.test(pathname)) return 'lesson';
   if (pathname.startsWith('/courses')) return 'other';
   if (!pathname.startsWith('/espace')) return null;
-  if (pathname.startsWith('/espace/pratique') || pathname.startsWith('/espace/tashih')) return 'practice';
+  if (pathname.startsWith('/espace/pratique') || pathname.startsWith('/espace/corrections')) return 'practice';
   if (pathname.startsWith('/espace/defi') || pathname.startsWith('/espace/diagnostic')) return 'challenge';
   if (pathname.startsWith('/espace/atelier') || pathname.startsWith('/espace/cahier')) return 'lab';
-  if (pathname.startsWith('/espace/jeux') || pathname.startsWith('/espace/madar')) return 'game';
+  if (pathname.startsWith('/espace/jeux')) return 'game';
   return 'other';
 }
 

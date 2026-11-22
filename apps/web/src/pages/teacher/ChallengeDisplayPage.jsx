@@ -133,7 +133,11 @@ function ResultsView({ data }) {
           ))}
         </ol>
       )}
-      <p className="mt-8 font-inter text-xl text-slate-600">{t('display.participated', { count: data.participation.completed })} <span className="text-slate-500">{t('display.of', { members: data.members })}</span></p>
+      <p className="mt-8 font-inter text-xl text-slate-600">
+        {data.participation.completed > 0 ? (
+          <>{t('display.participated', { count: data.participation.completed })} <span className="text-slate-500">{t('display.of', { members: data.members })}</span></>
+        ) : t('display.participatedNone')}
+      </p>
     </div>
   );
 }
@@ -197,7 +201,7 @@ function ParticipationView({ data }) {
         <text x="110" y="120" textAnchor="middle" fill="#0f172a" fontSize="44" fontWeight="900" direction="ltr">{data.participation.completed}/{data.members}</text>
       </svg>
       <div className="text-center sm:text-start">
-        <p className="font-space text-3xl font-black">{t('display.participated', { count: data.participation.completed })}</p>
+        <p className="font-space text-3xl font-black">{data.participation.completed > 0 ? t('display.participated', { count: data.participation.completed }) : t('display.participatedNone')}</p>
         <p className="mt-4 font-inter text-slate-500">{t('display.accuracy')}</p>
         <p className="font-space text-5xl font-black text-cyan-600" dir="ltr">{percent(data.accuracy)}</p>
       </div>

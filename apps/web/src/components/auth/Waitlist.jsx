@@ -3,18 +3,15 @@
  * register and display a message that says the platform is under test »). One sentence, an e-mail address (required),
  * then — if the person wants — a name, who they are and a French phone number; one button; then the confirmation.
  * It goes to `POST /waitlist` (apps/api › WaitlistController, which is the authority: `email` required, `name` ≤ 100,
- * `role` student / teacher / parent, `phone` a French number); the admin reads it with the contact messages.
- *
- * The request is sent from here and not through `services/authService.js › joinWaitlist`, which still sends a phone
- * and no e-mail (the Foundation agent's file — reported): when it takes `{ email, name, role, phone }`, call it.
+ * `role` student / teacher / parent, `phone` a French number) through `services/authService.js › joinWaitlist`; the
+ * admin reads it with the contact messages.
  */
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { CheckCircle2, FlaskConical, Mail, Phone } from 'lucide-react';
 import AuthShell, { AuthSubmit, authInputClass } from './AuthShell';
-import { apiRequest } from '../../services/apiClient';
-import { apiMessage } from '../../services/apiMessage';
+import { joinWaitlist } from '../../services/authService';
 
 // The server's rules, mirrored only so the person sees which field is wrong before the round trip.
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -40,17 +37,6 @@ export function waitlistError({ email, phone }) {
   return null;
 }
 
-async function sendWaitlist(payload) {
-  const { ok, status, data } = await apiRequest('/waitlist', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
-  });
-  // The validation sentences are written in French for the person (WaitlistController); anything else follows apiMessage.
-  if (!ok) throw new Error(data?.errors?.email?.[0] ?? data?.errors?.phone?.[0] ?? apiMessage('waitlist', data, status));
-  return data;
-}
-
 export default function Waitlist() {
   const { t } = useTranslation('auth');
   const [email, setEmail] = useState('');
@@ -70,7 +56,7 @@ export default function Waitlist() {
     setError('');
     setState('sending');
     try {
-      await sendWaitlist(waitlistPayload({ email, name, role, phone }));
+      await joinWaitlist(waitlistPayload({ email, name, role, phone }));
       setState('done');
     } catch (err) {
       setError(err.message);

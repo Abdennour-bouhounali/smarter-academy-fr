@@ -44,14 +44,9 @@ function codeOf(file) {
 const ADMIN_DIRS = ['pages/admin', 'components/admin'];
 const adminFiles = ADMIN_DIRS.flatMap((rel) => walk(resolve(src, rel)));
 
-/**
- * Le dossier du catalogue : `locales/ar/` pendant la campagne de traduction,
- * `locales/fr/` quand la session principale l'aura renommé
- * (FRANCE_REBUILD_PLAN §4quater, règle 2). Le test accepte les deux noms ;
- * le premier qui existe est le bon.
- */
-const LOCALE_DIR = ['fr', 'ar'].find((dir) => existsSync(resolve(src, `i18n/locales/${dir}/admin.json`)));
-const readCatalogue = () => JSON.parse(readFileSync(resolve(src, `i18n/locales/${LOCALE_DIR}/admin.json`), 'utf8'));
+/** Le dossier du catalogue : `locales/fr/` (une seule langue). */
+const CATALOGUE = resolve(src, 'i18n/locales/fr/admin.json');
+const readCatalogue = () => JSON.parse(readFileSync(CATALOGUE, 'utf8'));
 
 // Les blocs arabes d'Unicode. `\uFEFC` et non `\uFEFF` : U+FEFF est la marque d'ordre des octets (le BOM d'un CSV).
 const ARABIC = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFC]/;
@@ -117,9 +112,8 @@ describe('le panneau d’administration est français', () => {
   it('le catalogue français du panneau existe et est monté', () => {
     const i18n = readFileSync(resolve(src, 'i18n/index.js'), 'utf8');
     // À la demande depuis 2026-11-17 : il arrive avec le cadre du panneau, pas avec l'application.
-    // Le dossier s'appelle `ar` jusqu'au renommage de fin de campagne, `fr` ensuite.
-    expect(i18n).toMatch(/admin: \(\) => import\('\.\/locales\/(?:ar|fr)\/admin\.json'\)/);
-    expect(LOCALE_DIR, 'admin.json introuvable sous locales/fr/ ni locales/ar/').toBeDefined();
+    expect(i18n).toMatch(/admin: \(\) => import\('\.\/locales\/fr\/admin\.json'\)/);
+    expect(existsSync(CATALOGUE), 'admin.json introuvable sous locales/fr/').toBe(true);
 
     const catalogue = readCatalogue();
     // Les sections que tout écran consomme.

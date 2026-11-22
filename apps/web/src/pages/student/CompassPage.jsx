@@ -23,7 +23,7 @@ import { playSfx } from '../../lessons/common/utils/playEffect';
 import { LOCALE } from '../../locale.js';
 
 /**
- * « Ma boussole » — /espace/bawsala (P1). Contrat : docs/architecture/YEAR_COMPASS.md §6.
+ * « Ma boussole » — /espace/boussole (P1). Contrat : docs/architecture/YEAR_COMPASS.md §6.
  *
  * Le SERVEUR sert, corrige et recalcule les bandes ; cette page rejoue le
  * moteur pur (packages/core/compass) sur ses réponses pour savoir quoi

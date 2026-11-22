@@ -3,13 +3,20 @@
 // lib/walk.mjs › shot (nothing scrolls, 12 px, raw LaTeX, formulas, foreign words, a way out): these add what it cannot see.
 import { FLOOR_PX } from '../walk.mjs';
 
+/**
+ * A sentence that calls his answer WRONG (« faux », « fausse », « erroné », « incorrect »): never said by the world, the
+ * forge or a hint (FRENCH_LANGUAGE_CONTRACT.md §2 — the world shows what happens). The trainer's two answer buttons
+ * « Vrai » / « Faux » are words of a statement, not a verdict: test feedback texts only, never a button.
+ */
+export const WRONG_WORD = /\bfau(?:x|sses?)\b|\berron[ée]e?s?\b|\bincorrecte?s?\b/i;
+
 /** A regexp of the words that may not be read yet (null: none). */
 export const wordsRe = (words) =>
   words.length ? new RegExp(words.map((x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')) : null;
 
 /**
  * A WORLD screen (B14, A1): the instruction on screen, uncovered, 16 px when open, never under the card on the right; the
- * « اضغط E » prompt off the equation and its verdict; the instruction, the card and Zero's sentence name no rule not forged
+ * « Appuie sur E » prompt off the equation and its verdict; the instruction, the card and Zero's sentence name no rule not forged
  * yet (`forbid`, a regexp or null). Then the screenshot.
  */
 export async function worldShot(w, page, label, forbid, opts) {
@@ -307,7 +314,7 @@ export async function inquiryFits(
         .map((e) => ({ t: e.textContent.trim(), r: e.getBoundingClientRect() }))
         .filter((x) => x.t && x.r.width);
       // two labels overlap when their boxes meet; a world whose labels stand in tight stacked lines (`F.lines`: « 30 » over
-      // « بلاطة » on a gate) counts it only when they share more than that fraction of the smaller line's height
+      // « dalles » on a gate) counts it only when they share more than that fraction of the smaller line's height
       const over = (a, b) =>
         F.lines == null
           ? meet(a, b)
@@ -341,8 +348,8 @@ export async function tellsNothing(w, page, where, re, frame = '.iq') {
 }
 
 /**
- * « خريطة المعارف » laid out (B5, B8): every card inside the map box, no card on another, no link's label under a card,
- * the page's subtitle WHOLE (never an ellipsis; half a line of Arabic overhang tolerated, C4).
+ * « La carte des connaissances » laid out (B5, B8): every card inside the map box, no card on another, no link's label under a card,
+ * the page's subtitle WHOLE (never an ellipsis; half a line of overhang tolerated, C4).
  */
 export async function mapLaidOut(w, page, where) {
   const bad = await page.evaluate(() => {

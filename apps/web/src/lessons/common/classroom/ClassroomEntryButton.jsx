@@ -14,12 +14,10 @@ import { useClassroomMode } from './ClassroomContext';
  *
  * PLACEMENT. `tone="floating"` sort le bouton du flux et le pose dans la
  * COLONNE FLOTTANTE en bas à droite — même bord, même z-index, même langage
- * visuel que « Ma carte » et « Mon cahier ». Il se pose JUSTE SOUS la carte des
- * connaissances, au RAS DU COIN : son écart au bas (1.5rem) égale son écart
- * à droite, et la carte (5.5rem) puis le cahier (9.5rem) s'empilent
+ * visuel que « Mon cahier ». Il se pose au RAS DU COIN : son écart au bas
+ * (1.5rem) égale son écart à droite, et le cahier (5.5rem) s'empile
  * au-dessus. Le bord droit est celui de FIN : la barre latérale de l'espace
- * élève occupe le bord de début (la gauche) et intercepterait les clics
- * (voir la note de KnowledgeMap.jsx, apprise en QA).
+ * élève occupe le bord de début (la gauche) et intercepterait les clics.
  *
  * Il ne rend RIEN pour qui n'a pas le rôle présentateur (canPresentClassroom)
  * et rien non plus pendant une présentation (la barre de navigation du bas
@@ -47,7 +45,7 @@ const ClassroomEntryButton = forwardRef(function ClassroomEntryButton({ scope: s
   const look = tone === 'quiet' || floating
     ? 'border-indigo-200 bg-white text-indigo-800 hover:border-indigo-400 hover:bg-indigo-50'
     : 'border-indigo-700 bg-indigo-600 text-white hover:bg-indigo-700';
-  // La colonne flottante : au ras du coin, SOUS « Ma carte » et « Mon cahier ».
+  // La colonne flottante : au ras du coin, SOUS « Mon cahier ».
   const place = floating ? 'sa-classroom-fab' : '';
 
   return (

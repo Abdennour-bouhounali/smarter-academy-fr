@@ -106,7 +106,7 @@ export const TX = {
     status: {
       mastered: 'Maîtrisé',
       reinforce: 'À consolider',
-      gap: 'À reprendre',
+      gap: 'En difficulté',
       in_progress: 'En cours',
       not_started: 'Pas commencé',
     },
@@ -302,7 +302,6 @@ export const EXAM = {
   yes: 'Oui, je rends',
   no: 'Je continue',
   sealed: 'Copie rendue…',
-  back: 'Ta copie corrigée',
   pick: 'Touche une question pour voir sa correction',
   mine: 'Ta réponse',
   none: 'Pas de réponse',

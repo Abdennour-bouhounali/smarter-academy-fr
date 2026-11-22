@@ -61,7 +61,7 @@ export default function Workspace({ challenge, busy, result, error, onSubmit, on
     <div className="space-y-5" data-thinking-workspace={challenge.number}>
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-3">
-          <Link to="/espace/tafkir" className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 font-inter text-xs font-bold text-slate-600 ring-1 ring-slate-200 hover:text-slate-900">
+          <Link to="/espace/enigmes" className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 font-inter text-xs font-bold text-slate-600 ring-1 ring-slate-200 hover:text-slate-900">
             <ArrowBack size={14} aria-hidden="true" /> {t('workspace.back')}
           </Link>
           <h1 className="font-space text-3xl font-black text-slate-900">

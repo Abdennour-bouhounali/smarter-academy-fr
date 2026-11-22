@@ -2,13 +2,24 @@
  * Recherche tolérante pour les listes du formulaire de commande (wilayas, communes).
  * Un client tape « 16 », « ١٦ », « جزاير », « الجزائر » ou « alger » : tous trouvent
  * la wilaya 16. La normalisation de base (hamza/alif, tā' marbūṭa, alif maqṣūra,
- * voyelles, accents latins, chiffres arabo-hindis) est celle de la plateforme
- * (`normalizeSearchText`) ; on y ajoute ؤ/ئ et l'apostrophe des noms latins.
+ * voyelles, accents latins, chiffres arabo-hindis) vit ici depuis que la plateforme est
+ * française (la librairie est éteinte et garde son arabe jusqu'à ses livres français) ;
+ * on y ajoute ؤ/ئ et l'apostrophe des noms latins.
  */
-import { normalizeSearchText } from '../mathlab/work/workFilters';
+function foldArabic(value) {
+  let text = String(value ?? '').toLowerCase();
+  text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  text = text.replace(/[\u064B-\u065F\u0670\u0640]/g, '');
+  text = text.replace(/[\u0622\u0623\u0625\u0671]/g, '\u0627');
+  text = text.replace(/\u0649/g, '\u064A');
+  text = text.replace(/\u0629/g, '\u0647');
+  text = text.replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x0660));
+  text = text.replace(/[\u06F0-\u06F9]/g, (d) => String(d.charCodeAt(0) - 0x06f0));
+  return text.replace(/\s+/g, ' ').trim();
+}
 
 export function normalizeSearch(text) {
-  return normalizeSearchText(text)
+  return foldArabic(text)
     .replace(/ؤ/g, 'و')
     .replace(/ئ/g, 'ي')
     .replace(/['’`-]/g, ' ')

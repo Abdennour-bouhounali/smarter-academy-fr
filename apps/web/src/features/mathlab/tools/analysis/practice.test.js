@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { generateChallenge, checkAnswer, parseStudentNumber, CHALLENGE_KINDS, EXPERIMENTS, PREDICTIONS } from './practice.js';
-import ar from '../../../../i18n/locales/ar/mathlab.json';
+import ar from '../../../../i18n/locales/fr/mathlab.json';
 import { compileSource } from '../functionGrapher/expressionEvaluator.js';
 
 describe('la saisie d’une réponse', () => {

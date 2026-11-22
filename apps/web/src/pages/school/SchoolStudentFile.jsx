@@ -32,7 +32,7 @@ export default function SchoolStudentFile() {
 
   return (
     <div className="space-y-6" data-school-student-file>
-      <Link to="/idara/talamidh" className={btnSecondary}><ArrowBack size={16} aria-hidden="true" />{t('file.back')}</Link>
+      <Link to="/etablissement/eleves" className={btnSecondary}><ArrowBack size={16} aria-hidden="true" />{t('file.back')}</Link>
       {error && <p role="alert" className="rounded-xl bg-rose-50 p-3 font-inter text-sm text-rose-700">{error}</p>}
       {data && (
         <>

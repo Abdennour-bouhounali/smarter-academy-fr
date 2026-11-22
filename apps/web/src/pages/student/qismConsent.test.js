@@ -9,7 +9,7 @@ import {
 } from './qismConsent';
 
 const studentAr = JSON.parse(
-  readFileSync(new URL('../../i18n/locales/ar/student.json', import.meta.url), 'utf8'),
+  readFileSync(new URL('../../i18n/locales/fr/student.json', import.meta.url), 'utf8'),
 );
 const qismSrc = readFileSync(new URL('./Qism.jsx', import.meta.url), 'utf8');
 

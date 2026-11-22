@@ -1,5 +1,5 @@
 /**
- * QA navigateur — la géométrie dans l'espace (الهندسة ثلاثية الأبعاد) du مختبر الرياضيات.
+ * QA navigateur — la géométrie dans l'espace (« Géométrie dans l’espace ») de « L’atelier de mathématiques ».
  *
  * Lancement (dev server sur 5173, API sur 8000, élève QA existant) :
  *   node apps/web/e2e/mathlab-geometry3d.mjs [dossier-captures]
@@ -17,9 +17,9 @@
  *     réinitialiser ; la face désignée d'un clic ;
  *   - les options : mesures, axes, grille (case du panneau et bouton de la coquille) ;
  *   - persistance : naissance au premier changement, sauvegarde, relecture
- *     (solide, dimensions, options, caméra), « أعمالي » ;
+ *     (solide, dimensions, options, caméra), « Mes travaux » ;
  *   - export PNG ;
- *   - RTL : panneau à droite, formules LTR ;
+ *   - gauche à droite : page française sans dir="rtl", panneau à gauche, formules LTR ;
  *   - responsive : tablette et mobile, panneau repliable, pas de débordement,
  *     orbite au doigt et pincement (événements tactiles CDP).
  *
@@ -30,7 +30,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const OUT = process.argv[2] || '/tmp/mathlab-geometry3d-shots';
 mkdirSync(OUT, { recursive: true });
@@ -150,7 +150,7 @@ async function hostBox(page) {
   return page.locator('[data-ml-g3d-host]').boundingBox();
 }
 
-const ctx = await authedContext({ viewport: { width: 1440, height: 900 }, locale: 'ar-DZ', acceptDownloads: true });
+const ctx = await authedContext({ viewport: { width: 1440, height: 900 }, locale: 'fr-FR', acceptDownloads: true });
 const page = await ctx.newPage();
 attach(page);
 
@@ -159,7 +159,7 @@ try {
   // ── Accueil et première visite ────────────────────────────────────────
   await page.goto(`${BASE}/espace/atelier?lab=moyen`, { waitUntil: 'networkidle' });
   const card = page.locator('[data-ml-tool-card="geometry3d"]');
-  record('مخبر المتوسط : la carte « الهندسة ثلاثية الأبعاد »', (await card.count()) === 1 && (await card.innerText()).includes('الهندسة ثلاثية الأبعاد'));
+  record('atelier du collège : la carte « Géométrie dans l’espace »', (await card.count()) === 1 && (await card.innerText()).includes('Géométrie dans l’espace'));
   await card.click();
   await page.waitForURL(/\/espace\/atelier\/geometrie-3d\?lab=moyen$/, { timeout: 15000 });
   await page.waitForSelector('[data-ml-g3d-canvas]', { timeout: 30000 });
@@ -167,7 +167,7 @@ try {
   record('première visite : un cube d’arête 2, sans document', (await page.inputValue('[data-ml-g3d-shape-select]')) === 'cube' && (await page.inputValue('[data-ml-g3d-number="side"]')) === '2' && docIdOf(page.url()) === null);
   record('première visite : V = 8, A = 24', (await volume(page)) === 8 && (await surface(page)) === 24);
   record('première visite : trois cotes « a = 2 » sur le solide', (await page.$$eval('[data-ml-g3d-measure]', (els) => els.map((e) => e.textContent))).join('|') === 'a = 2|a = 2|a = 2');
-  record('première visite : l’invitation « اسحب لتدوير الشكل »', (await page.locator('[data-ml-g3d-drag-hint]').count()) === 1);
+  record('première visite : l’invitation « Fais glisser pour tourner le solide »', (await page.locator('[data-ml-g3d-drag-hint]').count()) === 1);
   record('première visite : rien n’est créé', (await page.locator('[data-ml-status]').getAttribute('data-ml-status')) === 'clean' && docIdOf(page.url()) === null);
   await page.screenshot({ path: `${OUT}/01-cube.png` });
 
@@ -245,7 +245,7 @@ try {
   await page.selectOption('[data-ml-g3d-shape-select]', 'cuboid');
   await sleep(300);
   record('pavé : le cube devient un pavé de mêmes arêtes', (await page.inputValue('[data-ml-g3d-number="length"]')) === '2,5' && (await page.inputValue('[data-ml-g3d-number="height"]')) === '2,5');
-  record('pavé : trois contrôles L, l, h', (await page.locator('[data-ml-g3d-dim]').count()) === 3 && (await page.locator('[data-ml-g3d-info-shape]').innerText()) === 'متوازي المستطيلات');
+  record('pavé : trois contrôles L, l, h', (await page.locator('[data-ml-g3d-dim]').count()) === 3 && (await page.locator('[data-ml-g3d-info-shape]').innerText()) === 'Pavé droit');
   await setNumber(page, 'length', '2'); await page.keyboard.press('Enter');
   await setNumber(page, 'width', '3'); await page.keyboard.press('Enter');
   await setNumber(page, 'height', '4'); await page.keyboard.press('Enter');
@@ -282,14 +282,14 @@ try {
   // ── Les options ────────────────────────────────────────────────────────
   await page.click('[data-ml-g3d-option="showMeasurements"]');
   await sleep(300);
-  record('options : sans « القياسات », les cotes disparaissent', (await page.$$eval('[data-ml-g3d-measure]', (els) => els.every((e) => e.style.display === 'none'))));
+  record('options : sans « Mesures », les cotes disparaissent', (await page.$$eval('[data-ml-g3d-measure]', (els) => els.every((e) => e.style.display === 'none'))));
   await page.click('[data-ml-g3d-option="showAxes"]');
   await sleep(300);
-  record('options : sans « المحاور », les noms d’axes disparaissent', (await page.$$eval('.sa-ml-g3d__label--axis', (els) => els.length === 3 && els.every((e) => e.style.display === 'none'))));
+  record('options : sans « Axes », les noms d’axes disparaissent', (await page.$$eval('.sa-ml-g3d__label--axis', (els) => els.length === 3 && els.every((e) => e.style.display === 'none'))));
   record('options : le bouton grille de la coquille est allumé', (await page.getAttribute('[data-ml-grid]', 'aria-pressed')) === 'true');
   await page.click('[data-ml-g3d-option="showGrid"]');
   await sleep(300);
-  record('options : la case « الشبكة » éteint le bouton de la coquille', (await page.getAttribute('[data-ml-grid]', 'aria-pressed')) === 'false');
+  record('options : la case « Quadrillage » éteint le bouton de la coquille', (await page.getAttribute('[data-ml-grid]', 'aria-pressed')) === 'false');
   await page.click('[data-ml-grid]');
   await sleep(300);
   record('options : le bouton de la coquille recoche la case', await page.isChecked('[data-ml-g3d-option="showGrid"]'));
@@ -304,32 +304,35 @@ try {
   record('export : un PNG non vide', download.suggestedFilename().endsWith('.png') && statSync(path).size > 2000, download.suggestedFilename());
 
   // ── Titre, persistance, relecture ─────────────────────────────────────
-  await page.fill('[data-ml-title]', 'مخروط الاختبار');
+  await page.fill('[data-ml-title]', 'Cône d’essai');
   await page.click('[data-ml-g3d-option="showGrid"]');
   await waitSaved(page);
   const saved = (await api(TOKEN, 'GET', `/math-lab/documents/${docId}`)).data.document;
-  record('persistance : solide, dimensions, options, caméra, titre', saved?.title === 'مخروط الاختبار' && saved?.data?.shape === 'cone' && saved.data.dimensions.radius === 3 && saved.data.dimensions.height === 4 && saved.data.showGrid === false && saved.data.showAxes === true && Array.isArray(saved.data.camera?.target), JSON.stringify(saved?.data).slice(0, 160));
+  record('persistance : solide, dimensions, options, caméra, titre', saved?.title === 'Cône d’essai' && saved?.data?.shape === 'cone' && saved.data.dimensions.radius === 3 && saved.data.dimensions.height === 4 && saved.data.showGrid === false && saved.data.showAxes === true && Array.isArray(saved.data.camera?.target), JSON.stringify(saved?.data).slice(0, 160));
   await page.reload({ waitUntil: 'networkidle' });
   await page.waitForSelector('[data-ml-g3d-canvas]', { timeout: 30000 });
   await sleep(600);
   record('relecture : le cône r = 3, h = 4 revient, grille éteinte', (await page.inputValue('[data-ml-g3d-shape-select]')) === 'cone' && (await page.inputValue('[data-ml-g3d-number="radius"]')) === '3' && (await volume(page)) === 37.7 && !(await page.isChecked('[data-ml-g3d-option="showGrid"]')) && (await page.getAttribute('[data-ml-grid]', 'aria-pressed')) === 'false');
-  record('relecture : le titre', (await page.inputValue('[data-ml-title]')) === 'مخروط الاختبار');
+  record('relecture : le titre', (await page.inputValue('[data-ml-title]')) === 'Cône d’essai');
   await page.goto(`${BASE}/espace/atelier`, { waitUntil: 'networkidle' });
   await page.waitForSelector(`[data-ml-doc="${docId}"]`, { timeout: 15000 });
-  record('أعمالي : listé avec son titre', (await page.locator(`[data-ml-doc="${docId}"]`).innerText()).includes('مخروط الاختبار'));
+  record('Mes travaux : listé avec son titre', (await page.locator(`[data-ml-doc="${docId}"]`).innerText()).includes('Cône d’essai'));
 
-  // ── RTL ────────────────────────────────────────────────────────────────
+  // ── LTR ────────────────────────────────────────────────────────────────
   await openTool(page, `/espace/atelier/geometrie-3d/${docId}`);
   const panel = await page.locator('[data-ml-g3d-panel]').boundingBox();
   const stage = await hostBox(page);
-  record('RTL : le panneau à droite, la fenêtre à gauche', panel.x > stage.x + stage.width / 2 && (await page.getAttribute('html', 'dir')) === 'rtl');
-  record('RTL : la police Cairo sur le panneau', (await page.locator('[data-ml-g3d-info-shape]').evaluate((e) => getComputedStyle(e).fontFamily)).includes('Cairo'));
+  // De gauche à droite, le panneau (bord de départ) passe à gauche : l'exact
+  // miroir de l'ancienne disposition RTL.
+  record('LTR : le panneau à gauche, la fenêtre à droite', panel.x + panel.width < stage.x + stage.width / 2 && (await page.getAttribute('html', 'dir')) !== 'rtl' && (await page.getAttribute('html', 'lang')) === 'fr');
+  const panelFont = await page.locator('[data-ml-g3d-info-shape]').evaluate((e) => getComputedStyle(e).fontFamily);
+  record('LTR : la police Inter sur le panneau, plus de Cairo', panelFont.includes('Inter') && !panelFont.includes('Cairo'), panelFont);
 
   // ── Les autres instruments toujours là ────────────────────────────────
   await page.goto(`${BASE}/espace/atelier/grapheur?lab=secondaire`, { waitUntil: 'networkidle' });
   record('régression : le grapheur s’ouvre', (await page.waitForSelector('[data-ml-grapher] [data-ml-plane] svg', { timeout: 30000 }).then(() => true).catch(() => false)));
   await page.goto(`${BASE}/espace/atelier/tableau`, { waitUntil: 'networkidle' });
-  record('régression : la سبّورة s’ouvre', (await page.waitForSelector('.excalidraw', { timeout: 30000 }).then(() => true).catch(() => false)));
+  record('régression : le tableau s’ouvre', (await page.waitForSelector('.excalidraw', { timeout: 30000 }).then(() => true).catch(() => false)));
 } catch (e) {
   record('scénario principal interrompu', false, String(e).slice(0, 400));
   await page.screenshot({ path: `${OUT}/error-main.png` }).catch(() => {});
@@ -339,7 +342,7 @@ try {
 
 // ── Visiteur ─────────────────────────────────────────────────────────────
 {
-  const anon = await browser.newContext({ viewport: { width: 1280, height: 800 }, locale: 'ar-DZ' });
+  const anon = await browser.newContext({ viewport: { width: 1280, height: 800 }, locale: 'fr-FR' });
   const p = await anon.newPage();
   await p.goto(`${BASE}/espace/atelier/geometrie-3d`, { waitUntil: 'networkidle' });
   record('visiteur : renvoyé vers /login', p.url().includes('/login'));
@@ -348,7 +351,7 @@ try {
 
 // ── Tablette et mobile ───────────────────────────────────────────────────
 for (const [label, width, height] of [['tablette', 1024, 768], ['mobile', 390, 844]]) {
-  const c = await authedContext({ viewport: { width, height }, locale: 'ar-DZ', hasTouch: true, isMobile: width < 700, deviceScaleFactor: 1 });
+  const c = await authedContext({ viewport: { width, height }, locale: 'fr-FR', hasTouch: true, isMobile: width < 700, deviceScaleFactor: 1 });
   const p = await c.newPage();
   attach(p);
   try {
@@ -391,7 +394,7 @@ for (const [label, width, height] of [['tablette', 1024, 768], ['mobile', 390, 8
     record(`${label} : curseur et champ ≥ 40 px de haut`, slider.height >= 40 && number.height >= 40, `${slider.height}/${number.height}`);
     await p.selectOption('[data-ml-g3d-shape-select]', 'cylinder');
     await sleep(300);
-    record(`${label} : changer de solide au doigt`, (await p.locator('[data-ml-g3d-info-shape]').innerText()) === 'أسطوانة');
+    record(`${label} : changer de solide au doigt`, (await p.locator('[data-ml-g3d-info-shape]').innerText()) === 'Cylindre');
     await p.screenshot({ path: `${OUT}/10-${label}-cylinder.png` });
   } catch (e) {
     record(`${label} : scénario interrompu`, false, String(e).slice(0, 300));

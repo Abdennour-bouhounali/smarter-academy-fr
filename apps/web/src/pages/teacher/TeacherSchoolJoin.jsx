@@ -37,7 +37,7 @@ export default function TeacherSchoolJoin() {
     setError(null);
     try {
       await joinSchool(token, linkToken);
-      navigate('/enseignant/muassasa', { replace: true });
+      navigate('/enseignant/etablissement', { replace: true });
     } catch (e) {
       setError(errorText(t, e));
       setBusy(false);
@@ -73,7 +73,7 @@ export default function TeacherSchoolJoin() {
                 {busy ? t('teacher.join.joining') : t('teacher.join.accept')}
               </button>
             ) : (
-              <Link to="/enseignant/muassasa" className={btnPrimary}>{t('teacher.join.open')}</Link>
+              <Link to="/enseignant/etablissement" className={btnPrimary}>{t('teacher.join.open')}</Link>
             )}
             <Link to="/enseignant" className={btnSecondary}>{t('common.cancel')}</Link>
           </div>

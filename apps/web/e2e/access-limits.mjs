@@ -1,15 +1,15 @@
 /**
- * « الوصول والحدود » au navigateur — docs/architecture/ACCESS_AND_LIMITS.md.
+ * « Accès et limites » au navigateur — docs/architecture/ACCESS_AND_LIMITS.md.
  *
  *   node e2e/access-limits.mjs [dossier-captures]
  *
  * Variables : QA_BASE (http://localhost:5173), QA_API, QA_STUDENT_EMAIL /
- * QA_PASSWORD (un élève au palier GRATUIT), QA_ADMIN_TOKEN (facultatif : un
+ * QA_PASSWORD (un élève de la formule GRATUITE), QA_ADMIN_TOKEN (facultatif : un
  * jeton Sanctum d'administrateur — sans lui, la partie admin est sautée).
  *
  * Vérifie, avec la configuration INITIALE (logic = premium, whiteboard =
  * gratuit, cahier et travaux limités en gratuit) :
- *   - l'accueil du مختبر : cadenas sur l'instrument premium, aucun sur le
+ *   - l'accueil de « L'atelier » : cadenas sur l'instrument premium, aucun sur le
  *     gratuit, compteur des travaux ;
  *   - l'instrument premium ouvert par son URL : panneau explicatif, pas d'outil ;
  *   - l'API directe refuse (403 premium_required) — l'interface n'est pas la porte ;
@@ -23,7 +23,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const ADMIN_TOKEN = process.env.QA_ADMIN_TOKEN || '';
 const OUT = process.argv[2] || '/tmp/access-limits-shots';
@@ -54,12 +54,12 @@ const TOKEN = login.token ?? login.data?.token;
 if (!TOKEN) { console.error('Connexion API impossible :', login); process.exit(1); }
 
 const summary = await api(TOKEN, 'GET', '/me/feature-access');
-record('résumé servi', summary.status === 200 && summary.data.tier === 'free', `palier ${summary.data.tier}`);
+record('résumé servi', summary.status === 200 && summary.data.tier === 'free', `formule ${summary.data.tier}`);
 
 const browser = await chromium.launch();
 const pageErrors = [];
 async function pageAs(token, options = {}) {
-  const context = await browser.newContext({ locale: 'ar-DZ', ...options });
+  const context = await browser.newContext({ locale: 'fr-FR', ...options });
   await context.addInitScript((t) => window.localStorage.setItem('token', t), token);
   const page = await context.newPage();
   page.on('pageerror', (e) => pageErrors.push(String(e)));
@@ -68,7 +68,7 @@ async function pageAs(token, options = {}) {
 }
 const noHorizontalScroll = (page) => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1);
 
-// ── Élève : accueil du مختبر ───────────────────────────────────────────────
+// ── Élève : accueil de l'atelier ──────────────────────────────────────────────
 const page = await pageAs(TOKEN);
 await page.goto(`${BASE}/espace/atelier`, { waitUntil: 'networkidle' });
 await page.waitForSelector('[data-ml-tool-card="whiteboard"]', { timeout: 20000 });

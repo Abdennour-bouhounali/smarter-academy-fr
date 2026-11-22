@@ -71,7 +71,7 @@ export default function AfterSolve({ replay }) {
     <div className="space-y-6" data-after-solve={replay.number}>
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-3">
-          <Link to="/espace/tafkir" className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 font-inter text-xs font-bold text-slate-600 ring-1 ring-slate-200 hover:text-slate-900">
+          <Link to="/espace/enigmes" className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 font-inter text-xs font-bold text-slate-600 ring-1 ring-slate-200 hover:text-slate-900">
             <ArrowBack size={14} aria-hidden="true" /> {t('workspace.back')}
           </Link>
           <h1 className="font-space text-2xl font-black text-slate-900 sm:text-3xl">
@@ -149,7 +149,7 @@ export default function AfterSolve({ replay }) {
               <section className="rounded-3xl bg-sky-50 p-5 ring-1 ring-sky-200" data-twin>
                 <h2 className="font-space text-lg font-black text-sky-900">{t('after.twinTitle')}</h2>
                 <p className="mt-1 font-inter text-sm text-sky-900/80">{t('after.twinHint')}</p>
-                <Link to={`/espace/tafkir/${replay.twin.id}`}
+                <Link to={`/espace/enigmes/${replay.twin.id}`}
                   className="mt-3 inline-flex min-h-[44px] items-center gap-2 rounded-2xl bg-sky-600 px-5 font-space text-sm font-black text-white hover:bg-sky-700">
                   {t('after.twinGo', { number: replay.twin.number })} <ArrowForward size={16} aria-hidden="true" />
                 </Link>
@@ -161,7 +161,7 @@ export default function AfterSolve({ replay }) {
             )}
           </div>
 
-          <Link to="/espace/tafkir" className="inline-flex items-center gap-2 font-inter text-sm font-bold text-nav-accent hover:underline">
+          <Link to="/espace/enigmes" className="inline-flex items-center gap-2 font-inter text-sm font-bold text-nav-accent hover:underline">
             <ArrowBack size={16} aria-hidden="true" /> {t('after.backToLadder')}
           </Link>
         </div>

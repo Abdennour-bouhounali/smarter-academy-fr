@@ -44,8 +44,6 @@ export function firstRequestableSeats(tiers = [], freeSeats) {
   return Math.max(floor, min);
 }
 
-export { formatDzd } from '../../../utils/dinars';
-
 /** « 6–20 » ou « 101+ » pour un palier. */
 export function tierLabel(tier) {
   if (!tier) return '';

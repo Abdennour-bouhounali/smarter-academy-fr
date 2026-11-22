@@ -11,8 +11,8 @@ import Distribution, { STATES } from '../../features/school/Distribution';
 
 /**
  * « Savoir-faire » (SCHOOL_ADMIN_SPACE.md §7, phase 4) : chaque savoir-faire d'un niveau,
- * classe par classe, en EFFECTIFS (maîtrisé · à consolider · lacune · non évalué).
- * Pas de moyenne : une classe « à 70 % » cacherait cinq élèves en lacune.
+ * classe par classe, en EFFECTIFS (maîtrisé · à consolider · en difficulté · non évalué).
+ * Pas de moyenne : une classe « à 70 % » cacherait cinq élèves en difficulté.
  */
 export default function SchoolLearningMap() {
   const { t } = useTranslation('idara');

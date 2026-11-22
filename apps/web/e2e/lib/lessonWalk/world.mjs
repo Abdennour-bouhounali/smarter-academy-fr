@@ -1,4 +1,4 @@
-// The gestures of the world « أرخبيل القواسم » (divisorIsles/Game.js), as lessons 4–6's story walks played them: the dev
+// The gestures of the world « L’archipel des diviseurs » (divisorIsles/Game.js), as lessons 4–6's story walks played them: the dev
 // hooks move the hero and the clock (`window.__world`: time, a position — never an answer), the keys and the buttons of
 // the screen do the rest. A world mechanic new to the library adds its gestures HERE (README « A world mechanic »).
 export function worldOf(w, page, L) {

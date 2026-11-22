@@ -1,11 +1,13 @@
 # French language contract
 
-**Status: written 2026-11-22, BEFORE the translation (plan `docs/FRANCE_REBUILD_PLAN.md` steps 1C–1E). The interface
-is still Arabic today; this document is what the translation follows, and it replaces `ARABIC_RTL_CONTRACT.md`, which
-is deleted when the last Arabic string leaves. Lines marked ❓ are the main session's choice and wait for the owner.**
+**Status: written 2026-11-22 before the translation (plan `docs/FRANCE_REBUILD_PLAN.md` §4quater), applied the same
+day: the web interface IS French and left to right; `apps/web/src/test/noArabic.test.js` refuses any Arabic character
+in the web, with one exemption — the books store (off) and its five admin labels `nav.books*`. The Arabic contract that
+came before it is deleted. Lines marked ❓ are the main session's choice and wait for the owner.**
 
 This product has ONE language and ONE direction: French (`fr-FR`), left to right. There is no language switch and no
-second locale. The strings live in `apps/web/src/i18n/locales/fr/` (today still `locales/ar/`), one JSON per namespace.
+second locale. The strings live in `apps/web/src/i18n/locales/fr/`, one JSON per namespace (the namespace names —
+`idara`, `madar`, … — are code identifiers and kept their names).
 
 ## 1. This is not a translation of the Arabic
 
@@ -58,6 +60,8 @@ all render them. Code identifiers, i18n keys, API fields and database columns ke
 | exam of the last year | BEM | **brevet** (« le brevet », « DNB » only in a source line) | |
 | mock exam sitting | الامتحان الأبيض | **brevet blanc** | |
 | exam sheet | ورقة الامتحان | **sujet** (the paper), **copie** (what the student hands in) | |
+| a difficulty step of the practice space, the exam ladder, a game | المستوى | **palier** (« Palier 1 · Je reprends les bases ») — the five step names stay: « Je reprends les bases », « J’applique », « Je m’exerce », « J’approfondis », « Défi » | « niveau » (a « niveau » is a grade) |
+| the four mastery states (`gap`, `reinforce`, `mastered`, `unassessed`) | — | **En difficulté**, **À consolider**, **Maîtrisé**, **Non évalué** — the same four words wherever a student, a teacher, a school or a parent reads them | « lacune », « À retravailler », « En progrès », « Pas encore évalué » |
 
 The student's doors: **Aujourd'hui · Mes leçons · Je m'entraîne · Moi**. The teacher's: **Aujourd'hui · Mes classes ·
 Mes outils · Mon compte**.
@@ -89,8 +93,11 @@ The game world (step 1C fixes these with the worlds' own sentences):
 | the robot | زيرو | **Zéro** |
 | world `divisor-isles` | أرخبيل القواسم | **L'archipel des diviseurs** |
 | world `mission-isle` | جزيرة المهمّات | **L'île des missions** |
-| world `root-courts` | قصر الساحات | ❓ NOT « le palais des cours » — « cours » reads as lessons to a French student. Proposal: **Le palais des dalles** (the courts are tiled squares and the tiles are what he counts) |
+| world `root-courts` | قصر الساحات | **Le palais des dalles** (NOT « le palais des cours » — « cours » reads as lessons): its rooms are « salles », its measuring rod the « toise » |
 | synthesis lesson | أدمج تعلّماتي | **Vers le brevet** |
+
+Games glossary: **an in-game level is a « palier »** (« Palier 12 », « Carte des paliers ») — the same word as a step of
+the practice space.
 
 ## 4. Typography
 
@@ -142,7 +149,9 @@ The notation of the French school, as the official texts and the brevet's papers
 
 ## 8. Direction
 
-Left to right everywhere: `index.html` (`lang="fr"`, no `dir`), `locale.js` (`DIRECTION = 'ltr'`), the web manifest.
+Left to right everywhere: `index.html` (`lang="fr"`, no `dir`), the web manifest; `locale.js` exports no direction (there
+is only one, the document's default). Icons whose meaning is a reading direction go through
+`components/common/DirectionalIcons.jsx` (forward points right).
 What the Arabic product needed and this one does not: `dir="rtl"` on any element, `direction: rtl` in CSS, a mirrored
 icon, a layout placed « from the right », the Arabic font stacks (Cairo, Tajawal, Amiri). The `dir="ltr"` islands
 around a formula are harmless and may leave with the file they are in. Logical CSS properties (`margin-inline-start`,
@@ -158,10 +167,18 @@ Tailwind `ms-` / `me-` / `start-` / `end-`) stay: they are correct in both direc
 - No reference to a textbook, a publisher or a page: the platform is independent from every book.
 - Money in euros, distances in kilometres, real orders of magnitude (a price, a speed, a population are plausible).
 
-## 10. How it is checked (planned — none of these checks exists yet)
+## 10. How it is checked
 
-- A check fails when an Arabic character is found outside the folders listed as « still to translate », then
-  everywhere once step 1D ends.
-- The contract tests of the admin and teacher pages are inverted: they must assert French and refuse Arabic.
-- A typography check on the JSON values: a straight apostrophe, a missing no-break space before `:` `;` `!` `?`,
-  « 3ème », English quotes.
+- `apps/web/src/test/noArabic.test.js` — no Arabic character in any text file of `apps/web/src`, `public`, `e2e`,
+  `scripts` and `index.html`, comments and tests included. ONE exemption, listed in the test with its reason: the
+  books store (`features/books/**`, `pages/admin/books/**` and the five `admin.json` keys `nav.books*`) — off until the
+  French books exist.
+- `apps/web/src/i18n/plurals.test.js` — the i18next language is `fr` (0 and 1 read the singular) and no Arabic plural
+  form (`_zero`, `_two`, `_few`, `_many`) is left in the bundled namespaces.
+- The engine's `typographyErrors` (`lessons/common/gameworld/kit/authoring/test/suites.js`) — a lesson's sentences: the
+  straight apostrophe, the missing no-break space before `:` `;` `!` `?`, « 3ème », English quotes.
+- `lessons/common/unbreakableCounters.test.js` — a « n / m » counter never breaks (no-break spaces around the slash).
+- The contract tests of the admin and teacher pages (`pages/adminContract.test.js`, `pages/teacherContract.test.js`)
+  assert French and refuse Arabic.
+- Not checked automatically: the count-and-noun no-break space everywhere (« 3 leçons »; the catalogue's
+  `{{count}} <noun>` strings were fixed on 2026-11-22), the register, the vocabulary table above.

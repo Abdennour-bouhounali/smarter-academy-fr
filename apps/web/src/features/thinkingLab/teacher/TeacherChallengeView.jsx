@@ -66,7 +66,7 @@ export default function TeacherChallengeView({ challenge: c, onTuple }) {
   return (
     <div className="space-y-5" data-teacher-thinking={c.number}>
       <div className="flex flex-wrap items-center gap-3">
-        <Link to="/enseignant/tafkir" className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 font-inter text-xs font-bold text-slate-600 ring-1 ring-slate-200 hover:text-slate-900">
+        <Link to="/enseignant/enigmes" className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 font-inter text-xs font-bold text-slate-600 ring-1 ring-slate-200 hover:text-slate-900">
           <ChevronBack size={14} aria-hidden="true" /> {t('teacher.back')}
         </Link>
         <h1 className="font-space text-3xl font-black text-slate-900">{t('challengeNumber', { number: c.number })}</h1>
@@ -173,7 +173,7 @@ export default function TeacherChallengeView({ challenge: c, onTuple }) {
         </Card>
       )}
       {c.twin && (
-        <Link to={`/enseignant/tafkir/${c.twin.id}`} className="inline-flex items-center gap-2 font-inter text-sm font-bold text-teal-800 hover:underline">
+        <Link to={`/enseignant/enigmes/${c.twin.id}`} className="inline-flex items-center gap-2 font-inter text-sm font-bold text-teal-800 hover:underline">
           {t('teacher.twin')}: {t('challengeNumber', { number: c.twin.number })} <ChevronForward size={16} aria-hidden="true" />
         </Link>
       )}

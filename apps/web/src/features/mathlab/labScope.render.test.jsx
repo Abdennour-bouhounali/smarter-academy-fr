@@ -3,7 +3,7 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import i18next from 'i18next';
 import { I18nextProvider, initReactI18next } from 'react-i18next';
-import mathlab from '../../i18n/locales/ar/mathlab.json';
+import mathlab from '../../i18n/locales/fr/mathlab.json';
 import { getMathLabTool } from './toolRegistry.js';
 import { toolCapabilities } from './labScope.js';
 import AlgebraTool from './tools/algebra/AlgebraTool.jsx';

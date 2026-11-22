@@ -108,7 +108,7 @@ export default function LessonIndex({ config, basePath }) {
               {t('hiddenByTeacherHint', { ns: 'access' })}
             </p>
             <Link
-              to="/espace/qism"
+              to="/espace/classe"
               className="inline-flex items-center gap-1 rounded-xl bg-teal-700 px-5 py-2.5 font-inter text-sm font-bold text-white transition-colors hover:bg-teal-800"
             >
               {t('myClass', { ns: 'nav' })}

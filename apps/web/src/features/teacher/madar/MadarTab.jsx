@@ -403,7 +403,7 @@ export default function MadarTab({ classGroup }) {
               {results.weeks.map((w) => <option key={w} value={w}>{w}</option>)}
             </select>
           </label>
-          <Link to={`/enseignant/classes/${classGroup.id}/madar/affichage?week=${results.week}&game=${results.game}`} className={btnSecondary} data-action="display">
+          <Link to={`/enseignant/classes/${classGroup.id}/jeux/affichage?week=${results.week}&game=${results.game}`} className={btnSecondary} data-action="display">
             <MonitorPlay size={16} aria-hidden="true" /> {t('teacher.display')}
           </Link>
         </div>

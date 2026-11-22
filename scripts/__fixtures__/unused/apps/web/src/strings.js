@@ -1,7 +1,7 @@
 export const T = {
-  title: 'عنوان',
-  deadLine: 'لا يقرؤها أحد',
-  group: { a: 'أ', b: 'ب' },
-  byKind: { warm: 'دافئ', cold: 'بارد' },
-  deadGroup: { c: 'ج' },
+  title: 'Titre',
+  deadLine: 'Personne ne la lit',
+  group: { a: 'A', b: 'B' },
+  byKind: { warm: 'Chaud', cold: 'Froid' },
+  deadGroup: { c: 'C' },
 };

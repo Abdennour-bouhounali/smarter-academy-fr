@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { buildStorySteps, STORY_LENGTH } from './storySteps.js';
 import { INVESTIGATIONS, getInvestigation } from './investigations.js';
 import * as R from './ruleEngine.js';
-import mathlab from '../../../../i18n/locales/ar/mathlab.json';
+import mathlab from '../../../../i18n/locales/fr/mathlab.json';
 
 const story = mathlab.tools.measurement.story;
 const lookup = (key) => key.split('.').reduce((node, part) => node?.[part], mathlab.tools.measurement);

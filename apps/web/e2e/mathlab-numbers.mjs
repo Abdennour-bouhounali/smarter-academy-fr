@@ -1,14 +1,14 @@
 /**
- * QA navigateur — le مختبر الأعداد والحساب (laboratoire des nombres et du
+ * QA navigateur — « Le labo des nombres » de l'atelier (nombres et
  * calcul).
  *
  * Lancement (dev server sur 5173, API sur 8000, élève QA existant) :
  *   node apps/web/e2e/mathlab-numbers.mjs [dossier-captures]
  *
  * Ce qu'on vérifie (§64) :
- *   - navigation : la carte sur l'accueil (plus « قريبًا » pour المستقيم
- *     المدرّج), l'URL directe, le rechargement ;
- *   - §4 : l'explorateur affiche décomposition, facteurs, قواسم, parité ;
+ *   - navigation : la carte sur l'accueil (plus « Bientôt » pour la droite
+ *     graduée), l'URL directe, le rechargement ;
+ *   - §4 : l'explorateur affiche décomposition, facteurs, diviseurs, parité ;
  *   - §5 : la valeur de position — ajouter, retirer, REGROUPER ;
  *   - §7, §49 : GLISSER un point sur la droite, et l'accrochage ;
  *   - §9, §12 : couper une part, et le dénominateur commun ;
@@ -21,11 +21,12 @@
  *   - §27, §28 : Euclide pas à pas, et ses rectangles ;
  *   - §31 : PGCD × PPCM = a × b, lu à l'écran ;
  *   - §32 : l'arrondi et ses deux voisins ;
- *   - §46 : « أرسِل إلى » transporte le nombre d'un mode à l'autre ;
+ *   - §46 : « Envoyer vers » transporte le nombre d'un mode à l'autre ;
  *   - §48, §53 : prédire → vérifier, et l'erreur qui MONTRE ;
  *   - §55 : garder une découverte ;
  *   - §49 : la sauvegarde et la RÉOUVERTURE du document ;
- *   - §58 : RTL — la notation reste LTR (direction CALCULÉE) ;
+ *   - §58 : gauche à droite — page française sans dir="rtl", notation LTR
+ *     (direction CALCULÉE) ;
  *   - §57 : responsive — tablette et mobile, pas de débordement horizontal,
  *     cibles tactiles ≥ 44 px ;
  *   - §59 : accessibilité — focus visible, poignée focalisable et nommée,
@@ -40,7 +41,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const OUT = process.argv[2] || '/tmp/mathlab-numbers-shots';
 mkdirSync(OUT, { recursive: true });
@@ -97,7 +98,7 @@ async function loginUI(page) {
 
 /** Un contexte connecté : on se connecte UNE fois (l'API limite à 6/min). */
 async function authedContext(options = {}) {
-  const context = await browser.newContext({ locale: 'ar-DZ', ...options });
+  const context = await browser.newContext({ locale: 'fr-FR', ...options });
   if (!authState) {
     const page = await context.newPage();
     wire(page);
@@ -109,7 +110,7 @@ async function authedContext(options = {}) {
   }
   await context.close();
 
-  return browser.newContext({ locale: 'ar-DZ', storageState: authState, ...options });
+  return browser.newContext({ locale: 'fr-FR', storageState: authState, ...options });
 }
 
 const shot = (page, name) => page.screenshot({ path: `${OUT}/${name}.png`, fullPage: false });
@@ -156,13 +157,14 @@ async function lineMap(page, index = 0) {
   const card = page.locator('a[href*="/atelier/nombres?lab=secondaire"]').first();
   record('accueil : la carte de l’instrument est présente', await card.count() > 0);
 
-  // « المستقيم المدرّج » ne doit plus figurer parmi les chips ANNONCÉS
-  // (« قريبًا ») : l'instrument l'a livré comme mode. « القياس », lui, reste
-  // annoncé — donc on regarde la liste des annoncés, pas la page entière.
+  // « La droite graduée » ne doit plus figurer parmi les chips ANNONCÉS
+  // (« Bientôt ») : l'instrument l'a livrée comme mode. « Grandeurs et mesures »
+  // est livré aussi (PLANNED_MATH_LAB_TOOLS est vide) : la liste des annoncés,
+  // si elle existe encore, ne nomme aucun des deux.
   const plannedText = await textOf(page, '.sa-ml-planned');
-  record('accueil : « المستقيم المدرّج » n’est plus annoncé « قريبًا »',
-    !plannedText.includes('المستقيم المدرّج'), plannedText.replace(/\s+/g, ' ').slice(0, 80));
-  record('accueil : « القياس » reste annoncé, lui', plannedText.includes('القياس'));
+  record('accueil : « La droite graduée » n’est plus annoncée « Bientôt »',
+    !/droite graduée/i.test(plannedText), plannedText.replace(/\s+/g, ' ').slice(0, 80));
+  record('accueil : « Grandeurs et mesures » n’est plus annoncé, lui non plus', !plannedText.includes('Grandeurs et mesures'));
   await shot(page, '01-home');
 
   await card.click();
@@ -176,10 +178,10 @@ async function lineMap(page, index = 0) {
   const explorer = await stageText(page);
   record('§4 : 360 est décomposé (300 + 60)', explorer.includes('300') && explorer.includes('60'));
   record('§4 : ses facteurs premiers sont affichés', /2\^3|2\^{3}|2³/.test(explorer) || explorer.includes('2^3'));
-  record('§4 : ses قواسم sont listés', explorer.includes('24') && explorer.includes('180'));
-  record('§4 : la parité est dite', explorer.includes('زوجي'));
+  record('§4 : ses diviseurs sont listés', explorer.includes('24') && explorer.includes('180'));
+  record('§4 : la parité est dite', /\bpair\b/.test(explorer));
   record('§4 : il y a une droite graduée dès l’ouverture', await page.locator('[data-ml-nb-line]').count() > 0);
-  record('§4 : le nombre est composé, et on dit par quoi', explorer.includes('مركّب'));
+  record('§4 : le nombre est composé, et on dit par quoi', explorer.includes('Nombre non premier'));
   await shot(page, '02-explorer');
 
   // §61 : aucun bruit de flottant à l'écran.
@@ -205,7 +207,7 @@ async function lineMap(page, index = 0) {
 
   await goMode(page, 'place');
   const before = await stageText(page);
-  record('§5 : les colonnes de mраتب sont dessinées', before.includes('الآلاف') && before.includes('الوحدات'));
+  record('§5 : les colonnes des rangs sont dessinées', before.includes('Milliers') && before.includes('Unités'));
   record('§5 : le total est écrit en somme', before.includes('4582') || before.includes('4 582'));
 
   // Ajouter UNE UNITÉ : c'est le « + » de la colonne des unités, la
@@ -346,10 +348,10 @@ async function lineMap(page, index = 0) {
   await page.click('.sa-ml-nb__tab >> nth=1');
   await page.waitForTimeout(340);
   const change = await stageText(page);
-  record('§16 : la hausse est nommée par un MOT (ارتفاع), pas seulement une couleur',
-    change.includes('ارتفاع') || change.includes('انخفاض'));
+  record('§16 : la hausse est nommée par un MOT (Hausse), pas seulement une couleur',
+    change.includes('Hausse') || change.includes('Baisse'));
   record('§16 : le coefficient multiplicateur est montré', change.includes('1,15') || change.includes('×'));
-  record('§16 : le piège de l’inverse est signalé', change.includes('لا يُلغى') || change.includes('−13'));
+  record('§16 : le piège de l’inverse est signalé', change.includes('ne s’annule pas') || change.includes('−13'));
 
   await context.close();
 }
@@ -366,7 +368,7 @@ async function lineMap(page, index = 0) {
 
   await goMode(page, 'proportion');
   const before = await stageText(page);
-  record('§17 : le tableau est jugé PROPORTIONNEL', before.includes('متناسب') && !before.includes('غير متناسب'));
+  record('§17 : le tableau est jugé PROPORTIONNEL', before.includes('C’est un tableau de proportionnalité') && !before.includes('Ce n’est pas un tableau de proportionnalité'));
   record('§17 : le coefficient 1,5 est affiché', before.includes('1,5'), before.slice(0, 90));
   record('§18 : le graphique est dessiné', await page.locator('.sa-ml-nb__graph').count() > 0);
 
@@ -376,7 +378,7 @@ async function lineMap(page, index = 0) {
   await cell.press('Enter');
   await page.waitForTimeout(420);
   const after = await stageText(page);
-  record('§17 : le verdict bascule à « غير متناسب »', after.includes('غير متناسب'));
+  record('§17 : le verdict bascule à « Ce n’est pas un tableau de proportionnalité »', after.includes('Ce n’est pas un tableau de proportionnalité'));
   record('§53 : la colonne fautive est DÉSIGNÉE', await page.locator('.is-failure').count() > 0);
   await shot(page, '07-proportion');
 
@@ -398,14 +400,14 @@ async function lineMap(page, index = 0) {
   record('§20 : le tableau des critères est affiché', rows >= 8, `${rows} critères`);
 
   // Ouvrir le critère de 9 : il doit montrer la SOMME DES CHIFFRES.
-  const row9 = page.locator('.sa-ml-nb__divrow', { hasText: 'على 9' }).first();
+  const row9 = page.locator('.sa-ml-nb__divrow', { hasText: /par 9(?!\d)/ }).first();
   await row9.click();
   await page.waitForTimeout(320);
   const body = await row9.textContent();
   record('§20 : le critère de 9 montre la somme des chiffres (3 + 6 + 0)',
     body.includes('3 + 6 + 0'), body.replace(/\s+/g, ' ').slice(0, 120));
   record('§20 : et la division qui en découle (360 ÷ 9 = 40)', body.includes('40'));
-  record('§20 : ce n’est PAS qu’un oui/non', body.includes('لأنّ'));
+  record('§20 : ce n’est PAS qu’un oui/non', body.includes('car'));
   await shot(page, '08-divisibility');
 
   await context.close();
@@ -475,11 +477,11 @@ async function lineMap(page, index = 0) {
   await page.waitForSelector('[data-ml-nb]', { timeout: 15000 });
 
   await goMode(page, 'gcdLcm');
-  // Un document neuf ouvre sur les différences successives (la méthode du manuel) :
+  // Un document neuf ouvre sur les différences successives (la méthode du collège) :
   // le PGCD n'est dit qu'à la dernière étape.
-  record('PGCD : un document neuf ouvre sur les الفوارق المتتالية',
+  record('PGCD : un document neuf ouvre sur les soustractions successives',
     await page.locator('[data-ml-nb-differences]').count() > 0);
-  // Le déroulé pas à pas (MATH_LAB §3.4.1) : rien avant « ابدأ الحل », puis un pas par clic.
+  // Le déroulé pas à pas (MATH_LAB §3.4.1) : rien avant « Commencer la solution », puis un pas par clic.
   record('PGCD : le résultat n’est PAS affiché avant le déroulé',
     await page.locator('[data-ml-nb-diff-result]').count() === 0);
   const firstFrames = await playToEnd(page, 'data-ml-nb-step');
@@ -500,14 +502,14 @@ async function lineMap(page, index = 0) {
   record('§28 : les rectangles d’Euclide sont dessinés',
     await page.locator('.sa-ml-nb__euclid-square').count() > 0);
   record('§31 : la relation PGCD × PPCM = a × b est VÉRIFIÉE à l’écran',
-    text.includes('3024') || text.includes('الطرفان متساويان'));
+    text.includes('3024') || text.includes('Les deux membres sont égaux'));
   await shot(page, '11-gcd');
 
   await context.close();
 }
 
 // ════════════════════════════════════════════════════════════════════════
-// 10. §32 l'arrondi, §46 « أرسِل إلى »
+// 10. §32 l'arrondi, §46 « Envoyer vers »
 // ════════════════════════════════════════════════════════════════════════
 {
   const context = await authedContext();
@@ -521,8 +523,8 @@ async function lineMap(page, index = 0) {
   record('§32 : les deux voisins de 7,846 au dixième sont 7,8 et 7,9',
     text.includes('7,8') && text.includes('7,9'), text.slice(0, 90));
   record('§32 : le milieu 7,85 est montré', text.includes('7,85'));
-  record('§33 : la troncature est comparée à l’arrondi', text.includes('الحذف'));
-  record('§34 : l’erreur absolue est affichée', text.includes('الخطأ المطلق'));
+  record('§33 : la troncature est comparée à l’arrondi', text.includes('La troncature'));
+  record('§34 : l’erreur absolue est affichée', text.includes('Erreur absolue'));
   await shot(page, '12-rounding');
 
   // §46 : envoyer un nombre d'un mode à l'autre.
@@ -530,11 +532,11 @@ async function lineMap(page, index = 0) {
   const sendButton = page.locator('.sa-ml-nb__sendto button').first();
   await sendButton.click();
   await page.waitForTimeout(220);
-  await page.locator('.sa-ml-nb__menu-item', { hasText: 'قابلية القسمة' }).first().click();
+  await page.locator('.sa-ml-nb__menu-item', { hasText: 'La divisibilité' }).first().click();
   await page.waitForTimeout(420);
   const mode = await page.locator('[data-ml-nb]').getAttribute('data-ml-nb-mode');
   const sent = await stageText(page);
-  record('§46 : « أرسِل إلى » change de mode ET transporte le nombre',
+  record('§46 : « Envoyer vers » change de mode ET transporte le nombre',
     mode === 'divisibility' && sent.includes('360'), `mode = ${mode}`);
 
   await context.close();
@@ -583,7 +585,7 @@ async function lineMap(page, index = 0) {
     await chips.click();
   }
   // Sinon la question se répond au glissé ou au curseur : sa valeur courante
-  // fait office de réponse, et « تحقّق » doit quand même rendre un verdict.
+  // fait office de réponse, et « Vérifier » doit quand même rendre un verdict.
   await page.locator('.sa-ml-nb__practice-actions .sa-ml-nb__button').first().click();
   await page.waitForTimeout(420);
   const verdictBox = await page.locator('.sa-ml-nb__verdict-box').count();
@@ -592,12 +594,12 @@ async function lineMap(page, index = 0) {
   const verdictText = await textOf(page, '.sa-ml-nb__verdict-box');
   const incorrect = await page.locator('.sa-ml-nb__verdict-box.is-incorrect').count() > 0;
   if (incorrect) {
-    record('§53 : l’erreur n’est PAS un simple « خطأ » — elle POSE UNE QUESTION',
-      verdictText.includes('؟'), verdictText.replace(/\s+/g, ' ').slice(0, 110));
+    record('§53 : l’erreur n’est PAS un simple « faux » — elle POSE UNE QUESTION',
+      verdictText.includes('?'), verdictText.replace(/\s+/g, ' ').slice(0, 110));
     record('§53 : et elle MONTRE (une droite ou des couples)',
       await page.locator('.sa-ml-nb__reveal').count() > 0);
   } else {
-    record('§48 : la bonne réponse est reconnue', verdictText.includes('صحيحة'));
+    record('§48 : la bonne réponse est reconnue', verdictText.includes('C’est la bonne réponse'));
   }
 
   // §48 : rien n'est bloqué — on peut toujours passer à la suite.
@@ -629,13 +631,13 @@ async function lineMap(page, index = 0) {
   await page.locator('.sa-ml-nb__footer .sa-ml-nb__button').nth(1).click();
   await page.waitForTimeout(300);
   const noteInput = page.locator('.sa-ml-nb__notes .sa-ml-nb__input');
-  await noteInput.fill('كل عدد يقبل القسمة على 6 يقبل القسمة على 2 وعلى 3.');
+  await noteInput.fill('Tout nombre divisible par 6 est divisible par 2 et par 3.');
   await noteInput.press('Enter');
   await page.waitForTimeout(400);
   const notes = await page.locator('.sa-ml-nb__notes-list li').count();
   record('§55 : une découverte se garde', notes === 1, `${notes} note(s)`);
-  record('§55 : le pont vers le vrai كرّاس existe',
-    await page.locator('.sa-ml-nb__notes-list .sa-ml-nb__tiny', { hasText: 'كرّاسي' }).count() > 0);
+  record('§55 : le pont vers le vrai cahier existe',
+    await page.locator('.sa-ml-nb__notes-list .sa-ml-nb__tiny', { hasText: 'mon cahier' }).count() > 0);
   await shot(page, '14-notes');
 
   // Attendre la sauvegarde, puis RECHARGER. L'outil attend 300 ms avant de
@@ -660,7 +662,7 @@ async function lineMap(page, index = 0) {
 }
 
 // ════════════════════════════════════════════════════════════════════════
-// 13. §58 RTL, §57 responsive, §59 accessibilité
+// 13. §58 LTR, §57 responsive, §59 accessibilité
 // ════════════════════════════════════════════════════════════════════════
 {
   const context = await authedContext();
@@ -670,16 +672,17 @@ async function lineMap(page, index = 0) {
   await page.waitForSelector('[data-ml-nb]', { timeout: 15000 });
   await page.waitForTimeout(500);
 
-  // §58 : la page est RTL, la NOTATION reste LTR — direction CALCULÉE.
+  // §58 : la page est française et LTR, la NOTATION est LTR — direction CALCULÉE.
   const pageDir = await page.evaluate(() => getComputedStyle(document.documentElement).direction);
-  record('§58 : la page est RTL', pageDir === 'rtl');
+  const pageLang = await page.evaluate(() => document.documentElement.lang);
+  record('§58 : la page est française, de gauche à droite', pageDir === 'ltr' && pageLang === 'fr', `${pageDir} lang=${pageLang}`);
 
   const formulaDir = await page.evaluate(() => {
     const node = document.querySelector('.sa-ml-nb__formula');
 
     return node ? getComputedStyle(node).direction : null;
   });
-  record('§58 : la notation mathématique reste LTR', formulaDir === 'ltr', `direction = ${formulaDir}`);
+  record('§58 : la notation mathématique est LTR', formulaDir === 'ltr', `direction = ${formulaDir}`);
 
   const lineDir = await page.evaluate(() => {
     const node = document.querySelector('.sa-ml-nb__line');
@@ -693,7 +696,7 @@ async function lineMap(page, index = 0) {
 
     return node ? getComputedStyle(node).fontFamily : '';
   });
-  record('§58 : Cairo est appliqué au texte arabe', font.includes('Cairo'), font.slice(0, 40));
+  record('§58 : plus de police arabe (Cairo) sur le texte', font !== '' && !font.includes('Cairo'), font.slice(0, 40));
 
   // §59 : le focus est visible.
   await page.locator('[data-ml-nb-modechip="line"]').focus();

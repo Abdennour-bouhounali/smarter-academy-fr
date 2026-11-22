@@ -1,5 +1,5 @@
-// « الامتحان الأبيض » served from the lesson's bank (kit/bankSitting.js): what a walk needs to fill a copy through the SAME
-// widgets the student uses — ChoiceInput (a button per choice), TemplateInput (« قوالب الإجابة »: boxes in the shape of the
+// « brevet blanc » served from the lesson's bank (kit/bankSitting.js): what a walk needs to fill a copy through the SAME
+// widgets the student uses — ChoiceInput (a button per choice), TemplateInput (the answer templates: boxes in the shape of the
 // answer), IntegerSetInput (a textarea). The subject is read from `window.__sitting.subject` (dev only) to know WHICH sheets
 // were drawn; the answer key is always read from the bank ON DISK (`bankOnDisk` + `fromDisk`), never from the page's `q.bank`.
 import { readdirSync, readFileSync } from 'node:fs';
@@ -75,8 +75,9 @@ export const expectedMark = (subject, plan) =>
 /** The selectors of the page on screen (the others stay mounted, hidden, so a box keeps what was typed). */
 export const ON = '.xs-body:not([hidden])';
 
-/** The five levels of « فضاء الامتحان »: the bank's levels, with the names the practice space gives them. */
-const BANK_LEVEL_NAMES = ['أستعيد الأساسيات', 'أوظّف', 'أتدرّب', 'أتعمّق', 'الوضعيّة الإدماجيّة'];
+/** The five levels of « Espace brevet »: the bank's levels, with the names the practice space gives them
+ * (`student.json › levelNames`, kit/text.js › BANK.levels). */
+const BANK_LEVEL_NAMES = ['Je reprends les bases', 'J’applique', 'Je m’exerce', 'J’approfondis', 'Défi'];
 
 /**
  * The rungs of the exam ladder as the student sees them. A rung writes its minutes and points only once the bank is loaded
@@ -103,7 +104,7 @@ export async function readLadder(page) {
   );
 }
 
-/** The steps a sitting draws (kit/bankSitting.js › SITTING_TYPES, as GAME_WORLD.md « فضاء الامتحان » documents it). */
+/** The steps a sitting draws (kit/bankSitting.js › SITTING_TYPES, as GAME_WORLD.md « Espace brevet » documents it). */
 const SITTING_TYPES = ['choice', 'rational', 'integerSet', 'selfCheck'];
 /** How many sheets a sitting of each level draws (the documented ladder: 1, 2, 2, 2, 1). */
 const SHEETS_PER_LEVEL = [1, 2, 2, 2, 1];
@@ -149,17 +150,25 @@ export function ladderFromDisk(bank) {
 
 /**
  * Does a rung show its level as the bank ON DISK says (`D` = `ladderFromDisk(bank)[i]`): the practice space's name, the
- * minutes and the points (« 5–8 دقائق · 2–2,5 نقاط »). A level computed by the product itself is refused: the walk would
- * compare the screen with the code that drew it.
+ * minutes and the points (« 5–8 minutes · 2–2,5 points », « 5 minutes · 1 point »). A level computed by the product itself
+ * is refused: the walk would compare the screen with the code that drew it. French agreement, written HERE (never the
+ * kit's helper): a range is plural, a single value under 2 is singular; the space between the number and its noun may be
+ * a no-break one, so it is matched as any white space.
  */
+const shownWith = (shown, [one, many]) => {
+  const s = String(shown);
+  const v = Number(s.replace(',', '.'));
+  const noun = !s.includes('–') && Number.isFinite(v) && Math.abs(v) < 2 ? one : many;
+  return new RegExp(`(^|[^0-9,])${s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s${noun}(?![a-z])`);
+};
 export const rungShows = (r, D, i) =>
   D?.fromDisk === true &&
   r.title === BANK_LEVEL_NAMES[i] &&
   r.title === D.title &&
   D.points != null &&
   D.minutes != null &&
-  r.small.includes(`${D.minutes} دقائق`) &&
-  r.small.includes(`${D.points} نقاط`);
+  shownWith(D.minutes, ['minute', 'minutes']).test(r.small) &&
+  shownWith(D.points, ['point', 'points']).test(r.small);
 
 const BANK_ROOT = new URL('../../../../content/practice/', import.meta.url);
 
@@ -183,9 +192,9 @@ export function bankOnDisk(grade, lesson) {
 export const fromDisk = (q, sheet) => ({ ...q, bank: sheet.questions.find((x) => x.id === q.qid) });
 
 /**
- * The words and numbers of OTHER lessons that this lesson's bank WRITES itself (« المجموعات الكاملة », 96 …): the bank is
+ * The words and numbers of OTHER lessons that this lesson's bank WRITES itself (a word such as « diviseurs communs », 96 …): the bank is
  * served as it is, so on a screen that SHOWS the bank's text (a sheet read, sat, handed back) they are its own text — pass
- * the result as `shot(…, { allow })` on those screens ONLY. Every other screen (the ladder, a promotion, « تقدّمي »…) is
+ * the result as `shot(…, { allow })` on those screens ONLY. Every other screen (the ladder, a promotion, « Ma progression »…) is
  * checked against the whole list. `metadata.source` is left out: it is never shown.
  */
 export function bankWrites(bank, { words = [], numbers = [] }) {

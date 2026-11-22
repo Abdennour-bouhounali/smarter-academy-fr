@@ -181,7 +181,7 @@ def main():
     p.add_argument("title", help="Card headline (Arabic or Latin).")
     p.add_argument("--eyebrow", default="", help="Small label above the title.")
     # The brand name is always Latin, never transliterated — it appears this way
-    # inside Arabic copy throughout the app (i18n/locales/ar/common.json appName).
+    # inside Arabic copy throughout the app (i18n/locales/fr/common.json appName).
     p.add_argument("--footer", default="Smarter Academy", help="Bottom-right wordmark.")
     p.add_argument("--theme", default="violet", choices=sorted(THEMES))
     p.add_argument("-o", "--output", default="og-card.png", help="Output PNG path.")

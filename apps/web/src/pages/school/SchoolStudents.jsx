@@ -118,7 +118,7 @@ export default function SchoolStudents() {
                     {s.login && <input type="checkbox" className="h-4 w-4" aria-label={personName(s, '')} checked={selected.has(s.id)} onChange={() => toggle(s.id)} />}
                   </td>
                   <td className="p-3 font-semibold text-slate-900">
-                    <Link to={`/idara/talamidh/${s.id}`} className="text-nav-accent hover:underline">{personName(s, t('common.unnamed'))}</Link>
+                    <Link to={`/etablissement/eleves/${s.id}`} className="text-nav-accent hover:underline">{personName(s, t('common.unnamed'))}</Link>
                     {s.enrolledBySchool && <span className="ms-2 rounded-lg bg-nav-accent-soft px-2 py-0.5 text-xs font-medium text-nav-accent">{t('students.enrolled')}</span>}
                   </td>
                   <td className="p-3">{s.classroom.name}</td>

@@ -29,7 +29,7 @@ export default function TeacherThinkingChallengePage() {
         {error && (
           <div className="space-y-3">
             <ErrorBox message={error} onRetry={() => load(0)} />
-            <Link to="/enseignant/tafkir" className="font-inter text-sm font-bold text-nav-accent hover:underline">{t('teacher.back')}</Link>
+            <Link to="/enseignant/enigmes" className="font-inter text-sm font-bold text-nav-accent hover:underline">{t('teacher.back')}</Link>
           </div>
         )}
         {!challenge && !error && <Loading />}

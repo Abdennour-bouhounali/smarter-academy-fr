@@ -52,7 +52,7 @@ export function questionNumber(questionId) {
   return m ? m[1] : String(questionId ?? '');
 }
 
-/** « ex-…-l2-003 » → « Exercice 3 · Niveau 2 » ; un identifiant inconnu → « Exercice ». */
+/** « ex-…-l2-003 » → « Exercice 3 · Palier 2 » ; un identifiant inconnu → « Exercice ». */
 export function exerciseLabel(note, t) {
   const m = /-l(\d+)-(\d+)$/.exec(String(note?.exerciseId ?? ''));
   const base = t('notebook.space.card.exercise');

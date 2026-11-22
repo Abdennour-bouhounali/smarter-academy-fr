@@ -100,8 +100,8 @@
     "managedByTeacher": "Tu es dans une classe : c’est ton professeur qui choisit ce réglage.",
     "practice": {
       "title": "Je m’entraîne",
-      "levelsOpen": "Ouvrir les cinq niveaux de difficulté dès le début",
-      "levelsOpenHelp": "Tu choisis tout de suite le niveau qui te convient, sans terminer d’abord un exercice du niveau précédent.",
+      "levelsOpen": "Ouvrir les cinq paliers dès le début",
+      "levelsOpenHelp": "Tu choisis tout de suite le palier qui te convient, sans terminer d’abord un exercice du palier précédent.",
       "validation": {
         "label": "Qui corrige",
         "teacher": "Ton professeur : il corrige les photos de ta copie et tes démonstrations, et une notification t’annonce sa correction.",
@@ -146,7 +146,7 @@
     "statXpHint": "Ils mesurent ton activité, pas ta maîtrise",
     "workNow": {
       "title": "🎯 À travailler maintenant",
-      "subtitle": "Les savoir-faire à travailler, d’après tes vrais résultats : d’abord ceux à retravailler, puis ceux en progrès.",
+      "subtitle": "Les savoir-faire à travailler, d’après tes vrais résultats : d’abord ceux en difficulté, puis ceux à consolider.",
       "lesson": "Leçon",
       "unit": "Chapitre",
       "field": "Thème",
@@ -202,11 +202,11 @@
       "otherTopics": "Autres notions de ce thème",
       "unitLessons_one": "{{count}} leçon",
       "unitLessons_other": "{{count}} leçons",
-      "lessonsDone": "{{done}} / {{total}} terminées",
+      "lessonsDone": "{{done}} / {{total}} terminées",
       "comingSoonLessons_one": "et {{count}} leçon en préparation",
       "comingSoonLessons_other": "et {{count}} leçons en préparation",
       "pathProgressAria": "Avancement du parcours : {{percent}} %",
-      "noneAssessed": "Pas encore évalué",
+      "noneAssessed": "Non évalué",
       "expand": "Afficher",
       "collapse": "Replier",
       "expandField": "Afficher les chapitres du thème",
@@ -253,13 +253,13 @@
     "emptyCta": "Découvrir mes leçons",
     "noLessonsStartedGrade": "Tu n’as encore commencé aucune leçon de {{grade}}.",
     "noLessonsStarted": "Tu n’as encore commencé aucune leçon.",
-    "footnote": "Chaque savoir-faire est évalué à partir de tes vraies réponses aux tests de fin de leçon, pas d’une moyenne générale. Un savoir-faire « pas encore évalué » attend simplement que tu passes le test : ce n’est pas un point faible. Le pourcentage dit où tu en es dans les étapes de la leçon, pas ce que tu maîtrises.",
+    "footnote": "Chaque savoir-faire est évalué à partir de tes vraies réponses aux tests de fin de leçon, pas d’une moyenne générale. Un savoir-faire « non évalué » attend simplement que tu passes le test : ce n’est pas un point faible. Le pourcentage dit où tu en es dans les étapes de la leçon, pas ce que tu maîtrises.",
     "statAllAssessed": "Tous les savoir-faire sont évalués"
   },
   "mastery": {
-    "unassessed": "Pas encore évalué",
-    "gap": "À retravailler",
-    "reinforce": "En progrès",
+    "unassessed": "Non évalué",
+    "gap": "En difficulté",
+    "reinforce": "À consolider",
     "mastered": "Maîtrisé",
     "estimatedAria": "Maîtrise estimée : {{percent}} %",
     "msgUnassessed": "Termine le test de fin de leçon pour évaluer ce savoir-faire.",
@@ -269,7 +269,7 @@
     "reason": {
       "threshold": "",
       "insufficient_evidence": "Consolide avec des exercices variés : {{done}} questions différentes sur {{needed}}",
-      "needs_assessment": "Prêt pour la suite : termine le test de fin de leçon ou un exercice d’un niveau plus élevé"
+      "needs_assessment": "Prêt pour la suite : termine le test de fin de leçon ou un exercice d’un palier plus élevé"
     },
     "freshness": {
       "fresh": "Récent",
@@ -295,7 +295,7 @@
       "successes": "Réussites : {{count}}",
       "assessmentSuccesses": "Réussites au test de fin de leçon : {{count}}",
       "withHints": "Réussites récentes avec un indice : {{count}}",
-      "maxDifficulty": "Niveau de difficulté le plus élevé réussi : {{level}}",
+      "maxDifficulty": "Palier le plus élevé réussi : {{level}}",
       "lastSuccess": "Dernière réussite : {{date}}",
       "lastFailure": "Dernière erreur : {{date}}",
       "recentTitle": "Derniers essais",
@@ -319,7 +319,7 @@
         "syntax_error": "Écriture non comprise"
       },
       "hintsUsed": "Avec indice ({{count}})",
-      "level": "Niveau {{level}}"
+      "level": "Palier {{level}}"
     }
   },
   "practice": {
@@ -357,23 +357,23 @@
     "sideHide": "Masquer {{what}}",
     "sideShow": "Afficher {{what}}",
     "sideLearningPoint": "le savoir-faire",
-    "backToLevels": "Retour aux niveaux",
-    "hubSubtitle": "Choisis un niveau. Tu peux revenir à un niveau terminé quand tu veux.",
+    "backToLevels": "Retour aux paliers",
+    "hubSubtitle": "Choisis un palier. Tu peux revenir à un palier terminé quand tu veux.",
     "reviewLesson": "Revoir la leçon",
-    "openSession": "Tu as une séance en cours au niveau {{level}}.",
+    "openSession": "Tu as une séance en cours au palier {{level}}.",
     "resume": "Reprendre",
-    "levelsTitle": "Les niveaux",
+    "levelsTitle": "Les paliers",
     "whatYouShowed": "Ce que tu as montré jusqu’ici",
     "whatYouShowedHint": "Ces états viennent du test final et de tes exercices : la même évaluation.",
-    "levelLabel": "Niveau {{level}}",
-    "questionOf": "Question {{current}} / {{total}}",
+    "levelLabel": "Palier {{level}}",
+    "questionOf": "Question {{current}} / {{total}}",
     "checkMyAnswer": "Vérifier ma réponse",
     "retry": "Réessayer",
     "nextQuestion": "Question suivante",
     "nextExercise": "Exercice suivant",
     "finishSession": "Terminer la séance",
     "sessionDone": "Séance terminée",
-    "summaryTitle": "Niveau {{level}} — {{lesson}}",
+    "summaryTitle": "Palier {{level}} — {{lesson}}",
     "statExercises": "Exercices",
     "statQuestions": "Questions",
     "statCorrect": "Justes",
@@ -389,7 +389,7 @@
     "whatResisted": "Ce qui t’a résisté",
     "timesCount_one": "{{count}} fois",
     "timesCount_other": "{{count}} fois",
-    "resistedHint": "Revenir sur ces points t’aidera plus qu’un niveau de plus.",
+    "resistedHint": "Revenir sur ces points t’aidera plus qu’un palier de plus.",
     "yourKnowledgeNow": "Où tu en es maintenant",
     "keepPracticing": "Continuer à m’entraîner",
     "myCourses": "Mes leçons",
@@ -580,11 +580,11 @@
     "levelRecommended": "Conseillé",
     "levelDone": "Terminé",
     "levelOpening": "Ouverture…",
-    "levelLockedHint": "Termine un exercice du niveau précédent pour ouvrir ce niveau.",
-    "levelLockedAfter": "Termine un exercice du niveau {{level}} pour ouvrir ce niveau.",
+    "levelLockedHint": "Termine un exercice du palier précédent pour ouvrir ce palier.",
+    "levelLockedAfter": "Termine un exercice du palier {{level}} pour ouvrir ce palier.",
     "entryTag": "Je m’entraîne",
     "entryTitle": "Commencer les exercices",
-    "entryBody": "{{total}} exercices sur {{levels}} niveaux, des bases jusqu’au défi. Ce que tu montres ici compte dans la même évaluation que le test final.",
+    "entryBody": "{{total}} exercices sur {{levels}} paliers, des bases jusqu’au défi. Ce que tu montres ici compte dans la même évaluation que le test final.",
     "entryStart": "Commencer les exercices",
     "entryLogin": "Se connecter pour s’entraîner",
     "entryLoginNote": "Ta progression est enregistrée dans ton compte.",
@@ -615,13 +615,13 @@
       "exerciseOf": "Exercice {{current}} sur {{total}}",
       "questionOfShort": "Question {{current}} sur {{total}}",
       "lastQuestion": "Dernière question de cet exercice",
-      "lastExercise": "Dernier exercice de ce niveau",
+      "lastExercise": "Dernier exercice de ce palier",
       "ariaExercises": "Ta progression dans les exercices",
       "ariaQuestions": "Ta progression dans les questions de cet exercice",
       "remainingQuestions_one": "Encore {{count}} question dans cet exercice",
       "remainingQuestions_other": "Encore {{count}} questions dans cet exercice",
-      "remainingExercises_one": "puis {{count}} exercice dans ce niveau",
-      "remainingExercises_other": "puis {{count}} exercices dans ce niveau"
+      "remainingExercises_one": "puis {{count}} exercice dans ce palier",
+      "remainingExercises_other": "puis {{count}} exercices dans ce palier"
     },
     "questionNumber": "Question {{n}}",
     "statementLabel": "Énoncé de l’exercice",
@@ -702,7 +702,7 @@
   "notebook": {
     "title": "Mon cahier",
     "empty": "Ton cahier est vide. Pendant un exercice, le bouton « Noter » garde ici ce que tu veux retenir.",
-    "noteOf": "Note {{current}} / {{total}}",
+    "noteOf": "Note {{current}} / {{total}}",
     "handled": "Traitée",
     "mistakes": {
       "calcul": "Erreur de calcul",
@@ -947,7 +947,7 @@
         "start": "Commencer la révision",
         "title": "Réviser mon cahier",
         "eyebrow": "Rappelle-toi, puis compare",
-        "progress": "{{current}} / {{total}}",
+        "progress": "{{current}} / {{total}}",
         "promptTitled": "Qu’avais-tu écrit sur « {{title}} » ?",
         "promptContext": "Qu’avais-tu écrit ici : {{place}} ?",
         "promptGeneric": "Que te rappelles-tu de cette note ?",
@@ -1081,7 +1081,7 @@
       "lessonsDone": "Leçons terminées",
       "starsLabel": "Étoiles gagnées",
       "challengeTitle": "🏁 Le défi du chapitre",
-      "keys": "Clés du défi : {{got}} / {{total}}",
+      "keys": "Clés du défi : {{got}} / {{total}}",
       "readChallenge": "Lire le défi",
       "path": "Le parcours du chapitre",
       "doneOf": "✓ {{done}} sur {{total}}",
@@ -1302,10 +1302,10 @@
       "unseen": "Pas encore vérifié"
     },
     "grades": {
-      "1am": "6e",
-      "2am": "5e",
-      "3am": "4e",
-      "4am": "3e"
+      "6e": "6e",
+      "5e": "5e",
+      "4e": "4e",
+      "3e": "3e"
     },
     "lesson": {
       "continue": "Reprends ta leçon : {{title}}",

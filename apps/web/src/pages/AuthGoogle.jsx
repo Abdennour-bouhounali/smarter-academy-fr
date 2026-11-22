@@ -39,8 +39,8 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta';
  */
 function landingFor(user) {
   if (user?.role === 'teacher') return '/enseignant';
-  if (user?.role === 'parent') return '/wali';
-  if (user?.role === 'school_admin') return '/idara';
+  if (user?.role === 'parent') return '/parent';
+  if (user?.role === 'school_admin') return '/etablissement';
   if (user?.role === 'admin') return '/admin';
   if (user?.role === 'book_manager') return '/admin/livres/commandes';
   // Arrivé par le lien d'une classe (et consentant) : on y retourne, et la

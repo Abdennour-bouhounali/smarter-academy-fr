@@ -242,7 +242,7 @@ describe('les indicateurs au tableau (statsFrames)', () => {
 
 describe('chaque phrase d’un frame existe, en français', () => {
   it('textKey / operationKey de tous les déroulés → mathlab.json', async () => {
-    const { default: mathlab } = await import('../../../../i18n/locales/ar/mathlab.json');
+    const { default: mathlab } = await import('../../../../i18n/locales/fr/mathlab.json');
     const lookup = (key) => key.split('.').reduce((node, part) => node?.[part], mathlab);
     const keys = new Set();
     const collect = (board) => board?.frames.forEach((f) => [f.textKey, f.operationKey, f.task?.promptKey].filter(Boolean).forEach((key) => keys.add(key)));

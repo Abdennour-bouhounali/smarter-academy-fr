@@ -162,7 +162,7 @@ export default function SchoolMeeting() {
   const go = useCallback((step) => setIndex((i) => Math.min(Math.max(i + step, 0), Math.max(slides.length - 1, 0))), [slides.length]);
   const close = useCallback(() => {
     if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
-    navigate(`/idara/taqarir/${reportId}`);
+    navigate(`/etablissement/rapports/${reportId}`);
   }, [navigate, reportId]);
 
   useEffect(() => {

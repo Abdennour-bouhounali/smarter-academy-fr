@@ -1,31 +1,31 @@
 /**
- * QA navigateur — le مختبر الرياضيات (/espace/atelier) et sa سبّورة.
+ * QA navigateur — « L’atelier de mathématiques » (/espace/atelier) et son tableau blanc.
  *
  * Lancement (dev server sur 5173, API sur 8000, élève QA existant) :
  *   node apps/web/e2e/mathlab.mjs [dossier-captures]
  *
  * Ce qu'on vérifie :
- *   - navigation : l'entrée « المختبر », l'accueil, l'ouverture de la سبّورة,
+ *   - navigation : l'entrée « L’atelier », l'accueil, l'ouverture du tableau,
  *     rechargement, précédent/suivant, segment inconnu, document d'autrui,
  *     visiteur non connecté ;
- *   - la سبّورة : crayon, rectangle, ellipse, flèche, ligne, texte, sélection
+ *   - le tableau : crayon, rectangle, ellipse, flèche, ligne, texte, sélection
  *     et déplacement, gomme, annuler/rétablir, zoom, main (déplacement de la
- *     vue), grille, export PNG, « مسح الكل » avec confirmation ;
+ *     vue), grille, export PNG, « Tout effacer » avec confirmation ;
  *   - persistance : naissance du document au premier trait (URL réécrite),
- *     sauvegarde automatique, titre, relecture après rechargement, « أعمالي »,
+ *     sauvegarde automatique, titre, relecture après rechargement, « Mes travaux »,
  *     suppression avec confirmation ;
- *   - les fichiers (« الملفات ») : PNG, PDF, SVG ; 1 Mo au plus ; 3 par
- *     سبّورة, dit avant le geste et refusé côté serveur aussi ; type
+ *   - les fichiers (« Fichiers ») : PNG, PDF, SVG ; 1 Mo au plus ; 3 par
+ *     tableau, dit avant le geste et refusé côté serveur aussi ; type
  *     inconnu refusé ; sélection multiple jugée en entier ; image posée sur
- *     la سبّورة sans base64 dans le document ; téléchargement ; suppression
+ *     le tableau sans base64 dans le document ; téléchargement ; suppression
  *     qui rend de la place et retire l'image ; persistance ; panneau dans
  *     l'écran à toute taille ;
  *   - import d'une bibliothèque de formes par le même panneau : fichier
  *     valide, JSON invalide, pas de doublon, persistance ;
- *     le « فتح » d'Excalidraw et le menu ⋮ de la bibliothèque vide (qui
- *     débordait du panneau sous RTL) ont disparu ;
+ *     le « Ouvrir » d'Excalidraw et le menu ⋮ de la bibliothèque vide (qui
+ *     débordait du panneau) ont disparu ;
  *   - un document neuf laissé tel quel ne crée RIEN sur le serveur ;
- *   - RTL : l'interface d'Excalidraw en arabe et en RTL ;
+ *   - langue : l'interface d'Excalidraw en français, de gauche à droite ;
  *   - responsive : bureau, tablette (tactile), mobile étroit — aucun
  *     débordement horizontal, boutons de 44 px.
  *
@@ -38,7 +38,7 @@ import { join } from 'node:path';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const OUT = process.argv[2] || '/tmp/mathlab-shots';
 mkdirSync(OUT, { recursive: true });
@@ -55,8 +55,8 @@ const LIB_VALID = join(FIX, 'formes.excalidrawlib');
 writeFileSync(LIB_VALID, JSON.stringify({
   type: 'excalidrawlib', version: 2, source: 'https://excalidraw.com',
   libraryItems: [
-    { id: 'lib-a', status: 'unpublished', created: 1, name: 'مستطيل', elements: [libElement('e-a')] },
-    { id: 'lib-b', status: 'unpublished', created: 2, name: 'مربع', elements: [libElement('e-b')] },
+    { id: 'lib-a', status: 'unpublished', created: 1, name: 'Rectangle', elements: [libElement('e-a')] },
+    { id: 'lib-b', status: 'unpublished', created: 2, name: 'Carré', elements: [libElement('e-b')] },
   ],
 }));
 const LIB_PNG = join(FIX, 'photo.png');
@@ -143,9 +143,9 @@ const docIdOf = (url) => Number((url.match(/\/atelier\/tableau\/(\d+)/) || [])[1
  * Attend que le geste précédent soit VRAIMENT parti.
  *
  * `waitForSelector('[data-ml-status="saved"]')` seul ne suffit pas : juste
- * après un trait, la coquille affiche encore « محفوظ » du geste d'AVANT
+ * après un trait, la coquille affiche encore « Enregistré » du geste d'AVANT
  * (la sérialisation attend 300 ms, la sauvegarde 2,5 s). On laisse donc
- * d'abord l'état devenir « modifié », puis on attend « محفوظ » — et si le
+ * d'abord l'état devenir « modifié », puis on attend « Enregistré » — et si le
  * geste n'a rien changé, le court délai d'attente rend la main sans échouer.
  */
 async function waitSaved(page, timeout = 15000) {
@@ -206,43 +206,49 @@ async function openWhiteboard(page) {
   await page.waitForSelector('[data-ml-whiteboard] .excalidraw', { timeout: 30000 });
 }
 
-const ctx = await authedContext({ viewport: { width: 1440, height: 900 }, locale: 'ar-DZ', acceptDownloads: true });
+const ctx = await authedContext({ viewport: { width: 1440, height: 900 }, locale: 'fr-FR', acceptDownloads: true });
 const page = await ctx.newPage();
 attach(page);
 
 try {
   record('connexion élève', !!authState);
 
-  // ── 1. L'accueil du مختبر ────────────────────────────────────────────
+  // ── 1. L'accueil de l'atelier ─────────────────────────────────────────
   await page.goto(`${BASE}/espace/atelier`, { waitUntil: 'networkidle' });
   await page.waitForSelector('[data-ml-home]', { timeout: 20000 });
-  record('accueil : titre', (await page.locator('h1').first().innerText()).includes('مختبر الرياضيات'));
-  record('navigation : entrée « المختبر » dans la barre latérale', await page.locator('aside a[href="/espace/atelier"]').count() === 1);
+  record('accueil : titre', (await page.locator('h1').first().innerText()).includes('L’atelier de mathématiques'));
+  record('navigation : entrée « L’atelier » dans la barre latérale', await page.locator('aside a[href="/espace/atelier"]').count() === 1);
   // Une carte par instrument LIVRÉ — le nombre suit le registre, il n'est
   // plus écrit ici : l'assertion « exactement trois » datait du jour où le
-  // مختبر en avait trois, et elle a vieilli à chaque instrument livré.
-  // Depuis les مخابر (MATH_LAB.md §2.1) : l'accueil montre la سبّورة, commune,
-  // puis deux choix ; les autres instruments sont dans chaque مخبر.
+  // l'atelier en avait trois, et elle a vieilli à chaque instrument livré.
+  // Depuis les deux ateliers (MATH_LAB.md §2.1) : l'accueil montre le tableau,
+  // commun, puis deux choix ; les autres instruments sont dans chaque atelier.
   // (mathlab-labs-scope.mjs vérifie cette architecture en détail.)
-  record('accueil : la سبّورة, commune, en tête', await page.locator('[data-ml-common-tools] [data-ml-tool-card="whiteboard"]').count() === 1);
-  record('accueil : deux choix — مخبر المتوسط, مخبر الثانوي', await page.locator('[data-ml-lab-choice]').count() === 2);
-  // PLANNED_MATH_LAB_TOOLS est vide depuis l'instrument القياس : rien d'annoncé.
+  record('accueil : le tableau, commun, en tête', await page.locator('[data-ml-common-tools] [data-ml-tool-card="whiteboard"]').count() === 1);
+  record('accueil : deux choix — atelier du collège, atelier du lycée', await page.locator('[data-ml-lab-choice]').count() === 2);
+  // PLANNED_MATH_LAB_TOOLS est vide depuis l'instrument des mesures : rien d'annoncé.
   if (await page.locator('[data-ml-planned]').count() > 0) {
     record('accueil : aucun lien vers un instrument annoncé', await page.locator('[data-ml-planned] a').count() === 0);
   }
   await page.screenshot({ path: `${OUT}/01-home-desktop.png`, fullPage: true });
 
-  // ── 2. Ouvrir la سبّورة ──────────────────────────────────────────────
+  // ── 2. Ouvrir le tableau ──────────────────────────────────────────────
   await page.click('[data-ml-tool-card="whiteboard"]');
   await page.waitForURL(/\/espace\/atelier\/tableau$/, { timeout: 15000 });
   await page.waitForSelector('[data-ml-whiteboard] .excalidraw', { timeout: 30000 });
-  record('سبّورة : ouverte, document neuf non enregistré', (await page.getAttribute('[data-ml-status]', 'data-ml-status')) === 'clean');
-  // Excalidraw ne pose pas `dir` lui-même : il hérite de <html dir="rtl"> et
-  // ses règles `[dir=rtl] .excalidraw …` s'appliquent. On lit la direction calculée.
-  record('سبّورة : Excalidraw en RTL', (await page.locator('[data-ml-whiteboard] .excalidraw').first().evaluate((el) => getComputedStyle(el).direction)) === 'rtl');
-  const arabicUi = await page.locator('[data-ml-whiteboard] [data-testid="toolbar-freedraw"]').count() === 1
-    && /[؀-ۿ]/.test(await page.locator('[data-ml-whiteboard] .App-toolbar').first().innerText().catch(() => '') || await page.locator('[data-ml-whiteboard] label[title]').first().getAttribute('title').catch(() => ''));
-  record('سبّورة : interface Excalidraw en arabe', arabicUi);
+  record('tableau : ouvert, document neuf non enregistré', (await page.getAttribute('[data-ml-status]', 'data-ml-status')) === 'clean');
+  // Excalidraw ne pose pas `dir` lui-même : il hérite de <html lang="fr"> sans
+  // `dir`. On lit la direction calculée, et la page ne porte aucun dir="rtl".
+  record('tableau : Excalidraw de gauche à droite', (await page.locator('[data-ml-whiteboard] .excalidraw').first().evaluate((el) => getComputedStyle(el).direction)) === 'ltr'
+    && (await page.getAttribute('html', 'lang')) === 'fr' && await page.locator('[dir="rtl"]').count() === 0);
+  // L'interface d'Excalidraw parle français (langCode="fr-FR") : les titres de la
+  // barre d'outils sont en lettres latines et ne contiennent aucune lettre arabe.
+  const toolbarTitle = await page.locator('[data-ml-whiteboard] label[title]').first().getAttribute('title').catch(() => '') || '';
+  const toolbarText = await page.locator('[data-ml-whiteboard] .App-toolbar').first().innerText().catch(() => '') || '';
+  const frenchUi = await page.locator('[data-ml-whiteboard] [data-testid="toolbar-freedraw"]').count() === 1
+    && /[A-Za-zÀ-ÿ]/.test(toolbarTitle)
+    && !/[\u0600-\u06FF]/.test(toolbarTitle + toolbarText);
+  record('tableau : interface Excalidraw en français', frenchUi, toolbarTitle);
   record('accessibilité : région du canevas nommée', !!(await page.getAttribute('[data-ml-whiteboard]', 'aria-label')));
   await page.screenshot({ path: `${OUT}/02-whiteboard-empty.png` });
 
@@ -260,7 +266,7 @@ try {
   created.add(docId);
   record('persistance : le document naît au premier trait, URL réécrite', docId != null);
   await waitSaved(page);
-  record('persistance : sauvegarde automatique « محفوظ »', true);
+  record('persistance : sauvegarde automatique « Enregistré »', true);
   record('persistance : le trait est sur le serveur', (await elementCount(docId)) === 1);
 
   await page.waitForTimeout(300);
@@ -280,14 +286,14 @@ try {
   await sleep(300);
   await waitSaved(page);
   const afterShapes = await elementCount(docId);
-  record('سبّورة : crayon, rectangle, ellipse, flèche, ligne, texte', afterShapes === 6, `${afterShapes} éléments`);
+  record('tableau : crayon, rectangle, ellipse, flèche, ligne, texte', afterShapes === 6, `${afterShapes} éléments`);
   await page.screenshot({ path: `${OUT}/03-whiteboard-shapes.png` });
 
   // ── 4. Titre ─────────────────────────────────────────────────────────
-  await page.fill('[data-ml-title]', 'المثلث ABC');
+  await page.fill('[data-ml-title]', 'Le triangle ABC');
   await waitSaved(page);
   const titled = await api(TOKEN, 'GET', `/math-lab/documents/${docId}`);
-  record('persistance : le titre est enregistré', titled.data.document?.title === 'المثلث ABC');
+  record('persistance : le titre est enregistré', titled.data.document?.title === 'Le triangle ABC');
 
   // ── 5. Sélection et déplacement ───────────────────────────────────────
   await tool(page, 'selection');
@@ -297,19 +303,19 @@ try {
   await sleep(300);
   await waitSaved(page);
   const after = (await api(TOKEN, 'GET', `/math-lab/documents/${docId}`)).data.document.data.elements.find((e) => e.type === 'rectangle');
-  record('سبّورة : sélectionner et déplacer', !!before && !!after && after.y > before.y + 20, `y ${before?.y?.toFixed(0)} → ${after?.y?.toFixed(0)}`);
+  record('tableau : sélectionner et déplacer', !!before && !!after && after.y > before.y + 20, `y ${before?.y?.toFixed(0)} → ${after?.y?.toFixed(0)}`);
 
   // ── 6. Annuler / rétablir ─────────────────────────────────────────────
   await page.click('[data-ml-whiteboard] [data-testid="button-undo"]');
   await sleep(300);
   await waitSaved(page);
   const undone = (await api(TOKEN, 'GET', `/math-lab/documents/${docId}`)).data.document.data.elements.find((e) => e.type === 'rectangle');
-  record('سبّورة : annuler', Math.abs(undone.y - before.y) < 1);
+  record('tableau : annuler', Math.abs(undone.y - before.y) < 1);
   await page.click('[data-ml-whiteboard] [data-testid="button-redo"]');
   await sleep(300);
   await waitSaved(page);
   const redone = (await api(TOKEN, 'GET', `/math-lab/documents/${docId}`)).data.document.data.elements.find((e) => e.type === 'rectangle');
-  record('سبّورة : rétablir', Math.abs(redone.y - after.y) < 1);
+  record('tableau : rétablir', Math.abs(redone.y - after.y) < 1);
 
   // ── 7. Gomme ─────────────────────────────────────────────────────────
   await tool(page, 'eraser');
@@ -317,7 +323,7 @@ try {
   await sleep(300);
   await waitSaved(page);
   const erased = await elementCount(docId);
-  record('سبّورة : gomme', erased < afterShapes, `${afterShapes} → ${erased}`);
+  record('tableau : gomme', erased < afterShapes, `${afterShapes} → ${erased}`);
   await tool(page, 'selection');
 
   // ── 8. Zoom, main, grille ─────────────────────────────────────────────
@@ -327,7 +333,7 @@ try {
   await zoomIn.click();
   await zoomIn.click();
   const zoomAfter = await zoomLabel();
-  record('سبّورة : zoom', zoomBefore !== zoomAfter, `${zoomBefore} → ${zoomAfter}`);
+  record('tableau : zoom', zoomBefore !== zoomAfter, `${zoomBefore} → ${zoomAfter}`);
   await page.locator('[data-ml-whiteboard] [data-testid="zoom-out-button"], [data-ml-whiteboard] .zoom-out-button').first().click();
   await page.mouse.move(...Object.values(P(0.5, 0.5)));
   await page.keyboard.down('Control');
@@ -335,7 +341,7 @@ try {
   await page.keyboard.up('Control');
   await tool(page, 'hand');
   await drag(page, P(0.5, 0.5), P(0.6, 0.55));
-  record('سبّورة : main (déplacer la vue), sans erreur', pageErrors.length === 0);
+  record('tableau : main (déplacer la vue), sans erreur', pageErrors.length === 0);
   await tool(page, 'selection');
   await page.click('[data-ml-grid]');
   record('coquille : grille activée', (await page.getAttribute('[data-ml-grid]', 'aria-pressed')) === 'true');
@@ -349,58 +355,58 @@ try {
   ]);
   record('coquille : export PNG', download.suggestedFilename().endsWith('.png'), download.suggestedFilename());
 
-  // ── 10. Mسح الكل avec confirmation, puis annuler ─────────────────────
+  // ── 10. « Tout effacer » avec confirmation, puis annuler ─────────────
   await page.click('[data-ml-clear]');
   await page.waitForSelector('[role="alertdialog"]', { timeout: 5000 });
   await page.click('[role="alertdialog"] button:not([data-nb-confirm])');
-  record('coquille : « مسح الكل » se refuse sans confirmation', (await elementCount(docId)) === erased);
+  record('coquille : « Tout effacer » se refuse sans confirmation', (await elementCount(docId)) === erased);
   await page.click('[data-ml-clear]');
   await page.waitForSelector('[role="alertdialog"]', { timeout: 5000 });
   await page.click('[data-nb-confirm]');
   await sleep(300);
   await waitSaved(page);
-  record('coquille : « مسح الكل » vide la سبّورة', (await elementCount(docId)) === 0);
+  record('coquille : « Tout effacer » vide le tableau', (await elementCount(docId)) === 0);
   await page.click('[data-ml-whiteboard] [data-testid="button-undo"]');
   await sleep(300);
   await waitSaved(page);
   record('coquille : le vidage s’annule', (await elementCount(docId)) === erased);
 
-  // ── 10b. Les fichiers de la سبّورة ─────────────────────────────────
-  record('fichiers : le bouton « الملفات » est dans la barre', await page.locator('[data-ml-files-toggle]').count() === 1);
+  // ── 10b. Les fichiers du tableau ───────────────────────────────────
+  record('fichiers : le bouton « Fichiers » est dans la barre', await page.locator('[data-ml-files-toggle]').count() === 1);
   await openFiles(page);
   record('fichiers : les deux compteurs sont dans le panneau', (await boardCounter(page)) === '0/3' && await page.locator('[data-ml-files-user]').count() === 1);
   await page.screenshot({ path: `${OUT}/08-files-empty.png` });
 
   let outcome = await addFiles(page, FILE_PNG);
   record('fichiers : une image PNG entre, 1 / 3', outcome === 'success' && (await filesCount(page)) === 1 && (await boardCounter(page)) === '1/3');
-  record('fichiers : la carte dit le type et la taille', /PNG|صورة/.test(await page.locator('[data-ml-file]').first().innerText()) && /KB|بايت/.test(await page.locator('[data-ml-file]').first().innerText()));
+  record('fichiers : la carte dit le type et la taille', /PNG|Image/.test(await page.locator('[data-ml-file]').first().innerText()) && /\b(?:o|Ko|Mo)\b/.test(await page.locator('[data-ml-file]').first().innerText()));
 
   outcome = await addFiles(page, FILE_PNG_BIG);
-  record('fichiers : 1 000 001 octets → « كبير جدًا »', outcome === 'error' && (await filesMessage(page)).includes('كبير جدًا') && (await filesCount(page)) === 1);
+  record('fichiers : 1 000 001 octets → « Fichier trop lourd »', outcome === 'error' && (await filesMessage(page)).includes('Fichier trop lourd') && (await filesCount(page)) === 1);
   outcome = await addFiles(page, FILE_DOCX);
-  record('fichiers : .docx → « غير مدعوم »', outcome === 'error' && (await filesMessage(page)).includes('غير مدعوم') && (await filesCount(page)) === 1);
+  record('fichiers : .docx → « n’est pas accepté »', outcome === 'error' && (await filesMessage(page)).includes('Ce type de fichier n’est pas accepté') && (await filesCount(page)) === 1);
   await page.screenshot({ path: `${OUT}/08-files-error.png` });
 
   outcome = await addFiles(page, LIB_PNG);
   record('bibliothèque : une image nommée .png va aux fichiers, pas à la bibliothèque', outcome === 'success' && (await filesCount(page)) === 2);
   outcome = await addFiles(page, LIB_BROKEN);
-  record('import : un JSON cassé est refusé (pas « تعذر تحميل المكتبة »)', outcome === 'error' && (await filesMessage(page)).includes('ليس مكتبة أشكال صالحة'));
+  record('import : un JSON cassé est refusé (pas « Impossible d’importer la bibliothèque »)', outcome === 'error' && (await filesMessage(page)).includes('ce n’est pas une bibliothèque de formes valide'));
   outcome = await addFiles(page, LIB_VALID);
   const units = await libraryUnits(page);
   record('import : une bibliothèque valide entre (2 formes) sans prendre de place', outcome === 'success' && units === 2 && (await boardCounter(page)) === '2/3', `${units} formes`);
-  record('import : le message de succès compte les formes', (await filesMessage(page)).includes('شكلين'));
-  record('bibliothèque : le « فتح » d’Excalidraw a disparu', await page.locator('[data-ml-whiteboard] [data-testid="lib-dropdown--load"]:visible').count() === 0);
+  record('import : le message de succès compte les formes', (await filesMessage(page)).includes('2 formes ajoutées à la bibliothèque'));
+  record('bibliothèque : le « Ouvrir » d’Excalidraw a disparu', await page.locator('[data-ml-whiteboard] [data-testid="lib-dropdown--load"]:visible').count() === 0);
   outcome = await addFiles(page, LIB_VALID);
-  record('import : réimporter la même bibliothèque ne la duplique pas', outcome === 'success' && (await libraryUnits(page)) === 2 && (await filesMessage(page)).includes('موجودة'));
+  record('import : réimporter la même bibliothèque ne la duplique pas', outcome === 'success' && (await libraryUnits(page)) === 2 && (await filesMessage(page)).includes('déjà dans ta bibliothèque'));
   await page.locator('[data-ml-whiteboard] [data-testid="sidebar-close"]').click().catch(() => {});
 
   outcome = await addFiles(page, [FILE_PDF, FILE_SVG]);
-  record('fichiers : PDF + SVG en une sélection → 3 / 3 ; refus si 4', outcome === 'error' && (await filesMessage(page)).includes('يمكن إضافة ملف واحد') && (await filesCount(page)) === 2);
+  record('fichiers : PDF + SVG en une sélection → 3 / 3 ; refus si 4', outcome === 'error' && (await filesMessage(page)).includes('Tu peux encore ajouter 1 fichier seulement') && (await filesCount(page)) === 2);
   outcome = await addFiles(page, FILE_PDF);
-  record('fichiers : le PDF entre, la سبّورة est pleine', outcome === 'success' && (await filesCount(page)) === 3 && (await boardCounter(page)) === '3/3');
+  record('fichiers : le PDF entre, le tableau est plein', outcome === 'success' && (await filesCount(page)) === 3 && (await boardCounter(page)) === '3/3');
   record('fichiers : « pleine » est dit AVANT le geste, bouton désactivé', await page.locator('[data-ml-files-full="board"]').count() === 1 && await page.locator('[data-ml-files-add]').isDisabled());
   outcome = await addFiles(page, FILE_SVG);
-  record('fichiers : un 4e fichier est refusé côté client', outcome === 'error' && (await filesMessage(page)).includes('الحدّ الأقصى البالغ 3') && (await filesCount(page)) === 3);
+  record('fichiers : un 4e fichier est refusé côté client', outcome === 'error' && (await filesMessage(page)).includes('maximum de 3 fichiers') && (await filesCount(page)) === 3);
   const bypass = await fetch(`${API}/math-lab/documents/${docId}/files`, { method: 'POST', headers: { Authorization: `Bearer ${TOKEN}`, Accept: 'application/json' }, body: (() => { const f = new FormData(); f.append('file', new Blob([PNG_BYTES], { type: 'image/png' }), 'x.png'); return f; })() });
   record('sécurité : le serveur refuse aussi le 4e fichier (422, code)', bypass.status === 422 && (await bypass.json()).code === 'math_lab_board_file_limit');
   await page.screenshot({ path: `${OUT}/09-files-full.png` });
@@ -410,7 +416,7 @@ try {
   await waitSaved(page);
   let doc = (await api(TOKEN, 'GET', `/math-lab/documents/${docId}`)).data.document;
   const image = doc.data.elements.find((e) => e.type === 'image');
-  record('fichiers : l’image posée sur la سبّورة référence le fichier, sans base64', !!image && /^sa-\d+(?:\?lab=\w+)?$/.test(image.fileId) && Object.keys(doc.data.files ?? {}).length === 0);
+  record('fichiers : l’image posée sur le tableau référence le fichier, sans base64', !!image && /^sa-\d+(?:\?lab=\w+)?$/.test(image.fileId) && Object.keys(doc.data.files ?? {}).length === 0);
   await page.screenshot({ path: `${OUT}/09-files-placed.png` });
 
   const [dl] = await Promise.all([
@@ -425,15 +431,15 @@ try {
   await openFiles(page);
   record('fichiers : conservés après rechargement, 3 / 3', (await filesCount(page)) === 3 && (await boardCounter(page)) === '3/3');
   doc = (await api(TOKEN, 'GET', `/math-lab/documents/${docId}`)).data.document;
-  record('fichiers : l’image reste sur la سبّورة après rechargement', doc.data.elements.some((e) => e.type === 'image'));
+  record('fichiers : l’image reste sur le tableau après rechargement', doc.data.elements.some((e) => e.type === 'image'));
 
-  // Le PDF : la سبّورة ne le pose pas sur le canevas, seulement le garde.
+  // Le PDF : le tableau ne le pose pas sur le canevas, seulement le garde.
   await page.locator('[data-ml-file][data-ml-file-kind="pdf"] [data-ml-file-delete]').click();
   await page.waitForSelector('[role="alertdialog"]', { timeout: 5000 });
   await page.click('[data-nb-confirm]');
   await page.waitForFunction(() => document.querySelectorAll('[data-ml-file]').length === 2, null, { timeout: 10000 });
   record('fichiers : supprimer rend de la place, 2 / 3', (await boardCounter(page)) === '2/3' && (await api(TOKEN, 'GET', `/math-lab/documents/${docId}/files`)).data.files.length === 2);
-  record('fichiers : un PDF ne se pose pas sur la سبّورة, il se garde', await page.locator('[data-ml-file][data-ml-file-kind="image"] [data-ml-file-place]').count() > 0);
+  record('fichiers : un PDF ne se pose pas sur le tableau, il se garde', await page.locator('[data-ml-file][data-ml-file-kind="image"] [data-ml-file-place]').count() > 0);
   await page.locator('[data-ml-file][data-ml-file-kind="image"] [data-ml-file-delete]').first().click();
   await page.waitForSelector('[role="alertdialog"]', { timeout: 5000 });
   await page.click('[data-nb-confirm]');
@@ -441,21 +447,21 @@ try {
   await page.waitForTimeout(400);
   await waitSaved(page);
   doc = (await api(TOKEN, 'GET', `/math-lab/documents/${docId}`)).data.document;
-  record('fichiers : supprimer l’image la retire aussi de la سبّورة', !doc.data.elements.some((e) => e.type === 'image' && e.fileId === image?.fileId));
+  record('fichiers : supprimer l’image la retire aussi du tableau', !doc.data.elements.some((e) => e.type === 'image' && e.fileId === image?.fileId));
   await page.click('[data-ml-files-close]');
   record('fichiers : le panneau se ferme', await page.locator('[data-ml-files]').count() === 0);
 
-  // ── 11. Rechargement, retour, « أعمالي » ─────────────────────────────
+  // ── 11. Rechargement, retour, « Mes travaux » ────────────────────────
   await page.reload({ waitUntil: 'networkidle' });
   await page.waitForSelector('[data-ml-whiteboard] .excalidraw', { timeout: 30000 });
-  record('navigation : rechargement — même document, titre relu', (await page.inputValue('[data-ml-title]')) === 'المثلث ABC' && docIdOf(page.url()) === docId);
+  record('navigation : rechargement — même document, titre relu', (await page.inputValue('[data-ml-title]')) === 'Le triangle ABC' && docIdOf(page.url()) === docId);
   await page.click('[data-ml-back]');
   await page.waitForSelector('[data-ml-home]', { timeout: 15000 });
   await page.waitForSelector(`[data-ml-doc="${docId}"]`, { timeout: 15000 });
-  record('أعمالي : le document est listé avec son titre', (await page.locator(`[data-ml-doc="${docId}"]`).innerText()).includes('المثلث ABC'));
+  record('Mes travaux : le document est listé avec son titre', (await page.locator(`[data-ml-doc="${docId}"]`).innerText()).includes('Le triangle ABC'));
   await page.click(`[data-ml-doc="${docId}"] [data-ml-doc-open]`);
   await page.waitForSelector('[data-ml-whiteboard] .excalidraw', { timeout: 30000 });
-  record('أعمالي : rouvrir', docIdOf(page.url()) === docId);
+  record('Mes travaux : rouvrir', docIdOf(page.url()) === docId);
   await page.goBack({ waitUntil: 'networkidle' });
   await page.waitForSelector('[data-ml-home]', { timeout: 15000 });
   record('navigation : précédent', /\/espace\/atelier$/.test(page.url()));
@@ -465,15 +471,15 @@ try {
 
   // ── 12. Segment inconnu, document d'autrui / inexistant ──────────────
   await page.goto(`${BASE}/espace/atelier/inconnu`, { waitUntil: 'networkidle' });
-  record('navigation : instrument inconnu → accueil du مختبر', /\/espace\/atelier$/.test(page.url()));
+  record('navigation : instrument inconnu → accueil de l’atelier', /\/espace\/atelier$/.test(page.url()));
   await page.goto(`${BASE}/espace/atelier/tableau/999999999`, { waitUntil: 'networkidle' });
   await page.waitForSelector('[data-ml-error]', { timeout: 15000 });
-  record('sécurité : document inexistant ou d’autrui → « غير موجود »', (await page.locator('[data-ml-error]').innerText()).includes('غير موجود'));
+  record('sécurité : document inexistant ou d’autrui → « n’existe pas »', (await page.locator('[data-ml-error]').innerText()).includes('Ce travail n’existe pas ou n’est pas à toi.'));
 
-  // ── 13. Suppression depuis « أعمالي » ─────────────────────────────────
+  // ── 13. Suppression depuis « Mes travaux » ────────────────────────────
   await page.goto(`${BASE}/espace/atelier`, { waitUntil: 'networkidle' });
   await page.waitForSelector(`[data-ml-doc="${docId}"]`, { timeout: 15000 });
-  // Depuis « أعمالي » refait en atelier, les gestes de rangement vivent dans
+  // Depuis « Mes travaux » refait en atelier, les gestes de rangement vivent dans
   // le menu « ⋮ » de la carte plutôt qu'en boutons alignés : on l'ouvre
   // d'abord (MATH_LAB.md §5i.3).
   await page.click(`[data-ml-doc="${docId}"] [data-ml-work-menu]`);
@@ -481,7 +487,7 @@ try {
   await page.waitForSelector('[role="alertdialog"]', { timeout: 5000 });
   await page.click('[data-nb-confirm]');
   await page.waitForSelector(`[data-ml-doc="${docId}"]`, { state: 'detached', timeout: 10000 });
-  record('أعمالي : suppression avec confirmation', (await api(TOKEN, 'GET', `/math-lab/documents/${docId}`)).status === 404);
+  record('Mes travaux : suppression avec confirmation', (await api(TOKEN, 'GET', `/math-lab/documents/${docId}`)).status === 404);
   created.delete(docId);
   await page.screenshot({ path: `${OUT}/05-home-after-delete.png`, fullPage: true });
 } catch (e) {
@@ -493,7 +499,7 @@ try {
 
 // ── 14. Visiteur non connecté ─────────────────────────────────────────────
 try {
-  const anon = await browser.newContext({ viewport: { width: 1280, height: 800 }, locale: 'ar-DZ' });
+  const anon = await browser.newContext({ viewport: { width: 1280, height: 800 }, locale: 'fr-FR' });
   const p = await anon.newPage();
   await p.goto(`${BASE}/espace/atelier/tableau`, { waitUntil: 'networkidle' });
   record('sécurité : visiteur → connexion', /\/login/.test(p.url()));
@@ -508,7 +514,7 @@ for (const [label, width, height, touch] of [
   ['tablette', 1024, 768, true], ['tablette-portrait', 768, 1024, true],
   ['mobile-430', 430, 932, true], ['mobile', 390, 844, true], ['mobile-360', 360, 800, true], ['mobile-bas-360x600', 360, 600, true],
 ]) {
-  const c = await authedContext({ viewport: { width, height }, locale: 'ar-DZ', hasTouch: touch, isMobile: width < 700, deviceScaleFactor: 1 });
+  const c = await authedContext({ viewport: { width, height }, locale: 'fr-FR', hasTouch: touch, isMobile: width < 700, deviceScaleFactor: 1 });
   const p = await c.newPage();
   attach(p);
   try {
@@ -517,38 +523,38 @@ for (const [label, width, height, touch] of [
     const overflowHome = await p.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     record(`${label} : accueil sans débordement horizontal`, overflowHome <= 0, `${overflowHome}px`);
     if (width < 700) {
-      record('mobile : entrée « المختبر » dans la barre d’onglets basse', await p.locator('nav.fixed.bottom-0 a[href="/espace/atelier"]').count() === 1);
+      record('mobile : entrée « L’atelier » dans la barre d’onglets basse', await p.locator('nav.fixed.bottom-0 a[href="/espace/atelier"]').count() === 1);
     }
     await p.screenshot({ path: `${OUT}/06-home-${label}.png`, fullPage: true });
 
     await openWhiteboard(p);
     const box = await canvasBox(p);
     const overflowTool = await p.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
-    record(`${label} : سبّورة sans débordement horizontal`, overflowTool <= 0, `${overflowTool}px`);
+    record(`${label} : tableau sans débordement horizontal`, overflowTool <= 0, `${overflowTool}px`);
     const fits = await p.evaluate(() => {
       const el = document.querySelector('[data-ml-tool]');
       const r = el.getBoundingClientRect();
       return { top: r.top, bottom: r.bottom, inner: window.innerHeight };
     });
-    record(`${label} : la سبّورة tient dans l’écran (sans défilement)`, fits.bottom <= fits.inner + 1 && box.height > 200, `bas ${fits.bottom.toFixed(0)} / ${fits.inner}, canevas ${box.height.toFixed(0)}px`);
+    record(`${label} : le tableau tient dans l’écran (sans défilement)`, fits.bottom <= fits.inner + 1 && box.height > 200, `bas ${fits.bottom.toFixed(0)} / ${fits.inner}, canevas ${box.height.toFixed(0)}px`);
     const saveBox = await p.locator('[data-ml-save]').boundingBox();
     const backBox = await p.locator('[data-ml-back]').boundingBox();
     record(`${label} : boutons de la coquille ≥ 44 px`, saveBox.height >= 44 && backBox.width >= 44 && backBox.height >= 44);
 
     // Le panneau des fichiers : dans l'écran à toute taille, et le premier
-    // fichier d'une سبّورة neuve la fait naître.
+    // fichier d'un tableau neuf le fait naître.
     const toggleBox = await p.locator('[data-ml-files-toggle]').boundingBox();
-    record(`${label} : « الملفات » visible, ≥ 44 px, dans l’écran`, inside(toggleBox, width, height) && toggleBox.width >= 44 && toggleBox.height >= 44);
+    record(`${label} : « Fichiers » visible, ≥ 44 px, dans l’écran`, inside(toggleBox, width, height) && toggleBox.width >= 44 && toggleBox.height >= 44);
     await openFiles(p);
     const panel = await p.locator('[data-ml-files]').boundingBox();
     const addBox = await p.locator('[data-ml-files-add]').boundingBox();
     const closeBox = await p.locator('[data-ml-files-close]').boundingBox();
-    record(`${label} : panneau, « إضافة », « إغلاق » dans l’écran`, inside(panel, width, height) && inside(addBox, width, height) && inside(closeBox, width, height) && addBox.height >= 44 && closeBox.height >= 44);
+    record(`${label} : panneau, « Ajouter des fichiers », « Fermer » dans l’écran`, inside(panel, width, height) && inside(addBox, width, height) && inside(closeBox, width, height) && addBox.height >= 44 && closeBox.height >= 44);
     const outcome = await addFiles(p, [FILE_PNG, FILE_PDF]);
     await p.waitForURL(/\/espace\/atelier\/tableau\/\d+(?:\?lab=\w+)?$/, { timeout: 15000 });
     const newId = docIdOf(p.url());
     created.add(newId);
-    record(`${label} : deux fichiers sur une سبّورة neuve → document créé, 2 / 3`, outcome === 'success' && (await filesCount(p)) === 2 && (await boardCounter(p)) === '2/3');
+    record(`${label} : deux fichiers sur un tableau neuf → document créé, 2 / 3`, outcome === 'success' && (await filesCount(p)) === 2 && (await boardCounter(p)) === '2/3');
     const msg = await p.locator('[data-ml-files-message]').boundingBox();
     const lastFile = await p.locator('[data-ml-file]').last().boundingBox();
     const panelAfter = await p.locator('[data-ml-files]').boundingBox();
@@ -559,7 +565,7 @@ for (const [label, width, height, touch] of [
     // taille d'avant l'ouverture du panneau.
     await p.waitForTimeout(500);
     const workspace = await p.locator('.sa-ml-workspace').boundingBox();
-    record(`${label} : la سبّورة reste utilisable sous le panneau`, workspace.height >= 150, `${workspace.height.toFixed(0)}px`);
+    record(`${label} : le tableau reste utilisable sous le panneau`, workspace.height >= 150, `${workspace.height.toFixed(0)}px`);
     await p.screenshot({ path: `${OUT}/10-files-${label}.png` });
     await addFiles(p, LIB_VALID);
     await p.waitForSelector('[data-ml-whiteboard] .sidebar', { timeout: 5000 });

@@ -9,7 +9,7 @@ import { STAR_COUNT, masteryStage, practiceRatios } from './learningPointProgres
  *
  *   SAVOIR-FAIRE
  *   Résoudre un problème avec la divisibilité…          ← le nom, en titre
- *   ★━━★━━☆  En progrès                            ← le CHEMIN de maîtrise
+ *   ★━━★━━☆  À consolider                           ← le CHEMIN de maîtrise
  *   1 / 10  exercices terminés   ▰▱▱   4 / 23  questions répondues ▰▱▱
  *
  * LE CHEMIN D'ÉTOILES — trois étoiles reliées, allumées selon l'état Mastery

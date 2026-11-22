@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { buildRevealSteps, latexNumber, imageName } from './practiceSteps.js';
 import { generateChallenge, CHALLENGE_KINDS } from './practice.js';
-import mathlab from '../../../../i18n/locales/ar/mathlab.json';
+import mathlab from '../../../../i18n/locales/fr/mathlab.json';
 
 function seeded(seed = 1) {
   let state = seed;

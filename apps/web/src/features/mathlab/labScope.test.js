@@ -12,7 +12,7 @@ import { mathLabToolPath, newMathLabDocument } from './mathLabDocument.js';
 import { selectWorks, activeWorkFilterCount, DEFAULT_WORK_FILTERS } from './work/workFilters.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
-const catalog = JSON.parse(readFileSync(resolve(here, '../../i18n/locales/ar/mathlab.json'), 'utf8'));
+const catalog = JSON.parse(readFileSync(resolve(here, '../../i18n/locales/fr/mathlab.json'), 'utf8'));
 const lookup = (key) => key.split('.').reduce((node, part) => node?.[part], catalog);
 
 /**

@@ -76,10 +76,10 @@ describe('App.jsx — every hidden address has its gate', () => {
     ['livres/commandes/:id', 'FeatureOutlet', 'books', ['/admin']],
     ['livres/messages', 'FeatureOutlet', 'books', ['/admin']],
     ['livres/gestionnaires', 'FeatureOutlet', 'books', ['/admin']],
-    ['tafkir', 'FeatureOutlet', 'thinkingLab', ['/espace', '/enseignant']],
-    ['tafkir/:challengeId', 'FeatureOutlet', 'thinkingLab', ['/espace', '/enseignant']],
-    ['tafkir/n/:number', 'FeatureOutlet', 'thinkingLab', ['/espace']],
-    ['bawsala', 'FeatureOutlet', 'compass', ['/espace']],
+    ['enigmes', 'FeatureOutlet', 'thinkingLab', ['/espace', '/enseignant']],
+    ['enigmes/:challengeId', 'FeatureOutlet', 'thinkingLab', ['/espace', '/enseignant']],
+    ['enigmes/n/:number', 'FeatureOutlet', 'thinkingLab', ['/espace']],
+    ['boussole', 'FeatureOutlet', 'compass', ['/espace']],
     ['defi', 'FeatureOutlet', 'dailyChallenge', ['/espace']],
     ['defi/historique', 'FeatureOutlet', 'dailyChallenge', ['/espace']],
     ['defi/:attemptId', 'FeatureOutlet', 'dailyChallenge', ['/espace']],
@@ -103,7 +103,7 @@ describe('App.jsx — every hidden address has its gate', () => {
   });
 
   it('the spaces that stay on are not gated', () => {
-    for (const path of ['jeux', 'jeux/:game', 'atelier', 'qism', 'pratique/:lessonCode', 'hissa/:lessonId', 'eleves']) {
+    for (const path of ['jeux', 'jeux/:game', 'atelier', 'classe', 'pratique/:lessonCode', 'seance/:lessonId', 'eleves']) {
       expect(placesOf(path).every((at) => gateAt(at) === null), path).toBe(true);
     }
   });

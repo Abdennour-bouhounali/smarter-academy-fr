@@ -20,7 +20,7 @@
  *     happens to have a test. `import * as ns` uses what is read from it (`ns.name`) — and EVERYTHING when `ns` is
  *     passed along, spread (`...ns`) or read with a computed key. `import('./file')`, `import.meta.glob(...)` and
  *     `export *` are followed.
- *  2. I18N KEYS of `apps/web/src/i18n/locales/ar/*.json`. A key is used when its path is written in the code, or when
+ *  2. I18N KEYS of `apps/web/src/i18n/locales/fr/*.json`. A key is used when its path is written in the code, or when
  *     the code builds a path that can reach it (`t(`status.${kind}`)` uses every key under `status.`).
  *  3. STRING TABLES (`strings.js`, `text.js`: an exported object of sentences). Every read of the table is followed
  *     from its import: `T.objective.cross` uses that entry; `T.objective` handed over whole (assigned, passed, spread
@@ -44,7 +44,7 @@ const rel = (file) => path.relative(ROOT, file);
 const ANALYSED = ['apps/web/src', 'packages/core'];
 /** Code that only CONSUMES: its imports count, its own exports are not reported. */
 const CONSUMERS = ['scripts', 'apps/web/scripts', 'apps/web/e2e'];
-const LOCALES = 'apps/web/src/i18n/locales/ar';
+const LOCALES = 'apps/web/src/i18n/locales/fr';
 /** The server may send a key that the page then translates: its quoted strings count as written. */
 const KEY_SOURCES_PHP = 'apps/api/app';
 const BASELINE = abs('scripts/check-unused.baseline.json');
@@ -63,6 +63,7 @@ const isStringTable = (file) => /(^|\/)(strings|text)\.js$/.test(file);
 // deleted Algerian lesson used stays until the first French lesson decides.
 const LESSON_ENGINE = 'lesson engine — no French lesson yet';
 const KEPT = {
+  'apps/web/src/lessons/common/components/kidFigure.js#HAIR_STYLES': LESSON_ENGINE,
   'apps/web/src/lessons/common/components/LessonIndex.jsx#default': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/divisorIsles/logic.js#DASH_WAVES': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/divisorIsles/logic.js#STATUES': LESSON_ENGINE,
@@ -96,23 +97,16 @@ const KEPT = {
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#coinsLeft': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#commonDivisors': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#differences': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#DIVISIONS_GEN': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#DIVISIONS': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#divisionTex': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#emptyCells': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#euclid': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#listAr': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#pgcdTex': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#PLANKS_ACC': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#planksFill': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#planksOf': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#roadOf': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#ROWS_ACC': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#ROWS': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#subTex': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#SUBTRACTIONS_GEN': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#SUBTRACTIONS': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/bankSitting.js#BANK_LEVELS': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/bankSitting.js#createBankSittings': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/evidence.js#counts': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/evidence.js#createEvidence': LESSON_ENGINE,
@@ -125,10 +119,7 @@ const KEPT = {
   'apps/web/src/lessons/common/gameworld/missions/lots.js#deal': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/missions/lots.js#euclid': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/missions/lots.js#fill': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/missions/words.js#counted': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/missions/words.js#CRATES': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/missions/words.js#leftOf': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/missions/words.js#ltr': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/rootCourts/logic.js#magnitude': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/rootCourts/logic.js#minus': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/rootCourts/ruleForge.js#courtPool': LESSON_ENGINE,

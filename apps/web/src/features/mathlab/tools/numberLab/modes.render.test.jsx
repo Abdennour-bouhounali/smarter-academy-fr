@@ -3,7 +3,7 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import i18next from 'i18next';
 import { I18nextProvider, initReactI18next } from 'react-i18next';
-import mathlab from '../../../../i18n/locales/ar/mathlab.json';
+import mathlab from '../../../../i18n/locales/fr/mathlab.json';
 import NumberLabTool from './NumberLabTool.jsx';
 import { createNumberLabData, setMode, patchMode, MODES } from './numberState.js';
 import MathBoard from '../../shared/mathBoard/MathBoard.jsx';
@@ -88,12 +88,12 @@ describe('le laboratoire se rend dans chaque mode', () => {
   });
 
   it('l’accord français du nombre de pas : 1 étape, 2 étapes, 11 étapes', () => {
-    expect(i18n.t('tools.numberLab.gcdLcm.differences.stepsCount', { ns: 'mathlab', count: 1 })).toBe('1 étape');
-    expect(i18n.t('tools.numberLab.gcdLcm.differences.stepsCount', { ns: 'mathlab', count: 2 })).toBe('2 étapes');
-    expect(i18n.t('tools.numberLab.gcdLcm.differences.stepsCount', { ns: 'mathlab', count: 5 })).toBe('5 étapes');
-    expect(i18n.t('tools.numberLab.gcdLcm.differences.stepsCount', { ns: 'mathlab', count: 11 })).toBe('11 étapes');
-    expect(i18n.t('tools.numberLab.gcdLcm.differences.divisionsCount', { ns: 'mathlab', count: 3 })).toBe('3 divisions');
-    expect(i18n.t('tools.numberLab.gcdLcm.squareCount', { ns: 'mathlab', count: 1, side: 36 })).toBe('1 carré de côté 36');
+    expect(i18n.t('tools.numberLab.gcdLcm.differences.stepsCount', { ns: 'mathlab', count: 1 })).toBe('1\u00a0étape');
+    expect(i18n.t('tools.numberLab.gcdLcm.differences.stepsCount', { ns: 'mathlab', count: 2 })).toBe('2\u00a0étapes');
+    expect(i18n.t('tools.numberLab.gcdLcm.differences.stepsCount', { ns: 'mathlab', count: 5 })).toBe('5\u00a0étapes');
+    expect(i18n.t('tools.numberLab.gcdLcm.differences.stepsCount', { ns: 'mathlab', count: 11 })).toBe('11\u00a0étapes');
+    expect(i18n.t('tools.numberLab.gcdLcm.differences.divisionsCount', { ns: 'mathlab', count: 3 })).toBe('3\u00a0divisions');
+    expect(i18n.t('tools.numberLab.gcdLcm.squareCount', { ns: 'mathlab', count: 1, side: 36 })).toBe('1\u00a0carré de côté 36');
   });
 
   it('un document V1 en euclid garde les carrés d’Euclide', () => {

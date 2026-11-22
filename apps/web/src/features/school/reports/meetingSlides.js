@@ -10,7 +10,7 @@
 
 /**
  * Une leçon mérite une diapositive si au moins un élève y a un état
- * (maîtrisé, à consolider ou lacune) : l'année entière, encore vierge, ferait
+ * (maîtrisé, à consolider ou en difficulté) : l'année entière, encore vierge, ferait
  * soixante-dix diapositives vides. Le rapport imprimé, lui, reste complet.
  */
 function hasEvidence(lesson) {

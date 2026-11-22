@@ -1,13 +1,13 @@
 /**
- * QA navigateur — le مختبر المقاطع المخروطية (laboratoire des coniques et de
- * la géométrie analytique).
+ * QA navigateur — l'outil « Coniques » de l'atelier (coniques et
+ * géométrie analytique).
  *
  * Lancement (dev server sur 5173, API sur 8000, élève QA existant) :
  *   node apps/web/e2e/mathlab-conics.mjs [dossier-captures]
  *
  * Ce qu'on vérifie (§55) :
  *   - navigation : la carte sur l'accueil, l'URL directe, le rechargement ;
- *   - la première visite : un CERCLE — le programme de 4AM — et aucun
+ *   - la première visite : un CERCLE — le programme du collège — et aucun
  *     document créé tant qu'on n'a rien touché ;
  *   - §6, §7 : GLISSER le centre met à jour l'équation EN DIRECT ;
  *   - §7 : écrire une équation déplace la courbe (les DEUX sens) ;
@@ -21,10 +21,11 @@
  *   - §21 : le tableau comparatif porte les VRAIES valeurs ;
  *   - §22 : translater la conique change h et k ;
  *   - §36, §40 : prédire → vérifier, et les indices ;
- *   - §45 : تراجع / إعادة défont un GESTE entier ;
+ *   - §45 : « Annuler » / « Rétablir » défont un GESTE entier ;
  *   - §52 : aucun bruit de virgule flottante à l'écran ;
  *   - §46 : la sauvegarde et la RÉOUVERTURE du document ;
- *   - RTL : panneau au bon bord, notation LTR (direction CALCULÉE) ;
+ *   - gauche à droite : page française sans dir="rtl", panneau au bon bord,
+ *     notation LTR (direction CALCULÉE) ;
  *   - responsive : tablette et mobile, pas de débordement horizontal,
  *     cibles tactiles ≥ 44 px ;
  *   - accessibilité : focus visible, poignée focalisable et nommée, flèches.
@@ -36,7 +37,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const OUT = process.argv[2] || '/tmp/mathlab-conics-shots';
 mkdirSync(OUT, { recursive: true });
@@ -81,7 +82,7 @@ async function loginUI(page) {
 
 /** Un contexte connecté : on se connecte UNE fois (l'API limite à 6/min). */
 async function authedContext(options = {}) {
-  const context = await browser.newContext({ locale: 'ar-DZ', ...options });
+  const context = await browser.newContext({ locale: 'fr-FR', ...options });
   if (!authState) {
     const page = await context.newPage();
     wire(page);
@@ -93,7 +94,7 @@ async function authedContext(options = {}) {
   }
   await context.close();
 
-  return browser.newContext({ locale: 'ar-DZ', storageState: authState, ...options });
+  return browser.newContext({ locale: 'fr-FR', storageState: authState, ...options });
 }
 
 function wire(page) {
@@ -156,7 +157,7 @@ async function selectKind(page, kind) {
 
   // Le programme d'abord : on ouvre sur un CERCLE.
   const openKind = await page.locator('[data-ml-cn-curve]').first().getAttribute('data-ml-cn-kind');
-  record('première visite : l’instrument ouvre sur une DAIRA (le programme de 4AM)', openKind === 'circle', openKind ?? '—');
+  record('première visite : l’instrument ouvre sur un CERCLE (le programme du collège)', openKind === 'circle', openKind ?? '—');
 
   await page.click('[data-ml-cn-tab="inspector"]');
   await page.waitForTimeout(300);
@@ -210,8 +211,8 @@ async function selectKind(page, kind) {
    * §2 — L'ÉQUATION EN DIRECT, sur l'onglet de manipulation.
    *
    * C'est la moitié de la synchronisation à double sens qui ne se voyait
-   * pas : on manipule dans « التحكّم », or le champ d'équation vit dans
-   * « القياسات ». Un bandeau en lecture seule montre donc l'équation au-dessus
+   * pas : on manipule dans « Réglages », or le champ d'équation vit dans
+   * l'onglet de l'équation. Un bandeau en lecture seule montre donc l'équation au-dessus
    * des curseurs, et il doit suivre le doigt PENDANT le glissement — pas
    * seulement à son relâchement.
    */
@@ -240,15 +241,15 @@ async function selectKind(page, kind) {
   record('§7 : l’équation porte le décalage (x − 3)', /x\s*−\s*3/.test(after), after);
   await shot(page, '03-drag-center');
 
-  // §45 — un glissement entier se défait d'UN تراجع.
+  // §45 — un glissement entier se défait d'UN « Annuler ».
   await page.click('[data-ml-cn-undo]');
   await page.waitForTimeout(400);
   const undone = await readEquation();
-  record('§45 : تراجع défait le GESTE entier, pas un pixel', undone === before, `${undone}`);
+  record('§45 : « Annuler » défait le GESTE entier, pas un pixel', undone === before, `${undone}`);
 
   await page.click('[data-ml-cn-redo]');
   await page.waitForTimeout(400);
-  record('§45 : إعادة le rétablit', (await readEquation()) === after);
+  record('§45 : « Rétablir » le rétablit', (await readEquation()) === after);
 
   await context.close();
 }
@@ -293,7 +294,7 @@ async function selectKind(page, kind) {
   const errorCode = await page.locator('[data-ml-cn-eqerror]').first().getAttribute('data-ml-cn-eqerror');
   const errorText = await textOf(page, '[data-ml-cn-eqerror]');
   record('§51 : « x² + y² = −4 » explique qu’aucun point ne convient', errorCode === 'emptySet', errorCode ?? '—');
-  record('§51 : le message est en ARABE, pas « erreur »', /[؀-ۿ]/.test(errorText), errorText.slice(0, 60));
+  record('§51 : le message est une phrase française, pas « erreur »', errorText.includes('Aucun point ne vérifie cette équation.'), errorText.slice(0, 60));
 
   await page.fill('[data-ml-cn-equation]', 'x^2 + xy + y^2 = 1');
   await page.click('[data-ml-cn-eqapply]');
@@ -468,7 +469,7 @@ async function selectKind(page, kind) {
   // §20 — la bascule les éteint et les rallume.
   await page.uncheck('[data-ml-cn-layer="showAsymptotes"]');
   await page.waitForTimeout(350);
-  record('§20 : « المقاربان » peut être éteint', (await page.locator('[data-ml-cn-asymptote]').count()) === 0);
+  record('§20 : « Asymptotes » peut être éteint', (await page.locator('[data-ml-cn-asymptote]').count()) === 0);
   await page.check('[data-ml-cn-layer="showAsymptotes"]');
   await page.waitForTimeout(350);
   record('§20 : et rallumé', (await page.locator('[data-ml-cn-asymptote]').count()) === 2);
@@ -528,7 +529,7 @@ async function selectKind(page, kind) {
    */
   await page.locator('[data-ml-cn-object]').last().click();
   await page.waitForTimeout(350);
-  record('§26 : la droite a ses propres vوسائط', await page.locator('[data-ml-cn-param="slope"]').isVisible());
+  record('§26 : la droite a ses propres paramètres', await page.locator('[data-ml-cn-param="slope"]').isVisible());
 
   const lineEq = async () => (await textOf(page, '[data-ml-cn-liveequation]')).trim();
   await page.fill('[data-ml-cn-input="slope"]', '2');
@@ -601,7 +602,7 @@ async function selectKind(page, kind) {
   await page.click('[data-ml-cn-tab="inspector"]');
   await page.waitForTimeout(250);
   const afterEq = await page.inputValue('[data-ml-cn-equation]');
-  record('§22 : l’انسحاب change l’équation (h et k seuls)', beforeEq !== afterEq, `${beforeEq} → ${afterEq}`);
+  record('§22 : la translation change l’équation (h et k seuls)', beforeEq !== afterEq, `${beforeEq} → ${afterEq}`);
 
   await context.close();
 }
@@ -700,11 +701,11 @@ const created = new Set();
     record('§46 : la RÉOUVERTURE retrouve la conique', /16/.test(equation) && /4/.test(equation), equation);
     await shot(reopened, '16-reopened');
 
-    // La vignette de « أعمالي » se dessine sans monter l'instrument.
+    // La vignette de « Mes travaux » se dessine sans monter l'instrument.
     await reopened.goto(`${BASE}/espace/atelier`, { waitUntil: 'networkidle' });
     await reopened.waitForTimeout(900);
     const preview = await reopened.locator('.sa-mlw-preview__svg path').count();
-    record('§5i : la carte de « أعمالي » dessine un aperçu réel', preview > 0, `${preview} tracés`);
+    record('§5i : la carte de « Mes travaux » dessine un aperçu réel', preview > 0, `${preview} tracés`);
     await shot(reopened, '17-my-work');
     await reopened.close();
   }
@@ -713,7 +714,7 @@ const created = new Set();
 }
 
 // ════════════════════════════════════════════════════════════════════════
-// 12. RTL, responsive, accessibilité
+// 12. Gauche à droite, responsive, accessibilité
 // ════════════════════════════════════════════════════════════════════════
 {
   const context = await authedContext();
@@ -721,9 +722,11 @@ const created = new Set();
   wire(page);
   await openTool(page);
 
-  // RTL — la page est en arabe, le plan reste LTR (c'est des mathématiques).
+  // La page est en français, de gauche à droite ; le plan est LTR (c'est des mathématiques).
   const htmlDir = await page.getAttribute('html', 'dir');
-  record('RTL : la page est en direction RTL', htmlDir === 'rtl', htmlDir ?? '—');
+  const htmlLang = await page.getAttribute('html', 'lang');
+  const pageDirection = await page.evaluate(() => getComputedStyle(document.documentElement).direction);
+  record('LTR : la page est en français, sans dir="rtl"', htmlLang === 'fr' && htmlDir !== 'rtl' && pageDirection === 'ltr' && await page.locator('[dir="rtl"]').count() === 0, `lang=${htmlLang} dir=${htmlDir ?? '—'}`);
   const planeDir = await page.locator('[data-ml-cn-plane]').first().evaluate((el) => getComputedStyle(el).direction);
   record('§48 : le PLAN reste LTR — la notation est mathématique', planeDir === 'ltr', planeDir);
   await page.click('[data-ml-cn-tab="inspector"]');
@@ -732,14 +735,14 @@ const created = new Set();
   record('§48 : l’équation reste LTR', eqDir === 'ltr', eqDir);
 
   /**
-   * Le panneau est du bon côté en RTL — mesuré DANS le conteneur de
+   * Le panneau est du bon côté — mesuré DANS le conteneur de
    * l'instrument, pas dans la fenêtre.
    *
-   * La fenêtre entière contient aussi la navigation du site, elle-même à
-   * droite en arabe ; comparer le panneau à `window.innerWidth` le
-   * déclarait « à gauche » alors qu'il est bien au bord de départ de la
-   * zone de l'outil, contre le plan. C'est le conteneur `.sa-ml-cn` qui
-   * fait foi.
+   * La fenêtre entière contient aussi la navigation du site ; comparer le
+   * panneau à `window.innerWidth` trompe. C'est le conteneur `.sa-ml-cn` qui
+   * fait foi. Le plan vient d'abord dans le DOM (`flex-direction: row`) :
+   * de gauche à droite, le plan est à gauche et le panneau à sa droite —
+   * l'exact miroir de l'ancienne disposition RTL.
    */
   const placement = await page.locator('[data-ml-conics]').evaluate((root) => {
     const host = root.getBoundingClientRect();
@@ -752,26 +755,27 @@ const created = new Set();
       hostWidth: Math.round(host.width),
     };
   });
-  record('RTL : le panneau est au bord de DÉPART de l’instrument (à droite du plan en arabe)',
-    placement.panelStart < placement.planeStart,
+  record('LTR : le panneau est à droite du plan, dans l’instrument',
+    placement.panelStart > placement.planeStart,
     `panneau@${placement.panelStart} plan@${placement.planeStart} sur ${placement.hostWidth}px`);
 
-  // Aucune chaîne latine accidentelle dans les libellés du panneau (§48).
+  // Aucun mot anglais accidentel dans les libellés du panneau (§48).
   const strayEnglish = await page.locator('[data-ml-cn-panel]').evaluate((el) => {
     const text = el.innerText;
-    // Les symboles mathématiques (x, y, h, k, a, b, r, e, P, F, C, V, d) sont
-    // légitimes ; on cherche des MOTS anglais de 4 lettres ou plus.
-    const words = text.match(/\b[A-Za-z]{4,}\b/g) ?? [];
+    // L'interface est française : les mots latins sont légitimes. On cherche
+    // des MOTS anglais d'interface oubliés et des clés i18n brutes.
+    const english = text.match(/\b(?:the|with|show|hide|reset|undo|redo|center|radius|error|loading|untitled|value|true|false|undefined)\b/gi) ?? [];
+    const rawKeys = text.match(/\btools\.[a-zA-Z]+\.[a-zA-Z.]+/g) ?? [];
 
-    return words.filter((w) => !['true', 'false'].includes(w.toLowerCase()));
+    return [...english, ...rawKeys];
   });
   record('§48 : aucun mot anglais oublié dans l’interface', strayEnglish.length === 0, strayEnglish.join(', ') || 'aucun');
-  await shot(page, '18-rtl');
+  await shot(page, '18-ltr');
 
   // Accessibilité — la poignée est focalisable et NOMMÉE.
   const handle = page.locator('[data-ml-handle="center"]').first();
   const ariaLabel = await handle.getAttribute('aria-label');
-  record('§49 : la poignée du centre porte un nom accessible', Boolean(ariaLabel) && /[؀-ۿ]/.test(ariaLabel),
+  record('§49 : la poignée du centre porte un nom accessible', Boolean(ariaLabel) && ariaLabel.startsWith('Centre') && !/[\u0600-\u06FF]/.test(ariaLabel),
     ariaLabel ?? '—');
   const tabIndex = await handle.getAttribute('tabindex');
   record('§49 : la poignée est focalisable au clavier', tabIndex === '0');
@@ -836,7 +840,7 @@ for (const [name, viewport] of [['tablette', { width: 834, height: 1112 }], ['mo
 {
   const listed = await api(TOKEN, 'GET', '/math-lab/documents?tool=conics');
   for (const document of (listed.data.documents ?? listed.data.data ?? [])) {
-    if (created.has(String(document.id)) || /مقاطع|بدون عنوان/.test(document.title ?? '')) {
+    if (created.has(String(document.id)) || /Coniques|Sans titre/.test(document.title ?? '')) {
       await api(TOKEN, 'DELETE', `/math-lab/documents/${document.id}`);
     }
   }

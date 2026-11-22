@@ -14,7 +14,7 @@ export const PHONE_LESSONS = lessonsWithPack('phone');
 /** The teacher's tools of a lesson that a phone may open (owner, 2026-11-16): the memo and the lesson file — to read and to note. */
 /** …of a lesson whose TEACHER side exists (`board` in its pack): a lesson may open its world on a phone before its board is written. */
 const TEACHER_PHONE_LESSONS = PHONE_LESSONS.filter((id) => lessonsWithPack('board').includes(id));
-const TEACHER_PHONE_TOOLS = [/^\/enseignant\/cours\/([^/]+)\/memoire\/?$/, /^\/enseignant\/milaff\/([^/]+)\/?$/];
+const TEACHER_PHONE_TOOLS = [/^\/enseignant\/cours\/([^/]+)\/memoire\/?$/, /^\/enseignant\/dossier\/([^/]+)\/?$/];
 
 /** Is this address a page of a phone-ready lesson that was designed for a phone? */
 export function isPhoneLessonPath(pathname) {

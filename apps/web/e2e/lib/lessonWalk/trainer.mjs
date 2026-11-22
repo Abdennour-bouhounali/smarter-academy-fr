@@ -1,14 +1,14 @@
-// « خريطة المعارف » and « تدرّب » of a lesson, as a STUDENT holding every key (lessons 5–6's trainer walks, made data):
+// « La carte des connaissances » and « Entraîne-toi » of a lesson, as a STUDENT holding every key (lessons 5–6's trainer walks, made data):
 // the map's cards laid out; a common mistake read as a card (the wrong sentence first, the rest uncovered by him); a key's
 // memo sheet; then one card per plan of `world/trainer.js` (or the descriptor's `train`) trained — six questions each, so
 // every kind of question is played through its screen. In each session: a wrong then a right answer (the hint) at
 // questions 1 and 3, two wrong answers at question 5 (the written correction), the others right at the first try.
 // Answers are computed by the descriptor: `gate[type](wave, n)` for a tap, `solve[kind](q)` for a form, `statement(text)`
-// for « صحيح أم خطأ؟ » (without it the walk TRIES: true, then false after the hint) and its reason by `reasonTrue` here.
+// for « Vrai ou faux ? » (without it the walk TRIES: true, then false after the hint) and its reason by `reasonTrue` here.
 // EVIDENCE (A6): every exam-format first try the lesson owes (`trainer.evidenceOf`) is posted, and the kit's verifier
 // (the server's rule) finds its claim TRUE exactly when the walk's own answer was right — a half-right answer is false.
 import { createWalk } from '../walk.mjs';
-import { mapLaidOut } from './checks.mjs';
+import { mapLaidOut, WRONG_WORD } from './checks.mjs';
 import { gcd } from './experiments.mjs';
 
 const plain = (text) =>
@@ -20,15 +20,16 @@ const plain = (text) =>
     .replace(/[⁦⁩]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
-/** Is a reason TRUE? Every equality « x = y × z (+ r) », « x − y = z », every « d (لا) يقسم n », every PGCD it writes. */
+/** Is a reason TRUE? Every equality « x = y × z (+ r) », « x − y = z », every « d divise n » / « d ne divise pas n », every
+ * PGCD it writes (white space, the no-break ones included, read as one space). */
 export function reasonTrue(text) {
   const t = plain(text);
   for (const m of t.matchAll(/(\d+) = (\d+) × (\d+)(?: \+ (\d+))?/g))
     if (Number(m[1]) !== Number(m[2]) * Number(m[3]) + Number(m[4] ?? 0)) return false;
   for (const m of t.matchAll(/(\d+) [-−] (\d+) = (\d+)/g))
     if (Number(m[1]) - Number(m[2]) !== Number(m[3])) return false;
-  for (const m of t.matchAll(/(\d+) (لا )?يقسم (\d+)/g))
-    if ((Number(m[3]) % Number(m[1]) === 0) === Boolean(m[2])) return false;
+  for (const m of t.matchAll(/(\d+) (ne divise pas|divise) (\d+)/g))
+    if ((Number(m[3]) % Number(m[1]) === 0) === (m[2] !== 'divise')) return false;
   for (const m of t.matchAll(/PGCD\((\d+) ; (\d+)\) = (\d+)(?![\d(])/g))
     if (gcd(Number(m[1]), Number(m[2])) !== Number(m[3])) return false;
   return true;
@@ -64,7 +65,7 @@ export async function trainerWalk(L, D, opts) {
     const practice = Object.fromEntries(KEYS.map((k) => [`${k}:1`, { stars: 2, best: 800 }]));
     const save = {
       v: 1,
-      // the islands' road counts its segments; « قصر الساحات » its terraces (the save's last place)
+      // the islands' road counts its segments; « Le palais des dalles » its terraces (the save's last place)
       stage: L.lesson.story.segments ? L.lesson.story.segments.length : L.lesson.story.terraces.length - 1,
       stars: {},
       gems: [],
@@ -90,7 +91,7 @@ export async function trainerWalk(L, D, opts) {
     expect(
       (await page.locator('[data-di-knode]').count()) === CARDS.length &&
         (await page.locator('[data-di-knode][data-open="true"]').count()) === CARDS.length,
-      `« خريطة المعارف »: the ${CARDS.length} cards of the lesson, all open with every key`,
+      `« La carte des connaissances »: the ${CARDS.length} cards of the lesson, all open with every key`,
     );
     await mapLaidOut(w, page, 'the knowledge map');
     await shot(page, 'know-full', OUT);
@@ -140,7 +141,7 @@ export async function trainerWalk(L, D, opts) {
       break;
     }
 
-    // ══ « تدرّب » ══
+    // ══ « Entraîne-toi » ══
     const tr = () =>
       page.evaluate(() => ({
         q: window.__trainer?.q,
@@ -154,7 +155,7 @@ export async function trainerWalk(L, D, opts) {
       expect(judge, `the descriptor judges the waves « ${x.type} » (gate.${x.type})`);
       return Boolean(judge(x, n));
     };
-    /** The right answer of a question, from its numbers (null for « صحيح أم خطأ؟ » without `statement`: tried). */
+    /** The right answer of a question, from its numbers (null for « Vrai ou faux ? » without `statement`: tried). */
     const solve = (q) => {
       if (q.kind === 'tap') {
         const ok = q.options.filter((n) => gate(q.wave, n));
@@ -238,7 +239,7 @@ export async function trainerWalk(L, D, opts) {
       await page.waitForTimeout(200);
       await page.click('[data-di-know-train]');
       await page.waitForSelector('[data-di-trainer]');
-      if (ci === 0) await mapLaidOut(w, page, `the knowledge map beside « تدرّب » (${card})`);
+      if (ci === 0) await mapLaidOut(w, page, `the knowledge map beside « Entraîne-toi » (${card})`);
       const want = kindsOf(card);
       const kinds = new Set();
       const formats = [];
@@ -306,7 +307,7 @@ export async function trainerWalk(L, D, opts) {
             r.fb === 'hint',
             `${card} · question ${i + 1} (${q.kind}): a wrong answer gets a HINT first, never « wrong » (« ${r.fbText.trim().slice(0, 70)} »)`,
           );
-          check(!/خطأ|خاطئ/.test(r.fbText), `${card} · question ${i + 1}: the hint never says « wrong »`);
+          check(!WRONG_WORD.test(r.fbText), `${card} · question ${i + 1}: the hint never says « wrong »`);
           if (i < 3) await shot(page, `${card}-q${i + 1}-hint`, DRAWN);
           if (plan === 'wrong-right') {
             await reply(q, v);
@@ -364,7 +365,7 @@ export async function trainerWalk(L, D, opts) {
     await page.waitForSelector('[data-di-start]');
     expect(
       (await page.evaluate(() => window.__world.getState().phase)) === 'title',
-      '« خريطة المعارف » closes back to the title screen',
+      '« La carte des connaissances » closes back to the title screen',
     );
   });
   return w;

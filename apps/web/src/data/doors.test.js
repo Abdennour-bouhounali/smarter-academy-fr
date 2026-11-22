@@ -24,28 +24,28 @@ describe('the four doors', () => {
   it('lights the student door of an address', () => {
     const door = (pathname) => activeDoorId(studentDoors, pathname);
     expect(door('/espace')).toBe('today');
-    expect(door('/espace/bawsala')).toBe('today');
+    expect(door('/espace/boussole')).toBe('today');
     expect(door('/espace/cours')).toBe('lessons');
     expect(door('/courses/moyen/4am/x/qasim-adad-tabii')).toBe('lessons');
     expect(door('/espace/pratique/qasim-adad-tabii')).toBe('train');
     expect(door('/espace/atelier/whiteboard/12')).toBe('train');
     expect(door('/espace/cahier/7')).toBe('me');
-    expect(door('/espace/profil/wali')).toBe('me');
+    expect(door('/espace/profil/parent')).toBe('me');
   });
 
   it('lights the teacher door of an address; the account pages light none', () => {
     const door = (pathname) => activeDoorId(teacherDoors, pathname, teacherAccountLinks);
     expect(door('/enseignant')).toBe('today');
     expect(door('/enseignant/classes/3')).toBe('classes');
-    expect(door('/enseignant/tashih')).toBe('classes');
+    expect(door('/enseignant/corrections')).toBe('classes');
     expect(door('/enseignant/atelier')).toBe('tools');
-    expect(door('/enseignant/hissa/qasim-adad-tabii')).toBe('lessons');
-    expect(door('/enseignant/milaff/qasim-adad-tabii')).toBe('lessons');
+    expect(door('/enseignant/seance/qasim-adad-tabii')).toBe('lessons');
+    expect(door('/enseignant/dossier/qasim-adad-tabii')).toBe('lessons');
     expect(door('/enseignant/offre')).toBeNull();
   });
 
   it('shows the line of pages only on a door’s own pages', () => {
-    expect(doorPagesFor(studentDoors, '/espace/defi').map((page) => page.path)).toContain('/espace/tafkir');
+    expect(doorPagesFor(studentDoors, '/espace/defi').map((page) => page.path)).toContain('/espace/enigmes');
     expect(doorPagesFor(studentDoors, '/espace')).toEqual([]);
     expect(doorPagesFor(studentDoors, '/espace/atelier/whiteboard')).toEqual([]);
     expect(doorPagesFor(teacherDoors, '/enseignant/cours')).toEqual([]);

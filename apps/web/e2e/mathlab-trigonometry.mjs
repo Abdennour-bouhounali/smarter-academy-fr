@@ -1,20 +1,20 @@
 /**
- * QA navigateur — le مختبر المثلثات (laboratoire de trigonométrie).
+ * QA navigateur — l'outil « Trigonométrie » de l'atelier.
  *
  * Lancement (dev server sur 5173, API sur 8000, élève QA existant) :
  *   node apps/web/e2e/mathlab-trigonometry.mjs [dossier-captures]
  *
  * Ce qu'on vérifie (§50) :
- *   - navigation : la carte sur l'accueil (plus « قريبًا »), l'URL directe,
+ *   - navigation : la carte sur l'accueil (plus « Bientôt »), l'URL directe,
  *     le rechargement, le visiteur non connecté ;
- *   - la première visite : le TRIANGLE du programme de 4AM, pas le cercle,
+ *   - la première visite : le TRIANGLE du programme du collège, pas le cercle,
  *     et aucun document créé tant qu'on n'a rien touché ;
  *   - le triangle (§9, §10) : glissement du sommet, les trois rapports lus
  *     sur les côtés, SOH-CAH-TOA qui ALLUME les bons segments ;
  *   - le cercle (§3) : glissement du point, l'angle, les coordonnées, les
  *     projections, tout synchronisé ;
  *   - les valeurs exactes (§19) : √3/2 et non 0,8660254037844386 ;
- *   - la tangente (§11) : « غير معرّف » à 90°, JAMAIS un nombre géant ;
+ *   - la tangente (§11) : « non définie » à 90°, JAMAIS un nombre géant ;
  *   - les graphes (§12, §32) : le marqueur suit le cercle, et GLISSER le
  *     graphe change l'angle — la relation dans les deux sens ;
  *   - la périodicité (§14, §15) : 450° affiche son équivalent 90° ;
@@ -23,7 +23,8 @@
  *   - l'identité (§22) : la somme vaut 1, exactement, à tout angle ;
  *   - l'entraînement (§25) : prédire → révéler, et JAMAIS de blocage ;
  *   - l'animation (§4) et le mouvement réduit (§38) ;
- *   - RTL : panneau au bon bord, notation LTR (direction CALCULÉE) ;
+ *   - gauche à droite : page française sans dir="rtl", panneau au bon bord,
+ *     notation LTR (direction CALCULÉE) ;
  *   - responsive : tablette et mobile, pas de débordement horizontal,
  *     cibles tactiles ≥ 44 px, glissement au DOIGT sans défilement ;
  *   - accessibilité : focus visible, poignée focalisable et nommée.
@@ -35,7 +36,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const OUT = process.argv[2] || '/tmp/mathlab-trigonometry-shots';
 mkdirSync(OUT, { recursive: true });
@@ -140,15 +141,15 @@ attach(page);
 await page.goto(`${BASE}/espace/atelier?lab=secondaire`, { waitUntil: 'networkidle' });
 await sleep(500);
 const card = page.locator('a[href*="/atelier/trigonometrie?lab=secondaire"]').first();
-record('accueil : la carte du مختبر المثلثات est ouvrable', await card.count() > 0);
-// La description de مخبر الثانوي NOMME la دائرة المثلثية (c'est son contenu) :
-// ce qu'on cherche est une PUCE « قريبًا », donc dans la liste des annoncés.
-const plannedChips = await page.locator('[data-ml-planned]').filter({ hasText: 'الدائرة المثلثية' }).count();
-record('accueil : plus de puce « قريبًا » pour la trigonométrie', plannedChips === 0,
+record('accueil : la carte de la trigonométrie est ouvrable', await card.count() > 0);
+// La description de l'atelier du lycée NOMME le cercle trigonométrique (c'est son
+// contenu) : ce qu'on cherche est une PUCE « Bientôt », donc dans la liste des annoncés.
+const plannedChips = await page.locator('[data-ml-planned]').filter({ hasText: /cercle trigonométrique|Trigonométrie/i }).count();
+record('accueil : plus de puce « Bientôt » pour la trigonométrie', plannedChips === 0,
   plannedChips ? `${plannedChips} occurrence(s) de l’ancien nom` : '');
 await page.screenshot({ path: `${OUT}/00-accueil.png` });
 
-// ── La première visite : le TRIANGLE (§9, programme 4AM) ──────────────────
+// ── La première visite : le TRIANGLE (§9, programme du collège) ──────────────────
 await page.goto(`${BASE}/espace/atelier/trigonometrie?lab=secondaire`, { waitUntil: 'networkidle' });
 await page.waitForSelector('[data-ml-trigonometry]', { timeout: 20000 });
 await sleep(900);
@@ -158,7 +159,7 @@ record('ouverture : l’instrument ouvre sur le TRIANGLE du programme',
   await page.locator('[data-ml-trig-tri]').count() === 1);
 record('ouverture : le sommet est saisissable',
   await page.locator('[data-ml-trig-trihandle]').count() === 1);
-record('ouverture : l’invitation « حرّك النقطة » est visible (§46)',
+record('ouverture : l’invitation « Fais glisser le point » est visible (§46)',
   await page.locator('[data-ml-trig-invite]').isVisible());
 record('ouverture : aucun document n’est créé avant la première touche',
   docIdOf(page.url()) === null, page.url());
@@ -244,7 +245,7 @@ await page.screenshot({ path: `${OUT}/05-drag.png` });
 // ── La tangente indéfinie (§11, §23) — LE cas à ne pas rater ──────────────
 await setAngle(page, 90);
 const tan90 = await valueOf(page, 'tan');
-record('tan(90°) affiche « غير معرّف », jamais un nombre (§11)', tan90 === 'غير معرّف', tan90);
+record('tan(90°) affiche « non définie », jamais un nombre (§11)', tan90 === 'non définie', tan90);
 record('tan(90°) : la note explique la division par zéro (§23)',
   await page.locator('[data-ml-trig-tannote]').count() === 1);
 record('tan(90°) : aucune valeur astronomique nulle part sur l’écran',
@@ -400,7 +401,7 @@ await page.screenshot({ path: `${OUT}/15-animation.png` });
 await openSection(page, 'presets');
 await page.locator('[data-ml-trig-preset="unitCircle"]').click();
 await sleep(500);
-record('préréglages : « الدائرة المثلثية » configure l’espace (§27)',
+record('préréglages : « Cercle trigonométrique » configure l’espace (§27)',
   await page.locator('[data-ml-trig-circle]').count() === 1);
 await openSection(page, 'experiments');
 await page.locator('[data-ml-trig-experiment="tanNear90"]').click();
@@ -422,8 +423,8 @@ await sleep(600);
 record('entraînement : une question est posée (§25)',
   await page.locator('[data-ml-trig-question]').count() === 1);
 const question = await page.locator('[data-ml-trig-question]').innerText();
-record('entraînement : la question est en ARABE, pas en anglais (§36)',
-  /[؀-ۿ]/.test(question) && !/\b(what|predict|find|which)\b/i.test(question),
+record('entraînement : la question est en FRANÇAIS, pas en anglais (§36)',
+  /[A-Za-zÀ-ÿ]{3}/.test(question) && !/[\u0600-\u06FF]/.test(question) && !/\b(what|predict|find|which)\b/i.test(question),
   question.slice(0, 70));
 
 // Une réponse volontairement fausse : le verdict tombe mais rien ne se ferme.
@@ -436,7 +437,7 @@ if (await answerField.count() > 0) {
     await page.locator('[data-ml-trig-verdict="incorrect"]').count() === 1);
   record('entraînement : après une erreur, le champ reste MODIFIABLE (§25)',
     await answerField.isEditable());
-  record('entraînement : après une erreur, « اكشف » reste disponible (§25)',
+  record('entraînement : après une erreur, « Voir la réponse » reste disponible (§25)',
     await page.locator('[data-ml-trig-reveal]').isEnabled());
   await answerField.fill('');
 }
@@ -446,12 +447,12 @@ record('entraînement : un indice s’affiche à la demande (§25)',
   await page.locator('[data-ml-trig-hint]').count() === 1);
 await page.locator('[data-ml-trig-reveal]').click();
 await sleep(600);
-record('entraînement : « اكشف » montre la réponse ET son explication (§25)',
+record('entraînement : « Voir la réponse » montre la réponse ET son explication (§25)',
   await page.locator('[data-ml-trig-explain]').count() === 1);
 await page.screenshot({ path: `${OUT}/17-entrainement.png` });
 await page.locator('[data-ml-trig-next]').click();
 await sleep(500);
-record('entraînement : « سؤال آخر » pose une nouvelle question',
+record('entraînement : « Autre question » pose une nouvelle question',
   await page.locator('[data-ml-trig-question]').count() === 1);
 await page.locator('[data-ml-trig-practice-close]').click();
 await sleep(300);
@@ -484,25 +485,31 @@ if (stored?.data?.data) {
     raw.length < 2000, `${raw.length} octets`);
 }
 
-// ── RTL et notation (§36) ─────────────────────────────────────────────────
+// ── LTR et notation (§36) ─────────────────────────────────────────────────
 const dir = await page.evaluate(() => document.documentElement.dir);
-record('RTL : la page est bien en rtl', dir === 'rtl', dir);
+const lang = await page.evaluate(() => document.documentElement.lang);
+const pageDirection = await page.evaluate(() => getComputedStyle(document.documentElement).direction);
+record('LTR : la page est en français, de gauche à droite', lang === 'fr' && dir !== 'rtl' && pageDirection === 'ltr', `lang=${lang} dir=${dir} direction=${pageDirection}`);
 const stageDir = await page.locator('[data-ml-trig-stage]').evaluate((el) => getComputedStyle(el).direction);
-record('RTL : le dessin est CALCULÉ en ltr — c’est des mathématiques (§36)', stageDir === 'ltr', stageDir);
+record('LTR : le dessin est CALCULÉ en ltr — c’est des mathématiques (§36)', stageDir === 'ltr', stageDir);
 const pointDir = await page.locator('[data-ml-trig-point]').evaluate((el) => getComputedStyle(el).direction);
-record('RTL : la notation (1/2 ; √3/2) est calculée en ltr (§36)', pointDir === 'ltr', pointDir);
+record('LTR : la notation (1/2 ; √3/2) est calculée en ltr (§36)', pointDir === 'ltr', pointDir);
 const panelBox = await page.locator('[data-ml-panel]').boundingBox();
-record('RTL : le panneau est sur le bord de DÉPART (à gauche en rtl)',
-  panelBox && panelBox.x < 680, panelBox ? `x=${Math.round(panelBox.x)}` : '');
+// Le dessin vient d'abord dans le DOM (`flex-direction: row`) : de gauche à
+// droite, le panneau est à droite — l'exact miroir de l'ancienne disposition RTL.
+record('LTR : le panneau est à droite (miroir de l’ancienne disposition)',
+  panelBox && panelBox.x + panelBox.width > 1360 - 680, panelBox ? `x=${Math.round(panelBox.x)}` : '');
 
 // Aucune chaîne anglaise oubliée dans l'interface (§36).
 const panelText = await page.locator('[data-ml-panel]').innerText();
-const englishLeftovers = panelText.match(/\b(Angle|Show|Hide|Reset|Play|Pause|Speed|Value|Mode|Layers|Practice|Reveal|Check|Hint|Next|Quadrant)\b/g);
+// « Angle », « Pause », « Mode » et « Quadrant » sont aussi des mots français :
+// on ne cherche que les mots anglais qui n'en sont pas.
+const englishLeftovers = panelText.match(/\b(Show|Hide|Reset|Play|Speed|Value|Layers|Practice|Reveal|Check|Hint|Next)\b/g);
 record('i18n : aucune chaîne anglaise oubliée dans le panneau (§36)',
   !englishLeftovers, englishLeftovers ? englishLeftovers.join(', ') : '');
 
-// Les chiffres restent latins (ARABIC_RTL_CONTRACT).
-record('i18n : les chiffres restent LATINS', !/[٠-٩]/.test(panelText));
+// Aucune lettre ni aucun chiffre arabe dans le panneau.
+record('i18n : aucun caractère arabe, les chiffres sont LATINS', !/[\u0600-\u06FF]/.test(panelText));
 
 // ── Accessibilité (§37) ───────────────────────────────────────────────────
 const handleRole = await page.locator('[data-ml-trig-handle]').getAttribute('role');
@@ -510,7 +517,7 @@ const handleLabel = await page.locator('[data-ml-trig-handle]').getAttribute('ar
 const handleValueText = await page.locator('[data-ml-trig-handle]').getAttribute('aria-valuetext');
 record('a11y : la poignée est un slider nommé', handleRole === 'slider' && Boolean(handleLabel), `${handleRole} / ${handleLabel}`);
 record('a11y : la poignée annonce ses valeurs (§37)',
-  Boolean(handleValueText) && /[؀-ۿ]/.test(handleValueText), handleValueText);
+  Boolean(handleValueText) && handleValueText.startsWith('Angle') && !/[\u0600-\u06FF]/.test(handleValueText), handleValueText);
 const tabIndex = await page.locator('[data-ml-trig-handle]').getAttribute('tabindex');
 record('a11y : la poignée est focalisable au clavier', tabIndex === '0');
 

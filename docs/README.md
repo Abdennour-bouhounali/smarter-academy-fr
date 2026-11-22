@@ -5,7 +5,7 @@
 
 This repository is the French platform (collège 6e–3e, French, left to right, Stripe) being rebuilt from the Algerian
 one. On 2026-11-22 the tree is the lesson ENGINE and the SHELL around an EMPTY French catalogue: **no lesson exists**,
-the interface still speaks Arabic and reads right to left, and no real user exists.
+the interface is French and reads left to right (since 2026-11-22), and no real user exists.
 
 ## Start here
 
@@ -19,8 +19,8 @@ the interface still speaks Arabic and reads right to left, and no real user exis
 - **current** — written for this repository.
 - **imported, corrected** — imported from the Algerian platform (DZ `dev` at `7f4cef1c`) on 2026-11-22 and corrected
   the same day against this tree. Its status block (top of the file) says what is true here and what is not.
-- **not yet French** — describes code that still does the Algerian thing (Arabic text, right to left, dinars, Algiers
-  time, Algerian school model); it stays true until the plan's step named in its status block converts that code.
+- **not yet French** — describes code that still does an Algerian thing (the Algerian school model, the Algerian cycles of
+  the math lab, an Algerian commercial model); its status block says which. The interface itself is French everywhere.
 - **history** — a dated record; it explains why, it is not a contract.
 
 ## Areas
@@ -28,14 +28,13 @@ the interface still speaks Arabic and reads right to left, and no real user exis
 | Area | Authoritative document | Status |
 |---|---|---|
 | The rebuild: steps, decisions, log | [`FRANCE_REBUILD_PLAN.md`](./FRANCE_REBUILD_PLAN.md) | current |
-| French language, register, typography, direction, formats, content and culture rules | [`architecture/FRENCH_LANGUAGE_CONTRACT.md`](./architecture/FRENCH_LANGUAGE_CONTRACT.md) | current — not yet applied in the code |
-| Arabic and right to left, as the code still does it | [`architecture/ARABIC_RTL_CONTRACT.md`](./architecture/ARABIC_RTL_CONTRACT.md) | not yet French — deleted when steps 1C–1E end |
+| French language, register, typography, direction, formats, content and culture rules | [`architecture/FRENCH_LANGUAGE_CONTRACT.md`](./architecture/FRENCH_LANGUAGE_CONTRACT.md) | current — applied (the web is French since 2026-11-22) |
 | The whole system (apps, API domains, auth, grades) | [`architecture/ARCHITECTURE.md`](./architecture/ARCHITECTURE.md) | imported, corrected |
 | A v2 lesson: its pack, its folder, what the server checks, done | [`architecture/LESSON_V2.md`](./architecture/LESSON_V2.md) | imported, corrected — no lesson yet |
-| The game world: kit, worlds (`divisorIsles`, `rootCourts`, `missionIsle`), the rule forge, the exam sitting | [`architecture/GAME_WORLD.md`](./architecture/GAME_WORLD.md) (why `rootCourts` looks as it does: [`reports/ROOTS_WORLD_PLAN.md`](./reports/ROOTS_WORLD_PLAN.md), history) | imported, corrected — not yet French (the kit's sentences, step 1C) |
+| The game world: kit, worlds (`divisorIsles`, `rootCourts`, `missionIsle`), the rule forge, the exam sitting | [`architecture/GAME_WORLD.md`](./architecture/GAME_WORLD.md) (why `rootCourts` looks as it does: [`reports/ROOTS_WORLD_PLAN.md`](./reports/ROOTS_WORLD_PLAN.md), history) | imported, corrected — French |
 | The launch kit of a lesson | [`architecture/LAUNCH_KIT.md`](./architecture/LAUNCH_KIT.md) (plan: [`reports/LAUNCH_KIT_PLAN_2026-11-17.md`](./reports/LAUNCH_KIT_PLAN_2026-11-17.md)) | imported, corrected — its families are empty |
 | The lab of a lesson | [`architecture/LESSON_LAB.md`](./architecture/LESSON_LAB.md) | imported, corrected |
-| The teacher's class session and board | [`architecture/CLASS_SESSION.md`](./architecture/CLASS_SESSION.md) | imported, corrected — not yet French |
+| The teacher's class session and board | [`architecture/CLASS_SESSION.md`](./architecture/CLASS_SESSION.md) | imported, corrected — French |
 | The projector shell (`lessons/common/classroom/`) | [`architecture/CLASSROOM_MODE.md`](./architecture/CLASSROOM_MODE.md) | imported, corrected — the module-lesson part is deleted |
 | Learning-point and assessment rules for a generated lesson | [`architecture/AI_LESSON_CONTRACT.md`](./architecture/AI_LESSON_CONTRACT.md) | imported, corrected |
 | What still binds of the module-lesson contract (`lesson.config.js`, stages, non-blocking progression) | [`architecture/LESSON_CONTRACT.md`](./architecture/LESSON_CONTRACT.md) | imported, corrected — the module system is deleted |
@@ -46,19 +45,19 @@ the interface still speaks Arabic and reads right to left, and no real user exis
 | Curriculum sync, evidence, mastery (Mastery V2) | [`architecture/LEARNING_ARCHITECTURE.md`](./architecture/LEARNING_ARCHITECTURE.md) (history: [`reports/LEARNING_POINT_MASTERY_AUDIT_2026-09-24.md`](./reports/LEARNING_POINT_MASTERY_AUDIT_2026-09-24.md), [`reports/LEARNING_POINT_MASTERY_V2_EXECUTION_PLAN_2026-09-24.md`](./reports/LEARNING_POINT_MASTERY_V2_EXECUTION_PLAN_2026-09-24.md)) | imported, corrected |
 | Completion vs mastery, progress storage | [`architecture/PROGRESS_MODEL.md`](./architecture/PROGRESS_MODEL.md) | imported, corrected |
 | The year compass and the school calendar | [`architecture/YEAR_COMPASS.md`](./architecture/YEAR_COMPASS.md) | imported, corrected — the French year is not written (plan 2D) |
-| The thinking lab | [`architecture/THINKING_LAB.md`](./architecture/THINKING_LAB.md) (plan: [`reports/THINKING_LAB_PLAN_2026-10-30.md`](./reports/THINKING_LAB_PLAN_2026-10-30.md), history) | imported, corrected — no challenge; not yet French |
+| The thinking lab | [`architecture/THINKING_LAB.md`](./architecture/THINKING_LAB.md) (plan: [`reports/THINKING_LAB_PLAN_2026-10-30.md`](./reports/THINKING_LAB_PLAN_2026-10-30.md), history) | imported, corrected — no challenge; OFF (`config/features.js`) |
 | The 6e diagnostic | [`architecture/DIAGNOSTIC_6E.md`](./architecture/DIAGNOSTIC_6E.md) (history: [`reports/DIAGNOSTIC_6E_REPORT.md`](./reports/DIAGNOSTIC_6E_REPORT.md), [`reports/DIAGNOSTIC_COVERAGE.md`](./reports/DIAGNOSTIC_COVERAGE.md), [`reports/DIAGNOSTIC_INTEGRATION.md`](./reports/DIAGNOSTIC_INTEGRATION.md)) | imported, corrected — mounted; its recommendations name lessons that do not exist |
-| The games space | [`architecture/MADAR_GAME.md`](./architecture/MADAR_GAME.md) | imported, corrected — not yet French |
-| The daily challenge | [`architecture/DAILY_CHALLENGE.md`](./architecture/DAILY_CHALLENGE.md) | imported, corrected — not yet French; not hidden yet (plan 1F) |
-| The Math Lab | [`architecture/MATH_LAB.md`](./architecture/MATH_LAB.md) (open issues: [`reports/PREEXISTING_ISSUES_2026-09-23.md`](./reports/PREEXISTING_ISSUES_2026-09-23.md)) | imported, corrected — not yet French; its two labs follow the Algerian cycles |
+| The games space | [`architecture/MADAR_GAME.md`](./architecture/MADAR_GAME.md) | imported, corrected — French |
+| The daily challenge | [`architecture/DAILY_CHALLENGE.md`](./architecture/DAILY_CHALLENGE.md) | imported, corrected — French; OFF (`config/features.js`) |
+| The Math Lab | [`architecture/MATH_LAB.md`](./architecture/MATH_LAB.md) (open issues: [`reports/PREEXISTING_ISSUES_2026-09-23.md`](./reports/PREEXISTING_ISSUES_2026-09-23.md)) | imported, corrected — French; its two labs follow the Algerian cycles (not yet French) |
 | The notebook | [`architecture/NOTEBOOK.md`](./architecture/NOTEBOOK.md) | imported, corrected |
 | Page tours | [`architecture/PAGE_TOURS.md`](./architecture/PAGE_TOURS.md) | imported, corrected |
 | Teachers, classes, plans, seats, activation | [`architecture/TEACHER_CLASSROOM_ARCHITECTURE.md`](./architecture/TEACHER_CLASSROOM_ARCHITECTURE.md) (history: [`reports/TEACHER_PEDAGOGICAL_MONITORING_PLAN_2026-09-24.md`](./reports/TEACHER_PEDAGOGICAL_MONITORING_PLAN_2026-09-24.md)) | imported, corrected — not yet French (the commercial model is Algerian, plan 1F) |
-| Parents (the private link, study time) | [`architecture/PARENT_SPACE.md`](./architecture/PARENT_SPACE.md) | imported, corrected — not yet French |
-| The school space | [`architecture/SCHOOL_ADMIN_SPACE.md`](./architecture/SCHOOL_ADMIN_SPACE.md) | imported, corrected — not yet French (Algerian school model) |
-| The books store | [`architecture/BOOKS_STORE.md`](./architecture/BOOKS_STORE.md) | imported, corrected — ON today, turned off by plan 1F |
+| Parents (the private link, study time) | [`architecture/PARENT_SPACE.md`](./architecture/PARENT_SPACE.md) | imported, corrected — French |
+| The school space | [`architecture/SCHOOL_ADMIN_SPACE.md`](./architecture/SCHOOL_ADMIN_SPACE.md) | imported, corrected — French interface; the school data model is still Algerian (not yet French) |
+| The books store | [`architecture/BOOKS_STORE.md`](./architecture/BOOKS_STORE.md) | imported, corrected — OFF (`config/features.js`, server `BOOKS_ENABLED`); its pages keep their Arabic until the French books exist |
 | Feature access per tier, quotas | [`architecture/ACCESS_AND_LIMITS.md`](./architecture/ACCESS_AND_LIMITS.md) | imported, corrected |
-| The admin panel, lesson tier | [`architecture/ADMIN_PANEL_ARCHITECTURE.md`](./architecture/ADMIN_PANEL_ARCHITECTURE.md) | imported, corrected — not yet French |
+| The admin panel, lesson tier | [`architecture/ADMIN_PANEL_ARCHITECTURE.md`](./architecture/ADMIN_PANEL_ARCHITECTURE.md) | imported, corrected — French (the books pages excepted, off) |
 | The demo dataset (`DemoDataSeeder`) | [`architecture/DEMO_DATASET.md`](./architecture/DEMO_DATASET.md) | imported, corrected — stops today: no published lesson |
 | Navigation: four doors, one menu, `nav-*` colours | [`reports/NAVIGATION_REBUILD_PLAN.md`](./reports/NAVIGATION_REBUILD_PLAN.md) §0 | imported, corrected |
 | Entry bundle and lazy boundaries | [`architecture/BUNDLE_BOUNDARIES.md`](./architecture/BUNDLE_BOUNDARIES.md) (history: [`reports/BUNDLE_ENTRY_REPORT_2026-10-14.md`](./reports/BUNDLE_ENTRY_REPORT_2026-10-14.md)) | imported, corrected |
@@ -105,5 +104,4 @@ The old French site's own documents are on `main`.
 ## Language of the documentation
 
 Documents and code comments are written in English and French. The product is French
-([`architecture/FRENCH_LANGUAGE_CONTRACT.md`](./architecture/FRENCH_LANGUAGE_CONTRACT.md)); until steps 1C–1E of the
-plan end, its interface is still Arabic.
+([`architecture/FRENCH_LANGUAGE_CONTRACT.md`](./architecture/FRENCH_LANGUAGE_CONTRACT.md)) and so is its interface.

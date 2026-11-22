@@ -1,30 +1,31 @@
 /**
- * QA navigateur — le مختبر الأشعة (laboratoire des vecteurs) du مختبر الرياضيات.
+ * QA navigateur — le « Labo des vecteurs » de « L’atelier de mathématiques ».
  *
  * Lancement (dev server sur 5173, API sur 8000, élève QA existant) :
  *   node apps/web/e2e/mathlab-vectors.mjs [dossier-captures]
  *
  * Ce qu'on vérifie :
- *   - navigation : la carte sur l'accueil (plus « قريبًا »), l'URL directe,
+ *   - navigation : la carte sur l'accueil (plus « Bientôt »), l'URL directe,
  *     le rechargement, le visiteur non connecté ;
  *   - la première visite : A, B et ⃗AB dessinés, les lectures justes
  *     (composantes, norme, direction), aucun document créé ;
  *   - le glissement : un point suit le doigt, ⃗AB et TOUTES ses dépendances
  *     suivent — c'est le §38 (« moving A must update dependent objects ») ;
- *   - le شعاع libre : déplacer son ORIGINE ne change pas ses composantes,
+ *   - le vecteur libre : déplacer son ORIGINE ne change pas ses composantes,
  *     déplacer son EXTRÉMITÉ les change (§6 contre §7) ;
  *   - les opérations : somme bout à bout, parallélogramme, différence,
  *     multiplication par un nombre ;
- *   - le curseur k : allongement, raccourcissement, renversement, شعاع nul ;
- *   - les constructions : milieu, انسحاب d'un point, انسحاب d'un triangle ;
+ *   - le curseur k : allongement, raccourcissement, renversement, vecteur nul ;
+ *   - les constructions : milieu, translation d'un point, translation d'un triangle ;
  *   - les mesures : distance (forme exacte), milieu, pente — y compris la
  *     droite VERTICALE qui ne doit JAMAIS afficher un nombre (§20) ;
- *   - les relations : توازي avec le facteur k, تعامد, استقامية ;
- *   - تراجع / إعادة, y compris la branche coupée ;
- *   - « مسح الكل » : le plan revient à son état d'ouverture ;
+ *   - les relations : colinéarité avec le facteur k, orthogonalité, alignement ;
+ *   - « Annuler » / « Rétablir », y compris la branche coupée ;
+ *   - « Tout effacer » : le plan revient à son état d'ouverture ;
  *   - persistance : naissance au premier changement, sauvegarde, relecture
- *     (scène, historique, fenêtre, sélection), « أعمالي » ;
- *   - RTL : panneau à droite, notation LTR, plan LTR (direction CALCULÉE) ;
+ *     (scène, historique, fenêtre, sélection), « Mes travaux » ;
+ *   - gauche à droite : page française sans dir="rtl", notation LTR, plan LTR
+ *     (direction CALCULÉE) ;
  *   - responsive : tablette et mobile, pas de débordement horizontal,
  *     cibles tactiles ≥ 44 px, glissement au DOIGT sans défilement de page ;
  *   - accessibilité : focus visible, poignées focalisables, état textuel.
@@ -36,7 +37,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const OUT = process.argv[2] || '/tmp/mathlab-vectors-shots';
 mkdirSync(OUT, { recursive: true });
@@ -126,13 +127,13 @@ const context = await authedContext({ viewport: { width: 1360, height: 900 } });
 const page = await context.newPage();
 attach(page);
 
-// ── L'accueil du مختبر ────────────────────────────────────────────────────
+// ── L'accueil de l'atelier ────────────────────────────────────────────────
 await page.goto(`${BASE}/espace/atelier?lab=secondaire`, { waitUntil: 'networkidle' });
 await sleep(400);
 const card = page.locator('a[href*="/atelier/vecteurs?lab=secondaire"], [data-ml-tool-card="vectors"]').first();
-record('accueil : la carte du مختبر الأشعة est ouvrable', await card.count() > 0);
-const stillAnnounced = await page.locator('text=الأشعة').locator('xpath=ancestor::*[contains(@class,"disabled") or @aria-disabled="true"]').count();
-record('accueil : « الأشعة » n’est plus annoncé « قريبًا »', stillAnnounced === 0);
+record('accueil : la carte du « Labo des vecteurs » est ouvrable', await card.count() > 0);
+const stillAnnounced = await page.locator('text=Labo des vecteurs').locator('xpath=ancestor::*[contains(@class,"disabled") or @aria-disabled="true"]').count();
+record('accueil : « Labo des vecteurs » n’est plus annoncé « Bientôt »', stillAnnounced === 0);
 
 // ── La première visite ────────────────────────────────────────────────────
 await page.goto(`${BASE}/espace/atelier/vecteurs?lab=secondaire`, { waitUntil: 'networkidle' });
@@ -146,13 +147,13 @@ record('ouverture : A et B sont posés', await page.locator('[data-ml-handle="po
 const comp0 = await reading(page, 'components');
 const norm0 = await reading(page, 'norm');
 const dir0 = await reading(page, 'direction');
-// Le شعاع s'écrit EN COLONNE (docs/architecture/MATH_LAB.md) : une seule
+// Le vecteur s'écrit EN COLONNE (docs/architecture/MATH_LAB.md) : une seule
 // paire de délimiteurs sur les deux composantes, jamais « (4 ; 3) ». KaTeX
 // rend les deux nombres dans des boîtes distinctes, donc on lit les chiffres
 // et on vérifie surtout qu'aucun couple en ligne n'est revenu.
 const comp0Digits = (comp0 || '').replace(/[^0-9−-]/g, '');
 record('ouverture : les composantes de ⃗AB sont 4 et 3, en colonne', comp0Digits === '43', comp0);
-record('ouverture : le شعاع n’est PAS écrit en ligne (4 ; 3)', !(comp0 || '').includes(';'), comp0);
+record('ouverture : le vecteur n’est PAS écrit en ligne (4 ; 3)', !(comp0 || '').includes(';'), comp0);
 record('ouverture : la colonne est bien rendue', await page.locator('[data-ml-reading="components"] [data-ml-vec-column]').count() === 1);
 record('ouverture : ‖⃗AB‖ vaut 5, sans décimales inutiles', norm0 === '5', norm0);
 record('ouverture : la direction vaut 36,87°', dir0 === '36,87°', dir0);
@@ -169,17 +170,17 @@ const normAfter = await reading(page, 'norm');
 record('glissement : la norme suit aussitôt', normAfter !== norm0, `${norm0} → ${normAfter}`);
 await page.screenshot({ path: `${OUT}/02-glissement.png` });
 
-// ── Le شعاع libre : origine contre extrémité (§6 / §7) ────────────────────
+// ── Le vecteur libre : origine contre extrémité (§6 / §7) ────────────────────
 await page.locator('[data-ml-add-vector]').click();
 await sleep(500);
 const freeComp = await page.locator('[data-ml-vector-card] [data-ml-reading="components"]').last().innerText().catch(() => null);
 await dragHandle(page, '[data-ml-handle="origin"]', 70, 70);
 const afterOrigin = await page.locator('[data-ml-vector-card] [data-ml-reading="components"]').last().innerText().catch(() => null);
-record('شعاع حرّ : déplacer l’ORIGINE ne change PAS les composantes (§6)',
+record('vecteur libre : déplacer l’ORIGINE ne change PAS les composantes (§6)',
   freeComp === afterOrigin, `${freeComp} → ${afterOrigin}`);
 await dragHandle(page, '[data-ml-handle="tip"]', 80, -50);
 const afterTip = await page.locator('[data-ml-vector-card] [data-ml-reading="components"]').last().innerText().catch(() => null);
-record('شعاع حرّ : déplacer l’EXTRÉMITÉ change les composantes (§7)',
+record('vecteur libre : déplacer l’EXTRÉMITÉ change les composantes (§7)',
   afterTip !== afterOrigin, `${afterOrigin} → ${afterTip}`);
 await page.screenshot({ path: `${OUT}/03-shaa-horr.png` });
 
@@ -202,17 +203,17 @@ await page.screenshot({ path: `${OUT}/06-difference.png` });
 // ── Le curseur k (§14, §15) ───────────────────────────────────────────────
 await openExperiment(page, 'scalar');
 const slider = page.locator('[data-ml-scalar-slider]');
-record('ضرب في عدد : le curseur k est présent', await slider.count() === 1);
+record('produit par un réel : le curseur k est présent', await slider.count() === 1);
 if (await slider.count()) {
   await slider.fill('3');
   await sleep(300);
   const kLong = await page.locator('[data-ml-scalar-state]').getAttribute('data-ml-scalar-state');
-  record('curseur k : k > 1 allonge le شعاع', kLong === 'longer', kLong);
+  record('curseur k : k > 1 allonge le vecteur', kLong === 'longer', kLong);
 
   await slider.fill('0.5');
   await sleep(300);
   const kShort = await page.locator('[data-ml-scalar-state]').getAttribute('data-ml-scalar-state');
-  record('curseur k : 0 < k < 1 raccourcit le شعاع', kShort === 'shorter', kShort);
+  record('curseur k : 0 < k < 1 raccourcit le vecteur', kShort === 'shorter', kShort);
 
   await slider.fill('-2');
   await sleep(300);
@@ -223,22 +224,22 @@ if (await slider.count()) {
   await slider.fill('0');
   await sleep(300);
   const kZero = await page.locator('[data-ml-scalar-state]').getAttribute('data-ml-scalar-state');
-  record('curseur k : k = 0 donne le شعاع nul, montré et non effacé', kZero === 'zero', kZero);
-  record('curseur k : le شعاع nul est dessiné comme un disque',
+  record('curseur k : k = 0 donne le vecteur nul, montré et non effacé', kZero === 'zero', kZero);
+  record('curseur k : le vecteur nul est dessiné comme un disque',
     await page.locator('[data-ml-vector-zero]').count() >= 1);
   await page.screenshot({ path: `${OUT}/07-curseur-k.png` });
 }
 
-// ── L'انسحاب (§16, §17) ───────────────────────────────────────────────────
+// ── La translation (§16, §17)────────────────────────────────────────────────
 await openExperiment(page, 'translation');
-record('انسحاب : l’image A′ est construite (§16)',
+record('translation : l’image A′ est construite (§16)',
   await page.locator('[data-ml-handle="point"]').count() >= 2);
 await page.screenshot({ path: `${OUT}/08-insihab.png` });
 
 await openExperiment(page, 'shape');
-record('انسحاب d’un triangle : les deux polygones sont dessinés (§17)',
+record('translation d’un triangle : les deux polygones sont dessinés (§17)',
   await page.locator('[data-ml-construction="polygon"]').count() === 2);
-record('انسحاب d’un triangle : l’image est en pointillés',
+record('translation d’un triangle : l’image est en pointillés',
   await page.locator('[data-ml-polygon-image="true"]').count() === 1);
 await page.screenshot({ path: `${OUT}/09-triangle.png` });
 
@@ -262,30 +263,30 @@ record('pente : une valeur est toujours lisible après déplacement', Boolean(sl
 // ── Les relations (§21, §22) ──────────────────────────────────────────────
 await openExperiment(page, 'parallel');
 const relations = await page.locator('[data-ml-relation]').allInnerTexts();
-record('توازي : la relation est annoncée avec son facteur k (§21)',
-  relations.some((line) => line.includes('متوازيان')), relations.join(' | '));
-await page.screenshot({ path: `${OUT}/11-tawazi.png` });
+record('colinéarité : la relation est annoncée avec son facteur k (§21)',
+  relations.some((line) => line.includes('colinéaires')), relations.join(' | '));
+await page.screenshot({ path: `${OUT}/11-colinearite.png` });
 
 await openExperiment(page, 'collinear');
 const collinearVerdict = await page.locator('[data-ml-collinear-verdict]').getAttribute('data-ml-collinear-verdict').catch(() => null);
-record('استقامية : un verdict est rendu (§22)', collinearVerdict !== null, String(collinearVerdict));
+record('alignement : un verdict est rendu (§22)', collinearVerdict !== null, String(collinearVerdict));
 await page.screenshot({ path: `${OUT}/12-istiqamiya.png` });
 
 await openExperiment(page, 'perpendicular');
-record('تعامد : l’expérience s’ouvre sans casser le plan',
+record('orthogonalité : l’expérience s’ouvre sans casser le plan',
   await page.locator('[data-ml-vectors]').count() === 1);
 
-// ── تراجع / إعادة (§30) ───────────────────────────────────────────────────
+// ── Annuler / Rétablir (§30)───────────────────────────────────────────────
 await openExperiment(page, 'addition');
 const beforeUndo = await page.locator('[data-ml-vector]').count();
 await page.locator('[data-ml-undo]').click();
 await sleep(400);
 const afterUndo = await page.locator('[data-ml-vector]').count();
-record('تراجع : le plan revient en arrière', afterUndo !== beforeUndo || true, `${beforeUndo} → ${afterUndo}`);
+record('Annuler : le plan revient en arrière', afterUndo !== beforeUndo || true, `${beforeUndo} → ${afterUndo}`);
 await page.locator('[data-ml-redo]').click();
 await sleep(400);
 const afterRedo = await page.locator('[data-ml-vector]').count();
-record('إعادة : le plan revient en avant', afterRedo === beforeUndo, `${afterUndo} → ${afterRedo}`);
+record('Rétablir : le plan revient en avant', afterRedo === beforeUndo, `${afterUndo} → ${afterRedo}`);
 
 // ── Zoom, déplacement ─────────────────────────────────────────────────────
 const viewBefore = await page.locator('[data-ml-vec-plane]').getAttribute('data-ml-view');
@@ -296,15 +297,16 @@ record('zoom : la fenêtre change', viewBefore !== viewZoomed);
 await page.locator('[data-ml-zoom-reset]').click();
 await sleep(300);
 
-// ── RTL et notation (§35) ─────────────────────────────────────────────────
+// ── LTR et notation (§35) ─────────────────────────────────────────────────
 const planeDir = await page.locator('[data-ml-vec-plane]').evaluate((n) => getComputedStyle(n).direction);
-record('RTL : le plan reste LTR — l’axe des abscisses garde son sens (§35)', planeDir === 'ltr', planeDir);
+record('LTR : le plan est LTR — l’axe des abscisses garde son sens (§35)', planeDir === 'ltr', planeDir);
 const readingDir = await page.locator('[data-ml-reading="components"]').first().evaluate((n) => getComputedStyle(n).direction).catch(() => null);
-record('RTL : une écriture mathématique est isolée en LTR', readingDir === 'ltr', String(readingDir));
+record('LTR : une écriture mathématique est en LTR', readingDir === 'ltr', String(readingDir));
 const htmlDir = await page.evaluate(() => document.documentElement.getAttribute('dir'));
-record('RTL : la page reste en arabe (dir=rtl)', htmlDir === 'rtl', String(htmlDir));
+const htmlLang = await page.evaluate(() => document.documentElement.getAttribute('lang'));
+record('LTR : la page est en français, sans dir="rtl"', htmlLang === 'fr' && htmlDir !== 'rtl' && (await page.evaluate(() => getComputedStyle(document.documentElement).direction)) === 'ltr', `lang=${htmlLang} dir=${htmlDir}`);
 const latinDigits = await page.locator('[data-ml-reading="components"]').first().innerText().catch(() => '');
-record('RTL : les chiffres restent latins (manuels algériens)', !/[٠-٩]/.test(latinDigits), latinDigits);
+record('LTR : les chiffres sont latins, aucun caractère arabe', !/[\u0600-\u06FF]/.test(latinDigits), latinDigits);
 
 // ── Persistance (§31) ─────────────────────────────────────────────────────
 await sleep(3200);
@@ -326,15 +328,15 @@ if (docId) {
   await page.screenshot({ path: `${OUT}/13-relecture.png` });
 }
 
-// ── « مسح الكل » (§29) ────────────────────────────────────────────────────
-const clearButton = page.locator('button', { hasText: 'مسح الكل' }).first();
+// ── « Tout effacer » (§29) ────────────────────────────────────────────────
+const clearButton = page.locator('[data-ml-clear]').first();
 if (await clearButton.count()) {
   await clearButton.click();
   await sleep(300);
-  const confirm = page.locator('button', { hasText: /مسح|تأكيد|نعم/ }).last();
+  const confirm = page.locator('[role="alertdialog"] [data-nb-confirm]').last();
   if (await confirm.count()) await confirm.click();
   await sleep(600);
-  record('مسح الكل : le plan revient à son état d’ouverture',
+  record('Tout effacer : le plan revient à son état d’ouverture',
     await page.locator('[data-ml-handle="point"]').count() === 2);
   await page.screenshot({ path: `${OUT}/14-remise-a-zero.png` });
 }

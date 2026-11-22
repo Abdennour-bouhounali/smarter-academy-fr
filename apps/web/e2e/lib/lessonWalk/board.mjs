@@ -1,9 +1,9 @@
-// « حصّة القسم » — the LESSON ON THE BOARD, driven by the lesson's own `board/script.js` (lessons 5–6's board walks, made
+// « Séance en classe » — the LESSON ON THE BOARD (« la leçon au tableau »), driven by the lesson's own `board/script.js` (lessons 5–6's board walks, made
 // data; simulated teacher, the API an in-memory double). EVERY station is played through its UI, in the script's order:
 //   situation  its bridge built, the verdict computed here (a % b);
 //   ask        a wrong pick met by the bridges the board builds (never « wrong »), then the right picks — COMPUTED here:
 //              the options that fill `a` — in the step's own `words` (a station not about planks speaks its language, A10);
-//   name       the student's tablet title; a reader picked on the seating map; « من يتذكّر؟ » hides words, a tap shows one;
+//   name       the student's tablet title; a reader picked on the seating map; « Qui s’en souvient ? » hides words, a tap shows one;
 //   trace      the copybook pages with the student's tablet titles.
 // On every screen: nothing scrolls, leaves the screen or its card, the oral question whole, no raw formula, formulas left to
 // right, nothing of another lesson, no text under 12 px, no button covered, the ✕ reachable; no key named before its
@@ -19,24 +19,25 @@ import { boardCourt } from './worlds/rootCourts.mjs';
 
 const CONTENT = join(dirname(fileURLToPath(import.meta.url)), '../../../../../content');
 const NAMES = [
-  ['عمر', 'بن علي'],
-  ['مريم', 'حدّاد'],
-  ['ياسين', 'منصوري'],
-  ['سلمى', 'بوزيد'],
-  ['أنس', 'قاسمي'],
-  ['هاجر', 'سعدي'],
-  ['إلياس', 'عمراني'],
-  ['نور', 'شريف'],
-  ['آدم', 'بلقاسم'],
-  ['رحمة', 'زروقي'],
-  ['يوسف', 'دحماني'],
-  ['خديجة', 'مرابط'],
+  ['Louis', 'Martin'],
+  ['Emma', 'Bernard'],
+  ['Hugo', 'Dubois'],
+  ['Léa', 'Thomas'],
+  ['Nathan', 'Robert'],
+  ['Chloé', 'Richard'],
+  ['Gabriel', 'Petit'],
+  ['Inès', 'Durand'],
+  ['Adam', 'Leroy'],
+  ['Jade', 'Moreau'],
+  ['Raphaël', 'Simon'],
+  ['Manon', 'Laurent'],
 ];
-const PLANK_WORDS = { card: 'لوح', held: 'يثبت', fell: 'ينهار' };
+/** The words of an `ask` step's cards when the step gives none (features/classSession/lessonScripts.js › ASK_WORDS). */
+const PLANK_WORDS = { card: 'Planche', held: 'Tient', fell: 'S’effondre' };
 
 export async function boardWalk(L, D, opts) {
   const BASE = process.env.E2E_BASE || 'http://localhost:5173';
-  const URL_ = `${BASE}/enseignant/hissa/${L.id}?classe=7`;
+  const URL_ = `${BASE}/enseignant/seance/${L.id}?classe=7`;
   const OUT =
     process.argv[2] && !process.argv[2].startsWith('--') ? process.argv[2] : `${tmpdir()}/lesson-${L.id}-board`;
   const SIZE = (process.env.E2E_SIZE || '1366x768').split('x').map(Number);
@@ -72,7 +73,8 @@ export async function boardWalk(L, D, opts) {
     lastName: NAMES[(i * 5) % 12][1],
     grade: L.grade,
   }));
-  const ALIEN_WORDS = [...new Set([...FOREIGN, ...(opts.foreign ?? []), 'جسر بين جزيرتين', 'التعرّف على قاسم'])];
+  // (the Algerian walk added two titles of its pilot lesson by hand; no French lesson exists yet to name)
+  const ALIEN_WORDS = [...new Set([...FOREIGN, ...(opts.foreign ?? [])])];
   const ALIEN_NUMBERS = [...new Set([...FOREIGN_NUMBERS, ...(opts.foreignNumbers ?? [])])];
   const TITLES = Object.fromEntries(L.lesson.keys.map((k) => [k, L.lesson.rules[k].title]));
   const KEYS = L.lesson.keys;
@@ -97,9 +99,9 @@ export async function boardWalk(L, D, opts) {
             success: true,
             user: {
               id: 77,
-              name: 'الأستاذ',
-              firstName: 'كريم',
-              lastName: 'أستاذ',
+              name: 'Claire Durand',
+              firstName: 'Claire',
+              lastName: 'Durand',
               role: 'teacher',
               roles: ['teacher'],
               email_verified_at: '2026-09-01T00:00:00Z',
@@ -112,7 +114,7 @@ export async function boardWalk(L, D, opts) {
           return json({ success: true });
         }
         if (/\/teacher\/classrooms(\?|$)/.test(url))
-          return json({ success: true, classrooms: [{ id: 7, name: '4 م 1', grade, status: 'active' }] });
+          return json({ success: true, classrooms: [{ id: 7, name: `${grade} B`, grade, status: 'active' }] });
         if (url.includes('/teacher/classrooms/7/students')) return json({ success: true, students });
         if (url.includes('/teacher/classrooms/7/seating')) {
           if (method === 'PUT') db.seating = body;
@@ -322,7 +324,8 @@ export async function boardWalk(L, D, opts) {
     await page.waitForSelector('[data-cs-hour]');
     const steps = L.script.steps;
     expect(
-      (await text('[data-cs-open="lesson"] small')).includes(`${steps.length} محطّة`),
+      // « 6 étapes : on essaie, on conclut, on nomme » (ClassSessionPage.jsx › stations; any space before the noun)
+      new RegExp(`(^|[^0-9])${steps.length}\\s+étapes?\\b`).test(await text('[data-cs-open="lesson"] small')),
       `the set-up counts the ${steps.length} stations of THIS lesson`,
     );
     await page.click('[data-cs-open="lesson"]');
@@ -405,7 +408,7 @@ export async function boardWalk(L, D, opts) {
         const hidden = await page.$$('[data-cs-blank="hidden"]');
         expect(
           hidden.length >= Math.min(1, (s.recall ?? []).length),
-          `${s.id}: « من يتذكّر؟ » hides key words (${hidden.length})`,
+          `${s.id}: « Qui s’en souvient ? » hides key words (${hidden.length})`,
         );
         if (hidden.length) {
           await hidden[0].click();
@@ -428,7 +431,7 @@ export async function boardWalk(L, D, opts) {
         await clean(s.id);
         await shot(s.id);
       } else if (s.kind === 'court') {
-        // « قصر الساحات »: a court and its rods (worlds/rootCourts.mjs › boardCourt)
+        // « Le palais des dalles »: a court and its rods (worlds/rootCourts.mjs › boardCourt)
         await notYet(`${s.id}, before its name`, still);
         await boardCourt({ page, check, expect, shot, clean, step: s });
         await notYet(s.id, still);
@@ -440,7 +443,11 @@ export async function boardWalk(L, D, opts) {
       }
     }
     expect((await page.$$('[data-cs-rail]')).length === steps.length, `the rail holds the ${steps.length} stations`);
-    expect((await text('[data-cs-lesson-next]')).includes('اختبار النهاية'), 'the last station leads to the end test');
+    expect(
+      (await attr('[data-cs-lesson-next]', 'data-cs-lesson-next')) === 'end' &&
+        (await text('[data-cs-lesson-next]')).includes('Test de fin'),
+      'the last station leads to the end test (« Test de fin »)',
+    );
     check(errors.length === 0, `no page error${errors.length ? ' — ' + errors.slice(0, 3).join(' | ') : ''}`);
   } catch (e) {
     if (!fails.length || !String(e.message).startsWith(fails.at(-1))) {

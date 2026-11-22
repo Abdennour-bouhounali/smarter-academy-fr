@@ -13,7 +13,7 @@ vi.mock('@smarter-academy/core', async (importOriginal) => {
 
 const t = (key, opts) => {
   if (key === 'notebook.space.card.exercise') return 'Exercice';
-  if (key === 'practice.levelLabel') return `Niveau ${opts.level}`;
+  if (key === 'practice.levelLabel') return `Palier ${opts.level}`;
   if (key === 'notebook.space.card.question') return `Question ${opts.id}`;
   return key;
 };
@@ -31,7 +31,7 @@ describe('ce qu’une carte dit d’une note', () => {
     expect(questionNumber('q3')).toBe('3');
     expect(questionNumber('Q12')).toBe('12');
     expect(questionNumber('autre')).toBe('autre');
-    expect(exerciseLabel({ exerciseId: 'ex-4am-lecon-a-l2-003' }, t)).toBe('Exercice 3 · Niveau 2');
+    expect(exerciseLabel({ exerciseId: 'ex-4am-lecon-a-l2-003' }, t)).toBe('Exercice 3 · Palier 2');
     expect(exerciseLabel({ exerciseId: 'mystere' }, t)).toBe('Exercice');
   });
 

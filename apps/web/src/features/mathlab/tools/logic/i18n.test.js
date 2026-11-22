@@ -28,7 +28,7 @@ import { INDUCTION_EXERCISES } from './inductionExercises.js';
 import { FAILURES, RELATIONS } from './inductionModel.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
-const catalog = JSON.parse(readFileSync(resolve(here, '../../../../i18n/locales/ar/mathlab.json'), 'utf8'));
+const catalog = JSON.parse(readFileSync(resolve(here, '../../../../i18n/locales/fr/mathlab.json'), 'utf8'));
 
 const lookup = (key) => key.split('.').reduce((node, part) => (node && typeof node === 'object' ? node[part] : undefined), catalog);
 const exists = (key) => typeof lookup(key) === 'string' && lookup(key).length > 0;

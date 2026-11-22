@@ -163,7 +163,7 @@ export default function ParentLinkCard() {
         </div>
       )}
 
-      <Link to="/espace/profil/wali" className="mt-4 inline-flex items-center gap-1.5 font-inter text-sm font-semibold text-nav-accent hover:underline">
+      <Link to="/espace/profil/parent" className="mt-4 inline-flex items-center gap-1.5 font-inter text-sm font-semibold text-nav-accent hover:underline">
         <Eye size={15} aria-hidden="true" />
         {t('student.seeWhatTheySee')}
       </Link>

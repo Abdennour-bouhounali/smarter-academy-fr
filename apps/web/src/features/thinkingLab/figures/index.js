@@ -3,7 +3,7 @@
  * `figure.component` / `whiteboard.seed` du contenu (FourArcs.jsx…). Aucune liste à
  * tenir à jour : le glob les trouve, chacune devient un lot paresseux À PART, chargé
  * seulement par le défi qui l'affiche (BUNDLE_BOUNDARIES.md : ce glob vit sous la
- * frontière paresseuse de la route /espace/tafkir).
+ * frontière paresseuse de la route /espace/enigmes).
  *
  * Contrat d'une figure (docs/architecture/THINKING_LAB.md §7) :
  *   export const LAYERS       toutes les couches que la figure sait dessiner ;

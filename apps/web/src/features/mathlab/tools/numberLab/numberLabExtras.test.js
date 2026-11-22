@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import mathlab from '../../../../i18n/locales/ar/mathlab.json';
+import mathlab from '../../../../i18n/locales/fr/mathlab.json';
 import { MODES, GCD_METHODS, POWER_TABS } from './numberState.js';
 import { MODE_SECTIONS, MODE_GROUPS } from './modeCatalog.js';
 import { divisibilityReason } from './divisibilityReasons.js';
@@ -44,8 +44,8 @@ describe('les chaînes françaises existent', () => {
       for (const form of ['one', 'other']) expect(get(`${key}_${form}`), `${key}_${form}`).toBeTruthy();
       for (const form of ['zero', 'two', 'few', 'many']) expect(get(`${key}_${form}`), `${key}_${form}`).toBeUndefined();
     }
-    expect(get('gcdLcm.differences.stepsCount_one')).toBe('{{count}} étape');
-    expect(get('gcdLcm.differences.stepsCount_other')).toBe('{{count}} étapes');
+    expect(get('gcdLcm.differences.stepsCount_one')).toBe('{{count}}\u00a0étape');
+    expect(get('gcdLcm.differences.stepsCount_other')).toBe('{{count}}\u00a0étapes');
   });
 
   it('aucune lettre arabe dans les chaînes du labo des nombres', () => {

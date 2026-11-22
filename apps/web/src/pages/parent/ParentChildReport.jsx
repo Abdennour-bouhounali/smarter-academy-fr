@@ -47,7 +47,7 @@ export default function ParentChildReport() {
       })
       .catch((e) => {
         if (!alive) return;
-        if (e.status === 404) navigate('/wali', { replace: true });
+        if (e.status === 404) navigate('/parent', { replace: true });
         else setError(e.message);
       });
     return () => { alive = false; };
@@ -62,14 +62,14 @@ export default function ParentChildReport() {
   };
 
   const unlink = async () => {
-    await unlinkChild(token, studentId).then(() => navigate('/wali', { replace: true })).catch((e) => setError(e.message));
+    await unlinkChild(token, studentId).then(() => navigate('/parent', { replace: true })).catch((e) => setError(e.message));
   };
 
   const loading = <div className="h-64 animate-pulse rounded-2xl bg-slate-100" />;
 
   return (
     <div className="space-y-5">
-      <Link to="/wali" className="inline-flex min-h-[44px] items-center gap-1 font-inter text-sm text-slate-600 hover:text-nav-accent">
+      <Link to="/parent" className="inline-flex min-h-[44px] items-center gap-1 font-inter text-sm text-slate-600 hover:text-nav-accent">
         <ChevronBack size={16} aria-hidden="true" />
         {t('report.back')}
       </Link>

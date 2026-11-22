@@ -46,8 +46,8 @@ role        registers via                       lands on         gate
 admin       seeded / promoted only              /admin           can:admin
 teacher     /register?type=enseignant, Google   /enseignant      can:teacher
 student     /register, Google                   /espace          (default)
-parent      not self-registerable (2026-10-23)  /wali            can:parent
-school_admin created by the platform admin       /idara           can:school   (the school director, 2026-10-26 — SCHOOL_ADMIN_SPACE.md)
+parent      not self-registerable (2026-10-23)  /parent          can:parent
+school_admin created by the platform admin       /etablissement           can:school   (the school director, 2026-10-26 — SCHOOL_ADMIN_SPACE.md)
 ```
 
 - **Ambassador (« سفير », 2026-10-05)** is not a role: it is a flag
@@ -831,7 +831,7 @@ frontend holds it in `StudyContextContext` (one fetch, `refresh()`).
 | Surface | What it does |
 |---|---|
 | `StudentHome` class chip (`CompassHomeSections`, since 2026-11-09 — the banner `ClassContextBanner` was removed with the old home) | « القسم X · الأستاذ Y » (`YEAR_COMPASS.md` §6bis) |
-| `/espace/qism` (« قسمي ») | join by code (LTR input) **only while independent** — in a class, the form is hidden and « يمكنك أن تكون في قسم واحد فقط… » says to leave first (`data-qism-one-class`); current class, leave (confirm: history preserved); shows « انضممت إلى القسم … » when arriving from the link (`location.state.joinedClassroom`) |
+| `/espace/classe` (« قسمي ») | join by code (LTR input) **only while independent** — in a class, the form is hidden and « يمكنك أن تكون في قسم واحد فقط… » says to leave first (`data-qism-one-class`); current class, leave (confirm: history preserved); shows « انضممت إلى القسم … » when arriving from the link (`location.state.joinedClassroom`) |
 | `/rejoindre/classe/:token` (public, `pages/JoinClassLink.jsx`) | preview → invalid / closed / member (→ قسمي) / in another class (« أنت في قسم آخر », → قسمي, no consent button) / consent + join, or consent → register / login → automatic join → قسمي. Built on `AuthShell plain` (one column, no brand panel) |
 | `/rejoindre/:token` | old invitation addresses → the same page, « رابط غير صالح » |
 
@@ -877,8 +877,8 @@ gutter variables and a fixed 80 px rail (`components/common/WorkspaceNav.jsx`, `
 /enseignant/classes/:id/defi/affichage   ChallengeDisplayPage   the daily challenge on the classroom screen — outside TeacherLayout, full screen (DAILY_CHALLENGE.md §10)
 /enseignant/offre                SubscriptionPage     « عرضي »
 /enseignant/profil               TeacherProfile
-/enseignant/muassasa             TeacherSchoolPage    « مؤسستي »: what the school sees (TeacherFacts), attach classes, leave — SCHOOL_ADMIN_SPACE.md §7
-/enseignant/muassasa/rejoindre/:token  TeacherSchoolJoin   join a school after reading what it will see
+/enseignant/etablissement             TeacherSchoolPage    « مؤسستي »: what the school sees (TeacherFacts), attach classes, leave — SCHOOL_ADMIN_SPACE.md §7
+/rejoindre/etablissement/:token  TeacherSchoolJoin   join a school after reading what it will see
 ```
 
 Creating a قسم never leaves « أقسامي ». The « قسم جديد » button opens
@@ -1152,7 +1152,7 @@ usesWorkspaceShell   StudentLayout  MainLayout     TeacherLayout  MainLayout
 ### « حصّة القسم » — the class session (2026-11-18, steps 1–2, not validated)
 
 A teacher runs a lesson's test on the board with his class — the seating map, the editable test, the student's name on top,
-the podium of teams — from `/enseignant/hissa/:lessonId` (full screen, outside the teacher shell, like the challenge and
+the podium of teams — from `/enseignant/seance/:lessonId` (full screen, outside the teacher shell, like the challenge and
 مدار displays). It follows the three locks of every teacher route and writes four tables of its own
 (`class_seatings`, `class_tests`, `class_sessions`, `class_session_answers`), **never** `learning_evidence`. The whole
 contract is `docs/architecture/CLASS_SESSION.md`; this document only points to it.

@@ -1,8 +1,8 @@
 /**
  * The sign-up page while registrations are closed (dev server on :5173): `node e2e/waitlist.mjs <out>`.
- * The API is answered by the walk (nothing is written anywhere): closed → the page shows the message and the phone
- * form, a wrong number is refused on the page, a right one is sent once and the confirmation shows; a student who comes
- * from a class link still gets the sign-up form; open → the form as before.
+ * The API is answered by the walk (nothing is written anywhere): closed → the page shows the message and the form
+ * (components/auth/Waitlist.jsx), a missing e-mail and a wrong French phone number are refused on the page, a right
+ * pair is sent once and the confirmation shows; open → the sign-up form as before.
  */
 import { chromium } from 'playwright';
 import { mkdirSync } from 'node:fs';
@@ -12,7 +12,7 @@ mkdirSync(out, { recursive: true });
 const b = await chromium.launch();
 const bad = [];
 const open = async ({ status, seed = null }) => {
-  const ctx = await b.newContext({ viewport: { width: 1366, height: 768 } });
+  const ctx = await b.newContext({ viewport: { width: 1366, height: 768 }, locale: 'fr-FR' });
   const sent = [];
   await ctx.route('**/api/v1/**', (route) => {
     const url = route.request().url();
@@ -38,18 +38,25 @@ const open = async ({ status, seed = null }) => {
     .catch(() => bad.push('closed: the waiting list is not shown'));
   await page.screenshot({ path: `${out}/01-closed.png` });
   if (await page.locator('input[type="password"]').count()) bad.push('closed: the sign-up form is still there');
+  // The e-mail is required (WaitlistController): without it nothing leaves the page.
+  await page.click('button[type="submit"]');
+  if (!(await page.locator('[data-waitlist-error]').count())) bad.push('a missing e-mail is not refused');
+  if (sent.length) bad.push('a form without an e-mail was sent');
+  await page.fill('[data-waitlist-email]', 'visiteur@exemple.fr');
   await page.fill('[data-waitlist-phone]', 'abc');
   await page.click('button[type="submit"]');
   if (!(await page.locator('[data-waitlist-error]').count())) bad.push('a wrong number is not refused');
   if (sent.length) bad.push('a wrong number was sent');
-  await page.fill('[data-waitlist-phone]', '0550 12 34 56');
+  await page.fill('[data-waitlist-phone]', '06 12 34 56 78');
   await page.click('button[type="submit"]');
   await page
     .waitForSelector('[data-waitlist="done"]', { timeout: 10000 })
     .catch(() => bad.push('no confirmation after a right number'));
   await page.screenshot({ path: `${out}/02-done.png` });
   console.log('sent:', JSON.stringify(sent));
-  if (sent.length !== 1 || sent[0].phone !== '0550 12 34 56') bad.push('the number was not sent once');
+  if (sent.length !== 1 || sent[0].email !== 'visiteur@exemple.fr' || sent[0].phone !== '06 12 34 56 78') {
+    bad.push('the e-mail and the number were not sent once');
+  }
   await ctx.close();
 }
 {

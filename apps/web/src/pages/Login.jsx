@@ -33,10 +33,10 @@ function postLoginPath(user) {
   }
   // Le parent (PARENT_SPACE.md) : même vérification, puis l'espace parent.
   if (user.role === 'parent') {
-    return user.emailVerified === false ? '/verification-email' : '/wali';
+    return user.emailVerified === false ? '/verification-email' : '/parent';
   }
   // Le directeur (SCHOOL_ADMIN_SPACE.md) : adresse vérifiée à sa nomination.
-  if (user.role === 'school_admin') return '/idara';
+  if (user.role === 'school_admin') return '/etablissement';
   return '/';
 }
 

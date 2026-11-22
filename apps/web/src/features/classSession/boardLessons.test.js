@@ -26,15 +26,15 @@ describe('séance en classe — the lessons that have their own board (and no «
 
   it('opens the class session, directly on one of the four moments when asked', () => {
     expect(MOMENTS).toEqual(['start', 'revise', 'lesson', 'end']);
-    expect(classSessionPath('lecon-cles')).toBe('/enseignant/hissa/lecon-cles');
-    expect(classSessionPath('lecon-cles', 'lesson')).toBe('/enseignant/hissa/lecon-cles?moment=lesson');
-    expect(classSessionPath('lecon-cles', 'anything')).toBe('/enseignant/hissa/lecon-cles'); // an unknown moment is not passed on
+    expect(classSessionPath('lecon-cles')).toBe('/enseignant/seance/lecon-cles');
+    expect(classSessionPath('lecon-cles', 'lesson')).toBe('/enseignant/seance/lecon-cles?moment=lesson');
+    expect(classSessionPath('lecon-cles', 'anything')).toBe('/enseignant/seance/lecon-cles'); // an unknown moment is not passed on
   });
 
   it('turns every old door of such a lesson into « la séance en classe », and leaves the other lessons their « mode classe »', () => {
     const base = '/courses/college/3e/nombres_calculs';
     expect(classDoor('lecon-cles', `${base}/lecon-cles`)).toEqual({
-      to: '/enseignant/hissa/lecon-cles',
+      to: '/enseignant/seance/lecon-cles',
       state: undefined,
       session: true,
     });

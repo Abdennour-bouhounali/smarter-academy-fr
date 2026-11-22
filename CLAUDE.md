@@ -29,12 +29,17 @@ rebuild: read `docs/FRANCE_REBUILD_PLAN.md` FIRST — it is the programme, the d
 - **Done in the web**: the payment switch (`context/PaymentsContext.jsx` — nothing sells and nothing locks while
   closed; the admin's panel « Paiement en ligne »), and `config/features.js`: books, thinking lab, daily challenge,
   compass and the 6e diagnostic are OFF until their French content exists.
-- **NOT done yet — do not be surprised**: the WEB interface still speaks ARABIC and reads right to left
-  (`i18n/locales/ar/` — 10,936 strings —, `locale.js`, `dir="rtl"`, the kit's and the worlds' sentences, about 2,500
-  lines of Arabic written in source files, 211 test files asserting Arabic); the web still validates a name as Arabic
-  (`utils/personName.js` — the API's pattern is in the plan's log) and still formats money as dinars. That is steps
-  1C–1D of the plan. Until a step is done, the code it concerns is described by the imported contract, not by the
-  French one.
+- **Done in the web** (2026-11-23): the whole interface is FRENCH, left to right — `i18n/locales/fr/`, `locale.js`
+  (`fr-FR`, `Europe/Paris`), the kit's and the worlds' sentences, the tests, the walks' handles, names in Latin
+  letters, euros (`utils/money.js`). `src/test/noArabic.test.js` refuses an Arabic character anywhere in `apps/web`
+  except the books store (switched off). The routes are French words (`/parent`, `/etablissement/…`,
+  `/enseignant/seance/…`, `/espace/enigmes`); the old transliterated paths have NO redirect.
+- **Accounts created by a school or a teacher are CLOSED** behind an admin switch (`ManagedAccountsGate`, API only —
+  the admin's panel and the hiding of the roster buttons in the web are still to build).
+- **NOT done yet — do not be surprised**: nothing has been SEEN in a browser and no walk has been run since the
+  translation; the API has never run on MySQL; root `scripts/` validators (`validate-exercises.mjs`,
+  `validate-thinking-lab.mjs`, `generate-compass-index.mjs`) still carry Algerian rules and wait for the first
+  French bank; a few comments in `apps/api` and `packages/core` still cite Arabic.
 - **The two products are 100% separated** (owner): two repositories, two databases, two deployments, no shared runtime,
   no shared package, no country switch, no locale parameter. This repository holds ONE language.
 
@@ -131,7 +136,7 @@ A v2 lesson is **content plus, at most once per unit, one world mechanic**:
 | `npm run check:unused` | unused exports and i18n keys; its baseline only SHRINKS |
 | `npm run check:format` | Prettier on the listed areas |
 | `npm run check:lessons` | the validators, the generated indexes, the net, the calendar (which passes while saying the French year is not written), the entry budget (212 KB gzip) |
-| `node apps/web/e2e/<walk>.mjs` | walks at 1366×768 — the shell's walks still assert Arabic; no lesson walk exists |
+| `node apps/web/e2e/<walk>.mjs` | walks at 1366×768 — rewritten for French but NOT run since; `_phase6-activation.mjs` and `access-limits.mjs` fail while payments are closed; no lesson walk exists |
 
 Generators: `generate:lesson-index`, `generate:lab-order`, `generate:learning-net`, `generate:compass-index`,
 `generate:lp-lock` (after APPENDING a learning point; it refuses a reorder on a built lesson).

@@ -214,8 +214,8 @@ def build_rasters(svgs):
     # Books store share card fallback (features/books/shareCards.json): ≤ 300 KB.
     card = (f'<div style="width:1200px;height:630px;display:flex;flex-direction:column;align-items:center;'
             f'justify-content:center;gap:34px;background:linear-gradient(160deg,#ffffff 40%,#eef2ff);'
-            f"font-family:Cairo,sans-serif\">{s.replace('<svg ', '<svg style=\"width:560px;height:auto\" ', 1)}"
-            f'<div dir="rtl" style="font-size:40px;font-weight:700;color:#0b1b3f">تعلّم الرياضيات بالفهم، لا بالحفظ</div></div>')
+            f"font-family:Manrope,'Segoe UI',Arial,sans-serif\">{s.replace('<svg ', '<svg style=\"width:560px;height:auto\" ', 1)}"
+            f'<div style="font-size:40px;font-weight:700;color:#0b1b3f">Les maths se comprennent</div></div>')
     tmp = PUBLIC / "og/_card.png"
     chrome_png(card, 1200, 630, tmp)
     Image.open(tmp).convert("RGB").quantize(colors=256, method=Image.MEDIANCUT).save(PUBLIC / "og/smarter-academy.png", optimize=True)

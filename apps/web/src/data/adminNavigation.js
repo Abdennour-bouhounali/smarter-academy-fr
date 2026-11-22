@@ -12,7 +12,7 @@ import { isFeatureOn } from '../config/features';
  * de page se dérivent tous d'ici, donc renommer une section se fait à un seul
  * endroit.
  *
- * `labelKey` → catalogue `admin` (src/i18n/locales/ar/admin.json, renommé
+ * `labelKey` → catalogue `admin` (src/i18n/locales/fr/admin.json, renommé
  * `locales/fr/` à la fin de la traduction), et non un libellé en dur : le panneau parle la langue du produit,
  * comme l'espace élève et l'espace enseignant. Une entrée de navigation ne
  * porte donc plus de texte — seulement la clé qui le désigne.

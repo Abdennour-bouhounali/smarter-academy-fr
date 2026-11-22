@@ -46,7 +46,7 @@ function PinForm({ onSubmit, submitLabel, busy, error }) {
 }
 
 /**
- * « lien parent » — /w/:token, la page du PARENT, SANS compte
+ * « lien parent » — /p/:token, la page du PARENT, SANS compte
  * (docs/architecture/PARENT_SPACE.md §2). Ouverte depuis WhatsApp ou en
  * scannant la « carte parent » : TÉLÉPHONE D'ABORD.
  *
@@ -184,7 +184,7 @@ export default function ParentLinkPage() {
               </div>
             </section>
 
-            <Link to="/himaya" className="flex min-h-[56px] items-center gap-3 rounded-2xl border border-indigo-200 bg-nav-accent-soft p-4 hover:bg-indigo-100">
+            <Link to="/protection" className="flex min-h-[56px] items-center gap-3 rounded-2xl border border-indigo-200 bg-nav-accent-soft p-4 hover:bg-indigo-100">
               <ShieldCheck size={24} className="flex-shrink-0 text-nav-accent" aria-hidden="true" />
               <span className="flex-1 font-space font-bold text-indigo-950">{t('linkPage.guide')}</span>
               <ChevronForward size={18} className="text-nav-accent" aria-hidden="true" />

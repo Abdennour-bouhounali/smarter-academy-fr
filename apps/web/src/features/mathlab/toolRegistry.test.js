@@ -120,7 +120,7 @@ describe('registre des instruments', () => {
   });
 
   it('chaque libellé du registre existe dans le catalogue', () => {
-    const catalog = JSON.parse(readFileSync(resolve(here, '../../i18n/locales/ar/mathlab.json'), 'utf8'));
+    const catalog = JSON.parse(readFileSync(resolve(here, '../../i18n/locales/fr/mathlab.json'), 'utf8'));
     const lookup = (key) => key.split('.').reduce((node, part) => node?.[part], catalog);
     for (const tool of MATH_LAB_TOOLS) {
       for (const key of [tool.labelKey, tool.descriptionKey, tool.newLabelKey, tool.defaultTitleKey]) {
@@ -193,7 +193,7 @@ describe('les mots de « Mes travaux »', () => {
     'work.errors.rename', 'work.errors.duplicate', 'work.errors.favorite', 'work.errors.delete',
   ];
 
-  const catalog = JSON.parse(readFileSync(resolve(here, '../../i18n/locales/ar/mathlab.json'), 'utf8'));
+  const catalog = JSON.parse(readFileSync(resolve(here, '../../i18n/locales/fr/mathlab.json'), 'utf8'));
   const lookup = (key) => key.split('.').reduce((node, part) => node?.[part], catalog);
 
   it('chaque libellé de l’atelier existe en français', () => {
@@ -247,7 +247,7 @@ describe('segments d\'URL', () => {
  * formule).
  */
 describe('le catalogue de l’atelier est en français', () => {
-  const catalog = JSON.parse(readFileSync(resolve(here, '../../i18n/locales/ar/mathlab.json'), 'utf8'));
+  const catalog = JSON.parse(readFileSync(resolve(here, '../../i18n/locales/fr/mathlab.json'), 'utf8'));
   const entries = [];
   const walk = (node, path) => {
     for (const [key, value] of Object.entries(node)) {

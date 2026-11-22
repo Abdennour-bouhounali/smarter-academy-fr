@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
  * tap → stepper → chip → slider → draw → drag).
  */
 /** « A », « B », « C »… — la lettre d'un choix d'après sa place. */
-export const choiceLetter = (index) => String.fromCharCode(65 + index);
+const choiceLetter = (index) => String.fromCharCode(65 + index);
 
 export default function ChoiceInput({ question, value, onChange, disabled }) {
   const { t } = useTranslation('student');

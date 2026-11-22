@@ -252,7 +252,7 @@ describe('§54 — les expériences ne demandent rien, elles MONTRENT', () => {
  * une réponse juste calculée ici, pas lue dans le défi.
  */
 describe('audit — la bonne réponse de l’élève est acceptée, dans son écriture', () => {
-  const mathlab = JSON.parse(readFileSync(new URL('../../../../i18n/locales/ar/mathlab.json', import.meta.url), 'utf8'));
+  const mathlab = JSON.parse(readFileSync(new URL('../../../../i18n/locales/fr/mathlab.json', import.meta.url), 'utf8'));
   const at = (key) => key.split('.').reduce((node, k) => node?.[k], mathlab);
 
   it('« Écris 3/4 sous forme de pourcentage » : 75 et 75 % sont justes, 0,75 % ne l’est pas', () => {

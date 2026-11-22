@@ -28,7 +28,7 @@ const adminPaths = () => adminNavSectionsFor('admin').flatMap((section) => secti
 // Each off feature: the addresses of its doors, its admin pages, its public link.
 const OFF = [
   { feature: 'books', student: [], teacher: [], admin: ['/admin/livres', '/admin/livres/commandes', '/admin/livres/messages', '/admin/livres/gestionnaires'], public: ['/books'] },
-  { feature: 'thinkingLab', student: ['/espace/tafkir'], teacher: ['/enseignant/tafkir'], admin: [], public: [] },
+  { feature: 'thinkingLab', student: ['/espace/enigmes'], teacher: ['/enseignant/enigmes'], admin: [], public: [] },
   { feature: 'dailyChallenge', student: ['/espace/defi'], teacher: [], admin: ['/admin/offres/defi-quotidien'], public: [] },
   { feature: 'compass', student: [], teacher: [], admin: [], public: [] },
   { feature: 'diagnostic', student: [], teacher: [], admin: [], public: [] },
@@ -72,14 +72,14 @@ describe('config/features.js — what has no French content yet', () => {
 
   it('the spaces that stay on keep their doors: games, math lab, notebook, progression, class', () => {
     const student = pathsOf(visibleDoors(studentDoors));
-    for (const path of ['/espace/jeux', '/espace/atelier', '/espace/cahier', '/espace/progression', '/espace/qism']) {
+    for (const path of ['/espace/jeux', '/espace/atelier', '/espace/cahier', '/espace/progression', '/espace/classe']) {
       expect(student).toContain(path);
     }
     const teacher = pathsOf(visibleDoors(teacherDoors));
     for (const path of ['/enseignant/jeux', '/enseignant/atelier', '/enseignant/cahier', '/enseignant/classes']) {
       expect(teacher).toContain(path);
     }
-    expect(visibleLinks(teacherAccountLinks, { paymentsOpen: true }).map((link) => link.path)).toContain('/enseignant/muassasa');
+    expect(visibleLinks(teacherAccountLinks, { paymentsOpen: true }).map((link) => link.path)).toContain('/enseignant/etablissement');
   });
 
   it('the book manager, books off, is sent to his account — never back and forth to a store that is gone', () => {

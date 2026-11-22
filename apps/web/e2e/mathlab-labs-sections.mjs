@@ -1,4 +1,4 @@
-// QA des laboratoires à sections du مختبر (الجبر، الاحتمالات والإحصاء، الأعداد والحساب).
+// QA des laboratoires à sections de l'atelier (algèbre, probabilités et statistiques, nombres et calcul).
 //
 // Lancement (Vite sur 5173 et l'API sur 8000 en marche, comptes QA importés) :
 //   node apps/web/e2e/mathlab-labs-sections.mjs [shots]
@@ -9,6 +9,7 @@
 // script ouvre CHAQUE section de la barre des laboratoires et vérifie :
 //   - l'onglet de la section est sélectionné ;
 //   - aucun débordement horizontal de la page ;
+//   - aucune lettre arabe visible (l'interface est française) ;
 //   - aucun « NaN », « Infinity », « undefined » ni clé i18n brute (`tools.…`) visible ;
 //   - aucune erreur de page.
 // Avec `shots`, une capture par section et par largeur dans QA_OUT.
@@ -18,7 +19,7 @@ import { mkdirSync } from 'node:fs';
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
-const TEACHER = { email: process.env.QA_TEACHER_EMAIL || 'qa-prof@smarter.dz', password: PASSWORD };
+const TEACHER = { email: process.env.QA_TEACHER_EMAIL || 'qa-prof@exemple.fr', password: PASSWORD };
 const OUT = process.env.QA_OUT || '/tmp/mathlab-labs-qa';
 const SHOTS = process.argv.includes('shots');
 const ROUTES = [
@@ -56,7 +57,7 @@ try {
       viewport: { width: viewport.width, height: viewport.height },
       hasTouch: Boolean(viewport.hasTouch),
       isMobile: Boolean(viewport.isMobile),
-      locale: 'ar-DZ',
+      locale: 'fr-FR',
     });
     await context.addInitScript((tk) => { try { localStorage.setItem('token', tk); } catch { /* noop */ } }, token);
 
@@ -86,6 +87,7 @@ try {
         const text = await page.locator('main, [data-ml-shell], body').first().innerText();
         const bad = text.match(/\bNaN\b|\bInfinity\b|\bundefined\b|tools\.[a-zA-Z]+\.[a-zA-Z.]+|kit\.[a-z]+\.[a-z]+/);
         check(!bad, `[${id}] aucun NaN/Infinity/clé brute visible${bad ? ` — « ${bad[0]} »` : ''}`);
+        check(!/[\u0600-\u06FF]/.test(text), `[${id}] aucune lettre arabe visible`);
 
         if (SHOTS) await page.screenshot({ path: `${OUT}/${route.name}-${viewport.label}-${String(index).padStart(2, '0')}-${id}.png`, fullPage: false });
       }

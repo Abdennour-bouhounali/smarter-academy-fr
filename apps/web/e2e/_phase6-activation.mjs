@@ -5,13 +5,16 @@
 //   cd apps/api && php artisan serve --port=8000
 //   node apps/web/e2e/_phase6-activation.mjs CODE1 CODE2
 //
+// PRÉALABLE : le paiement en ligne OUVERT (panneau admin « Paiement en ligne ») —
+// fermé, /espace/activation renvoie à /espace (PaidOutlet, App.jsx).
+//
 // Les codes en clair sont passés en ARGUMENTS : ils n'existent qu'une fois,
 // à la génération, et les écrire dans un fichier versionné les déposerait
 // dans l'historique du dépôt.
 import { chromium } from 'playwright';
 
 const BASE = process.env.QA_BASE || 'http://localhost:4173';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 
 const [validCode, secondCode] = process.argv.slice(2);
@@ -35,7 +38,7 @@ async function overflow(page) {
 }
 
 const browser = await chromium.launch();
-const context = await browser.newContext({ viewport: { width: 1400, height: 950 }, locale: 'ar-DZ' });
+const context = await browser.newContext({ viewport: { width: 1400, height: 950 }, locale: 'fr-FR' });
 const page = await context.newPage();
 
 page.on('pageerror', (e) => pageErrors.push(e.message));
@@ -64,17 +67,20 @@ try {
   await page.goto(`${BASE}/espace/activation`, { waitUntil: 'networkidle' });
 
   const dir = await page.evaluate(() => document.documentElement.getAttribute('dir'));
-  record('page en RTL', dir === 'rtl', `dir=${dir}`);
+  const lang = await page.evaluate(() => document.documentElement.getAttribute('lang'));
+  record('page de gauche à droite (aucun dir="rtl")', dir !== 'rtl', `dir=${dir}`);
+  record('page en français', lang === 'fr', `lang=${lang}`);
 
+  // access:activationTitle — « Activer l’accès ».
   const heading = await page.locator('h1').first().innerText();
-  record('titre arabe', heading.includes('تفعيل'), heading);
+  record('titre français', heading.includes('Activer l’accès'), heading);
 
-  // Le champ du code est LTR dans une page RTL : le code est latin.
+  // Le champ du code se lit de gauche à droite.
   const inputDir = await page.evaluate(() => {
     const el = document.querySelector('#activation-code');
     return el && getComputedStyle(el).direction;
   });
-  record('champ du code en LTR', inputDir === 'ltr', `direction=${inputDir}`);
+  record('champ du code de gauche à droite', inputDir === 'ltr', `direction=${inputDir}`);
 
   record('aucun débordement horizontal', !(await overflow(page)));
 
@@ -89,30 +95,30 @@ try {
   await page.fill('#activation-code', 'ZZZZZZZZZZZZ');
   await submit();
   let message = await alertText();
-  record('code inconnu refusé', message.includes('غير صالح'), message.trim());
+  record('code inconnu refusé', message.includes('n’est pas valable'), message.trim());
 
   // Champ vide : refus local, sans appel réseau.
   await page.fill('#activation-code', '');
   await submit();
   message = await alertText();
-  record('code vide refusé', message.includes('أدخل'), message.trim());
+  record('code vide refusé', message.includes('Saisis ton code'), message.trim());
 
   // ── Le succès ────────────────────────────────────────────────────────
   await page.fill('#activation-code', validCode);
   await submit();
   await page.waitForSelector('[role="status"]', { timeout: 15000 });
   const success = await page.locator('[role="status"]').first().innerText();
-  record('code valide accepté', success.includes('تمّ تفعيل'), success.split('\n')[0]);
+  record('code valide accepté', success.includes('Ton accès est activé'), success.split('\n')[0]);
 
   // L'état d'accès a changé SANS rechargement : c'est le refresh du contexte.
   const statusAfter = await page.locator('section[aria-label]').first().innerText();
-  record('état d’accès mis à jour sans rechargement', statusAfter.includes('وصول كامل'), statusAfter.split('\n')[0]);
+  record('état d’accès mis à jour sans rechargement', statusAfter.includes('Accès complet'), statusAfter.split('\n')[0]);
 
   // ── Le même code, une seconde fois ───────────────────────────────────
   await page.fill('#activation-code', validCode);
   await submit();
   message = await alertText();
-  record('code déjà utilisé refusé', message.includes('سبق استعماله') || message.includes('سبق استعمال'), message.trim());
+  record('code déjà utilisé refusé', message.includes('déjà été utilisé'), message.trim());
 
   // ── Un second code empile l'accès ────────────────────────────────────
   if (secondCode) {
@@ -120,7 +126,7 @@ try {
     await submit();
     await page.waitForTimeout(1500);
     const stacked = await page.locator('[role="status"]').first().innerText();
-    record('second code accepté (empilement)', stacked.includes('تمّ تفعيل'), stacked.split('\n')[0]);
+    record('second code accepté (empilement)', stacked.includes('Ton accès est activé'), stacked.split('\n')[0]);
   }
 
   // ── La limite de débit ───────────────────────────────────────────────
@@ -131,9 +137,9 @@ try {
     await submit();
     await page.waitForTimeout(600);
     const text = await page.locator('[role="alert"]').first().innerText().catch(() => '');
-    if (text.includes('عدد المحاولات')) rateLimited = true;
+    if (text.includes('Trop d’essais')) rateLimited = true;
   }
-  record('limite de débit atteinte', rateLimited, rateLimited ? 'message arabe rendu' : 'jamais atteinte');
+  record('limite de débit atteinte', rateLimited, rateLimited ? 'message rendu' : 'jamais atteinte');
 
   await page.screenshot({ path: '/tmp/qa-activation-desktop.png', fullPage: true });
 

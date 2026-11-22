@@ -1,17 +1,17 @@
 // Math Lab — solutions pas à pas (MATH_LAB.md §3.4.1), vérifiées dans un vrai navigateur
-// sur les routes enseignant (qa-prof@smarter.dz), à 1280 et 390 px. Vite sur 5173, API sur 8000.
+// sur les routes enseignant (qa-prof@exemple.fr), à 1280 et 390 px. Vite sur 5173, API sur 8000.
 // Lancement : node apps/web/e2e/mathlab-step-reveal.mjs — captures dans /tmp/mathlab-steps-qa.
 import { chromium } from 'playwright';
 import { mkdirSync } from 'node:fs';
 const OUT = process.env.QA_OUT || '/tmp/mathlab-steps-qa';
 mkdirSync(OUT, { recursive: true });
-const res = await fetch('http://localhost:8000/api/v1/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ email: 'qa-prof@smarter.dz', password: 'QaPass2026!' }) });
+const res = await fetch('http://localhost:8000/api/v1/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ email: 'qa-prof@exemple.fr', password: 'QaPass2026!' }) });
 const d = await res.json(); const token = d.token ?? d.data?.token;
 const browser = await chromium.launch();
 let ok = 0, ko = 0;
 const check = (c, l) => { if (c) ok++; else { ko++; console.log('  ✗', l); } };
 for (const vp of [{ width: 1280, height: 800, n: 'd' }, { width: 390, height: 844, n: 'm', touch: true }]) {
-  const ctx = await browser.newContext({ viewport: { width: vp.width, height: vp.height }, hasTouch: !!vp.touch, isMobile: !!vp.touch, locale: 'ar-DZ' });
+  const ctx = await browser.newContext({ viewport: { width: vp.width, height: vp.height }, hasTouch: !!vp.touch, isMobile: !!vp.touch, locale: 'fr-FR' });
   await ctx.addInitScript((tk) => { localStorage.setItem('token', tk); localStorage.removeItem('sa-ml-step-player'); }, token);
   const page = await ctx.newPage();
   const errs = []; page.on('pageerror', (e) => errs.push(e.message));

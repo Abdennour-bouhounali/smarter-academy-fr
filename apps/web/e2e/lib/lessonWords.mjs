@@ -1,4 +1,4 @@
-// The words of each lesson of the shared world « أرخبيل القواسم » — READ FROM THE LESSONS' DATA, never kept by hand, so a
+// The words of each lesson of the shared world « L’archipel des diviseurs » — READ FROM THE LESSONS' DATA, never kept by hand, so a
 // renamed island or tablet can never leave a walk checking a stale name (2026-11-19: four lessons were repaired and their
 // hand lists in lib/baqi.mjs, lib/qawaid.mjs, lib/hasr.mjs and lib/walk.mjs had gone stale).
 //
@@ -8,17 +8,17 @@
 // built in memory when a walk starts (~0.3 s) and imported from a data: URL; CSS, images and Vite's `virtual:` modules are stubbed.
 //
 // A lesson's NAMES (what would betray it on another lesson's screen):
-//   the lesson's title (lesson.config.js), its story's title (after « أرخبيل القواسم: », the world's name, shared),
+//   the lesson's title (lesson.config.js), its story's title (after « L’archipel des diviseurs : », the world's name, shared),
 //   its islands, its store (`story.text.boss.title`, or the kit's when the story keeps it), its tablets (`rules[*].title`),
 //   its practice levels and real-world worlds (`text.levels`, `text.worlds[*].name`), its knowledge sheets
 //   (`knowledge.modules[*].title`).
-// Two rules drop a name that would be ordinary Arabic on any screen: fewer than 5 characters, or ONE word (« البرهان »,
-// « المضاعفات »: a word of the subject, not a name).
+// Two rules drop a name that would be ordinary French on any screen: fewer than 5 characters, or ONE word (« démonstration »,
+// « multiples »: a word of the subject, not a name).
 // A lesson's OWN TEXT: every string of its world content, its board (script + memo), its config, and the kit's text as its
 // story overrides it (`Game.js › withStory`; the kit's pilot tablets left out: they are the pilot's).
 // foreignWordsFor(id) = the names of the OTHER lessons, minus every name that is a substring of the lesson's own text
-// (« جزيرة الضوء » is the kit's dash island in every lesson; « جزيرة البقايا » is in two lessons; « القسمة الإقليدية » is
-// inside the 2AM lesson's own title): a set difference, never a hand list.
+// (the kit's dash island is in every lesson; an island may be in two lessons; « division euclidienne » may be inside
+// another lesson's own title): a set difference, never a hand list.
 import { createRequire } from 'node:module';
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -103,7 +103,8 @@ function withStory(base, over) {
   return out;
 }
 
-const WORLD_NAME_PREFIX = /^أرخبيل القواسم:\s*/;
+/** « L’archipel des diviseurs : » before a story's own title (the no-break space before the colon included). */
+const WORLD_NAME_PREFIX = /^L[’']archipel des diviseurs\s*:\s*/;
 /** A name worth checking: at least 5 characters and more than one word. */
 const isName = (s) => typeof s === 'string' && s.trim().length >= 5 && /\s/.test(s.trim());
 

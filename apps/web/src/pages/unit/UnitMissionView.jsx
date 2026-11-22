@@ -138,7 +138,7 @@ function NowCard({ lesson, n, total, icon, progress, first, compact, t, onDetail
         <div className="mt-4 flex gap-2.5">
           <Link to={lesson.path} data-unit-continue
             className="inline-flex min-h-[58px] flex-1 items-center justify-center whitespace-nowrap rounded-2xl bg-nav-accent px-4 text-xl font-black text-white shadow-[0_5px_0_0_#3730A3] hover:bg-[#3350c4] active:translate-y-0.5">
-            {first ? t('unit.mission.startUnit') : progress > 0 ? t('unit.mission.continue') : t('unit.mission.startLesson')} <span aria-hidden="true" className="ms-2">←</span>
+            {first ? t('unit.mission.startUnit') : progress > 0 ? t('unit.mission.continue') : t('unit.mission.startLesson')} <span aria-hidden="true" className="ms-2">→</span>
           </Link>
           <button type="button" onClick={onDetails} data-unit-whats-in
             className="min-h-[58px] whitespace-nowrap rounded-2xl border-2 border-violet-200 bg-violet-50 px-3 text-[15px] font-black text-violet-800 hover:border-violet-400">
@@ -212,7 +212,7 @@ function LessonWindow({ lesson, n, total, icon, status, unmet, onOpenLesson, ava
       {available ? (
         <Link to={lesson.path} data-unit-open
           className="flex min-h-[58px] w-full items-center justify-center rounded-2xl bg-nav-accent text-xl font-black text-white shadow-[0_5px_0_0_#3730A3] hover:bg-[#3350c4]">
-          {button} <span aria-hidden="true" className="ms-2">←</span>
+          {button} <span aria-hidden="true" className="ms-2">→</span>
         </Link>
       ) : (
         <span aria-disabled="true" className="flex min-h-[58px] w-full items-center justify-center rounded-2xl bg-slate-200 text-lg font-black text-slate-500">{t('unit.comingSoon')}</span>
@@ -284,7 +284,7 @@ export default function UnitMissionView({ unit, mission }) {
                 <p className="font-bold text-slate-600">{t('unit.mission.finishedLine')}</p>
                 <div className="mt-3 flex flex-wrap gap-1.5">{mission.keys.map((k) => <span key={k.label} className="rounded-full bg-amber-100 px-2.5 py-0.5 text-sm font-bold text-amber-900">{k.icon} {k.label}</span>)}</div>
                 <button type="button" onClick={() => setWin({ kind: 'challenge' })} data-unit-solve
-                  className="mt-4 min-h-[58px] w-full rounded-2xl bg-nav-accent text-xl font-black text-white shadow-[0_5px_0_0_#3730A3]">{t('unit.mission.solve')} ←</button>
+                  className="mt-4 min-h-[58px] w-full rounded-2xl bg-nav-accent text-xl font-black text-white shadow-[0_5px_0_0_#3730A3]">{t('unit.mission.solve')} →</button>
               </div>
               <div className="flex items-center justify-center rounded-2xl bg-gradient-to-b from-amber-100 to-amber-200 text-7xl" aria-hidden="true">🏆</div>
             </article>
@@ -293,7 +293,7 @@ export default function UnitMissionView({ unit, mission }) {
           <article className="flex flex-col gap-2.5 rounded-3xl border border-slate-200 bg-gradient-to-b from-amber-50 to-white p-5 shadow-sm" data-unit-challenge-card>
             <div className="flex items-center justify-between gap-2">
               <h3 className="text-[15px] font-black text-amber-800">{t('unit.mission.challengeTitle')}</h3>
-              <button type="button" onClick={() => setWin({ kind: 'challenge' })} className="whitespace-nowrap text-sm font-black text-nav-accent">{t('unit.mission.readChallenge')} ←</button>
+              <button type="button" onClick={() => setWin({ kind: 'challenge' })} className="whitespace-nowrap text-sm font-black text-nav-accent">{t('unit.mission.readChallenge')} →</button>
             </div>
             <p className="text-[17px] font-bold leading-relaxed text-slate-900"><Highlighted text={mission.challenge.lead} numbers={mission.challenge.numbers} /></p>
             <div className="mt-auto flex items-center gap-2" data-unit-keys={state.keysEarned}>

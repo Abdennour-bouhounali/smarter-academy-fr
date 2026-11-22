@@ -17,8 +17,7 @@ a v2 lesson: content declared in its `lesson.pack.js`, played on a world of `les
   append-only — never reorder a lesson's points.
 - A wrong answer never blocks progression (`npm run check:non-blocking`).
 - Language, register, typography and formats: [`docs/architecture/FRENCH_LANGUAGE_CONTRACT.md`](./docs/architecture/FRENCH_LANGUAGE_CONTRACT.md).
-  The interface is still Arabic until steps 1C–1E of the plan; until then the code it concerns follows
-  [`ARABIC_RTL_CONTRACT.md`](./docs/architecture/ARABIC_RTL_CONTRACT.md).
+  The interface is French and left to right; `apps/web/src/test/noArabic.test.js` refuses any Arabic character in the web.
 
 ## Shared code
 

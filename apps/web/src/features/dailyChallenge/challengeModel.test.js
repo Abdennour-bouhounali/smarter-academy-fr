@@ -77,11 +77,11 @@ describe('challengeModel', () => {
 // the day. The letters and the sentences must say the same week.
 describe('a Monday-to-Friday challenge', () => {
   it('names the ISO weekdays in French, Monday first', async () => {
-    const challenge = (await import('../../i18n/locales/ar/challenge.json')).default;
+    const challenge = (await import('../../i18n/locales/fr/challenge.json')).default;
     expect(challenge.streak.weekday).toEqual({ 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' });
   });
   it('says there is no challenge at the weekend, and that the weekend does not break a streak', async () => {
-    const challenge = (await import('../../i18n/locales/ar/challenge.json')).default;
+    const challenge = (await import('../../i18n/locales/fr/challenge.json')).default;
     expect(challenge.reasons.rest_day).toMatch(/du lundi au vendredi/);
     expect(challenge.intro.rulesBody).toMatch(/le week-end ne la casse pas/);
     expect(challenge.intro.doneHint).not.toMatch(/demain/);

@@ -8,7 +8,7 @@ const src = readFileSync(resolve(here, 'Progression.jsx'), 'utf8');
 
 // Le catalogue arabe : c'est lui qui porte désormais les libellés.
 const studentAr = JSON.parse(
-  readFileSync(new URL('../../i18n/locales/ar/student.json', import.meta.url), 'utf8'),
+  readFileSync(new URL('../../i18n/locales/fr/student.json', import.meta.url), 'utf8'),
 );
 const home = readFileSync(resolve(here, 'StudentHome.jsx'), 'utf8');
 // La tuile des compétences vit dans son propre composant depuis la refonte

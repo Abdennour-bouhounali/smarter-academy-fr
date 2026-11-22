@@ -51,12 +51,12 @@ export default function SchoolReport() {
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-center gap-2 print:hidden">
-        <Link to="/idara/taqarir" className={btnSecondary}><ArrowBack size={16} aria-hidden="true" />{t('reports.back')}</Link>
+        <Link to="/etablissement/rapports" className={btnSecondary}><ArrowBack size={16} aria-hidden="true" />{t('reports.back')}</Link>
         {report && (
           <>
             <span className="flex-1" />
             <button type="button" className={btnSecondary} onClick={exportCsv} data-report-csv><Download size={16} aria-hidden="true" />{t('reports.csv')}</button>
-            <Link to={`/idara/ijtimaa/${report.id}`} className={btnSecondary}><Presentation size={16} aria-hidden="true" />{t('reports.meeting')}</Link>
+            <Link to={`/etablissement/reunion/${report.id}`} className={btnSecondary}><Presentation size={16} aria-hidden="true" />{t('reports.meeting')}</Link>
             <button type="button" className={btnPrimary} onClick={() => window.print()} data-report-print><Printer size={16} aria-hidden="true" />{t('reports.print')}</button>
           </>
         )}

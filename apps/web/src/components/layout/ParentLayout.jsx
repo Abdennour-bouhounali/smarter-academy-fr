@@ -8,8 +8,8 @@ import { needsName } from '../../utils/personName';
 import { getDisplayName } from '../../utils/userDisplay';
 
 const LINKS = [
-  { to: '/wali', end: true, icon: Users, key: 'nav.children' },
-  { to: '/wali/himaya', end: false, icon: ShieldCheck, key: 'nav.guide' },
+  { to: '/parent', end: true, icon: Users, key: 'nav.children' },
+  { to: '/parent/protection', end: false, icon: ShieldCheck, key: 'nav.guide' },
 ];
 
 /**
@@ -24,7 +24,7 @@ const LINKS = [
  *
  * Une garde, comme l'enseignant : « prénom et nom ». L'élève lit le nom de son
  * parent dans « Les parents liés à ton compte » ; un compte sans nom passe par
- * /wali/bienvenue. Le rôle est vérifié par ProtectedRoute ; la vraie porte
+ * /parent/bienvenue. Le rôle est vérifié par ProtectedRoute ; la vraie porte
  * reste le serveur (can:parent + lien actif).
  */
 export default function ParentLayout() {
@@ -34,7 +34,7 @@ export default function ParentLayout() {
   const navigate = useNavigate();
 
   if (needsName(user)) {
-    return <Navigate to="/wali/bienvenue" replace state={{ from: location.pathname + location.search }} />;
+    return <Navigate to="/parent/bienvenue" replace state={{ from: location.pathname + location.search }} />;
   }
 
   const handleLogout = async () => {
@@ -47,7 +47,7 @@ export default function ParentLayout() {
       <ScrollToTop />
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-5xl items-center gap-2 px-3 sm:h-16 sm:gap-4 sm:px-6">
-          <Link to="/wali" className="flex flex-shrink-0 items-center gap-2 sm:gap-3">
+          <Link to="/parent" className="flex flex-shrink-0 items-center gap-2 sm:gap-3">
             <img src="/brand/mark-color.svg" width="200" height="200" decoding="async" alt="Smarter Academy" className="h-8 w-8 sm:h-9 sm:w-9" />
             <span className="hidden font-space text-sm font-bold text-nav-accent sm:inline">{t('nav.spaceName')}</span>
           </Link>

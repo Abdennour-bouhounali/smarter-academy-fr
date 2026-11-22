@@ -60,7 +60,7 @@ export default function SchoolReports() {
     setError(null);
     try {
       const d = await generateReport(token, { type, scope: scope || null, termId: termId ? Number(termId) : null });
-      navigate(`/idara/taqarir/${d.report.id}`);
+      navigate(`/etablissement/rapports/${d.report.id}`);
     } catch (e) {
       setError(errorText(t, e));
       setBusy(false);
@@ -138,7 +138,7 @@ export default function SchoolReports() {
                   {t('reports.generatedAt')} {new Date(r.generatedAt).toLocaleString(LOCALE, { dateStyle: 'medium', timeStyle: 'short', numberingSystem: 'latn' })}
                 </p>
               </div>
-              <Link to={`/idara/taqarir/${r.id}`} className={btnSecondary}>{t('reports.open')}</Link>
+              <Link to={`/etablissement/rapports/${r.id}`} className={btnSecondary}>{t('reports.open')}</Link>
               <button type="button" className={btnDanger} onClick={() => setDeleting(r)} aria-label={t('reports.delete')}><Trash2 size={16} aria-hidden="true" /></button>
             </li>
           ))}

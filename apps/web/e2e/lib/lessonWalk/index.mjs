@@ -20,14 +20,17 @@ export const PARTS = {
 };
 /** `all` = every part but the sitting (it opens every sheet of the bank: run it on its own, trusted.md). */
 export const ALL = ['story', 'hub', 'trainer', 'board', 'launch'];
-/** Two knowledge cards of other lessons whose tablet carries a longer name (lessons 4–6's lists add them by hand). */
-const LONG_NAMES = ['جداء عاملين', 'الرقمان الأخيران'];
+/**
+ * Knowledge cards of other lessons whose tablet carries a longer name than the lessons' data gives (the Algerian lessons
+ * 4–6 added two by hand). No French lesson exists yet: the first lessons add theirs here, each justified.
+ */
+const LONG_NAMES = [];
 
 /** Runs `parts` of the lesson the descriptor names; screenshots in `<out>/<part>`. */
 export async function runLessonWalk(D, parts, out) {
   deafAll();
   const L = await loadLesson(D.id);
-  // a lesson of ANOTHER world than the islands (« قصر الساحات »): its foreign words and its screens' rules are its world's
+  // a lesson of ANOTHER world than the islands (« Le palais des dalles »): its foreign words and its screens' rules are its world's
   const other = worldOfLesson(L);
   const foreign = other
     ? other.foreignWords(L, [...LONG_NAMES, ...(D.foreignWords ?? [])])

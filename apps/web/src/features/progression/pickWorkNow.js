@@ -4,8 +4,8 @@ import { flattenTree } from './buildProgressionTree';
  * « À travailler maintenant » — une règle DÉTERMINISTE et lisible, pas un moteur de
  * recommandation : on ne pioche que dans les états réels du profil.
  *
- *  1. les points « gap » (🔴 À retravailler) d'abord, puis « reinforce »
- *     (🟡 En progrès) ;
+ *  1. les points « gap » (🔴 En difficulté) d'abord, puis « reinforce »
+ *     (🟡 À consolider) ;
  *  2. à état égal, la leçon la plus RÉCEMMENT visitée d'abord (c'est là que
  *     l'élève est) ;
  *  3. puis l'ordre officiel du programme (thème, chapitre, leçon, point) ;

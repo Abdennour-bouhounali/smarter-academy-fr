@@ -17,7 +17,7 @@ import { matrixFor } from './transformModel.js';
 import {
   normalizeScene, setSteps, addFigure, emptyScene, createTransformationsData, resolveData,
 } from './transformState.js';
-import mathlab from '../../../../i18n/locales/ar/mathlab.json';
+import mathlab from '../../../../i18n/locales/fr/mathlab.json';
 
 const at = (x, y) => ({ x, y });
 

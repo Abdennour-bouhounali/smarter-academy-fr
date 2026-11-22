@@ -47,13 +47,13 @@ export const MOMENTS = Object.freeze(['start', 'revise', 'lesson', 'end']);
 
 /** The class session of a lesson; `moment` opens it directly on one moment of the hour. */
 export const classSessionPath = (lessonId, moment = null) =>
-  `/enseignant/hissa/${encodeURIComponent(lessonId)}${moment && MOMENTS.includes(moment) ? `?moment=${moment}` : ''}`;
+  `/enseignant/seance/${encodeURIComponent(lessonId)}${moment && MOMENTS.includes(moment) ? `?moment=${moment}` : ''}`;
 
 /** « le suivi de la classe »: the class on this lesson, student by student — a tab of the set-up screen of the class session. */
-export const classTrackingPath = (lessonId) => `/enseignant/mutabaa/${encodeURIComponent(lessonId)}`;
+export const classTrackingPath = (lessonId) => `/enseignant/suivi/${encodeURIComponent(lessonId)}`;
 
 /** « la fiche de connaissances » of the lesson on the board of the class: a quick revision with the whole class. */
-export const classCardPath = (lessonId) => `/enseignant/bitaqa/${encodeURIComponent(lessonId)}`;
+export const classCardPath = (lessonId) => `/enseignant/carte/${encodeURIComponent(lessonId)}`;
 
 /** Is this lesson path (the lesson page or one of its modules) the path of a lesson that has its board? */
 export const boardLessonOfPath = (path) =>

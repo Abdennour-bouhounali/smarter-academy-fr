@@ -1,7 +1,7 @@
 /**
  * « le suivi de la classe » — the class on THIS lesson, student by student (owner, 2026-11-18; CLASS_SESSION.md §2bis).
- * Its own screen (`/enseignant/mutabaa/:lessonId`). What a teacher reads here, top to bottom:
- *   the class in facts — per savoir-faire, how many are « Maîtrisé », « À consolider », « Lacune », not assessed yet;
+ * Its own screen (`/enseignant/suivi/:lessonId`). What a teacher reads here, top to bottom:
+ *   the class in facts — per savoir-faire, how many are « Maîtrisé », « À consolider », « En difficulté », « Non évalué »;
  *   each student on one line — his state on every savoir-faire (one square each) and his exercises (how many, how many right);
  *   a line opens on the detail — each savoir-faire in words, each exercise with what he got right, and right at the first try.
  * The order is « who needs me first », never a ranking. Read-only; nothing here is written anywhere.

@@ -1,5 +1,5 @@
 /**
- * QA navigateur — le مختبر المتتاليات (laboratoire des suites et récurrences).
+ * QA navigateur — l'outil « Suites » de l'atelier (suites et récurrences).
  *
  * Lancement (dev server sur 5173, API sur 8000, élève QA existant) :
  *   node apps/web/e2e/mathlab-sequences.mjs [dossier-captures]
@@ -7,9 +7,9 @@
  * Ce qu'on vérifie (§53) :
  *   - navigation : la carte sur l'accueil, l'URL directe, le rechargement,
  *     le visiteur non connecté ;
- *   - la première visite : la suite ARITHMÉTIQUE du programme de 4AM avec ses
- *     FROUS MÉTATALLIQUES affichées, et aucun document créé avant le premier geste ;
- *   - les familles (§3) : arithmétique, géométrique, tآلفية, صريحة, تراجعية,
+ *   - la première visite : la suite ARITHMÉTIQUE du programme du collège avec ses
+ *     DIFFÉRENCES SUCCESSIVES affichées, et aucun document créé avant le premier geste ;
+ *   - les familles (§3) : arithmétique, géométrique, arithmético-géométrique, explicite, par récurrence,
  *     rang deux (Fibonacci) ;
  *   - les curseurs (§5, §25) : q de 0,8 → 1 → 1,2 → −1, et le comportement
  *     qui change SOUS le doigt ;
@@ -25,7 +25,8 @@
  *   - l'écriture libre (§31) et sa sûreté (§32) : `2u +`, `1/(u-2)`, `u^u` ;
  *   - l'entraînement (§27) : prédire → révéler, et JAMAIS de blocage ;
  *   - le mouvement réduit (§43) ;
- *   - RTL : panneau au bon bord, notation LTR (direction CALCULÉE) ;
+ *   - gauche à droite : page française sans dir="rtl", panneau au bon bord,
+ *     notation LTR (direction CALCULÉE) ;
  *   - responsive : tablette et mobile, pas de débordement horizontal,
  *     cibles tactiles ≥ 36 px ;
  *   - accessibilité : focus visible, curseurs nommés, ligne courante marquée
@@ -40,7 +41,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const OUT = process.argv[2] || '/tmp/mathlab-sequences-shots';
 mkdirSync(OUT, { recursive: true });
@@ -161,7 +162,7 @@ attach(page);
 
 await page.goto(`${BASE}/espace/atelier?lab=secondaire`, { waitUntil: 'networkidle' });
 const card = page.locator('a[href*="/atelier/suites"]').first();
-record('accueil : la carte du مختبر المتتاليات est là', await card.count() > 0);
+record('accueil : la carte de l’outil des suites est là', await card.count() > 0);
 await page.screenshot({ path: `${OUT}/00-accueil.png`, fullPage: true });
 
 // ═══ 2. La première visite ═══════════════════════════════════════════════
@@ -183,11 +184,11 @@ record('les dix premiers termes sont 2, 5, 8, 11…',
   firstValues.slice(0, 4).join(',') === '2,5,8,11', firstValues.slice(0, 5).join(' · '));
 
 const deltaCount = await countOf(page, '[data-ml-seq-delta]');
-record('les FROUS MÉTATALLIQUES (§الفروق المتتالية, LP 2.1) sont affichées d’emblée', deltaCount > 0, `${deltaCount} lignes`);
+record('les DIFFÉRENCES SUCCESSIVES (LP 2.1) sont affichées d’emblée', deltaCount > 0, `${deltaCount} lignes`);
 
 // La règle de la plateforme : rien du lycée sur le premier écran.
 const cobwebAtOpen = await countOf(page, '[data-ml-seq-cobweb]');
-record('le premier écran ne montre PAS la toile (au-delà du programme de 4AM)', cobwebAtOpen === 0);
+record('le premier écran ne montre PAS la toile (au-delà du programme du collège)', cobwebAtOpen === 0);
 
 const dots = await dotIndices(page);
 record('le graphe montre dix points discrets', dots.length === 10, dots.join(','));
@@ -499,8 +500,8 @@ await sleep(700);
 record('§27 : l’entraînement s’ouvre sur une question', await countOf(page, '[data-ml-seq-practice-question]') > 0);
 
 const question = await textOf(page, '[data-ml-seq-practice-question]');
-record('§44 : la question est en ARABE',
-  /[؀-ۿ]/.test(question ?? '') && !/\b(what|predict|find|which|how)\b/i.test(question ?? ''), question);
+record('§44 : la question est en FRANÇAIS',
+  /[A-Za-zÀ-ÿ]{3}/.test(question ?? '') && !/[\u0600-\u06FF]/.test(question ?? '') && !/\b(what|predict|find|which|how)\b/i.test(question ?? ''), question);
 
 // Une réponse volontairement fausse.
 const answerField = page.locator('[data-ml-seq-practice-answer]').first();
@@ -523,11 +524,11 @@ record('§27 : « révéler » reste actif après une erreur — rien ne se verr
 record('§27 : « question suivante » reste actif',
   await page.locator('[data-ml-seq-practice-next]').first().isEnabled());
 record('§27 : la mention « réessaie librement » est affichée',
-  (await textOf(page, '[data-ml-seq-practice]'))?.includes('أعِد المحاولة'));
+  (await textOf(page, '[data-ml-seq-practice]'))?.includes('Recommence autant que tu veux'));
 
 // Une saisie illisible n'est PAS « faux ».
 if (!isChoice) {
-  await answerField.fill('أربعة');
+  await answerField.fill('quatre');
   await page.locator('[data-ml-seq-practice-check]').first().click();
   await sleep(350);
   const unreadable = await page.locator('[data-ml-seq-practice-verdict]').first().getAttribute('data-ml-seq-practice-verdict');
@@ -590,16 +591,18 @@ if (docId) {
   record('persistance : le document reste minuscule', raw.length < 2000, `${raw.length} octets`);
 }
 
-// ═══ 15. RTL et notation (§44) ═══════════════════════════════════════════
+// ═══ 15. LTR et notation (§44) ═══════════════════════════════════════════
 const dir = await page.evaluate(() => document.documentElement.dir);
-record('RTL : la page est en rtl', dir === 'rtl');
+const lang = await page.evaluate(() => document.documentElement.lang);
+const pageDirection = await page.evaluate(() => getComputedStyle(document.documentElement).direction);
+record('LTR : la page est en français, de gauche à droite', lang === 'fr' && dir !== 'rtl' && pageDirection === 'ltr', `lang=${lang} dir=${dir} direction=${pageDirection}`);
 
 const planeDir = await page.evaluate(() => {
   const node = document.querySelector('[data-ml-seq-plane]');
 
   return node ? getComputedStyle(node).direction : null;
 });
-record('RTL : le PLAN reste en ltr (c’est de la mathématique)', planeDir === 'ltr', String(planeDir));
+record('LTR : le PLAN est en ltr (c’est de la mathématique)', planeDir === 'ltr', String(planeDir));
 
 const ruleStyle = await page.evaluate(() => {
   const node = document.querySelector('[data-ml-seq-rule]');
@@ -608,19 +611,21 @@ const ruleStyle = await page.evaluate(() => {
 
   return { direction: style.direction, textAlign: style.textAlign };
 });
-record('RTL : la notation est en ltr ET alignée à gauche (la paire de §44)',
+record('LTR : la notation est en ltr ET alignée à gauche (la paire de §44)',
   ruleStyle?.direction === 'ltr' && ruleStyle?.textAlign === 'left', JSON.stringify(ruleStyle));
 
 const panelBox = await page.locator('[data-ml-panel]').first().boundingBox();
-record('RTL : le panneau est au bord de DÉBUT (à gauche en rtl)',
-  panelBox && panelBox.x < 700, JSON.stringify(panelBox && { x: Math.round(panelBox.x) }));
+// Le plan vient d'abord dans le DOM (`flex-direction: row`) : de gauche à
+// droite, le panneau est à droite — l'exact miroir de l'ancienne disposition RTL.
+record('LTR : le panneau est à droite du plan (miroir de l’ancienne disposition)',
+  panelBox && panelBox.x + panelBox.width > 1360 - 700, JSON.stringify(panelBox && { x: Math.round(panelBox.x) }));
 
 const panelText = await textOf(page, '[data-ml-panel]');
 record('aucun mot anglais oublié dans le panneau',
   !/\b(sequence|ratio|difference|term|next|play|reveal|hint|table)\b/i.test(panelText ?? ''));
-record('aucun chiffre arabo-indien : les manuels algériens écrivent en chiffres latins',
-  !/[٠-٩]/.test(panelText ?? ''));
-await page.screenshot({ path: `${OUT}/09-rtl.png`, fullPage: true });
+record('aucun chiffre arabo-indien ni lettre arabe dans le panneau',
+  !/[\u0600-\u06FF]/.test(panelText ?? ''));
+await page.screenshot({ path: `${OUT}/09-ltr.png`, fullPage: true });
 
 // ═══ 16. Accessibilité (§43) ═════════════════════════════════════════════
 const sliderLabel = await page.locator('[data-ml-seq-slider="ratio"]').first().getAttribute('aria-label');

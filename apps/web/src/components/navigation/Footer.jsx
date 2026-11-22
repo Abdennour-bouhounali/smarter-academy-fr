@@ -95,7 +95,7 @@ export default function Footer() {
                 { to: '/confidentialite', label: t('privacy') },
                 { to: '/cgu', label: t('terms') },
                 // Le guide de protection de l'appareil (PARENT_SPACE.md §6) : public, pour les parents.
-                { to: '/himaya', label: tm('footer.deviceGuide') },
+                { to: '/protection', label: tm('footer.deviceGuide') },
               ].map((item) => (
                 <li key={item.to}>
                   <Link

@@ -576,11 +576,13 @@
    comme en exercice (NotebookButton) : même pastille, même place. */
 .sa-nb-lesson-trigger {
   position: fixed;
-  left: 1.5rem;
-  /* L'étage au-dessus de « Ma fiche », qui est au ras du coin (1.5rem). La
-     colonne ne compte plus que deux pastilles depuis que « Mode classe » est
-     remonté dans la rangée de repères de l'étape. Sous `lg`, la pile monte
-     au-dessus de la barre de navigation du bas (`--sa-bottom-nav`, index.css). */
+  right: 1.5rem;
+  /* Le bord de FIN (la droite), comme la colonne flottante du moteur : la
+     barre latérale de l'espace élève tient le bord de début. La pastille se
+     pose à l'étage AU-DESSUS de « Projeter » (`.sa-classroom-fab`,
+     lessons/common/classroom/classroom.css : bottom 1.5rem, 3rem de haut) —
+     les deux ne se recouvrent pas. Sous `lg`, la pile monte au-dessus de la
+     barre de navigation du bas (`--sa-bottom-nav`, index.css). */
   bottom: calc(5.5rem + var(--sa-bottom-nav, 0px));
   z-index: 40;
   display: inline-flex;

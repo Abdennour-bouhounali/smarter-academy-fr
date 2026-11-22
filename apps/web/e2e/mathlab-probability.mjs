@@ -1,12 +1,12 @@
 /**
- * QA navigateur — الاحتمالات والإحصاء (probabilités & statistiques) du مختبر الرياضيات.
+ * QA navigateur — « Probabilités et statistiques » de « L’atelier de mathématiques ».
  *
  * Lancement (dev server sur 5173, API sur 8000, élève QA existant) :
  *   node apps/web/e2e/mathlab-probability.mjs [dossier-captures]
  *
  * Ce qu'on vérifie :
  *   - navigation : la carte sur l'accueil, l'URL directe, le rechargement,
- *     le visiteur non connecté, l'absence de « قريبًا » pour l'instrument ;
+ *     le visiteur non connecté, l'absence de « Bientôt » pour l'instrument ;
  *   - la première visite : la pièce, cent tirages prêts, aucun tirage fait,
  *     aucun document créé ;
  *   - chaque expérience : pièce, dé, deux dés (la somme 7 domine), entiers
@@ -19,14 +19,15 @@
  *     avalée, le vide, les repères moyenne / médiane et leurs cases,
  *     bâtons contre histogramme ;
  *   - persistance : naissance au premier changement, sauvegarde, relecture
- *     (mode, expérience, effectifs, série, cases), « أعمالي », mسح الكل ;
+ *     (mode, expérience, effectifs, série, cases), « Mes travaux », « Tout effacer » ;
  *   - la table d'expérience (three.js) : pour CHAQUE valeur du dé, la face
  *     réellement en haut (lue sur l'objet) = le résultat affiché = l'effectif
  *     qui monte ; la pièce sur ses deux côtés ; deux dés et leur somme ;
  *     un lancer interrompu en l'air n'est pas compté ; « mouvement réduit »
  *     pose le résultat tout de suite ; le lot culbute puis se pose sur le
  *     dernier tirage ;
- *   - RTL : panneau à droite, Cairo, graphique LTR ;
+ *   - gauche à droite : page française sans dir="rtl", panneau à gauche, police
+ *     Inter (plus de Cairo), graphique LTR ;
  *   - responsive : tablette et mobile, panneau repliable, pas de débordement,
  *     pastilles ≥ 36 px sous le doigt.
  *
@@ -37,7 +38,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://localhost:5173';
 const API = process.env.QA_API || 'http://localhost:8000/api/v1';
-const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@smarter.dz';
+const EMAIL = process.env.QA_STUDENT_EMAIL || 'qa-eleve@exemple.fr';
 const PASSWORD = process.env.QA_PASSWORD || 'QaPass2026!';
 const OUT = process.argv[2] || '/tmp/mathlab-probability-shots';
 mkdirSync(OUT, { recursive: true });
@@ -105,7 +106,7 @@ const waitSaved = async (page, timeout = 9000) => {
   await page.waitForSelector('[data-ml-status="saved"]', { timeout });
 };
 // Le total vit dans la légende du SVG : `innerText` n'existe pas sur un <text> SVG, on lit `textContent`.
-// Le total est un attribut numérique : le texte arabe de la légende (« تجربة واحدة ») ne porte pas toujours un chiffre.
+// Le total est un attribut numérique : le texte de la légende (« 1 tirage ») ne porte pas toujours un chiffre.
 const total = (page) => page.evaluate(() => Number(document.querySelector('[data-ml-ps-chart-total]')?.getAttribute('data-ml-ps-total') ?? 0));
 const stat = async (page, key) => num(await page.locator(`[data-ml-ps-stat-value="${key}"]`).innerText());
 const counts = (page) => page.$$eval('[data-ml-ps-count]', (els) => els.map((e) => Number(e.textContent.replace(/\D/g, ''))));
@@ -116,7 +117,7 @@ const waitRunDone = async (page, timeout = 25000) => {
 
 async function openTool(page, path = '/espace/atelier/probabilites-statistiques?lab=secondaire') {
   await page.goto(`${BASE}${path}`, { waitUntil: 'networkidle' });
-  // Le pupitre existe dans les deux modes ; le bouton « أطلق » seulement en mode expérience.
+  // Le pupitre existe dans les deux modes ; le bouton « Lancer l’expérience » seulement en mode expérience.
   await page.waitForSelector('[data-ml-ps] [data-ml-ps-panel]', { timeout: 30000 });
   await sleep(300);
 }
@@ -148,38 +149,38 @@ async function setDataset(page, text) {
   await sleep(450);
 }
 
-const ctx = await authedContext({ viewport: { width: 1440, height: 900 }, locale: 'ar-DZ' });
+const ctx = await authedContext({ viewport: { width: 1440, height: 900 }, locale: 'fr-FR' });
 const page = await ctx.newPage();
 attach(page);
 
 let docId = null;
 try {
   // ── Accueil et première visite ────────────────────────────────────────
-  // Le scénario parcourt les quatre sections : c'est le ثانوي (au collège,
+  // Le scénario parcourt les quatre sections : c'est le lycée (au collège,
   // ni arbre ni loi normale — mathlab-labs-scope.mjs).
   await page.goto(`${BASE}/espace/atelier?lab=secondaire`, { waitUntil: 'networkidle' });
   const card = page.locator('[data-ml-tool-card="probabilityStats"]');
-  record('مخبر الثانوي : la carte « الاحتمالات والإحصاء »', (await card.count()) === 1 && (await card.innerText()).includes('الاحتمالات والإحصاء'));
+  record('atelier du lycée : la carte « Probabilités et statistiques »', (await card.count()) === 1 && (await card.innerText()).includes('Probabilités et statistiques'));
   await card.click();
   await page.waitForURL(/\/espace\/atelier\/probabilites-statistiques\?lab=secondaire$/, { timeout: 15000 });
   await page.waitForSelector('[data-ml-ps-run]', { timeout: 30000 });
   await sleep(400);
   record('première visite : la pièce, 100 tirages prêts, aucun tirage', (await page.inputValue('[data-ml-ps-experiment]')) === 'coin' && (await page.getAttribute('[data-ml-ps-draws="100"]', 'aria-pressed')) === 'true' && (await page.locator('[data-ml-ps-chart-empty]').count()) === 1);
   record('première visite : rien n’est créé', (await page.locator('[data-ml-status]').getAttribute('data-ml-status')) === 'clean' && docIdOf(page.url()) === null);
-  record('première visite : « إعادة التصفير » désactivé', await page.locator('[data-ml-ps-reset]').isDisabled());
+  record('première visite : « Remettre à zéro » désactivé', await page.locator('[data-ml-ps-reset]').isDisabled());
   await page.screenshot({ path: `${OUT}/01-first.png` });
 
   // ── La pièce : lancer, accumuler, animer ──────────────────────────────
   await page.click('[data-ml-ps-draws="10"]');
   await page.click('[data-ml-ps-run]');
   await sleep(120);
-  record('pièce : pendant l’animation, le bouton devient « أوقف »', (await page.locator('[data-ml-ps-stop]').count()) === 1);
+  record('pièce : pendant l’animation, le bouton devient « Arrêter »', (await page.locator('[data-ml-ps-stop]').count()) === 1);
   await waitRunDone(page);
   record('pièce : 10 tirages faits, deux barres', (await total(page)) === 10 && (await page.locator('[data-ml-ps-bar]').count()) === 2);
   const c10 = await counts(page);
   record('pièce : les effectifs somment à 10', c10.length === 2 && c10[0] + c10[1] === 10, c10.join('+'));
   record('pièce : le trait théorique à 50 % est dessiné', (await page.locator('[data-ml-ps-theoretical]').count()) === 2);
-  record('pièce : « وجه … مقابل 50 % »', (await page.locator('[data-ml-ps-tracked]').innerText()).includes('50'));
+  record('pièce : « Face … contre 50 % »', (await page.locator('[data-ml-ps-tracked]').innerText()).includes('contre') && (await page.locator('[data-ml-ps-tracked]').innerText()).includes('50'));
   await page.waitForURL(/\/probabilites-statistiques\/\d+(?:\?lab=\w+)?$/, { timeout: 12000 });
   docId = docIdOf(page.url());
   created.add(docId);
@@ -191,9 +192,9 @@ try {
   await waitRunDone(page);
   record('pièce : un second lancer S’AJOUTE — 1 010 tirages', (await total(page)) === 1010);
   const heads = num(await page.locator('[data-ml-ps-tracked-frequency]').innerText());
-  record('pièce : la fréquence de « وجه » est près de 50 %', heads > 40 && heads < 60, `${heads} %`);
+  record('pièce : la fréquence de « Face » est près de 50 %', heads > 40 && heads < 60, `${heads} %`);
   record('loi des grands nombres : la courbe de convergence est dessinée', (await page.locator('[data-ml-ps-convergence]').count()) === 1 && (await page.locator('[data-ml-ps-convergence-theoretical]').count()) === 1);
-  record('loi des grands nombres : une question, pas une leçon', (await page.locator('[data-ml-ps-prompt]').innerText()).includes('؟'));
+  record('loi des grands nombres : une question, pas une leçon', (await page.locator('[data-ml-ps-prompt]').innerText()).includes('?'));
   await page.screenshot({ path: `${OUT}/03-coin-1010.png` });
 
   await page.click('[data-ml-ps-draws="100000"]');
@@ -212,7 +213,7 @@ try {
   await page.click('[data-ml-ps-stop]').catch(() => {});
   await sleep(200);
   const stopped = await total(page);
-  record('arrêt : « أوقف » interrompt l’animation', (await page.locator('[data-ml-ps-run]').count()) === 1 && stopped >= 101010 && stopped < 201010, `${stopped}`);
+  record('arrêt : « Arrêter » interrompt l’animation', (await page.locator('[data-ml-ps-run]').count()) === 1 && stopped >= 101010 && stopped < 201010, `${stopped}`);
   await page.click('[data-ml-ps-reset]');
   await sleep(300);
   record('réinitialiser : plus aucun tirage, graphique vide, bouton désactivé', (await page.locator('[data-ml-ps-chart-empty]').count()) === 1 && (await page.locator('[data-ml-ps-reset]').isDisabled()));
@@ -284,7 +285,7 @@ try {
   record('tirages : 0 est refusé', (await page.locator('#ml-ps-draws-error').count()) === 1);
   await drawsField.fill('250');
   await drawsField.press('Enter');
-  // Changer les bornes a déjà remis la simulation à zéro : « إعادة التصفير » est alors désactivé, à juste titre.
+  // Changer les bornes a déjà remis la simulation à zéro : « Remettre à zéro » est alors désactivé, à juste titre.
   record('entiers : changer les bornes remet la simulation à zéro', await page.locator('[data-ml-ps-reset]').isDisabled());
   await page.click('[data-ml-ps-run]');
   await waitRunDone(page);
@@ -294,7 +295,7 @@ try {
   await page.selectOption('[data-ml-ps-experiment]', 'die');
   await page.click('[data-ml-ps-draws="1"]');
   record('table : un dé est posé sur la table (canevas three.js)', (await page.locator('[data-ml-ps-dice="die"] [data-ml-ps-dice-canvas]').count()) === 1 && (await page.getAttribute('[data-ml-ps-dice]', 'data-ml-ps-dice-count')) === '1');
-  record('table : le bouton dit « ارمِ النرد »', (await page.locator('[data-ml-ps-run]').innerText()).includes('ارمِ النرد'));
+  record('table : le bouton dit « Lance le dé »', (await page.locator('[data-ml-ps-run]').innerText()).includes('Lance le dé'));
   {
     const seen = new Set();
     let allConsistent = true;
@@ -344,7 +345,7 @@ try {
     const t0 = Date.now();
     await page.click('[data-ml-ps-run]');
     await sleep(200);
-    record('dé : pendant un lot, la table dit « محاكاة 1000 رمية… »', (await page.getAttribute('[data-ml-ps-result]', 'data-ml-ps-result')) === 'batch' && (await page.locator('[data-ml-ps-result]').innerText()).includes('1000'));
+    record('dé : pendant un lot, la table dit « Simulation de 1000 tirages… »', (await page.getAttribute('[data-ml-ps-result]', 'data-ml-ps-result')) === 'batch' && /Simulation de 1[\s\u202f\u00a0]?000/.test(await page.locator('[data-ml-ps-result]').innerText()));
     await waitRunDone(page);
     await page.waitForFunction(() => document.querySelector('[data-ml-ps-result]')?.getAttribute('data-ml-ps-result') === 'idle', null, { timeout: 5000 });
     const ms = Date.now() - t0;
@@ -362,7 +363,7 @@ try {
     await page.click('[data-ml-ps-run]');
     await waitRunDone(page);
     await page.waitForFunction(() => document.querySelector('[data-ml-ps-result]')?.getAttribute('data-ml-ps-result') === 'idle', null, { timeout: 5000 });
-    record('dé : sans « شاهد كل رمية », 10 tirages passent en lot (< 3 s)', Date.now() - t0 < 3000 && (await total(page)) === before + 10);
+    record('dé : sans « Voir chaque lancer », 10 tirages passent en lot (< 3 s)', Date.now() - t0 < 3000 && (await total(page)) === before + 10);
     await page.click('[data-ml-ps-option="watchRolls"]');
   }
 
@@ -376,10 +377,10 @@ try {
     for (let i = 0; i < 24 && seen.size < 2; i += 1) {
       const roll = await rollOnce(page);
       seen.add(roll.parts);
-      const word = roll.parts === '1' ? 'وجه' : 'ظهر';
+      const word = roll.parts === '1' ? 'Face' : 'Pile';
       if (roll.parts !== roll.top || !roll.text.includes(word)) consistent = false;
     }
-    record('pièce : « وجه » et « ظهر » sont sortis', seen.size === 2, [...seen].join(' '));
+    record('pièce : « Face » et « Pile » sont sortis', seen.size === 2, [...seen].join(' '));
     record('pièce : pour CHAQUE lancer, le côté en haut = le mot affiché', consistent);
     await page.screenshot({ path: `${OUT}/16-coin-landed.png` });
   }
@@ -430,7 +431,7 @@ try {
   record('série : vide → tirets, pas NaN, pas de plantage', (await page.locator('[data-ml-ps-stat-value="mean"]').innerText()) === '—' && (await page.locator('[data-ml-ps-chart-empty]').count()) === 1);
   await page.click('[data-ml-ps-option="showMean"]');
   await setDataset(page, '3 5 5 6 8');
-  record('série : la case « المتوسط » décochée cache le repère', (await page.locator('[data-ml-ps-mean-line]').count()) === 0 && (await page.locator('[data-ml-ps-median-line]').count()) === 1);
+  record('série : la case « Afficher la moyenne » décochée cache le repère', (await page.locator('[data-ml-ps-mean-line]').count()) === 0 && (await page.locator('[data-ml-ps-median-line]').count()) === 1);
   await page.click('[data-ml-ps-option="showMean"]');
   const many = Array.from({ length: 80 }, (_, i) => Math.round(50 + 30 * Math.sin(i * 1.7) + i * 0.4)).join(' ');
   await setDataset(page, many);
@@ -439,7 +440,7 @@ try {
 
   // ── Persistance ───────────────────────────────────────────────────────
   await setDataset(page, '10, 20, 30');
-  await page.fill('[data-ml-title]', 'تجربة QA');
+  await page.fill('[data-ml-title]', 'Expérience QA');
   await waitSaved(page);
   await page.reload({ waitUntil: 'networkidle' });
   await page.waitForSelector('[data-ml-ps-dataset]', { timeout: 30000 });
@@ -454,38 +455,39 @@ try {
   const sim = stored.data?.document?.data?.simulation ?? null;
   record('serveur : des effectifs et le dernier tirage, jamais les tirages', Boolean(sim) && Array.isArray(sim.counts) && sim.counts.length === 4 && sim.total === 100 && !('draws' in sim) && Array.isArray(sim.last?.parts), JSON.stringify(sim ?? stored.data).slice(0, 120));
   await page.goto(`${BASE}/espace/atelier`, { waitUntil: 'networkidle' });
-  record('« أعمالي » liste le document', (await page.locator('body').innerText()).includes('تجربة QA'));
+  record('« Mes travaux » liste le document', (await page.locator('body').innerText()).includes('Expérience QA'));
 
-  // ── Mسح الكل ──────────────────────────────────────────────────────────
+  // ── Tout effacer ────────────────────────────────────────────────────────
   await openTool(page, `/espace/atelier/probabilites-statistiques/${docId}`);
   record('réouverture : le mode « expérience » a été enregistré', (await page.getAttribute('[data-ml-ps-mode="experiment"]', 'aria-selected')) === 'true' && (await total(page)) === 100);
   await page.click('[data-ml-clear]');
   await page.waitForSelector('[role="alertdialog"]', { timeout: 5000 });
   const dialogText = await page.locator('[role="alertdialog"]').innerText();
-  record('« مسح الكل » : le texte de l’outil', dialogText.includes('النتائج'));
+  record('« Tout effacer » : le texte de l’outil', dialogText.includes('Effacer tous les résultats\u202f?'));
   await page.click('[data-nb-confirm]');
   await sleep(300);
-  record('« مسح الكل » : plus aucun tirage', (await page.locator('[data-ml-ps-chart-empty]').count()) === 1);
+  record('« Tout effacer » : plus aucun tirage', (await page.locator('[data-ml-ps-chart-empty]').count()) === 1);
 
-  // ── RTL ───────────────────────────────────────────────────────────────
+  // ── LTR ───────────────────────────────────────────────────────────────
   const panelBox = await page.locator('[data-ml-ps-panel]').boundingBox();
   const stageBox = await page.locator('[data-ml-ps-stage]').boundingBox();
-  record('RTL : le panneau est à droite du graphique', panelBox.x > stageBox.x);
+  // Le panneau vient d'abord dans le DOM : de gauche à droite, il est à gauche.
+  record('LTR : le panneau est à gauche du graphique', panelBox.x < stageBox.x);
   const font = await page.locator('[data-ml-ps-run]').evaluate((el) => getComputedStyle(el).fontFamily);
-  record('RTL : Cairo sur les contrôles', /Cairo/i.test(font), font);
+  record('LTR : Inter sur les contrôles, plus de Cairo', /Inter/i.test(font) && !/Cairo/i.test(font), font);
   await page.click('[data-ml-ps-run]');
   await waitRunDone(page);
   // La direction CALCULÉE : l'attribut `dir` ne s'applique pas à un SVG, seule la CSS compte.
-  record('RTL : le graphique reste LTR sous une page RTL', (await page.locator('[data-ml-ps-chart]').first().evaluate((el) => getComputedStyle(el).direction)) === 'ltr' && (await page.evaluate(() => getComputedStyle(document.documentElement).direction)) === 'rtl');
+  record('LTR : le graphique est LTR, comme la page française', (await page.locator('[data-ml-ps-chart]').first().evaluate((el) => getComputedStyle(el).direction)) === 'ltr' && (await page.evaluate(() => getComputedStyle(document.documentElement).direction)) === 'ltr' && (await page.getAttribute('html', 'lang')) === 'fr');
   const totalBox = await page.locator('[data-ml-ps-chart-total]').evaluate((el) => { const b = el.getBBox(); const svg = el.ownerSVGElement.viewBox.baseVal; return { right: b.x + b.width, max: svg.width }; });
-  record('RTL : la légende du total ne sort pas du cadre', totalBox.right <= totalBox.max, JSON.stringify(totalBox));
+  record('LTR : la légende du total ne sort pas du cadre', totalBox.right <= totalBox.max, JSON.stringify(totalBox));
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 1);
   record('bureau : pas de débordement horizontal', !overflow);
-  await page.screenshot({ path: `${OUT}/10-rtl.png` });
+  await page.screenshot({ path: `${OUT}/10-ltr.png` });
 
   // ── Mouvement réduit : le résultat se pose tout de suite ───────────────
   {
-    const calm = await authedContext({ viewport: { width: 1280, height: 800 }, locale: 'ar-DZ', reducedMotion: 'reduce' });
+    const calm = await authedContext({ viewport: { width: 1280, height: 800 }, locale: 'fr-FR', reducedMotion: 'reduce' });
     const p = await calm.newPage();
     attach(p);
     try {
@@ -505,7 +507,7 @@ try {
   }
 
   // ── Un visiteur ───────────────────────────────────────────────────────
-  const anon = await browser.newContext({ viewport: { width: 1280, height: 800 }, locale: 'ar-DZ' });
+  const anon = await browser.newContext({ viewport: { width: 1280, height: 800 }, locale: 'fr-FR' });
   const anonPage = await anon.newPage();
   await anonPage.goto(`${BASE}/espace/atelier/probabilites-statistiques?lab=secondaire`, { waitUntil: 'networkidle' });
   record('visiteur : envoyé à /login', /\/login/.test(anonPage.url()));
@@ -519,7 +521,7 @@ try {
 
 // ── Tablette et mobile ───────────────────────────────────────────────────
 for (const [label, width, height] of [['tablette', 1024, 768], ['mobile', 390, 844]]) {
-  const c = await authedContext({ viewport: { width, height }, locale: 'ar-DZ', hasTouch: true, isMobile: width < 700, deviceScaleFactor: 1 });
+  const c = await authedContext({ viewport: { width, height }, locale: 'fr-FR', hasTouch: true, isMobile: width < 700, deviceScaleFactor: 1 });
   const p = await c.newPage();
   attach(p);
   try {

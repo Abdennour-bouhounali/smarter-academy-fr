@@ -300,25 +300,16 @@ html[data-sa-classroom="fallback"] body *:not(.sa-classroom-root--active):not(.s
    La colonne, du bas vers le haut :
 
      bottom: 1.5rem   « ⛶ Projeter »    ← nous, au RAS DU COIN
-     bottom: 5.5rem   « 🧠 Ma carte »   (KnowledgeMap, bottom-22)
-     bottom: 9.5rem   « 📓 Mon cahier » (LessonNotebookAnchor)
+     bottom: 5.5rem   « 📓 Mon cahier » (`.sa-nb-lesson-trigger`, features/practice/notebook/notebook.css)
 
-   « Projeter » se pose JUSTE SOUS la carte des connaissances, au ras du coin :
-   son écart au BAS (1.5rem) égale son écart à DROITE (1.5rem), la pastille
-   est posée dans l'angle. La carte et le cahier s'empilent au-dessus.
-
-   Le coin est libre : l'ancienne pastille « Ctrl+K » du site, posée dans ce
-   coin, l'occupait et interceptait les clics de cet étage. Elle a été retirée, puis la palette elle-même
-   (2026-11-17, décision du propriétaire : pas de recherche globale).
-
-   Les trois hauteurs se tiennent : changer l'une sans les autres fait se
-   recouvrir deux pastilles.
+   « Projeter » se pose au ras du coin : son écart au BAS (1.5rem) égale son
+   écart à DROITE (1.5rem). Le cahier s'empile au-dessus. Les deux hauteurs
+   se tiennent : changer l'une sans l'autre fait se recouvrir les pastilles
+   (classroomLayout.render.test.jsx le vérifie).
 
    La colonne est en bas à DROITE, au bord de FIN : la barre latérale de
    l'espace élève occupe le bord de début (la gauche) et intercepterait les
-   clics (leçon de QA consignée dans KnowledgeMap.jsx). Le cahier
-   (`.sa-nb-lesson-trigger`, features/practice/notebook/notebook.css) doit
-   tenir le même bord.
+   clics. Le cahier tient le même bord.
    Il disparaît à l'impression, comme les autres déclencheurs. */
 .sa-classroom-fab {
   position: fixed;

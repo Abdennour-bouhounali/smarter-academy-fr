@@ -73,7 +73,7 @@ async function statusOf(entry) {
 
   add('pack: lesson.pack.js, its flags in the generated index', has('lesson.pack.js') && Boolean(entry.pack));
   add('S2 world: named in the pack', Boolean(flags.world), flags.world ?? 'no world');
-  // THE LAST LESSON OF A UNIT (« أدمج تعلّماتي », world « mission-isle », docs/reports/INTEGRATION_LESSON_PLAN.md) is not a
+  // THE LAST LESSON OF A UNIT (« Vers le brevet », world « mission-isle », docs/reports/INTEGRATION_LESSON_PLAN.md) is not a
   // lesson of keys: no forge, no trainer, no knowledge map, no instrument. It is judged on its missions (data files of
   // `missions/`, each with its test), its island's content, its bank, its walk — and, like every lesson, on the board
   // and the class test.
@@ -134,7 +134,7 @@ async function statusOf(entry) {
     add('S3 knowledge: named in the pack', Boolean(flags.knowledge));
     add('S6 exam coach: named in the pack', Boolean(flags.coach));
   }
-  add('S4 practice bank is the BEM exam sheet', examStyle.includes(entry.id), 'content/practice/exam-style.json');
+  add('S4 practice bank is the brevet exam sheet', examStyle.includes(entry.id), 'content/practice/exam-style.json');
   // the exam sittings serve the lesson's bank AS IT IS (owner, 2026-11-18): its world/sitting.js goes through the kit's adapter
   const sitting = read(path.join(world, 'sitting.js')) ?? '';
   add(
@@ -142,8 +142,8 @@ async function statusOf(entry) {
     /createBankSittings\(/.test(sitting) && !/createSittings\(/.test(sitting),
     'world/sitting.js › createBankSittings (kit/bankSitting.js)',
   );
-  if (missions) notHere('S8 « مختبري »: an instrument of its own');
-  else add('S8 « مختبري »: an instrument of its own', labRegistry.includes(`lesson: '${entry.id}'`));
+  if (missions) notHere('S8 « Mon labo »: an instrument of its own');
+  else add('S8 « Mon labo »: an instrument of its own', labRegistry.includes(`lesson: '${entry.id}'`));
   const tools = await coreTools(entry.id);
   if (tools === null)
     add('S1 launch kit: a family per core tool', null, 'the learning net could not be read from this script');
