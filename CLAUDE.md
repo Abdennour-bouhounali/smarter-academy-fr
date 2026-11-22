@@ -23,11 +23,18 @@ rebuild: read `docs/FRANCE_REBUILD_PLAN.md` FIRST — it is the programme, the d
   ids, 55 programme items + 53 stubs of earlier grades — not yet validated by the owner; 6e, 5e, 4e are empty
   skeletons); `npm run lesson:brief -- <code>` prints what a lesson must teach; the server side of the payment switch
   is built (plan §4ter) — payments are CLOSED by default.
-- **NOT done yet — do not be surprised**: the interface still speaks ARABIC and reads right to left
-  (`i18n/locales/ar/`, `locale.js`, `dir="rtl"`, the kit's and the worlds' sentences); person names must still be in
-  Arabic letters; e-mails are Arabic; money is the dinar; the time zone is Algiers; the books store is on. Each has
-  its step in the plan (§4, steps 1C–1G). Until a step is done, the code it concerns is described by the imported
-  contract, not by the French one.
+- **Done in the API** (2026-11-22): names in Latin letters, every e-mail and message in French, `Europe/Paris` and a
+  Monday–Friday week, euros, the books store off (`BOOKS_ENABLED`), registration closed by default, payments closed
+  by default (`PaymentGate`).
+- **Done in the web**: the payment switch (`context/PaymentsContext.jsx` — nothing sells and nothing locks while
+  closed; the admin's panel « Paiement en ligne »), and `config/features.js`: books, thinking lab, daily challenge,
+  compass and the 6e diagnostic are OFF until their French content exists.
+- **NOT done yet — do not be surprised**: the WEB interface still speaks ARABIC and reads right to left
+  (`i18n/locales/ar/` — 10,936 strings —, `locale.js`, `dir="rtl"`, the kit's and the worlds' sentences, about 2,500
+  lines of Arabic written in source files, 211 test files asserting Arabic); the web still validates a name as Arabic
+  (`utils/personName.js` — the API's pattern is in the plan's log) and still formats money as dinars. That is steps
+  1C–1D of the plan. Until a step is done, the code it concerns is described by the imported contract, not by the
+  French one.
 - **The two products are 100% separated** (owner): two repositories, two databases, two deployments, no shared runtime,
   no shared package, no country switch, no locale parameter. This repository holds ONE language.
 

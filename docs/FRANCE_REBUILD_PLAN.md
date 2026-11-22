@@ -2,9 +2,10 @@
 
 **Status (2026-11-22, end of the first day): Stage 0 and step 1B done — the tree is the lesson engine and the shell
 around a French catalogue; the 3e net is live with 59 lessons announced and none built; the server side of the
-payment switch is built. NEXT: the web side of the payment switch and the hiding of what has no French content
-(1F), then the engine's language boundary and one French lesson rendered left to right (1C), then the shell in French
-(1D–1E). The interface still speaks Arabic. Everything is committed and pushed on `rebuild/dz-core`; nothing is
+payment switch is built on both sides and payments are closed; what has no French content is hidden; the API
+speaks French (names, mails, time, euros). NEXT: the web in French — the 18 string files, the engine's sentences,
+the direction, the tests that assert Arabic (1C–1D) — then the first French lesson (§8). The WEB interface still
+speaks Arabic. Everything is committed and pushed on `rebuild/dz-core`; nothing is
 deployed. Owed from 1A: the API suite on MySQL, a local database, one browser walk. The progress log is §9.**
 
 This folder is the French platform being rebuilt from the Algerian one. It is the mirror image of
@@ -197,8 +198,8 @@ reason `payments_closed` » while closed: `EntitlementService::decide` (content 
 licence's seats). A real entitlement keeps its own reason. Choices made there, open to the owner: a VISITOR with no
 account also reads what would be premium (« no tier » read literally — one line to require an account instead); the
 class daily challenge still draws free questions only; real Stripe was never contacted — « configured » is judged
-from the configuration alone. **The web side is NOT built yet**: until it is, the app still shows the Algerian
-commercial screens, and the server refuses what they offer.
+from the configuration alone. **The web side is built too** (2026-11-22): `context/PaymentsContext.jsx` reads
+`/billing/status` once and fails closed; the admin's panel « Paiement en ligne » sits beside the registration switch.
 
 Culture rules for French content replace DZ's (owner to confirm, §7): neutral secular everyday French contexts, euros,
 French first names, characters in ordinary clothes; the independence from the textbook, « discover, don't be told »,
@@ -265,12 +266,12 @@ What is left of this track:
 |---|---|---|
 | `validate-lessons.mjs`, `audit-knowledge-dependencies.mjs` and `lesson-v2-status.mjs` recognise a v2 lesson by the text `retiredModules: true` in its `routes.jsx`; `buildLessonRoutes` no longer takes that option — the first French lesson would be judged a module lesson | docs pass, 2026-11-22 | the first French lesson (§8) |
 | `check:non-blocking` and `audit:knowledge:gate` look for patterns only a module lesson had: they pass on any tree. Delete them or re-aim them at the v2 lesson | docs pass | the first French lesson |
-| The 6e diagnostic is reachable (`ChooseGrade` sends a new 6e student to it) and recommends lessons that do not exist | docs pass | step 1F (hide what has no French content) |
-| The daily challenge, the thinking lab and the compass are not hidden yet although they have no French content | docs pass | step 1F |
 | The teacher's lesson memo page (`/enseignant/cours/:lessonId/memoire`) reads module-lesson files a v2 lesson does not have; `teacher_lab_settings` (API) has no web caller; nothing calls `POST /lessons/{code}/evidence` | docs pass | step 1H (dead code of the shell) |
 | The API still reads `content/class-tests/`; the web guard that checked a default class test's answers was deleted with the Algerian tests | docs pass | the first French class test |
 | `.claude/skills/lesson-v2/` tells agents to read deleted Algerian documents | docs pass | §8 (the skill is adapted first) |
-| `deploy.yml` still refuses a `.fr` domain (the Algerian guard) | docs pass | step 1G |
+| `deploy.yml` has steps that fail on a fresh French deployment (the `/books/smart-protocol` check, the backup that refuses a database under 1 KB, content checks expecting non-empty lists) | API pass | the first deployment (§6) |
+| The web still validates a name as Arabic and formats money as dinars; the roster error codes it reads are the old ones | API pass | step 1D |
+| The legal pages are the old site's, restored unchanged at the owner's word; what does not fit the product today is listed for him, not fixed | owner, 2026-11-22 | before registration opens |
 | Code comments cite deleted documents (about 80 places in `apps/api`, `apps/web/src`, `scripts`) | docs pass | with each file's next change |
 | The thinking-lab leak detector treats Latin letters as mathematics: on French prose a formula is caught only after a colon or `=` | tooling pass | the first French challenge |
 | 15 `[NOT CHECKED 2026-11-22]` marks in the corrected contracts | docs pass | when the area is next touched |
@@ -287,6 +288,8 @@ Working rule learned on 2026-11-22: while agents share this folder, **every comm
 | 2026-11-22 | 1B (end) | Web: the app on the empty catalogue, the legacy lesson systems deleted (1,283 files reached from `main.jsx`, 4,938 before). Then everything the deletions left unused: 337 strings, 548 exports, 39 arithmetic modules of core; the unused baseline shrank from 399 to 233 lines. Lint, `check:unused`, `check:unreached`, `check:format`, the entry budget (192 KB gzip) pass. NOT seen in a browser |
 | 2026-11-22 | 1I (first pass) | Documentation: 181 documents of things that are gone deleted, ~65 contracts corrected with a status block, `CLAUDE.md` and `docs/README.md` rewritten for this product; §8bis lists the debts found |
 | 2026-11-22 | 1F (server) | The payment switch, closed by default (§4ter): `PaymentGate`, 22 tests. API suite: 1,528 tests, 1,519 pass, the same 8 MySQL-only ones do not. The web side is not built |
+| 2026-11-22 | 1F (web) | The payment switch in the web (`context/PaymentsContext.jsx`: reads `/billing/status`, fails closed; every commercial surface absent while closed; the admin panel « Paiement en ligne ») and `config/features.js` (books, thinking lab, daily challenge, compass, 6e diagnostic OFF: no door, routes redirect, no API call). Not seen in a browser |
+| 2026-11-22 | 1E + 1G (API) | The French country layer of the API: Latin names, French mails and messages, `Europe/Paris`, Monday–Friday, euros (other plan prices `PRICE_TO_BE_DECIDED_BY_OWNER = 0`, unbuyable), French demo data, books off on the server, the reports migration made schema-only, the deploy guard inverted. 1,549 tests, 1,540 pass, the same 8 MySQL-only. **For the web, still to mirror**: the name pattern — Latin letters with accents (`A-Za-zÀÂÆÇÉÈÊËÎÏÔŒÖÙÛÜŸ` and lower case), space / hyphen / apostrophe only between two letters, 1–50 characters per part, NFC — and the roster codes `firstName_invalid` / `lastName_invalid`; the waitlist form: `email` required, `name`, `role` (`student`/`teacher`/`parent`) and a French `phone` optional; weeks start on Monday everywhere. **`deploy.yml` steps that would fail on a fresh French deployment** (listed, not changed — §6): the check of `/books/smart-protocol`, the backup that refuses a database under 1 KB, the practice and thinking-lab content checks that expect non-empty lists, the reference to `HOSTINGER_CATCHUP_ALL.sql` |
 | 2026-11-22 | 2A | Official sources fetched and filed: `docs/curriculum/officiel/` |
 | 2026-11-22 | 2C (3e) | **The 3e net is live** in `packages/core/curriculum/fr/`, from the official texts, NOT yet validated by the owner (`docs/curriculum/net-3e/REVIEW.md`): 55 items of 3e + 53 stubs of earlier grades, 112 weighted links, 17 threads, 13 units, 59 lessons all `coming_soon`, 161 learning points with locked ids (`generate:lp-lock`); the 19 items the 2026 programme adds in 2028 wait in `net/horizon_2028.json`. A lesson shows its own title; stubs have no home lesson. `lesson:brief` prints a French lesson's brief. A 3e student sees his 13 chapters announced, never a dead link; 6e–4e say « no lesson yet ». Core 36 files / 958 tests, scripts 12 / 104, web 347 / 5,231: all pass, with every check (`check:lessons` with `SKIP_DB_DRIFT_CHECK=1` — no local database yet). Still to do in Stage 2: the owner's validation; 2D the school calendar and the progression by week; 4e, 5e, 6e; 2G the exercise bank's contract for the brevet |
 | 2026-11-22 | 1D (prep) | `docs/architecture/FRENCH_LANGUAGE_CONTRACT.md` written before any translation |
