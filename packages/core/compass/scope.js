@@ -11,16 +11,17 @@
  *            partir de `prereqsOf`.
  *
  * Importé par chemin (jamais depuis le barrel) : il charge le réseau.
+ * `net` (optionnel) est un résolveur de createLearningNet : les tests passent le leur.
  */
-import { getLesson, getItem, homeLessonOf, linksInto } from '../curriculum/dz/net/learningNet.js';
-import { taughtLessons, upcomingLessons } from '../curriculum/dz/calendar/schoolCalendar.js';
+import * as deliveredNet from '../curriculum/fr/net/learningNet.js';
+import { taughtLessons, upcomingLessons } from '../curriculum/fr/calendar/schoolCalendar.js';
 
 const TYPE_RANK = { requires: 0, extends: 1, consolidates: 2 };
 
 /** Les prérequis directs d'un item (un pas), `requires` d'abord, sans doublon. */
-export function prereqsOf(itemId) {
+export function prereqsOf(itemId, net = deliveredNet) {
   const seen = new Set();
-  return linksInto(itemId)
+  return net.linksInto(itemId)
     .slice()
     .sort((a, b) => TYPE_RANK[a.type] - TYPE_RANK[b.type])
     .map((l) => l.from)
@@ -31,10 +32,10 @@ export function prereqsOf(itemId) {
     });
 }
 
-function itemsOfLessons(codes) {
+function itemsOfLessons(codes, net) {
   const out = [];
   for (const code of codes) {
-    const l = getLesson(code);
+    const l = net.getLesson(code);
     if (!l || l.kind === 'synthesis') continue;
     for (const id of l.programmeItems ?? []) if (!out.includes(id)) out.push(id);
   }
@@ -45,15 +46,17 @@ function itemsOfLessons(codes) {
  * → { targets, taughtItems, upcomingItems, ruleA, ruleB, taughtLessons, upcomingLessons }
  * `targets` = règle B puis règle A (ordre de la classe), sans doublon.
  */
-export function buildScope({ progression, pointer, recentTaught = 10, maxUpcomingPrereqs = 4, upcomingWeeks = 3 }) {
+export function buildScope({
+  progression, pointer, recentTaught = 10, maxUpcomingPrereqs = 4, upcomingWeeks = 3, net = deliveredNet,
+}) {
   const taught = taughtLessons(progression, pointer);
   const upcoming = upcomingLessons(progression, pointer, upcomingWeeks);
-  const taughtItems = itemsOfLessons(taught);
-  const upcomingItems = itemsOfLessons(upcoming);
+  const taughtItems = itemsOfLessons(taught, net);
+  const upcomingItems = itemsOfLessons(upcoming, net);
   const ruleA = taughtItems.slice(-recentTaught);
   const ruleB = [];
   for (const id of upcomingItems) {
-    for (const p of prereqsOf(id)) {
+    for (const p of prereqsOf(id, net)) {
       if (ruleB.length >= maxUpcomingPrereqs) break;
       if (!ruleB.includes(p) && !ruleA.includes(p) && !upcomingItems.includes(p)) ruleB.push(p);
     }
@@ -63,14 +66,14 @@ export function buildScope({ progression, pointer, recentTaught = 10, maxUpcomin
 }
 
 /** Ce que le rapport affiche d'un item : texte, année, leçon où le réviser. */
-export function itemInfo(itemId) {
-  const it = getItem(itemId);
+export function itemInfo(itemId, net = deliveredNet) {
+  const it = net.getItem(itemId);
   if (!it) return null;
-  const home = homeLessonOf(itemId);
+  const home = net.homeLessonOf(itemId);
   return {
     id: itemId,
-    textAr: it.textAr,
+    text: it.text,
     grade: it.grade,
-    homeLesson: home ? { code: home.code, grade: home.grade, titleAr: home.titleAr, status: home.status } : null,
+    homeLesson: home ? { code: home.code, grade: home.grade, title: home.title, status: home.status } : null,
   };
 }

@@ -23,94 +23,15 @@
  * Voir docs/architecture/PROGRESS_MODEL.md § Renumérotation des modules.
  */
 
-/** lessonId → étapes ordonnées { version, map: { ancienNuméro: nouveauNuméro } }. */
-export const MODULE_LAYOUT_MIGRATIONS = {
-  // 2026-10-05 — pilote « مسائل » : 3 modules insérés avant le test (4 → 7).
-  'qasim-adad-tabii': [{ version: 2, map: { 4: 7 } }],
-  // 2026-10-06 — déploiement « مسائل » à toutes les leçons (docs/sources/4am/masail-rollout/).
-  'qawasim-adad-tabii': [{ version: 2, map: { 4: 7 } }],
-  'awwaliyan-fima-baynahuma': [{ version: 2, map: { 4: 7 } }],
-  'tayin-pgcd': [{ version: 2, map: { 4: 7 } }],
-  'qasim-mushtarak-akbar': [{ version: 2, map: { 4: 7 } }],
-  'bahth-pgcd': [{ version: 2, map: { 5: 8 } }],
-  'khawass-qawasim': [{ version: 2, map: { 5: 8 } }],
-  'ikhtizal-kasr': [{ version: 2, map: { 5: 8 } }],
-  'jidhr-tarbii': [{ version: 2, map: { 4: 7 } }],
-  'amaliyat-judhur': [{ version: 2, map: { 5: 8 } }],
-  'muadalat-x-murabba': [{ version: 2, map: { 4: 7 } }],
-  'tawzif-khawass-judhur': [{ version: 2, map: { 6: 9 } }],
-  'natiqa-ghayr-natiqa': [{ version: 2, map: { 4: 7 } }],
-  'mutatabiqat-shahira': [{ version: 2, map: { 5: 8 } }],
-  'muadala-ula': [{ version: 2, map: { 5: 8 } }],
-  'nashr-tabsit': [{ version: 2, map: { 4: 7 } }],
-  'mushkilat-jumla': [{ version: 2, map: { 4: 7 } }],
-  'hall-jabri': [{ version: 2, map: { 4: 7 } }],
-  'mutarajiha-ula': [{ version: 2, map: { 6: 9 } }],
-  'mafhum-jumla': [{ version: 2, map: { 4: 7 } }],
-  'tahlil-ibara': [{ version: 2, map: { 5: 8 } }],
-  'jidaa-maadum': [{ version: 2, map: { 5: 8 } }],
-  'tarrid-mushkila': [{ version: 2, map: { 4: 7 } }],
-  'tanasub-muamil': [{ version: 2, map: { 4: 7 } }],
-  'tarrid-khatti': [{ version: 2, map: { 4: 7 } }],
-  'dala-khattiya': [{ version: 2, map: { 4: 7 } }],
-  'takrar-mujamma': [{ version: 2, map: { 5: 8 } }],
-  'tatbiqat-tanasub': [{ version: 2, map: { 5: 8 } }],
-  'majdulat-ihsaiya': [{ version: 2, map: { 5: 8 } }],
-  'mada-wasit-mutawassit': [{ version: 2, map: { 5: 8 } }],
-  'tafsir-bayani-jumla': [{ version: 2, map: { 4: 7 } }],
-  'mafhum-taalufiya': [{ version: 2, map: { 5: 8 } }],
-  'tamthil-bayani-khatti': [{ version: 2, map: { 4: 7 } }],
-  'tanasub-taghayyurat': [{ version: 2, map: { 4: 7 } }],
-  'qiraat-wadiyat-ihsaiya': [{ version: 2, map: { 5: 8 } }],
-  'tamthil-bayani-taalufi': [{ version: 2, map: { 5: 8 } }],
-  'tarrid-taalufi': [{ version: 2, map: { 5: 8 } }],
-  'nisab-muthallathiya': [{ version: 2, map: { 5: 8 } }],
-  'alaqat-muthallathiya': [{ version: 2, map: { 5: 8 } }],
-  'insihab-shuaa': [{ version: 2, map: { 5: 8 } }],
-  'murakkibata-shuaa': [{ version: 2, map: { 5: 8 } }],
-  'shuaayn-mutasawiyayn': [{ version: 2, map: { 5: 8 } }],
-  'muntasaf-masafa': [{ version: 2, map: { 5: 8 } }],
-  'inshaat-talis': [{ version: 2, map: { 4: 7 } }],
-  'zawiya-muhitiya': [{ version: 2, map: { 5: 8 } }],
-  'majmu-shuaayn': [{ version: 2, map: { 5: 8 } }],
-  'talis-hisab-atwal': [{ version: 2, map: { 5: 8 } }],
-  'barahin-ashia': [{ version: 2, map: { 5: 8 } }],
-  'aksiya-talis': [{ version: 2, map: { 5: 8 } }],
-  'ithbat-khawas-maalam': [{ version: 2, map: { 5: 8 } }],
-  'hisab-murakkibatay': [{ version: 2, map: { 5: 8 } }],
-  'hasiba-muthallathiya': [{ version: 2, map: { 4: 7 } }],
-  'mafhum-dawaran': [{ version: 2, map: { 5: 8 } }],
-  'khawas-dawaran': [{ version: 2, map: { 5: 8 } }],
-  'mudalaat-muntazama': [{ version: 2, map: { 5: 8 } }],
-  'tarrid-muthallathiya': [{ version: 2, map: { 4: 7 } }],
-  'kura-julla': [{ version: 2, map: { 5: 8 } }],
-  'misaha-hajm-kura': [{ version: 2, map: { 5: 8 } }],
-  'takbir-tasghir': [{ version: 2, map: { 5: 8 } }],
-  'maqati-mustawiya': [{ version: 2, map: { 5: 8 } }],
-  // 2026-10-13 — synthèse « أدمج تعلّماتي » : six وضعيات d'entraînement (1–6) insérées, l'ancienne analyse (1) passe
-  // au module 7, le test de 3 à 8 ; « أؤكّد تعلّماتي » (2) est supprimé : son « 2 » est ramené à « 0 » (module déjà terminé, sans effet).
-  'wadiya-idmajiya-aadad': [{ version: 2, map: { 1: 7, 2: 0, 3: 8 } }],
-  // 2026-10-13 — synthèses « أدمج تعلّماتي » des unités 2–14, au format de l'unité 1 : six « وضعيات تدريبية » (1–6) insérées
-  // après أستعدّ, l'ancienne situation → 7 (analyse), le test final → 8 ; « أؤكّد تعلّماتي » et « أتعمّق » supprimés (→ 0, sans effet).
-  'wadiya-idmajiya-ashia': [{ version: 2, map: { 1: 7, 2: 0, 3: 0, 4: 8 } }],
-  'wadiya-idmajiya-dawaran': [{ version: 2, map: { 1: 7, 2: 0, 3: 0, 4: 8 } }],
-  'wadiya-idmajiya-fada': [{ version: 2, map: { 1: 7, 2: 0, 3: 0, 4: 8 } }],
-  'wadiya-idmajiya-harfi': [{ version: 2, map: { 1: 7, 2: 0, 3: 0, 4: 8 } }],
-  'wadiya-idmajiya-ihsa': [{ version: 2, map: { 1: 7, 2: 0, 3: 0, 4: 8 } }],
-  'wadiya-idmajiya-judhur': [{ version: 2, map: { 1: 7, 2: 0, 3: 8 } }],
-  'wadiya-idmajiya-jumal': [{ version: 2, map: { 1: 7, 2: 0, 3: 0, 4: 8 } }],
-  'wadiya-idmajiya-khattiya': [{ version: 2, map: { 1: 7, 2: 0, 3: 0, 4: 8 } }],
-  'wadiya-idmajiya-maalam': [{ version: 2, map: { 1: 7, 2: 0, 3: 0, 4: 8 } }],
-  'wadiya-idmajiya-muadalat': [{ version: 2, map: { 1: 7, 2: 0, 3: 0, 4: 8 } }],
-  'wadiya-idmajiya-muthallathat': [{ version: 2, map: { 1: 7, 2: 0, 3: 0, 4: 8 } }],
-  'wadiya-idmajiya-taalufiya': [{ version: 2, map: { 1: 7, 2: 0, 3: 0, 4: 8 } }],
-  'wadiya-idmajiya-talis': [{ version: 2, map: { 1: 7, 2: 0, 3: 0, 4: 8 } }],
-  // <<masail-rollout: one line per lesson, inserted above this anchor>>
-};
+/**
+ * lessonId → étapes ordonnées { version, map: { ancienNuméro: nouveauNuméro } }.
+ * Vide depuis le 2026-11-22 : toutes ses entrées nommaient des leçons supprimées (FRANCE_REBUILD_PLAN.md §4bis).
+ */
+export const MODULE_LAYOUT_MIGRATIONS = {};
 
 /** La version de disposition courante d'une leçon (1 si jamais renumérotée). */
-export function currentModuleLayoutVersion(lessonId) {
-  const steps = MODULE_LAYOUT_MIGRATIONS[lessonId];
+export function currentModuleLayoutVersion(lessonId, migrations = MODULE_LAYOUT_MIGRATIONS) {
+  const steps = migrations[lessonId];
   return steps?.length ? steps[steps.length - 1].version : 1;
 }
 
@@ -121,10 +42,11 @@ export function currentModuleLayoutVersion(lessonId) {
  * @param {string} lessonId
  * @param {object|null} data  { completedModules, currentModule, layoutVersion, … }
  *                            null/undefined = aucun stockage pour cette leçon.
+ * @param {object} [migrations]  la table (MODULE_LAYOUT_MIGRATIONS par défaut ; les tests passent la leur)
  * @returns {object|null} les données migrées (ou `data` inchangé)
  */
-export function migrateLessonProgress(lessonId, data) {
-  const steps = MODULE_LAYOUT_MIGRATIONS[lessonId];
+export function migrateLessonProgress(lessonId, data, migrations = MODULE_LAYOUT_MIGRATIONS) {
+  const steps = migrations[lessonId];
   if (!steps?.length) return data;
   const latest = steps[steps.length - 1].version;
   // Rien de stocké : la progression naît dans la disposition courante.
@@ -146,7 +68,7 @@ export function migrateLessonProgress(lessonId, data) {
 }
 
 /** Le stockage vide d'une leçon, estampillé à la disposition courante. */
-export function emptyLessonProgress(lessonId) {
+export function emptyLessonProgress(lessonId, migrations = MODULE_LAYOUT_MIGRATIONS) {
   const base = { completedModules: [], completedExercises: [] };
-  return MODULE_LAYOUT_MIGRATIONS[lessonId] ? { ...base, layoutVersion: currentModuleLayoutVersion(lessonId) } : base;
+  return migrations[lessonId] ? { ...base, layoutVersion: currentModuleLayoutVersion(lessonId, migrations) } : base;
 }

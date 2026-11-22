@@ -149,6 +149,20 @@ check at a time on this machine; an agent runs only the tests of what it touched
 weakened to pass: a test is deleted only when the thing it tested is deleted, and the report names every deleted test
 file and why.
 
+**Done in `packages/core` (2026-11-22) — the names every other area must now use:**
+
+| Was | Is |
+|---|---|
+| `@smarter-academy/core/curriculum/dz/net/learningNet.js`, `…/dz/calendar/schoolCalendar.js`, any `curriculum/dz/…` path | the same path under `curriculum/fr/…`; data files as in the table above |
+| `dzCourseLevels`, `DZ_UNIT_PATH_SEGMENT`, `buildDzUnitPath` | `allCourseLevels`, `UNIT_PATH_SEGMENT`, `buildUnitPath` |
+| `formatTextbookPages` (and `textbookPages.js`) | deleted |
+| `ACTIVE_GRADE_IDS`, `schoolCalendar.GRADES` | `['6e','5e','4e','3e']`; `learningNet.WEIGHTED_GRADES` is `[]` until Stage 2 weights 3e |
+| every `…Ar` key in the data and in what the resolvers return (`describeLesson().titleAr`, `describeItem().textAr`, `noRebuildForLesson().addedValueAr`/`.noteAr`, `scope.itemInfo().textAr`, `homeLesson.titleAr`) | the key without `Ar` |
+| `MODULE_LAYOUT_MIGRATIONS` (74 DZ entries) | `{}` |
+| catalogue grade | gains `shortName` (« 6e »…) |
+
+New, for tests that need content: `buildCourseLevels(gradeSources)` is exported, `createLearningNet({ programme, net, lessonFiles, unitFiles, weightedGrades })`, and `scope.js` / `moduleLayoutMigrations.js` functions take an optional net / table — a test builds a 2–3 item neutral fixture in its own file, never real curriculum content. The shipped school year is EMPTY (`start`/`end` null) and `validateSchoolYear` refuses it on purpose until Stage 2D. The catalogue builder still hides a thème that has no lesson, so every grade exports `chapters: []` today.
+
 Culture rules for French content replace DZ's (owner to confirm, §7): neutral secular everyday French contexts, euros,
 French first names, characters in ordinary clothes; the independence from the textbook, « discover, don't be told »,
 drawn-in-code and the one screen size 1366×768 are kept as they are.

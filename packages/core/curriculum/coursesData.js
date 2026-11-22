@@ -1,51 +1,45 @@
 // `with { type: 'json' }` so this module also loads under plain Node (the
 // curriculum export script) — Vite/vitest accept the attribute too.
-// Le programme algérien officiel — la source unique des intitulés arabes.
-import programme4am from './dz/programme_4am_2026_2027.json' with { type: 'json' };
-// Le découpage en leçons de ce programme (phase 7) — dérivé du précédent,
-// jamais concurrent : chaque leçon y déclare le sujet officiel dont elle vient.
-import lessons4am from './dz/lessons_4am_2026_2027.json' with { type: 'json' };
-import units4am from './dz/units_4am_2026_2027.json' with { type: 'json' };
-// 1AM–3AM (2026-10-14, phase 2 du déploiement du cycle moyen) : même trio, leçons
-// `coming_soon` tant qu'elles ne sont pas générées (docs/architecture/LEARNING_NET.md).
-import programme1am from './dz/programme_1am_2026_2027.json' with { type: 'json' };
-import lessons1am from './dz/lessons_1am_2026_2027.json' with { type: 'json' };
-import units1am from './dz/units_1am_2026_2027.json' with { type: 'json' };
-import programme2am from './dz/programme_2am_2026_2027.json' with { type: 'json' };
-import lessons2am from './dz/lessons_2am_2026_2027.json' with { type: 'json' };
-import units2am from './dz/units_2am_2026_2027.json' with { type: 'json' };
-import programme3am from './dz/programme_3am_2026_2027.json' with { type: 'json' };
-import lessons3am from './dz/lessons_3am_2026_2027.json' with { type: 'json' };
-import units3am from './dz/units_3am_2026_2027.json' with { type: 'json' };
+// The programme of each grade is the single source of the catalogue's titles;
+// lessons_<g> derives from it, units_<g> groups those lessons.
+import programme6e from './fr/programme_6e_2026_2027.json' with { type: 'json' };
+import lessons6e from './fr/lessons_6e_2026_2027.json' with { type: 'json' };
+import units6e from './fr/units_6e_2026_2027.json' with { type: 'json' };
+import programme5e from './fr/programme_5e_2026_2027.json' with { type: 'json' };
+import lessons5e from './fr/lessons_5e_2026_2027.json' with { type: 'json' };
+import units5e from './fr/units_5e_2026_2027.json' with { type: 'json' };
+import programme4e from './fr/programme_4e_2026_2027.json' with { type: 'json' };
+import lessons4e from './fr/lessons_4e_2026_2027.json' with { type: 'json' };
+import units4e from './fr/units_4e_2026_2027.json' with { type: 'json' };
+import programme3e from './fr/programme_3e_2026_2027.json' with { type: 'json' };
+import lessons3e from './fr/lessons_3e_2026_2027.json' with { type: 'json' };
+import units3e from './fr/units_3e_2026_2027.json' with { type: 'json' };
 import { filterActiveCourseLevels } from './activeGrades.js';
 
 
-// ── LE CATALOGUE ALGÉRIEN ────────────────────────────────────────────────
+// ── LE CATALOGUE ────────────────────────────────────────────────
 //
-// Construit ENTIÈREMENT depuis dz/programme_4am_2026_2027.json, jamais
+// Construit ENTIÈREMENT depuis fr/programme_<g>_2026_2027.json, jamais
 // retapé. C'est l'invariant I1 de la phase 6F : le programme fourni par le
-// propriétaire est la seule source des intitulés arabes, et tout ce qui suit
+// propriétaire est la seule source des intitulés, et tout ce qui suit
 // en dérive —
 //
-//   programme_4am_2026_2027.json → buildDzCourseLevels() → coursesData.js
+//   programme_<g>_2026_2027.json → buildCourseLevels() → coursesData.js
 //     → exportCurriculum.mjs → curriculum-export.json
 //     → smarter:import-curriculum → chapters.topics
 //
-// Si un intitulé arabe apparaît à deux endroits, l'un des deux est un
+// Si un intitulé apparaît à deux endroits, l'un des deux est un
 // défaut. Un test qui a besoin du libellé LIT le JSON, il ne le recopie pas.
 //
-// Le découpage en leçons vient de dz/lessons_4am_2026_2027.json et les unités
-// du manuel de dz/units_4am_2026_2027.json ; seuls les ميادين qui portent au
-// moins une leçon sont montrés (voir buildDzCourseLevels).
+// Le découpage en leçons vient de fr/lessons_<g>_2026_2027.json et les unités
+// de fr/units_<g>_2026_2027.json ; seuls les domaines qui portent au
+// moins une leçon sont montrés (voir buildGrade).
 /**
- * Une leçon 4AM, construite depuis le découpage fourni par le propriétaire.
+ * Une leçon, construite depuis le découpage fourni par le propriétaire.
  *
- * La leçon algérienne a pour provenance un SUJET du programme, et la
- * déclare telle quelle. (Le catalogue français hérité et son constructeur
- * ont été retirés le 2026-09-25 avec les leçons françaises : ce fichier ne
- * porte plus que le catalogue algérien.)
+ * La leçon a pour provenance un SUJET du programme, et la déclare telle quelle.
  */
-function buildDzLesson(lesson, { levelId, gradeId, topicTitle }) {
+function buildLesson(lesson, { levelId, gradeId, topicTitle }) {
   const pointPrerequisites = lesson.pointPrerequisites ?? {};
   return {
     id: lesson.code,
@@ -102,92 +96,90 @@ function buildDzLesson(lesson, { levelId, gradeId, topicTitle }) {
 }
 
 /** Le chemin de la page d'une unité du manuel. Le segment `units` est réservé : aucune leçon ne peut porter ce code. */
-export const DZ_UNIT_PATH_SEGMENT = 'units';
-export function buildDzUnitPath({ levelId, gradeId, chapterId, unitCode }) {
-  return `/courses/${levelId}/${gradeId}/${chapterId}/${DZ_UNIT_PATH_SEGMENT}/${unitCode}`;
+export const UNIT_PATH_SEGMENT = 'units';
+export function buildUnitPath({ levelId, gradeId, chapterId, unitCode }) {
+  return `/courses/${levelId}/${gradeId}/${chapterId}/${UNIT_PATH_SEGMENT}/${unitCode}`;
 }
 
 /**
  * Une unité (وحدة) du manuel : le niveau entre le ميدان et le درس. Elle porte
- * ses leçons DANS L'ORDRE DU MANUEL et, à part, sa synthèse (« أدمج
- * تعلّماتي »). Les intitulés viennent de dz/units_4am_2026_2027.json, qui
- * cite lui-même l'extraction du manuel.
+ * ses leçons DANS L'ORDRE et, à part, sa synthèse. Les intitulés viennent
+ * de fr/units_<g>_2026_2027.json.
  */
-function buildDzUnit(unit, lessonsOfUnit, { levelId, gradeId }) {
+function buildUnit(unit, lessonsOfUnit, { levelId, gradeId }) {
   const built = lessonsOfUnit.slice().sort((a, b) => a.order - b.order);
   return {
     id: unit.code,
     number: unit.number,
-    title: unit.titleAr,
+    title: unit.title,
     icon: unit.icon ?? null,
-    subtitle: unit.subtitleAr ?? null,
-    objectives: unit.objectivesAr ?? [],
+    subtitle: unit.subtitle ?? null,
+    objectives: unit.objectives ?? [],
     sourceTopicIds: unit.sourceTopicIds ?? [],
     textbook: unit.textbook ?? null,
     challenge: unit.challenge ?? null,
     aside: unit.aside ?? null,
     order: unit.order,
     chapterId: unit.chapterId,
-    path: buildDzUnitPath({ levelId, gradeId, chapterId: unit.chapterId, unitCode: unit.code }),
+    path: buildUnitPath({ levelId, gradeId, chapterId: unit.chapterId, unitCode: unit.code }),
     lessons: built.filter((l) => l.kind !== 'synthesis'),
     synthesis: built.find((l) => l.kind === 'synthesis') ?? null,
   };
 }
 
 /**
- * Les classes du cycle moyen, dans l'ordre : chacune construite depuis SON
+ * Les classes du collège, dans l'ordre : chacune construite depuis SON
  * trio programme / leçons / unités. Ajouter une classe = ajouter ici son trio.
  */
-const DZ_MOYEN_GRADES = [
-  { programme: programme1am, lessons: lessons1am, units: units1am },
-  { programme: programme2am, lessons: lessons2am, units: units2am },
-  { programme: programme3am, lessons: lessons3am, units: units3am },
-  { programme: programme4am, lessons: lessons4am, units: units4am },
+const COLLEGE_GRADES = [
+  { programme: programme6e, lessons: lessons6e, units: units6e },
+  { programme: programme5e, lessons: lessons5e, units: units5e },
+  { programme: programme4e, lessons: lessons4e, units: units4e },
+  { programme: programme3e, lessons: lessons3e, units: units3e },
 ];
 
-/** Une classe du cycle moyen (ses ميادين, leurs leçons et leurs unités). */
-function buildDzMoyenGrade({ programme, lessons, units }) {
+/** Une classe (ses domaines, leurs leçons et leurs unités). */
+function buildGrade({ programme, lessons, units }) {
   const gradeId = programme.grade;
+  const levelId = programme.level;
   const lessonsByChapter = new Map();
   for (const lesson of lessons.lessons) {
     if (!lessonsByChapter.has(lesson.chapterId)) lessonsByChapter.set(lesson.chapterId, []);
     lessonsByChapter.get(lesson.chapterId).push(lesson);
   }
 
-  // Le catalogue ne montre QUE les ميادين qui portent des leçons (décision
-  // du propriétaire, 2026-09-25 : l'unité « الأعداد الطبيعيّة والأعداد
-  // النّاطقة » seule). Le PROGRAMME, lui, reste entier et vérifié dans
-  // programme_<g>_2026_2027.json — on ne retranche rien à la source
-  // officielle ; on n'affiche pas un ميدان vide. Un ميدان réapparaît de
-  // lui-même le jour où une leçon de lessons_<g>_2026_2027.json le nomme.
+  // Le catalogue ne montre QUE les domaines qui portent des leçons. Le
+  // PROGRAMME, lui, reste entier dans programme_<g>_2026_2027.json — on ne
+  // retranche rien à la source officielle ; on n'affiche pas un domaine vide.
+  // Un domaine apparaît de lui-même le jour où une leçon de
+  // lessons_<g>_2026_2027.json le nomme.
   // `order` reste la position dans le programme, pas dans cette liste.
-  const topicTitleOf = new Map(programme.domains.flatMap((d) => d.topics.map((t) => [t.id, t.titleAr])));
-  // Les ميادين d'AFFICHAGE décidés par le propriétaire (units_4am › ownerChapters,
-  // unité 6 « الدالة الخطية والتناسبية » sous « ميدان التناسبية والدوال », 2026-10-02) :
+  const topicTitleOf = new Map(programme.domains.flatMap((d) => d.topics.map((t) => [t.id, t.title])));
+  // Les domaines d'AFFICHAGE décidés par le propriétaire (units_<g> › ownerChapters) :
   // rangés APRÈS les domaines du programme, sans aucun sujet officiel — le programme
   // reste une transcription intouchée, et chaque unité qui s'y range déclare son
   // domaine de programme (`placement`).
   const ownerDomains = (units.ownerChapters ?? []).map((c) => ({
-    id: c.id, titleAr: c.titleAr, subtitleAr: c.subtitleAr, topics: [],
+    id: c.id, title: c.title, subtitle: c.subtitle, topics: [],
   }));
   const displayOrder = units.chapterOrder?.order ?? [];
   const displayRank = (id) => (displayOrder.includes(id) ? displayOrder.indexOf(id) : displayOrder.length);
   const chapters = [...programme.domains, ...ownerDomains].map((domain, index) => ({
     id: domain.id,
-    title: domain.titleAr,
-    subtitle: domain.subtitleAr ?? null,
+    title: domain.title,
+    subtitle: domain.subtitle ?? null,
     // Icône d'affichage du ميدان (units_<g> › chapterIcons) — jamais dans le programme.
     icon: units.chapterIcons?.[domain.id] ?? null,
     order: index,
-    // Les sujets OFFICIELS, au mot près. `namedMethodsAr`/`namedPartsAr` ne
-    // sont recopiés QUE là où le programme les porte (6 sujets sur 28) :
-    // fabriquer un tableau vide pour les 22 autres affirmerait que le
+    // Les sujets OFFICIELS, au mot près. `namedMethods`/`namedParts` ne
+    // sont recopiés QUE là où le programme les porte :
+    // fabriquer un tableau vide pour les autres affirmerait que le
     // programme ne nomme rien, ce qu'il ne dit pas — il se tait.
     topics: domain.topics.map((topic) => ({
       id: topic.id,
-      title: topic.titleAr,
-      ...(topic.namedMethodsAr ? { namedMethods: topic.namedMethodsAr } : {}),
-      ...(topic.namedPartsAr ? { namedParts: topic.namedPartsAr } : {}),
+      title: topic.title,
+      ...(topic.namedMethods ? { namedMethods: topic.namedMethods } : {}),
+      ...(topic.namedParts ? { namedParts: topic.namedParts } : {}),
     })),
     // Les leçons du chapitre, À PLAT, dans l'ordre du catalogue : celles des
     // unités du manuel d'abord (phase 8), puis celles restées « un sujet =
@@ -197,11 +189,11 @@ function buildDzMoyenGrade({ programme, lessons, units }) {
     lessons: (lessonsByChapter.get(domain.id) ?? [])
       .slice()
       .sort((a, b) => a.order - b.order)
-      .map((lesson) => buildDzLesson(lesson, {
-        levelId: 'moyen',
+      .map((lesson) => buildLesson(lesson, {
+        levelId,
         gradeId,
         // Le sujet est cherché dans TOUT le programme : une unité placée par le
-        // propriétaire sous un autre ميدان (`placement`, unité 3) garde son sujet officiel.
+        // propriétaire sous un autre domaine (`placement`) garde son sujet officiel.
         topicTitle: topicTitleOf.get(lesson.sourceTopicId),
       })),
   })).filter((chapter) => chapter.lessons.length > 0)
@@ -217,75 +209,60 @@ function buildDzMoyenGrade({ programme, lessons, units }) {
       .filter((u) => u.chapterId === chapter.id)
       .slice()
       .sort((a, b) => a.order - b.order)
-      .map((u) => buildDzUnit(u, chapter.lessons.filter((l) => l.unitId === u.code), {
-        levelId: 'moyen',
+      .map((u) => buildUnit(u, chapter.lessons.filter((l) => l.unitId === u.code), {
+        levelId,
         gradeId,
       }));
   }
 
   return {
     id: gradeId,
-    name: programme.gradeLabelAr,
-    // Le programme ET son découpage en leçons sont arrêtés. Chaque leçon porte
-    // son propre `status` : `available` dès que son lesson.config.js existe
-    // (les 74 leçons 4AM), `coming_soon` sinon — carte non cliquable
-    // « قيد الإعداد » (1AM–3AM, 2026-10-14). Voir I2.
+    name: programme.gradeLabel,
+    shortName: programme.gradeShortLabel ?? null,
+    // Chaque leçon porte son propre `status` : `available` dès que son
+    // implémentation existe, `coming_soon` sinon — carte non cliquable. Voir I2.
     curriculumStatus: 'lessons_planned',
     chapters,
   };
 }
 
-function buildDzCourseLevels() {
-  return [
-    {
-      id: 'moyen',
-      title: programme4am.levelLabelAr,
-      icon: '📘',
-      color: 'from-emerald-500 to-teal-500',
-      lightBg: 'bg-emerald-50/50 border-emerald-200',
-      accentColor: 'text-emerald-600',
-      badgeBg: 'bg-emerald-100 text-emerald-700',
-      grades: DZ_MOYEN_GRADES.map(buildDzMoyenGrade),
-    },
-    {
-      id: 'thanawi',
-      title: 'التعليم الثانوي',
-      icon: '📗',
-      color: 'from-blue-500 to-cyan-500',
-      lightBg: 'bg-blue-50/50 border-blue-200',
-      accentColor: 'text-blue-600',
-      badgeBg: 'bg-blue-100 text-blue-700',
-      grades: [
-        {
-          // La SECONDE classe algérienne (master spec §3). Son identité
-          // existe — un élève peut s'y inscrire — mais aucun programme n'a
-          // été fourni pour elle (rapport de reprise §19, B1). Le marqueur
-          // ci-dessous est ce qui permet à l'interface de le DIRE, au lieu
-          // de servir un catalogue vide qui passerait pour une panne.
-          id: 'terminale_dz',
-          name: 'السنة الثالثة ثانوي',
-          curriculumStatus: 'not_supplied',
-          chapters: [],
-        },
-      ],
-    },
-  ];
+/**
+ * Le catalogue construit depuis une liste de trios programme / leçons / unités, rangés sous le niveau de leur
+ * programme. Exporté pour que les tests vérifient les invariants du constructeur sur un petit jeu de données à eux.
+ */
+export function buildCourseLevels(gradeSources = COLLEGE_GRADES) {
+  const levels = new Map();
+  for (const source of gradeSources) {
+    const { level, levelLabel } = source.programme;
+    if (!levels.has(level)) {
+      levels.set(level, {
+        id: level,
+        title: levelLabel,
+        icon: '📘',
+        color: 'from-emerald-500 to-teal-500',
+        lightBg: 'bg-emerald-50/50 border-emerald-200',
+        accentColor: 'text-emerald-600',
+        badgeBg: 'bg-emerald-100 text-emerald-700',
+        grades: [],
+      });
+    }
+    levels.get(level).grades.push(buildGrade(source));
+  }
+  return [...levels.values()];
 }
 
-// Le catalogue ALGÉRIEN complet : les deux classes du produit, actives ou
-// non. C'est lui qu'exporte exportCurriculum.mjs vers la base, et lui que
-// lisent les gardes. Il ne contient AUCUNE classe française (phase 6F ; le
-// catalogue français hérité a été supprimé le 2026-09-25).
+// Le catalogue complet : toutes les classes du produit, actives ou non. C'est
+// lui qu'exporte exportCurriculum.mjs vers la base, et lui que lisent les gardes.
 // Annotations « pure » (BUNDLE_BOUNDARIES.md §4 règle 7) : sans elles, un import du baril qui n'utilise AUCUN nom du
 // catalogue (ex. `hasRequiredRole`) garderait ces ≈ 95 Ko gzip de JSON dans le lot d'entrée.
-export const dzCourseLevels = /* @__PURE__ */ buildDzCourseLevels();
+export const allCourseLevels = /* @__PURE__ */ buildCourseLevels();
 
 // The catalogue every student-facing consumer must use. Filtered to only
 // ACTIVE_GRADE_IDS (packages/core/curriculum/activeGrades.js) so that every
 // downstream reader — navigation, course browser, resume/next-lesson logic,
 // grade pickers — is starved of anything not explicitly activated, rather
 // than each needing its own filter.
-export const courseLevels = /* @__PURE__ */ filterActiveCourseLevels(dzCourseLevels);
+export const courseLevels = /* @__PURE__ */ filterActiveCourseLevels(allCourseLevels);
 
 /**
  * Flattens courseLevels into the list of every selectable grade — the single

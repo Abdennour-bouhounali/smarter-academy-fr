@@ -1,7 +1,4 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
 import { frac, fracText } from './linear.js';
 import {
   eq2, system, classify, holdsAt, pairHolds, isSolution, scale, addEqs, subEqs, eliminated,
@@ -160,25 +157,5 @@ describe('écriture', () => {
     expect(pairLatex(13, 19)).toBe('(13 ; 19)');
     expect(pairLatex(frac(-1, 2), frac(-5, 2))).toBe('\\left(-\\dfrac{1}{2} ; -\\dfrac{5}{2}\\right)');
     expect(pairText(frac(68, 19), frac(39, 19))).toBe('(68/19 ; 39/19)');
-  });
-});
-
-describe('cohérence avec l’extraction du manuel (docs/sources/4am/unit5/extraction.json)', () => {
-  const here = dirname(fileURLToPath(import.meta.url));
-  const ex = JSON.parse(readFileSync(join(here, '../../../docs/sources/4am/unit5/extraction.json'), 'utf8'));
-  const byId = Object.fromEntries(ex.elements.map((e) => [e.id, e]));
-  // sympy écrit « \frac{13}{5} », « - \frac{1}{2} » : on compare des fractions.
-  const read = (tex) => {
-    const m = String(tex).replace(/\s/g, '').match(/^(-?)\\frac\{(\d+)\}\{(\d+)\}$/);
-    return m ? `${m[1]}${m[2]}/${m[3]}` : String(tex).replace(/\s/g, '');
-  };
-  it('act-2, طرائق, دوري الآن : même couple exact', () => {
-    const pairs = [
-      [byId['act-2'].answer.c1, '2x + y = 7', '3x - 2y = 4,2'],
-      [byId['method-example'].answer['1'], '3x + y = -4', 'x - y = 2'],
-      [byId['method-example'].answer['2'], '4x + 2y = 9', '-4x + 3y = 6'],
-      [byId['now-59'].answer['2'], '6x - 2y = 8', 'x + 3y = 1'],
-    ];
-    for (const [ans, s1, s2] of pairs) expect(solved(s1, s2)).toBe(`(${read(ans.x)} ; ${read(ans.y)})`);
   });
 });

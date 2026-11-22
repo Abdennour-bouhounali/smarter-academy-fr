@@ -1,5 +1,5 @@
 /**
- * schoolCalendar — le calendrier scolaire et les progressions annuelles (moyen)
+ * schoolCalendar — le calendrier scolaire et les progressions annuelles (collège)
  * comme DONNÉES, et les questions pures qu'on leur pose : quelle semaine est-ce,
  * qu'a déjà vu la classe, que vient-il ensuite, quelle est la prochaine échéance.
  *
@@ -14,18 +14,19 @@
  * (aucun fuseau horaire en jeu).
  */
 import school20262027 from './school_2026_2027.json' with { type: 'json' };
-import prog1am20262027 from './progression_1am_2026_2027.json' with { type: 'json' };
-import prog2am20262027 from './progression_2am_2026_2027.json' with { type: 'json' };
-import prog3am20262027 from './progression_3am_2026_2027.json' with { type: 'json' };
-import prog4am20262027 from './progression_4am_2026_2027.json' with { type: 'json' };
+import prog6e20262027 from './progression_6e_2026_2027.json' with { type: 'json' };
+import prog5e20262027 from './progression_5e_2026_2027.json' with { type: 'json' };
+import prog4e20262027 from './progression_4e_2026_2027.json' with { type: 'json' };
+import prog3e20262027 from './progression_3e_2026_2027.json' with { type: 'json' };
 
-export const GRADES = ['1am', '2am', '3am', '4am'];
+export const GRADES = ['6e', '5e', '4e', '3e'];
 
 /** Années scolaires disponibles : année → { calendar, progressions[grade] }. */
 export const SCHOOL_YEARS = {
   '2026/2027': {
     calendar: school20262027,
-    progressions: { '1am': prog1am20262027, '2am': prog2am20262027, '3am': prog3am20262027, '4am': prog4am20262027 },
+    // Empty until stage 2D writes the French year: validateSchoolYear refuses it, on purpose.
+    progressions: { '6e': prog6e20262027, '5e': prog5e20262027, '4e': prog4e20262027, '3e': prog3e20262027 },
   },
 };
 

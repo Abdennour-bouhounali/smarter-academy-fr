@@ -1,12 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
 import {
   RANK_NAMES, digitsByRank, countOfRank, valueOfCounts, isWritable, decompose, classesOf, spaced, toArabicWords, classWordsOf,
 } from './placeValue.js';
 
-const extraction = JSON.parse(readFileSync(new URL('../../../docs/sources/1am/unit1/extraction.json', import.meta.url), 'utf8'));
-const el = (id) => extraction.elements.find((e) => e.id === id);
-const num = (s) => Number(String(s).replace(/\s/g, ''));
 
 describe('placeValue — rangs, comptes, valeur', () => {
   it('digitsByRank and countOfRank tell « رقم » from « عدد » (2017: 1 and 201)', () => {
@@ -59,32 +55,7 @@ describe('placeValue — rangs, comptes, valeur', () => {
   });
 });
 
-describe('placeValue — toArabicWords (the platform spelling of build-extraction.py)', () => {
-  it('matches EVERY words answer of the extraction', () => {
-    const act = el('act-1').answer;
-    expect(toArabicWords(act.next.digits)).toBe(act.next.words);
-    expect(toArabicWords(act.previous.digits)).toBe(act.previous.words);
-    for (const [n, a] of Object.entries(el('know-1').answer)) {
-      if (a && typeof a === 'object' && a.words) {
-        expect(toArabicWords(Number(n)), n).toBe(a.words);
-        expect(spaced(Number(n)).replace(/ /g, ' ')).toBe(a.spaced);
-      }
-    }
-    for (const a of el('ex-3').answer) {
-      expect(toArabicWords(a.n), String(a.n)).toBe(a.words);
-      expect(spaced(a.n).replace(/ /g, ' ')).toBe(a.spaced);
-    }
-    const d2 = el('deep-2').answer;
-    expect(toArabicWords(9999999999)).toBe(d2['9999999999']);
-    expect(toArabicWords(num(d2.next.digits))).toBe(d2.next.words);
-    expect(toArabicWords(4467070000)).toBe(d2.words['نبتون']);
-    expect(toArabicWords(1427000000)).toBe(d2.words['زحل']);
-    expect(toArabicWords(149600000)).toBe(d2.words['الأرض']);
-    const prep4 = el('prep').items.find((i) => i.n === 4);
-    expect(toArabicWords(20892)).toBe(prep4.options[prep4.correct[0]]);
-    expect(toArabicWords(el('self-1').answer.a)).toBe(el('self-1').answer.wordsCheck);
-  });
-
+describe('placeValue — toArabicWords', () => {
   it('spot values', () => {
     const cases = {
       0: 'صفر', 11: 'أحد عشر', 12: 'اثنا عشر', 13: 'ثلاثة عشر', 71: 'واحد وسبعون', 100: 'مائة', 101: 'مائة وواحد', 200: 'مائتان',

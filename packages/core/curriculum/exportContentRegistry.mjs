@@ -54,6 +54,8 @@ const itemKey = (sourceKind, lessonCode, exerciseCode, questionId) =>
 
 /** Chaque dossier contenant un lesson.config.js (recherche en profondeur). */
 function findLessonDirs(dir, acc = []) {
+  // No lesson folder at all is a valid state (the empty catalogue): export nothing, never crash.
+  if (!existsSync(dir)) return acc;
   for (const name of readdirSync(dir)) {
     const full = join(dir, name);
     if (!statSync(full).isDirectory()) continue;
@@ -260,6 +262,11 @@ if (existsSync(indexPath)) {
           if (!existsSync(file)) continue;
           data = JSON.parse(await readFile(file, 'utf8'));
           break;
+        }
+        // A stale index would otherwise put exercises that no longer exist into the database.
+        if (!data) {
+          problems.push(`${lessonCode}/level-${level}/${exerciseCode}: listed in index.generated.json, file missing — regenerate the index`);
+          continue;
         }
 
         exercises.push({

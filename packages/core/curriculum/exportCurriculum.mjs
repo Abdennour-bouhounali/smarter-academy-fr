@@ -13,26 +13,19 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-// Le catalogue ALGÉRIEN, et lui seul.
-//
-// Jusqu'à la phase 6F, ce script exportait l'arbre français complet : la base
-// devait refléter toute classe physiquement présente, le français y restant
-// « présent mais dormant » (master spec §3). Ce n'est plus l'état voulu. La
-// base DZ ne contient que les classes DZ ; l'arbre français
-// (`referenceCourseLevels`) ne sort plus jamais du monde JavaScript, où il ne
-// sert qu'à valider les dossiers de leçons restés sur le disque.
+// Le catalogue complet, actif ou non : chaque classe sort avec son drapeau `active`.
 //
 // Conséquence à garder en tête : l'import est un UPSERT qui ne supprime rien
 // (CurriculumImporter). Retirer une classe d'ici ne l'efface donc pas de la
 // base — c'est `smarter:scope-curriculum` qui s'en charge, et il lit CE
 // fichier pour savoir quoi garder. L'export est l'autorité ; la base suit.
-import { dzCourseLevels } from './coursesData.js';
+import { allCourseLevels } from './coursesData.js';
 import { isGradeActive } from './activeGrades.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const outputPath = resolve(process.argv[2] || resolve(here, '.generated/curriculum-export.json'));
 
-const grades = dzCourseLevels.flatMap((level) =>
+const grades = allCourseLevels.flatMap((level) =>
   level.grades.map((grade, gradeIndex) => ({
     code: grade.id,
     name: grade.name,
@@ -50,9 +43,9 @@ const grades = dzCourseLevels.flatMap((level) =>
       title: chapter.title,
       order: chapterIndex,
       // Les SUJETS du programme officiel, portés par le chapitre parce
-      // qu'aucune leçon ne les porte encore. C'est le bout algérien de la
-      // chaîne I1 : ces intitulés viennent de programme_4am_2026_2027.json et
-      // n'ont été retapés nulle part.
+      // qu'aucune leçon ne les porte encore. C'est le bout de la chaîne I1 :
+      // ces intitulés viennent de programme_<g>_2026_2027.json et n'ont été
+      // retapés nulle part.
       topics: chapter.topics ?? [],
       // Les UNITÉS du manuel (phase 8) — absentes (tableau vide) pour un
       // chapitre encore découpé « un sujet = une leçon ».

@@ -1,52 +1,91 @@
 import { describe, expect, it } from 'vitest';
 import { buildScope, prereqsOf, itemInfo } from './scope.js';
-import { SCHOOL_YEARS, defaultPointer } from '../curriculum/dz/calendar/schoolCalendar.js';
-import { getItem } from '../curriculum/dz/net/learningNet.js';
+import { SCHOOL_YEARS } from '../curriculum/fr/calendar/schoolCalendar.js';
+import { createLearningNet } from '../curriculum/fr/net/learningNet.js';
 
-const { calendar, progressions } = SCHOOL_YEARS['2026/2027'];
-const p4 = progressions['4am'];
+// The delivered net and year are EMPTY (FRANCE_REBUILD_PLAN.md §4bis): the rules A and B are checked on a neutral net.
+const item = (id, segment) => ({ id, segment, grade: id.split('.')[0], number: Number(id.slice(-2)), text: `Compétence ${id}` });
+const net = createLearningNet({
+  programme: {
+    grades: [{ id: '6e' }, { id: '5e' }],
+    segments: [{ id: '6e.m1', grade: '6e', number: 1 }, { id: '5e.m1', grade: '5e', number: 1 }],
+    items: [
+      item('6e.m1.r01', '6e.m1'), item('6e.m1.r02', '6e.m1'), item('6e.m1.r03', '6e.m1'),
+      item('5e.m1.r01', '5e.m1'), item('5e.m1.r02', '5e.m1'),
+    ],
+  },
+  net: {
+    threads: [],
+    links: [
+      { from: '6e.m1.r02', to: '5e.m1.r01', type: 'extends', addedValue: 'plus loin' },
+      { from: '6e.m1.r01', to: '5e.m1.r01', type: 'requires' },
+      { from: '6e.m1.r03', to: '5e.m1.r02', type: 'consolidates', note: 'rappel' },
+      { from: '5e.m1.r01', to: '5e.m1.r02', type: 'requires' },
+    ],
+  },
+  lessonFiles: [
+    { grade: '6e', lessons: [{ code: 'a6', order: 0, kind: 'lesson', title: 'Leçon a6', programmeItems: ['6e.m1.r01', '6e.m1.r02', '6e.m1.r03'] }] },
+    {
+      grade: '5e',
+      lessons: [
+        { code: 'l1', order: 0, kind: 'lesson', title: 'Leçon l1', programmeItems: ['5e.m1.r01'], status: 'available' },
+        { code: 'l2', order: 1, kind: 'lesson', title: 'Leçon l2', programmeItems: ['5e.m1.r02'] },
+        { code: 'syn', order: 2, kind: 'synthesis', title: 'Synthèse', programmeItems: ['5e.m1.r02'] },
+      ],
+    },
+  ],
+  unitFiles: [],
+});
+const progression = { weeks: [{ week: 'w01', lessons: ['l1'] }, { week: 'w02', lessons: ['l2'] }, { week: 'w03', lessons: ['syn'] }] };
 
 describe('prereqsOf', () => {
-  it('donne les prérequis directs du réseau, sans doublon ni l’item lui-même', () => {
-    const p = prereqsOf('4am.m1.r06');
-    expect(p).toContain('3am.m4.r03');
-    expect(new Set(p).size).toBe(p.length);
-    expect(p).not.toContain('4am.m1.r06');
+  it('donne les prérequis directs du réseau, `requires` d’abord, sans doublon ni l’item lui-même', () => {
+    expect(prereqsOf('5e.m1.r01', net)).toEqual(['6e.m1.r01', '6e.m1.r02']);
+    expect(prereqsOf('5e.m1.r02', net)).toEqual(['5e.m1.r01', '6e.m1.r03']);
+    expect(prereqsOf('6e.m1.r01', net)).toEqual([]);
   });
 });
 
-describe('buildScope (4AM, 15 novembre 2026)', () => {
-  const pointer = defaultPointer(calendar, p4, '2026-11-15');
-  const s = buildScope({ progression: p4, pointer });
-
-  it('ne cible que des items qui existent', () => {
-    expect(s.targets.length).toBeGreaterThan(0);
-    for (const id of s.targets) expect(getItem(id)).not.toBeNull();
+describe('buildScope', () => {
+  it('règle A : les items des leçons vues ; règle B : les prérequis des leçons à venir, jamais elles-mêmes', () => {
+    const s = buildScope({ progression, pointer: 'l1', net });
+    expect(s.taughtLessons).toEqual(['l1']);
+    expect(s.upcomingLessons).toEqual(['l2', 'syn']);
+    expect(s.ruleA).toEqual(['5e.m1.r01']);
+    // a synthesis brings no item; 5e.m1.r01 is already in rule A
+    expect(s.upcomingItems).toEqual(['5e.m1.r02']);
+    expect(s.ruleB).toEqual(['6e.m1.r03']);
+    expect(s.targets).toEqual(['6e.m1.r03', '5e.m1.r01']);
+    for (const id of s.targets) expect(net.getItem(id)).not.toBeNull();
   });
-  it('règle A : au plus 10 items vus, tous issus de leçons vues', () => {
-    expect(s.ruleA.length).toBeLessThanOrEqual(10);
-    for (const id of s.ruleA) expect(s.taughtItems).toContain(id);
+  it('avant la rentrée : aucune règle A, et la règle B s’arrête à son plafond', () => {
+    const s0 = buildScope({ progression, pointer: null, net });
+    expect(s0.ruleA).toEqual([]);
+    expect(s0.ruleB).toEqual(['6e.m1.r01', '6e.m1.r02', '6e.m1.r03']);
+    expect(buildScope({ progression, pointer: null, maxUpcomingPrereqs: 2, net }).ruleB).toEqual(['6e.m1.r01', '6e.m1.r02']);
   });
-  it('règle B : jamais un item des leçons à venir lui-même, 4 au plus', () => {
-    expect(s.ruleB.length).toBeLessThanOrEqual(4);
-    for (const id of s.ruleB) expect(s.upcomingItems).not.toContain(id);
-  });
-  it('rien de ce qui n’est pas encore vu n’est ciblé en règle A', () => {
+  it('ne garde en règle A que les plus récents des items vus', () => {
+    const s = buildScope({ progression, pointer: 'l2', recentTaught: 1, net });
+    expect(s.taughtItems).toEqual(['5e.m1.r01', '5e.m1.r02']);
+    expect(s.ruleA).toEqual(['5e.m1.r02']);
     for (const id of s.ruleA) expect(s.upcomingItems).not.toContain(id);
   });
-  it('avant la rentrée : aucune règle A', () => {
-    const s0 = buildScope({ progression: p4, pointer: null });
-    expect(s0.ruleA).toEqual([]);
+  it('sur l’année livrée, vide : aucune cible, aucun plantage', () => {
+    const { progressions } = SCHOOL_YEARS['2026/2027'];
+    const s = buildScope({ progression: progressions['6e'], pointer: null });
+    expect(s.targets).toEqual([]);
   });
 });
 
 describe('itemInfo', () => {
   it('donne le texte et la leçon où réviser', () => {
-    const info = itemInfo('4am.m1.r06');
-    expect(info.textAr.length).toBeGreaterThan(0);
-    expect(info.homeLesson.code).toBe('jidhr-tarbii');
+    expect(itemInfo('5e.m1.r01', net)).toEqual({
+      id: '5e.m1.r01', text: 'Compétence 5e.m1.r01', grade: '5e',
+      homeLesson: { code: 'l1', grade: '5e', title: 'Leçon l1', status: 'available' },
+    });
   });
   it('null pour un item inconnu', () => {
+    expect(itemInfo('nope', net)).toBeNull();
     expect(itemInfo('nope')).toBeNull();
   });
 });
