@@ -14,6 +14,7 @@ import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { AdminPage, AdminSection, AdminCard, Loading, ErrorBox, Num, formatDate } from './adminUi';
 import AdminNotifications from './notifications/AdminNotifications';
 import RegistrationCard from '../../components/admin/RegistrationCard';
+import PaymentsSwitchCard from '../../components/admin/PaymentsSwitchCard';
 
 /**
  * La phrase d'une alerte, écrite ICI et non par le serveur.
@@ -80,6 +81,8 @@ export default function AdminDashboard() {
       {/* « التسجيل » : ouvrir / fermer l'inscription publique — hors des données du tableau de bord, pour rester
           visible et utilisable même quand celles-ci ne chargent pas. */}
       <RegistrationCard />
+      {/* « Paiement en ligne » : the payments switch (FRANCE_REBUILD_PLAN.md §4ter), beside the registration switch. */}
+      <PaymentsSwitchCard />
       {loading && <Loading label={t('dashboard.loading')} />}
       {error && <ErrorBox message={error} onRetry={reload} />}
 

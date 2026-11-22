@@ -4,6 +4,7 @@ import { BadgeCheck, GraduationCap, School, Users } from 'lucide-react';
 import { AuthContext } from '../../context/AuthContext';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { fetchSchoolOverview } from '../../services/schoolService';
+import { usePayments } from '../../context/PaymentsContext';
 
 function Figure({ icon: Icon, label, value, hint }) {
   return (
@@ -30,6 +31,8 @@ export default function SchoolHome() {
   const { token } = useContext(AuthContext);
   const [data, setData] = useState(null);
   const [problem, setProblem] = useState(null);
+  // Payments closed: no « seats bought » card — every pupil has full access, nothing is sold (§4ter).
+  const { paymentsOpen } = usePayments();
 
   useEffect(() => {
     let alive = true;
@@ -71,7 +74,7 @@ export default function SchoolHome() {
       </section>
 
       {/* La licence (D1) : sièges utilisés sur sièges achetés, et sa fin. */}
-      <section className="rounded-2xl border border-slate-200 bg-white p-5" data-school-licence>
+      {paymentsOpen && <section className="rounded-2xl border border-slate-200 bg-white p-5" data-school-licence>
         <div className="flex items-center gap-2 text-slate-500">
           <BadgeCheck size={18} aria-hidden="true" />
           <p className="font-inter text-sm">{t('home.licence')}</p>
@@ -87,7 +90,7 @@ export default function SchoolHome() {
         ) : (
           <p className="mt-2 font-inter text-sm text-slate-600">{t('home.noLicence')}</p>
         )}
-      </section>
+      </section>}
     </div>
   );
 }

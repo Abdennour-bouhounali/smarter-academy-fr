@@ -7,13 +7,8 @@ import CourseLayout from './components/layout/CourseLayout';
 const Methode = lazy(() => import('./pages/Methode'));
 const About = lazy(() => import('./pages/About'));
 const Courses = lazy(() => import('./pages/Courses'));
-// ── Stripe : DÉMONTÉ du produit algérien (master spec §18) ─────────────
-// Tarifs.jsx, Abonnement.jsx et AbonnementRetour.jsx restent PHYSIQUEMENT
-// présents sur le disque : le produit algérien ne les sert pas, mais un
-// paiement en ligne algérien autorisé pourrait un jour réutiliser cette
-// mécanique. Ce qui compte est qu'aucune route ne les atteigne : sans
-// import ni montage, elles ne sont ni navigables ni même incluses au lot.
-// L'accès payant passe par /espace/activation.
+// No pricing, checkout or return page exists in this tree yet (plan §4, step 1F). What sells is behind
+// `PaidOutlet` (payments switch, §4ter); what has no French content yet behind `FeatureOutlet` (config/features.js).
 const FAQ = lazy(() => import('./pages/FAQ'));
 const Contact = lazy(() => import('./pages/Contact'));
 import Login from './pages/Login';
@@ -200,6 +195,7 @@ const MathLabHome = lazy(() => import('./pages/student/MathLab'));
 const MathLabToolPage = lazy(() => import('./pages/student/MathLab').then((m) => ({ default: m.MathLabToolPage })));
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import AdminOnlyOutlet from './components/auth/AdminOnlyOutlet';
+import { FeatureOutlet, PaidOutlet } from './components/auth/FeatureOutlet';
 import { prefetchBooksForLocation } from './features/books/bookCache';
 import RequireAccount from './components/auth/RequireAccount';
 import RequireLargeScreen from './components/auth/RequireLargeScreen';
@@ -209,6 +205,7 @@ import { WorkspaceLayoutProvider } from './context/WorkspaceLayoutContext';
 import { NotebookProvider } from './features/practice/notebook/NotebookProvider';
 import { MathLabOverlayProvider } from './features/mathlab/overlay/MathLabOverlayProvider';
 import { ContentAvailabilityProvider } from './context/ContentAvailabilityContext';
+import { PaymentsProvider } from './context/PaymentsContext';
 import { StudyContextProvider } from './context/StudyContextContext';
 import { useLessonProgressSync } from './hooks/useLessonProgressSync';
 import { useLessonRoutes } from './lessons/lessonRouteBoundary';
@@ -241,39 +238,42 @@ export default function App() {
   return (
     <AuthProvider>
       <LessonProgressSync />
-      <ContentAvailabilityProvider>
-        <StudyContextProvider>
-          <WorkspaceLayoutProvider>
-            {/* LE cahier de l'élève : une seule fenêtre pour toute l'application,
-          au-dessus du routeur pour survivre au changement de module. Les
-          pages de leçon lui publient leur position (LessonNotebookAnchor). */}
-            <NotebookProvider>
-              {/* LE مختبر posé SUR la leçon : un seul calque pour toute
-          l'application, au-dessus du routeur lui aussi — ouvrir un
-          instrument ne doit jamais démonter la leçon, sinon l'élève perd sa
-          place (features/mathlab/overlay/). */}
-              <MathLabOverlayProvider>
-                <Router>
-                  {/* Le TEMPS RÉEL d'étude de l'élève (PARENT_SPACE.md §3) : un composant
-            nul sous le routeur — il lit l'adresse pour savoir où le temps passe. */}
-                  <StudyTimeTracker />
-                  {/* Frontière d'attente UNIQUE pour les routes découpées (admin,
-            moteur d'exercices, pages légales, diagnostic). Elle est posée
-            AUTOUR du routeur : la coquille (barre de navigation, pied de
-            page) est rendue par les layouts à l'intérieur de chaque route,
-            et un repli neutre évite un écran blanc pendant le téléchargement
-            du lot de la page. Les leçons ont en plus leur propre <Suspense>
-            (frontière de routes, puis celui que buildLessonRoutes pose autour
-            de leur contenu) : la coquille reste à l'écran. */}
-                  <Suspense fallback={<div className="min-h-screen bg-[#FAFAFA]" />}>
-                    <AppRoutes />
-                  </Suspense>
-                </Router>
-              </MathLabOverlayProvider>
-            </NotebookProvider>
-          </WorkspaceLayoutProvider>
-        </StudyContextProvider>
-      </ContentAvailabilityProvider>
+      {/* « Are payments open? » — read once, for visitors too; closed until the server says otherwise. */}
+      <PaymentsProvider>
+        <ContentAvailabilityProvider>
+          <StudyContextProvider>
+            <WorkspaceLayoutProvider>
+              {/* LE cahier de l'élève : une seule fenêtre pour toute l'application,
+            au-dessus du routeur pour survivre au changement de module. Les
+            pages de leçon lui publient leur position (LessonNotebookAnchor). */}
+              <NotebookProvider>
+                {/* LE مختبر posé SUR la leçon : un seul calque pour toute
+            l'application, au-dessus du routeur lui aussi — ouvrir un
+            instrument ne doit jamais démonter la leçon, sinon l'élève perd sa
+            place (features/mathlab/overlay/). */}
+                <MathLabOverlayProvider>
+                  <Router>
+                    {/* Le TEMPS RÉEL d'étude de l'élève (PARENT_SPACE.md §3) : un composant
+              nul sous le routeur — il lit l'adresse pour savoir où le temps passe. */}
+                    <StudyTimeTracker />
+                    {/* Frontière d'attente UNIQUE pour les routes découpées (admin,
+              moteur d'exercices, pages légales, diagnostic). Elle est posée
+              AUTOUR du routeur : la coquille (barre de navigation, pied de
+              page) est rendue par les layouts à l'intérieur de chaque route,
+              et un repli neutre évite un écran blanc pendant le téléchargement
+              du lot de la page. Les leçons ont en plus leur propre <Suspense>
+              (frontière de routes, puis celui que buildLessonRoutes pose autour
+              de leur contenu) : la coquille reste à l'écran. */}
+                    <Suspense fallback={<div className="min-h-screen bg-[#FAFAFA]" />}>
+                      <AppRoutes />
+                    </Suspense>
+                  </Router>
+                </MathLabOverlayProvider>
+              </NotebookProvider>
+            </WorkspaceLayoutProvider>
+          </StudyContextProvider>
+        </ContentAvailabilityProvider>
+      </PaymentsProvider>
     </AuthProvider>
   );
 }
@@ -334,22 +334,28 @@ function AppRoutes() {
             <Route path="offres/demandes" element={<AdminSubscriptionRequests />} />
             <Route path="offres/abonnements" element={<AdminSubscriptions />} />
             <Route path="offres/acces" element={<AdminAccessLimits />} />
-            <Route path="offres/defi-quotidien" element={<AdminDailyChallenge />} />
+            <Route element={<FeatureOutlet feature="dailyChallenge" home="/admin" />}>
+              <Route path="offres/defi-quotidien" element={<AdminDailyChallenge />} />
+            </Route>
             <Route path="offres/:id" element={<AdminPlanEditor />} />
 
             <Route path="systeme/journal" element={<AdminActivityLog />} />
             <Route path="systeme/coherence" element={<AdminRegistryHealth />} />
             <Route path="systeme/messages" element={<AdminContactMessages />} />
-            <Route path="livres/gestionnaires" element={<AdminBookManagers />} />
+            <Route element={<FeatureOutlet feature="books" home="/admin" />}>
+              <Route path="livres/gestionnaires" element={<AdminBookManagers />} />
+            </Route>
           </Route>
 
           {/* La librairie et « حسابي » : l'administrateur ET le gestionnaire (can:books). */}
           <Route path="compte" element={<AdminProfile />} />
           <Route path="compte/securite" element={<AdminSecurity />} />
-          <Route path="livres" element={<AdminBookCatalog />} />
-          <Route path="livres/commandes" element={<AdminBookOrders />} />
-          <Route path="livres/commandes/:id" element={<AdminBookOrderDetail />} />
-          <Route path="livres/messages" element={<AdminBookMessages />} />
+          <Route element={<FeatureOutlet feature="books" home="/admin" />}>
+            <Route path="livres" element={<AdminBookCatalog />} />
+            <Route path="livres/commandes" element={<AdminBookOrders />} />
+            <Route path="livres/commandes/:id" element={<AdminBookOrderDetail />} />
+            <Route path="livres/messages" element={<AdminBookMessages />} />
+          </Route>
         </Route>
       </Route>
 
@@ -361,9 +367,11 @@ function AppRoutes() {
       <Route path="/espace" element={<ProtectedRoute allowedRoles={['student']} />}>
         <Route path="bienvenue/nom" element={<CompleteName />} />
         <Route path="bienvenue" element={<ChooseGrade />} />
-        <Route path="diagnostic" element={<DiagnosticIntro />} />
-        <Route path="diagnostic/run" element={<DiagnosticRun />} />
-        <Route path="diagnostic/resultat" element={<DiagnosticResult />} />
+        <Route element={<FeatureOutlet feature="diagnostic" home="/espace" />}>
+          <Route path="diagnostic" element={<DiagnosticIntro />} />
+          <Route path="diagnostic/run" element={<DiagnosticRun />} />
+          <Route path="diagnostic/resultat" element={<DiagnosticResult />} />
+        </Route>
         {/* « مدار » : PLEIN ÉCRAN, hors de StudentLayout — un jeu se joue sans
             barre latérale ni barre d'onglets, au téléphone comme au portable
             (MADAR_GAME.md). Le serveur tient cœurs, parties et classement. */}
@@ -386,9 +394,11 @@ function AppRoutes() {
           <Route path="profil" element={<Profil />} />
           {/* « ما يراه وليّك » : le rapport que lit le وليّ, lu par l'élève lui-même. */}
           <Route path="profil/wali" element={<StudentParentView />} />
-          {/* La saisie d'un code d'activation — le seul geste par lequel
-              un élève ouvre ses propres droits (master spec §17). */}
-          <Route path="activation" element={<Activation />} />
+          {/* The activation code: pointless while payments are closed (everyone has full access) — the server still
+              accepts a code. */}
+          <Route element={<PaidOutlet home="/espace" />}>
+            <Route path="activation" element={<Activation />} />
+          </Route>
           {/* La pratique vit DANS l'espace élève, avec la même barre
               latérale que les leçons : les routes de leçon passent par
               CourseLayout, qui rend StudentLayout dès qu'on est connecté.
@@ -403,17 +413,23 @@ function AppRoutes() {
             <Route path="tashih/:reviewId" element={<AnswerReviewPage />} />
             {/* « مختبر التفكير » : l'échelle, un défi (par son id stable), un numéro (« التحدّي 318 »).
               Le serveur juge, compte et ouvre la porte ; ces pages ne font qu'afficher. */}
-            <Route path="tafkir" element={<ThinkingLadderPage />} />
-            <Route path="tafkir/n/:number" element={<ThinkingNumberPage />} />
-            <Route path="tafkir/:challengeId" element={<ThinkingChallengePage />} />
+            <Route element={<FeatureOutlet feature="thinkingLab" home="/espace" />}>
+              <Route path="tafkir" element={<ThinkingLadderPage />} />
+              <Route path="tafkir/n/:number" element={<ThinkingNumberPage />} />
+              <Route path="tafkir/:challengeId" element={<ThinkingChallengePage />} />
+            </Route>
             {/* « بوصلتي » : la jauge de départ et sa خطّة (YEAR_COMPASS.md). Le serveur sert et corrige. */}
-            <Route path="bawsala" element={<CompassPage />} />
+            <Route element={<FeatureOutlet feature="compass" home="/espace" />}>
+              <Route path="bawsala" element={<CompassPage />} />
+            </Route>
           </Route>
           {/* « التحدّي اليومي » : le serveur tient la tentative ; ces
               routes ne font que l'afficher (DAILY_CHALLENGE.md). */}
-          <Route path="defi" element={<DailyChallengePage />} />
-          <Route path="defi/historique" element={<ChallengeHistoryPage />} />
-          <Route path="defi/:attemptId" element={<ChallengeReviewPage />} />
+          <Route element={<FeatureOutlet feature="dailyChallenge" home="/espace" />}>
+            <Route path="defi" element={<DailyChallengePage />} />
+            <Route path="defi/historique" element={<ChallengeHistoryPage />} />
+            <Route path="defi/:attemptId" element={<ChallengeReviewPage />} />
+          </Route>
           {/* Le مختبر الرياضيات : l'accueil, puis un instrument par
               segment d'URL (résolu dans le registre, features/mathlab),
               avec ou sans document enregistré. Un instrument de plus
@@ -435,7 +451,9 @@ function AppRoutes() {
       <Route path="/enseignant" element={<ProtectedRoute allowedRoles={['teacher']} />}>
         {/* Le mode d'AFFICHAGE du défi : plein écran, hors de la coquille
             enseignant — c'est ce que la classe voit au tableau. */}
-        <Route path="classes/:id/defi/affichage" element={<TeacherChallengeDisplay />} />
+        <Route element={<FeatureOutlet feature="dailyChallenge" home="/enseignant" />}>
+          <Route path="classes/:id/defi/affichage" element={<TeacherChallengeDisplay />} />
+        </Route>
         <Route path="classes/:id/madar/affichage" element={<TeacherMadarDisplay />} />
         {/* « حصّة القسم » : la séance en classe d'une leçon (plan de la classe, test, podium) — plein écran, au tableau (CLASS_SESSION.md). */}
         {/* tablette et ordinateur seulement : la séance de classe se projette */}
@@ -461,7 +479,9 @@ function AppRoutes() {
           {/* « تصحيح الإجابات » : photos de copie et démonstrations des élèves en
               « تصحيح الأستاذ » (AnswerReviewService, 2026-10-06). */}
           <Route path="tashih" element={<TeacherReviews />} />
-          <Route path="offre" element={<TeacherSubscription />} />
+          <Route element={<PaidOutlet home="/enseignant" />}>
+            <Route path="offre" element={<TeacherSubscription />} />
+          </Route>
           <Route path="profil" element={<TeacherProfile />} />
           <Route path="muassasa" element={<TeacherSchoolPage />} />
           <Route path="muassasa/rejoindre/:token" element={<TeacherSchoolJoin />} />
@@ -505,8 +525,10 @@ function AppRoutes() {
           {/* « مختبر التفكير » : la PRÉVISUALISATION de l'enseignant (THINKING_LAB.md §8bis) — tout ouvert,
               rien d'écrit ; la porte du serveur est `can:teacher`. */}
           <Route element={<RequireLargeScreen />}>
-            <Route path="tafkir" element={<TeacherThinkingListPage />} />
-            <Route path="tafkir/:challengeId" element={<TeacherThinkingChallengePage />} />
+            <Route element={<FeatureOutlet feature="thinkingLab" home="/enseignant" />}>
+              <Route path="tafkir" element={<TeacherThinkingListPage />} />
+              <Route path="tafkir/:challengeId" element={<TeacherThinkingChallengePage />} />
+            </Route>
           </Route>
           <Route path="cahier" element={<Notebook />} />
           <Route path="cahier/revision" element={<NotebookReviewPage />} />
@@ -566,8 +588,6 @@ function AppRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/books" element={<BooksPage />} />
-        <Route path="/books/:slug" element={<BookDetailPage />} />
 
         {/* L'écran d'attente entre l'inscription et l'espace élève.
             Publique : l'élève y arrive aussi en revenant du lien reçu
@@ -597,6 +617,10 @@ function AppRoutes() {
         {/* « اجعل الجهاز للدراسة فقط » : le guide des parents, PUBLIC (PARENT_SPACE.md §6). */}
         <Route path="/himaya" element={<DeviceGuidePage />} />
 
+        <Route element={<FeatureOutlet feature="books" home="/" />}>
+          <Route path="/books" element={<BooksPage />} />
+          <Route path="/books/:slug" element={<BookDetailPage />} />
+        </Route>
         <Route path="*" element={<HomeRedirect />} />
       </Route>
 

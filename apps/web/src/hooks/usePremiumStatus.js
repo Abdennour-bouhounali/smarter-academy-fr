@@ -1,6 +1,7 @@
 import { useContext, useMemo } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useContentAvailability } from '../context/ContentAvailabilityContext';
+import { usePayments } from '../context/PaymentsContext';
 
 /**
  * « Cet élève a-t-il déjà payé ? » — la question posée par toute l'interface,
@@ -35,10 +36,13 @@ import { useContentAvailability } from '../context/ContentAvailabilityContext';
 export function usePremiumStatus() {
   const { user } = useContext(AuthContext);
   const { access } = useContentAvailability();
+  const { paymentsOpen } = usePayments();
 
   return useMemo(() => {
     const isAuthenticated = Boolean(user);
-    const isPremium = access?.premiumAccess === true;
+    // Payments closed: everyone has full access with the reason `payments_closed` — that is not « premium », and
+    // nothing here may present it as one or invite to pay (FRANCE_REBUILD_PLAN.md §4ter).
+    const isPremium = paymentsOpen && access?.premiumAccess === true;
 
     return {
       /** L'élève a un droit premium ACTIF, quelle qu'en soit l'origine. */
@@ -61,9 +65,11 @@ export function usePremiumStatus() {
        * doute). Un visiteur anonyme, lui, garde la découverte publique : il
        * n'a pas d'état d'accès à attendre.
        */
-      canSeeUpgrade: !isAuthenticated || (access !== null && !isPremium),
+      canSeeUpgrade: paymentsOpen && (!isAuthenticated || (access !== null && !isPremium)),
+      /** Is online payment open? While closed, no surface sells or locks. */
+      paymentsOpen,
       /** 'anonymous' | 'free' | 'premium' — le public auquel on s'adresse. */
       audience: !isAuthenticated ? 'anonymous' : isPremium ? 'premium' : 'free',
     };
-  }, [access, user]);
+  }, [access, user, paymentsOpen]);
 }

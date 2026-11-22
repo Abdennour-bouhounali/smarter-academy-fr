@@ -6,7 +6,9 @@ import { Sun, BookOpen, Target, UserRound } from 'lucide-react';
  * line of pages under a door (`DoorTabs`) all read this file, and no menu entry is written anywhere else.
  *
  * A door = `path` (where a tap goes), `pages` (what lives behind it, shown as one line on those pages) and `match`
- * (other addresses that keep the door lit). `labelKey` → i18n `nav`.
+ * (other addresses that keep the door lit). `labelKey` → i18n `nav`. A page with `feature` shows only while that
+ * feature is on (`config/features.js`), one with `paid` only while payments are open — `visibleDoors` (data/doors.js)
+ * is what the menus draw.
  */
 export const studentDoors = [
   {
@@ -36,9 +38,9 @@ export const studentDoors = [
     path: '/espace/defi',
     match: ['/espace/pratique'],
     pages: [
-      { labelKey: 'dailyChallenge', path: '/espace/defi' },
+      { labelKey: 'dailyChallenge', path: '/espace/defi', feature: 'dailyChallenge' },
       { labelKey: 'madar', path: '/espace/jeux' },
-      { labelKey: 'thinkingLab', path: '/espace/tafkir' },
+      { labelKey: 'thinkingLab', path: '/espace/tafkir', feature: 'thinkingLab' },
       { labelKey: 'mathLab', path: '/espace/atelier' },
     ],
   },

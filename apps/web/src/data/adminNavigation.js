@@ -2,6 +2,7 @@ import {
   LayoutDashboard, BarChart3, BookOpen, Flag, Users, KeyRound, Package,
   UserCog, ScrollText, Library, ShoppingBag, MessageSquare, UserCheck, GraduationCap, School, Building2, BadgeCheck, Inbox, CreditCard, SlidersHorizontal, Flame,
 } from 'lucide-react';
+import { isFeatureOn } from '../config/features';
 
 /**
  * L'arborescence du panneau d'administration (spec §4).
@@ -95,7 +96,7 @@ export const adminNavSections = [
       // « الوصول والحدود » : outils du مختبر, cahier et travaux, par palier.
       { labelKey: 'nav.accessLimits', path: '/admin/offres/acces', icon: SlidersHorizontal },
       // « التحدّي اليومي » : barème et défauts (DAILY_CHALLENGE.md).
-      { labelKey: 'nav.dailyChallenge', path: '/admin/offres/defi-quotidien', icon: Flame },
+      { labelKey: 'nav.dailyChallenge', path: '/admin/offres/defi-quotidien', icon: Flame, feature: 'dailyChallenge' },
     ],
   },
   {
@@ -114,6 +115,7 @@ export const adminNavSections = [
     labelKey: 'nav.books',
     icon: Library,
     roles: BOOKS_ROLES,
+    feature: 'books',
     links: [
       { labelKey: 'nav.booksOrders', path: '/admin/livres/commandes', icon: ShoppingBag, roles: BOOKS_ROLES },
       { labelKey: 'nav.booksCatalog', path: '/admin/livres', icon: Library, end: true, roles: BOOKS_ROLES },
@@ -145,7 +147,9 @@ export const adminNavSections = [
 /** Tous les liens à plat — utile pour dériver un titre de page depuis l'URL. */
 export const adminNavLinks = adminNavSections.flatMap((section) => section.links);
 
-const visibleTo = (item, role) => (item.roles ?? ['admin']).includes(role);
+// `feature`: shown only while that feature is on (config/features.js). The admin's commercial pages (plans,
+// subscriptions, codes) have none: he sees them whether payments are open or closed.
+const visibleTo = (item, role) => (item.roles ?? ['admin']).includes(role) && (!item.feature || isFeatureOn(item.feature));
 
 /** Les sections que voit un rôle : l'administrateur tout, le gestionnaire de la librairie « الكتب » et son compte. */
 export function adminNavSectionsFor(role) {

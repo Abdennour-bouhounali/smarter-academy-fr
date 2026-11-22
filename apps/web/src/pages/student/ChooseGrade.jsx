@@ -11,6 +11,7 @@ import { isDiagnosticAvailableForGrade } from '../../services/diagnosticService'
 import { needsName } from '../../utils/personName';
 import { postAuthPath } from '../../features/classJoin/pendingClassJoin';
 import { getDisplayName } from '../../utils/userDisplay';
+import { isFeatureOn } from '../../config/features';
 
 const GRADES_BY_LEVEL = getAllGrades().reduce((groups, grade) => {
   (groups[grade.levelTitle] ??= []).push(grade);
@@ -25,6 +26,14 @@ const GRADE_BADGE = Object.fromEntries(courseLevels.flatMap((level) => level.gra
 const LEVEL_GRADIENT = {
   college: '#3B5BDB',
 };
+
+/**
+ * Where a student goes once his grade is chosen: the diagnostic where one exists AND is shown (config/features.js —
+ * the 6e diagnostic recommends lessons that do not exist yet), otherwise his space.
+ */
+export function pathAfterGrade(gradeId) {
+  return isFeatureOn('diagnostic') && isDiagnosticAvailableForGrade(gradeId) ? '/espace/diagnostic' : '/espace';
+}
 
 /**
  * The onboarding step between account creation and the student space:
@@ -65,9 +74,7 @@ export default function ChooseGrade() {
     setError('');
     try {
       await updateGrade(gradeId);
-      // A diagnostic is the natural next onboarding step where one exists —
-      // for any other grade, land in the space exactly as before.
-      navigate(isDiagnosticAvailableForGrade(gradeId) ? '/espace/diagnostic' : '/espace');
+      navigate(pathAfterGrade(gradeId));
     } catch (err) {
       setError(err.message);
       setSelecting(null);

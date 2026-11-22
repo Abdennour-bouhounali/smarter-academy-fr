@@ -2,6 +2,7 @@ import { useCallback, useContext, useEffect, useSyncExternalStore } from 'react'
 import { AuthContext } from '../context/AuthContext';
 import { fetchFeatureAccess } from '../services/featureAccessService';
 import { withRefusal } from '../features/access/featureAccess';
+import { notePaymentsOpen } from '../context/PaymentsContext';
 
 /**
  * Le résumé « الوصول والحدود » du compte connecté, partagé par toutes les
@@ -37,6 +38,7 @@ export function refreshFeatureAccess(token) {
 
   inflight = fetchFeatureAccess(token)
     .then((data) => {
+      notePaymentsOpen(data?.paymentsOpen);
       if (state.token === token) emit({ token, data, loading: false });
       return data;
     })

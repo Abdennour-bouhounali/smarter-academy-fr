@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { AuthContext } from './AuthContext';
 import { fetchClosedContent } from '../services/contentAvailabilityService';
+import { notePaymentsOpen, usePayments } from './PaymentsContext';
 
 /**
  * Ce que l'administration a retiré — partagé par toute l'application élève.
@@ -50,6 +51,18 @@ function readClosed(result) {
 }
 
 /**
+ * The lessons drawn with a padlock and with the « premium » mark. While payments are closed there are none: a paywall
+ * nobody can pay is a dead end (FRANCE_REBUILD_PLAN.md §4ter) — every card, row, lesson index and lesson gate reads
+ * these two sets, so this is the one place that hides them.
+ */
+export function paidSets(closed, paymentsOpen) {
+  return {
+    locked: new Set(paymentsOpen ? (closed.locked ?? []) : []),
+    premium: new Set(paymentsOpen ? (closed.premium ?? []) : []),
+  };
+}
+
+/**
  * Délai minimal entre deux relectures déclenchées par le RETOUR sur l'onglet.
  * Le palier est décidé par l'administrateur en base : une décision prise
  * pendant que l'élève a la page ouverte doit l'atteindre sans rechargement
@@ -59,6 +72,7 @@ const AVAILABILITY_REFRESH_MIN_MS = 30_000;
 
 export function ContentAvailabilityProvider({ children }) {
   const { token } = useContext(AuthContext);
+  const { paymentsOpen } = usePayments();
   const [closed, setClosed] = useState(EMPTY_CLOSED);
   const lastFetchedAt = useRef(0);
   // Chaque lecture reçoit un numéro ; seule la PLUS RÉCENTE s'applique. Sans
@@ -85,6 +99,7 @@ export function ContentAvailabilityProvider({ children }) {
     lastFetchedAt.current = Date.now();
     const ticket = ++sequence.current;
     const result = await fetchClosedContent(token);
+    notePaymentsOpen(result.access?.paymentsOpen);
     if (ticket !== sequence.current) return result;
 
     setClosed(readClosed(result));
@@ -109,6 +124,7 @@ export function ContentAvailabilityProvider({ children }) {
 
     fetchClosedContent(token)
       .then((result) => {
+        notePaymentsOpen(result.access?.paymentsOpen);
         if (cancelled || ticket !== sequence.current) return;
         setClosed(readClosed(result));
         setAccess(result.access ?? null);
@@ -141,8 +157,7 @@ export function ContentAvailabilityProvider({ children }) {
 
   const value = useMemo(() => {
     const lessonSet = new Set(closed.lessons);
-    const lockedSet = new Set(closed.locked ?? []);
-    const premiumSet = new Set(closed.premium ?? []);
+    const { locked: lockedSet, premium: premiumSet } = paidSets(closed, paymentsOpen);
     const hiddenByClassSet = new Set(closed.hiddenByClass ?? []);
 
     return {
@@ -193,7 +208,7 @@ export function ContentAvailabilityProvider({ children }) {
         return numbers.includes(Number(moduleNumber));
       },
     };
-  }, [closed, access, loaded, load]);
+  }, [closed, access, loaded, load, paymentsOpen]);
 
   return (
     <ContentAvailabilityContext.Provider value={value}>

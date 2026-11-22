@@ -3,6 +3,11 @@ import { Bell, BellOff, BellRing, Loader2, Smartphone } from 'lucide-react';
 import { AuthContext } from '../../../context/AuthContext';
 import { fetchPush, removePushSubscription, savePushSubscription, savePushTopics, testPush } from './pushApi';
 import { P } from './strings';
+import { isFeatureOn } from '../../../config/features';
+
+// The books store's topics while the store is off (config/features.js): no prompt for what has no page.
+const BOOK_TOPICS = ['book_order', 'book_message'];
+const shownTopic = (topic) => isFeatureOn('books') || !BOOK_TOPICS.includes(topic);
 
 /** La clé publique VAPID (base64url) → les octets attendus par `pushManager.subscribe`. */
 function keyBytes(base64url) {
@@ -130,7 +135,7 @@ export default function AdminNotifications() {
       <>
         <p className="text-slate-600">{P.on}</p>
         <div className="mt-2 grid gap-1.5 sm:grid-cols-2">
-          {(server.topics ?? []).map((topic) => (
+          {(server.topics ?? []).filter(shownTopic).map((topic) => (
             <label key={topic} className="flex min-h-11 cursor-pointer items-center gap-2.5 rounded-xl bg-white px-3 ring-1 ring-violet-100 hover:ring-violet-300">
               <input type="checkbox" checked={chosen.includes(topic)} onChange={() => toggle(topic)} className="h-4 w-4 accent-violet-600" />
               <span className="text-slate-800">{P.topics[topic] ?? topic}</span>

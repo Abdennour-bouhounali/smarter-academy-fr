@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
+import { isFeatureOn } from '../../config/features';
 
 /**
  * Sous /admin, les pages de l'administrateur SEUL. Le gestionnaire de la
@@ -12,9 +13,11 @@ import { AuthContext } from '../../context/AuthContext';
  * entre dans le bundle d'entrée (App.jsx), la navigation et ses icônes non.
  */
 const BOOK_MANAGER_HOME = '/admin/livres/commandes';
+// Books off (config/features.js): his only page left is his account — never a loop back to the store.
+const ACCOUNT_HOME = '/admin/compte';
 
 export default function AdminOnlyOutlet() {
   const { user } = useContext(AuthContext);
-  if (user?.role !== 'admin') return <Navigate to={BOOK_MANAGER_HOME} replace />;
+  if (user?.role !== 'admin') return <Navigate to={isFeatureOn('books') ? BOOK_MANAGER_HOME : ACCOUNT_HOME} replace />;
   return <Outlet />;
 }

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { ChevronDown, HelpCircle, CheckCircle2 } from 'lucide-react';
+import { usePayments } from '../../context/PaymentsContext';
 
 // Seuls les identifiants vivent ici : question et réponse sont résolues au
 // rendu depuis le namespace `marketing` (faq.items.<id>.q / .a).
@@ -17,8 +18,18 @@ const FAQ_IDS = [
   'device',
 ];
 
+// The answers about a paid access: shown only while payments are open. Closed, « free » becomes « free for now »
+// (FRANCE_REBUILD_PLAN.md §4ter: the public copy says what is true at the time).
+const PAID_IDS = new Set(['free', 'activation', 'noCard', 'premiumVisible']);
+function faqIds(paymentsOpen) {
+  if (paymentsOpen) return FAQ_IDS;
+  return FAQ_IDS.flatMap((id) => (id === 'free' ? ['freeNow'] : PAID_IDS.has(id) ? [] : [id]));
+}
+
 export default function FAQSection() {
   const { t } = useTranslation('marketing');
+  const { paymentsOpen } = usePayments();
+  const ids = faqIds(paymentsOpen);
   const [openIndex, setOpenIndex] = useState(0);
 
   const toggle = (i) => {
@@ -30,7 +41,7 @@ export default function FAQSection() {
       <div className="max-w-4xl mx-auto">
         {/* Accordion List */}
         <div className="space-y-4">
-          {FAQ_IDS.map((id, i) => (
+          {ids.map((id, i) => (
             <motion.div
               key={id}
               initial={{ opacity: 0, y: 20 }}

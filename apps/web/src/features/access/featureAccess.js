@@ -41,14 +41,18 @@ export function featureState(summary, key) {
   }
   const quota = feature.quota ?? null;
   const exhausted = quota != null && !quota.unlimited && quota.remaining <= 0;
+  // Payments closed (the summary says so): nothing is locked behind a tier nobody can buy (FRANCE_REBUILD_PLAN.md
+  // §4ter). The server already answers « allowed » then; this keeps a stale or mixed answer from drawing a padlock.
+  const paidLockLifted = summary.paymentsOpen === false && feature.reason === 'premium_required';
+  const allowed = feature.allowed === true || paidLockLifted;
 
   return {
     known: true,
     enabled: feature.enabled !== false,
-    allowed: feature.allowed === true,
-    reason: feature.reason ?? 'ok',
+    allowed,
+    reason: paidLockLifted ? 'ok' : (feature.reason ?? 'ok'),
     quota,
-    canCreate: feature.allowed === true && !exhausted,
+    canCreate: allowed && !exhausted,
   };
 }
 

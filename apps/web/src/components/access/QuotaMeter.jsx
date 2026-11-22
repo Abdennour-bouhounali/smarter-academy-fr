@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Gauge } from 'lucide-react';
+import { usePayments } from '../../context/PaymentsContext';
 
 /**
  * « 7 متبقّية من 10 · هذا الشهر » — le quota tel que le serveur l'a compté.
@@ -8,7 +9,9 @@ import { Gauge } from 'lucide-react';
  */
 export default function QuotaMeter({ quota, className = '' }) {
   const { t } = useTranslation('access');
-  if (!quota) return null;
+  // Payments closed: no limit banner — a counter next to a tier nobody can buy is an upsell (§4ter).
+  const { paymentsOpen } = usePayments();
+  if (!quota || !paymentsOpen) return null;
   const exhausted = !quota.unlimited && quota.remaining <= 0;
 
   return (

@@ -51,9 +51,9 @@ export default function CompassHomeSections({ compass, gradeId, today, resume, v
       {stateKey === 'done' && <DoneSections compass={compass} year={year} visits={visits} />}
 
       {stateKey !== 'new' && (
-        <div className="grid gap-4 lg:grid-cols-2" data-compass-row-habits>
+        <div className={`grid gap-4 ${challenge ? 'lg:grid-cols-2' : ''}`} data-compass-row-habits>
           <LessonCard resume={resume} />
-          <div className="min-w-0 [&>a]:mt-0 [&>a]:h-full">{challenge}</div>
+          {challenge && <div className="min-w-0 [&>a]:mt-0 [&>a]:h-full">{challenge}</div>}
         </div>
       )}
 

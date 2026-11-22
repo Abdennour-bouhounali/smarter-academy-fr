@@ -27,6 +27,7 @@ import InterventionsTab from '../../features/teacher/interventions/Interventions
 const DailyChallengeTab = lazy(() => import('../../features/teacher/dailyChallenge/DailyChallengeTab'));
 // « لعبة مدار » : lot et catalogue `madar` chargés à l'ouverture de l'onglet.
 const MadarTab = lazy(() => import('../../features/teacher/madar/MadarTab'));
+import { isFeatureOn } from '../../config/features';
 import { Loading, ErrorBox, useTableLabels, btnSecondary, btnPrimary, btnDanger, input } from './teacherUi';
 
 /**
@@ -38,7 +39,8 @@ const SECTIONS = [
   { id: 'overview', tabs: ['overview'] },
   { id: 'students', tabs: ['students'] },
   { id: 'learning', tabs: ['learningPoints', 'interventions'] },
-  { id: 'activities', tabs: ['dailyChallenge', 'madar'] },
+  // The daily challenge has no French content yet (config/features.js): its page is left out, its data never asked for.
+  { id: 'activities', tabs: [...(isFeatureOn('dailyChallenge') ? ['dailyChallenge'] : []), 'madar'] },
   { id: 'settings', tabs: ['settings', 'lessons'] },
 ];
 const TABS = SECTIONS.flatMap((section) => section.tabs);

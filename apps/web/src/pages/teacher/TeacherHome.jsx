@@ -11,6 +11,7 @@ import { useReviewCount } from '../../features/teacher/reviews/useReviewCount';
 import { weekLessonsFor, todayIso } from '../../features/teacher/today/weekLessons';
 import WeekLessons from '../../features/teacher/today/WeekLessonList';
 import { TeacherPage, Loading, ErrorBox, btnSecondary } from './teacherUi';
+import { usePayments } from '../../context/PaymentsContext';
 
 const CARD = 'rounded-2xl border border-nav-line bg-white p-5';
 
@@ -45,6 +46,8 @@ export default function TeacherHome() {
   const loader = useCallback((token) => fetchTeacherDashboard(token), []);
   const { data, loading, error, reload } = useAdminResource(loader, [loader]);
   const reviews = useReviewCount();
+  // Payments closed: no limit line, no plan link, no pending request — nothing is sold (§4ter).
+  const { paymentsOpen } = usePayments();
   const today = todayIso();
   const ent = data?.entitlements;
   const classes = (data?.classrooms ?? []).filter((c) => c.status !== 'archived');
@@ -83,7 +86,7 @@ export default function TeacherHome() {
               {t('home.today.waiting', { count: reviews })}
             </Link>
           )}
-          {ent.students.overLimit || ent.classes.overLimit ? (
+          {!paymentsOpen ? null : ent.students.overLimit || ent.classes.overLimit ? (
             <p
               className="rounded-2xl bg-nav-now-soft p-3 font-inter text-sm font-semibold text-[#8a5a00]"
               role="status"
@@ -102,7 +105,7 @@ export default function TeacherHome() {
               </Link>
             </p>
           ) : null}
-          {ent.request && (
+          {paymentsOpen && ent.request && (
             <p
               className="rounded-2xl border border-nav-line bg-white p-3 font-inter text-sm text-nav-ink"
               role="status"

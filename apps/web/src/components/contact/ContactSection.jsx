@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Mail, Send, CheckCircle, Inbox, MailOpen, Reply, Sparkles } from 'lucide-react';
 import { submitContactRequest } from '../../services/contactService';
 import { ArrowForward } from '../common/DirectionalIcons';
+import { usePayments } from '../../context/PaymentsContext';
 
 // Les clés de sujet restent stables ; seul le libellé arabe est affiché.
 // Le libellé est envoyé au serveur tel quel : la boîte de réception de
@@ -26,6 +27,9 @@ const EMPTY_FORM = { name: '', email: '', phone: '', message: '' };
 
 export default function ContactSection() {
   const { t } = useTranslation('marketing');
+  // Payments closed: no « prices » subject — there is nothing to price (§4ter).
+  const { paymentsOpen } = usePayments();
+  const subjects = paymentsOpen ? SUBJECTS : SUBJECTS.filter((key) => key !== 'pricing');
   const [form, setForm] = useState(EMPTY_FORM);
   const [subject, setSubject] = useState('general');
   const [submitted, setSubmitted] = useState(false);
@@ -182,7 +186,7 @@ export default function ContactSection() {
                   <fieldset>
                     <legend className="font-inter text-sm font-semibold text-slate-700 mb-2">{t('contact.subjectLabel')}</legend>
                     <div role="radiogroup" aria-label={t('contact.subjectLabel')} className="flex flex-wrap gap-2">
-                      {SUBJECTS.map((key) => {
+                      {subjects.map((key) => {
                         const selected = subject === key;
                         return (
                           <button

@@ -14,6 +14,7 @@ import { storage, scopedStorage } from '../utils/storage';
 import { AuthContext } from '../context/AuthContext';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import NoLessonYet from '../components/student/NoLessonYet';
+import { usePayments } from '../context/PaymentsContext';
 
 export default function CoursesPage() {
   const { t } = useTranslation('common');
@@ -21,6 +22,8 @@ export default function CoursesPage() {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const { user, loading: authLoading } = useContext(AuthContext);
+  // Payments closed: no « paid » legend and no « the rest opens with a code » — nothing is paid (§4ter).
+  const { paymentsOpen } = usePayments();
 
   // 1. Determine Initial State & Fallbacks
   const urlLevel = searchParams.get('level');
@@ -200,16 +203,22 @@ export default function CoursesPage() {
             <h1 className="font-space font-bold text-3xl sm:text-4xl text-slate-900 mb-2">
               {t('catalogueTitle')}
             </h1>
-            <p className="font-inter text-slate-500 text-sm sm:text-base max-w-xl mx-auto mb-5">
-              {t('catalogueSubtitle')}
-            </p>
+            {paymentsOpen && (
+              <p className="font-inter text-slate-500 text-sm sm:text-base max-w-xl mx-auto mb-5">
+                {t('catalogueSubtitle')}
+              </p>
+            )}
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-              <span className="flex items-center gap-1.5 text-xs font-inter font-medium text-slate-500">
-                <span className="w-2 h-2 rounded-full bg-emerald-500" /> {t('legendFree')}
-              </span>
-              <span className="flex items-center gap-1.5 text-xs font-inter font-medium text-slate-500">
-                <Crown size={12} className="text-violet-500" /> {t('legendPremium')}
-              </span>
+              {paymentsOpen && (
+                <>
+                  <span className="flex items-center gap-1.5 text-xs font-inter font-medium text-slate-500">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500" /> {t('legendFree')}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-xs font-inter font-medium text-slate-500">
+                    <Crown size={12} className="text-violet-500" /> {t('legendPremium')}
+                  </span>
+                </>
+              )}
               <span className="flex items-center gap-1.5 text-xs font-inter font-medium text-slate-500">
                 <Lock size={12} className="text-slate-400" /> {t('legendComingSoon')}
               </span>

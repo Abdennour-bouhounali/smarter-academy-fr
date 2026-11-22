@@ -7,6 +7,7 @@ import SettingsButton from '../../features/settings/SettingsButton';
 import { getAllGrades } from '@smarter-academy/core';
 import { AuthContext } from '../../context/AuthContext';
 import { useContentAvailability } from '../../context/ContentAvailabilityContext';
+import { usePayments } from '../../context/PaymentsContext';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { getFullName, getInitials } from '../../utils/userDisplay';
 import NameEditor from '../../components/account/NameEditor';
@@ -40,6 +41,7 @@ export default function Profil() {
   // reste du contexte, et le pire qu'elle produise est une invitation à
   // s'abonner montrée une seconde de trop à un abonné.
   const { access } = useContentAvailability();
+  const { paymentsOpen } = usePayments();
   const navigate = useNavigate();
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -76,6 +78,11 @@ export default function Profil() {
   // dit de l'interne au-delà de ça — ni référence, ni motif, ni qui l'a
   // accordé.
   const plan = (() => {
+    // Payments closed: the platform is free, and full access for the reason `payments_closed` is NOT a subscription —
+    // one sentence, no plan, no code to enter (FRANCE_REBUILD_PLAN.md §4ter).
+    if (!paymentsOpen) {
+      return { premium: false, free: true, title: t('profile.planFreeForNow'), detail: null, iconClass: 'bg-emerald-50 text-emerald-600' };
+    }
     if (access?.subscriptionActive) {
       return {
         premium: true,
@@ -171,7 +178,7 @@ export default function Profil() {
           </div>
           <div>
             <p className="font-space font-bold text-slate-800 text-sm">{plan.title}</p>
-            <p className="font-inter text-slate-500 text-xs mt-0.5">{plan.detail}</p>
+            {plan.detail && <p className="font-inter text-slate-500 text-xs mt-0.5">{plan.detail}</p>}
           </div>
         </div>
         {/* Les deux publics mènent au MÊME endroit — la saisie d'un code :
@@ -179,7 +186,7 @@ export default function Profil() {
             produit algérien (master spec §17/§18). Un élève déjà servi peut
             y empiler une seconde carte ; un élève sans accès y entre la
             sienne. Seul le libellé change. */}
-        <Link
+        {!plan.free && <Link
           to="/espace/activation"
           className={plan.premium
             ? 'inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-space font-bold text-xs text-slate-700 border border-slate-300 transition-all hover:bg-slate-50'
@@ -188,7 +195,7 @@ export default function Profil() {
         >
           {!plan.premium && <Crown size={14} />}
           تفعيل الوصول
-        </Link>
+        </Link>}
       </motion.div>
 
       <Suspense fallback={null}>

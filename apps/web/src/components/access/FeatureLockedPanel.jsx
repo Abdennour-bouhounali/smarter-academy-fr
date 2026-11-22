@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Lock, Gauge } from 'lucide-react';
 import { AuthContext } from '../../context/AuthContext';
+import { usePayments } from '../../context/PaymentsContext';
 
 /**
  * L'état « fermé » d'une fonctionnalité — un instrument verrouillé, un
@@ -18,10 +19,13 @@ import { AuthContext } from '../../context/AuthContext';
 export default function FeatureLockedPanel({ reason, quota = null, resource = null, compact = false }) {
   const { t, i18n } = useTranslation('access');
   const { user } = useContext(AuthContext);
+  // Payments closed: a refusal still says what happened, never « activate full access » (§4ter).
+  const { paymentsOpen } = usePayments();
   const isQuota = reason === 'quota_exceeded';
-  const key = ['premium_required', 'feature_disabled', 'not_available', 'quota_exceeded'].includes(reason) ? reason : 'not_available';
+  const known = ['premium_required', 'feature_disabled', 'not_available', 'quota_exceeded'].includes(reason) ? reason : 'not_available';
+  const key = !paymentsOpen && known === 'premium_required' ? 'not_available' : known;
   const Icon = isQuota ? Gauge : Lock;
-  const canActivate = user?.role === 'student' && (reason === 'premium_required' || isQuota);
+  const canActivate = paymentsOpen && user?.role === 'student' && (reason === 'premium_required' || isQuota);
   const resetsAt = quota?.resetsAt ? new Date(quota.resetsAt).toLocaleDateString(i18n.language || 'ar-DZ', { day: 'numeric', month: 'long' }) : null;
 
   return (
@@ -38,7 +42,7 @@ export default function FeatureLockedPanel({ reason, quota = null, resource = nu
             {t('feature.quota_exceeded.body', { used: quota.used, limit: quota.limit, resource: resource ? t(`feature.resource.${resource}`) : '' })}
           </p>
           <p className="font-inter text-xs text-slate-500">{resetsAt ? t('feature.resetsOn', { date: resetsAt }) : t('feature.neverResets')}</p>
-          {user?.role === 'student' && <p className="font-inter text-xs text-slate-500">{t('feature.quota_exceeded.bodyPremium')}</p>}
+          {canActivate && <p className="font-inter text-xs text-slate-500">{t('feature.quota_exceeded.bodyPremium')}</p>}
         </>
       ) : (
         <p className="font-inter text-sm text-slate-600 max-w-md">{t(`feature.${key}.body`)}</p>

@@ -3,7 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LogOut, Crown, ShieldCheck } from 'lucide-react';
 import TourReplayButton from '../../features/tours/TourReplayButton';
-import { activeDoorId, doorPagesFor } from '../../data/doors';
+import { activeDoorId, doorPagesFor, visibleDoors, visibleLinks } from '../../data/doors';
+import { usePayments } from '../../context/PaymentsContext';
 
 /**
  * THE MENU OF A WORKSPACE — one component for the student and the teacher (NAVIGATION_REBUILD_PLAN.md).
@@ -12,7 +13,8 @@ import { activeDoorId, doorPagesFor } from '../../data/doors';
  *   phone (< 768 px): a top bar (mark, account) and a bottom bar of the same doors.
  *
  * Same skeleton, two voices: ONE blue for both (owner, 2026-11-16: « the black is everywhere »): the student's lit door is soft blue, the teacher's is filled blue; dark navy is for text only. Only the nine `nav-*`
- * colours are used here — no gradient. The doors are DATA (`data/studentNavigation.js`, `data/teacherNavigation.js`).
+ * colours are used here — no gradient. The doors are DATA (`data/studentNavigation.js`, `data/teacherNavigation.js`),
+ * drawn through `visibleDoors`: a feature with no French content and, while payments are closed, what sells are left out.
  *
  * Hooks other code relies on, kept: `.sa-workspace-sidebar` and `aside` (hidden by full-screen pages),
  * `data-workspace-bar`, `data-tour="workspace.nav"`, `#app-header`, `data-nav-badge`.
@@ -146,8 +148,8 @@ function AccountMenu({ account, identity, links, access, onLogout, placement, ex
 
 export default function WorkspaceNav({
   account,
-  doors,
-  accountLinks,
+  doors: allDoors,
+  accountLinks: allAccountLinks,
   identity,
   counts = {},
   access = null,
@@ -157,6 +159,9 @@ export default function WorkspaceNav({
 }) {
   const { t } = useTranslation('nav');
   const { pathname } = useLocation();
+  const { paymentsOpen } = usePayments();
+  const doors = visibleDoors(allDoors, { paymentsOpen });
+  const accountLinks = visibleLinks(allAccountLinks, { paymentsOpen });
   const lit = activeDoorId(doors, pathname, accountLinks);
   const voice = VOICE[account];
   const countLabel = t('notifications.pendingReviews', { count: counts.reviews ?? 0 });
@@ -252,7 +257,8 @@ export default function WorkspaceNav({
 export function DoorTabs({ account, doors, counts = {} }) {
   const { t } = useTranslation('nav');
   const { pathname } = useLocation();
-  const pages = doorPagesFor(doors, pathname);
+  const { paymentsOpen } = usePayments();
+  const pages = doorPagesFor(visibleDoors(doors, { paymentsOpen }), pathname);
   if (!pages.length) return null;
   const voice = VOICE[account];
   return (

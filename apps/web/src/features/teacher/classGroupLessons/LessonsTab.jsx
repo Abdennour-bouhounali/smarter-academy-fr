@@ -13,6 +13,7 @@ import {
 import { flattenCurriculum, idsNeeding, applyBulkOutcome, countByStatus } from './lessonSelection';
 import { Loading, ErrorBox } from '../../../pages/teacher/teacherUi';
 import MathLabel from '../../../lessons/common/components/MathLabel';
+import { usePayments } from '../../../context/PaymentsContext';
 
 /**
  * Les leçons de la classe : afficher / masquer, une par une ou en lot.
@@ -24,6 +25,8 @@ import MathLabel from '../../../lessons/common/components/MathLabel';
 export default function LessonsTab({ classGroup, entitlements }) {
   const { t } = useTranslation('teacher');
   const { token } = useContext(AuthContext);
+  // Payments closed: no « paid » tag on a lesson — every student opens it (§4ter).
+  const { paymentsOpen } = usePayments();
   const loader = useCallback((tk) => fetchClassLessons(tk, classGroup.id), [classGroup.id]);
   const { data: curriculum, loading, error, reload, setData } = useAdminResource(loader, [loader]);
   const rows = useMemo(() => flattenCurriculum(curriculum), [curriculum]);
@@ -215,7 +218,7 @@ export default function LessonsTab({ classGroup, entitlements }) {
                         {t('lessons.notPublished')}
                       </span>
                     )}
-                    {row.tier === 'premium' && <span>{t('lessons.premium')}</span>}
+                    {paymentsOpen && row.tier === 'premium' && <span>{t('lessons.premium')}</span>}
                     {!row.effectiveForStudents && row.classStatus !== 'hidden' && (
                       <span>{t('lessons.notEffective')}</span>
                     )}

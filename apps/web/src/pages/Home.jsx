@@ -8,6 +8,7 @@ import SmarterEverydaySection from '../components/home/SmarterEverydaySection';
 import CtaBanner from '../components/common/CtaBanner';
 import { useTranslation } from 'react-i18next';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
+import { usePayments } from '../context/PaymentsContext';
 
 // The banner reads the full catalogue (resume lesson): lazy, so the catalogue stays out of the entry
 // chunk (BUNDLE_BOUNDARIES.md §3). It renders nothing for visitors and admins.
@@ -17,11 +18,13 @@ const StudentHomeBanner = lazy(() => import('../components/student/StudentHomeBa
 // Understanding (MethodTeaser), Trust/Relevance (TrustRelevanceSection),
 // Desire (FreePremiumTeaser + SmarterEveryday), Action (CtaBanner).
 // Nothing here repeats what another visitor page already owns: the full
-// methodology lives on /methode, the full pricing on /tarifs, the mission
-// on /about — Home experiences the idea, it doesn't re-explain it.
+// methodology lives on /methode, the mission on /about — Home experiences the
+// idea, it doesn't re-explain it. While payments are closed there is no
+// free/paid teaser: nothing is paid (FRANCE_REBUILD_PLAN.md §4ter).
 export default function Home() {
   const { t } = useTranslation('marketing');
   const { user } = useContext(AuthContext);
+  const { paymentsOpen } = usePayments();
 
   useDocumentMeta(t('home.metaTitle'), t('home.metaDescription'));
 
@@ -35,7 +38,7 @@ export default function Home() {
       )}
       <MethodTeaser />
       <TrustRelevanceSection />
-      <FreePremiumTeaser />
+      {paymentsOpen && <FreePremiumTeaser />}
       <SmarterEverydaySection />
       <CtaBanner
         eyebrow={t('home.ctaEyebrow')}

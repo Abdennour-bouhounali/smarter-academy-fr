@@ -27,6 +27,7 @@ import DailyChallengeCard from '../../features/home/components/DailyChallengeCar
 import { fetchCompass } from '../../services/compassService';
 import { usePrefetchLessonRuntime } from '../../lessons/common/lessonRuntimeLoader';
 import NoLessonYet from '../../components/student/NoLessonYet';
+import { isFeatureOn } from '../../config/features';
 
 // « بوصلتي » sur l'accueil (YEAR_COMPASS.md §6bis) : un lot PARESSEUX — réseau + calendrier n'entrent
 // pas dans le lot de l'accueil ; la page s'affiche, puis la section arrive.
@@ -67,17 +68,19 @@ export default function StudentHome() {
   const { isLessonPremium } = useContentAvailability();
 
   // L'état de « بوصلتي » (serveur). Une erreur réseau laisse l'accueil sans la jauge (état `off`), jamais vide.
+  // The compass off (config/features.js): never asked for — the home opens at once in its `off` state.
+  const compassOn = isFeatureOn('compass');
   const [compass, setCompass] = useState(null);
-  const [compassLoaded, setCompassLoaded] = useState(false);
+  const [compassLoaded, setCompassLoaded] = useState(!compassOn);
   useEffect(() => {
-    if (!token) return undefined;
+    if (!token || !compassOn) return undefined;
     let cancelled = false;
     fetchCompass(token)
       .then((c) => { if (!cancelled) setCompass(c); })
       .catch(() => {})
       .finally(() => { if (!cancelled) setCompassLoaded(true); });
     return () => { cancelled = true; };
-  }, [token]);
+  }, [token, compassOn]);
   const today = useMemo(() => localToday(), []);
   const classroom = studyContext?.mode === 'classroom' ? (studyContext.primary ?? studyContext.classrooms?.[0] ?? null) : null;
 
@@ -154,7 +157,7 @@ export default function StudentHome() {
                 resume={continueCourse}
                 visits={visits}
                 classroom={classroom}
-                challenge={<DailyChallengeCard />}
+                challenge={isFeatureOn('dailyChallenge') ? <DailyChallengeCard /> : null}
               />
             </Suspense>
           ) : skeleton}

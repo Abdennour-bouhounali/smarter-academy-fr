@@ -11,6 +11,7 @@ import {
 import {
   AdminPage, AdminSection, AdminCard, Loading, ErrorBox, btnPrimary, btnSecondary, input as inputClass, Num, formatDate, useAdminLabels,
 } from '../adminUi';
+import { isFeatureOn } from '../../../config/features';
 
 /**
  * « الوصول والحدود » — ce que chaque palier peut faire des instruments du
@@ -39,7 +40,8 @@ export default function AccessLimits() {
   const tools = features.filter((f) => f.group === 'math_lab_tool');
   const notebook = features.find((f) => f.key === 'notebook');
   const documents = features.find((f) => f.key === 'math_lab.documents');
-  const thinkingLab = features.find((f) => f.key === 'thinking_lab.ladder');
+  // The thinking lab has no French content yet (config/features.js): no row for a page nobody sees.
+  const thinkingLab = isFeatureOn('thinkingLab') ? features.find((f) => f.key === 'thinking_lab.ladder') : null;
 
   return (
     <AdminPage eyebrow={t('access.eyebrow')} title={t('access.title')} subtitle={t('access.subtitle')}>

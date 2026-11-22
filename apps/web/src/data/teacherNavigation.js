@@ -38,7 +38,7 @@ export const teacherDoors = [
     path: '/enseignant/atelier',
     pages: [
       { labelKey: 'mathLab', path: '/enseignant/atelier' },
-      { labelKey: 'thinkingLab', path: '/enseignant/tafkir' },
+      { labelKey: 'thinkingLab', path: '/enseignant/tafkir', feature: 'thinkingLab' },
       { labelKey: 'notebook', path: '/enseignant/cahier' },
     ],
   },
@@ -47,6 +47,6 @@ export const teacherDoors = [
 /** The account, not the work: reached from his picture, never from a door. */
 export const teacherAccountLinks = [
   { labelKey: 'doors.account', path: '/enseignant/profil' },
-  { labelKey: 'myPlan', path: '/enseignant/offre' },
+  { labelKey: 'myPlan', path: '/enseignant/offre', paid: true },
   { labelKey: 'mySchool', path: '/enseignant/muassasa' },
 ];

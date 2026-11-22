@@ -9,6 +9,7 @@ import { fetchClassStudents, removeClassStudent } from '../../../services/teache
 import { useTableLabels, formatDate, btnSecondary, Loading, ErrorBox } from '../../../pages/teacher/teacherUi';
 import CredentialsDialog from './CredentialsDialog';
 import { studentName } from '../insights/insights';
+import { usePayments } from '../../../context/PaymentsContext';
 
 // « بطاقات الأولياء » : paresseux — il tire qrcode-generator et le namespace `family` (PARENT_SPACE.md §2bis).
 const ParentCardsDialog = lazy(() => import('./ParentCardsDialog'));
@@ -67,7 +68,9 @@ export default function MembersTab({ classGroup, entitlements, onChanged, onInvi
 
   const fullName = (s) => studentName(s, t('common.unnamedStudent'));
 
-  const seats = entitlements?.students;
+  // Payments closed: no seat cap and no « widen your plan » — a teacher's seats are not sold (§4ter).
+  const { paymentsOpen } = usePayments();
+  const seats = paymentsOpen ? entitlements?.students : null;
   const seatsFull = seats && seats.maximum != null && seats.current >= seats.maximum;
   const seatsNear = seats && seats.maximum != null && seats.current >= seats.maximum * NEAR_FULL;
   const all = students ?? [];
