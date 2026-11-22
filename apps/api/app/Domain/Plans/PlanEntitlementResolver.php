@@ -2,6 +2,7 @@
 
 namespace App\Domain\Plans;
 
+use App\Domain\Billing\PaymentGate;
 use App\Models\Classroom;
 use App\Models\ClassroomMembership;
 use App\Models\Plan;
@@ -48,7 +49,53 @@ class PlanEntitlementResolver
 
         // array_key_exists et non `??` : null est une VALEUR (« illimité »),
         // pas une absence.
-        return array_key_exists($key, $values) ? $values[$key] : EntitlementKeys::defaultOf($key);
+        $value = array_key_exists($key, $values) ? $values[$key] : EntitlementKeys::defaultOf($key);
+
+        return $this->liftsWhenClosed($key, $value) ? self::fullValue($key) : $value;
+    }
+
+    /**
+     * Le paiement en ligne FERMÉ (PaymentGate) : aucune offre n'enferme un compte — chaque limite levée, chaque
+     * fonctionnalité ouverte, aucune classe scolaire exclue. Appliqué à la LECTURE, jamais écrit : rouvrir rend les
+     * valeurs de l'offre telles quelles. L'interrupteur n'est consulté que si la valeur restreint quelque chose.
+     *
+     * `students.covered` garde sa vraie valeur : l'accès des élèves est déjà ouvert par EntitlementService, et la
+     * forcer ferait passer l'interrupteur pour une vraie couverture par l'enseignant.
+     */
+    private function liftsWhenClosed(string $key, mixed $value): bool
+    {
+        if ($key === EntitlementKeys::STUDENTS_COVERED || ! EntitlementKeys::exists($key) || $value === self::fullValue($key)) {
+            return false;
+        }
+
+        return ! app(PaymentGate::class)->isOpen();
+    }
+
+    private static function fullValue(string $key): mixed
+    {
+        return match (EntitlementKeys::typeOf($key)) {
+            EntitlementKeys::TYPE_LIMIT => null,
+            EntitlementKeys::TYPE_FEATURE => true,
+            EntitlementKeys::TYPE_LIST => [],
+        };
+    }
+
+    /**
+     * Les valeurs et leurs sources APRÈS l'interrupteur du paiement (source `payments_closed` pour ce qu'il lève).
+     *
+     * @param  array{values: array<string, mixed>, sources: array<string, array{source: string, overrideId: ?int}>}  $resolved
+     * @return array{values: array<string, mixed>, sources: array<string, array{source: string, overrideId: ?int}>}
+     */
+    private function effective(array $resolved): array
+    {
+        foreach ($resolved['values'] as $key => $value) {
+            if ($this->liftsWhenClosed($key, $value)) {
+                $resolved['values'][$key] = self::fullValue($key);
+                $resolved['sources'][$key] = ['source' => PaymentGate::CLOSED_CODE, 'overrideId' => null];
+            }
+        }
+
+        return $resolved;
     }
 
     /** Une fonctionnalité booléenne. */
@@ -96,7 +143,7 @@ class PlanEntitlementResolver
     {
         $resolved = $this->resolve($user);
         $usage = $user->isTeacher() ? $this->usage($user) : ['classrooms' => 0, 'students' => 0];
-        $values = $resolved['values'];
+        $values = $this->effective($resolved)['values'];
 
         $meter = function (string $key, int $current) use ($values): array {
             $max = $values[$key] ?? null;
@@ -152,7 +199,7 @@ class PlanEntitlementResolver
      */
     public function explain(User $user): array
     {
-        $resolved = $this->resolve($user);
+        $resolved = $this->effective($this->resolve($user));
         $rows = [];
         foreach (EntitlementKeys::all() as $key => $meta) {
             $rows[] = [

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\Billing\PaymentGate;
 use App\Domain\Plans\EntitlementKeys;
 use App\Domain\Plans\PlanAdminService;
 use App\Domain\Plans\PlanEntitlementResolver;
@@ -29,6 +30,7 @@ class MeSubscriptionController extends Controller
         private SubscriptionActivationService $subscriptions,
         private SubscriptionRequestService $requests,
         private TeacherPricingService $pricing,
+        private PaymentGate $gate,
     ) {}
 
     /** Les offres PUBLIQUES du type de ce compte. */
@@ -37,6 +39,15 @@ class MeSubscriptionController extends Controller
         $user = $request->user();
         $type = $user->isTeacher() ? Plan::TYPE_TEACHER : Plan::TYPE_STUDENT;
         $current = $this->entitlements->summaryFor($user)['plan'];
+
+        // Paiement fermé : aucune offre n'est montrée, donc aucun prix (PaymentGate). Même forme de réponse.
+        if (! $this->gate->isOpen()) {
+            return response()->json([
+                'success' => true,
+                'plans' => [],
+                'freeSeats' => $type === Plan::TYPE_TEACHER ? $this->entitlements->defaultValue($type, EntitlementKeys::STUDENTS_TOTAL_MAX) : null,
+            ]);
+        }
 
         $plans = Plan::ofType($type)->public()
             ->with(['currentVersion.entitlements', 'currentVersion.activePrice', 'currentVersion.pricingTiers'])
@@ -71,6 +82,9 @@ class MeSubscriptionController extends Controller
     /** Le devis serveur pour N élèves sur une offre publique — l'autorité que le client confirme. */
     public function quote(Request $request, int $planId)
     {
+        // Un devis est le premier pas d'un paiement : refusé tant que le paiement en ligne est fermé.
+        $this->gate->assertOpen();
+
         $user = $request->user();
         $type = $user->isTeacher() ? Plan::TYPE_TEACHER : Plan::TYPE_STUDENT;
         $plan = Plan::ofType($type)->public()->with('currentVersion.pricingTiers')->find($planId);
@@ -115,6 +129,9 @@ class MeSubscriptionController extends Controller
     /** Une DEMANDE — jamais une activation. */
     public function storeRequest(Request $request)
     {
+        // Avant la validation ; SubscriptionRequestService le revérifie (le domaine ne s'en remet pas au contrôleur).
+        $this->gate->assertOpen();
+
         $validated = $request->validate([
             'planId' => 'required|integer|min:1',
             'note' => 'nullable|string|max:500',

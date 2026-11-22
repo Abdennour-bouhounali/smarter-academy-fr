@@ -27,6 +27,13 @@ use Illuminate\Support\Facades\DB;
  * pour DESSINER un état ; il n'autorise rien — chaque geste protégé repasse
  * par `ensure()` ou `consume()`.
  *
+ * ── Le paiement en ligne fermé ───────────────────────────────────────────
+ * Rien à faire ici : EntitlementService range alors tout compte actif en
+ * premium (motif `payments_closed`), et chacun reçoit ce que reçoit le palier
+ * premium. L'interrupteur global d'une fonctionnalité et le quota du premium
+ * restent ce que l'administration a réglé — ce ne sont pas des limites qu'on
+ * paie pour lever.
+ *
  * ── L'enseignant ─────────────────────────────────────────────────────────
  * Il n'a pas de règle à part : EntitlementService le range en premium (motif
  * `teacher_role`), et il reçoit donc exactement ce que le palier premium
@@ -170,7 +177,7 @@ class FeatureAccessService
      * Tout ce que le client doit savoir pour DESSINER : le palier, et chaque
      * fonctionnalité avec sa décision et son quota.
      *
-     * @return array{tier: string, tierReason: string, features: array<string, array<string, mixed>>}
+     * @return array{tier: string, tierReason: string, paymentsOpen: bool, features: array<string, array<string, mixed>>}
      */
     public function summaryFor(User $user): array
     {
@@ -188,7 +195,13 @@ class FeatureAccessService
             ];
         }
 
-        return ['tier' => $tier['tier'], 'tierReason' => $tier['reason'], 'features' => $features];
+        return [
+            'tier' => $tier['tier'],
+            // `payments_closed` : le palier premium vient de l'interrupteur fermé, pas d'un droit (PaymentGate).
+            'tierReason' => $tier['reason'],
+            'paymentsOpen' => $this->entitlements->paymentsOpen(),
+            'features' => $features,
+        ];
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Domain\School;
 
+use App\Domain\Billing\PaymentGate;
 use App\Domain\Classroom\ClassroomException;
 use App\Models\Classroom;
 use App\Models\ClassroomMembership;
@@ -38,9 +39,16 @@ class SchoolCapacityService
             ->count('student_id');
     }
 
-    /** NULL : aucune licence ne court (les sièges de l'enseignant s'appliquent). */
+    /**
+     * NULL : aucune licence ne court (les sièges de l'enseignant s'appliquent) — ou le paiement en ligne est fermé :
+     * alors aucun siège ne se compte, ni ici ni chez l'enseignant (PlanEntitlementResolver).
+     */
     public function remainingSeats(School|int $school): ?int
     {
+        if (! app(PaymentGate::class)->isOpen()) {
+            return null;
+        }
+
         $licence = $this->runningLicence($school);
 
         return $licence === null ? null : max(0, $licence->student_seats - $this->currentStudentCount($school));
@@ -54,6 +62,11 @@ class SchoolCapacityService
      */
     public function assertCanSeat(SchoolLicence $licence, User $student): void
     {
+        // Paiement fermé : une licence ne plafonne personne (PaymentGate). Rouvrir rend le plafond.
+        if (! app(PaymentGate::class)->isOpen()) {
+            return;
+        }
+
         $seated = ClassroomMembership::where('student_id', $student->id)->active()
             ->whereIn('classroom_id', Classroom::where('school_id', $licence->school_id)->where('status', Classroom::STATUS_ACTIVE)->select('id'))
             ->exists();

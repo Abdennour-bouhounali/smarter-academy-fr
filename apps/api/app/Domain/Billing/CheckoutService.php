@@ -36,6 +36,7 @@ class CheckoutService
         private PlanCatalog $plans,
         private PaymentProviderRegistry $providers,
         private EntitlementService $entitlements,
+        private PaymentGate $gate,
     ) {}
 
     /**
@@ -46,9 +47,14 @@ class CheckoutService
      * @throws DomainException si l'offre n'existe pas, n'est pas achetable, ou
      *                         si l'élève ne doit pas s'abonner maintenant.
      * @throws CheckoutFailedException si le fournisseur refuse.
+     * @throws PaymentsClosedException si le paiement en ligne est fermé.
      */
     public function start(User $user, string $planKey): array
     {
+        // ── 0. La plateforme vend-elle ? ─────────────────────────────────
+        // Refusé ICI, côté serveur : cacher un bouton n'a jamais protégé rien.
+        $this->gate->assertOpen();
+
         // ── 1. L'offre existe-t-elle, et est-elle vendable ? ─────────────
         // Le catalogue est l'autorité. Une clé inconnue est refusée sans
         // même être journalisée telle quelle : c'est une entrée cliente.
@@ -226,6 +232,10 @@ class CheckoutService
                 'reason' => 'authentication_required',
                 'access' => $access,
             ];
+        }
+
+        if (! $this->gate->isOpen()) {
+            return ['canSubscribe' => false, 'reason' => PaymentGate::CLOSED_CODE, 'access' => $access];
         }
 
         try {

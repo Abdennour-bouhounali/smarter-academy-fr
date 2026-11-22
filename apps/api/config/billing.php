@@ -34,6 +34,18 @@ return [
     'provider' => env('BILLING_PROVIDER', 'stripe'),
 
     /*
+     * LE PAIEMENT EN LIGNE — ouvert ou fermé (propriétaire, 2026-11-22 : « I must be able to toggle this: open or close
+     * the online payment »). Fermé PAR DÉFAUT : la plateforme est gratuite, ne prend d'argent par aucun chemin, et
+     * personne n'est bloqué par un palier, une offre ou une limite payante (docs/FRANCE_REBUILD_PLAN.md §4ter).
+     *
+     * Ce n'est que le DÉFAUT : la ligne `payments` de `platform_settings` (PATCH /admin/payments) l'emporte. Le seul
+     * lecteur de cette valeur est App\Domain\Billing\PaymentGate.
+     */
+    'payments' => [
+        'open' => (bool) env('PAYMENTS_OPEN', false),
+    ],
+
+    /*
      * `test` | `live`. Sert à AFFICHER un avertissement sans ambiguïté dans
      * l'administration, et à empêcher qu'on croie encaisser pour de vrai
      * alors qu'on est en test (ou l'inverse, bien plus grave).

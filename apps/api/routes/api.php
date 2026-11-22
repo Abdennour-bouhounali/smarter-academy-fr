@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\AdminEntitlementController;
 use App\Http\Controllers\Admin\AdminHealthController;
 use App\Http\Controllers\Admin\AdminManualSubscriptionController;
 use App\Http\Controllers\Admin\AdminMasteryReplayController;
+use App\Http\Controllers\Admin\AdminPaymentsController;
 use App\Http\Controllers\Admin\AdminPlanController;
 use App\Http\Controllers\Admin\AdminProviderEventController;
 use App\Http\Controllers\Admin\AdminPushController;
@@ -31,6 +32,7 @@ use App\Http\Controllers\Admin\AdminUserDeletionController;
 use App\Http\Controllers\AnswerImageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BillingCheckoutController;
+use App\Http\Controllers\BillingStatusController;
 use App\Http\Controllers\BillingSubscriptionController;
 use App\Http\Controllers\BookStoreController;
 use App\Http\Controllers\ClassJoinLinkController;
@@ -107,6 +109,9 @@ Route::prefix('v1')->group(function () {
     // Les inscriptions sont-elles ouvertes ? Et, fermées, la liste d'attente (config/registration.php).
     Route::get('/registration', [WaitlistController::class, 'status'])->middleware('throttle:60,1');
     Route::post('/waitlist', [WaitlistController::class, 'store'])->middleware('throttle:6,1');
+
+    // Le paiement en ligne est-il ouvert ? (PaymentGate, config/billing.php › payments.open). Rien d'autre : ni offre, ni prix.
+    Route::get('/billing/status', [BillingStatusController::class, 'show'])->middleware('throttle:60,1');
 
     // ── La LIBRAIRIE : vitrine publique (livres papier, commande sans paiement
     // en ligne). Voir docs/architecture/BOOKS_STORE.md.
@@ -822,6 +827,10 @@ Route::prefix('v1')->group(function () {
             // « التسجيل » : ouvrir / fermer les inscriptions (RegistrationGate, platform_settings).
             Route::get('/registration', [AdminRegistrationController::class, 'show']);
             Route::patch('/registration', [AdminRegistrationController::class, 'update']);
+            // Le paiement en ligne : ouvrir / fermer (PaymentGate, platform_settings). Ouvrir exige un fournisseur complet.
+            // `/payments/switch` et non `/payments` : `GET /admin/payments` est déjà la liste des paiements reçus.
+            Route::get('/payments/switch', [AdminPaymentsController::class, 'show']);
+            Route::patch('/payments/switch', [AdminPaymentsController::class, 'update']);
 
             Route::get('/students', [AdminStudentController::class, 'index']);
             // Un compte élève créé par l'administrateur ; le mot de passe rendu une fois.

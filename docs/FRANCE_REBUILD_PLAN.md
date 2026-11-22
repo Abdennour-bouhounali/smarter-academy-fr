@@ -179,10 +179,22 @@ default **false**), overridden by the administrator's row `payments` of `platfor
 | What is shown | `GET /billing/status` (public) says `open: false`; the plans list is empty; the web shows no price, no « Premium », no lock, no pricing page, no subscription page |
 | Access | nobody is locked by a tier, a plan or a paid limit: every account has full access (a paywall nobody can pay is a dead end). `/me/access` says why (`payments_closed`) |
 | Never blocked, open or closed | a provider's webhook (an event is never refused); cancelling or managing a subscription that exists; redeeming an activation code (a grant by the administrator, not a payment) |
-| The administrator | `GET` / `PATCH /admin/payments` — the switch, written in the activity log with the old and the new value. Opening is refused with `payments_not_configured` while Stripe has no secret or no price: an open switch on a broken checkout is worse than a closed one |
+| The administrator | `GET` / `PATCH /admin/payments/switch` (`/admin/payments` is the list of payments received) — the switch, written in the activity log with the old and the new value. Opening is refused with `payments_not_configured` while Stripe has no secret, no webhook secret or no price: an open switch on a broken checkout is worse than a closed one |
 
 Opening the switch restores the tiers, the plans and the limits exactly as they are configured — nothing is lost
 while it is closed. The legal pages and the public copy say what is true at the time: free while closed.
+
+**Built in the API on 2026-11-22** (`PaymentGate`, 22 tests in `tests/Feature/PaymentGateTest.php`). How it is wired:
+the access layer may not import Billing (`PaymentProviderBoundaryTest`), so it reads the neutral interface
+`Domain\Access\PaidAccessSwitch`, which `PaymentGate` implements. The authorities that answer « full access,
+reason `payments_closed` » while closed: `EntitlementService::decide` (content tiers), `FeatureAccessService`
+(feature limits — a closed platform gets the premium column; a feature the admin switched off stays off),
+`PlanEntitlementResolver` (a teacher's seats, classes, class size, allowed grades), `SchoolCapacityService` (a
+licence's seats). A real entitlement keeps its own reason. Choices made there, open to the owner: a VISITOR with no
+account also reads what would be premium (« no tier » read literally — one line to require an account instead); the
+class daily challenge still draws free questions only; real Stripe was never contacted — « configured » is judged
+from the configuration alone. **The web side is NOT built yet**: until it is, the app still shows the Algerian
+commercial screens, and the server refuses what they offer.
 
 Culture rules for French content replace DZ's (owner to confirm, §7): neutral secular everyday French contexts, euros,
 French first names, characters in ordinary clothes; the independence from the textbook, « discover, don't be told »,

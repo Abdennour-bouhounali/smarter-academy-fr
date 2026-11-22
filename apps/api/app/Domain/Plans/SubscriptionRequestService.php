@@ -3,6 +3,7 @@
 namespace App\Domain\Plans;
 
 use App\Domain\Admin\ActivityLogger;
+use App\Domain\Billing\PaymentGate;
 use App\Domain\Push\AdminPush;
 use App\Models\Plan;
 use App\Models\PlanVersion;
@@ -39,6 +40,9 @@ class SubscriptionRequestService
      */
     public function request(User $user, Plan $plan, ?string $note = null, ?int $studentSeats = null): SubscriptionRequest
     {
+        // Une demande d'offre COMMENCE un paiement : refusée tant que le paiement en ligne est fermé.
+        app(PaymentGate::class)->assertOpen();
+
         if ($user->isAdmin()) {
             throw new DomainException('Un administrateur n\'a pas d\'offre.');
         }

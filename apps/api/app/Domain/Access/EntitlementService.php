@@ -84,8 +84,11 @@ class EntitlementService
 
         // À partir d'ici le contenu est payant. L'anonyme s'arrête là, sans
         // requête.
+        // Paiement fermé : le palier payant vaut le gratuit, visiteur compris (le gratuit lui est ouvert).
         if ($user === null) {
-            return AccessDecision::deny(AccessDecision::AUTHENTICATION_REQUIRED);
+            return $this->paymentsOpen()
+                ? AccessDecision::deny(AccessDecision::AUTHENTICATION_REQUIRED)
+                : AccessDecision::allow(AccessDecision::VIA_PAYMENTS_CLOSED);
         }
 
         // L'ENSEIGNANT lit tout le contenu publié : il ne l'achète pas, il
@@ -143,7 +146,19 @@ class EntitlementService
             return AccessDecision::allow(AccessDecision::VIA_TEACHER_SUBSCRIPTION);
         }
 
+        // Le paiement en ligne est FERMÉ : personne n'est enfermé par un palier qu'il ne peut pas payer. Évalué en
+        // DERNIER, pour qu'un vrai droit garde son vrai motif ; aucune ligne n'est écrite.
+        if (! $this->paymentsOpen()) {
+            return AccessDecision::allow(AccessDecision::VIA_PAYMENTS_CLOSED);
+        }
+
         return AccessDecision::deny(AccessDecision::PREMIUM_REQUIRED);
+    }
+
+    /** L'interrupteur du paiement en ligne — décidé par l'administrateur (PaidAccessSwitch), jamais ici. */
+    public function paymentsOpen(): bool
+    {
+        return app(PaidAccessSwitch::class)->isOpen();
     }
 
     /**
@@ -243,7 +258,7 @@ class EntitlementService
      * connaître la référence externe d'un abonnement pour savoir qu'il est
      * actif (spec §25).
      *
-     * @return array{freeAccess: bool, subscriptionActive: bool, activationCodeActive: bool, adminOverrideActive: bool, teacherCoverageActive: bool, premiumAccess: bool, expiresAt: ?string}
+     * @return array{freeAccess: bool, subscriptionActive: bool, activationCodeActive: bool, adminOverrideActive: bool, teacherCoverageActive: bool, premiumAccess: bool, reason: string, paymentsOpen: bool, expiresAt: ?string}
      */
     public function summarize(?User $user): array
     {
@@ -268,6 +283,9 @@ class EntitlementService
             // Le modèle C : couvert par la licence de son établissement.
             'schoolCoverageActive' => $schoolCoverage['covered'],
             'premiumAccess' => $decision->allowed,
+            // POURQUOI (ou pourquoi pas) : `payments_closed` quand c'est l'interrupteur qui ouvre, pas un droit.
+            'reason' => $decision->reason,
+            'paymentsOpen' => $this->paymentsOpen(),
             'expiresAt' => optional($this->accessEndsAt($valid, $coverage, $schoolCoverage))->toIso8601String(),
         ];
     }

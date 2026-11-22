@@ -355,6 +355,10 @@ class ContentAccess
         $moduleStatuses = [];
 
         $premium = self::premiumLessonCodes();
+        // Paiement fermé : rien n'est vendu, donc rien n'est « Premium » ni verrouillé. Rouvrir rend la liste.
+        if ($premium !== [] && ! app(EntitlementService::class)->paymentsOpen()) {
+            $premium = [];
+        }
 
         return [
             'lessons' => $closedLessons,

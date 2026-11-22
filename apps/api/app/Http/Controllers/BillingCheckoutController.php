@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Domain\Billing\CheckoutFailedException;
 use App\Domain\Billing\CheckoutService;
+use App\Domain\Billing\PaymentGate;
 use App\Domain\Billing\PlanCatalog;
 use DomainException;
 use Illuminate\Http\Request;
@@ -31,6 +32,7 @@ class BillingCheckoutController extends Controller
     public function __construct(
         private CheckoutService $checkout,
         private PlanCatalog $plans,
+        private PaymentGate $gate,
     ) {}
 
     /**
@@ -44,7 +46,8 @@ class BillingCheckoutController extends Controller
     {
         return response()->json([
             'success' => true,
-            'plans' => $this->plans->publicList(),
+            // Paiement fermé : rien n'est proposé, donc rien n'est chiffré (PaymentGate). Même forme de réponse.
+            'plans' => $this->gate->isOpen() ? $this->plans->publicList() : [],
             // « Cet élève peut-il souscrire ? » — de quoi afficher un bouton
             // ou un état, sans que le client ait à le déduire lui-même.
             'status' => $this->checkout->statusFor($request->user()),
@@ -62,6 +65,9 @@ class BillingCheckoutController extends Controller
      */
     public function start(Request $request)
     {
+        // Avant toute validation : fermé, il n'y a rien à corriger, il y a un message à lire.
+        $this->gate->assertOpen();
+
         $validated = $request->validate([
             // Liste blanche : seules les clés du catalogue sont acceptées.
             // C'est la barrière qui rend la falsification de tarif

@@ -69,6 +69,9 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(\App\Domain\DailyChallenge\DailyChallengeConfig::class);
         // « مدار » : les réglages de classe, mémorisés par requête.
         $this->app->singleton(\App\Domain\Madar\MadarConfig::class);
+        // L'interrupteur du paiement en ligne : consulté par chaque décision de palier, relu une fois par requête.
+        $this->app->singleton(\App\Domain\Billing\PaymentGate::class);
+        $this->app->bind(\App\Domain\Access\PaidAccessSwitch::class, fn ($app) => $app->make(\App\Domain\Billing\PaymentGate::class));
 
         /**
          * … mais RECOMMENCÉ à chaque requête.
@@ -96,6 +99,7 @@ class AppServiceProvider extends ServiceProvider
                     $this->app->make(FeatureAccessService::class)->forget();
                     $this->app->make(\App\Domain\DailyChallenge\DailyChallengeConfig::class)->forget();
                     $this->app->make(\App\Domain\Madar\MadarConfig::class)->forget();
+                    $this->app->make(\App\Domain\Billing\PaymentGate::class)->forget();
                 },
             );
         });

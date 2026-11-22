@@ -7,11 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Un réglage de la plateforme changé par l'ADMINISTRATEUR (une ligne par clé),
  * par-dessus les défauts du dépôt. Clé `registration` : lue uniquement par
- * App\Domain\Registration\RegistrationGate.
+ * App\Domain\Registration\RegistrationGate. Clé `payments` : lue uniquement par
+ * App\Domain\Billing\PaymentGate.
  */
 class PlatformSetting extends Model
 {
     public const REGISTRATION_KEY = 'registration';
+
+    public const PAYMENTS_KEY = 'payments';
 
     protected $fillable = ['key', 'values', 'updated_by'];
 

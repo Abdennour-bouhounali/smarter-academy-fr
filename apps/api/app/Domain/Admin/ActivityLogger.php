@@ -226,6 +226,9 @@ class ActivityLogger
     /** « التسجيل » : l'administrateur ouvre ou ferme les inscriptions (RegistrationGate::update) — ancien → nouveau. */
     public const REGISTRATION_SETTINGS_CHANGED = 'registration.settings_changed';
 
+    /** Le paiement en ligne ouvert ou fermé par l'administrateur (PaymentGate::update) — ancien → nouveau. */
+    public const PAYMENTS_SETTINGS_CHANGED = 'payments.settings_changed';
+
     /** Un compte élève créé par l'administrateur (StudentService::create) : jamais le mot de passe dans le journal. */
     public const STUDENT_CREATED = 'student.created';
 

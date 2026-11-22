@@ -57,6 +57,12 @@ final class AccessDecision
     /** L'administrateur relit tout le contenu, payant compris. */
     public const VIA_ADMIN_ROLE = 'admin_role';
 
+    /**
+     * Le paiement en ligne est FERMÉ (PaymentGate) : le palier payant n'enferme personne — un mur qu'on ne peut pas
+     * payer est une impasse. Distinct d'un vrai droit : aucune ligne, et rouvrir le paiement rend le palier.
+     */
+    public const VIA_PAYMENTS_CLOSED = 'payments_closed';
+
     /** Refus : contenu payant, aucun droit valide. */
     public const PREMIUM_REQUIRED = 'premium_required';
 
