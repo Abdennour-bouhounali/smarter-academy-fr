@@ -9,6 +9,7 @@ use App\Domain\Classroom\ClassroomMembershipService;
 use App\Domain\Classroom\ClassroomProgressService;
 use App\Domain\Classroom\ParentCards;
 use App\Domain\Classroom\StudentCredentials;
+use App\Domain\Registration\ManagedAccountsGate;
 use App\Http\Controllers\Controller;
 use DomainException;
 use Illuminate\Http\Request;
@@ -27,6 +28,7 @@ class TeacherClassroomStudentController extends Controller
         private ClassroomInsightService $insights,
         private ClassroomInterventionService $interventions,
         private StudentCredentials $credentials,
+        private ManagedAccountsGate $managedAccounts,
     ) {}
 
     public function index(Request $request, int $id)
@@ -74,11 +76,13 @@ class TeacherClassroomStudentController extends Controller
     /**
      * « بطاقات الدخول » : un NOUVEAU mot de passe pour chaque élève choisi,
      * rendu une seule fois avec son courriel, pour être imprimé
-     * (StudentCredentials).
+     * (StudentCredentials). Refusé tant que l'administrateur n'a pas ouvert les comptes
+     * gérés (ManagedAccountsGate → 403 `managed_accounts_closed`).
      */
     public function credentials(Request $request, int $id)
     {
         $classroom = TeacherClassroomController::ownedClassroom($request, $id, 'manage');
+        $this->managedAccounts->assertOpen();
         $validated = $request->validate([
             'studentIds' => 'required|array|min:1|max:200',
             'studentIds.*' => 'integer',

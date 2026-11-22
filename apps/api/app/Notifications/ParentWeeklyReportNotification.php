@@ -53,9 +53,9 @@ class ParentWeeklyReportNotification extends Notification
             $message->line("Nous n’avons enregistré aucun temps d’étude cette semaine. Vous pouvez en parler avec {$first}, simplement.");
         }
 
-        // `/wali/abnaa/{id}` : la page de l'enfant dans l'espace parent du frontend (apps/web App.jsx).
+        // `/parent/enfants/{id}` : la page de l'enfant dans l'espace parent du frontend (apps/web App.jsx).
         return $message
-            ->action('Voir le détail dans mon espace parent', $base.'/wali/abnaa/'.$this->student->id)
+            ->action('Voir le détail dans mon espace parent', $base.'/parent/enfants/'.$this->student->id)
             ->line('Le temps effectif ne compte que lorsque la page de la plateforme est affichée et utilisée. Pour ne plus recevoir ce courriel : espace parent, puis la page de votre enfant.')
             ->salutation('L’équipe '.$brand);
     }

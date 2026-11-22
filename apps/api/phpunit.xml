@@ -25,6 +25,8 @@
         <env name="PAYMENTS_OPEN" value="true"/>
         <!-- the books store tests were written for an open store: the suite runs with it ON; BooksSwitchTest closes it itself -->
         <env name="BOOKS_ENABLED" value="true"/>
+        <!-- the roster and credentials tests were written with schools and teachers creating student accounts: the suite runs with it OPEN; ManagedAccountsGateTest closes it itself -->
+        <env name="MANAGED_ACCOUNTS_OPEN" value="true"/>
         <env name="APP_MAINTENANCE_DRIVER" value="file"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="BROADCAST_CONNECTION" value="null"/>

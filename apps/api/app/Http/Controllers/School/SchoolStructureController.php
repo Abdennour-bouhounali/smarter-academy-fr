@@ -49,7 +49,7 @@ class SchoolStructureController extends SchoolController
     public function teachers(Request $request)
     {
         return $this->withSchool($request, fn (School $school) => [
-            // Le jeton seul : le client compose /rejoindre/muassasa/{jeton}.
+            // Le jeton seul : le client compose /rejoindre/etablissement/{jeton}.
             'joinLinkToken' => $school->teacher_join_token,
             'teachers' => $this->teachers->list($school),
         ]);

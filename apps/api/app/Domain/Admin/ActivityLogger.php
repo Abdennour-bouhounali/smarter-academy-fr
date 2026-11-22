@@ -229,6 +229,9 @@ class ActivityLogger
     /** Le paiement en ligne ouvert ou fermé par l'administrateur (PaymentGate::update) — ancien → nouveau. */
     public const PAYMENTS_SETTINGS_CHANGED = 'payments.settings_changed';
 
+    /** Les comptes élèves créés par un établissement ou un enseignant, ouverts ou fermés (ManagedAccountsGate::update). */
+    public const MANAGED_ACCOUNTS_SETTINGS_CHANGED = 'managed_accounts.settings_changed';
+
     /** Un compte élève créé par l'administrateur (StudentService::create) : jamais le mot de passe dans le journal. */
     public const STUDENT_CREATED = 'student.created';
 

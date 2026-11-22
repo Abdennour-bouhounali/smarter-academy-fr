@@ -47,7 +47,10 @@ class ParentAccessLinkTest extends TestCase
 
     private function tokenFrom(string $url): string
     {
-        return substr($url, strrpos($url, '/w/') + 3);
+        // Le lien parent du frontend : /p/{jeton} (l'ancien /w/{jeton} n'existe plus côté web).
+        $this->assertStringStartsWith(rtrim((string) config('app.frontend_url'), '/').'/p/', $url);
+
+        return substr($url, strrpos($url, '/p/') + 3);
     }
 
     private function linkOf(User $student): string

@@ -28,13 +28,13 @@ class ParentLinkRevokedNotification extends Notification
 
         $brand = (string) config('app.name');
 
-        // `/wali` : le chemin de l'espace parent du frontend (apps/web App.jsx).
+        // `/parent` : le chemin de l'espace parent du frontend (apps/web App.jsx).
         return (new MailMessage)
             ->subject($name.' a retiré le lien avec votre compte — '.$brand)
             ->greeting('Bonjour,')
             ->line("{$name} a retiré, depuis son profil, le lien entre son compte et le vôtre.")
             ->line('Vous ne recevrez plus le résumé de son travail. S’il s’agit d’une erreur, demandez-lui un nouveau code et saisissez-le dans votre espace parent.')
-            ->action('Ouvrir mon espace parent', $base.'/wali')
+            ->action('Ouvrir mon espace parent', $base.'/parent')
             ->salutation('L’équipe '.$brand);
     }
 }

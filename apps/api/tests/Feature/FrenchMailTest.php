@@ -67,7 +67,8 @@ class FrenchMailTest extends TestCase
 
         $html = $this->assertFrench($mail, 'Zoé Martin a retiré le lien avec votre compte — '.config('app.name'));
         $this->assertStringContainsString('le vôtre', $html);
-        $this->assertStringContainsString('/wali', $html);
+        $this->assertStringContainsString(rtrim((string) config('app.frontend_url'), '/').'/parent"', $html);
+        $this->assertStringNotContainsString('/wali', $html);
     }
 
     public function test_le_resume_de_la_semaine(): void
@@ -81,6 +82,8 @@ class FrenchMailTest extends TestCase
         $html = $this->assertFrench($mail, 'La semaine de Hugo Lefèvre sur '.config('app.name'));
         $this->assertStringContainsString('du lundi 16 au dimanche 22 novembre 2026', $html);
         $this->assertStringContainsString('Savoir-faire maîtrisés', $html);
+        $this->assertStringContainsString(rtrim((string) config('app.frontend_url'), '/').'/parent/enfants/'.$student->id, $html);
+        $this->assertStringNotContainsString('/wali', $html);
         $this->assertSame("1\u{00A0}h\u{00A0}25\u{00A0}min", ParentWeeklyReportNotification::duration(5100));
         $this->assertSame("4\u{00A0}min", ParentWeeklyReportNotification::duration(240));
     }

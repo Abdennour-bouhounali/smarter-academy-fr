@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\AdminDailyChallengeController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminEntitlementController;
 use App\Http\Controllers\Admin\AdminHealthController;
+use App\Http\Controllers\Admin\AdminManagedAccountsController;
 use App\Http\Controllers\Admin\AdminManualSubscriptionController;
 use App\Http\Controllers\Admin\AdminMasteryReplayController;
 use App\Http\Controllers\Admin\AdminPaymentsController;
@@ -56,6 +57,7 @@ use App\Http\Controllers\LegalController;
 use App\Http\Controllers\LessonFinalTestAttemptController;
 use App\Http\Controllers\LessonProgressController;
 use App\Http\Controllers\MadarController;
+use App\Http\Controllers\ManagedAccountsStatusController;
 use App\Http\Controllers\MathLabDocumentController;
 use App\Http\Controllers\MathLabFileController;
 use App\Http\Controllers\MeSubscriptionController;
@@ -258,6 +260,10 @@ Route::prefix('v1')->group(function () {
         // Les administrateurs en sont exemptés par le middleware lui-même :
         // leur compte est créé par `make:admin`, sans aucun courriel.
         Route::middleware('email.verified')->group(function () {
+            // Les comptes élèves créés par un établissement ou un enseignant sont-ils ouverts ? (ManagedAccountsGate)
+            // Lu par les écrans de l'enseignant et de l'établissement pour cacher leurs boutons.
+            Route::get('/managed-accounts/status', ManagedAccountsStatusController::class);
+
             Route::post('/diagnostic/sessions', [DiagnosticController::class, 'start']);
             Route::get('/diagnostic/sessions/current', [DiagnosticController::class, 'current']);
             Route::post('/diagnostic/sessions/{sessionId}/responses', [DiagnosticController::class, 'respond']);
@@ -835,6 +841,9 @@ Route::prefix('v1')->group(function () {
             // « التسجيل » : ouvrir / fermer les inscriptions (RegistrationGate, platform_settings).
             Route::get('/registration', [AdminRegistrationController::class, 'show']);
             Route::patch('/registration', [AdminRegistrationController::class, 'update']);
+            // Les comptes élèves créés par un établissement ou un enseignant : ouvrir / fermer (ManagedAccountsGate).
+            Route::get('/managed-accounts', [AdminManagedAccountsController::class, 'show']);
+            Route::patch('/managed-accounts', [AdminManagedAccountsController::class, 'update']);
             // Le paiement en ligne : ouvrir / fermer (PaymentGate, platform_settings). Ouvrir exige un fournisseur complet.
             // `/payments/switch` et non `/payments` : `GET /admin/payments` est déjà la liste des paiements reçus.
             Route::get('/payments/switch', [AdminPaymentsController::class, 'show']);

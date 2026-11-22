@@ -162,7 +162,7 @@ class ParentAccessLinkService
 
     public static function url(ParentAccessLink $link): string
     {
-        return rtrim((string) config('app.frontend_url'), '/').'/w/'.$link->token_encrypted;
+        return rtrim((string) config('app.frontend_url'), '/').'/p/'.$link->token_encrypted;
     }
 
     /** @return array<string, mixed> */

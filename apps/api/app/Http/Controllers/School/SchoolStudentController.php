@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\School;
 
+use App\Domain\Registration\ManagedAccountsGate;
 use App\Domain\School\SchoolClassroomService;
 use App\Domain\School\SchoolRosterService;
 use App\Models\School;
@@ -13,12 +14,17 @@ use Illuminate\Http\Request;
  *
  * Les mots de passe n'existent en clair que dans les réponses de `commit` et
  * de `credentials` : `no-store`, montrés une fois, imprimés sur les cartes.
+ *
+ * L'import (aperçu compris) et l'émission d'identifiants sont refusés tant que l'administrateur n'a pas ouvert les
+ * comptes créés par un établissement (ManagedAccountsGate → 403 `managed_accounts_closed`). La liste et le
+ * changement de classe d'élèves qui existent déjà restent permis.
  */
 class SchoolStudentController extends SchoolController
 {
     public function __construct(
         private SchoolRosterService $roster,
         private SchoolClassroomService $classrooms,
+        private ManagedAccountsGate $managedAccounts,
     ) {}
 
     public function index(Request $request)
@@ -32,6 +38,8 @@ class SchoolStudentController extends SchoolController
 
     public function preview(Request $request)
     {
+        $this->managedAccounts->assertOpen();
+
         $data = $this->validatedRoster($request);
 
         return $this->withSchool($request, function (School $school) use ($data) {
@@ -43,6 +51,8 @@ class SchoolStudentController extends SchoolController
 
     public function commit(Request $request)
     {
+        $this->managedAccounts->assertOpen();
+
         $data = $this->validatedRoster($request);
 
         return $this->withSchool($request, function (School $school) use ($request, $data) {
@@ -68,6 +78,8 @@ class SchoolStudentController extends SchoolController
 
     public function credentials(Request $request)
     {
+        $this->managedAccounts->assertOpen();
+
         $data = $request->validate([
             'studentIds' => ['required', 'array', 'min:1', 'max:'.(int) config('school.roster_max_rows')],
             'studentIds.*' => ['integer'],
