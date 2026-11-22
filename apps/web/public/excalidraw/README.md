@@ -5,7 +5,7 @@ Copie de `node_modules/@excalidraw/excalidraw/dist/prod/fonts/` (sans
 d'Excalidraw si un jour un glyphe en a besoin).
 
 Pourquoi : sans `window.EXCALIDRAW_ASSET_PATH`, Excalidraw télécharge ses
-polices depuis un CDN tiers (esm.sh) à chaque ouverture de la سبّورة. Une
+polices depuis un CDN tiers (esm.sh) à chaque ouverture du tableau blanc. Une
 plateforme scolaire ne dépend pas d'un CDN externe pour dessiner, et n'y
 envoie pas les requêtes de ses élèves. Le chemin est déclaré dans
 `src/features/mathlab/tools/whiteboard/WhiteboardTool.jsx`.

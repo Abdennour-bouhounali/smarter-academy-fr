@@ -35,7 +35,7 @@ const EMPTY_CLOSED = { lessons: [], modules: {}, locked: [], premium: [], hidden
 
 /**
  * L'ÉTAT DE PUBLICATION, servi au seul RELECTEUR (administrateur, ou
- * enseignant ambassadeur — « سفير »). Pour lui le serveur ne ferme rien et
+ * enseignant ambassadeur). Pour lui le serveur ne ferme rien et
  * rend à la place `statuses` : l'état de chaque contenu non publié. Absent
  * de la carte = publié. Pour tout autre compte, `statuses` est absent.
  */
@@ -78,7 +78,7 @@ export function ContentAvailabilityProvider({ children }) {
   // Chaque lecture reçoit un numéro ; seule la PLUS RÉCENTE s'applique. Sans
   // lui, la lecture lancée à la connexion (avant qu'un lien de classe ne fasse
   // rejoindre) pouvait arriver APRÈS le `refresh()` qui suit l'adhésion et
-  // réafficher l'accès d'avant — « وصول كامل » n'apparaissait qu'au rechargement.
+  // réafficher l'accès d'avant — « Accès complet » n'apparaissait qu'au rechargement.
   const sequence = useRef(0);
   const [access, setAccess] = useState(null);
   const [loaded, setLoaded] = useState(false);

@@ -2,7 +2,7 @@ import { apiRequest, ApiError, classifyStatus } from './apiClient';
 import { apiMessage } from './apiMessage';
 
 /**
- * « بوصلتي » — la jauge de départ (docs/architecture/YEAR_COMPASS.md).
+ * « Ma boussole » — la jauge de départ (docs/architecture/YEAR_COMPASS.md).
  *
  * Le serveur sert chaque question SANS clé de réponse, la corrige et ne
  * renvoie que ✓ / pas encore ; il recalcule lui-même les bandes à la fin.

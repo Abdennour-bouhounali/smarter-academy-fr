@@ -1,9 +1,7 @@
 <!doctype html>
-<!-- lang/dir are the Algerian platform's fixed foundation (ar-DZ, RTL) — see
-     src/locale.js. SEO/OG metadata below targets smarter-academy.com in
-     Arabic; the full SEO copy/keywords pass is still Phase 13 (SEO/Public
-     Surface). -->
-<html lang="ar" dir="rtl">
+<!-- One language, one direction: French, left to right (src/locale.js — no `dir`, LTR is the default).
+     The SEO / Open Graph metadata below targets the French site, https://smarter-academy.fr/. -->
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8" />
@@ -17,16 +15,11 @@
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#01255f" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Vérification du domaine pour Meta (publicités de la librairie, BOOKS_STORE.md §4) : statique, les robots ne lisent pas React. -->
-  <meta name="facebook-domain-verification" content="2ia8hdzkk9y8b9ti265h4xfb43rplx" />
 
   <!-- Primary Title & Meta Tags -->
-  <!-- [À VÉRIFIER DANS LE PROGRAMME OFFICIEL] real copy/domain/keywords are
-       Phase 13 work; title/description below are placeholders only so the
-       tab/share preview isn't French while the rest of the shell is Arabic. -->
-  <title>Smarter Academy — تعلّم الرياضيات بالفهم، لا بالحفظ</title>
+  <title>Smarter Academy — les mathématiques du collège, comprises et pas apprises par cœur</title>
   <meta name="description"
-    content="Smarter Academy منصة تفاعلية لفهم واكتشاف وإتقان الرياضيات." />
+    content="Smarter Academy, la plateforme interactive pour découvrir, comprendre et maîtriser les mathématiques du collège, de la 6e à la 3e." />
   <meta name="author" content="Smarter Academy" />
   <meta name="robots" content="index, follow" />
 
@@ -37,13 +30,13 @@
        public/og-image.png, which Vite copies to dist/og-image.png (1200×630,
        256-colour PNG kept under ~300 KB: WhatsApp drops heavier previews). -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://smarter-academy.com/" />
+  <meta property="og:url" content="https://smarter-academy.fr/" />
   <meta property="og:title" content="Smarter Academy" />
   <meta property="og:description"
-    content="تعلّم الرياضيات من خلال التجربة والمناولة والملاحظة، ثم افهمها وأتقنها." />
-  <meta property="og:locale" content="ar_DZ" />
-  <meta property="og:site_name" content="Smarter Academy DZ" />
-  <meta property="og:image" content="https://smarter-academy.com/og-image.png" />
+    content="Les mathématiques du collège par l’expérience, la manipulation et l’observation, pour les comprendre puis les maîtriser." />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Smarter Academy" />
+  <meta property="og:image" content="https://smarter-academy.fr/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/png" />
@@ -53,8 +46,8 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Smarter Academy" />
   <meta name="twitter:description"
-    content="تعلّم الرياضيات من خلال التجربة والمناولة والملاحظة، ثم افهمها وأتقنها." />
-  <meta name="twitter:image" content="https://smarter-academy.com/og-image.png" />
+    content="Les mathématiques du collège par l’expérience, la manipulation et l’observation, pour les comprendre puis les maîtriser." />
+  <meta name="twitter:image" content="https://smarter-academy.fr/og-image.png" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -71,19 +64,13 @@
        immédiatement dans la police de repli, puis l'échange — l'identité
        visuelle est conservée, elle arrive juste sans retenir la page.
        <noscript> garde le comportement classique sans JavaScript. -->
-  <!-- Cairo is the platform's global, canonical Arabic font (master spec
-       §14; tailwind.config.js `fontFamily`, index.css `html`/`h1`-`h6`/
-       `.font-space`/`.font-inter`) — chosen for Arabic legibility; the
-       existing Latin fonts stay for math/code and any remaining Latin UI
-       surfaces. Tajawal is still fetched here as the platform's second
-       Arabic fallback (covers the brief window before this non-blocking
-       sheet finishes loading), never as a primary choice. -->
+  <!-- Inter is the text font of the interface and Space Grotesk the display font of the headings
+       (tailwind.config.js `fontFamily`, index.css `html` / `h1`-`h6`). No Arabic family is fetched. -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@400;500;600;700;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'" />
   <!-- JetBrains Mono À PART, en `display=optional` (2026-10-17) : `font-mono` habille
-       beaucoup de petits libellés ARABES (fil d'Ariane, étiquettes) dont il n'a
-       aucun glyphe. Arrivée tardive en `swap`, elle changeait la hauteur de ces
+       beaucoup de petits libellés (fil d'Ariane, étiquettes). Arrivée tardive en `swap`, elle changeait la hauteur de ces
        lignes et faisait descendre la page (CLS 0,25 sur la page d'unité). En
        `optional`, une police pas encore là au premier rendu n'est plus échangée :
        la page garde le repli, la police est en cache pour la suivante. -->
@@ -91,32 +78,32 @@
   <noscript>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=optional" rel="stylesheet" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@400;500;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet" />
   </noscript>
 
 
 
   <!-- Structured Data (JSON-LD) -->
-  <!-- url/@id omitted: no Algerian production domain exists yet (Phase 2/13).
-       knowsAbout is intentionally generic ("Mathematics"), not
-       grade-specific — naming 4AM/Terminale-DZ here is curriculum content,
-       out of scope for this phase (Phase 4 is RTL/i18n infrastructure only). -->
+  <!-- What is true today: mathematics for the French collège (6e to 3e), in French. No price is stated (payments
+       are closed). The address is the site's contact address, never a person's. -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
-      "name": "Smarter Academy DZ",
-      "description": "منصة تعليمية تفاعلية للرياضيات.",
-      "email": "abdennour.bouhounali@gmail.com",
-      "logo": "https://smarter-academy.com/brand/logo-stacked-color.png",
+      "name": "Smarter Academy",
+      "url": "https://smarter-academy.fr/",
+      "description": "Plateforme interactive de mathématiques pour le collège, de la 6e à la 3e.",
+      "email": "contact@smarter-academy.fr",
+      "logo": "https://smarter-academy.fr/brand/logo-stacked-color.png",
+      "inLanguage": "fr-FR",
       "areaServed": {
         "@type": "Country",
-        "name": "Algeria"
+        "name": "France"
       },
       "knowsAbout": [
-        "الرياضيات",
-        "التعلم التفاعلي"
+        "Mathématiques",
+        "Collège"
       ]
     }
     </script>
@@ -130,7 +117,7 @@
         .root-spinner { width: 40px; height: 40px; border: 4px solid #3b82f6; border-top-color: transparent; border-radius: 50%; animation: root-spin 1s linear infinite; margin-bottom: 20px; }
       </style>
       <div class="root-spinner"></div>
-      <p style="color: #64748b; font-weight: 500; font-family: 'Cairo', 'Tajawal', sans-serif;">جارٍ تحميل Smarter Academy...</p>
+      <p style="color: #64748b; font-weight: 500;">Chargement de Smarter Academy…</p>
     </div>
   </div>
   <script type="module" src="/src/main.jsx"></script>

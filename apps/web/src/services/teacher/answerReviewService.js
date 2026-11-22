@@ -2,7 +2,7 @@ import { apiBlob } from '../apiClient';
 import { call, get, query, send } from './teacherClient';
 
 /**
- * « تصحيح الإجابات » — la file de correction de l'enseignant (API :
+ * « Réponses à corriger » — la file de correction de l'enseignant (API :
  * TeacherAnswerReviewController, 2026-10-06). Périmètre tenu par le serveur :
  * les élèves actifs de SES classes.
  */

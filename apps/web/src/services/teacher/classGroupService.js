@@ -1,7 +1,7 @@
 import { call, get, query, send } from './teacherClient';
 
 /**
- * Les classes (« الأقسام ») d'un enseignant. Aucun identifiant d'enseignant
+ * Les classes (« Les classes ») d'un enseignant. Aucun identifiant d'enseignant
  * ne part jamais : le serveur résout tout depuis le jeton, et refuse en 403
  * la classe d'un autre.
  */
@@ -56,7 +56,7 @@ export function fetchClassStudentProgress(token, id, studentId) {
 
 /**
  * Le CAHIER d'un élève de la classe — en lecture seule, borné aux leçons du
- * قسم par le serveur. Aucune fonction d'écriture ne l'accompagne : il n'y a
+ * classe par le serveur. Aucune fonction d'écriture ne l'accompagne : il n'y a
  * pas de route pour cela (TeacherClassroomNotebookController).
  */
 export function fetchClassStudentNotebook(token, id, studentId, params = null) {
@@ -122,7 +122,7 @@ export function fetchStudentLearningPointEvidence(token, id, studentId, code) {
 }
 
 /**
- * DÉTECTER — « تستحقّ نظرة » et « ما الذي تغيّر؟ ». Les signaux sont
+ * DÉTECTER — « À regarder » et « Ce qui a changé ». Les signaux sont
  * calculés par le serveur à chaque lecture ; l'écran les FORMATE, il ne les
  * recalcule pas.
  */
@@ -153,7 +153,7 @@ export function updateClassIntervention(token, id, interventionId, patch) {
 }
 
 /**
- * « بطاقات الدخول » : un NOUVEAU mot de passe pour chaque élève choisi, rendu
+ * « Cartes de connexion » : un NOUVEAU mot de passe pour chaque élève choisi, rendu
  * une seule fois avec son courriel — à imprimer, jamais à garder.
  */
 export function issueStudentCredentials(token, id, studentIds) {
@@ -161,7 +161,7 @@ export function issueStudentCredentials(token, id, studentIds) {
 }
 
 /**
- * « بطاقات الأولياء » : le « رابط الوليّ » de chaque élève choisi, pour l'imprimer
+ * « Cartes des parents » : le « lien parent » de chaque élève choisi, pour l'imprimer
  * en QR (PARENT_SPACE.md §2bis). Le lien existant est réutilisé.
  */
 export function issueParentCards(token, id, studentIds) {

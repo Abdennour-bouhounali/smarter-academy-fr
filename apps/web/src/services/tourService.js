@@ -2,7 +2,7 @@ import { apiRequest, ApiError, classifyStatus } from './apiClient';
 import { apiMessage } from './apiMessage';
 
 /**
- * « جولة تعريفية » (2026-10-07) — GET /me/tours (les visites closes par ce
+ * « Visite guidée » (2026-10-07) — GET /me/tours (les visites closes par ce
  * compte) et POST /me/tours/{key} (clore une visite : `completed` ou
  * `skipped`). Voir docs/architecture/PAGE_TOURS.md.
  */

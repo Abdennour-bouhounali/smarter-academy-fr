@@ -1,13 +1,13 @@
 import './turnPhone.css';
 
 /**
- * « أدِر هاتفك »: a page that needs the WIDTH of the screen (the game world of a lesson, the teacher's lesson file) shows
+ * « Tourne ton téléphone »: a page that needs the WIDTH of the screen (the game world of a lesson, the teacher's lesson file) shows
  * this while a phone is held upright; turning the phone removes it. The page stays mounted behind — nothing is lost.
  *   cover  true: the whole screen (the game) · false: the place of the page, under what is above it (the lesson file).
  */
 export default function TurnPhone({ title, body, cover = true, ...rest }) {
   return (
-    <div className={`sa-turn ${cover ? 'sa-turn--cover' : ''}`} role="alert" dir="rtl" {...rest}>
+    <div className={`sa-turn ${cover ? 'sa-turn--cover' : ''}`} role="alert" {...rest}>
       <svg viewBox="0 0 120 120" aria-hidden="true">
         <rect
           x="42"

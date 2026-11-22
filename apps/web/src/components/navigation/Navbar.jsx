@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 import { ArrowForward } from '../common/DirectionalIcons';
 import { AuthContext } from '../../context/AuthContext';
 import { navLinks } from '../../data/navigation';
-import { IS_RTL } from '../../locale.js';
 import { needsEmailVerification } from '../../utils/emailVerification';
 
 function AuthCluster({ compact = false, onNavigate }) {
@@ -246,9 +245,8 @@ export default function Navbar() {
               {navLinks.map((link, i) => (
                 <m.div
                   key={link.path}
-                  // Enters from the reading-start side; `x` is physical, so the sign
-                  // follows the platform direction (src/locale.js).
-                  initial={{ opacity: 0, x: IS_RTL ? 20 : -20 }}
+                  // Enters from the reading-start side: the left, the page reads left to right.
+                  initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                 >

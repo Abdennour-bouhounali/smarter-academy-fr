@@ -4,7 +4,7 @@ import { apiMessage } from './apiMessage';
 /**
  * La CLOCHE (2026-10-06) — GET /me/notifications, dans l'application
  * seulement (aucun courriel). Premier type : `answer_reviewed`
- * (« صحّح أستاذك إجابتك »), `data.reviewId` ouvre la correction.
+ * (« Ton professeur a corrigé ta réponse »), `data.reviewId` ouvre la correction.
  */
 async function call(path, options) {
   const { ok, status, data } = await apiRequest(path, options);

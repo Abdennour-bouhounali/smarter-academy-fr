@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, resolve, dirname } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
-const SITE = 'https://smarter-academy.com';
+const SITE = 'https://smarter-academy.fr';
 
 const escapeAttr = (value) => value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
@@ -43,7 +43,7 @@ export const bookSlugOf = (card) => card.path.match(/^\/books\/([^/]+)$/)?.[1] ?
 /**
  * LE PREMIER ÉCRAN DE LA FICHE, EN HTML (2026-10-17).
  *
- * La page d'achat ne doit jamais montrer « جارٍ تحميل Smarter Academy » : elle
+ * La page d'achat ne doit jamais montrer « Chargement de Smarter Academy » : elle
  * attendait le lot d'entrée (≈ 324 Ko gzip), puis le lot de la page, puis l'API.
  * Le build écrit donc dans son HTML le composant RÉEL du premier écran
  * (src/features/books/BookHero.jsx, rendu par react-dom/server — aucune copie à
@@ -53,7 +53,7 @@ export const bookSlugOf = (card) => card.path.match(/^\/books\/([^/]+)$/)?.[1] ?
  * (bookCache.removeStaticBookShell) — jamais d'écran blanc entre les deux.
  */
 export function renderBookShell(heroHtml) {
-  return `<div id="sa-static-shell" dir="rtl" style="position:absolute;inset:0 0 auto 0;z-index:60;min-height:100vh;background:#fafafa">
+  return `<div id="sa-static-shell" style="position:absolute;inset:0 0 auto 0;z-index:60;min-height:100vh;background:#fafafa">
   <div class="fixed top-0 left-0 right-0 z-50 bg-white/90 border-b border-gray-100"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-nowrap items-center justify-between h-16 gap-3">
     <a href="/" class="flex items-center gap-2.5"><img src="/brand/mark-color.svg" width="200" height="200" alt="Smarter Academy" class="h-10 w-10" /><span class="hidden sm:flex font-space font-bold text-slate-900 text-sm leading-none whitespace-nowrap">Smarter Academy</span></a>
   </div></div></div>
@@ -105,7 +105,7 @@ export function renderBookPage(html, { card, book, heroHtml, preloadChunks = [] 
     `<script>window.__SA_BOOK_SNAPSHOT__=${json};</script>`,
   ].filter(Boolean).join('\n  ');
   let out = renderSharePage(html, card).replace('</head>', `  ${head}\n</head>`);
-  // L'écran d'attente de l'application (spinner + « جارٍ تحميل ») n'a rien à faire ici.
+  // L'écran d'attente de l'application (spinner + « Chargement ») n'a rien à faire ici.
   return replaceRoot(out, `<div id="root"></div>\n  ${renderBookShell(heroHtml)}`);
 }
 

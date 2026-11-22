@@ -17,11 +17,11 @@ const LINKS = [
 ];
 
 /**
- * La coquille de « فضاء الإدارة » (docs/architecture/SCHOOL_ADMIN_SPACE.md §6) :
+ * La coquille de « Espace établissement » (docs/architecture/SCHOOL_ADMIN_SPACE.md §6) :
  * une barre en haut et une colonne large — le directeur lit des tableaux et
  * des rapports, sur tablette et ordinateur (pas de téléphone, CLAUDE.md).
  *
- * Pas de garde « الاسم و اللقب » : le nom du directeur est saisi par
+ * Pas de garde « prénom et nom » : le nom du directeur est saisi par
  * l'administration à sa nomination. Le rôle est vérifié par ProtectedRoute ;
  * la vraie porte reste le serveur (can:school + nomination active).
  */
@@ -41,7 +41,7 @@ export default function SchoolLayout() {
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur print:hidden">
         {/* Huit entrées : libellés à partir de xl (1280 px), icônes seules en
             dessous (tablette 1024 px) avec le libellé en infobulle et en nom
-            accessible ; le nom du directeur et « تسجيل الخروج » écrits à partir de 2xl. */}
+            accessible ; le nom du directeur et « Se déconnecter » écrits à partir de 2xl. */}
         <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-6">
           <Link to="/idara" className="flex flex-shrink-0 items-center gap-3">
             <img src="/brand/mark-color.svg" width="200" height="200" decoding="async" alt="Smarter Academy" className="h-9 w-9" />

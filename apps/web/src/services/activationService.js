@@ -1,9 +1,9 @@
 import { apiRequest } from './apiClient';
 import { ApiError, classifyStatus } from '@smarter-academy/core';
+import { apiMessage } from './apiMessage';
 
 /**
- * La saisie d'un code d'activation — le geste commercial du produit algérien
- * (ALGERIA_PLATFORM_MASTER_SPEC.md §17).
+ * La saisie d'un code d'activation (`/espace/activation`).
  *
  * Ce module n'accorde RIEN et ne décide RIEN : il transmet un code et rend ce
  * que le serveur a décidé. L'accès premium est une réponse du serveur
@@ -30,7 +30,7 @@ export async function redeemActivationCode(token, code) {
 
   if (!ok) {
     const error = new ApiError(
-      data?.message || 'تعذّر تفعيل الرمز.',
+      apiMessage('activation', data, status),
       classifyStatus(status),
       status,
     );

@@ -42,28 +42,15 @@ export default {
         '9xl': ['8rem',     { lineHeight: '1' }],
       },
       fontFamily: {
-        // Cairo is the canonical Arabic font (ar-DZ — src/locale.js, index.css).
-        // None of the Latin identity fonts (Inter, Space Grotesk, JetBrains
-        // Mono) carry Arabic glyphs, so Cairo sits right behind each of them:
-        // Arabic runs fall through to Cairo per glyph while Latin runs, digits
-        // and code keep the identity fonts. Tajawal is only a last Arabic
-        // fallback (covers the gap before the non-blocking Google Fonts sheet
-        // finishes loading).
-        //
-        // `sans` is redefined on purpose: Tailwind's default (ui-sans-serif,
-        // system-ui…) DOES have Arabic glyphs, so a `font-sans` element would
-        // silently render Arabic in a system font instead of Cairo.
-        // `mono` carries Cairo for the same reason: labels, badges and buttons
-        // are styled `font-mono` all over the platform, and without an Arabic
-        // fallback their Arabic text rendered in the OS monospace font.
-        'sans': ['Inter', 'Cairo', 'Tajawal', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
-        'space': ['"Space Grotesk"', 'Cairo', 'Tajawal', 'sans-serif'],
-        'inter': ['Inter', 'Cairo', 'Tajawal', 'sans-serif'],
-        'mono': ['"JetBrains Mono"', 'Cairo', 'Tajawal', 'monospace'],
-        // `font-arabic` puts Cairo first where a surface is Arabic-only by
-        // design (e.g. alongside `dir="ltr"` math, where the surrounding text
-        // should stay Arabic even if a parent's default font were ever Latin).
-        'arabic': ['Cairo', 'Tajawal', '"Space Grotesk"', 'sans-serif'],
+        // The identity fonts of the French site: Inter for text, Space Grotesk
+        // for display, JetBrains Mono for small labels and code (index.html
+        // fetches them; index.css repeats the stacks for `html` and `h1`-`h6`).
+        // `sans` is redefined so a `font-sans` element renders in Inter rather
+        // than the system font. No Arabic family: the product is French only.
+        'sans': ['Inter', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+        'space': ['"Space Grotesk"', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
+        'mono': ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
         accent: {

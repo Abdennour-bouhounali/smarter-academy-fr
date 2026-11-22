@@ -1,10 +1,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  # UN seul hôte : www.smarter-academy.com → smarter-academy.com. Le lot appelle
-  # l'API sur https://smarter-academy.com/api/v1, et l'API ne répond pas au CORS
+  # UN seul hôte : www.smarter-academy.fr → smarter-academy.fr. Le lot appelle
+  # l'API sur https://smarter-academy.fr/api/v1, et l'API ne répond pas au CORS
   # de « www » : sur www, toute requête échouait (2026-10-20 : la fiche du livre
-  # s'affichait, puis « هذا الكتاب غير موجود »).
+  # s'affichait, puis « ce livre n’existe pas »).
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
   RewriteRule ^index\.html$ - [L]

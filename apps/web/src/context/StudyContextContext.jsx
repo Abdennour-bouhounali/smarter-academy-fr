@@ -5,7 +5,7 @@ import { fetchStudyContext } from '../services/studyContextService';
 /**
  * « Comment cet élève étudie-t-il ? » — indépendant, ou dans la classe d'un
  * enseignant. Un seul appel au montage, une lecture partout (accueil,
- * page « قسمي »), et un `refresh()` pour les deux gestes qui le changent :
+ * page « Ma classe »), et un `refresh()` pour les deux gestes qui le changent :
  * rejoindre et quitter.
  *
  * POLITIQUE D'OUVERTURE, comme ContentAvailabilityContext : tant que la

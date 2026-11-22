@@ -5,8 +5,8 @@ import { withRefusal } from '../features/access/featureAccess';
 import { notePaymentsOpen } from '../context/PaymentsContext';
 
 /**
- * Le résumé « الوصول والحدود » du compte connecté, partagé par toutes les
- * surfaces (accueil du مختبر, instrument, calque, cahier) sans fournisseur
+ * Le résumé « Accès et limites » du compte connecté, partagé par toutes les
+ * surfaces (accueil de l'atelier, instrument, calque, cahier) sans fournisseur
  * au-dessus du routeur : une petite mémoire de module, un seul appel par
  * jeton, rafraîchie après chaque création (le compteur change) et corrigée
  * par chaque refus reçu (`reportRefusal`).

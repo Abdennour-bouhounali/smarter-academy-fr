@@ -2,7 +2,7 @@ import { apiRequest, ApiError, classifyStatus } from './apiClient';
 import { apiMessage } from './apiMessage';
 
 /**
- * L'élève et sa classe (« قسمي ») : où il étudie, rejoindre, quitter.
+ * L'élève et sa classe (« Ma classe ») : où il étudie, rejoindre, quitter.
  *
  * Le serveur reste l'autorité : rejoindre ne prend qu'un code ou le jeton
  * du lien de classe (jamais un identifiant de classe), et ce que l'élève voit ensuite —
@@ -29,7 +29,7 @@ export function fetchStudyContext(token) {
  * Rejoindre = CONSENTIR au partage : le serveur refuse (422
  * `consent_required`) tout corps sans `consent: true`. Le drapeau ne part
  * que si l'appelant le passe explicitement — il doit venir d'un geste de
- * l'élève (« أوافق وأنضمّ »), jamais d'un défaut du service.
+ * l'élève (« J'accepte et je rejoins »), jamais d'un défaut du service.
  *
  * Par le LIEN, la réponse est idempotente : un membre reçoit
  * `alreadyMember: true` (200) au lieu d'une erreur.
@@ -82,7 +82,7 @@ export function leaveClassGroup(token, classroomId) {
 }
 
 /**
- * Publique : ce qu'un lien de classe révèle avant tout compte (nom du قسم,
+ * Publique : ce qu'un lien de classe révèle avant tout compte (nom de la classe,
  * classe scolaire, enseignant, adhésions ouvertes). Avec le jeton d'un élève
  * connecté, dit aussi s'il est déjà membre (`alreadyMember`).
  */

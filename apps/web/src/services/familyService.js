@@ -1,9 +1,9 @@
 import { call, get, send } from './teacher/teacherClient';
 
 /**
- * Transport de « فضاء الوليّ » (docs/architecture/PARENT_SPACE.md). Même
+ * Transport de « Espace parent » (docs/architecture/PARENT_SPACE.md). Même
  * convention que les services enseignant : jeton en premier argument, erreur
- * arabe (`common.apiErrors.family`) et motif clos `reason` sur l'erreur
+ * du catalogue (`common.apiErrors.family`, services/apiMessage.js) et motif clos `reason` sur l'erreur
  * (`invalid_code`, `expired_code`, `already_linked`…), traduit par la page
  * sous `family:errors.*`.
  */
@@ -20,17 +20,17 @@ export const unlinkChild = (token, studentId) => call(`/parent/children/${encode
 
 export const fetchMyReport = (token, week = 0) => call(`/student/parents/report?week=${week}`, get(token), KEY);
 
-// « التقدّم بالتفصيل » — la même forme pour le parent et pour l'élève.
+// « La progression en détail » — la même forme pour le parent et pour l'élève.
 export const fetchChildProgress = (token, studentId) =>
   call(`/parent/children/${encodeURIComponent(studentId)}/progress`, get(token), KEY);
 export const fetchMyProgress = (token) => call('/student/parents/progress', get(token), KEY);
 
-// « رابط الوليّ » — côté ÉLÈVE : le lien sans compte (PARENT_SPACE.md §2).
+// « lien parent » — côté ÉLÈVE : le lien sans compte (PARENT_SPACE.md §2).
 export const fetchMyParentLink = (token) => call('/student/parent-link', get(token), KEY);
 export const createParentLink = (token) => call('/student/parent-link', send('POST', token, { consent: true }), KEY);
 export const revokeParentLink = (token) => call('/student/parent-link', send('DELETE', token), KEY);
 
-// « رابط الوليّ » — côté PARENT, SANS compte : le jeton du lien est la porte ;
+// « lien parent » — côté PARENT, SANS compte : le jeton du lien est la porte ;
 // `pass` est le laissez-passer rendu par le code à 4 chiffres, s'il en a un.
 const withPass = (pass) => ({ headers: { Accept: 'application/json', ...(pass ? { 'X-Parent-Pass': pass } : {}) } });
 const linkPath = (linkToken) => `/parent-link/${encodeURIComponent(linkToken)}`;

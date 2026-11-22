@@ -19,11 +19,11 @@ import PageTourProvider from '../../features/tours/PageTourProvider';
  * shell with `user.grade === null` — not just right after signing up (e.g.
  * they closed the tab mid-onboarding). Every route nested under here
  * requires a grade to make sense, so this is the one place that guard lives
- * rather than repeating it per page — except while no Algerian grade exists
+ * rather than repeating it per page — except while no grade exists
  * at all (see the getAllGrades() check below), since gating on a choice
  * nobody can make would trap every student in a redirect loop.
  *
- * COLUMN MODE (« prior ») — the shell RESERVES the place of « بطاقتي » instead of letting it float over the lesson: the
+ * COLUMN MODE (« prior ») — the shell RESERVES the place of « Ma carte » instead of letting it float over the lesson: the
  * rail keeps its 80 px (`RAIL_WIDTH`, it does not fold) and <main> gains a gutter on the end side. The content really
  * shrinks, and `useLessonViewport`, which reads the padding box of this <main>, places the map exactly in that gutter
  * (see WorkspaceLayoutContext).
@@ -33,16 +33,16 @@ export default function StudentLayout() {
   const { isPrior, contentGutter } = useWorkspaceLayout();
   const location = useLocation();
 
-  // « الاسم و اللقب » AVANT la classe scolaire : un compte sans nom (créé
+  // « prénom et nom » AVANT la classe scolaire : un compte sans nom (créé
   // avant leur collecte) passe d'abord par l'étape qui les demande, puis
   // revient ici — `from` le ramène à la page qu'il visait.
   if (needsName(user)) {
     return <Navigate to="/espace/bienvenue/nom" replace state={{ from: location.pathname + location.search }} />;
   }
 
-  // No Algerian grade exists yet (packages/core/curriculum/activeGrades.js —
-  // ACTIVE_GRADE_IDS is empty pending Phase 7's official curriculum), so
-  // ChooseGrade.jsx has nothing to offer any student right now. Gating on a
+  // While no grade is active (packages/core/curriculum/activeGrades.js —
+  // ACTIVE_GRADE_IDS empty), ChooseGrade.jsx has nothing to offer any
+  // student. Gating on a
   // grade that cannot possibly be chosen would trap every student in a
   // redirect loop — so the gate only applies once there is at least one
   // grade to actually choose.
@@ -50,7 +50,7 @@ export default function StudentLayout() {
     return <Navigate to="/espace/bienvenue" replace />;
   }
 
-  // « جولة تعريفية » : la visite guidée de la première visite de chaque page
+  // « Visite guidée » : la visite guidée de la première visite de chaque page
   // (features/tours, docs/architecture/PAGE_TOURS.md).
   return (
     <PageTourProvider>

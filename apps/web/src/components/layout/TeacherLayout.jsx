@@ -11,7 +11,7 @@ import { needsName } from '../../utils/personName';
 import PageTourProvider from '../../features/tours/PageTourProvider';
 
 /**
- * La coquille de l'espace ENSEIGNANT (« فضاء الأستاذ ») — le même espace de
+ * La coquille de l'espace ENSEIGNANT (« Espace professeur ») — le même espace de
  * travail que StudentLayout (barre latérale + contenu, pas de pied de page
  * visiteur), avec sa propre navigation.
  *
@@ -19,12 +19,12 @@ import PageTourProvider from '../../features/tours/PageTourProvider';
  * possède des classes qui ont chacune la leur. Le rôle est vérifié par
  * ProtectedRoute en amont ; la vraie porte reste le serveur (can:teacher).
  *
- * UNE garde, en revanche : « الاسم و اللقب ». Les élèves d'un enseignant le
+ * UNE garde, en revanche : « prénom et nom ». Les élèves d'un enseignant le
  * lisent sous ce nom ; un compte qui n'en a pas encore passe par l'étape
  * /enseignant/bienvenue, puis revient à la page qu'il visait.
  *
  * SAME WORKSPACE as the student's: <main> carries `.sa-workspace-main`, `data-rail` and the variables
- * `--sa-sidebar-w` (the fixed 80 px rail) / `--sa-gutter-w`, so a teacher reading a lesson gets the same « بطاقتي »
+ * `--sa-sidebar-w` (the fixed 80 px rail) / `--sa-gutter-w`, so a teacher reading a lesson gets the same « Ma carte »
  * column — the lesson makes room instead of being covered.
  */
 export default function TeacherLayout() {
@@ -38,7 +38,7 @@ export default function TeacherLayout() {
     return <Navigate to="/enseignant/bienvenue" replace state={{ from: location.pathname + location.search }} />;
   }
 
-  // « جولة تعريفية » : la visite guidée de la première visite de chaque page
+  // « Visite guidée » : la visite guidée de la première visite de chaque page
   // (features/tours, docs/architecture/PAGE_TOURS.md).
   return (
     <PageTourProvider>

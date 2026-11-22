@@ -18,7 +18,7 @@ describe('submitReport — un seul envoi multipart', () => {
       source: 'module',
       context: { lessonCode: 'qasim', moduleNumber: 2, step: 'ex', grade: undefined },
       category: 'math_error',
-      note: 'خطأ هنا',
+      note: 'Erreur ici',
       screenshot,
     });
 
@@ -36,7 +36,7 @@ describe('submitReport — un seul envoi multipart', () => {
     expect(body.get('lessonCode')).toBe('qasim');
     expect(body.get('moduleNumber')).toBe('2');
     expect(body.get('category')).toBe('math_error');
-    expect(body.get('note')).toBe('خطأ هنا');
+    expect(body.get('note')).toBe('Erreur ici');
     // Un champ vide n'est pas envoyé (le serveur le lirait comme une chaîne vide).
     expect(body.has('grade')).toBe(false);
     const file = body.get('screenshot');
@@ -57,7 +57,7 @@ describe('submitReport — un seul envoi multipart', () => {
     for (const key of ['lesson_id', 'lessonId', 'module_id', 'user_id']) expect(body.has(key)).toBe(false);
   });
 
-  it('un refus (403 non relecteur) lève une erreur ARABE, jamais le message serveur', async () => {
+  it('un refus (403 non relecteur) lève la phrase du client, jamais un message serveur hors liste', async () => {
     global.fetch.mockResolvedValue({ ok: false, status: 403, json: async () => ({ reason: 'not_a_reviewer', message: 'Seuls les ambassadeurs…' }) });
     await expect(submitReport('tok', { source: 'lesson', category: 'other' })).rejects.toMatchObject({ status: 403 });
     await expect(submitReport('tok', { source: 'lesson', category: 'other' })).rejects.not.toThrow(/Seuls/);

@@ -1,13 +1,13 @@
 import { call, get, send } from './teacher/teacherClient';
 
 /**
- * Transport du « التحدّي اليومي » côté élève (docs/architecture/DAILY_CHALLENGE.md).
+ * Transport du « Défi du jour » côté élève (docs/architecture/DAILY_CHALLENGE.md).
  *
  * Le client n'envoie JAMAIS un score, un temps, une justesse ou une série :
  * une position et une réponse brute, rien d'autre. Le serveur sert les
  * questions sans clé de réponse, chronomètre, juge et compte. Les erreurs
  * portent un `reason` clos (`expired`, `already_answered`, `window_closed`…)
- * que l'écran traduit en arabe.
+ * que l'écran dit en français.
  */
 const KEY = 'dailyChallenge';
 

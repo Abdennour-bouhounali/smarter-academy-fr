@@ -16,7 +16,7 @@ describe('needsEmailVerification', () => {
   });
 });
 
-describe('« فضائي » avant la vérification', () => {
+describe('« Mon espace » avant la vérification', () => {
   const read = (p) => readFileSync(new URL(p, import.meta.url), 'utf8');
 
   it('ProtectedRoute renvoie vers /verification-email', () => {

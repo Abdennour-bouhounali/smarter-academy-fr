@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { MemoryRouter } from 'react-router-dom';
-import '../i18n';
+import i18n from '../i18n';
 import { ContentAvailabilityContext } from '../context/ContentAvailabilityContext';
 import LessonCard from '../components/student/LessonCard';
 import AmbassadorSwitch from '../components/admin/ui/AmbassadorSwitch';
@@ -15,14 +15,14 @@ const here = dirname(fileURLToPath(import.meta.url));
 const read = (p) => readFileSync(resolve(here, '../..', p), 'utf8');
 
 /**
- * Les RELECTEURS (admin, enseignant ambassadeur « سفير ») voient tout le
+ * Les RELECTEURS (admin, enseignant ambassadeur) voient tout le
  * contenu, quel qu'en soit l'état, avec une pastille d'état. La preuve
  * d'autorité vit côté serveur (ContentAccessReviewerTest) ; ici, que
  * l'interface affiche ce que le serveur décide, et rien de plus.
  */
 const LESSON = {
   id: 'qasim-adad-tabii', status: 'available', path: '/courses/x', icon: '📘',
-  title: 'درس', description: 'وصف', duration: '30 د',
+  title: 'Leçon', description: 'Description', duration: '30 min',
 };
 
 const availability = (overrides = {}) => ({
@@ -91,7 +91,7 @@ describe('les surfaces qui affichent l’état', () => {
     expect(source).toContain(call);
   });
 
-  it('la page d’unité garde le geste à sa place : « قريبًا » désactivé au lieu de rien', () => {
+  it('la page d’unité garde le geste à sa place : « Bientôt » désactivé au lieu de rien', () => {
     const source = read('src/pages/UnitPage.jsx');
     expect(source).toContain('{!available && (');
     expect(source).toContain("t('unit.soon')");
@@ -114,7 +114,7 @@ describe('les surfaces qui affichent l’état', () => {
   });
 });
 
-describe('l’interrupteur « سفير » de l’administration', () => {
+describe('l’interrupteur « ambassadeur » de l’administration', () => {
   const renderSwitch = (teacher) => renderToStaticMarkup(
     <AuthContext.Provider value={{ token: 't', user: { role: 'admin' } }}>
       <AmbassadorSwitch teacher={teacher} withLabel />
@@ -127,7 +127,7 @@ describe('l’interrupteur « سفير » de l’administration', () => {
     expect(on).toContain('aria-checked="true"');
     const off = renderSwitch({ id: 1, email: 'a@b.c', isAmbassador: false });
     expect(off).toContain('aria-checked="false"');
-    expect(off).toContain('ليس سفيراً');
+    expect(off).toContain(i18n.t('teachers.ambassador.off', { ns: 'admin' }));
   });
 
   it('est posé dans la liste ET la fiche enseignant', () => {

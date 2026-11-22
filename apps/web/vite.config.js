@@ -10,7 +10,7 @@ import sharePages from './vite-plugin-share-pages.js';
 /**
  * Le contenu de pratique vit HORS de apps/web (content/practice, lu aussi par Laravel) : Vite ne le surveillait pas.
  * Un serveur de dev lancé avant qu'une banque soit ajoutée gardait l'ancien `active.json` / `index.generated.json` —
- * la carte « بنك تمارين هذا الدرس » manquait jusqu'au redémarrage (constaté le 2026-10-14 sur l'unité 3 1AM).
+ * la carte de la banque d'exercices de la leçon manquait jusqu'au redémarrage (constaté le 2026-10-14).
  * On ajoute le dossier au watcher : un fichier modifié ou ajouté recharge la page, comme une source.
  */
 const PRACTICE_CONTENT = fileURLToPath(new URL('../../content/practice', import.meta.url));
@@ -26,7 +26,7 @@ function watchPracticeContent() {
 /**
  * `virtual:practice-level-counts` — leçon → { niveau: nombre d'exercices }.
  *
- * La carte « بنك تمارين هذا الدرس » du sommaire d'une leçon n'a besoin QUE de ces
+ * La carte de la banque d'exercices du sommaire d'une leçon n'a besoin QUE de ces
  * nombres. Elle les lisait dans practiceContent.js, qui embarque l'index complet
  * (183 Ko de JSON : chaque identifiant d'exercice) et la table du glob de
  * ≈ 4 200 exercices — un lot de 80 Ko gzip téléchargé par chaque sommaire de

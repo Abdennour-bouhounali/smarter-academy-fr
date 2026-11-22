@@ -9,7 +9,7 @@ import {
   MIN_CONTENT_WIDTH,
 } from './WorkspaceLayoutContext';
 
-// The column mode of « بطاقتي »: a FIXED width, the best for the screen, beside the 80 px rail (which does not fold).
+// The column mode of « Ma carte »: a FIXED width, the best for the screen, beside the 80 px rail (which does not fold).
 describe('column width (fixed, best for the screen)', () => {
   it('matches the documented table', () => {
     expect(RAIL_WIDTH).toBe(80);

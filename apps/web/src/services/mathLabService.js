@@ -2,10 +2,10 @@ import { apiRequest, ApiError, classifyStatus } from './apiClient';
 import { apiMessage } from './apiMessage';
 
 /**
- * Transport du مختبر الرياضيات (Math Lab) — même forme que practiceService.js.
+ * Transport de l'atelier (Math Lab) — même forme que practiceService.js.
  *
  * Un document = { id, tool, title, schemaVersion, dataBytes, createdAt,
- * updatedAt, data? }. `data` est l'état sérialisé de l'INSTRUMENT (la سبّورة
+ * updatedAt, data? }. `data` est l'état sérialisé de l'INSTRUMENT (le tableau blanc
  * aujourd'hui) : le serveur le stocke sans le lire, le client le confie à
  * l'outil qui l'a produit. La liste ne porte pas `data` ; la lecture d'un
  * document, si.
@@ -82,7 +82,7 @@ export function bulkMathLabDocuments(token, ids, action) {
   return call('/math-lab/documents/bulk', withBody(token, 'POST', { ids, action }), action === 'delete' ? 'mathLabDelete' : 'mathLabSave');
 }
 
-// ── Les fichiers d'une سبّورة ─────────────────────────────────────────────
+// ── Les fichiers d'un tableau blanc ─────────────────────────────────────────────
 // Un fichier = { id, documentId, kind, name, mimeType, size, createdAt } ;
 // chaque réponse porte `quota` = { document: {used, max} | null, user: {used, max}, limits }.
 
@@ -91,7 +91,7 @@ export function fetchMathLabFiles(token, documentId) {
   return call(`/math-lab/documents/${encodeURIComponent(documentId)}/files`, { headers: headers(token) }, 'mathLabFiles');
 }
 
-/** Les compteurs de l'élève seul — pour une سبّورة pas encore enregistrée. */
+/** Les compteurs de l'élève seul — pour un tableau blanc pas encore enregistrée. */
 export function fetchMathLabQuota(token) {
   return call('/math-lab/quota', { headers: headers(token) }, 'mathLabFiles');
 }

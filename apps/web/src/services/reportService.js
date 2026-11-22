@@ -2,7 +2,7 @@ import { apiRequest, ApiError, classifyStatus } from './apiClient';
 import { apiMessage } from './apiMessage';
 
 /**
- * « Signaler un problème » — administrateur et AMBASSADEURS (« سفراء »).
+ * « Signaler un problème » — administrateur et AMBASSADEURS.
  *
  * UN envoi, multipart (depuis 2026-10-05) : le contexte, la catégorie, une
  * note facultative et une capture d'écran facultative (zone fautive déjà

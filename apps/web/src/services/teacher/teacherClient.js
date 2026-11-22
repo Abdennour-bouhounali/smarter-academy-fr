@@ -4,10 +4,9 @@ import { apiMessage } from '../apiMessage';
 /**
  * Socle des services de l'espace ENSEIGNANT — même convention que
  * services/admin/adminClient.js (le jeton est toujours le premier argument),
- * avec une différence qui compte : le message d'erreur est ARABE, résolu par
- * apiMessage depuis une clé du catalogue, jamais la phrase du serveur
- * (ARABIC_RTL_CONTRACT.md : « the API speaks codes, the client speaks
- * Arabic »). Le MOTIF clos (`reason`) voyage sur l'erreur pour que la page
+ * avec une différence qui compte : le message d'erreur est résolu par
+ * apiMessage depuis une clé du catalogue — la phrase du serveur n'est montrée
+ * que pour un code de sa liste (services/apiMessage.js). Le MOTIF clos (`reason`) voyage sur l'erreur pour que la page
  * choisisse sa phrase.
  *
  * @param {string} path

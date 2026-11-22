@@ -7,7 +7,7 @@ import {
 } from './studyContextService';
 
 /**
- * قسمي, côté client : rejoindre = consentir. Le drapeau `consent` ne part
+ * « Ma classe », côté client : rejoindre = consentir. Le drapeau `consent` ne part
  * que si l'appelant le passe — le service n'en décide jamais.
  */
 describe('studyContextService', () => {
@@ -57,11 +57,11 @@ describe('studyContextService', () => {
 
   describe('previewJoinLink', () => {
     it('publique : sans jeton d’API, aucun en-tête Authorization', async () => {
-      respond(200, { success: true, joinLink: { classroomName: 'أ', joiningOpen: true } });
+      respond(200, { success: true, joinLink: { classroomName: '3e A', joiningOpen: true } });
       const preview = await previewJoinLink('abc');
       expect(sentUrl()).toMatch(/\/join-links\/abc$/);
       expect(global.fetch.mock.calls[0][1]?.headers?.Authorization).toBeUndefined();
-      expect(preview).toEqual({ classroomName: 'أ', joiningOpen: true });
+      expect(preview).toEqual({ classroomName: '3e A', joiningOpen: true });
     });
 
     it('avec le jeton d’un élève connecté, l’en-tête part (alreadyMember)', async () => {

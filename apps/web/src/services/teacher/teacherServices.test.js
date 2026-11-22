@@ -31,7 +31,7 @@ describe('services enseignant', () => {
     expect(source).not.toMatch(/\/invitations/);
   });
 
-  it('le message rendu vient du catalogue arabe, jamais du serveur', () => {
+  it('le message rendu passe par apiMessage, jamais par la phrase brute du serveur', () => {
     const client = read('./teacherClient.js');
     expect(client).toContain('apiMessage(messageKey, data, status)');
     expect(client).not.toMatch(/data\?\.message \|\|/);

@@ -20,7 +20,7 @@ const READERS = {
   ],
 };
 
-/** Les primitives que l'espace enseignant, l'école et « قسمي » rendent aussi : elles lisent `common › ui.*`. */
+/** Les primitives que l'espace professeur, l'établissement et « Ma classe » rendent aussi : elles lisent `common › ui.*`. */
 const SHARED_PRIMITIVES = ['Modal.jsx', 'FilterBar.jsx', 'DataTable.jsx', 'states.jsx', 'SelectionCheckbox.jsx'];
 
 function sourceFiles(dir, out = []) {

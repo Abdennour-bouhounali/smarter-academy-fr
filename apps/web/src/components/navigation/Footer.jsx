@@ -4,6 +4,7 @@ import { Mail } from 'lucide-react';
 import { ArrowForward } from '../common/DirectionalIcons';
 import { useTranslation } from 'react-i18next';
 import { navLinks } from '../../data/navigation';
+import { CONTACT_EMAIL } from '../../data/contact';
 
 export default function Footer() {
   const { t } = useTranslation('nav');
@@ -32,7 +33,7 @@ export default function Footer() {
 
             <p className="flex items-start gap-2 text-xs font-inter text-slate-400">
               <Mail size={13} className="text-blue-400 flex-shrink-0 mt-0.5" />
-              <a href="mailto:abdennour.bouhounali@gmail.com" className="hover:text-white transition-colors break-words">abdennour.bouhounali@gmail.com</a>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white transition-colors break-words">{CONTACT_EMAIL}</a>
             </p>
           </m.div>
 
@@ -89,18 +90,16 @@ export default function Footer() {
           <nav aria-label={tm('footer.legalAria')} className="mb-5">
             <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 sm:justify-start">
               {[
-                // Les trois documents sont en FRANÇAIS (textes de l'ancien site rétablis
-                // le 2026-11-22) : leurs intitulés le sont aussi, comme sur `main`.
-                { to: '/mentions-legales', label: 'Mentions légales', lang: 'fr' },
-                { to: '/confidentialite', label: 'Politique de confidentialité', lang: 'fr' },
-                { to: '/cgu', label: "Conditions Générales d'Utilisation", lang: 'fr' },
-                // Le guide « حماية الجهاز » (PARENT_SPACE.md §6) : public, pour les parents.
+                // Les trois documents de l'ancien site, rétablis le 2026-11-22.
+                { to: '/mentions-legales', label: t('legalNotice') },
+                { to: '/confidentialite', label: t('privacy') },
+                { to: '/cgu', label: t('terms') },
+                // Le guide de protection de l'appareil (PARENT_SPACE.md §6) : public, pour les parents.
                 { to: '/himaya', label: tm('footer.deviceGuide') },
               ].map((item) => (
                 <li key={item.to}>
                   <Link
                     to={item.to}
-                    lang={item.lang}
                     className="font-inter text-slate-400 hover:text-white text-sm transition-colors duration-200"
                   >
                     {item.label}

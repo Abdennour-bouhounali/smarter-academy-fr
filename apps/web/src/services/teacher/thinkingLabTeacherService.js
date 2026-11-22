@@ -1,7 +1,7 @@
 import { call, get, send } from './teacherClient';
 
 /**
- * Transport de la « معاينة الأستاذ » du « مختبر التفكير » (docs/architecture/THINKING_LAB.md §8bis) :
+ * Transport de la « Aperçu du professeur » du « Le labo des énigmes » (docs/architecture/THINKING_LAB.md §8bis) :
  * lecture seule. Le serveur sert chaque défi ouvert (réponse, clés, relecture) à l'enseignant
  * seulement (`can:teacher`) et n'écrit rien — ni progression, ni tentative.
  */

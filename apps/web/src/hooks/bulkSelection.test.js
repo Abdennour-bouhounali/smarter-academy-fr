@@ -107,13 +107,13 @@ describe('« tout sélectionner »', () => {
 describe('le branchement des actions groupées', () => {
   // La liste des MODULES n'en fait plus partie (2026-11-11) : un module n'a
   // pas d'état propre, il suit sa leçon — voir le test dédié plus bas.
-  // La page « التمارين » n'en fait plus partie non plus (2026-11-11) : elle
+  // La page « Exercices » n'en fait plus partie non plus (2026-11-11) : elle
   // est organisée PAR LEÇON — voir le test dédié plus bas.
   const PAGES = {
     'src/pages/admin/content/Lessons.jsx': 'lesson',
   };
 
-  it('la page « التمارين » change la banque d’une leçon d’un seul geste, pas exercice par exercice', () => {
+  it('la page « Exercices » change la banque d’une leçon d’un seul geste, pas exercice par exercice', () => {
     const source = read('src/pages/admin/content/Exercises.jsx');
     expect(source).toContain('fetchLessons');
     expect(source).toContain('withExercises: 1');
@@ -122,7 +122,7 @@ describe('le branchement des actions groupées', () => {
     expect(source).not.toContain('BulkActionBar');
   });
 
-  it('il n’y a plus de page « المحاور » : un module suit sa leçon (2026-11-11)', () => {
+  it('il n’y a plus de page « Étapes » : un module suit sa leçon (2026-11-11)', () => {
     expect(existsSync(resolve(webRoot, 'src/pages/admin/content/Modules.jsx'))).toBe(false);
     expect(read('src/data/adminNavigation.js')).not.toContain('contenu/modules');
     expect(read('src/App.jsx')).not.toContain('contenu/modules');
@@ -222,7 +222,7 @@ describe('le branchement des actions groupées', () => {
    * La case à cocher n'apparaît QUE là où une action groupée existe. Les
    * listes de signalements et d'abonnements n'en ont pas : une case qui ne
    * mène à rien est une promesse non tenue. (Les élèves en ont une depuis
-   * « تفعيل عرض » en lot — voir le test suivant.)
+   * « Activer une formule » en lot — voir le test suivant.)
    */
   it('la sélection reste optionnelle dans DataTable', () => {
     const table = read('src/components/admin/ui/DataTable.jsx');
@@ -252,37 +252,39 @@ describe('le branchement des actions groupées', () => {
 });
 
 /**
- * LE NOMBRE, EN ARABE.
+ * LE NOMBRE, EN FRANÇAIS.
  *
- * L'ancienne version de ce bloc verifiait l'accord FRANCAIS : « 24 lecons
- * selectionnees » contre « 24 lecons selectionnes ». L'interface est arabe
- * desormais, et l'arabe ne se decline pas en deux formes mais en SIX
- * categories (`zero`, `one`, `two`, `few`, `many`, `other`) — c'est
- * `Intl.PluralRules('ar-DZ')` qui choisit, jamais une concatenation. Ces
- * tests verifient donc que le catalogue porte bien les six formes, et que le
- * nom vient toujours du TYPE.
+ * L'interface est française : i18next lit le français en deux formes, `_one`
+ * (0 et 1 : « 0 leçon », « 1 leçon ») et `_other` (« 2 leçons ») — c'est
+ * `Intl.PluralRules('fr')` qui choisit, jamais une concaténation. Les six
+ * catégories arabes et le duel ont disparu (FRENCH_LANGUAGE_CONTRACT.md §6).
+ * Ces tests vérifient que le catalogue porte bien les deux formes, qu'elles
+ * sont françaises, et que le nom vient toujours du TYPE.
  */
 describe('le nom compte du contenu', () => {
   const noun = (key, count) => i18n.t(`bulk.noun.${key}`, { ns: 'admin', count });
 
-  it('decline chaque type dans les categories de pluriel arabes', () => {
+  it('décline chaque type au singulier et au pluriel français', () => {
     for (const key of ['lesson', 'module', 'exercise', 'item']) {
-      // Une forme par categorie, toutes non vides : une cle manquante revient
-      // telle quelle et se verrait a l'ecran.
-      for (const count of [1, 2, 3, 11, 100]) {
+      // Toutes non vides : une clé manquante revient telle quelle et se verrait à l'écran.
+      for (const count of [0, 1, 2, 3, 11, 100]) {
         const rendered = noun(key, count);
         expect(rendered, `${key}/${count}`).not.toContain('bulk.noun');
         expect(rendered, `${key}/${count}`).not.toBe('');
+        expect(rendered, `${key}/${count}`).not.toMatch(/[\u0600-\u06FF]/);
       }
     }
   });
 
-  it('distingue le singulier, le duel et le pluriel', () => {
-    // Le duel est ce qu'aucune regle francaise ne sait produire : « درسان »
-    // ne s'obtient pas en ajoutant « s » a « درس ».
-    expect(noun('lesson', 1)).not.toBe(noun('lesson', 2));
-    expect(noun('lesson', 2)).not.toBe(noun('lesson', 3));
-    expect(noun('lesson', 3)).not.toBe(noun('lesson', 11));
+  it('distingue le singulier (0 et 1) du pluriel (dès 2), sans duel', () => {
+    // La FORME, le nombre mis de côté : « 3 leçons » et « 11 leçons » sont la même forme.
+    const form = (count) => noun('lesson', count).replace(String(count), '#');
+    expect(form(0)).toBe(form(1));
+    expect(form(1)).not.toBe(form(2));
+    // Pas de duel ni de « quelques » : 2, 3, 11 et 100 prennent la même forme.
+    expect(form(2)).toBe(form(3));
+    expect(form(3)).toBe(form(11));
+    expect(form(11)).toBe(form(100));
   });
 
   it('connait les trois types de contenu, par leur cle', () => {

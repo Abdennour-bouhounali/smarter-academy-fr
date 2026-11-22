@@ -1,18 +1,18 @@
 import { call, get, send } from './teacher/teacherClient';
 
 /**
- * Transport de « مدار » côté élève (docs/architecture/MADAR_GAME.md).
+ * Transport de « Madar » côté élève (docs/architecture/MADAR_GAME.md).
  *
  * Le client n'envoie jamais un cœur, une durée ou une justesse : un score
  * (borné par le serveur avec la durée RÉELLE de la partie) et une réponse
  * brute. Les erreurs portent un `reason` clos (`no_hearts`, `daily_cap`,
- * `hearts_full`…) que l'écran traduit en arabe.
+ * `hearts_full`…) que l'écran dit en français.
  */
 const KEY = 'madar';
 
 /**
  * Les appels du jeu pour un ÉLÈVE (`classId` absent : /madar) ou pour un
- * ENSEIGNANT qui joue dans une de ses classes (« نافس أستاذك » :
+ * ENSEIGNANT qui joue dans une de ses classes (« Défie ton professeur » :
  * /teacher/classrooms/{id}/madar/play). Mêmes réponses des deux côtés.
  */
 export function madarApi(classId = null) {

@@ -77,7 +77,7 @@ describe('le cadre de page partagé n’a pas régressé', () => {
 
   it('l’administration partage le même cadre', () => {
     // Le chrome du panneau a DÉMÉNAGÉ dans `pages/admin/adminUi.jsx`, avec le
-    // reste de ses en-têtes, états et libellés arabes — le jumeau de
+    // reste de ses en-têtes, états et libellés — le jumeau de
     // `pages/teacher/teacherUi.jsx`. C'est là que la gouttière partagée se
     // vérifie maintenant ; `components/admin/AdminPage.jsx` n'en est plus
     // qu'un réexport.

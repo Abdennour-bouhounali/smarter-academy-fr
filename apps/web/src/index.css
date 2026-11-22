@@ -11,7 +11,7 @@
 
   html {
     scroll-behavior: smooth;
-    font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
   }
 
@@ -25,45 +25,15 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     line-height: 1.2;
     color: #0F172A;
   }
 
-  /* Arabic typography (ar-DZ, RTL — src/locale.js). CAIRO IS THE CANONICAL
-     ARABIC FONT of the platform (master spec §14) — this is the single
-     source of truth; do not introduce another Arabic font anywhere else.
-     Cairo is not the primary family in these stacks: it is the Arabic
-     glyph provider in every stack (html, headings, and tailwind.config.js's
-     font-inter/font-space). Inter and Space Grotesk carry no Arabic glyphs,
-     so the browser renders Arabic runs in Cairo per glyph while Latin runs
-     (brand name, digits, code) keep the identity fonts — one stack serves
-     mixed Arabic/Latin lines. Tajawal stays as a second fallback only (in
-     case Cairo hasn't finished loading yet — see index.html's non-blocking
-     Google Fonts link). Math is unaffected: KaTeX/MathLive ship their own
-     fonts and are isolated LTR (.sa-math-* below). Digits and code stay
-     JetBrains Mono via font-mono/.font-mono-jetbrains, whose stacks also
-     carry Cairo so Arabic labels styled as mono don't drop to a system
-     monospace font. Taller leading only under RTL: tight leading reads as
-     cramped in Arabic (master spec §14). */
-  [dir="rtl"] body {
-    line-height: 1.85;
-  }
-
-  [dir="rtl"] h1,
-  [dir="rtl"] h2,
-  [dir="rtl"] h3,
-  [dir="rtl"] h4,
-  [dir="rtl"] h5,
-  [dir="rtl"] h6 {
-    line-height: 1.4;
-  }
-
-  /* Mathematical notation stays LTR inside the RTL shell (master spec §14).
-     `unicode-bidi: isolate` keeps the expression out of the surrounding
-     Arabic bidi run; `direction: ltr` fixes its own layout. Applied by
-     MathText.jsx, the single KaTeX chokepoint. */
+  /* Mathematical notation is an isolated left-to-right island. The page is LTR already; `unicode-bidi: isolate`
+     keeps the expression out of the surrounding text's bidi run all the same. Applied by MathText.jsx, the single
+     KaTeX chokepoint. */
   .sa-math-inline {
     direction: ltr;
     unicode-bidi: isolate;
@@ -149,7 +119,7 @@
 
   .tech-chip {
     @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-semibold;
-    font-family: 'JetBrains Mono', 'Cairo', 'Tajawal', monospace;
+    font-family: 'JetBrains Mono', monospace;
   }
 
   .section-wrapper {
@@ -224,24 +194,19 @@
 
 @layer utilities {
   .font-space {
-    font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   .font-inter {
-    font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 
-  /* JetBrains Mono has no Arabic glyphs: Cairo follows it so a label styled
-     as mono still renders its Arabic in Cairo, while digits and code keep
-     JetBrains Mono (same stack as tailwind.config.js's `mono`). */
+  /* Same stack as tailwind.config.js's `mono`. */
   .font-mono-jetbrains {
-    font-family: 'JetBrains Mono', 'Cairo', 'Tajawal', monospace;
+    font-family: 'JetBrains Mono', monospace;
   }
 
-  /* Cairo is global (html, h1–h6, font-sans/inter/space/mono; master spec
-     §14) — the former module-scoped `sa-font-trial-cairo` pilot (PGCD
-     module 1) has been generalized into these shared rules and the class
-     removed from that module. KaTeX/MathLive are unaffected: KaTeX sets
+  /* KaTeX/MathLive are unaffected by the stacks above: KaTeX sets
      `font: normal 1.21em KaTeX_Main,…` directly on `.katex` itself
      (katex.min.css), so inherited font-family never crosses into its
      internal spans — do NOT add `.katex * { font-family: revert }`, it
@@ -392,15 +357,13 @@ svg [role="slider"]:focus-visible {
    `transition: padding` — la coquille « fait de la place » ; c'est le même
    mouvement, et la même durée, que la compression de la barre latérale.
    ───────────────────────────────────────────────────────────────────────── */
-/* RTL (ar-DZ, le défaut — src/locale.js) : le schéma est MIROITÉ en bloc.
-   La barre latérale s'ancre au bord de DÉBUT (`start-0` dans StudentNavbar /
-   AdminSidebar), donc à droite ; « Ma carte » (KnowledgeMap.jsx) au bord de
-   FIN, donc à gauche. <main> réserve chacune du bon côté :
+/* De gauche à droite (fr-FR — src/locale.js). La barre latérale s'ancre au
+   bord de DÉBUT (`start-0` dans StudentNavbar / AdminSidebar), donc à gauche ;
+   « Ma carte » (KnowledgeMap.jsx) au bord de FIN, donc à droite. <main>
+   réserve chacune du bon côté :
 
-     LTR   ┌────┬────────────────────────────┬────────────┐
+           ┌────┬────────────────────────────┬────────────┐
            │ S  │        CONTENU             │  MA CARTE  │
-     RTL   ┌────────────┬────────────────────────────┬────┐
-           │  MA CARTE  │        CONTENU             │ S  │
 
    `useLessonViewport` lit la boîte de padding de <main> : la mesure suit ces
    règles sans jamais coder un côté en dur. */
@@ -412,26 +375,16 @@ svg [role="slider"]:focus-visible {
   transition: padding 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-[dir="rtl"] .sa-workspace-main {
-  padding-right: 0px;
-  padding-left: var(--sa-gutter-w, 0px);
-}
-
 @media (min-width: 1024px) {
   .sa-workspace-main {
     padding-left: var(--sa-sidebar-w, 0px);
-  }
-
-  [dir="rtl"] .sa-workspace-main {
-    padding-left: var(--sa-gutter-w, 0px);
-    padding-right: var(--sa-sidebar-w, 0px);
   }
 }
 
 /* La barre de navigation du BAS (élève et enseignant, sous `lg`, h-16) occupe
    les 4rem du bas de l'écran. Les pastilles flottantes de la leçon
-   (« 🧠 بطاقتي », « 📓 كرّاسي ») se posent AU-DESSUS : sans ce décalage, la
-   barre recouvrait « بطاقتي » et avalait ses clics — la carte était
+   (« 🧠 Ma carte », « 📓 Mon cahier ») se posent AU-DESSUS : sans ce décalage, la
+   barre recouvrait « Ma carte » et avalait ses clics — la carte était
    inaccessible sur téléphone et tablette. `:has` parce que les pastilles
    vivent dans un portail (hors de <main>) ; la coquille visiteur n'a ni
    barre ni décalage. */
@@ -447,11 +400,6 @@ svg [role="slider"]:focus-visible {
 @media (min-width: 768px) and (max-width: 1023px) {
   .sa-workspace-main[data-rail] {
     padding-left: var(--sa-sidebar-w, 0px);
-  }
-
-  [dir="rtl"] .sa-workspace-main[data-rail] {
-    padding-left: var(--sa-gutter-w, 0px);
-    padding-right: var(--sa-sidebar-w, 0px);
   }
 
   body:has(.sa-workspace-main[data-rail]) {
@@ -646,30 +594,27 @@ html[data-sa-resizing] .sa-workspace-main {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   FEUILLE D'EXAMEN — `.sa-exam-paper` (pratique au format BEM, 2026-10-06).
-   Le sujet de شهادة التعليم المتوسط est composé en naskh (LaTeX arabe) : Amiri,
-   chargée à la demande (features/practice/exam/examFont.js), puis les naskh
-   système, Cairo en dernier recours. Les formules restent à KaTeX, dont les
+   FEUILLE D'EXAMEN — `.sa-exam-paper` (pratique au format du brevet, 2026-10-06).
+   Le sujet se lit comme un sujet imprimé : une police à empattements du système
+   (aucune police chargée pour lui). Les formules restent à KaTeX, dont les
    polices italiques sont déjà celles du sujet (A, x, ABC). Les contrôles de
    saisie gardent la police de l'interface : on lit un sujet, on répond dans
    l'application. */
 .sa-exam-paper {
-  font-family: 'Amiri', 'Noto Naskh Arabic', 'Traditional Arabic', 'Cairo', serif;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
 }
 .sa-exam-paper :is(button, input, textarea, select, legend, summary, [data-exam-answer-zone]) {
-  font-family: 'Cairo', 'Tajawal', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
-/* Une formule KaTeX qui passe à la ligne (après « = ») est découpée en blocs ;
-   dans un paragraphe RTL ces blocs se rangeaient de droite à gauche
-   (« PGCD(21 ; 14) = PGCD(14 ; 7) » devenait « …= ( » / « 7).PGCD(14 ; »,
-   vu le 2026-10-06 sur la feuille d'examen). La formule garde son sens LTR. */
+/* Une formule KaTeX qui passe à la ligne (après « = ») est découpée en blocs :
+   la formule garde son sens de gauche à droite, isolée du texte qui l'entoure. */
 /* LA RÉPONSE ÉCRITE SUR LA COPIE (propriétaire, 2026-10-06) : « une petite réponse,
    un petit champ ; une grande réponse, un grand champ — et que ça ne fasse pas
    plateforme ». Sur la feuille d'examen seulement (`data-answer-size`, posé par le
    lecteur d'après `answerSize`) :
    - un nombre s'écrit à l'encre bleue sur un trait pointillé, à sa mesure ;
    - une démonstration s'écrit sur des lignes réglées, avec la marge rouge ;
-   - une question fermée se coche : « ☐ نعم   ☐ لا ».
+   - une question fermée se coche : « ☐ Oui   ☐ Non ».
    Les autres leçons gardent leurs champs. */
 .sa-exam-paper [data-answer-form] input[type='text'] {
   border: 0;
@@ -679,7 +624,7 @@ html[data-sa-resizing] .sa-workspace-main {
   box-shadow: none;
   min-height: 0;
   padding: 0.1rem 0.4rem;
-  font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
   font-size: 1.35rem;
   color: #1e3a8a;
 }
@@ -690,7 +635,7 @@ html[data-sa-resizing] .sa-workspace-main {
   outline: none;
 }
 .sa-exam-paper [data-answer-form] input[type='text']::placeholder {
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.8rem;
   color: #a3adbb;
 }
@@ -709,7 +654,6 @@ html[data-sa-resizing] .sa-workspace-main {
   flex-wrap: nowrap;
   resize: horizontal;
   overflow: hidden;
-  direction: rtl;
   /* + la place du bouton clavier ⌨ de MathLive DANS le champ (34 px) : sans elle, la réponse n'avait plus
      que ~5 px et le texte indicatif était coupé (propriétaire, 2026-10-08). Le menu ☰ est masqué (plus bas). */
   --answer-chrome: 38px;
@@ -721,16 +665,14 @@ html[data-sa-resizing] .sa-workspace-main {
 }
 .sa-exam-paper [data-answer-form] [data-answer-box] input[type='text'] { width: 100%; min-width: 0; flex: 1 1 auto; }
 .sa-exam-paper [data-answer-form] [data-answer-format] { display: none; }
-/* On écrit de DROITE à GAUCHE sur la copie (propriétaire, 2026-10-06) : le texte
-   s'aligne à droite, y compris un nombre ou une formule. Le sens INTERNE de
-   chaque ligne reste automatique (`dir="auto"` / `unicode-bidi: plaintext`) :
-   « 7/9 », « −3 » ou « PGCD(21 ; 14) » ne s'inversent pas. */
+/* On écrit de GAUCHE à DROITE sur la copie : le texte s'aligne au début de la
+   ligne, y compris un nombre ou une formule. */
 .sa-exam-paper [data-answer-form] input[type='text'],
 .sa-exam-paper [data-answer-form] input[type='text']::placeholder,
 .sa-exam-paper [data-answer-size='proof'] textarea,
 .sa-exam-paper [data-answer-size='proof'] textarea::placeholder,
 .sa-exam-paper [data-proof-text] {
-  text-align: right;
+  text-align: start;
 }
 
 .sa-exam-paper [data-answer-size='proof'] textarea,
@@ -742,11 +684,10 @@ html[data-sa-resizing] .sa-workspace-main {
   border-radius: 0;
   box-shadow: none;
   padding: 0 0.6rem;
-  /* La marge rouge de la copie, toujours à DROITE : la zone est en `dir="auto"`
-     et une première ligne latine (« PGCD… ») la ferait passer à gauche. */
-  border-right: 2px solid rgba(244, 63, 94, 0.35);
+  /* La marge rouge de la copie, à GAUCHE comme sur une copie double. */
+  border-inline-start: 2px solid rgba(244, 63, 94, 0.35);
   line-height: 2rem;
-  font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
   font-size: 1.15rem;
   color: #1e3a8a;
   background-color: transparent;
@@ -756,11 +697,11 @@ html[data-sa-resizing] .sa-workspace-main {
 }
 .sa-exam-paper [data-answer-size='proof'] textarea:focus,
 .sa-exam-paper [data-work-area] textarea:focus { outline: none; box-shadow: none; }
-.sa-exam-paper [data-work-area] textarea::placeholder { font-family: 'Cairo', sans-serif; font-size: 0.85rem; color: #a3adbb; }
-.sa-exam-paper [data-work-area] textarea { text-align: right; }
-.sa-exam-paper [data-work-text] { font-family: 'Amiri', 'Noto Naskh Arabic', serif; font-size: 1.1rem; color: #1e3a8a; text-align: right; line-height: 2rem; }
-.sa-exam-paper [data-answer-size='proof'] textarea::placeholder { font-family: 'Cairo', sans-serif; font-size: 0.85rem; color: #a3adbb; }
-.sa-exam-paper [data-proof-text] { font-family: 'Amiri', 'Noto Naskh Arabic', serif; font-size: 1.1rem; color: #1e3a8a; }
+.sa-exam-paper [data-work-area] textarea::placeholder { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #a3adbb; }
+.sa-exam-paper [data-work-area] textarea { text-align: start; }
+.sa-exam-paper [data-work-text] { font-family: 'Georgia', 'Times New Roman', Times, serif; font-size: 1.1rem; color: #1e3a8a; text-align: start; line-height: 2rem; }
+.sa-exam-paper [data-answer-size='proof'] textarea::placeholder { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #a3adbb; }
+.sa-exam-paper [data-proof-text] { font-family: 'Georgia', 'Times New Roman', Times, serif; font-size: 1.1rem; color: #1e3a8a; }
 
 .sa-exam-paper [data-answer-size='choice'] .grid { display: flex; flex-wrap: wrap; gap: 0.25rem 2rem; }
 .sa-exam-paper [data-answer-size='choice'] button[aria-pressed] {
@@ -772,7 +713,7 @@ html[data-sa-resizing] .sa-workspace-main {
   border: 0;
   border-radius: 0;
   background: transparent;
-  font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
   font-size: 1.15rem;
   color: #0f172a;
 }
@@ -785,7 +726,7 @@ html[data-sa-resizing] .sa-workspace-main {
   flex: none;
   border: 1.5px solid #475569;
   border-radius: 3px;
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
   font-weight: 700;
   line-height: 1;
@@ -802,7 +743,7 @@ html[data-sa-resizing] .sa-workspace-main {
    de réponse (EXERCISE_CONTRACT.md « MathLive, every field »). */
 .sa-exam-mathfield::part(menu-toggle) { display: none; }
 
-/* « لوحة الرموز » (2026-11-09) : le champ à côté de la lettre écrit GRAND — les chiffres d'une
+/* Le pavé de symboles (2026-11-09) : le champ à côté de la lettre écrit GRAND — les chiffres d'une
    fraction se lisent de loin (propriétaire : « les nombres sont petits ») — et la lettre remplace
    le bouton-clavier de MathLive. Le cadre est celui de la boîte qui l'entoure (RationalInput).
    Deux classes : plus fort que `.sa-exam-paper math-field`, aussi sur la copie d'examen. */
@@ -844,12 +785,12 @@ math-field.sa-exam-mathfield.sa-pad-mathfield::part(virtual-keyboard-toggle) { d
 /* Dans la rédaction en lignes, le trait est celui de la LIGNE. */
 .sa-exam-paper [data-lines-editor] math-field { border-bottom: 0; font-size: 1.15rem; }
 .sa-exam-paper [data-lines-editor] {
-  border-right: 2px solid rgba(244, 63, 94, 0.35);
-  padding-right: 0.6rem;
+  border-inline-start: 2px solid rgba(244, 63, 94, 0.35);
+  padding-inline-start: 0.6rem;
 }
-.sa-exam-paper [data-line-text] { font-family: 'Amiri', 'Noto Naskh Arabic', serif; font-size: 1.1rem; color: #1e3a8a; }
-.sa-exam-paper [data-line-text]::placeholder { font-family: 'Cairo', sans-serif; font-size: 0.85rem; color: #a3adbb; }
-.sa-exam-ink { font-family: 'Amiri', 'Noto Naskh Arabic', serif; font-size: 1.1rem; color: #1e3a8a; line-height: 2rem; }
+.sa-exam-paper [data-line-text] { font-family: 'Georgia', 'Times New Roman', Times, serif; font-size: 1.1rem; color: #1e3a8a; }
+.sa-exam-paper [data-line-text]::placeholder { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #a3adbb; }
+.sa-exam-ink { font-family: 'Georgia', 'Times New Roman', Times, serif; font-size: 1.1rem; color: #1e3a8a; line-height: 2rem; }
 
 .sa-exam-paper .katex {
   direction: ltr;
@@ -875,14 +816,14 @@ math-field.sa-exam-mathfield.sa-pad-mathfield::part(virtual-keyboard-toggle) { d
   .sa-manip-reject { animation: none; }
 }
 
-/* « أتوقّع القاعدة » (lessons/common/kit/PredictRule.jsx) — tant que l'élève n'a
+/* « Je prédis la règle » (lessons/common/kit/PredictRule.jsx) — tant que l'élève n'a
    pas écrit sa prédiction, ce qui SUIT la règle dans le même conteneur (la
    question d'application) reste caché : on ne répond pas avant d'avoir vu la règle. */
 .sa-predict-pending ~ * {
   display: none !important;
 }
 
-/* Une règle du manuel enveloppée (PredictRule) puis SA brique : une seule « توقّعك ». */
+/* Une règle du manuel enveloppée (PredictRule) puis SA brique : une seule « ta prédiction ». */
 [data-predict-revealed] ~ [data-knowledge-brick] [data-predict-own] {
   display: none;
 }

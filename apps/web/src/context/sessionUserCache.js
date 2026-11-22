@@ -1,7 +1,7 @@
 // LE COMPTE CONNU de cet appareil — pour ne plus attendre `/auth/me` avant de peindre.
 //
 // Avant (mesuré le 2026-10-17) : chaque page authentifiée attendait la réponse
-// de `/auth/me` (≈ un aller-retour, 300–800 ms sur un réseau algérien) AVANT de
+// de `/auth/me` (≈ un aller-retour, 300–800 ms sur un réseau lent) AVANT de
 // demander le lot de sa page, puis ses propres données : une cascade
 // entrée → /me → lot de la page → données. Les fournisseurs (study-context,
 // lesson-progress, tours, notifications) attendaient eux aussi le rôle.

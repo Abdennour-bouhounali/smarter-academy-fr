@@ -7,7 +7,7 @@
  * pas « non vérifié » : seul un `false` explicite ferme la porte.
  *
  * Utilisé par ProtectedRoute (/espace, /enseignant → /verification-email) et
- * par la barre de navigation (le bouton « فضائي » mène à la vérification).
+ * par la barre de navigation (le bouton « Mon espace » mène à la vérification).
  * Le serveur reste la vraie porte ; ceci évite d'ouvrir un espace dont
  * chaque appel serait refusé.
  */

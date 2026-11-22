@@ -1,6 +1,6 @@
 import { call, get, send, query } from './teacherClient';
 
-/** « مدار » d'une classe, côté enseignant : réglages, semaine, écran du tableau. */
+/** « Madar » d'une classe, côté enseignant : réglages, semaine, écran du tableau. */
 const KEY = 'madar';
 const base = (id) => `/teacher/classrooms/${encodeURIComponent(id)}/madar`;
 

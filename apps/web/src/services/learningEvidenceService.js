@@ -38,7 +38,7 @@ export async function fetchLearningProfile(token, filters = {}) {
 }
 
 /**
- * « Pourquoi cette حالة ? » — the explainable-mastery payload of ONE learning
+ * « Pourquoi cet état ? » — the explainable-mastery payload of ONE learning
  * point : status, reason, the evidence facts and the last attempts.
  *
  * @param {string} token

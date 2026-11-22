@@ -8,7 +8,7 @@ import { apiMessage } from './apiMessage';
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
 
 /**
- * Registers a new account from « الاسم و اللقب » + email + password and
+ * Registers a new account from « prénom et nom » + email + password and
  * returns an authenticated session, exactly like login() does. The role comes
  * from a server whitelist (student by default, or teacher). Grade is collected
  * afterwards (see updateGrade()), not at registration.
@@ -109,7 +109,7 @@ export async function logout(token) {
 }
 
 /**
- * Changes the current user's « الاسم و اللقب » — students and teachers alike
+ * Changes the current user's « prénom et nom » — students and teachers alike
  * (profile page, and the onboarding step for accounts that have none yet).
  * @returns {Promise<object>} The updated user.
  * @throws {ApiError} On network failure or a non-2xx response.
@@ -173,7 +173,7 @@ export async function resendVerificationEmail(token) {
 }
 
 /**
- * « نسيت كلمة المرور » — demande le lien par courriel.
+ * « Mot de passe oublié » — demande le lien par courriel.
  *
  * Le serveur répond pareil que l'adresse existe ou non : ne jamais en
  * déduire (ni afficher) qu'un compte existe.
@@ -273,11 +273,12 @@ export async function registrationStatus() {
 
 /** The waiting list while registrations are closed: a phone number, a name if given, who he is. */
 export async function joinWaitlist({ phone, name, role }) {
-  const { ok, data } = await apiRequest('/waitlist', {
+  const { ok, status, data } = await apiRequest('/waitlist', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ phone, ...(name ? { name } : {}), role }),
   });
-  if (!ok) throw new Error(data?.errors?.phone?.[0] ?? data?.message ?? 'تعذّر الإرسال. حاول من جديد.');
+  // The phone's validation sentence is written for the person (WaitlistController); anything else follows apiMessage.
+  if (!ok) throw new Error(data?.errors?.phone?.[0] ?? apiMessage('waitlist', data, status));
   return data;
 }

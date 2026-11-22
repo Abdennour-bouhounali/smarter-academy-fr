@@ -1,6 +1,6 @@
 import { call, get, send, query } from './teacherClient';
 
-/** « التحدّي اليومي » d'un قسم : réglages, résultats d'un jour, affichage. */
+/** « Défi du jour » d'une classe : réglages, résultats d'un jour, affichage. */
 const base = (id) => `/teacher/classrooms/${encodeURIComponent(id)}/daily-challenge`;
 
 export function fetchClassChallengeSettings(token, classroomId) {

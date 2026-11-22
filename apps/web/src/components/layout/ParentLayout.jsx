@@ -13,7 +13,7 @@ const LINKS = [
 ];
 
 /**
- * La coquille de « فضاء الوليّ » (docs/architecture/PARENT_SPACE.md) : une
+ * La coquille de « Espace parent » (docs/architecture/PARENT_SPACE.md) : une
  * barre en haut et une colonne de lecture — un parent LIT un rapport, il n'a
  * pas d'espace de travail (pas de barre latérale, pas de cahier, pas de leçon).
  *
@@ -22,8 +22,8 @@ const LINKS = [
  * les deux liens et une icône de sortie ; le nom et les libellés longs
  * n'apparaissent qu'à partir de `sm` / `md`.
  *
- * Une garde, comme l'enseignant : « الاسم و اللقب ». L'élève lit le nom de son
- * وليّ dans « الأولياء المرتبطون بحسابك » ; un compte sans nom passe par
+ * Une garde, comme l'enseignant : « prénom et nom ». L'élève lit le nom de son
+ * parent dans « Les parents liés à ton compte » ; un compte sans nom passe par
  * /wali/bienvenue. Le rôle est vérifié par ProtectedRoute ; la vraie porte
  * reste le serveur (can:parent + lien actif).
  */

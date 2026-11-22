@@ -5,9 +5,9 @@ import { isolateOutsideMath, isolateMathRuns } from './bidi';
  *
  * For the places where only a STRING fits: `<option>`, `title` / `aria-label` attributes, a label
  * concatenated into a template, the `MathLabel` fallback while KaTeX loads. The catalogue's points to
- * learn, descriptions and module blurbs are written like lesson content (« الترميز $x \longmapsto ax + b$ »);
+ * learn, descriptions and module blurbs are written like lesson content (« la notation $x \longmapsto ax + b$ »);
  * printed raw, the student read the dollars and the backslashes. Here each island becomes Unicode
- * (« x ⟼ ax + b »), isolated LTR like any formula (ARABIC_RTL_CONTRACT.md).
+ * (« x ⟼ ax + b »), isolated left to right like any formula (utils/bidi.js).
  *
  * Dependency-free on purpose (no KaTeX): it may run in the entry bundle.
  */

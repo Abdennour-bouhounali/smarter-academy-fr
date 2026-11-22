@@ -77,7 +77,7 @@ export const AuthProvider = ({ children }) => {
     return updatedUser;
   };
 
-  // « الاسم و اللقب » — same shape as updateGrade: the server answers with
+  // « prénom et nom » — same shape as updateGrade: the server answers with
   // the whole user, which replaces ours.
   const updateProfile = async (names) => {
     const updatedUser = await updateProfileRequest(token, names);

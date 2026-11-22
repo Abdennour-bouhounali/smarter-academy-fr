@@ -34,10 +34,9 @@ export default function AdminLayout() {
       <AdminMobileBar />
 
       <main
-        // RTL (ar-DZ, le défaut de la plateforme — src/locale.js) : la barre
-        // s'ancre sur le bord de DÉBUT, et `--sa-sidebar-w` est appliqué par
-        // `.sa-workspace-main` du bon côté selon la direction. Aucune bascule
-        // gauche/droite à écrire ici.
+        // La barre s'ancre sur le bord de DÉBUT (à gauche, src/locale.js), et
+        // `--sa-sidebar-w` est appliqué par `.sa-workspace-main` de ce côté.
+        // Aucune bascule gauche/droite à écrire ici.
         className="sa-workspace-main relative z-10 min-h-screen pt-14 lg:pt-0"
         style={{ '--sa-sidebar-w': collapsed ? '80px' : '256px' }}
       >

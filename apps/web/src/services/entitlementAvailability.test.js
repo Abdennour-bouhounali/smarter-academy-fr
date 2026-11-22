@@ -112,9 +112,8 @@ describe('la porte de palier côté élève', () => {
     expect(lockedAt).toBeGreaterThan(-1);
     expect(worldAt).toBeGreaterThan(lockedAt);
 
-    // Le panneau partagé : message arabe (clé i18n) et chemin vers la SAISIE
-    // D'UN CODE, jamais une page de tarifs — le produit algérien se paie en
-    // espèces, hors de l'application (§17/§18).
+    // Le panneau partagé : message du catalogue (clé i18n) et chemin vers la
+    // SAISIE D'UN CODE, jamais une page de tarifs.
     const panel = read('src/lessons/common/components/PremiumLessonLocked.jsx');
     expect(panel).toContain("t('lockedHint')");
     expect(panel).toContain('/espace/activation');

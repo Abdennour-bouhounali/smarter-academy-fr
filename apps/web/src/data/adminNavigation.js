@@ -12,8 +12,8 @@ import { isFeatureOn } from '../config/features';
  * de page se dérivent tous d'ici, donc renommer une section se fait à un seul
  * endroit.
  *
- * `labelKey` → catalogue arabe `admin` (src/i18n/locales/ar/admin.json), et
- * non un libellé français en dur : le panneau parle la langue du produit,
+ * `labelKey` → catalogue `admin` (src/i18n/locales/ar/admin.json, renommé
+ * `locales/fr/` à la fin de la traduction), et non un libellé en dur : le panneau parle la langue du produit,
  * comme l'espace élève et l'espace enseignant. Une entrée de navigation ne
  * porte donc plus de texte — seulement la clé qui le désigne.
  *
@@ -22,7 +22,7 @@ import { isFeatureOn } from '../config/features';
  *
  * `roles` (section ou lien) : qui la voit. Absent = l'administrateur seul.
  * Le gestionnaire de la librairie (`book_manager`, BOOKS_STORE.md §6ter) ne voit
- * que « الكتب » et son compte — la vraie porte reste serveur (`can:books`).
+ * que « Livres » et son compte — la vraie porte reste serveur (`can:books`).
  */
 const BOOKS_ROLES = ['admin', 'book_manager'];
 
@@ -79,7 +79,7 @@ export const adminNavSections = [
       { labelKey: 'nav.teachersAll', path: '/admin/enseignants', icon: GraduationCap, end: true },
       { labelKey: 'nav.teachersPendingRequests', path: '/admin/enseignants?requests=pending', icon: GraduationCap, matchQuery: 'requests=pending' },
       { labelKey: 'nav.classrooms', path: '/admin/classes', icon: School },
-      // « فضاء الإدارة » : les établissements et leur directeur (SCHOOL_ADMIN_SPACE.md §5).
+      // « Espace établissement » : les établissements et leur directeur (SCHOOL_ADMIN_SPACE.md §5).
       { labelKey: 'nav.schools', path: '/admin/etablissements', icon: Building2 },
     ],
   },
@@ -93,15 +93,14 @@ export const adminNavSections = [
       { labelKey: 'nav.plansAll', path: '/admin/offres', icon: BadgeCheck, end: true },
       { labelKey: 'nav.plansRequests', path: '/admin/offres/demandes', icon: Inbox },
       { labelKey: 'nav.plansSubscriptions', path: '/admin/offres/abonnements', icon: CreditCard },
-      // « الوصول والحدود » : outils du مختبر, cahier et travaux, par palier.
+      // « Accès et limites » : outils de l'atelier, cahier et travaux, par palier.
       { labelKey: 'nav.accessLimits', path: '/admin/offres/acces', icon: SlidersHorizontal },
-      // « التحدّي اليومي » : barème et défauts (DAILY_CHALLENGE.md).
+      // « Défi du jour » : barème et défauts (DAILY_CHALLENGE.md).
       { labelKey: 'nav.dailyChallenge', path: '/admin/offres/defi-quotidien', icon: Flame, feature: 'dailyChallenge' },
     ],
   },
   {
-    // L'ACCÈS PAYANT du produit algérien : des codes vendus en espèces —
-    // liés ou non à une offre (master spec §17). Aucun paiement en ligne.
+    // L'ACCÈS PAR CODE : des codes d'activation, liés ou non à une formule.
     labelKey: 'nav.access',
     icon: KeyRound,
     links: [
@@ -120,7 +119,7 @@ export const adminNavSections = [
       { labelKey: 'nav.booksOrders', path: '/admin/livres/commandes', icon: ShoppingBag, roles: BOOKS_ROLES },
       { labelKey: 'nav.booksCatalog', path: '/admin/livres', icon: Library, end: true, roles: BOOKS_ROLES },
       { labelKey: 'nav.booksMessages', path: '/admin/livres/messages', icon: MessageSquare, roles: BOOKS_ROLES },
-      // « مسيّرو المكتبة » : l'administrateur seul les crée.
+      // « Gestionnaires de la librairie » : l'administrateur seul les crée.
       { labelKey: 'nav.booksManagers', path: '/admin/livres/gestionnaires', icon: UserCheck },
     ],
   },
@@ -151,7 +150,7 @@ export const adminNavLinks = adminNavSections.flatMap((section) => section.links
 // subscriptions, codes) have none: he sees them whether payments are open or closed.
 const visibleTo = (item, role) => (item.roles ?? ['admin']).includes(role) && (!item.feature || isFeatureOn(item.feature));
 
-/** Les sections que voit un rôle : l'administrateur tout, le gestionnaire de la librairie « الكتب » et son compte. */
+/** Les sections que voit un rôle : l'administrateur tout, le gestionnaire de la librairie « Livres » et son compte. */
 export function adminNavSectionsFor(role) {
   return adminNavSections
     .filter((section) => visibleTo(section, role))

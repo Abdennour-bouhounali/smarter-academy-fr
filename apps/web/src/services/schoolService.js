@@ -1,9 +1,9 @@
 import { call, get, send } from './teacher/teacherClient';
 
 /**
- * Transport de « فضاء الإدارة » (docs/architecture/SCHOOL_ADMIN_SPACE.md). Même
+ * Transport de « Espace établissement » (docs/architecture/SCHOOL_ADMIN_SPACE.md). Même
  * convention que les services enseignant et famille : jeton en premier
- * argument, erreur arabe (`common.apiErrors.idara`) et motif clos `reason`
+ * argument, erreur du catalogue (`common.apiErrors.idara`, services/apiMessage.js) et motif clos `reason`
  * (`no_school`), traduit par la page sous `idara:errors.*`.
  */
 const KEY = 'idara';
@@ -38,7 +38,7 @@ export const generateReport = (token, body) => call('/school/reports', send('POS
 export const fetchReport = (token, id) => call(`/school/reports/${encodeURIComponent(id)}`, get(token), KEY);
 export const deleteReport = (token, id) => call(`/school/reports/${encodeURIComponent(id)}`, send('DELETE', token), KEY);
 
-// Côté ENSEIGNANT — « مؤسستي » (même transport, même catalogue d'erreurs).
+// Côté ENSEIGNANT — « Mon établissement » (même transport, même catalogue d'erreurs).
 export const fetchMySchool = (token) => call('/teacher/school', get(token), KEY);
 export const previewSchoolLink = (token, linkToken) => call(`/teacher/school-links/${encodeURIComponent(linkToken)}`, get(token), KEY);
 export const joinSchool = (token, linkToken) => call('/teacher/school/join', send('POST', token, { token: linkToken, consent: true }), KEY);

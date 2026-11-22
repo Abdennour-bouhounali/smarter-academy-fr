@@ -83,7 +83,7 @@ const AdminSubscriptionRequests = lazy(() => import('./pages/admin/requests/Subs
 const AdminSubscriptions = lazy(() =>
   import('./pages/admin/subscriptions/Subscriptions').then((m) => ({ default: m.AdminSubscriptions })),
 );
-// L'ESPACE ENSEIGNANT (« فضاء الأستاذ ») : arabe, RTL, sa propre coquille.
+// L'ESPACE ENSEIGNANT (« Espace professeur ») : sa propre coquille.
 const TeacherLayout = lazy(() => {
   preloadNamespace('teacher');
   return import('./components/layout/TeacherLayout');
@@ -99,17 +99,17 @@ const TeacherSubscription = lazy(() => import('./pages/teacher/SubscriptionPage'
 const TeacherProfile = lazy(() => import('./pages/teacher/TeacherProfile'));
 const TeacherLessonMemo = lazy(() => import('./pages/teacher/LessonMemoPage'));
 const TeacherReviews = lazy(() => import('./pages/teacher/TeacherReviewsPage'));
-// « فضاء الوليّ » — l'espace PARENT (docs/architecture/PARENT_SPACE.md) : sa
-// coquille, ses pages, le guide « حماية الجهاز » (public aussi) et, côté élève,
-// « ما يراه وليّك ». Tout est paresseux ; les chaînes sont dans `family` (à la demande).
+// « Espace parent » — l'espace PARENT (docs/architecture/PARENT_SPACE.md) : sa
+// coquille, ses pages, le guide « Protéger l'appareil » (public aussi) et, côté élève,
+// « Ce que voit ton parent ». Tout est paresseux ; les chaînes sont dans `family` (à la demande).
 const ParentLayout = lazy(() => import('./components/layout/ParentLayout'));
 const ParentHome = lazy(() => import('./pages/parent/ParentHome'));
 const ParentChildReport = lazy(() => import('./pages/parent/ParentChildReport'));
 const DeviceGuidePage = lazy(() => import('./pages/parent/DeviceGuidePage'));
 const StudentParentView = lazy(() => import('./pages/student/ParentView'));
-// « رابط الوليّ » : la page PUBLIQUE du parent, sans compte (owner, 2026-10-23).
+// « lien parent » : la page PUBLIQUE du parent, sans compte (owner, 2026-10-23).
 const ParentLinkPage = lazy(() => import('./pages/parent/ParentLinkPage'));
-// « فضاء الإدارة » : le directeur d'un établissement (SCHOOL_ADMIN_SPACE.md).
+// « Espace établissement » : le directeur d'un établissement (SCHOOL_ADMIN_SPACE.md).
 // Tout est paresseux ; les chaînes sont dans `idara` (à la demande).
 const SchoolLayout = lazy(() => import('./components/layout/SchoolLayout'));
 const SchoolHome = lazy(() => import('./pages/school/SchoolHome'));
@@ -122,13 +122,13 @@ const SchoolStudentFile = lazy(() => import('./pages/school/SchoolStudentFile'))
 const SchoolReports = lazy(() => import('./pages/school/SchoolReports'));
 const SchoolReport = lazy(() => import('./pages/school/SchoolReport'));
 const SchoolMeeting = lazy(() => import('./pages/school/SchoolMeeting'));
-// « مؤسستي » : l'établissement vu par l'enseignant, et son lien d'adhésion.
+// « Mon établissement » : l'établissement vu par l'enseignant, et son lien d'adhésion.
 const TeacherSchoolPage = lazy(() => import('./pages/teacher/TeacherSchoolPage'));
 const TeacherSchoolJoin = lazy(() => import('./pages/teacher/TeacherSchoolJoin'));
-// « المؤسسات », côté administration de la plateforme.
+// « Établissements », côté administration de la plateforme.
 const AdminSchoolList = lazy(() => import('./pages/admin/schools/SchoolList'));
 const AdminSchoolDetail = lazy(() => import('./pages/admin/schools/SchoolDetail'));
-// L'élève et sa classe (« قسمي »), et le lien public d'une classe.
+// L'élève et sa classe (« Ma classe »), et le lien public d'une classe.
 const Qism = lazy(() => import('./pages/student/Qism'));
 const JoinClassLink = lazy(() => import('./pages/JoinClassLink'));
 // Les pages de l'espace élève sont des lots À PART, comme l'admin et
@@ -147,7 +147,7 @@ const NotebookReviewPage = lazy(() =>
 );
 const Profil = lazy(() => import('./pages/student/Profil'));
 const ChooseGrade = lazy(() => import('./pages/student/ChooseGrade'));
-// « عرّفنا بنفسك » : l'étape qui demande الاسم و اللقب à un compte qui n'en a
+// « Présente-toi » : l'étape qui demande le prénom et le nom à un compte qui n'en a
 // pas encore (élève ET enseignant — pages/onboarding/CompleteName.jsx).
 const CompleteName = lazy(() => import('./pages/onboarding/CompleteName'));
 const Activation = lazy(() => import('./pages/student/Activation'));
@@ -161,20 +161,20 @@ const PracticeHub = lazy(() => import('./pages/student/practice/PracticeHub'));
 const PracticeSession = lazy(() => import('./pages/student/practice/PracticeSession'));
 const PracticeSummary = lazy(() => import('./pages/student/practice/PracticeSummary'));
 const AnswerReviewPage = lazy(() => import('./pages/student/practice/AnswerReviewPage'));
-// « التحدّي اليومي » : l'écran du jour, l'historique, la revue d'un jour.
+// « Défi du jour » : l'écran du jour, l'historique, la revue d'un jour.
 const DailyChallengePage = lazy(() => import('./pages/student/challenge/DailyChallengePage'));
-// « بوصلتي » (YEAR_COMPASS.md) : la jauge, le rapport, la semaine — un lot paresseux (réseau + calendrier).
+// « Ma boussole » (YEAR_COMPASS.md) : la jauge, le rapport, la semaine — un lot paresseux (réseau + calendrier).
 const CompassPage = lazy(() => import('./pages/student/CompassPage'));
 const ChallengeHistoryPage = lazy(() => import('./pages/student/challenge/ChallengeHistoryPage'));
 const ChallengeReviewPage = lazy(() => import('./pages/student/challenge/ChallengeReviewPage'));
 const TeacherChallengeDisplay = lazy(() => import('./pages/teacher/ChallengeDisplayPage'));
-// « مدار » : le jeu (plein écran, hors des coquilles) et son écran du tableau.
+// « Madar » : le jeu (plein écran, hors des coquilles) et son écran du tableau.
 const MadarPage = lazy(() => import('./pages/student/madar/MadarPage'));
-// « مختبر التفكير » (THINKING_LAB.md) : trois lots paresseux, sous RequireLargeScreen.
+// « Le labo des énigmes » (THINKING_LAB.md) : trois lots paresseux, sous RequireLargeScreen.
 const ThinkingLadderPage = lazy(() => import('./pages/student/thinking/ThinkingLadderPage'));
 const ThinkingChallengePage = lazy(() => import('./pages/student/thinking/ThinkingChallengePage'));
 const ThinkingNumberPage = lazy(() => import('./pages/student/thinking/ThinkingNumberPage'));
-// … et sa « معاينة الأستاذ » (lecture seule, /enseignant/tafkir).
+// … et son « Aperçu du professeur » (lecture seule, /enseignant/tafkir).
 const TeacherThinkingListPage = lazy(() => import('./pages/teacher/thinking/TeacherThinkingListPage'));
 const TeacherThinkingChallengePage = lazy(() => import('./pages/teacher/thinking/TeacherThinkingChallengePage'));
 const GamesHub = lazy(() => import('./pages/student/madar/GamesHub'));
@@ -189,8 +189,8 @@ const TeacherLessonCard = lazy(() =>
 );
 const TeacherGamesPage = lazy(() => import('./pages/teacher/TeacherGamesPage'));
 const AdminDailyChallenge = lazy(() => import('./pages/admin/dailyChallenge/DailyChallengeConfig'));
-// Le مختبر الرياضيات (Math Lab) : les instruments LIBRES de l'élève, hors de
-// toute leçon. Paresseux, comme la pratique — et la سبّورة charge son moteur
+// L'atelier (Math Lab) : les instruments LIBRES de l'élève, hors de
+// toute leçon. Paresseux, comme la pratique — et le tableau blanc charge son moteur
 // (Excalidraw) paresseusement à son tour : aucune autre page ne le paie.
 const MathLabHome = lazy(() => import('./pages/student/MathLab'));
 const MathLabToolPage = lazy(() => import('./pages/student/MathLab').then((m) => ({ default: m.MathLabToolPage })));
@@ -248,7 +248,7 @@ export default function App() {
             au-dessus du routeur pour survivre au changement de module. Les
             pages de leçon lui publient leur position (LessonNotebookAnchor). */}
               <NotebookProvider>
-                {/* LE مختبر posé SUR la leçon : un seul calque pour toute
+                {/* L'ATELIER posé SUR la leçon : un seul calque pour toute
             l'application, au-dessus du routeur lui aussi — ouvrir un
             instrument ne doit jamais démonter la leçon, sinon l'élève perd sa
             place (features/mathlab/overlay/). */}
@@ -289,8 +289,8 @@ function AppRoutes() {
       {/* Le panneau d'administration. `allowedRoles` est explicite ici :
           c'était le défaut de ProtectedRoute, mais l'écrire rend la porte
           lisible sur place. La vraie protection reste serveur — chaque
-          /api/v1/admin/* est derrière can:admin, sauf la librairie et « حسابي »
-          derrière can:books, que le gestionnaire « مسيّر المكتبة » ouvre aussi
+          /api/v1/admin/* est derrière can:admin, sauf la librairie et « Mon compte »
+          derrière can:books, que le « gestionnaire de la librairie » ouvre aussi
           (voir AdminAuthorizationTest). */}
       <Route path="/admin" element={<ProtectedRoute allowedRoles={['admin', 'book_manager']} />}>
         <Route element={<AdminLayout />}>
@@ -348,7 +348,7 @@ function AppRoutes() {
             </Route>
           </Route>
 
-          {/* La librairie et « حسابي » : l'administrateur ET le gestionnaire (can:books). */}
+          {/* La librairie et « Mon compte » : l'administrateur ET le gestionnaire (can:books). */}
           <Route path="compte" element={<AdminProfile />} />
           <Route path="compte/securite" element={<AdminSecurity />} />
           <Route element={<FeatureOutlet feature="books" home="/admin" />}>
@@ -373,10 +373,10 @@ function AppRoutes() {
           <Route path="diagnostic/run" element={<DiagnosticRun />} />
           <Route path="diagnostic/resultat" element={<DiagnosticResult />} />
         </Route>
-        {/* « مدار » : PLEIN ÉCRAN, hors de StudentLayout — un jeu se joue sans
+        {/* « Madar » : PLEIN ÉCRAN, hors de StudentLayout — un jeu se joue sans
             barre latérale ni barre d'onglets, au téléphone comme au portable
             (MADAR_GAME.md). Le serveur tient cœurs, parties et classement. */}
-        {/* « فضاء الألعاب » : la salle (trois jeux) puis la page de chaque jeu.
+        {/* « Espace jeux » : la salle (trois jeux) puis la page de chaque jeu.
             L'ancienne adresse /espace/madar mène à la salle. */}
         <Route path="jeux" element={<GamesHub />} />
         <Route path="jeux/:game" element={<MadarPage />} />
@@ -393,7 +393,7 @@ function AppRoutes() {
           <Route path="cahier/revision" element={<NotebookReviewPage />} />
           <Route path="cahier/:noteId" element={<NotebookNotePage />} />
           <Route path="profil" element={<Profil />} />
-          {/* « ما يراه وليّك » : le rapport que lit le وليّ, lu par l'élève lui-même. */}
+          {/* « Ce que voit ton parent » : le rapport que lit le parent, lu par l'élève lui-même. */}
           <Route path="profil/wali" element={<StudentParentView />} />
           {/* The activation code: pointless while payments are closed (everyone has full access) — the server still
               accepts a code. */}
@@ -412,33 +412,33 @@ function AppRoutes() {
             <Route path="pratique/:lessonCode/bilan/:sessionId" element={<PracticeSummary />} />
             {/* La correction de l'enseignant, ouverte depuis la cloche — en lecture seule. */}
             <Route path="tashih/:reviewId" element={<AnswerReviewPage />} />
-            {/* « مختبر التفكير » : l'échelle, un défi (par son id stable), un numéro (« التحدّي 318 »).
+            {/* « Le labo des énigmes » : l'échelle, un défi (par son id stable), un numéro (« Défi 318 »).
               Le serveur juge, compte et ouvre la porte ; ces pages ne font qu'afficher. */}
             <Route element={<FeatureOutlet feature="thinkingLab" home="/espace" />}>
               <Route path="tafkir" element={<ThinkingLadderPage />} />
               <Route path="tafkir/n/:number" element={<ThinkingNumberPage />} />
               <Route path="tafkir/:challengeId" element={<ThinkingChallengePage />} />
             </Route>
-            {/* « بوصلتي » : la jauge de départ et sa خطّة (YEAR_COMPASS.md). Le serveur sert et corrige. */}
+            {/* « Ma boussole » : la jauge de départ et son plan (YEAR_COMPASS.md). Le serveur sert et corrige. */}
             <Route element={<FeatureOutlet feature="compass" home="/espace" />}>
               <Route path="bawsala" element={<CompassPage />} />
             </Route>
           </Route>
-          {/* « التحدّي اليومي » : le serveur tient la tentative ; ces
+          {/* « Défi du jour » : le serveur tient la tentative ; ces
               routes ne font que l'afficher (DAILY_CHALLENGE.md). */}
           <Route element={<FeatureOutlet feature="dailyChallenge" home="/espace" />}>
             <Route path="defi" element={<DailyChallengePage />} />
             <Route path="defi/historique" element={<ChallengeHistoryPage />} />
             <Route path="defi/:attemptId" element={<ChallengeReviewPage />} />
           </Route>
-          {/* Le مختبر الرياضيات : l'accueil, puis un instrument par
+          {/* L'atelier : l'accueil, puis un instrument par
               segment d'URL (résolu dans le registre, features/mathlab),
               avec ou sans document enregistré. Un instrument de plus
               n'ajoute pas de route ici. */}
           <Route path="atelier" element={<MathLabHome />} />
           <Route path="atelier/:toolSlug" element={<MathLabToolPage />} />
           <Route path="atelier/:toolSlug/:documentId" element={<MathLabToolPage />} />
-          {/* « قسمي » : la classe de l'enseignant que l'élève a rejointe, ou
+          {/* « Ma classe » : la classe de l'enseignant que l'élève a rejointe, ou
               peut rejoindre par code / lien de classe. Un contexte, pas un
               contenu : le serveur reste l'autorité sur ce qui est visible. */}
           <Route path="qism" element={<Qism />} />
@@ -456,12 +456,12 @@ function AppRoutes() {
           <Route path="classes/:id/defi/affichage" element={<TeacherChallengeDisplay />} />
         </Route>
         <Route path="classes/:id/madar/affichage" element={<TeacherMadarDisplay />} />
-        {/* « حصّة القسم » : la séance en classe d'une leçon (plan de la classe, test, podium) — plein écran, au tableau (CLASS_SESSION.md). */}
+        {/* « séance en classe » : la séance en classe d'une leçon (plan de la classe, test, podium) — plein écran, au tableau (CLASS_SESSION.md). */}
         {/* tablette et ordinateur seulement : la séance de classe se projette */}
         <Route element={<RequireLargeScreen />}>
           <Route path="hissa/:lessonId" element={<TeacherClassSession />} />
         </Route>
-        {/* « نافس أستاذك » : l'enseignant joue dans UNE de ses classes — la même
+        {/* « Défie ton professeur » : l'enseignant joue dans UNE de ses classes — la même
             salle et les mêmes jeux que l'élève, plein écran, hors coquille. */}
         <Route path="classes/:classId/jeux" element={<GamesHub />} />
         <Route path="classes/:classId/jeux/:game" element={<MadarPage />} />
@@ -474,11 +474,11 @@ function AppRoutes() {
           <Route path="classes/:id" element={<TeacherClassGroupDetail />} />
           <Route path="classes/:id/eleves/:studentId" element={<TeacherStudentProgress />} />
           {/* Le cahier d'un élève, en LECTURE SEULE. La vraie porte est
-              le serveur : ClassroomPolicy + appartenance au قسم
+              le serveur : ClassroomPolicy + appartenance à la classe
               (TeacherClassroomNotebookTest). */}
           <Route path="classes/:id/eleves/:studentId/cahier" element={<TeacherStudentNotebook />} />
-          {/* « تصحيح الإجابات » : photos de copie et démonstrations des élèves en
-              « تصحيح الأستاذ » (AnswerReviewService, 2026-10-06). */}
+          {/* « Réponses à corriger » : photos de copie et démonstrations des élèves en
+              « Correction du professeur » (AnswerReviewService, 2026-10-06). */}
           <Route path="tashih" element={<TeacherReviews />} />
           <Route element={<PaidOutlet home="/enseignant" />}>
             <Route path="offre" element={<TeacherSubscription />} />
@@ -488,17 +488,17 @@ function AppRoutes() {
           <Route path="muassasa/rejoindre/:token" element={<TeacherSchoolJoin />} />
           {/* L'ENSEIGNANT APPREND COMME UN ÉLÈVE — mêmes pages, même
               moteur, dans SON espace : le catalogue (Explorer), le
-              مختبر et son cahier (à lui : le serveur ne sert que les
+              atelier et son cahier (à lui : le serveur ne sert que les
               notes et documents du compte). Les leçons elles-mêmes
               restent sur /courses/… et CourseLayout rend TeacherLayout
               pour lui ; ce qui change n'est pas la page mais le LECTEUR
               (features/learning/learningViewer) : tous les modules
               ouverts, aucune progression écrite. */}
           <Route path="cours" element={<Explorer />} />
-          {/* « مذكرة الدرس » : le guide d'orchestration d'une séance,
+          {/* « La fiche du professeur » : le guide d'orchestration d'une séance,
               construit depuis la leçon (features/teacher/lessonMemo).
               Enseignant seulement — la porte est ce ProtectedRoute ;
-              les notes « كرّاسي » qu'elle affiche sont servies par le
+              les notes « Mon cahier » qu'elle affiche sont servies par le
               serveur au seul propriétaire. */}
           <Route element={<RequireLargeScreen />}>
             <Route path="cours/:lessonId/memoire" element={<TeacherLessonMemo />} />
@@ -509,12 +509,12 @@ function AppRoutes() {
               vérifie localement et montre les réponses de SES élèves ;
               le serveur garde les écritures derrière `learner`. */}
           <Route element={<RequireLargeScreen />}>
-            {/* TeacherBankGate : une leçon qui a son tableau (« حصّة القسم ») a le بنك de l'enseignant et montre
+            {/* TeacherBankGate : une leçon qui a son tableau (« séance en classe ») a la banque d'exercices de l'enseignant et montre
               un exercice sur le tableau de la classe ; les autres gardent le Hub et le lecteur d'avant. */}
-            {/* « ملفّ الدرس » : le fichier de travail de l'enseignant sur UNE leçon — DANS son espace (la navigation reste),
-              hors du مختبر ; seul le plein écran de la سبّورة la recouvre. */}
+            {/* « Dossier de la leçon » : le fichier de travail de l'enseignant sur UNE leçon — DANS son espace (la navigation reste),
+              hors de l'atelier ; seul le plein écran du tableau blanc la recouvre. */}
             <Route path="milaff/:lessonId" element={<TeacherLessonFile />} />
-            {/* « متابعة القسم » et « بطاقة المعارف » d'une leçon : dans l'espace enseignant, sous l'en-tête commun des outils */}
+            {/* « Suivi de la classe » et « fiche de connaissances » d'une leçon : dans l'espace enseignant, sous l'en-tête commun des outils */}
             <Route path="mutabaa/:lessonId" element={<TeacherLessonTracking />} />
             <Route path="bitaqa/:lessonId" element={<TeacherLessonCard />} />
             <Route path="pratique/:lessonCode" element={<TeacherBankGate />} />
@@ -523,7 +523,7 @@ function AppRoutes() {
           <Route path="atelier" element={<MathLabHome />} />
           <Route path="atelier/:toolSlug" element={<MathLabToolPage />} />
           <Route path="atelier/:toolSlug/:documentId" element={<MathLabToolPage />} />
-          {/* « مختبر التفكير » : la PRÉVISUALISATION de l'enseignant (THINKING_LAB.md §8bis) — tout ouvert,
+          {/* « Le labo des énigmes » : la PRÉVISUALISATION de l'enseignant (THINKING_LAB.md §8bis) — tout ouvert,
               rien d'écrit ; la porte du serveur est `can:teacher`. */}
           <Route element={<RequireLargeScreen />}>
             <Route element={<FeatureOutlet feature="thinkingLab" home="/enseignant" />}>
@@ -537,12 +537,12 @@ function AppRoutes() {
         </Route>
       </Route>
 
-      {/* « رابط الوليّ » — le lien privé du parent, SANS compte : hors de toute
+      {/* « lien parent » — le lien privé du parent, SANS compte : hors de toute
           coquille, téléphone d'abord. Le jeton est la porte ; le serveur la
           garde (ParentAccessLinkService). PARENT_SPACE.md §2. */}
       <Route path="/w/:token" element={<ParentLinkPage />} />
 
-      {/* « فضاء الوليّ » (compte parent — gardé pour plus tard, plus d'inscription
+      {/* « Espace parent » (compte parent — gardé pour plus tard, plus d'inscription
           publique depuis 2026-10-23). Rôle vérifié ici ; la vraie porte est le serveur :
           chaque /api/v1/parent/* est derrière can:parent, et chaque lecture
           d'un enfant derrière un LIEN ACTIF (ParentLinkService::activeLink). */}
@@ -555,11 +555,11 @@ function AppRoutes() {
         </Route>
       </Route>
 
-      {/* « فضاء الإدارة » — le directeur d'un établissement. Rôle vérifié ici ;
+      {/* « Espace établissement » — le directeur d'un établissement. Rôle vérifié ici ;
           la vraie porte est le serveur : /api/v1/school/* derrière can:school
           et une nomination active (SchoolAccess::schoolOf). */}
       <Route path="/idara" element={<ProtectedRoute allowedRoles={['school_admin']} />}>
-        {/* « وضع الاجتماع » : plein écran, hors de la coquille (projecteur). */}
+        {/* « Mode réunion » : plein écran, hors de la coquille (projecteur). */}
         <Route path="ijtimaa/:reportId" element={<SchoolMeeting />} />
         <Route element={<SchoolLayout />}>
           <Route index element={<SchoolHome />} />
@@ -601,7 +601,7 @@ function AppRoutes() {
             encore authentifié quand la connexion commence. */}
         <Route path="/auth/google" element={<AuthGoogle />} />
 
-        {/* Le LIEN DE CLASSE (رابط الانضمام), ouvert depuis WhatsApp, souvent
+        {/* Le LIEN DE CLASSE, ouvert depuis WhatsApp, souvent
             sans compte. Publique ; l'adhésion reste une requête de l'élève
             authentifié, après son consentement. L'ancienne adresse des
             invitations par courriel (/rejoindre/:token) aboutit à la même
@@ -616,7 +616,7 @@ function AppRoutes() {
         <Route path="/mentions-legales" element={<MentionsLegales />} />
         <Route path="/confidentialite" element={<Confidentialite />} />
         <Route path="/cgu" element={<CGU />} />
-        {/* « اجعل الجهاز للدراسة فقط » : le guide des parents, PUBLIC (PARENT_SPACE.md §6). */}
+        {/* « Un appareil pour étudier » : le guide des parents, PUBLIC (PARENT_SPACE.md §6). */}
         <Route path="/himaya" element={<DeviceGuidePage />} />
 
         <Route element={<FeatureOutlet feature="books" home="/" />}>
@@ -634,7 +634,7 @@ function AppRoutes() {
             Seul "/" reste ouvert au visiteur. */}
         <Route element={<RequireAccount />}>
           <Route path="/courses" element={<Courses />} />
-          {/* La page d'une UNITÉ du manuel (الوحدة) : le niveau entre le ميدان et le درس (phase 8). */}
+          {/* La page d'une UNITÉ du programme (le chapitre) : le niveau entre le thème et la leçon (phase 8). */}
           <Route path="/courses/:levelId/:gradeId/:chapterId/units/:unitId" element={<UnitPage />} />
 
           {/* Les leçons — UNE frontière paresseuse (lessons/lessonRouteBoundary.jsx) :

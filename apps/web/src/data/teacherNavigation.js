@@ -5,7 +5,7 @@ import { Sun, BookOpen, Users, FlaskConical } from 'lucide-react';
  * `docs/reports/NAVIGATION_REBUILD_PLAN.md`). DATA, like `data/studentNavigation.js`: the rail, the bottom bar and the
  * line of pages under a door read this file. `labelKey` → i18n `nav`.
  *
- * « تصحيح الإجابات » is no longer a menu entry: its count (`badge: 'reviews'`) shows on « أقسامي » and on its page line.
+ * « Réponses à corriger » is no longer a menu entry: its count (`badge: 'reviews'`) shows on « Mes classes » and on its page line.
  * `rest: true` marks the door that stays lit on every other page of his space (a lesson and its tools).
  */
 export const teacherDoors = [

@@ -16,7 +16,7 @@ async function call(path, options) {
   const { ok, status, data } = await apiRequest(path, options);
   if (!ok) {
     const error = new ApiError(apiMessage('practice', data, status), classifyStatus(status), status);
-    // Le CODE et le corps (un refus « الوصول والحدود » y porte son quota) :
+    // Le CODE et le corps (un refus « Accès et limites » y porte son quota) :
     // lus par refusalFromError, jamais affichés tels quels.
     error.code = typeof data?.code === 'string' ? data.code : null;
     error.data = data ?? null;
@@ -123,7 +123,7 @@ export function fetchNextExercise(token, sessionId) {
   );
 }
 
-/** La « خزانة الميداليات » de l'élève pour une leçon (médailles déduites des réponses). */
+/** La « vitrine des médailles » de l'élève pour une leçon (médailles déduites des réponses). */
 export function fetchLessonMedals(token, lessonCode) {
   return call(
     `/lessons/${encodeURIComponent(lessonCode)}/practice/medals`,
@@ -134,7 +134,7 @@ export function fetchLessonMedals(token, lessonCode) {
 
 /**
  * Les réponses ENREGISTRÉES de la séance, exercice par exercice — la source de
- * « التمرين السابق » (feuille d'examen, 2026-10-06), lue en base.
+ * « L'exercice précédent » (feuille d'examen, 2026-10-06), lue en base.
  */
 export function fetchSessionAnswers(token, sessionId) {
   return call(
@@ -235,7 +235,7 @@ export function deleteNote(token, id) {
   );
 }
 
-/* ── Photos de copie et correction de l'enseignant (prototype BEM, 2026-10-06) ── */
+/* ── Photos de copie et correction de l'enseignant (prototype au format du brevet, 2026-10-06) ── */
 
 /**
  * Joint UNE photo à l'étape ouverte (avant la réponse). Le refus porte un

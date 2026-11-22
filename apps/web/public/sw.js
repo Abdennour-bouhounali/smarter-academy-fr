@@ -1,7 +1,7 @@
 /*
  * Service worker de Smarter Academy — UNIQUEMENT les notifications du tableau de bord
- * (commandes, inscriptions, messages, بلاغات… — BOOKS_STORE.md §6quater). Il n'est enregistré
- * que sur l'appareil d'un administrateur ou d'un « مسيّر المكتبة » qui active les notifications,
+ * (commandes, inscriptions, messages, signalements… — BOOKS_STORE.md §6quater). Il n'est enregistré
+ * que sur l'appareil d'un administrateur ou d'un « gestionnaire de la librairie » qui active les notifications,
  * jamais chez un élève.
  *
  * Volontairement SANS gestionnaire `fetch` : il ne met rien en cache et ne touche à aucune
@@ -13,14 +13,13 @@ self.addEventListener('activate', (event) => event.waitUntil(self.clients.claim(
 
 self.addEventListener('push', (event) => {
   let data = {};
-  try { data = event.data ? event.data.json() : {}; } catch { data = { title: 'طلب جديد', body: event.data && event.data.text() }; }
-  const title = data.title || 'طلب جديد';
+  try { data = event.data ? event.data.json() : {}; } catch { data = { title: 'Nouvelle commande', body: event.data && event.data.text() }; }
+  const title = data.title || 'Nouvelle commande';
   event.waitUntil(self.registration.showNotification(title, {
     body: data.body || '',
     tag: data.tag || 'book-order',
     renotify: true,
-    dir: 'rtl',
-    lang: 'ar',
+    lang: 'fr',
     icon: '/icon-192.png',
     badge: '/icon-192.png',
     data: { url: data.url || '/admin' },

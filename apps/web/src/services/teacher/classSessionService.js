@@ -1,7 +1,7 @@
 import { call, get, send, query } from './teacherClient';
 
 /**
- * « حصّة القسم » — the teacher's class session (docs/architecture/CLASS_SESSION.md): the seating map of a class, the test
+ * « séance en classe » — the teacher's class session (docs/architecture/CLASS_SESSION.md): the seating map of a class, the test
  * of a lesson (the default kept by the server + the teacher's own copy), the finished sessions.
  * A session that could not be sent (the school's connection dropped) waits in an outbox and is sent at the next visit:
  * the server ignores a session it already has (same uuid).
@@ -15,9 +15,9 @@ export const fetchClassTest = (token, lessonCode) => call(test(lessonCode), get(
 export const saveClassTest = (token, lessonCode, { start, end }) => call(test(lessonCode), send('PUT', token, { start, end }), 'classroomSave');
 export const resetClassTest = (token, lessonCode) => call(test(lessonCode), send('DELETE', token), 'classroomSave');
 export const fetchClassSessions = (token, classId, lessonCode = null) => call(`${cls(classId)}/class-sessions${query({ lessonCode })}`, get(token), 'classroomLoad');
-/** « متابعة القسم »: each active student of the class on ONE lesson — his state per الكفاءة, his exercises. Read-only. */
+/** « Suivi de la classe »: each active student of the class on ONE lesson — his state per learning point (savoir-faire), his exercises. Read-only. */
 export const fetchLessonTracking = (token, classId, lessonCode) => call(`${cls(classId)}/lesson-tracking/${encodeURIComponent(lessonCode)}`, get(token), 'progressLoadClass');
-/** « ملفّ الدرس »: the lesson → the teacher's whiteboard document of the Math Lab (`documentId`, null until first opened). */
+/** « Dossier de la leçon »: the lesson → the teacher's whiteboard document of the Math Lab (`documentId`, null until first opened). */
 export const fetchLessonFile = (token, lessonCode) => call(`/teacher/lesson-files/${encodeURIComponent(lessonCode)}`, get(token), 'classroomLoad').then((d) => d.file);
 export const saveLessonFile = (token, lessonCode, body) => call(`/teacher/lesson-files/${encodeURIComponent(lessonCode)}`, send('PUT', token, body), 'classroomSave').then((d) => d.file);
 const storeClassSession = (token, classId, record) => call(`${cls(classId)}/class-sessions`, send('POST', token, record), 'classroomSave').then((d) => d.session);
